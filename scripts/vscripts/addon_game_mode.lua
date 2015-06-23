@@ -1,4 +1,15 @@
--- Hoard_Mode template (I've build a basic script based off of holdout_example game mode. Most of this won't function properly at this time ~Nye)
+-- Hoard_Mode template (I've build a basic script based off of holdout_example game mode. Most of this won't function properly atm ~Nye)
+--[[
+Holdout Example
+
+	Underscore prefix such as "_function()" denotes a local function and is used to improve readability
+	
+	Variable Prefix Examples
+		"fl"	Float
+		"n"		Int
+		"v"		Table
+		"b"		Boolean
+]]
 
 require( "Hoard_Mode_game_spawner" )
 
@@ -56,7 +67,7 @@ function CHoard_ModeGameMode:_ReadGameConfiguration()
 	
 	end 
 
-	-- Verify spawners if random is set
+-- Verify spawners if random is set
 function CHoard_ModeGameMode:ChooseRandomSpawnInfo()
 	if #self._vRandomSpawnsList == 0 then
 		error( "Attempt to choose a random spawn, but no random spawns are specified in the data." )
@@ -79,9 +90,6 @@ function CHoard_ModeGameMode:_ReadRandomSpawnsConfiguration( kvSpawns )
 		} )
 	end
 end
-	
-	
-	
 	
 function CHoard_ModeGameMode:InitGameMode()
 	print( "Template addon is loaded." )
@@ -123,8 +131,6 @@ function CHoard_ModeGameMode:_CheckForDefeat()
 		return
 	end
 end
-
--- getting rid of un-needed frostivus particle stuff I guess? (might be useless code)
 
 function CHoard_ModeGameMode:_SpawnHeroClientEffects( hero, nPlayerID )
 	-- Spawn these effects on the client, since we don't need them to stay in sync or anything

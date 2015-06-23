@@ -1,6 +1,6 @@
 "AddonInfo"
 {
-	maps			"ettempt"
+	maps			"Hoard_mode"
 	"IsPlayable"	"1"
 	"Hoard_Mode"
 	{

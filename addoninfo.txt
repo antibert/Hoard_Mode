@@ -2,7 +2,7 @@
 {
 	maps			"ettempt"
 	"IsPlayable"	"1"
-	"hoard_mode"
+	"Hoard_Mode"
 	{
 					"MaxPlayers"                    "5"
 	}

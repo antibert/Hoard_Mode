@@ -1,12 +1,12 @@
 --[[
-	Choard_modeGameSpawner - A single unit spawner for hoard_mode.
+	CHoard_ModeGameSpawner - A single unit spawner for Hoard_Mode.
 ]]
-if Choard_modeGameSpawner == nil then
-	Choard_modeGameSpawner = class({})
+if CHoard_ModeGameSpawner == nil then
+	CHoard_ModeGameSpawner = class({})
 end
 
 
-function Choard_modeGameSpawner:ReadConfiguration( name, kv, gameRound )
+function CHoard_ModeGameSpawner:ReadConfiguration( name, kv, gameRound )
 	self._gameRound = gameRound
 	self._dependentSpawners = {}
 
@@ -35,7 +35,7 @@ function Choard_modeGameSpawner:ReadConfiguration( name, kv, gameRound )
 end
 
 
-function Choard_modeGameSpawner:PostLoad( spawnerList )
+function CHoard_ModeGameSpawner:PostLoad( spawnerList )
 	self._waitForUnit = spawnerList[ self._szWaitForUnit ]
 	if self._szWaitForUnit ~= "" and not self._waitForUnit then
 		print( self._szName .. " has a wait for unit " .. self._szWaitForUnit .. " that is missing from the round data." )
@@ -52,7 +52,7 @@ function Choard_modeGameSpawner:PostLoad( spawnerList )
 end
 
 
-function Choard_modeGameSpawner:Precache()
+function CHoard_ModeGameSpawner:Precache()
 	PrecacheUnitByNameAsync( self._szNPCClassName, function( sg ) self._sg = sg end )
 	if self._szChampionNPCClassName ~= "" then
 		PrecacheUnitByNameAsync( self._szChampionNPCClassName, function( sg ) self._sgChampion = sg end )
@@ -60,7 +60,7 @@ function Choard_modeGameSpawner:Precache()
 end
 
 
-function Choard_modeGameSpawner:Begin()
+function CHoard_ModeGameSpawner:Begin()
 	self._nUnitsSpawnedThisRound = 0
 	self._nChampionsSpawnedThisRound = 0
 	self._nUnitsCurrentlyAlive = 0
@@ -89,7 +89,7 @@ function Choard_modeGameSpawner:Begin()
 end
 
 
-function Choard_modeGameSpawner:End()
+function CHoard_ModeGameSpawner:End()
 	if self._sg ~= nil then
 		UnloadSpawnGroupByHandle( self._sg )
 		self._sg = nil
@@ -101,7 +101,7 @@ function Choard_modeGameSpawner:End()
 end
 
 
-function Choard_modeGameSpawner:ParentSpawned( parentSpawner )
+function CHoard_ModeGameSpawner:ParentSpawned( parentSpawner )
 	if parentSpawner == self._groupWithUnit then
 		-- Make sure we use the same spawn location as parentSpawner.
 		self:_DoSpawn()
@@ -113,7 +113,7 @@ function Choard_modeGameSpawner:ParentSpawned( parentSpawner )
 end
 
 
-function Choard_modeGameSpawner:Think()
+function CHoard_ModeGameSpawner:Think()
 	if not self._flNextSpawnTime then
 		return
 	end
@@ -133,17 +133,17 @@ function Choard_modeGameSpawner:Think()
 end
 
 
-function Choard_modeGameSpawner:GetTotalUnitsToSpawn()
+function CHoard_ModeGameSpawner:GetTotalUnitsToSpawn()
 	return self._nTotalUnitsToSpawn
 end
 
 
-function Choard_modeGameSpawner:IsFinishedSpawning()
+function CHoard_ModeGameSpawner:IsFinishedSpawning()
 	return ( self._nTotalUnitsToSpawn <= self._nUnitsSpawnedThisRound ) or ( self._groupWithUnit ~= nil )
 end
 
 
-function Choard_modeGameSpawner:_GetSpawnLocation()
+function CHoard_ModeGameSpawner:_GetSpawnLocation()
 	if self._groupWithUnit then
 		return self._groupWithUnit:_GetSpawnLocation()
 	else
@@ -152,7 +152,7 @@ function Choard_modeGameSpawner:_GetSpawnLocation()
 end
 
 
-function Choard_modeGameSpawner:_GetSpawnWaypoint()
+function CHoard_ModeGameSpawner:_GetSpawnWaypoint()
 	if self._groupWithUnit then
 		return self._groupWithUnit:_GetSpawnWaypoint()
 	else
@@ -161,7 +161,7 @@ function Choard_modeGameSpawner:_GetSpawnWaypoint()
 end
 
 
-function Choard_modeGameSpawner:_UpdateRandomSpawn()
+function CHoard_ModeGameSpawner:_UpdateRandomSpawn()
 	self._vecSpawnLocation = Vector( 0, 0, 0 )
 	self._entWaypoint = nil
 
@@ -188,7 +188,7 @@ function Choard_modeGameSpawner:_UpdateRandomSpawn()
 end
 
 
-function Choard_modeGameSpawner:_DoSpawn()
+function CHoard_ModeGameSpawner:_DoSpawn()
 	local nUnitsToSpawn = math.min( self._nUnitsPerSpawn, self._nTotalUnitsToSpawn - self._nUnitsSpawnedThisRound )
 
 	if nUnitsToSpawn <= 0 then
@@ -240,14 +240,14 @@ function Choard_modeGameSpawner:_DoSpawn()
 			end
 			self._nUnitsSpawnedThisRound = self._nUnitsSpawnedThisRound + 1
 			self._nUnitsCurrentlyAlive = self._nUnitsCurrentlyAlive + 1
-			entUnit.hoard_mode_IsCore = true
+			entUnit.Hoard_Mode_IsCore = true
 			entUnit:SetDeathXP( self._gameRound:GetXPPerCoreUnit() )
 		end
 	end
 end
 
 
-function Choard_modeGameSpawner:StatusReport()
+function CHoard_ModeGameSpawner:StatusReport()
 	print( string.format( "** Spawner %s", self._szNPCClassName ) )
 	print( string.format( "%d of %d spawned", self._nUnitsSpawnedThisRound, self._nTotalUnitsToSpawn ) )
 end

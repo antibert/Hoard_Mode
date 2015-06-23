@@ -1,9 +1,9 @@
--- hoard_mode template (I've build a basic script based off of holdout_example game mode. Most of this won't function properly at this time ~Nye)
+-- Hoard_Mode template (I've build a basic script based off of holdout_example game mode. Most of this won't function properly at this time ~Nye)
 
-require( "hoard_mode_game_spawner" )
+require( "Hoard_Mode_game_spawner" )
 
-if Choard_mode == nil then
-	Choard_mode = class({})
+if CHoard_Mode == nil then
+	CHoard_Mode = class({})
 end
 
 function Precache( context )
@@ -18,8 +18,8 @@ end
 
 -- Create the game mode when we activate
 function Activate()
-	GameRules.hoard_mode = Choard_modeGameMode()
-	GameRules.hoard_mode:InitGameMode()
+	GameRules.Hoard_Mode = CHoard_ModeGameMode()
+	GameRules.Hoard_Mode:InitGameMode()
 	self._entAncient = Entities:FindByName( nil, "dota_goodguys_fort" )
 	if not self._entAncient then
 		print( "Ancient entity not found!" )
@@ -40,24 +40,24 @@ function Activate()
 --	GameRules:GetGameModeEntity():SetHUDVisible( DOTA_HUD_VISIBILITY_TOP_HEROES, false )
 
 	-- Hook into game events allowing reload of functions at run time (?????)
-	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( Choard_modeGameMode, "OnNPCSpawned" ), self )
-	ListenToGameEvent( "player_reconnected", Dynamic_Wrap( Choard_modeGameMode, 'OnPlayerReconnected' ), self )
-	ListenToGameEvent( "entity_killed", Dynamic_Wrap( Choard_modeGameMode, 'OnEntityKilled' ), self )
-	ListenToGameEvent( "game_rules_state_change", Dynamic_Wrap( Choard_modeGameMode, "OnGameRulesStateChange" ), self )
+	ListenToGameEvent( "npc_spawned", Dynamic_Wrap( CHoard_ModeGameMode, "OnNPCSpawned" ), self )
+	ListenToGameEvent( "player_reconnected", Dynamic_Wrap( CHoard_ModeGameMode, 'OnPlayerReconnected' ), self )
+	ListenToGameEvent( "entity_killed", Dynamic_Wrap( CHoard_ModeGameMode, 'OnEntityKilled' ), self )
+	ListenToGameEvent( "game_rules_state_change", Dynamic_Wrap( CHoard_ModeGameMode, "OnGameRulesStateChange" ), self )
 
 	-- Register OnThink with the game engine so it is called every 0.25 seconds (????)
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, 0.25 ) 
 end
 
 -- Read and assign configurable keyvalues if applicable
-function Choard_modeGameMode:_ReadGameConfiguration()
+function CHoard_ModeGameMode:_ReadGameConfiguration()
 	local kv = LoadKeyValues( "scripts/maps/" .. GetMapName() .. ".txt" )
 	kv = kv or {} -- Handle the case where there is not keyvalues file
 	
 	end 
 
 	-- Verify spawners if random is set
-function Choard_modeGameMode:ChooseRandomSpawnInfo()
+function CHoard_ModeGameMode:ChooseRandomSpawnInfo()
 	if #self._vRandomSpawnsList == 0 then
 		error( "Attempt to choose a random spawn, but no random spawns are specified in the data." )
 		return nil
@@ -67,7 +67,7 @@ end
 
 
 -- Verify valid spawns are defined and build a table with them from the keyvalues file
-function Choard_modeGameMode:_ReadRandomSpawnsConfiguration( kvSpawns )
+function CHoard_ModeGameMode:_ReadRandomSpawnsConfiguration( kvSpawns )
 	self._vRandomSpawnsList = {}
 	if type( kvSpawns ) ~= "table" then
 		return
@@ -83,15 +83,15 @@ end
 	
 	
 	
-function Choard_modeGameMode:InitGameMode()
+function CHoard_ModeGameMode:InitGameMode()
 	print( "Template addon is loaded." )
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
 end
 
 -- Evaluate the state of the game
-function Choard_modeGameMode:OnThink()
+function CHoard_ModeGameMode:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		--print( "hoard_mode script is running." )
+		--print( "Hoard_Mode script is running." )
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
 	end
@@ -99,7 +99,7 @@ function Choard_modeGameMode:OnThink()
 end
 
 -- how the radiant wins le game lololololol xD top kek
-function Choard_modeGameMode:_CheckForDefeat()
+function CHoard_ModeGameMode:_CheckForDefeat()
 	if GameRules:State_Get() ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		return
 	end
@@ -126,7 +126,7 @@ end
 
 -- getting rid of un-needed frostivus particle stuff I guess? (might be useless code)
 
-function Choard_modeGameMode:_SpawnHeroClientEffects( hero, nPlayerID )
+function CHoard_ModeGameMode:_SpawnHeroClientEffects( hero, nPlayerID )
 	-- Spawn these effects on the client, since we don't need them to stay in sync or anything
 	-- ParticleManager:ReleaseParticleIndex( ParticleManager:CreateParticleForPlayer( "particles/generic_gameplay/winter_effects_hero.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero, PlayerResource:GetPlayer( nPlayerID ) ) )	-- Attaches the breath effects to players for winter maps
 	ParticleManager:ReleaseParticleIndex( ParticleManager:CreateParticleForPlayer( "particles/frostivus_gameplay/frostivus_hero_light.vpcf", PATTACH_ABSORIGIN_FOLLOW, hero, PlayerResource:GetPlayer( nPlayerID ) ) )

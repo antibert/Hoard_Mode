@@ -1,4 +1,4 @@
-"hoard_mode"
+"Hoard_Mode"
 
 	"RandomSpawns"
 	{

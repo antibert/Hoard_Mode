@@ -96,13 +96,13 @@
 	}
 
 	//=================================================================================
-	// Tower: Holdout Tower
+	// Tower: Hoard_Mode Tower
 	//=================================================================================
-	"npc_dota_holdout_tower"
+	"npc_dota_Hoard_Mode_tower"
 	{
 		// General
 		//
-		"BaseClass"					"npc_dota_holdout_tower"	// Class of entity of link to.
+		"BaseClass"					"npc_dota_Hoard_Mode_tower"	// Class of entity of link to.
 		"Model"						"models/props_structures/tower_good.vmdl"// Model.
 		"SoundSet"					"Tower.Water"					// Name of sound set.
 		"MinimapIcon"				"minimap_tower90"
@@ -192,11 +192,11 @@
 	//=================================================================================
 	// Tower - Spawn Protection - High Attack Rate
 	//=================================================================================
-	"npc_dota_holdout_tower_spawn_protection"
+	"npc_dota_Hoard_Mode_tower_spawn_protection"
 	{
 		// General
 		//
-		"BaseClass"					"npc_dota_holdout_tower_spawn_protection"		// Class of entity of link to.
+		"BaseClass"					"npc_dota_Hoard_Mode_tower_spawn_protection"		// Class of entity of link to.
 		"Model"						"models/props_structures/tower001.vmdl"			// Model.
 		"SoundSet"					"Tower.Fire"									// Name of sound set.
 		"MinimapIcon"				"minimap_tower90"
@@ -284,7 +284,7 @@
 	}
 
 	//=================================================================================	
-	// Holdout: Guardian Angel
+	// Hoard_Mode: Guardian Angel
 	//=================================================================================
 	"npc_dota_summoned_guardian_angel"
 	{
@@ -1318,7 +1318,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"holdout_gyrocopter_homing_missile"			// Ability 1
+		"Ability1"					"Hoard_Mode_gyrocopter_homing_missile"			// Ability 1
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -1420,7 +1420,7 @@
 			{
 				"Ability1"
 				{
-					"Name"				"holdout_gyrocopter_homing_missile"
+					"Name"				"Hoard_Mode_gyrocopter_homing_missile"
 					"Damage"			"1"
 					"Stun"				"1"
 				}
@@ -1526,7 +1526,7 @@
 		"VoiceFile"				"soundevents/voscripts/game_sounds_vo_rattletrap.vsndevts"
 		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_rattletrap.vsndevts"
 
-		"vscripts"					"holdout_ai_attack_ancient.lua"
+		"vscripts"					"Hoard_Mode_ai_attack_ancient.lua"
 
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
@@ -1538,7 +1538,7 @@
 	//=================================================================================================================
 	// Creature: Homing Missile
 	//=================================================================================================================
-	"npc_dota_holdout_homing_missile"
+	"npc_dota_Hoard_Mode_homing_missile"
 	{
 		// General
 		//----------------------------------------------------------------
@@ -2710,7 +2710,7 @@
 		"VisionDaytimeRange"		"2000"		// Range of vision during day light.
 		"VisionNighttimeRange"		"2000"		// Range of vision at night time.
 
-		"vscripts"					"holdout_ai_pudge.lua"
+		"vscripts"					"Hoard_Mode_ai_pudge.lua"
 
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
@@ -3466,7 +3466,7 @@
 
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"Ability1"					"holdout_ancient_apparition_ice_blast"
+		"Ability1"					"Hoard_Mode_ancient_apparition_ice_blast"
 
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
@@ -3518,7 +3518,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_ancient_apparition.vsndevts"
 
-		"vscripts"					"holdout_ai_ancient_apparition.lua"
+		"vscripts"					"Hoard_Mode_ai_ancient_apparition.lua"
 	}
 
 	//=================================================================
@@ -4248,7 +4248,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"holdout_scourge_venomous_gale"			// Ability 1.
+		"Ability1"					"Hoard_Mode_scourge_venomous_gale"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -4326,7 +4326,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"holdout_scourge_venomous_gale"			// Ability 1.
+		"Ability1"					"Hoard_Mode_scourge_venomous_gale"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -4405,7 +4405,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"holdout_scourge_venomous_gale"			// Ability 1.
+		"Ability1"					"Hoard_Mode_scourge_venomous_gale"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -4484,7 +4484,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"holdout_scourge_venomous_gale"			// Ability 1.
+		"Ability1"					"Hoard_Mode_scourge_venomous_gale"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.

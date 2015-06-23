@@ -1,7 +1,9 @@
 "AddonInfo"
 {
-	"holdout_example"
+	maps			"ettempt"
+	"IsPlayable"	"1"
+	"hoard_mode"
 	{
-		"MaxPlayers"		"5"
+					"MaxPlayers"                    "5"
 	}
 }

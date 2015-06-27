@@ -4,20 +4,18 @@ if CHoard_ModeGameMode == nil then
 	CHoard_ModeGameMode = class({})
 end
 
+-- This library allow for easily delayed/timed actions
+require('libraries/timers')
+
 function Precache( context )
-	--[[
-		Precache things we know we'll use.  Possible file types include (but not limited to):
-			PrecacheResource( "model", "*.vmdl", context )
-			PrecacheResource( "soundfile", "*.vsndevts", context )
-			PrecacheResource( "particle", "*.vpcf", context )
-			PrecacheResource( "particle_folder", "particles/folder", context )
-	]]
+	PrecacheUnitByNameSync("npc_dota_creature_gnoll_assassin", context)
 end
 
 -- Create the game mode when we activate
 function Activate()
 	GameRules.Hoard_Mode = CHoard_ModeGameMode()
 	GameRules.Hoard_Mode:InitGameMode()
+	InitiateHoardMode()
 end
 
 function CHoard_ModeGameMode:InitGameMode()
@@ -33,4 +31,30 @@ function CHoard_ModeGameMode:OnThink()
 		return nil
 	end
 	return 1
+end
+
+-- This function is called once and only once when the game completely begins
+function CHoard_ModeGameMode:InitiateHoardMode()
+	print("[HOARDMODE] The game has officially begun")
+
+	Timers:CreateTimer(0, function()
+		SpawnGnolls()
+		return 30.0 -- Rerun this timer every 30 game-time seconds 
+    end)
+end
+
+function CHoard_ModeGameMode:SpawnGnolls()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_1"):GetAbsOrigin()
+	local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local units_to_spawn = 10
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point+RandomVector(RandomInt(100,200)), true, nil, nil, DOTA_TEAM_NEUTRALS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
 end

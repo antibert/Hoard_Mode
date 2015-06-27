@@ -1,4 +1,4 @@
--- Hoard_Mode template (I've build a basic script based off of holdout_example game mode. Most of this won't function properly atm ~Nye)
+-- Hoard_Mode template (I've build a basic script based off of holdout_example game mode. its fucking broken as fuck ~Nye)
 --[[
 Holdout Example
 

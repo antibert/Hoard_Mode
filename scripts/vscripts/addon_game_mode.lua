@@ -1,6 +1,6 @@
 -- Hoard_Mode template (I've build a basic script based off of holdout_example game mode. its fucking broken as fuck ~Nye)
 --[[
-Holdout Example
+Hoard_Mode
 
 	Underscore prefix such as "_function()" denotes a local function and is used to improve readability
 	

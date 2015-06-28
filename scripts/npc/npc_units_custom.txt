@@ -179,7 +179,7 @@
 			"HPGain"					"50"
 			"DamageGain"				"2"
 			"ArmorGain"					"0.25"
-			"MagicResistGain"			"0.1"
+			"MagicResistGain"			"0"
 			"MoveSpeedGain"				"1"
 			"BountyGain"				"3"
 			"XPGain"					"15"
@@ -188,9 +188,9 @@
 }
 
     //=================================================================================
-	// Creature: Kobold Guard
+	// Creature: Kobold Ripper
 	//=================================================================================
-	"npc_dota_creature_kobold_tunneler"
+	"npc_dota_creature_kobold_ripper"
 	{										
 		// General
 		//----------------------------------------------------------------
@@ -199,7 +199,7 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				".9"
+		"ModelScale" 				".7"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -215,9 +215,9 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"14"		// Damage range min.
-		"AttackDamageMax"			"15"		// Damage range max.	
-		"AttackRate"				"1.35"		// Speed of attack.
+		"AttackDamageMin"			"10"		// Damage range min.
+		"AttackDamageMax"			"13"		// Damage range max.	
+		"AttackRate"				"2"		// Speed of attack.
 		"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
@@ -231,18 +231,18 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"16"		// Experience earn.
-		"BountyGoldMin"				"0"		// Gold earned min.
-		"BountyGoldMax"				"0"		// Gold earned max.
+		"BountyXP"					"10"		// Experience earn.
+		"BountyGoldMin"				"10"		// Gold earned min.
+		"BountyGoldMax"				"12"		// Gold earned max.
 
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"270"		// Speed.
+		"MovementSpeed"				"400"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"40"		// Base health.
+		"StatusHealth"				"60"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -273,10 +273,110 @@
 			"HPGain"					"45"
 			"DamageGain"				"2"
 			"ArmorGain"					"0.25"
-			"MagicResistGain"			"0.1"
+			"MagicResistGain"			"0"
 			"MoveSpeedGain"				"1"
 			"BountyGain"				"2"
 			"XPGain"					"13"
 		}
 	}
 	
+	//=================================================================
+	// Baby Spiderling
+	//=================================================================
+	"npc_dota_creature_spiderling"
+	{
+		// General
+		//
+		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+		"Model"						"models/heroes/broodmother/spiderling.vmdl"	// Model.
+		"SoundSet"					"0"					// Name of sound set.
+		"ModelScale"				".8"								// old 1.0
+		"Level"						"1"
+		"IsSummoned"				"1"
+		"CanBeDominated"			"1"
+		"SelectionGroup"			"Spiders"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		
+		"Ability1"					"broodmother_poison_sting"			// Ability 1.
+		"Ability2"					""		// Ability 2.
+		"Ability3"					""			// Ability 3.
+		"Ability4"					""			// Ability 4.
+		"Ability5"					""			// Ability 5.
+		"Ability6"					""			// Ability 6 - Extra.
+		"Ability7"					""			// Ability 7 - Extra.
+		"Ability8"					""			// Ability 8 - Extra.
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"				"0"		// Magical protection.
+
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"25"		// Damage range min.
+		"AttackDamageMax"			"28"		// Damage range max.
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackRate"				"1.35"		// Speed of attack.
+		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"100"		// Range within a target can be attacked.
+		"ProjectileModel"			""			// Particle system model for projectile.
+		"ProjectileSpeed"			""			// Speed of projectile.
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"23"		// Experience earn.
+		"BountyGoldMin"				"11"		// Gold earned min.
+		"BountyGoldMax"				"13"		// Gold earned max.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
+		"HealthBarOffset"			"140"
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+		"MovementSpeed"				"380"		// Speed
+		"MovementTurnRate"			"0.5"		// Turning rate.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"180"		// Base health.
+		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"			// Mana regeneration rate.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"		// Range of vision during day light.
+		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+
+		// Creature Data
+		//----------------------------------------------------------------------------------------------------------------------
+		"Creature"
+		{
+		//	"Aggression"				"100.0"
+		//	"Avoidance"					"0.0"
+		//	"Support"					"30.0"
+			//"CanRespawn"				"0"
+			
+			//Level Up
+			"HPGain"					"45"
+			"DamageGain"				"4"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"5"
+			"BountyGain"				"2"
+			"XPGain"					"13"			"spiderling_ai.lua"
+	}

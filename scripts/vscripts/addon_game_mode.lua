@@ -6,7 +6,7 @@ end
 
 gameInitialized = false
 
--- This library allow for easily delayed/timed actions
+-- This library allows for easily delayed/timed actions
 require('libraries/timers')
 
 function Precache( context )
@@ -59,8 +59,8 @@ function CHoard_ModeGameMode:SetRules()
 	GameRules:SetPreGameTime( 10.0 )
 	GameRules:SetPostGameTime( 60.0 )
 	GameRules:SetTreeRegrowTime( 60.0 )
-	GameRules:SetGoldTickTime( 60.0 )
-	GameRules:SetGoldPerTick( 100 )
+	GameRules:SetGoldTickTime( 0.6 )
+	GameRules:SetGoldPerTick( 1 )
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesOverride( true )
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible( false )
 end
@@ -80,3 +80,4 @@ function CHoard_ModeGameMode:SpawnGnolls()
 		end)
 	end
 end
+

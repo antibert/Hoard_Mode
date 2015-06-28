@@ -1,0 +1,57 @@
+-- List of things to finish for the mod. 
+-- At the bottom is where all the spawns and their timers have/need to be set
+
+
+
+-- GENERAL
+
+1. 
+
+
+-- KEY VALUE FILES (Units, Items etc..)
+
+1. Finish adding all mob types
+
+2. 
+
+-- SPAWN TIMERS (Not including natural Dire creep spawns)
+-- This is the spawns for EACH of the scripted spawners: 1,2 & 3 
+-- Spawner 4 will be deatailed in a seperate BOSSES List below
+
+//spawns start:
+
+-- Phase 1
+0:00 - Creature(s): npc_dota_creature_gnoll_assassin // Amount: 10 per 30 seconds // End: 3:00 (7 Spawns)
+
+0:30 - Creature(s): npc_dota_creature_kobold_ripper // Amount: 4 per 20 seconds // End: 15:00 (i dont fucking know, a lot)
+
+1:30 - Creature(s): npc_dota_creature_spiderling // Amount: 8 per 40 seconds // End: 5:30 (7 Spawns)
+
+2:30 - Creature(s): npc_dota_creature_basic_zombie // Amount: 5 per 20 seconds // End: Never
+
+4:00 - Creature(s): npc_dota_creature_berserk_zombie // Amount: 3 per 30 seconds // End: Never
+
+-- Phase 2
+
+6:00 - Creature(s): npc_dota_creature_ogre_melee // Amount: 7 per 30 seconds // End: 15:00 (19 spawns)
+
+
+
+
+15:00 - Creature(s): npc_dota_creature_roshan_boss // Amount: 1 spawn
+
+
+
+
+
+
+
+-- BOSSES (Spawner 4)
+
+
+5:00 - Creature(s): npc_dota_creature_roshan_boss // 1 spawn
+
+
+10:00 - Creature(s): npc_dota_creature_ogre_boss // 1 spawn
+
+

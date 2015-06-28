@@ -4,6 +4,8 @@ if CHoard_ModeGameMode == nil then
 	CHoard_ModeGameMode = class({})
 end
 
+gameInitialized = false
+
 -- This library allow for easily delayed/timed actions
 require('libraries/timers')
 
@@ -15,7 +17,6 @@ end
 function Activate()
 	GameRules.Hoard_Mode = CHoard_ModeGameMode()
 	GameRules.Hoard_Mode:InitGameMode()
-	InitiateHoardMode()
 end
 
 function CHoard_ModeGameMode:InitGameMode()
@@ -26,7 +27,10 @@ end
 -- Evaluate the state of the game
 function CHoard_ModeGameMode:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
-		--print( "Template addon script is running." )
+		if gameInitialized == false then
+			CHoard_ModeGameMode:OnGameInProgress()
+			gameInitialized = true
+		end
 	elseif GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
 		return nil
 	end
@@ -34,11 +38,11 @@ function CHoard_ModeGameMode:OnThink()
 end
 
 -- This function is called once and only once when the game completely begins
-function CHoard_ModeGameMode:InitiateHoardMode()
+function CHoard_ModeGameMode:OnGameInProgress()
 	print("[HOARDMODE] The game has officially begun")
 
 	Timers:CreateTimer(0, function()
-		SpawnGnolls()
+		CHoard_ModeGameMode:SpawnGnolls()
 		return 30.0 -- Rerun this timer every 30 game-time seconds 
     end)
 end
@@ -46,7 +50,7 @@ end
 function CHoard_ModeGameMode:SpawnGnolls()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_1"):GetAbsOrigin()
-	local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 	local units_to_spawn = 10
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()

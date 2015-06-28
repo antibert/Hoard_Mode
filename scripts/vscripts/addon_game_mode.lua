@@ -17,6 +17,7 @@ end
 function Activate()
 	GameRules.Hoard_Mode = CHoard_ModeGameMode()
 	GameRules.Hoard_Mode:InitGameMode()
+	GameRules.Hoard_Mode:SetRules()
 end
 
 function CHoard_ModeGameMode:InitGameMode()
@@ -45,6 +46,23 @@ function CHoard_ModeGameMode:OnGameInProgress()
 		CHoard_ModeGameMode:SpawnGnolls()
 		return 30.0 -- Rerun this timer every 30 game-time seconds 
     end)
+end
+
+-- Some basic changes for the game mode
+
+function CHoard_ModeGameMode:SetRules()
+
+	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 5 )
+	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 0 )
+	GameRules:SetUseUniversalShopMode( true )
+	GameRules:SetHeroSelectionTime( 30.0 )
+	GameRules:SetPreGameTime( 10.0 )
+	GameRules:SetPostGameTime( 60.0 )
+	GameRules:SetTreeRegrowTime( 60.0 )
+	GameRules:SetGoldTickTime( 60.0 )
+	GameRules:SetGoldPerTick( 100 )
+	GameRules:GetGameModeEntity():SetTopBarTeamValuesOverride( true )
+	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible( false )
 end
 
 function CHoard_ModeGameMode:SpawnGnolls()

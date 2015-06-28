@@ -48,7 +48,7 @@ function CHoard_ModeGameMode:OnGameInProgress()
     end)
 end
 
--- Some basic changes for the game mode
+-- Some basic rules for the game mode
 
 function CHoard_ModeGameMode:SetRules()
 

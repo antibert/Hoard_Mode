@@ -72,7 +72,7 @@ function CHoard_ModeGameMode:SpawnGnolls()
 	local units_to_spawn = 10
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point+RandomVector(RandomInt(100,200)), true, nil, nil, DOTA_TEAM_NEUTRALS)
+			local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point+RandomVector(RandomInt(100,200)), true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
 									Position = waypoint, Queue = true} )

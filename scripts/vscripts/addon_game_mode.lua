@@ -11,7 +11,8 @@ require('libraries/timers')
 
 function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_creature_gnoll_assassin", context)
-end
+	PrecacheUnitByNameSync("npc_dota_creature_roshan_boss", context)
+	end
 
 -- Create the game mode when we activate
 function Activate()
@@ -46,6 +47,10 @@ function CHoard_ModeGameMode:OnGameInProgress()
 		CHoard_ModeGameMode:SpawnGnolls()
 		return 30.0 -- Rerun this timer every 30 game-time seconds 
     end)
+	Timers:CreateTimer(0, function()
+		CHoard_ModeGameMode:SpawnRippers()
+		return 20.0 -- Rerun this timer every 20 game-time seconds 
+    end)
 end
 
 -- Some basic rules for the game mode
@@ -65,6 +70,8 @@ function CHoard_ModeGameMode:SetRules()
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible( false )
 end
 
+-- SPAWNERS
+
 function CHoard_ModeGameMode:SpawnGnolls()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
@@ -81,3 +88,18 @@ function CHoard_ModeGameMode:SpawnGnolls()
 	end
 end
 
+function CHoard_ModeGameMode:SpawnRippers()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local unit = CreateUnitByName("npc_dota_creature_roshan_boss", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+	local units_to_spawn = 4
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_roshan_boss", point+RandomVector(RandomInt(100,200)), true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end

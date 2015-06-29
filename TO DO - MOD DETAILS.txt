@@ -18,6 +18,8 @@
 
 2. BUFF CLARITY MANA RATE
 
+3. GET RIF OF "VMDL_C" FILES IT HAS TO BE "VMDL"
+
 —- Art/Music (Nye Jobs)
 
 1. Loading screens

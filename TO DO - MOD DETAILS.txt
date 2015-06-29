@@ -5,20 +5,17 @@
 
 -- GENERAL
 
+1. Correct BOT LANE spawn waypoints for Dire (they just yolo towards ancient)
+
 1. Separate Spawning script into separate LUA outside of game_addon.lua
 
-2. Start scripting the spawn times for stuff
-
-3. Make desisions as to whether to have the number of players as (4) or (5) 
+2. GIVE ROSHAN PHASE (Plus some other units to prevent sticking)
 
 
 -- KEY VALUE FILES (Units, Items etc..)
 
-1. Finish adding all mob types (Nye Job)
 
 2. BUFF CLARITY MANA RATE
-
-3. GET RIF OF "VMDL_C" FILES IT HAS TO BE "VMDL"
 
 —- Art/Music (Nye Jobs)
 

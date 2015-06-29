@@ -11,9 +11,13 @@ require('libraries/timers')
 
 function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_creature_gnoll_assassin", context)
+	PrecacheUnitByNameSync("npc_dota_creature_kobold_ripper", context)
+	PrecacheUnitByNameSync("npc_dota_creature_spiderling", context)
+	PrecacheUnitByNameSync("npc_dota_creature_basic_zombie", context)
+	PrecacheUnitByNameSync("npc_dota_creature_berserk_zombie", context)
 	PrecacheUnitByNameSync("npc_dota_creature_roshan_boss", context)
 	end
-
+	
 -- Create the game mode when we activate
 function Activate()
 	GameRules.Hoard_Mode = CHoard_ModeGameMode()
@@ -39,20 +43,6 @@ function CHoard_ModeGameMode:OnThink()
 	return 1
 end
 
--- This function is called once and only once when the game completely begins
-function CHoard_ModeGameMode:OnGameInProgress()
-	print("[HOARDMODE] The game has officially begun")
-
-	Timers:CreateTimer(0, function()
-		CHoard_ModeGameMode:SpawnGnolls()
-		return 30.0 -- Rerun this timer every 30 game-time seconds 
-    end)
-	Timers:CreateTimer(0, function()
-		CHoard_ModeGameMode:SpawnRippers()
-		return 20.0 -- Rerun this timer every 20 game-time seconds 
-    end)
-end
-
 -- Some basic rules for the game mode
 
 function CHoard_ModeGameMode:SetRules()
@@ -70,16 +60,46 @@ function CHoard_ModeGameMode:SetRules()
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible( false )
 end
 
--- SPAWNERS
+-- This function is called once and only once when the game begins
+
+function CHoard_ModeGameMode:OnGameInProgress()
+	print("[HOARDMODE] The game has officially begun")
+
+	Timers:CreateTimer(0, function()
+		CHoard_ModeGameMode:SpawnGnolls()
+		return 30.0 -- Rerun this timer every 30 game-time seconds 
+    end)
+	Timers:CreateTimer(120, function()
+		CHoard_ModeGameMode:SpawnRippers()
+		return 17.0 
+    end)
+	Timers:CreateTimer(0, function()
+		CHoard_ModeGameMode:SpawnSpiderlings()
+		return 12.0 
+    end)
+	Timers:CreateTimer(180, function()
+		CHoard_ModeGameMode:SpawnZombies()
+		return 20.0 
+    end)
+	Timers:CreateTimer(240, function()
+		CHoard_ModeGameMode:SpawnZombies2()
+		return 30.0  
+    end)
+	Timers:CreateTimer(300, function()
+		CHoard_ModeGameMode:SpawnRoshan()
+		return 2500.0
+    end)
+end
+
+ -- All spawners and stuff 
 
 function CHoard_ModeGameMode:SpawnGnolls()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
-	local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point, true, nil, nil, DOTA_TEAM_BADGUYS)
-	local units_to_spawn = 10
+	local units_to_spawn = 7
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point+RandomVector(RandomInt(100,200)), true, nil, nil, DOTA_TEAM_BADGUYS)
+			local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
@@ -91,11 +111,10 @@ end
 function CHoard_ModeGameMode:SpawnRippers()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
-	local unit = CreateUnitByName("npc_dota_creature_roshan_boss", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 	local units_to_spawn = 4
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_roshan_boss", point+RandomVector(RandomInt(100,200)), true, nil, nil, DOTA_TEAM_BADGUYS)
+			local unit = CreateUnitByName("npc_dota_creature_kobold_ripper", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
@@ -103,3 +122,70 @@ function CHoard_ModeGameMode:SpawnRippers()
 		end)
 	end
 end
+
+function CHoard_ModeGameMode:SpawnZombies()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 9
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_basic_zombie", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function CHoard_ModeGameMode:SpawnZombies2()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 5
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_berserk_zombie", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+-- BOSSES
+
+function CHoard_ModeGameMode:SpawnRoshan()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 1
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_roshan_boss", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+-- Bottom Lane
+
+function CHoard_ModeGameMode:SpawnSpiderlings()
+	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 3
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_spiderling", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+
+

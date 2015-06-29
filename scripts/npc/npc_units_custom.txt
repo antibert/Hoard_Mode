@@ -78,8 +78,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1800"		// Base health.
-		"StatusHealthRegen"			"1"			// Health regeneration rate.
+		"StatusHealth"				"2000"		// Base health.
+		"StatusHealthRegen"			"2"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusStartingMana"		"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -124,8 +124,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"23"		// Damage range min.
-		"AttackDamageMax"			"26"		// Damage range max.
+		"AttackDamageMin"			"19"		// Damage range min.
+		"AttackDamageMax"			"22"		// Damage range max.
 		"AttackRate"				"1.6"		// Speed of attack.
 		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
@@ -151,7 +151,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"150"		// Base health.
+		"StatusHealth"				"170"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -241,7 +241,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"180"		// Base health.
+		"StatusHealth"				"150"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -482,9 +482,9 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/heroes/broodmother/spiderling.vmdl"	// Model.
+		"Model"						"models\items\broodmother\spiderling\thistle_crawler\thistle_crawler.vmdl"	// Model.
 		"SoundSet"					"0"					// Name of sound set.
-		"ModelScale"				".8"								// old 1.0
+		"ModelScale"				"0.3"								// old 1.0
 		"Level"						"1"
 		"IsSummoned"				"1"
 		"CanBeDominated"			"1"
@@ -513,7 +513,7 @@
 		"AttackDamageMin"			"25"		// Damage range min.
 		"AttackDamageMax"			"28"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"1.35"		// Speed of attack.
+		"AttackRate"				"1.3"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
@@ -522,19 +522,20 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"23"		// Experience earn.
-		"BountyGoldMin"				"11"		// Gold earned min.
-		"BountyGoldMax"				"13"		// Gold earned max.
+		"BountyXP"					"27"		// Experience earn.
+		"BountyGoldMin"				"23"		// Gold earned min.
+		"BountyGoldMax"				"28"		// Gold earned max.
 
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
 		"HealthBarOffset"			"140"
+		"RingRadius"				"45"
 
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-		"MovementSpeed"				"380"		// Speed
+		"MovementSpeed"				"300"		// Speed
 		"MovementTurnRate"			"0.5"		// Turning rate.
 
 		// Status
@@ -572,8 +573,10 @@
 			"MagicResistGain"			"0"
 			"MoveSpeedGain"				"5"
 			"BountyGain"				"2"
-			"XPGain"					"13"			"spiderling_ai.lua"
+				"XPGain"					"13"			"spiderling_ai.lua"
+		}
 	}
+	
 	
 	//=================================================================
 	// Medium Spiders
@@ -697,15 +700,16 @@
 			}
 		}
 	}
+	
 	//=================================================================================
 	// Creature: Basic Zombie
 	//=================================================================================
 	"npc_dota_creature_basic_zombie"
 	{
 		// General
-		//
+		//---------------------------------------------------------------
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/heroes/undying/undying_minion.vmdl"	// Model.
+		"Model"						"models\heroes\undying\undying_minion.vmdl"	// Model.
 		"SoundSet"					"Undying_Zombie"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
 		"ModelScale"				"1"
@@ -733,7 +737,7 @@
 		"AttackDamageMin"			"40"		// Damage range min.
 		"AttackDamageMax"			"55"		// Damage range max.
 		"AttackRate"				"1.6"		// Speed of attack.
-		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAnimationPoint"		"1.0"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
 		"AttackRange"				"128"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
@@ -759,7 +763,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"250"		// Base health.
+		"StatusHealth"				"325"		// Base health.
 		"StatusHealthRegen"			"0"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -822,7 +826,7 @@
 		"Model"						"models/heroes/undying/undying_minion_torso.vmdl"	// Model.
 		"SoundSet"					"Undying_Zombie"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
-		"ModelScale"				".8"
+		"ModelScale"				"1"
 		"Level"						"1"
 		"CanBeDominated"			"1"
 		
@@ -841,7 +845,7 @@
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"			"0"		// Magical protection.
+		"MagicalResistance"			"15"		// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------
@@ -875,8 +879,8 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"200"		// Base health.
-		"StatusHealthRegen"			"5.0"		// Health regeneration rate.
+		"StatusHealth"				"425"		// Base health.
+		"StatusHealthRegen"			"0"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
 
@@ -1097,7 +1101,7 @@
 		"BaseClass"					"npc_dota_creature"	                 // Class of entity of link to.
 		"Model"						"models\creeps\roshan\roshan.vmdl"	// Model.
 		"SoundSet"					"Roshan"					        // Name of sound set.
-		"ModelScale"				"1.0"
+		"ModelScale"				"1.5"
 		"Level"						"1"
 		"ConsideredHero"			"1"
 		
@@ -1139,8 +1143,8 @@
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"			// Hull type used for navigation/locomotion.
-		"RingRadius"				"100"
-		"HealthBarOffset"			"200"
+		"RingRadius"				"110"
+		"HealthBarOffset"			"500"
 
 		// Movement
 		//----------------------------------------------------------------

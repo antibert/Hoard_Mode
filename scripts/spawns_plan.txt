@@ -2,19 +2,24 @@
 -- This is the spawns for EACH of the scripted spawners: 1,2 & 3 
 -- Spawner 4 will be detailed in a separate BOSSES List below
 
+
+
+
+
 ====== WORK IN PROGRESS ========
 
-//spawns start:
+
+
+
+//spawns for MID Lane:
 
 -- Phase 1
 
-0:00 - Creature(s): npc_dota_creature_gnoll_assassin // Amount: 10 per 30 seconds // End: Never
+0:00 - Creature(s): npc_dota_creature_gnoll_assassin // Amount: 7 per 30 seconds // End: Never
 
-1:00 - Creature(s): npc_dota_creature_kobold_ripper // Amount: 4 per 20 seconds // End: 15:00 (42 Spawns)
+2:00 - Creature(s): npc_dota_creature_kobold_ripper // Amount: 4 per 20 seconds // End: 15:00 (42 Spawns)
 
-1:30 - Creature(s): npc_dota_creature_spiderling // Amount: 8 per 40 seconds // End: 5:30 (7 Spawns)
-
-2:30 - Creature(s): npc_dota_creature_basic_zombie // Amount: 9 per 20 seconds // End: Never
+3:00 - Creature(s): npc_dota_creature_basic_zombie // Amount: 9 per 20 seconds // End: Never
 
 4:00 - Creature(s): npc_dota_creature_berserk_zombie // Amount: 5 per 30 seconds // End: Never
 
@@ -38,6 +43,8 @@
 
 20:00 - Creature(s): npc_dota_creature_big_satyr // Amount: 7 per 30 seconds // End: 25:00 (11 spawns)
 
+20:00 - Creature(s): npc_dota_creature_spiderling // Amount: 8 per 40 seconds // End: Never
+
 20:00 - Creature(s): npc_dota_creature_forest_prophet // Amount: 2 per 30 seconds // End: 30:00 (21 Spawns)
 
 21:00 - Creature(s): npc_dota_creature_small_spirit_bear // Amount: 4 per 30 seconds // End: 30:00 (19 spawns)
@@ -59,7 +66,7 @@
 40:00 - Creature(s): npc_dota_creature_troll_healer // Amount: 5 per 40 seconds // End: Never
 
 
--- BOSSES (Spawner 4)
+-- BOSSES (Spawner 4 - Mid Lane)
 
 5:00 - Creature(s): npc_dota_creature_roshan_boss // 1 spawn
 
@@ -74,5 +81,13 @@
 
 
 45:00 - Creature (s): INSERT INSANE MEGA BOSS HERE
+
+
+
+//spawns for BOT Lane (Easy faming lane):
+
+0:00 - Creature(s): npc_dota_creature_spiderling // Amount: 3 per 12 seconds // End: Never
+
+4:30 - Creature(s): npc_dota_creature_gnoll_assassin // Amount: 3 per 30 seconds // End: Never
 
 

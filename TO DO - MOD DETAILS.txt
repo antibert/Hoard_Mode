@@ -1,20 +1,22 @@
 -- List of things to finish for the mod. 
--- At the bottom is where all the spawns and their timers have/need to be set
-
+-- Check scripts/spawns_plan for a detailed plan of all creep spawns
+-- 卐 This is the windmill of friendship 卐 Repost if you also love your friends 卐
 
 
 -- GENERAL
 
 1. Separate Spawning script into separate LUA outside of game_addon.lua
 
-2. 
+2. Start scripting the spawn times for stuff
+
+3. Make desisions as to whether to have the number of players as (4) or (5) 
 
 
 -- KEY VALUE FILES (Units, Items etc..)
 
 1. Finish adding all mob types (Nye Job)
 
-2. 
+2. BUFF CLARITY MANA RATE
 
 —- Art/Music (Nye Jobs)
 
@@ -23,57 +25,5 @@
 2. Swap around some basic sound sets (defeat sounds and such)
 
 
--- SPAWN TIMERS (Not including natural Dire creep spawns)
--- This is the spawns for EACH of the scripted spawners: 1,2 & 3 
--- Spawner 4 will be detailed in a separate BOSSES List below
-
-//spawns start:
-
--- Phase 1
-
-0:00 - Creature(s): npc_dota_creature_gnoll_assassin // Amount: 10 per 30 seconds // End: 3:00 (7 Spawns)
-
-1:00 - Creature(s): npc_dota_creature_kobold_ripper // Amount: 4 per 20 seconds // End: 15:00 (42 Spawns? I think)
-
-1:30 - Creature(s): npc_dota_creature_spiderling // Amount: 8 per 40 seconds // End: 5:30 (7 Spawns)
-
-2:30 - Creature(s): npc_dota_creature_basic_zombie // Amount: 9 per 20 seconds // End: Never
-
-4:00 - Creature(s): npc_dota_creature_berserk_zombie // Amount: 5 per 30 seconds // End: Never
-
-
-
--- Phase 2
-
-7:00 - Creature(s): npc_dota_creature_ogre_melee // Amount: 7 per 30 seconds // End: 15:00 (19 spawns)
-
-8:00 - Creature(s): npc_dota_creature_mini_satyr // Amount: 11 per 30 seconds // End: 15:00 (17 Spawns)
-
-10:00 - Creature(s): npc_dota_creature_medium_satyr // Amount: 6 per 40 seconds // End: 15:10 (9 Spawns)
-
-12:00 - Creature(s): npc_dota_medium_spiders // Amount: 8 per 40 seconds // End 15:10 (6 Spawns)
-
-15:00 - Creature(s): npc_dota_creature_roshan_boss // Amount: 1 spawn (Yes, one spawn each from spawner 1,2 and 3)
-
-
-
-—- Phase 3 (Shit gets hard here)
-
-20:00 - Creature(s): npc_dota_creature_big_satyr // Amount: 7 per 30 seconds // End: 25:00 (11 spawns)
-
-20:00 - Creature(s): npc_dota_creature_forest_prophet // Amount: 2 per 30 seconds // End: 30:00 (42 Spawns? I think)
-
-
-
--- BOSSES (Spawner 4)
-
-
-5:00 - Creature(s): npc_dota_creature_roshan_boss // 1 spawn
-
-
-10:00 - Creature(s): npc_dota_creature_ogre_boss // 1 spawn
-
-
-17:00 - Creature(s): npc_dota_creature_king_treant // 1 spawn
 
 

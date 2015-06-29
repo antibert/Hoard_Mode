@@ -1,0 +1,78 @@
+-- SPAWN TIMERS (Not including natural Dire creep spawns)
+-- This is the spawns for EACH of the scripted spawners: 1,2 & 3 
+-- Spawner 4 will be detailed in a separate BOSSES List below
+
+====== WORK IN PROGRESS ========
+
+//spawns start:
+
+-- Phase 1
+
+0:00 - Creature(s): npc_dota_creature_gnoll_assassin // Amount: 10 per 30 seconds // End: Never
+
+1:00 - Creature(s): npc_dota_creature_kobold_ripper // Amount: 4 per 20 seconds // End: 15:00 (42 Spawns)
+
+1:30 - Creature(s): npc_dota_creature_spiderling // Amount: 8 per 40 seconds // End: 5:30 (7 Spawns)
+
+2:30 - Creature(s): npc_dota_creature_basic_zombie // Amount: 9 per 20 seconds // End: Never
+
+4:00 - Creature(s): npc_dota_creature_berserk_zombie // Amount: 5 per 30 seconds // End: Never
+
+
+
+-- Phase 2
+
+7:00 - Creature(s): npc_dota_creature_ogre_melee // Amount: 7 per 30 seconds // End: 15:00 (19 spawns)
+
+8:00 - Creature(s): npc_dota_creature_mini_satyr // Amount: 11 per 30 seconds // End: 15:00 (15 Spawns)
+
+10:00 - Creature(s): npc_dota_creature_medium_satyr // Amount: 6 per 40 seconds // End: 15:20 (9 Spawns)
+
+12:00 - Creature(s): npc_dota_medium_spiders // Amount: 8 per 40 seconds // End 15:20 (6 Spawns)
+
+15:00 - Creature(s): npc_dota_creature_roshan_boss // Amount: 1 spawn (Yes, one spawn each from spawner 1,2 and 3)
+
+
+
+—- Phase 3 (Shit gets hard here)
+
+20:00 - Creature(s): npc_dota_creature_big_satyr // Amount: 7 per 30 seconds // End: 25:00 (11 spawns)
+
+20:00 - Creature(s): npc_dota_creature_forest_prophet // Amount: 2 per 30 seconds // End: 30:00 (21 Spawns)
+
+21:00 - Creature(s): npc_dota_creature_small_spirit_bear // Amount: 4 per 30 seconds // End: 30:00 (19 spawns)
+
+22:00 - Creature(s): npc_dota_creature_large_spirit_bear // Amount: 2 per 40 seconds // End: 30:00 (20 spawns)
+
+26:00 - Creature(s): npc_dota_creature_treant // Amount: 8 per 20 seconds // End: 30:00 (spawns)
+
+-- Phase 4 (Insane) 
+
+33:00 - Creature(s): npc_dota_creature_corpselord // Amount: 1 spawn
+
+33:00 - Creature (s): npc_dota_splitter_c // Amount: 10 per 20 seconds // End: Never
+
+35:00 - Creature (s): npc_dota_creature_kobold_guard // Amount: 17 per 30 seconds // End: Never
+
+37:00 - Creature(s): npc_dota_creature_roshan_boss // Amount: 1 spawn 
+
+40:00 - Creature(s): npc_dota_creature_troll_healer // Amount: 5 per 40 seconds // End: Never
+
+
+-- BOSSES (Spawner 4)
+
+5:00 - Creature(s): npc_dota_creature_roshan_boss // 1 spawn
+
+
+10:00 - Creature(s): npc_dota_creature_ogre_boss // 1 spawn
+
+
+17:00 - Creature(s): npc_dota_creature_king_treant // 1 spawn
+
+
+30:00 - Creature(s): npc_dota_creature_big_bear // 1 spawn
+
+
+45:00 - Creature (s): INSERT INSANE MEGA BOSS HERE
+
+

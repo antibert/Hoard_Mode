@@ -39,7 +39,7 @@
 
 
 
-—- Phase 3 (Shit gets hard here)
+-- Phase 3 (Shit gets hard here)
 
 20:00 - Creature(s): npc_dota_creature_big_satyr // Amount: 7 per 30 seconds // End: 25:00 (11 spawns)
 

@@ -16,6 +16,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_creature_basic_zombie", context)
 	PrecacheUnitByNameSync("npc_dota_creature_berserk_zombie", context)
 	PrecacheUnitByNameSync("npc_dota_creature_roshan_boss", context)
+    PrecacheUnitByNameSync("npc_dota_creature_ogre_boss", context)
 	end
 	
 -- Create the game mode when we activate
@@ -51,7 +52,7 @@ function CHoard_ModeGameMode:SetRules()
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 0 )
 	GameRules:SetUseUniversalShopMode( true )
 	GameRules:SetHeroSelectionTime( 30.0 )
-	GameRules:SetPreGameTime( 10.0 )
+	GameRules:SetPreGameTime( 15.0 )
 	GameRules:SetPostGameTime( 60.0 )
 	GameRules:SetTreeRegrowTime( 60.0 )
 	GameRules:SetGoldTickTime( 0.6 )
@@ -87,7 +88,11 @@ function CHoard_ModeGameMode:OnGameInProgress()
     end)
 	Timers:CreateTimer(300, function()
 		CHoard_ModeGameMode:SpawnRoshan()
-		return 2500.0
+		return 2000.0
+    end)
+    	Timers:CreateTimer(600, function()
+		CHoard_ModeGameMode:SpawnOgreBoss()
+		return 2000.0
     end)
 end
 
@@ -156,12 +161,27 @@ end
 -- BOSSES
 
 function CHoard_ModeGameMode:SpawnRoshan()
-	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local point = Entities:FindByName(nil, "spawner4"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
 	local units_to_spawn = 1
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_roshan_boss", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function CHoard_ModeGameMode:SpawnOgreBoss()
+	local point = Entities:FindByName(nil, "spawner4"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 1
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_ogre_boss", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )

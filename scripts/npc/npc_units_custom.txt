@@ -238,7 +238,7 @@
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"480"		// Speed.
-
+        "IsPhased"                  "1"
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"150"		// Base health.
@@ -1151,7 +1151,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
 		"MovementSpeed"				"300"		// Speed
 		"MovementTurnRate"			"1.0"		// Turning rate.
-
+        "IsPhased"                  "1"
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"10000"		// Base health.
@@ -1351,7 +1351,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"125"		// Speed.
 		"MovementTurnRate"			"0.1"		// Turning rate.
-
+        "IsPhased"                  "1"
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"15000"		// Base health.

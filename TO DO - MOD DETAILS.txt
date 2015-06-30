@@ -3,19 +3,33 @@
 -- 卐 This is the windmill of friendship 卐 Repost if you also love your friends 卐
 
 
--- GENERAL
+-- GENERAL/SCRIPTING
 
 1. Correct BOT LANE spawn waypoints for Dire (they just yolo towards ancient)
 
-1. Separate Spawning script into separate LUA outside of game_addon.lua
 
-2. GIVE ROSHAN PHASE (Plus some other units to prevent sticking)
-
-
--- KEY VALUE FILES (Units, Items etc..)
+2. Separate Spawning script into separate LUA outside of game_addon.lua
 
 
-2. BUFF CLARITY MANA RATE
+
+-- KEY VALUE FILES (Nye Jobs Mostly)
+
+
+1. GIVE ROSHAN PHASE (Done maybe?)
+
+
+2. Buff Clarity Mana rate replenish (Done Maybe?)
+
+
+3. Reduce Tango and Salve Costs (Done Maybe?)
+
+
+
+—- MAPPING/MODELS (Nye Jobs)
+
+
+1. Move Spawner 4 to Direside secret shop area, faster boss spawns and less crowding
+
 
 —- Art/Music (Nye Jobs)
 

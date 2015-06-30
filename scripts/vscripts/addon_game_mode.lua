@@ -74,10 +74,6 @@ function CHoard_ModeGameMode:OnGameInProgress()
 		CHoard_ModeGameMode:SpawnRippers()
 		return 17.0 
     end)
-	Timers:CreateTimer(0, function()
-		CHoard_ModeGameMode:SpawnSpiderlings()
-		return 12.0 
-    end)
 	Timers:CreateTimer(180, function()
 		CHoard_ModeGameMode:SpawnZombies()
 		return 20.0 
@@ -86,6 +82,7 @@ function CHoard_ModeGameMode:OnGameInProgress()
 		CHoard_ModeGameMode:SpawnZombies2()
 		return 30.0  
     end)
+-- Bosses
 	Timers:CreateTimer(300, function()
 		CHoard_ModeGameMode:SpawnRoshan()
 		return 2000.0
@@ -94,9 +91,14 @@ function CHoard_ModeGameMode:OnGameInProgress()
 		CHoard_ModeGameMode:SpawnOgreBoss()
 		return 2000.0
     end)
+-- Bot Lane
+    	Timers:CreateTimer(0, function()
+		CHoard_ModeGameMode:SpawnSpiderlings()
+		return 12.0 
+    end)
 end
 
- -- All spawners and stuff 
+ -- MID Lane Spawners 
 
 function CHoard_ModeGameMode:SpawnGnolls()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
@@ -190,7 +192,7 @@ function CHoard_ModeGameMode:SpawnOgreBoss()
 	end
 end
 
--- Bottom Lane
+-- BOT Lane
 
 function CHoard_ModeGameMode:SpawnSpiderlings()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()

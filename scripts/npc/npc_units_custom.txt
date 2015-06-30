@@ -239,6 +239,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"480"		// Speed.
         "IsPhased"                  "1"
+        
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"150"		// Base health.
@@ -1152,6 +1153,7 @@
 		"MovementSpeed"				"300"		// Speed
 		"MovementTurnRate"			"1.0"		// Turning rate.
         "IsPhased"                  "1"
+        
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"10000"		// Base health.
@@ -1319,7 +1321,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"6"			// Physical protection.
+		"ArmorPhysical"				"10"			// Physical protection.
 		"MagicalResistance"			"30"		// Magical protection.
 		
 		// Attack
@@ -1336,7 +1338,7 @@
 
 		// Bounds
 		//----------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"			// Hull type used for navigation/locomotion.
+		"BoundsHullName"			"DOTA_HULL_SIZE_HUGE"			// Hull type used for navigation/locomotion.
 		"RingRadius"				"100"
 		"HealthBarOffset"			"320"
 
@@ -1352,6 +1354,7 @@
 		"MovementSpeed"				"125"		// Speed.
 		"MovementTurnRate"			"0.1"		// Turning rate.
         "IsPhased"                  "1"
+        
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"15000"		// Base health.

@@ -17,6 +17,8 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_creature_berserk_zombie", context)
 	PrecacheUnitByNameSync("npc_dota_creature_roshan_boss", context)
     PrecacheUnitByNameSync("npc_dota_creature_ogre_boss", context)
+    PrecacheUnitByNameSync("npc_dota_creature_medium_satyr", context)
+	
 	end
 	
 -- Create the game mode when we activate
@@ -91,10 +93,15 @@ function CHoard_ModeGameMode:OnGameInProgress()
 		CHoard_ModeGameMode:SpawnOgreBoss()
 		return 2000.0
     end)
--- Bot Lane
+-- Top Lane
     	Timers:CreateTimer(0, function()
 		CHoard_ModeGameMode:SpawnSpiderlings()
-		return 12.0 
+		return 18.0 
+    end)
+-- Bot Lane
+    	Timers:CreateTimer(15, function()
+		CHoard_ModeGameMode:SpawnSatyrs()
+		return 33.0 
     end)
 end
 
@@ -192,15 +199,32 @@ function CHoard_ModeGameMode:SpawnOgreBoss()
 	end
 end
 
--- BOT Lane
+-- TOP Lane
 
 function CHoard_ModeGameMode:SpawnSpiderlings()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 7
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_spiderling", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+-- BOT Lane
+
+function CHoard_ModeGameMode:SpawnSatyrs()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 3
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_spiderling", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			local unit = CreateUnitByName("npc_dota_creature_medium_satyr", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )

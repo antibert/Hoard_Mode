@@ -1506,7 +1506,7 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models\creeps\neutral_creeps\n_creep_satyr_c\n_creep_satyr_c.vmdl_c"	// Model.
+		"Model"						"models\creeps\neutral_creeps\n_creep_satyr_c\n_creep_satyr_c.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_meele"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
@@ -1595,7 +1595,7 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models\creeps\neutral_creeps\n_creep_satyr_a\n_creep_satyr_a.vmdl_c"	// Model.
+		"Model"						"models\creeps\neutral_creeps\n_creep_satyr_a\n_creep_satyr_a.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_meele"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"

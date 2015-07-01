@@ -3,19 +3,25 @@
 -- 卐 This is the windmill of friendship 卐 Repost if you also love your friends 卐
 
 
+MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING 
+
+
 -- GENERAL/SCRIPTING
 
-1. Correct spawn waypoints - side lanes yolo to mid -  need alternate patching for some units to prevent blocking. 
+1. Make creeps follow waypoints - side lanes yolo to mid -  need alternate patching for some units to prevent blocking. 
 
 
 2. Separate Spawning script into separate LUA outside of game_addon.lua
+
+
+3. Timer stops
 
 
 
 -- KEY VALUE FILES (Nye Jobs Mostly)
 
 
-1. Need to give some mobs Phase movement to prevent blocking
+1. Need to give bosses and fast units Phase movement to prevent blocking
 
 
 2. Buff Clarity Mana rate replenish 

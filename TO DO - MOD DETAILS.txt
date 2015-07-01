@@ -5,7 +5,7 @@
 
 -- GENERAL/SCRIPTING
 
-1. Correct BOT LANE spawn waypoints for Dire (they just yolo towards ancient)
+1. Correct spawn waypoints - side lanes yolo to mid -  need alternate patching for some units to prevent blocking. 
 
 
 2. Separate Spawning script into separate LUA outside of game_addon.lua
@@ -15,13 +15,13 @@
 -- KEY VALUE FILES (Nye Jobs Mostly)
 
 
-1. boss mobs have PHASE (Done maybe?)
+1. Need to give some mobs Phase movement to prevent blocking
 
 
-2. Buff Clarity Mana rate replenish (Done Maybe?)
+2. Buff Clarity Mana rate replenish 
 
 
-3. Reduce Tango and Salve Costs (Done Maybe?)
+3. Reduce Healing salve cost
 
 
 

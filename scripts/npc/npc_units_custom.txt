@@ -238,7 +238,8 @@
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"480"		// Speed.
-        "IsPhased"                  "1"
+        "modifierstate"             "MODIFIER_STATE_NO_UNIT_COLLISION" 
+
         
 		// Status
 		//----------------------------------------------------------------
@@ -1152,7 +1153,7 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
 		"MovementSpeed"				"300"		// Speed
 		"MovementTurnRate"			"1.0"		// Turning rate.
-        "IsPhased"                  "1"
+        "modifierstate"             "MODIFIER_STATE_NO_UNIT_COLLISION" 
         
 		// Status
 		//----------------------------------------------------------------
@@ -1353,7 +1354,9 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
 		"MovementSpeed"				"160"		// Speed.
 		"MovementTurnRate"			"0.1"		// Turning rate.
-        "IsPhased"                  "1"
+        "modifierstate"             "MODIFIER_STATE_NO_UNIT_COLLISION" 
+
+
         
 		// Status
 		//----------------------------------------------------------------

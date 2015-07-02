@@ -8,14 +8,7 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 -- GENERAL/SCRIPTING
 
-1. Make creeps follow waypoints - side lanes yolo to mid -  need alternate patching for some units to prevent blocking. 
-
-
-2. Separate Spawning script into separate LUA outside of game_addon.lua
-
-
-3. Timer stops
-
+1. input all the spawns 
 
 
 -- KEY VALUE FILES (Nye Jobs Mostly)

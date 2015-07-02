@@ -2410,7 +2410,7 @@
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/creeps/neutral_creeps/n_creep_golem_b/n_creep_golem_b.vmdl"	// Model.
-		"ModelScale"				"0.4"
+		"ModelScale"				"1"
 		"Level"						"1"
 		
 		// Abilities
@@ -2426,7 +2426,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"4"			// Physical protection.
+		"ArmorPhysical"				"8"			// Physical protection.
 		"MagicalResistance"			"20"		// Magical protection.
 
 		// Attack
@@ -2456,7 +2456,7 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-		"MovementSpeed"				"330"		// Speed
+		"MovementSpeed"				"290"		// Speed
 		"MovementTurnRate"			"1.0"		// Turning rate.
 
 		"VoiceFile"				"soundevents/voscripts/game_sounds_vo_life_stealer.vsndevts"
@@ -2464,7 +2464,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"420"		// Base health.
+		"StatusHealth"				"1420"		// Base health.
 		"StatusHealthRegen"			"1.0"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.

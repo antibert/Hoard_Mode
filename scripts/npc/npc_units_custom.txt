@@ -1526,7 +1526,7 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MEELE_ATTACK"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"43"		// Damage range min.
 		"AttackDamageMax"			"48"		// Damage range max.
 		"AttackRate"				"1.35"		// Speed of attack.
@@ -1616,7 +1616,7 @@
 		
 		// Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MEELE_ATTACK"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"76"		// Damage range min.
 		"AttackDamageMax"			"81"		// Damage range max.
 		"AttackRate"				"1.35"		// Speed of attack.
@@ -1706,7 +1706,7 @@
 
 		// Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MEELE_ATTACK"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"23"		// Damage range min.
 		"AttackDamageMax"			"27"		// Damage range max.
 		"AttackRate"				"1.0"		// Speed of attack.

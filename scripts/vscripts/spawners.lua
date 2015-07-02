@@ -11,7 +11,9 @@ function Spawners:StartSpawners()
 		useGameTime = true,
 		endTime = 0,
 		callback = function()
-			Spawners:SpawnGnolls()
+			Spawners:SpawnGnollsTop()
+			Spawners:SpawnGnollsMid()
+			Spawners:SpawnGnollsBot()
 			return 30.0
 		end
 	})
@@ -142,7 +144,7 @@ end
 
 -- MID Lane Spawners 
 
-function Spawners:SpawnGnolls()
+function Spawners:SpawnGnollsMid()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
 	local units_to_spawn = 7
@@ -277,7 +279,7 @@ end
 
 -- TOP Lane
 
-function Spawners:SpawnGnolls()
+function Spawners:SpawnGnollsTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 7
@@ -413,7 +415,7 @@ end
 
 -- BOT Lane
 
-function Spawners:SpawnGnolls()
+function Spawners:SpawnGnollsBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 7

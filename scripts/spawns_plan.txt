@@ -10,7 +10,7 @@
 
 
 
--- BOSSES (Spawner 4 - Mid Lane)
+-- BOSSES (Spawner 4 - goes into Mid Lane)
 
 5:00 - Creature(s): npc_dota_creature_roshan_boss // 1 spawn
 

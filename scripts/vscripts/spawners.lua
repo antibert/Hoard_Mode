@@ -32,15 +32,15 @@ function Spawners:StartSpawners()
 		Spawners:SpawnOgreBoss()
 		return 2000.0
     end)
-    Timers:CreateTimer(600, function()
+    Timers:CreateTimer(1020, function()
 		Spawners:SpawnKingTree()
 		return 2000.0
     end)
-    Timers:CreateTimer(600, function()
+    Timers:CreateTimer(1620, function()
 		Spawners:SpawnBigBear()
 		return 2000.0
     end)
-    Timers:CreateTimer(600, function()
+    Timers:CreateTimer(2400, function()
 		Spawners:SpawnFuckYou()
 		return 2000.0
     end)
@@ -474,7 +474,7 @@ function Spawners:SpawnSatyrs()
 	end
 end
 
-function Spawners:BigSatyrs()
+function Spawners:SpawnBigSatyrs()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 3

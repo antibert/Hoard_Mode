@@ -24,7 +24,7 @@
 27:00 - Creature(s): npc_dota_creature_big_bear // 1 spawn
 
 
-40:00 - Creature (s): INSERT INSANE MEGA BOSS HERE
+40:00 - Creature (s): npc_dota_creature_fuck_you // 1 spawn
 
 
 //spawns for MID Lane:
@@ -95,6 +95,8 @@ Double Dire creeps
 3:00 - Creature(s): npc_dota_creature_mini_satyr // Amount: 3 per 20 seconds // End: Never
 
 5:00 - Creature(s): npc_dota_creature_kobold_ripper // Amount: 4 per 20 seconds // End: Never
+
+-- Phase 2
 
 7:00 - Creature(s): npc_dota_creature_medium_satyr // Amount: 7 per 30 seconds // End: Never
 

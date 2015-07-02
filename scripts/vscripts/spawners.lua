@@ -17,8 +17,8 @@ function Spawners:StartSpawners()
 			return 30.0
 		end
 	})
-	-- Stop spawning gnolls after 3 minutes.
-	Timers:CreateTimer(180, function()
+	-- Stop spawning gnolls after 3.5 minutes.
+	Timers:CreateTimer(210, function()
 		Spawners:StopSpawner("gnolls")
 	end)
 	
@@ -104,14 +104,30 @@ function Spawners:StartSpawners()
 	
 -- TOP LANE
 
-    Timers:CreateTimer(0, function()
-		Spawners:SpawnSpiderlings()
-		return 18.0 
-    end)
-	Timers:CreateTimer(240, function()
-		Spawners:SpawnSpiders()
-		return 39.0 
-    end)
+Timers:CreateTimer("spiderling", {
+		useGameTime = true,
+		endTime = 0,
+		callback = function()
+			Spawners:SpawnSpiderlings()
+			return 18.0
+		end
+	})
+	Timers:CreateTimer(450, function()
+		Spawners:StopSpawner("spiderling")
+	end)
+
+Timers:CreateTimer("spiders", {
+		useGameTime = true,
+		endTime = 240,
+		callback = function()
+			Spawners:SpawnSpiders()
+			return 18.0
+		end
+	})
+	Timers:CreateTimer(450, function()
+		Spawners:StopSpawner("spiders")
+	end)
+
 	Timers:CreateTimer(480, function()
 		Spawners:SpawnBears()
 		return 27.0 
@@ -120,6 +136,17 @@ function Spawners:StartSpawners()
 		Spawners:SpawnLargeBears()
 		return 45.0 
     end)
+    
+    Timers:CreateTimer(1500, function()
+		Spawners:SpawnSpiderlings()
+		return 30.0 
+    end)
+    
+    Timers:CreateTimer(1920, function()
+		Spawners:SpawnSpiders()
+		return 39.0 
+    end)
+    
 -- BOT LANE
 
     Timers:CreateTimer(180, function()
@@ -147,6 +174,10 @@ function Spawners:StartSpawners()
 		return 20.0 
     end)
 end
+
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
 
 -- MID Lane Spawners 
 
@@ -283,12 +314,16 @@ function Spawners:TrollMid()
 	end
 end
 
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
+
 -- TOP Lane
 
 function Spawners:SpawnGnollsTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 7
+	local units_to_spawn = 10
 	for i=1,units_to_spawn do
 		local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
@@ -418,6 +453,9 @@ function Spawners:TrollTop()
 	end
 end
 
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
 
 -- BOT Lane
 
@@ -585,7 +623,9 @@ function Spawners:TrollBot()
 	end
 end
 
-
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
 
 -- BOSSES
 

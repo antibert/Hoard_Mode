@@ -9,16 +9,11 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 1. Incorporating Database thingy (much later)
 
-2. Make toplane more appropriate for caster type heros
-
 
 -- GENERAL/SCRIPTING
 
-2. harder top lane
 
-3. make spiders stop before bears come/ start spawning again much later
-
-4. mINI sATYRS ARE DYING IMMEDIATLY AFTER SPAWNING WTF
+4. MINI sATYRS ARE DYING IMMEDIATLY AFTER SPAWNING WTF
 
 5. PROBLEM TO THINK ABOUT: LOTS OF UNITS = LAG
 
@@ -33,7 +28,9 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 5. rippers need slowing attack modifierz
 
-6. Replace prophets with something else
+6. Replace prophets with something else probably
+
+7. make ultimate skeleton boss much a much spookier meme
 
 
 

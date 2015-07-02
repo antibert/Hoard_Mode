@@ -79,7 +79,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"2000"		// Base health.
-		"StatusHealthRegen"			"2"			// Health regeneration rate.
+		"StatusHealthRegen"			"3"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusStartingMana"		"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -358,7 +358,7 @@
 		"Creature"
 		{
 		//	"Aggression"				"50.0"
-		//	"Avoidance"					"0.0"
+		//	"Avoidance"					"20.0"
 		//	"Support"					"30.0"
 			//"CanRespawn"				"0"
 			
@@ -1665,8 +1665,8 @@
 		//----------------------------------------------------------------
 		"Creature"
 		{
-		//	"Aggression"				"100.0"
-		//	"Avoidance"					"0.0"
+		//	"Aggression"				"50.0"
+		//	"Avoidance"					"50.0"
 		//	"Support"					"0.0"
 			//Level Up
 			"HPGain"					"10"
@@ -2192,7 +2192,7 @@
 		"SoundSet"					"LoneDruid_SpiritBear"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts"
 		"Level"						"4"
-		"ModelScale" 				"1.5"
+		"ModelScale" 				"1.7"
 		"ConsideredHero"			"1"
 
 		// Abilities
@@ -2204,14 +2204,14 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"20"		// Physical protection.
+		"ArmorPhysical"				"23"		// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"230"		// Damage range min.
-		"AttackDamageMax"			"250"		// Damage range max.	
-		"AttackRate"				"1.7"		// Speed of attack.
+		"AttackDamageMax"			"230"		// Damage range max.	
+		"AttackRate"				"0.8"		// Speed of attack.
 		"AttackAnimationPoint"		"0.43"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"128"		// Range within a target can be attacked.
@@ -2238,7 +2238,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"8000"		// Base health.
-		"StatusHealthRegen"			"2"			// Health regeneration rate.
+		"StatusHealthRegen"			"3"			// Health regeneration rate.
 		"StatusMana"				"3000"		// Base mana.
 		"StatusManaRegen"			"5.0"		// Mana regeneration rate.		 
 		
@@ -2280,14 +2280,6 @@
 			
 			"OffensiveAbilities"
 			{
-				"Ability1"				
-				{
-					"Name"				"ursa_overpower"
-				}
-				"Ability2"				
-				{
-					"Name"				"ursa_enrage"
-				}
 				"Ability3"				
 				{
 					"Name"				"ursa_earth_shock"
@@ -2504,7 +2496,7 @@
 		}
 	}
 	//=================================================================================
-	// Creature: INSANE FUCKING MEGA BOSS 
+	// Creature: INSANE FUCKING SPOOKI MEME MEGA BOSS SKELETON
 	//=================================================================================
 	"npc_dota_creature_fuck_you"
 	{
@@ -2513,11 +2505,11 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models\creeps\neutral_creeps\n_creep_troll_skeleton\n_creep_skeleton_melee.vmdl"	// Model.
 		"SoundSet"					""					// Name of sound set.
-		"ModelScale"				"4"
+		"ModelScale"				"5"
 		"Level"						"4"
 		"ConsideredHero"			"1"
 		"MinimapIcon"				"minimap_enemyicon"
-		"MinimapIconSize"			"275"
+		"MinimapIconSize"			"313"
 		"precache"
 		{
 			"particle_folder"	"particles/units/heroes/hero_treant"
@@ -2535,17 +2527,17 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"20"			// Physical protection.
-		"MagicalResistance"			"25"		// Magical protection (percentage).
+		"ArmorPhysical"				"13"			// Physical protection.
+		"MagicalResistance"			"13"		// Magical protection (percentage).
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"650"		// Damage range min.
-		"AttackDamageMax"			"750"		// Damage range max.
+		"AttackDamageMin"			"830"		// Damage range min.
+		"AttackDamageMax"			"875"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"1.9"			// Speed of attack.
-		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackRate"				"2"			// Speed of attack.
+		"AttackAnimationPoint"		"0.8"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
 		"AttackRange"				"128"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
@@ -2553,28 +2545,28 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"1000"		// Experience earn.
-		"BountyGoldMin"				"1000"		// Gold earned min.
-		"BountyGoldMax"				"1100"		// Gold earned max.
+		"BountyXP"					"13000"		// Experience earn.
+		"BountyGoldMin"				"13000"		// Gold earned min.
+		"BountyGoldMax"				"13000"		// Gold earned max.
 
 		// Bounds
 		//----------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"			// Hull type used for navigation/locomotion.
 		"RingRadius"				"190"
-		"HealthBarOffset"			"400"
+		"HealthBarOffset"			"413"
 
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-		"MovementSpeed"				"130"		// Speed
+		"MovementSpeed"				"213"		// Speed
 		"MovementTurnRate"			"1.0"		// Turning rate.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"12000"		// Base health.
-		"StatusHealthRegen"			"15"		// Health regeneration rate.
-		"StatusMana"				"500"		// Base mana.
-		"StatusManaRegen"			"5"			// Mana regeneration rate.
+		"StatusHealth"				"13000"		// Base health.
+		"StatusHealthRegen"			"13"		// Health regeneration rate.
+		"StatusMana"				"13"		// Base mana.
+		"StatusManaRegen"			"13"			// Mana regeneration rate.
 
 		// Team
 		//----------------------------------------------------------------
@@ -2585,8 +2577,8 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+		"VisionDaytimeRange"		"1300"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1300"		// Range of vision at night time.
 
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_treant.vsndevts"
@@ -2609,14 +2601,6 @@
 
 			"DefaultState"				"Invade"
 
-			"AttachWearables"
-			{
-				"Wearable1" { "ItemDef" "227" }
-				"Wearable2"	{ "ItemDef" "228" }
-				"Wearable3"	{ "ItemDef" "229" }
-				"Wearable4"	{ "ItemDef" "230" }
-				"Wearable5" { "ItemDef" "231" }
-			}
 		}
 	}	
 }

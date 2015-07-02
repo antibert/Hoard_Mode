@@ -8,7 +8,13 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 -- GENERAL/SCRIPTING
 
-1. input all the spawns 
+1. no gnollls mid 
+
+2. harder top lane
+
+3. spiders too squshy to towers
+
+
 
 
 -- KEY VALUE FILES (Nye Jobs Mostly)
@@ -21,6 +27,20 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 
 3. Reduce Healing salve cost
+
+
+4. zombies 0.2/0.1 less model scale
+
+5. rippers need slowing attack modifierzz
+
+6. satrs slightly smaller
+
+7. small bears bigger
+
+8. WTF IS WRONG WITH THE BOSSES SPAWNS
+
+9. big satyr is not spawning
+
 
 
 

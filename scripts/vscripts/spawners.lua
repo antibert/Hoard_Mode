@@ -5,10 +5,20 @@ end
 require('libraries/timers')
 
 function Spawners:StartSpawners()
-	Timers:CreateTimer(0, function()
-		Spawners:SpawnGnolls()
-		return 30.0 -- Rerun this timer every 30 game-time seconds 
-    end)
+	-- Start spawning gnolls every 30 seconds.
+	Timers:CreateTimer("gnolls", {
+		useGameTime = true,
+		endTime = 0,
+		callback = function()
+			Spawners:SpawnGnolls()
+			return 30.0
+		end
+	})
+	-- Stop spawning gnolls after 3 minutes.
+	Timers:CreateTimer(180, function()
+		Spawners:StopSpawner("gnolls")
+	end)
+	
 	Timers:CreateTimer(120, function()
 		Spawners:SpawnRippers()
 		return 17.0 
@@ -49,13 +59,11 @@ function Spawners:SpawnGnolls()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
 	local units_to_spawn = 7
 	for i=1,units_to_spawn do
-		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point, true, nil, nil, DOTA_TEAM_BADGUYS)
-			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
-									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
-		end)
+		local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+								OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+								Position = waypoint, Queue = true} )
+		print("Move ",unit:GetEntityIndex()," to ", waypoint)
 	end
 end
 
@@ -168,4 +176,10 @@ function Spawners:SpawnSatyrs()
 			print("Move ",unit:GetEntityIndex()," to ", waypoint)
 		end)
 	end
+end
+
+-- Function to stop spawners
+
+function Spawners:StopSpawner(spawner)
+	Timers:RemoveTimer(spawner)
 end

@@ -22,12 +22,9 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 1. Need to give bosses and fast units Phase movement to prevent blocking
 
-
 2. Buff Clarity Mana rate replenish 
 
-
 3. Reduce Healing salve cost
-
 
 4. zombies 0.2/0.1 less model scale
 
@@ -41,6 +38,9 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 9. big satyr is not spawning
 
+10. Get skelleton model (its satyr atm)
+
+11. Global spawns are limited to mid lane atm, create more funtions
 
 
 

@@ -5,25 +5,35 @@
 
 MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING 
 
+-- Notes
+
+1. Incorporating Database thingy (much later)
+
+2. Make toplane more appropriate for caster type heros
+
 
 -- GENERAL/SCRIPTING
 
-1. Global spawns are limited to mid lane atm, create more funtions
-
 2. harder top lane
+
+3. make spiders stop before bears come/ start spawning again much later
+
+4. mINI sATYRS ARE DYING IMMEDIATLY AFTER SPAWNING WTF
+
+5. PROBLEM TO THINK ABOUT: LOTS OF UNITS = LAG
 
 
 
 -- KEY VALUE FILES (Nye Jobs Mostly)
 
 
-1. Need to give bosses and fast units Phase movement to prevent blocking
+1. Need to give bosses and spiderlings/rippers Phase movement to prevent blocking
 
 2. Buff Clarity Mana rate replenish 
 
-3. Reduce Healing salve cost
+5. rippers need slowing attack modifierz
 
-5. rippers need slowing attack modifierzz
+6. Replace prophets with something else
 
 
 
@@ -34,7 +44,10 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 1. Loading screens
 
-2. Swap around some basic sound sets (defeat sounds and such)
+2. Banner image 
+
+3. Media art piece
+
 
 
 

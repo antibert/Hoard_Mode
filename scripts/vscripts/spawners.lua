@@ -57,7 +57,7 @@ function Spawners:StartSpawners()
     end)
 	Timers:CreateTimer(480, function()
 		Spawners:SpawnSpooki()
-		return 20.0  
+		return 13.0  
     end)
 	Timers:CreateTimer("prophet", {
 		useGameTime = true,
@@ -75,7 +75,9 @@ function Spawners:StartSpawners()
 		useGameTime = true,
 		endTime = 1020,
 		callback = function()
-			Spawners:SpawnTree()
+			Spawners:SpawnTreesTop()
+			Spawners:SpawnTreesMid()
+			Spawners:SpawnTreesBot()
 			return 20.0
 		end
 	})
@@ -88,11 +90,15 @@ function Spawners:StartSpawners()
 		return 40.0 
     end)	
 	Timers:CreateTimer(1380, function()
-		Spawners:SpawnGuard()
+		Spawners:SpawnGuardTop()
+		Spawners:SpawnGuardMid()
+		Spawners:SpawnGuardBot()
 		return 30.0 
     end)
 	Timers:CreateTimer(1800, function()
-		Spawners:SpawnTroll()
+		Spawners:SpawnTrollTop()
+		Spawners:SpawnTrollMid()
+		Spawners:SpawnTrollBot()
 		return 20.0 
     end)
 	
@@ -217,7 +223,7 @@ function Spawners:SpawnProphet()
 	end
 end
 
-function Spawners:SpawnTree()
+function Spawners:SpawnTreesMid()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
 	local units_to_spawn = 8
@@ -247,7 +253,7 @@ function Spawners:Corpse()
 	end
 end
 
-function Spawners:Guard()
+function Spawners:GuardMid()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
 	local units_to_spawn = 17
@@ -262,7 +268,7 @@ function Spawners:Guard()
 	end
 end
 
-function Spawners:Troll()
+function Spawners:TrollMid()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
 	local units_to_spawn = 1
@@ -367,7 +373,7 @@ function Spawners:Prophet()
 	end
 end
 
-function Spawners:SpawnTree()
+function Spawners:SpawnTreesTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 8
@@ -382,7 +388,7 @@ function Spawners:SpawnTree()
 	end
 end
 
-function Spawners:Guard()
+function Spawners:GuardTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 17
@@ -397,7 +403,7 @@ function Spawners:Guard()
 	end
 end
 
-function Spawners:Troll()
+function Spawners:TrollTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 1
@@ -519,7 +525,7 @@ function Spawners:Ogre()
 	end
 end
 
-function Spawners:SpawnTree()
+function Spawners:SpawnTreesBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 8
@@ -549,7 +555,7 @@ function Spawners:SpawnSplitter()
 	end
 end
 
-function Spawners:Guard()
+function Spawners:GuardBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 17
@@ -564,7 +570,7 @@ function Spawners:Guard()
 	end
 end
 
-function Spawners:Troll()
+function Spawners:TrollBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 1

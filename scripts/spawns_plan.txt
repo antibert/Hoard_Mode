@@ -4,8 +4,6 @@
 
 
 
-
-
 ====== WORK IN PROGRESS ========
 
 
@@ -41,7 +39,7 @@
 -- Phase 2
 
 
-8:00 - Creature(s): npc_dota_creature_spooki // Amount: 13 per 20 seconds // End: Never
+8:00 - Creature(s): npc_dota_creature_spooki // Amount: 13 per 13 seconds // End: Never
 
 14:00 - Creature(s): npc_dota_creature_forest_prophet // Amount: 2 per 30 seconds // End: 16:00
 
@@ -65,9 +63,9 @@
 
 0:00 - Creature(s): npc_dota_creature_gnoll_assassin // Amount: 7 per 30 seconds // End: 3:00
 
-3:00 - Creature(s): npc_dota_creature_spiderling // Amount: 3 per 12 seconds // End: Never
+3:00 - Creature(s): npc_dota_creature_spiderling // Amount: 3 per 12 seconds // End: 8:00
 
-4:30 - Creature(s): npc_dota_medium_spiders // Amount: 8 per 39 seconds // End Never
+4:30 - Creature(s): npc_dota_medium_spiders // Amount: 8 per 39 seconds // End 8:00
 
 -- Phase 2
 
@@ -81,14 +79,16 @@
 
 -- Phase 3
 
-23:00 - Creature (s): npc_dota_creature_kobold_guard // Amount: 17 per 30 seconds // End: Never
+23:00 - Creature(s): npc_dota_creature_kobold_guard // Amount: 17 per 30 seconds // End: Never
+
+25:00 - Creature(s): npc_dota_creature_spiderling // Amount: 8 per 12 seconds // End: Never
+
+32:00 - Creature(s): npc_dota_medium_spiders // Amount: 8 per 39 seconds // End Never
 
 30:00 - Creature(s): npc_dota_creature_troll_healer // Amount: 1 per 20 seconds // End: Never
 
 
 //spawns for BOT Lane:
-
-Double Dire creeps
 
 0:00 - Creature(s): npc_dota_creature_gnoll_assassin // Amount: 7 per 30 seconds // End: 3:00
 

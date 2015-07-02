@@ -8,7 +8,7 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 -- GENERAL/SCRIPTING
 
-1. no gnollls mid 
+1. Global spawns are limited to mid lane atm, create more funtions
 
 2. harder top lane
 
@@ -40,7 +40,7 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 10. Get skelleton model (its satyr atm)
 
-11. Global spawns are limited to mid lane atm, create more funtions
+11. 
 
 
 

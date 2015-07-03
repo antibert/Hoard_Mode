@@ -469,13 +469,11 @@ function Spawners:SpawnMiniSatyrs()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 3
 	for i=1,units_to_spawn do
-		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_mini_satyr", point, true, nil, nil, DOTA_TEAM_BADGUYS)
-			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
-									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
-		end)
+		local unit = CreateUnitByName("npc_dota_creature_mini_satyr", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+								OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+								Position = waypoint, Queue = true} )
+		print("Move ",unit:GetEntityIndex()," to ", waypoint)
 	end
 end
 

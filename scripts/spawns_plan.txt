@@ -31,6 +31,8 @@
 
 0:00 - Creature(s): npc_dota_creature_gnoll_assassin // Amount: 7 per 30 seconds // End: 3:00
 
+1:00 - Creature(s): npc_dota_creature_bazz // Amount: 4 per 23 seconds // End: 3:20
+
 3:00 - Creature(s): npc_dota_creature_basic_zombie // Amount: 9 per 20 seconds // End: Never
 
 4:10 - Creature(s): npc_dota_creature_berserk_zombie // Amount: 5 per 30 seconds // End: Never

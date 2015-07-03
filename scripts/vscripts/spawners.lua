@@ -44,9 +44,20 @@ function Spawners:StartSpawners()
 		Spawners:SpawnFuckYou()
 		return 2000.0
     end)
-	
+ 
 -- MID LANE/All Lanes
-
+		
+	Timers:CreateTimer("bazz", {
+		useGameTime = true,
+		endTime = 60,
+		callback = function()
+			Spawners:SpawnBazz()
+			return 23.0
+		end
+	})
+	Timers:CreateTimer(180, function()
+		Spawners:StopSpawner("bazz")
+	end)
 	Timers:CreateTimer(180, function()
 		Spawners:SpawnZombies()
 		return 20.0 
@@ -191,6 +202,19 @@ function Spawners:SpawnGnollsMid()
 	end
 end
 
+function Spawners:SpawnBazz()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 4
+	for i=1,units_to_spawn do
+		local unit = CreateUnitByName("npc_dota_creature_bazz", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+								OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+								Position = waypoint, Queue = true} )
+		print("Move ",unit:GetEntityIndex()," to ", waypoint)
+	end
+end
+
 function Spawners:SpawnZombies()
 	local point = Entities:FindByName(nil, "spawner5"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
@@ -317,7 +341,7 @@ end
 function Spawners:SpawnGnollsTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 10
+	local units_to_spawn = 6
 	for i=1,units_to_spawn do
 		local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
@@ -454,7 +478,7 @@ end
 function Spawners:SpawnGnollsBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 7
+	local units_to_spawn = 5
 	for i=1,units_to_spawn do
 		local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),

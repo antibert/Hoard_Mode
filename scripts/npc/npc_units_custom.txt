@@ -1487,7 +1487,7 @@
 		"Creature"
 		{
 		//	"Aggression"				"50.0"
-		//	"Avoidance"					"5"
+		//	"Avoidance"					"20.0"
 		//	"Support"					"30.0"
 			//Level Up
 			"HPGain"					"10"

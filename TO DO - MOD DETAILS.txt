@@ -17,6 +17,8 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 5. PROBLEM TO THINK ABOUT: LOTS OF UNITS = LAG
 
+3. more maps for differnet numbers of players
+
 
 
 -- KEY VALUE FILES (Nye Jobs Mostly)

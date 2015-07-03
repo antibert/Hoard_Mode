@@ -1411,7 +1411,7 @@
 		}
 	}
 //=================================================================================	
-	// Creature: Small Satyr
+	// Creature: Mini Satyr
 	//=================================================================================
 	"npc_dota_creature_satyr"	
 	{
@@ -1422,7 +1422,7 @@
 		"SoundSet"					"n_creep_ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				"1.1"
+		"ModelScale" 				"1.0"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -1440,7 +1440,7 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"38"		// Damage range min.
 		"AttackDamageMax"			"43"		// Damage range max.
-		"AttackRate"				"1.35"		// Speed of attack.
+		"AttackRate"				"0.9"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"600"		// Range within a target can be attacked.

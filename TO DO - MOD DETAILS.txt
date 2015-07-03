@@ -7,17 +7,17 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 -- Notes
 
+3. more maps for differnet numbers of players
+
+
 1. Incorporating Database thingy (much later)
 
 
 -- GENERAL/SCRIPTING
 
-
-4. MINI sATYRS ARE DYING IMMEDIATLY AFTER SPAWNING WTF
-
 5. PROBLEM TO THINK ABOUT: LOTS OF UNITS = LAG
 
-3. more maps for differnet numbers of players
+
 
 
 

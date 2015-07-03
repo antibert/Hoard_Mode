@@ -615,8 +615,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"150"		// Damage range min.
-		"AttackDamageMax"			"190"		// Damage range max.
+		"AttackDamageMin"			"60"		// Damage range min.
+		"AttackDamageMax"			"75"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1.35"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
@@ -1410,19 +1410,19 @@
 			"DisableResistance"			"100.0"
 		}
 	}
-	//=================================================================================	
-	// Creature: Mini Satyr
+//=================================================================================	
+	// Creature: Small Satyr
 	//=================================================================================
-	"npc_dota_creature_mini_satyr"	
+	"npc_dota_creature_satyr"	
 	{
 		// General
 		//----------------------------------------------------------------
 		"Model"						"models\creeps\neutral_creeps\n_creep_satyr_b\n_creep_satyr_b.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
-		"SoundSet"					"n_creep_Ranged"
+		"SoundSet"					"n_creep_ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				"1"
+		"ModelScale" 				"1.1"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -1433,40 +1433,40 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"0"			// Physical protection.
+		"ArmorPhysical"				"1"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"18"		// Damage range min.
-		"AttackDamageMax"			"23"		// Damage range max.
-		"AttackRate"				"1.6"		// Speed of attack.
-		"AttackAnimationPoint"		"0.4"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"700"		// Range within a target can be acquired.
-		"AttackRange"				"650"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles\neutral_fx\satyr_trickster_projectile.vpcf" // Particle system model for projectile.
-		"ProjectileSpeed"			"1300"		// Speed of projectile.		     
+		"AttackDamageMin"			"38"		// Damage range min.
+		"AttackDamageMax"			"43"		// Damage range max.
+		"AttackRate"				"1.35"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
+		"AttackRange"				"600"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_leshrac/leshrac_base_attack.vpcf"          // Particle system model for projectile.
+		"ProjectileSpeed"			"1800"		    // Speed of projectile.		     
 
 		// Bounds
 		//----------------------------------------------------------------
-		"RingRadius"				"30"
-		"HealthBarOffset"			"170"
+		"RingRadius"				"40"
+		"HealthBarOffset"			"160"
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"35"		// Experience earn.
-		"BountyGoldMin"				"18"		// Gold earned min.
-		"BountyGoldMax"				"21"		// Gold earned max.
+		"BountyXP"					"80"		// Experience earn.
+		"BountyGoldMin"				"45"		// Gold earned min.
+		"BountyGoldMax"				"53"		// Gold earned max.
 
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"330"		// Speed.			
+		"MovementSpeed"				"290"		// Speed.			
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				“200”		// Base health.
-		"StatusHealthRegen"			"2"		// Health regeneration rate.
+		"StatusHealth"				"280"		// Base health.
+		"StatusHealthRegen"			"3"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
@@ -1487,8 +1487,8 @@
 		"Creature"
 		{
 		//	"Aggression"				"50.0"
-		//	"Avoidance"					"20.0"
-		//	"Support"					"30.0"
+		//	"Avoidance"					"50.0"
+		//	"Support"					"0.0"
 			//Level Up
 			"HPGain"					"10"
 			"DamageGain"				"20"
@@ -2553,7 +2553,7 @@
 		//----------------------------------------------------------------
 		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"			// Hull type used for navigation/locomotion.
 		"RingRadius"				"190"
-		"HealthBarOffset"			"413"
+		"HealthBarOffset"			"800"
 
 		// Movement
 		//----------------------------------------------------------------

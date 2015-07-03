@@ -1,6 +1,6 @@
 "AddonInfo"
 {
-	maps			"Hoard_mode"
+	maps			"Hoard_Mode"
 	"IsPlayable"	"1"
 	"Hoard_Mode"
 	{

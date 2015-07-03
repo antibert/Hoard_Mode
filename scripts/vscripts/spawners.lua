@@ -13,7 +13,6 @@ function Spawners:StartSpawners()
 		callback = function()
 			Spawners:SpawnGnollsTop()
 			Spawners:SpawnGnollsMid()
-			Spawners:SpawnGnollsBot()
 			return 30.0
 		end
 	})
@@ -159,8 +158,12 @@ Timers:CreateTimer("spiders", {
     end)
     
 -- BOT LANE
-
-    Timers:CreateTimer(180, function()
+   
+   Timers:CreateTimer(19, function()
+		Spawners:SpawnFrostOgres()
+		return 53.0 
+    end)
+    Timers:CreateTimer(210, function()
 		Spawners:SpawnMiniSatyrs()
 		return 20.0 
     end)
@@ -192,7 +195,7 @@ end
 function Spawners:SpawnGnollsMid()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
-	local units_to_spawn = 7
+	local units_to_spawn = 8
 	for i=1,units_to_spawn do
 		local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
@@ -341,7 +344,7 @@ end
 function Spawners:SpawnGnollsTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 6
+	local units_to_spawn = 5
 	for i=1,units_to_spawn do
 		local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
@@ -475,12 +478,12 @@ end
 
 -- BOT Lane
 
-function Spawners:SpawnGnollsBot()
+function Spawners:SpawnMiniSatyrs()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 5
+	local units_to_spawn = 3
 	for i=1,units_to_spawn do
-		local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+		local unit = CreateUnitByName("npc_dota_creature_satyr", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 								OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 								Position = waypoint, Queue = true} )
@@ -488,12 +491,12 @@ function Spawners:SpawnGnollsBot()
 	end
 end
 
-function Spawners:SpawnMiniSatyrs()
+function Spawners:SpawnFrostOgres()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 3
+	local units_to_spawn = 2
 	for i=1,units_to_spawn do
-		local unit = CreateUnitByName("npc_dota_creature_satyr", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+		local unit = CreateUnitByName("npc_dota_creature_ogre", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 								OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 								Position = waypoint, Queue = true} )

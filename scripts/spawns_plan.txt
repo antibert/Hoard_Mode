@@ -29,7 +29,7 @@
 
 -- Phase 1
 
-0:00 - Creature(s): npc_dota_creature_gnoll_assassin // Amount: 7 per 30 seconds // End: 3:00
+0:00 - Creature(s): npc_dota_creature_gnoll_assassin // Amount: 8 per 30 seconds // End: 3:00
 
 1:00 - Creature(s): npc_dota_creature_bazz // Amount: 4 per 23 seconds // End: 3:20
 
@@ -60,10 +60,9 @@
 
 
 
-
 //spawns for TOP Lane:
 
-0:00 - Creature(s): npc_dota_creature_gnoll_assassin // Amount: 7 per 30 seconds // End: 3:00
+0:00 - Creature(s): npc_dota_creature_gnoll_assassin // Amount: 5 per 30 seconds // End: 3:00
 
 3:00 - Creature(s): npc_dota_creature_spiderling // Amount: 7 per 18 seconds // End: 8:00
 
@@ -92,9 +91,11 @@
 
 //spawns for BOT Lane:
 
-0:00 - Creature(s): npc_dota_creature_gnoll_assassin // Amount: 7 per 30 seconds // End: 3:00
+Double Dire creep spawn
 
-3:00 - Creature(s): npc_dota_creature_mini_satyr // Amount: 3 per 20 seconds // End: Never
+0:00 - Creature(s): npc_dota_creature_ogre // Amount: 2 per 53 seconds // End: 3:30
+
+3:30 - Creature(s): npc_dota_creature_mini_satyr // Amount: 3 per 20 seconds // End: Never
 
 5:00 - Creature(s): npc_dota_creature_kobold_ripper // Amount: 4 per 17 seconds // End: Never
 

@@ -9,7 +9,6 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 3. more maps for differnet numbers of players
 
-
 1. Incorporating Database thingy (much later)
 
 

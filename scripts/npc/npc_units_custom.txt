@@ -132,7 +132,7 @@
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
 		"AttackRange"				"550"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/neutral_fx/gnoll_base_attack.vpcf" // Particle system model for projectile.
-		"ProjectileSpeed"			"1000"		// Speed of projectile.		     
+		"ProjectileSpeed"			"2000"		// Speed of projectile.		     
 
 		// Bounds
 		//----------------------------------------------------------------
@@ -1753,15 +1753,15 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"2"			// Physical protection.
+		"ArmorPhysical"				"3"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"50"		// Damage range min.
-		"AttackDamageMax"			"63"		// Damage range max.
-		"AttackRate"				"1.35"		// Speed of attack.
-		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackDamageMin"			"35"		// Damage range min.
+		"AttackDamageMax"			"53"		// Damage range max.
+		"AttackRate"				"1.5"		// Speed of attack.
+		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
@@ -1781,11 +1781,11 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"240"		// Speed.
+		"MovementSpeed"				"190"		// Speed.
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"550"		// Base health.
+		"StatusHealth"				"850"		// Base health.
 		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.		 

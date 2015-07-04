@@ -261,7 +261,7 @@ Timers:CreateTimer("largebears", {
 		Spawners:SpawnBigSatyrs()
 		return 41.0 
     end)
-	Timers:CreateTimer(900, function()
+	Timers:CreateTimer(210, function()
 		Spawners:SpawnOgre()
 		return 30.0 
     end)
@@ -715,7 +715,7 @@ function Spawners:Prophet()
 	end
 end
 
-function Spawners:Ogre()
+function Spawners:SpawnOgre()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 7

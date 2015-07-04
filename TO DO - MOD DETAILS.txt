@@ -2,7 +2,6 @@
 -- Check scripts/spawns_plan for a detailed plan of all creep spawns
 -- 卐 This is the windmill of friendship 卐 Repost if you also love your friends 卐
 
-
 MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING 
 
 -- Notes
@@ -20,7 +19,6 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 
 -- KEY VALUE FILES (Nye Jobs Mostly)
-
 
 1. Need to give bosses and spiderlings/rippers Phase movement to prevent blocking
 

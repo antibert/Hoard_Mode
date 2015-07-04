@@ -34,7 +34,10 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_splitter_c", context)
     PrecacheUnitByNameSync("npc_dota_creature_fuck_you", context)
     PrecacheUnitByNameSync("npc_dota_creature_bazz", context)
-    PrecacheUnitByNameSync("npc_dota_creature_ogre", context)	
+    PrecacheUnitByNameSync("npc_dota_creature_ogre", context)
+	PrecacheUnitByNameSync("npc_dota_creature_cool_spiders", context)
+	PrecacheUnitByNameSync("npc_dota_creature_mini_spiders", context)
+	PrecacheUnitByNameSync("npc_dota_creature_big_spiders", context)
 	end
 	
 -- Create the game mode when we activate

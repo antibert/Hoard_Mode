@@ -19,8 +19,6 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 2. add way to buy upgrades for botlane creeps
 
 
-
-
 -- KEY VALUE FILES (Nye Jobs Mostly)
 
 
@@ -39,7 +37,7 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 GIVE BIG BEARS EQUIPD cvisual itemzs
 
 //ITEMS
-
+	
 Magic stick/wand give changes based on creep kills
 
 Give observer ward a useful effect

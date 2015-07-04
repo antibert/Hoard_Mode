@@ -50,21 +50,36 @@ function Spawners:StartSpawners()
 		useGameTime = true,
 		endTime = 60,
 		callback = function()
-			Spawners:SpawnBazz()
+			Spawners:SpawnBazzTop()
+			Spawners:SpawnBazzMid()
 			return 23.0
 		end
 	})
 	Timers:CreateTimer(180, function()
 		Spawners:StopSpawner("bazz")
 	end)
-	Timers:CreateTimer(180, function()
-		Spawners:SpawnZombies()
-		return 20.0 
-    end)
-	Timers:CreateTimer(250, function()
-		Spawners:SpawnZombies2()
-		return 30.0  
-    end)
+	Timers:CreateTimer("zombie", {
+		useGameTime = true,
+		endTime = 180,
+		callback = function()
+			Spawners:SpawnZombies()
+			return 20.0
+		end
+	})
+	Timers:CreateTimer(990, function()
+		Spawners:StopSpawner("zombie")
+	end)
+	Timers:CreateTimer("zombie2", {
+		useGameTime = true,
+		endTime = 250,
+		callback = function()
+			Spawners:SpawnZombies2()
+			return 30.0
+		end
+	})
+	Timers:CreateTimer(990, function()
+		Spawners:StopSpawner("zombie2")
+	end)
 	Timers:CreateTimer(480, function()
 		Spawners:SpawnSpooki()
 		return 13.0  
@@ -116,7 +131,7 @@ function Spawners:StartSpawners()
 
 Timers:CreateTimer("spiderling", {
 		useGameTime = true,
-		endTime = 0,
+		endTime = 240,
 		callback = function()
 			Spawners:SpawnSpiderlings()
 			return 18.0
@@ -125,7 +140,17 @@ Timers:CreateTimer("spiderling", {
 	Timers:CreateTimer(450, function()
 		Spawners:StopSpawner("spiderling")
 	end)
-
+Timers:CreateTimer("cool", {
+		useGameTime = true,
+		endTime = 210,
+		callback = function()
+			Spawners:SpawnCoolSpiders()
+			return 30.0
+		end
+	})
+	Timers:CreateTimer(330, function()
+		Spawners:StopSpawner("cool")
+	end)
 Timers:CreateTimer("spiders", {
 		useGameTime = true,
 		endTime = 240,
@@ -136,6 +161,29 @@ Timers:CreateTimer("spiders", {
 	})
 	Timers:CreateTimer(450, function()
 		Spawners:StopSpawner("spiders")
+	end)
+	
+Timers:CreateTimer("mini", {
+		useGameTime = true,
+		endTime = 180,
+		callback = function()
+			Spawners:SpawnMiniSpiders()
+			return 21.0
+		end
+	})
+	Timers:CreateTimer(450, function()
+		Spawners:StopSpawner("mini")
+	end)
+Timers:CreateTimer("big", {
+		useGameTime = true,
+		endTime = 330,
+		callback = function()
+			Spawners:SpawnBigSpiders()
+			return 34.0
+		end
+	})
+	Timers:CreateTimer(450, function()
+		Spawners:StopSpawner("big")
 	end)
 
 	Timers:CreateTimer(480, function()
@@ -205,7 +253,7 @@ function Spawners:SpawnGnollsMid()
 	end
 end
 
-function Spawners:SpawnBazz()
+function Spawners:SpawnBazzMid()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
 	local units_to_spawn = 4
@@ -354,13 +402,56 @@ function Spawners:SpawnGnollsTop()
 	end
 end
 
+function Spawners:SpawnBazzTop()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 4
+	for i=1,units_to_spawn do
+		local unit = CreateUnitByName("npc_dota_creature_bazz", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+								OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+								Position = waypoint, Queue = true} )
+		print("Move ",unit:GetEntityIndex()," to ", waypoint)
+	end
+end
+
 function Spawners:SpawnSpiderlings()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 7
+	local units_to_spawn = 12
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_spiderling", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnCoolSpiders()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 12
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_cool_spiders", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnMiniSpiders()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 6
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_mini_spiders", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
@@ -376,6 +467,21 @@ function Spawners:SpawnSpiders()
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_medium_spiders", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnSpiders()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 3
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_big_spiders", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )

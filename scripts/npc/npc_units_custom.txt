@@ -2723,12 +2723,12 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/heroes/ursa/ursa.vmdl"	// Model.
+		"Model"						"models\items\lone_druid\bear\iron_claw_spirit_bear\iron_claw_spirit_bear.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"LoneDruid_SpiritBear"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts"
 		"Level"						"4"
-		"ModelScale" 				"1.7"
+		"ModelScale" 				"1.5"
 		"ConsideredHero"			"1"
 
 		// Abilities
@@ -2756,7 +2756,8 @@
 
 		// Bounds
 		//----------------------------------------------------------------
-		"RingRadius"				"70"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"100"
 		"HealthBarOffset"			"215"
 
 		// Bounty

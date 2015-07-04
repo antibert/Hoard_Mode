@@ -93,15 +93,15 @@
 
 Double Dire creep spawn
 
-0:00 - Creature(s): npc_dota_creature_ogre // Amount: 2 per 53 seconds // End: 3:30
+0:17 - Creature(s): npc_dota_creature_ogre // Amount: 2 per 53 seconds // End: 3:30
 
-3:30 - Creature(s): npc_dota_creature_mini_satyr // Amount: 3 per 20 seconds // End: Never
+4:30 - Creature(s): npc_dota_creature_mini_satyr // Amount: 3 per 20 seconds // End: Never
 
-5:00 - Creature(s): npc_dota_creature_kobold_ripper // Amount: 4 per 17 seconds // End: Never
+6:00 - Creature(s): npc_dota_creature_kobold_ripper // Amount: 4 per 17 seconds // End: Never
 
 -- Phase 2
 
-7:00 - Creature(s): npc_dota_creature_medium_satyr // Amount: 7 per 33 seconds // End: Never
+8:00 - Creature(s): npc_dota_creature_medium_satyr // Amount: 7 per 33 seconds // End: Never
 
 13:00 - Creature(s): npc_dota_creature_big_satyr // Amount: 3 per 40 seconds // End: Never
 

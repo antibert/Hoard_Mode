@@ -16,6 +16,7 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 5. PROBLEM TO THINK ABOUT: LOTS OF UNITS = LAG
 
+2. add way to buy upgrades for botlane creeps
 
 
 
@@ -33,9 +34,18 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 7. make ultimate skeleton boss much a much spookier meme
 
+193. stop zombie spawns before tree phase
 
+GIVE BIG BEARS EQUIPD cvisual itemzs
+
+//ITEMS
+
+Magic stick/wand give changes based on creep kills
+
+Give observer ward a useful effect
 
 —- MAPPING/MODELS (Nye Jobs)
+
 
 
 —- Art/Music (Nye Jobs)

@@ -159,19 +159,19 @@ Timers:CreateTimer("spiders", {
     
 -- BOT LANE
    
-   Timers:CreateTimer(19, function()
+   Timers:CreateTimer(17, function()
 		Spawners:SpawnFrostOgres()
 		return 53.0 
     end)
-    Timers:CreateTimer(210, function()
+    Timers:CreateTimer(270, function()
 		Spawners:SpawnMiniSatyrs()
 		return 20.0 
     end)
-	Timers:CreateTimer(300, function()
+	Timers:CreateTimer(360, function()
 		Spawners:SpawnRippers()
 		return 17.0 
     end)
-    Timers:CreateTimer(420, function()
+    Timers:CreateTimer(480, function()
 		Spawners:SpawnSatyrs()
 		return 33.0 
     end)

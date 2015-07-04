@@ -787,7 +787,7 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models\heroes\broodmother\spiderling.vmdl"	// Model.
 		"SoundSet"					"0"					// Name of sound set.
-		"ModelScale"				"0.7"								// old 1.0
+		"ModelScale"				"0.5"								// old 1.0
 		"Level"						"1"
 		"IsSummoned"				"1"
 		
@@ -1129,7 +1129,7 @@
 		"Model"						"models\heroes\broodmother\spiderling.vmdl"	// Model.
 		"SoundSet"					"Hero_Broodmother"					// Name of sound set.
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_broodmother.vsndevts"
-		"ModelScale"				"1.2"								// old 1.0
+		"ModelScale"				"1.1"								// old 1.0
 		"Level"						"1"
 		
 		// Abilities
@@ -1177,7 +1177,7 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-		"MovementSpeed"				"425"		// Speed
+		"MovementSpeed"				"350"		// Speed
 		"MovementTurnRate"			"0.5"		// Turning rate.
 
 		// Status
@@ -1639,7 +1639,7 @@
 		"BaseClass"					"npc_dota_creature"	                 // Class of entity of link to.
 		"Model"						"models\creeps\roshan\roshan.vmdl"	// Model.
 		"SoundSet"					"Roshan"					        // Name of sound set.
-		"ModelScale"				"1.5"
+		"ModelScale"				"1.3"
 		"Level"						"1"
 		"ConsideredHero"			"1"
 		
@@ -1946,7 +1946,7 @@
 			"DisableResistance"			"100.0"
 		}
 	}
-//=================================================================================	
+    //=================================================================================	
 	// Creature: Mini Satyr
 	//=================================================================================
 	"npc_dota_creature_satyr"	
@@ -2314,7 +2314,7 @@
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"						"models/heroes/treant_protector/treant_protector.vmdl"	// Model.
 		"SoundSet"					""					// Name of sound set.
-		"ModelScale"				"1.8"
+		"ModelScale"				"2.3"
 		"Level"						"4"
 		"ConsideredHero"			"1"
 		"MinimapIcon"				"minimap_enemyicon"
@@ -2348,7 +2348,7 @@
 		"AttackRate"				"1.9"			// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
-		"AttackRange"				"128"		// Range within a target can be attacked.
+		"AttackRange"				"180"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1000"		// Speed of projectile.
 
@@ -2373,7 +2373,7 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"12000"		// Base health.
-		"StatusHealthRegen"			"15"		// Health regeneration rate.
+		"StatusHealthRegen"			"17"		// Health regeneration rate.
 		"StatusMana"				"500"		// Base mana.
 		"StatusManaRegen"			"5"			// Mana regeneration rate.
 
@@ -2623,7 +2623,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"1500"		// Base health.
 		"StatusHealthRegen"			"2"			// Health regeneration rate.
-		"StatusMana"				"0"		// Base mana.
+		"StatusMana"				"200"		// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
 		// Vision
@@ -2645,12 +2645,12 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models/heroes/lone_druid/spirit_bear.vmdl"	// Model.
+		"Model"						"models\items\lone_druid\bear\iron_claw_spirit_bear\iron_claw_spirit_bear.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"LoneDruid_SpiritBear"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				"1.4z"
+		"ModelScale" 				"1.4"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -2661,7 +2661,7 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"8"			// Physical protection.
+		"ArmorPhysical"				"18"			// Physical protection.
 
 		// Attack
 		//----------------------------------------------------------------
@@ -2671,7 +2671,7 @@
 		"AttackRate"				"1.75"		// Speed of attack.
 		"AttackAnimationPoint"		"0.43"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
-		"AttackRange"				"128"		// Range within a target can be attacked.
+		"AttackRange"				"160"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			"0"			// Speed of projectile.		   
 
@@ -2723,7 +2723,7 @@
 	{										
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models\items\lone_druid\bear\iron_claw_spirit_bear\iron_claw_spirit_bear.vmdl"	// Model.
+		"Model"						"models\items\lone_druid\true_form\iron_claw_true_form\iron_claw_true_form.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"LoneDruid_SpiritBear"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts"
@@ -2915,8 +2915,8 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"420"		// Base health.
 		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0"			// Mana regeneration rate.
+		"StatusMana"				"400"			// Base mana.
+		"StatusManaRegen"			"1"			// Mana regeneration rate.
 
 		// Team
 		//----------------------------------------------------------------

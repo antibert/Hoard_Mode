@@ -17,7 +17,7 @@ function Spawners:StartSpawners()
 		end
 	})
 	-- Stop spawning gnolls after 3.5 minutes.
-	Timers:CreateTimer(210, function()
+	Timers:CreateTimer(180, function()
 		Spawners:StopSpawner("gnolls")
 	end)
 	
@@ -66,7 +66,7 @@ function Spawners:StartSpawners()
 			return 20.0
 		end
 	})
-	Timers:CreateTimer(990, function()
+	Timers:CreateTimer(960, function()
 		Spawners:StopSpawner("zombie")
 	end)
 	Timers:CreateTimer("zombie2", {
@@ -77,22 +77,40 @@ function Spawners:StartSpawners()
 			return 30.0
 		end
 	})
-	Timers:CreateTimer(990, function()
+	Timers:CreateTimer(960, function()
 		Spawners:StopSpawner("zombie2")
 	end)
-	Timers:CreateTimer(480, function()
-		Spawners:SpawnSpooki()
-		return 13.0  
-    end)
-	Timers:CreateTimer("prophet", {
+	Timers:CreateTimer("spooki1", {
 		useGameTime = true,
-		endTime = 840,
+		endTime = 480,
 		callback = function()
-			Spawners:SpawnProphet()
-			return 30.0
+			Spawners:SpawnSpooki()
+			return 13.0
 		end
 	})
 	Timers:CreateTimer(960, function()
+		Spawners:StopSpawner("spooki1")
+	end)
+    Timers:CreateTimer("spooki", {
+		useGameTime = true,
+		endTime = 1300,
+		callback = function()
+			Spawners:SpawnSpooki()
+			return 13.0
+		end
+	})
+	Timers:CreateTimer(1800, function()
+		Spawners:StopSpawner("spooki")
+	end)
+	Timers:CreateTimer("prophet", {
+		useGameTime = true,
+		endTime = 1020,
+		callback = function()
+			Spawners:SpawnProphet()
+			return 48.0
+		end
+	})
+	Timers:CreateTimer(1200, function()
 		Spawners:StopSpawner("prophet")
 	end)
 	
@@ -103,7 +121,7 @@ function Spawners:StartSpawners()
 			Spawners:SpawnTreesTop()
 			Spawners:SpawnTreesMid()
 			Spawners:SpawnTreesBot()
-			return 20.0
+			return 15.0
 		end
 	})
 	Timers:CreateTimer(1200, function()
@@ -114,6 +132,19 @@ function Spawners:StartSpawners()
 		Spawners:SpawnCorpse()
 		return 40.0 
     end)	
+	Timers:CreateTimer("splitter", {
+		useGameTime = true,
+		endTime = 1200,
+		callback = function()
+			Spawners:SpawnSplitterTop()
+			Spawners:SpawnSplitterMid)
+			Spawners:SpawnSplitterBot()
+			return 25.0
+		end
+	})
+	Timers:CreateTimer(1500, function()
+		Spawners:StopSpawner("splitter")
+	end)
 	Timers:CreateTimer(1380, function()
 		Spawners:SpawnGuardTop()
 		Spawners:SpawnGuardMid()
@@ -137,7 +168,7 @@ Timers:CreateTimer("spiderling", {
 			return 18.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(570, function()
 		Spawners:StopSpawner("spiderling")
 	end)
 Timers:CreateTimer("cool", {
@@ -159,7 +190,7 @@ Timers:CreateTimer("spiders", {
 			return 18.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(570, function()
 		Spawners:StopSpawner("spiders")
 	end)
 	
@@ -171,7 +202,7 @@ Timers:CreateTimer("mini", {
 			return 21.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(570, function()
 		Spawners:StopSpawner("mini")
 	end)
 Timers:CreateTimer("big", {
@@ -182,28 +213,31 @@ Timers:CreateTimer("big", {
 			return 34.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(570, function()
 		Spawners:StopSpawner("big")
 	end)
-
-	Timers:CreateTimer(480, function()
-		Spawners:SpawnBears()
-		return 27.0 
-    end)
-	Timers:CreateTimer(720, function()
-		Spawners:SpawnLargeBears()
-		return 45.0 
-    end)
-    
-    Timers:CreateTimer(1500, function()
-		Spawners:SpawnSpiderlings()
-		return 30.0 
-    end)
-    
-    Timers:CreateTimer(1920, function()
-		Spawners:SpawnSpiders()
-		return 39.0 
-    end)
+Timers:CreateTimer("bears", {
+		useGameTime = true,
+		endTime = 600,
+		callback = function()
+			Spawners:SpawnBears()
+			return 27.0
+		end
+	})
+	Timers:CreateTimer(960, function()
+		Spawners:StopSpawner("bears")
+	end)
+Timers:CreateTimer("largebears", {
+		useGameTime = true,
+		endTime = 780,
+		callback = function()
+			Spawners:SpawnLargeBears()
+			return 27.0
+		end
+	})
+	Timers:CreateTimer(960, function()
+		Spawners:StopSpawner("largebears")
+	end)  
     
 -- BOT LANE
    
@@ -230,10 +264,6 @@ Timers:CreateTimer("big", {
 	Timers:CreateTimer(900, function()
 		Spawners:SpawnOgre()
 		return 30.0 
-    end)
-    Timers:CreateTimer(1200, function()
-		Spawners:SpawnSplitter()
-		return 20.0 
     end)
 end
 
@@ -341,7 +371,7 @@ function Spawners:SpawnTreesMid()
 	end
 end
 
-function Spawners:Corpse()
+function Spawners:SpawnCorpse()
 	local point = Entities:FindByName(nil, "spawner5"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
 	local units_to_spawn = 2
@@ -356,7 +386,7 @@ function Spawners:Corpse()
 	end
 end
 
-function Spawners:GuardMid()
+function Spawners:SpawnGuardMid()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
 	local units_to_spawn = 17
@@ -371,7 +401,7 @@ function Spawners:GuardMid()
 	end
 end
 
-function Spawners:TrollMid()
+function Spawners:SpawnTrollMid()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
 	local units_to_spawn = 1
@@ -386,6 +416,20 @@ function Spawners:TrollMid()
 	end
 end
 
+function Spawners:SpawnSplitterMid()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 10
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_splitter_c", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
 
 -- TOP Lane
 
@@ -520,21 +564,6 @@ function Spawners:SpawnLargeBears()
 	end
 end
 
-function Spawners:Prophet()
-	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
-	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 2
-	for i=1,units_to_spawn do
-		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_forest_prophet", point, true, nil, nil, DOTA_TEAM_BADGUYS)
-			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
-									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
-		end)
-	end
-end
-
 function Spawners:SpawnTreesTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
@@ -550,7 +579,7 @@ function Spawners:SpawnTreesTop()
 	end
 end
 
-function Spawners:GuardTop()
+function Spawners:SpawnGuardTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 17
@@ -565,7 +594,22 @@ function Spawners:GuardTop()
 	end
 end
 
-function Spawners:TrollTop()
+function Spawners:SpawnSplitterTop()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 10
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_splitter_c", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnTrollTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 1
@@ -701,7 +745,7 @@ function Spawners:SpawnTreesBot()
 	end
 end
 
-function Spawners:SpawnSplitter()
+function Spawners:SpawnSplitterBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 10
@@ -716,7 +760,7 @@ function Spawners:SpawnSplitter()
 	end
 end
 
-function Spawners:GuardBot()
+function Spawners:SpawnGuardBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 17
@@ -731,7 +775,7 @@ function Spawners:GuardBot()
 	end
 end
 
-function Spawners:TrollBot()
+function Spawners:SpawnTrollBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 1

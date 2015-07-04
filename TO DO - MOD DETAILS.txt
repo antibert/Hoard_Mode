@@ -32,7 +32,6 @@ MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING
 
 7. make ultimate skeleton boss much a much spookier meme
 
-
 //ITEMS
 	
 Magic stick/wand give changes based on creep kills
@@ -41,9 +40,7 @@ Give observer ward a useful effect
 
 —- MAPPING/MODELS (Nye Jobs)
 
-1. Fix or try your damndest to fix the map flickering 
-(you're probably going to have to rebuild the parts of the radiant side that are flickering)
-
+-- hole near dire spawner 1
 
 
 —- Art/Music (Nye Jobs)

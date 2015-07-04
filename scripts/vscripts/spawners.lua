@@ -137,7 +137,7 @@ function Spawners:StartSpawners()
 		endTime = 1200,
 		callback = function()
 			Spawners:SpawnSplitterTop()
-			Spawners:SpawnSplitterMid)
+			Spawners:SpawnSplitterMid()
 			Spawners:SpawnSplitterBot()
 			return 25.0
 		end

@@ -1,0 +1,17 @@
+
+"altar_lp"
+{
+	"dsp"	"1"
+	"fadetime" "1"
+
+	"playlooping"
+	{
+		"volume"		".8"
+		"pitch"		"100"
+		"wave"		"sounds/ambient/soundscapes/altar_lp.vsnd"
+		"origin"	"-177, -434, 1107;"
+	}
+
+
+}
+

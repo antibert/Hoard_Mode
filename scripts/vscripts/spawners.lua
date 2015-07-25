@@ -2,333 +2,10 @@ if Spawners == nil then
 	Spawners = class({})
 end
 
-require('libraries/timers')
-
-function Spawners:StartSpawners()
-    -- First Gnoll spawn example
-	-- Start spawning gnolls every 30 seconds.
-	Timers:CreateTimer("gnolls", {
-		useGameTime = true,
-		endTime = 0,
-		callback = function()
-			Spawners:SpawnGnollsTop()
-			Spawners:SpawnGnollsMid()
-			return 30.0
-		end
-	})
-	-- Stop spawning gnolls after 3.5 minutes.
-	Timers:CreateTimer(180, function()
-		Spawners:StopSpawner("gnolls")
-	end)
-	
--- BOSSES
-	
-	Timers:CreateTimer(480, function()
-		Spawners:SpawnRoshan()
-		return 2000.0
-    end)
-    Timers:CreateTimer(8000, function()
-		Spawners:SpawnBigBear()
-		return 2000.0
-    end)
-    Timers:CreateTimer(870, function()
-		Spawners:SpawnOgreBoss()
-		return 2000.0
-    end)
-    Timers:CreateTimer(1080, function()
-		Spawners:SpawnKingTree()
-		return 2000.0
-    end)
-    Timers:CreateTimer(1320, function()
-		Spawners:SpawnBigSplitter()
-		return 2000.0
-    end)
-    Timers:CreateTimer(2400, function()
-		Spawners:SpawnFuckYou()
-		return 2000.0
-    end)
- 
--- MID LANE/All Lanes
-		
-	Timers:CreateTimer("bazz", {
-		useGameTime = true,
-		endTime = 60,
-		callback = function()
-			Spawners:SpawnBazzTop()
-			Spawners:SpawnBazzMid()
-			return 23.0
-		end
-	})
-	Timers:CreateTimer(180, function()
-		Spawners:StopSpawner("bazz")
-	end)
-	Timers:CreateTimer("zombie", {
-		useGameTime = true,
-		endTime = 180,
-		callback = function()
-			Spawners:SpawnZombies()
-			return 20.0
-		end
-	})
-	Timers:CreateTimer(450, function()
-		Spawners:StopSpawner("zombie")
-	end)
-	Timers:CreateTimer("zombie2", {
-		useGameTime = true,
-		endTime = 250,
-		callback = function()
-			Spawners:SpawnZombies2()
-			return 30.0
-		end
-	})
-	Timers:CreateTimer(450, function()
-		Spawners:StopSpawner("zombie2")
-	end)
-	Timers:CreateTimer("corpse", {
-		useGameTime = true,
-		endTime = 360,
-		callback = function()
-			Spawners:SpawnCorpse()
-			return 40.0
-		end
-	})
-	Timers:CreateTimer(450, function()
-		Spawners:StopSpawner("corpse")
-	end)
-	Timers:CreateTimer("spooki1", {
-		useGameTime = true,
-		endTime = 480,
-		callback = function()
-			Spawners:SpawnSpooki()
-			return 13.0
-		end
-	})
-	Timers:CreateTimer(930, function()
-		Spawners:StopSpawner("spooki1")
-	end)
-    Timers:CreateTimer("spooki", {
-		useGameTime = true,
-		endTime = 1300,
-		callback = function()
-			Spawners:SpawnSpooki()
-			return 13.0
-		end
-	})
-	Timers:CreateTimer(1800, function()
-		Spawners:StopSpawner("spooki")
-	end)
-	Timers:CreateTimer("prophet", {
-		useGameTime = true,
-		endTime = 1020,
-		callback = function()
-			Spawners:SpawnProphet()
-			return 48.0
-		end
-	})
-	Timers:CreateTimer(1170, function()
-		Spawners:StopSpawner("prophet")
-	end)
-	
-	Timers:CreateTimer("tree", {
-		useGameTime = true,
-		endTime = 1020,
-		callback = function()
-			Spawners:SpawnTreesTop()
-			Spawners:SpawnTreesMid()
-			Spawners:SpawnTreesBot()
-			return 15.0
-		end
-	})
-	Timers:CreateTimer(1200, function()
-		Spawners:StopSpawner("tree")
-	end)
-    
-	Timers:CreateTimer(1200, function()
-		Spawners:SpawnCorpse()
-		return 40.0 
-    end)	
-	Timers:CreateTimer("splitter", {
-		useGameTime = true,
-		endTime = 1230,
-		callback = function()
-			Spawners:SpawnSplitterTop()
-			Spawners:SpawnSplitterMid()
-			Spawners:SpawnSplitterBot()
-			return 25.0
-		end
-	})
-	Timers:CreateTimer(1350, function()
-		Spawners:StopSpawner("splitter")
-	end)
-	Timers:CreateTimer(1380, function()
-		Spawners:SpawnGuardTop()
-		Spawners:SpawnGuardMid()
-		Spawners:SpawnGuardBot()
-		return 30.0 
-    end)
-	Timers:CreateTimer(1800, function()
-		Spawners:SpawnTrollTop()
-		Spawners:SpawnTrollMid()
-		Spawners:SpawnTrollBot()
-		return 20.0 
-    end)
-	
--- TOP LANE
-
-Timers:CreateTimer("spiderling", {
-		useGameTime = true,
-		endTime = 240,
-		callback = function()
-			Spawners:SpawnSpiderlings()
-			return 18.0
-		end
-	})
-	Timers:CreateTimer(570, function()
-		Spawners:StopSpawner("spiderling")
-	end)
-Timers:CreateTimer("cool", {
-		useGameTime = true,
-		endTime = 210,
-		callback = function()
-			Spawners:SpawnCoolSpiders()
-			return 30.0
-		end
-	})
-	Timers:CreateTimer(330, function()
-		Spawners:StopSpawner("cool")
-	end)
-Timers:CreateTimer("spiders", {
-		useGameTime = true,
-		endTime = 270,
-		callback = function()
-			Spawners:SpawnSpiders()
-			return 18.0
-		end
-	})
-	Timers:CreateTimer(570, function()
-		Spawners:StopSpawner("spiders")
-	end)
-Timers:CreateTimer("mini", {
-		useGameTime = true,
-		endTime = 210,
-		callback = function()
-			Spawners:SpawnMiniSpiders()
-			return 21.0
-		end
-	})
-	Timers:CreateTimer(330, function()
-		Spawners:StopSpawner("mini")
-	end)
-Timers:CreateTimer("big", {
-		useGameTime = true,
-		endTime = 330,
-		callback = function()
-			Spawners:SpawnBigSpiders()
-			return 34.0
-		end
-	})
-	Timers:CreateTimer(570, function()
-		Spawners:StopSpawner("big")
-	end)
-Timers:CreateTimer("bears", {
-		useGameTime = true,
-		endTime = 600,
-		callback = function()
-			Spawners:SpawnBears()
-			return 27.0
-		end
-	})
-	Timers:CreateTimer(930, function()
-		Spawners:StopSpawner("bears")
-	end)
-Timers:CreateTimer("largebears", {
-		useGameTime = true,
-		endTime = 720,
-		callback = function()
-			Spawners:SpawnLargeBears()
-			return 27.0
-		end
-	})
-	Timers:CreateTimer(930, function()
-		Spawners:StopSpawner("largebears")
-	end)  
-    
--- BOT LANE
-
-   Timers:CreateTimer("frostogres", {
-		useGameTime = true,
-		endTime = 17,
-		callback = function()
-			Spawners:SpawnFrostOgres()
-			return 53.0
-		end
-	})
-	Timers:CreateTimer(450, function()
-		Spawners:StopSpawner("frostogres")
-	end)  
-   Timers:CreateTimer("ogres", {
-		useGameTime = true,
-		endTime = 210,
-		callback = function()
-			Spawners:SpawnFrostOgres()
-			return 30.0
-		end
-	})
-	Timers:CreateTimer(450, function()
-		Spawners:StopSpawner("ogres")
-	end)  
-	Timers:CreateTimer("minisatyrs", {
-		useGameTime = true,
-		endTime = 270,
-		callback = function()
-			Spawners:SpawnMiniSatyrs()
-			return 29.0
-		end
-	})
-	Timers:CreateTimer(990, function()
-		Spawners:StopSpawner("minisatyrs")
-	end) 
-	Timers:CreateTimer("rippers", {
-		useGameTime = true,
-		endTime = 480,
-		callback = function()
-			Spawners:SpawnRippers()
-			return 17.0
-		end
-	})
-	Timers:CreateTimer(990, function()
-		Spawners:StopSpawner("rippers")
-	end) 
-    Timers:CreateTimer(480, function()
-		Spawners:SpawnSatyrs()
-		return 33.0 
-    end)
-	Timers:CreateTimer("satyrs", {
-		useGameTime = true,
-		endTime = 480,
-		callback = function()
-			Spawners:SpawnSatyrs()
-			return 33.0
-		end
-	})
-	Timers:CreateTimer(990, function()
-		Spawners:StopSpawner("satyrs")
-	end) 
-	Timers:CreateTimer("bigsatyrs", {
-		useGameTime = true,
-		endTime = 780,
-		callback = function()
-			Spawners:SpawnBigSatyrs()
-			return 41.0
-		end
-	})
-	Timers:CreateTimer(990, function()
-		Spawners:StopSpawner("bigsatyrs")
-	end) 
-end
-
+require('SpawnTimers')
 
 -- MID Lane Spawners 
+
 
 function Spawners:SpawnGnollsMid()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
@@ -386,13 +63,41 @@ function Spawners:SpawnZombies2()
 	end
 end
 
-function Spawners:SpawnSpooki()
+function Spawners:SpawnSpookiMid()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
 	local units_to_spawn = 13
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_spooki", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnNyx()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 6
+	for i=1,units_to_spawn do
+		local unit = CreateUnitByName("npc_dota_nyx", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+								OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+								Position = waypoint, Queue = true} )
+		print("Move ",unit:GetEntityIndex()," to ", waypoint)
+	end
+end
+
+function Spawners:SpawnDrake()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 5
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_drake", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
@@ -419,10 +124,55 @@ end
 function Spawners:SpawnTreesMid()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
-	local units_to_spawn = 8
+	local units_to_spawn = 7
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_treant", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnThing()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 7
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_thing", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnFangMid()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 4
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_fang", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnShroomMid()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 3
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_shroom", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
@@ -446,13 +196,43 @@ function Spawners:SpawnCorpse()
 	end
 end
 
+function Spawners:SpawnAA()
+	local point = Entities:FindByName(nil, "spawner5"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 1
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_ancient_apparition", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
 function Spawners:SpawnGuardMid()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
-	local units_to_spawn = 17
+	local units_to_spawn = 12
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_kobold_guard", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnCentaurMid()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 5
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_centaur", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
@@ -479,10 +259,160 @@ end
 function Spawners:SpawnSplitterMid()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
-	local units_to_spawn = 10
+	local units_to_spawn = 3
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_splitter_c", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnRhinoTop()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 1
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_rhino", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnRhinoMid()
+	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 1
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_rhino", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnRhinoBot()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 1
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_rhino", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnDemonMid()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 5
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_demon", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnDemonDogMid()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 1
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_demon_dog", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnMiniDemonMid()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 6
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_mini_demon", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnDragonMid()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 2
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_dragon", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnLizardMid()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 3
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_lizard", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnStalkerMid()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 5
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_stalker", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnRoshMid()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 2
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_roshan_mob", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
@@ -512,6 +442,19 @@ function Spawners:SpawnBazzTop()
 	local units_to_spawn = 4
 	for i=1,units_to_spawn do
 		local unit = CreateUnitByName("npc_dota_creature_bazz", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+								OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+								Position = waypoint, Queue = true} )
+		print("Move ",unit:GetEntityIndex()," to ", waypoint)
+	end
+end
+
+function Spawners:SpawnBeast()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 1
+	for i=1,units_to_spawn do
+		local unit = CreateUnitByName("npc_dota_creature_beast", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 								OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 								Position = waypoint, Queue = true} )
@@ -579,13 +522,29 @@ function Spawners:SpawnSpiders()
 	end
 end
 
-function Spawners:SpawnSpiders()
+function Spawners:SpawnBigSpiders()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = 3
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_big_spiders", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+
+function Spawners:SpawnSpookiTop()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 5
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_spooki", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
@@ -627,7 +586,7 @@ end
 function Spawners:SpawnTreesTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 8
+	local units_to_spawn = 7
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_treant", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -639,10 +598,40 @@ function Spawners:SpawnTreesTop()
 	end
 end
 
+function Spawners:SpawnShroomTop()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 3
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_Shroom", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnFangTop()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 4
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_fang", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
 function Spawners:SpawnGuardTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 17
+	local units_to_spawn = 10
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_kobold_guard", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -654,13 +643,58 @@ function Spawners:SpawnGuardTop()
 	end
 end
 
+function Spawners:SpawnCentaurTop()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 5
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_centaur", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
 function Spawners:SpawnSplitterTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 10
+	local units_to_spawn = 3
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_splitter_c", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnGhostMeele()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 7
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_ghost_Meele", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnGhost()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 1
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_ghost", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
@@ -685,6 +719,110 @@ function Spawners:SpawnTrollTop()
 end
 
 
+function Spawners:SpawnDemonTop()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 5
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_demon", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnDemonDogTop()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 1
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_demon_dog", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnMiniDemonTop()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 6
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_mini_demon", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnDragonTop()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 2
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_dragon", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnLizardTop()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 3
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_lizard", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnStalkerTop()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 5
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_stalker", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnRoshTop()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 1
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_roshan_mob", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
 
 -- BOT Lane
 
@@ -748,7 +886,7 @@ end
 function Spawners:SpawnBigSatyrs()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 3
+	local units_to_spawn = 2
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_big_satyr", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -778,7 +916,7 @@ end
 function Spawners:SpawnOgre()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 7
+	local units_to_spawn = 6
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_ogre_melee", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -793,7 +931,7 @@ end
 function Spawners:SpawnTreesBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 8
+	local units_to_spawn = 7
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_treant", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -805,10 +943,55 @@ function Spawners:SpawnTreesBot()
 	end
 end
 
+function Spawners:SpawnShroomBot()
+	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 3
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_shroom", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnFangBot()
+	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 4
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_fang", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnStump()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 1
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_stump", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
 function Spawners:SpawnSplitterBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 10
+	local units_to_spawn = 3
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_splitter_c", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -820,13 +1003,43 @@ function Spawners:SpawnSplitterBot()
 	end
 end
 
+function Spawners:SpawnHellBear()
+	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 3
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_hellbear", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
 function Spawners:SpawnGuardBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 17
+	local units_to_spawn = 10
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_kobold_guard", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnCentaurBot()
+	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 5
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_centaur", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
@@ -850,7 +1063,125 @@ function Spawners:SpawnTrollBot()
 	end
 end
 
+function Spawners:SpawnDemonBot()
+	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 5
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_demon", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
 
+function Spawners:SpawnDemonDogBot()
+	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 1
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_demon_dog", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnDragonBot()
+	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 2
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_dragon", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnLizardBot()
+	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 3
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_lizard", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnMiniDemonBot()
+	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 6
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_mini_demon", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnStalkerBot()
+	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 5
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_stalker", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnSpookiBot()
+	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 13
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_spooki", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function Spawners:SpawnRoshBot()
+	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = 1
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_roshan_mob", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
 
 -- BOSSES
 
@@ -944,8 +1275,17 @@ function Spawners:SpawnBigSplitter()
 	end
 end
 
--- Function to stop spawners
-
-function Spawners:StopSpawner(spawner)
-	Timers:RemoveTimer(spawner)
+function Spawners:SpawnCentaurBoss()
+	local point = Entities:FindByName(nil, "spawner4"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 1
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_centaur_boss", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
 end

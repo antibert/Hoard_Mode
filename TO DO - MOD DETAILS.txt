@@ -2,52 +2,43 @@
 -- Check scripts/spawns_plan for a detailed plan of all creep spawns
 -- 卐 This is the windmill of friendship 卐 Repost if you also love your friends 卐
 
-MISSION IS TO BUILD A BASIC WORKING ALPHA VERSION FOR TESTING 
+MISSION IS TO GET TO BETA
 
 -- Notes
 
-3. more maps for differnet numbers of players
+1. Objectives for taking rosh (getting rapiers or access to some teir 1 items)
+
+3. more maps for differnet numbers of players 
 
 1. Incorporating Database thingy (much later)
 
 
 -- GENERAL/SCRIPTING
 
-5. PROBLEM TO THINK ABOUT: LOTS OF UNITS = LAG Reduce unit numbers
-
-2. add way to buy upgrades for botlane creeps
+2. add way to buy upgrades like buying back towers
 
 
 -- KEY VALUE FILES (Nye Jobs Mostly)
 
-1. Need to give bosses and spiderlings/rippers Phase movement to prevent blocking
 
-2. Buff Clarity Mana rate replenish 
-
-5. rippers need slowing attack modifierz
-
-6. Replace prophets with something else probably
-
-7. make ultimate skeleton boss much a much spookier meme
 
 //ITEMS
 	
 Magic stick/wand give changes based on creep kills
 
-Give observer ward a useful effect
+Urn gains charges through stuff
+
+
+//Heros
+
+
 
 —- MAPPING/MODELS (Nye Jobs)
-
--- hole near dire spawner 1
 
 
 —- Art/Music (Nye Jobs)
 
-1. Loading screens
-
-2. Banner image 
-
-3. Media art piece
+4. Stick a tune in it
 
 
 

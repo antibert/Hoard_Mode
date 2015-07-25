@@ -9,6 +9,9 @@ gameInitialized = false
 require('spawners')
 
 function Precache( context )
+	PrecacheResource( "particle_folder", "particles/frostivus_gameplay", context )
+    PrecacheItemByNameSync("item_king_rapier", context)
+	PrecacheUnitByNameSync("npc_dota_creature_ancient_apparition", context)
 	PrecacheUnitByNameSync("npc_dota_creature_gnoll_assassin", context)
 	PrecacheUnitByNameSync("npc_dota_creature_kobold_ripper", context)
 	PrecacheUnitByNameSync("npc_dota_creature_kobold_guard", context)
@@ -25,6 +28,7 @@ function Precache( context )
     PrecacheUnitByNameSync("npc_dota_creature_medium_satyr", context)
 	PrecacheUnitByNameSync("npc_dota_creature_big_satyr", context)
     PrecacheUnitByNameSync("npc_dota_creature_spooki", context)
+	PrecacheUnitByNameSync("npc_dota_creature_drake", context)
 	PrecacheUnitByNameSync("npc_dota_creature_king_treant", context)
 	PrecacheUnitByNameSync("npc_dota_creature_forest_prophet", context)
 	PrecacheUnitByNameSync("npc_dota_creature_treant", context)
@@ -38,6 +42,25 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_creature_cool_spiders", context)
 	PrecacheUnitByNameSync("npc_dota_creature_mini_spiders", context)
 	PrecacheUnitByNameSync("npc_dota_creature_big_spiders", context)
+	PrecacheUnitByNameSync("npc_dota_demon", context)
+	PrecacheUnitByNameSync("npc_dota_demon_dog", context)
+	PrecacheUnitByNameSync("npc_dota_creature_thing", context)
+	PrecacheUnitByNameSync("npc_dota_creature_shroom", context)
+    PrecacheUnitByNameSync("npc_dota_creature_stump", context)	
+	PrecacheUnitByNameSync("npc_dota_creature_fang", context)
+	PrecacheUnitByNameSync("npc_dota_ghost_meele", context)
+	PrecacheUnitByNameSync("npc_dota_ghost", context)
+	PrecacheUnitByNameSync("npc_dota_rhino", context)
+	PrecacheUnitByNameSync("npc_dota_hellbear", context)
+	PrecacheUnitByNameSync("npc_dota_dragon", context)
+	PrecacheUnitByNameSync("npc_dota_stalker", context)
+	PrecacheUnitByNameSync("npc_dota_mini_demon", context)
+	PrecacheUnitByNameSync("npc_dota_creature_beast", context)
+	PrecacheUnitByNameSync("npc_dota_centaur_boss", context)
+    PrecacheUnitByNameSync("npc_dota_centaur", context)
+	PrecacheUnitByNameSync("npc_dota_hero_venomancer_holdout", context)
+	PrecacheUnitByNameSync("npc_dota_nyx", context)
+	PrecacheUnitByNameSync("npc_dota_roshan_mob", context)
 	end
 	
 -- Create the game mode when we activate
@@ -68,18 +91,33 @@ end
 -- Some basic rules for the game mode
 
 function CHoard_ModeGameMode:SetRules()
+	
+	self.m_VictoryMessages = {}
+	self.m_VictoryMessages[DOTA_TEAM_BADGUYS]  = "#VictoryMessage_BadGuys"
+	self.m_VictoryMessages[DOTA_TEAM_GOODGUYS]  = "#VictoryMessage_GoodGuys"
 
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 5 )
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 0 )
+	GameRules:SetTimeOfDay( 0.75 )
 	GameRules:SetUseUniversalShopMode( true )
-	GameRules:SetHeroSelectionTime( 30.0 )
-	GameRules:SetPreGameTime( 17.0 )
-	GameRules:SetPostGameTime( 60.0 )
+	GameRules:SetHeroSelectionTime( 34.0 )
+	GameRules:SetPreGameTime( 23.0 )
+	GameRules:SetPostGameTime( 120.0 )
 	GameRules:SetTreeRegrowTime( 60.0 )
-	GameRules:SetGoldTickTime( 0.3 )
+	GameRules:SetGoldTickTime( 0.6 )
 	GameRules:SetGoldPerTick( 1 )
-	GameRules:GetGameModeEntity():SetTopBarTeamValuesOverride( true )
-	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible( false )
+	GameRules:GetGameModeEntity():SetLoseGoldOnDeath( false )
+	GameRules:GetGameModeEntity():SetRuneEnabled( 0, true ) --Double Damage
+	GameRules:GetGameModeEntity():SetRuneEnabled( 1, true ) -- haste rune
+	GameRules:GetGameModeEntity():SetRuneEnabled( 2, true ) -- illu
+	GameRules:GetGameModeEntity():SetRuneEnabled( 3, false ) --Invis Rune
+	GameRules:GetGameModeEntity():SetRuneEnabled( 4, true ) --Regen
+	GameRules:GetGameModeEntity():SetRuneEnabled( 5, true ) --Bounty
+	GameRules:GetGameModeEntity():SetFixedRespawnTime(23)
+	GameRules:GetGameModeEntity():SetFountainPercentageHealthRegen( 4 )
+	GameRules:GetGameModeEntity():SetFountainPercentageManaRegen( 6 )
+	GameRules:GetGameModeEntity():SetFountainConstantManaRegen( 1 )
+	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1300 )	
 end
 
 -- This function is called once and only once when the game begins

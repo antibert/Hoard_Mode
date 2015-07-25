@@ -1,0 +1,5 @@
+"addon"
+{
+	"DOTA_BadGuys"    								"THE HOARD"
+}
+

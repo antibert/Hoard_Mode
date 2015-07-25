@@ -1,9 +1,13 @@
 "AddonInfo"
 {
-	maps			"Hoard_Mode"
+	maps			"Horde_5p_Easy Horde_4p_Hard"
 	"IsPlayable"	"1"
-	"Hoard_Mode"
+	"Horde_5p_Easy"
 	{
 					"MaxPlayers"                    "5"
+	}
+	"Horde_4p_Hard"
+	{
+					"MaxPlayers"                    "4"
 	}
 }

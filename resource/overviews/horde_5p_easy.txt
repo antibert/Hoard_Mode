@@ -1,0 +1,8 @@
+horde_5p_easy
+{
+	material materials/overviews/horde_5p_easy.vmat
+	pos_x -8192
+	pos_y 8192
+	scale 16.000
+}
+

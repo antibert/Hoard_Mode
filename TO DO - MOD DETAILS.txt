@@ -1,44 +1,44 @@
--- List of things to finish for the mod. 
--- Check scripts/spawns_plan for a detailed plan of all creep spawns
--- 卐 This is the windmill of friendship 卐 Repost if you also love your friends 卐
+-- MOD STUFF TO DO
 
-MISSION IS TO GET TO BETA
+THE MISSION IS TO GET TO BETA
 
--- Notes
+Scripting Goals:
 
-1. Objectives for taking rosh (getting rapiers or access to some teir 1 items)
+1. Add way to buy upgrades like buying back buildings (towers in the base) through a purchasable item
 
-3. more maps for differnet numbers of players 
+2. The bot lane friendly creep spawn stops spawning when there is a certain number of units lingering around
+(Important to stop lag issues from banking them too much - 
+If I need to put another scipted spawner there which spawns radiant creeps instead of the default dota spawner
+ let me know - If it becomes a scripted spawner though I assume destorying dire rax will no longer give you super creeps -
+ I want to keep that feature in the game so that will need to be coded back in if it stops)
+ 
+3. npc_dota_creature_roshan needs to be a more viable objective:
+-- Roshan drops rapiers (I'll make rapiers no longer purchasable from the shop) 
+-- Following the Roshan Theme, I'll make some big mobs that hang around in spots on the map, 
+I'll need help getting them to drop stuff (again rapiers or whatever, I need to refine this idea)
 
-1. Incorporating Database thingy (much later)
+4. Randomly detirmined spawns (Some of the spawners spawn a number of units randomly between two integers - 
+would be nice to expand this to a few randomly detirmined mob types also) 
+
+5. Big Job: Different spawns for differnet maps (Currently both maps use the same spawners and spawn the same stuff. 
+I don't know how to change what a spawner is spawning based on the map - 
+I tried just using different spawners of either map. but that just breaks the LUA)
 
 
--- GENERAL/SCRIPTING
+Less Intersting:
 
-2. add way to buy upgrades like buying back towers
-
-
--- KEY VALUE FILES (Nye Jobs Mostly)
-
-
-
-//ITEMS
+//ITEMS:
 	
-Magic stick/wand give changes based on creep kills
+-- Magic stick/wand give changes based on creep kills (each kill gives 1 charge,
+ there are like 30 - 40 maybe more max charges, 
+ but they give like 1 mana/health or probably less to be balanced)
 
-Urn gains charges through stuff
-
-
-//Heros
-
-
-
-—- MAPPING/MODELS (Nye Jobs)
+--Urn gains charges from killing certain unit types 
+(if there is a way to specify the units that are "ConsideredHero" "1" to give urn charges, 
+although I think Urn currently gets charges based on a unit's baseclass rather than this function)
 
 
-—- Art/Music (Nye Jobs)
 
-4. Stick a tune in it
 
 
 

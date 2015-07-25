@@ -4,7 +4,8 @@ THE MISSION IS TO GET TO BETA
 
 Scripting Goals:
 
-1. Add way to buy upgrades like buying back buildings (towers in the base) through a purchasable item
+1. Add way to buy upgrades like buying back buildings (towers in the base) through a purchasable item. 
+(The towers in question are currently called "npc_dota_hoard_tower" on the 4p map and "npc_dota_hoard_tower_easy" on the 5p map.
 
 2. The bot lane friendly creep spawn stops spawning when there is a certain number of units lingering around
 (Important to stop lag issues from banking them too much - 

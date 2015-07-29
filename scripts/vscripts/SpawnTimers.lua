@@ -163,7 +163,7 @@ function Spawners:StartSpawners()
 			return 13.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
+	Timers:CreateTimer(2160, function()
 		Spawners:StopSpawner("spooki")
 	end)
 	Timers:CreateTimer("prophet", {
@@ -390,7 +390,7 @@ function Spawners:StartSpawners()
 		Spawners:SpawnTrollTop()
 		Spawners:SpawnTrollMid()
 		Spawners:SpawnTrollBot()
-			return 28.0
+			return 30.0
 		end
 	})
 	Timers:CreateTimer(6000, function()
@@ -403,23 +403,34 @@ function Spawners:StartSpawners()
 			Spawners:SpawnDemonTop()
 			Spawners:SpawnDemonMid()
 			Spawners:SpawnDemonBot()
-			return 41.0
+			return 46.0
 		end
 	})
 	Timers:CreateTimer(2000, function()
 		Spawners:StopSpawner("demon")
 	end)
+	Timers:CreateTimer("demon2", {
+		useGameTime = true,
+		endTime = 2280,
+		callback = function()
+			Spawners:SpawnDemonBot()
+			return 55.0
+		end
+	})
+	Timers:CreateTimer(6000, function()
+		Spawners:StopSpawner("demon2")
+	end)
 	Timers:CreateTimer("demondog", {
 		useGameTime = true,
-		endTime = 5000,
+		endTime = 3500,
 		callback = function()
 			Spawners:SpawnDemonDogTop()
 			Spawners:SpawnDemonDogMid()
 			Spawners:SpawnDemonDogBot()
-			return 24.0
+			return 35.0
 		end
 	})
-	Timers:CreateTimer(2000, function()
+	Timers:CreateTimer(6000, function()
 		Spawners:StopSpawner("demondog")
 	end)
 	Timers:CreateTimer("minidemon", {
@@ -455,7 +466,7 @@ function Spawners:StartSpawners()
 			Spawners:SpawnDragonTop()
 			Spawners:SpawnDragonMid()
 			Spawners:SpawnDragonBot()
-			return 31.0
+			return 50.0
 		end
 	})
 	Timers:CreateTimer(6000, function()
@@ -502,13 +513,13 @@ function Spawners:StartSpawners()
 	end)
 	Timers:CreateTimer("AA", {
 		useGameTime = true,
-		endTime = 1475,
+		endTime = 2160,
 		callback = function()
 			Spawners:SpawnAA()
 			return 150.0
 		end
 	})
-	Timers:CreateTimer(1680, function()
+	Timers:CreateTimer(2170, function()
 		Spawners:StopSpawner("AA")
 	end)
 	
@@ -531,7 +542,7 @@ Timers:CreateTimer("spiderling", {
 		endTime = 270,
 		callback = function()
 			Spawners:SpawnSpiderlings()
-			return 18.0
+			return 35.0
 		end
 	})
 	Timers:CreateTimer(570, function()
@@ -617,6 +628,17 @@ Timers:CreateTimer("largebears", {
 	})
 	Timers:CreateTimer(450, function()
 		Spawners:StopSpawner("frostogres")
+	end)  
+   Timers:CreateTimer("bird", {
+		useGameTime = true,
+		endTime = 240,
+		callback = function()
+			Spawners:SpawnBird()
+			return 32.0
+		end
+	})
+	Timers:CreateTimer(600, function()
+		Spawners:StopSpawner("bird")
 	end)  
    Timers:CreateTimer("ogres", {
 		useGameTime = true,

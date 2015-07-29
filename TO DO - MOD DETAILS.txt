@@ -32,6 +32,8 @@ would be nice to expand this to a few randomly detirmined mob types also)
 I don't know how to change what a spawner is spawning based on the map - 
 I tried just using different spawners of either map. but that just breaks the LUA)
 
+6. Instead of steady creep spawn top, players can purchase waves of creeps to spawn there and attack towards the dire ancient. 
+
 
 KV STUFF:
 

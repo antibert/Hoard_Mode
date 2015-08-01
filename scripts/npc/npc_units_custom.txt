@@ -311,7 +311,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"neutral_spell_immunity"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -322,8 +322,8 @@
 
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"15"		// Physical protection.
-		"MagicalResistance"			"0"			// Magical protection.
+		"ArmorPhysical"				"17"		// Physical protection.
+		"MagicalResistance"			"100"			// Magical protection.
 
 		// Attack
 		//----------------------------------------------------------------

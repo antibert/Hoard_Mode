@@ -1,13 +1,18 @@
 Next Update Patch Notes:
 
-Alpha 2.0b
+Alpha 2.0d
+-- Removed Ancient Neutral spawners in dire jungle (issues with them stacking up)
+-- Put creep spawner back top because you asked for it back so nicely. Kappa.
 
+Heroes:
+//Centaur:
+-- Double Edge damage increased from "175 250 325 400" to "200 300 400 500"
+-- Double Edge radius increased from 190 to 350
 
 
 MOD STUFF TO DO:
+-- Add Some one time spawners in dire jungle for things that drop stuff or something
 -- ADD Ssome sstatic friendly creep spawns in base to defend
--- Reconsider creeps spawning top, maybe reduce or remove them
--- Fix Death Ward
 
 Bigger Jobs:
 
@@ -51,6 +56,10 @@ although I think Urn currently gets charges based on a unit's baseclass rather t
 
 -- Etherial Blade has a large AOE
 
+-- New Consumable 7/8th slot item
+
+-- Blink Dagger + bots = blink bots with a fairly costly recipe
+
 
 //ABILITES:
 
@@ -73,3 +82,5 @@ although I think Urn currently gets charges based on a unit's baseclass rather t
 -- Brewmaster Ultimate spawns spirit pandas to control (like visiage familiars) Earth Panda lvl 1, Wind Panda lvl 2, Fire panda on lvl 3
 
 -- PA Dagger shoots through creeps dealing damage to all the creeps it passes through 
+
+-- Invoker forge spirit melting strike hits creeps

@@ -431,6 +431,9 @@
 	//=================================================================================================================
 	"doom_bringer_devour"
 	{
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 	    "AbilityTextureName"			"horde_devour"
 		"AbilityCooldown"				"40.0 35.0 30.0 25.0"
 	    "AbilitySpecial"
@@ -871,7 +874,7 @@
 	"morphling_waveform"
 	{
 		"AbilityCastRange"				"3000"
-		"AbilityDamage"					"100 200 300 400"
+		"AbilityDamage"					"200 300 400 500"
 		"AbilitySpecial"
 		{
 			"01"
@@ -984,7 +987,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"damage_base"					"50.0 75.0 100.0 125.0"
+				"damage_base"					"100.0 150.0 200.0 250.0"
 			}
 			"02"
 			{
@@ -1009,12 +1012,12 @@
 			"06"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"knockback_min"					"100"
+				"knockback_min"					"500"
 			}
 			"07"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"knockback_max"					"300"
+				"knockback_max"					"850"
 			}
 			"08"
 			{
@@ -2019,7 +2022,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"20"
+				"duration"				"10"
 			}
 			"02"
 			{
@@ -2692,17 +2695,13 @@
 	//=================================================================================================================
 	"lone_druid_spirit_bear"
 	{
+			"AbilityCooldown"				"120.0 110.0 100.0 90.0"
 			"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"bear_hp"					"1500 2000 2500 3000"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bear_regen_tooltip"	    "2 3 4 5"
 			}
 			"03"
 			{
@@ -2712,7 +2711,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bear_armor"				"5 6 7 8"
+				"bear_armor"				"6 8 10 12"
 			}
 			"05"
 			{
@@ -2722,7 +2721,7 @@
 			"06"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"180.0 160.0 140.0 120.0"
+				"cooldown_scepter"			"120.0 110.0 100.0 90.0"
 			}
 		}
 	}
@@ -3377,32 +3376,13 @@
 	//=================================================================================================================
 	"warlock_rain_of_chaos"
 	{
+		"AbilityCooldown"				"100 90 80"
 		"AbilitySpecial"
 		{
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"stun_duration"				"5.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"golem_hp_tooltip"			"900 1200 1500"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"golem_regen_tooltip"		"25 50 75"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"number_of_golems_scepter"	"3"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"golem_hp_tooltip_scepter"			"675 900 1125"
 			}
 		}
 	}

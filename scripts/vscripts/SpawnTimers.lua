@@ -385,12 +385,12 @@ function Spawners:StartSpawners()
 	end)
 	Timers:CreateTimer("troll2", {
 		useGameTime = true,
-		endTime = 2280,
+		endTime = 2260,
 		callback = function()
 		Spawners:SpawnTrollTop()
 		Spawners:SpawnTrollMid()
 		Spawners:SpawnTrollBot()
-			return 30.0
+			return 28.0
 		end
 	})
 	Timers:CreateTimer(6000, function()
@@ -695,7 +695,29 @@ Timers:CreateTimer("largebears", {
 	Timers:CreateTimer(930, function()
 		Spawners:StopSpawner("bigsatyrs")
 	end) 
-end
+
+
+-- Neutral Camps/Map Spawns
+	
+	Timers:CreateTimer("money", {
+		useGameTime = true,
+		endTime = 0,
+		callback = function()
+			Spawners:SpawnMoney()
+			return 150.0
+		end
+	})
+	Timers:CreateTimer(1200, function()
+		Spawners:StopSpawner("money")
+	end) 
+	
+	
+	
+	end
+
+
+
+
 
 
 -- Function to stop spawners

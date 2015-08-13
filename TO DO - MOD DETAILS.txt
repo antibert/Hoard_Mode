@@ -1,11 +1,15 @@
 Next Update Patch Notes:
 
-Alpha 2.11
+Alpha 2.2
 
+-- Dino attack damage increased
+-- Final wave spawn timers adjusted slightly
 
 MOD STUFF TO DO:
--- Add Some one time spawners in dire jungle for things that drop stuff or something
--- ADD Ssome sstatic friendly creep spawns in base to defend
+-- ADD Some static friendly creep spawns in base to defend
+-- Fix Russian Translation
+-- post 40 minutes is boring
+-- Fix top camp not spawning more than once
 
 Bigger Jobs:
 
@@ -19,7 +23,7 @@ If I need to put another scipted spawner there which spawns radiant creeps inste
  I want to keep that feature in the game so that will need to be coded back in if it stops)
  
 3. npc_dota_creature_roshan needs to be a more viable objective:
--- Roshan drops rapiers (I'll make rapiers no longer purchasable from the shop) 
+-- Roshan drops rapiers? (I'll make rapiers no longer purchasable from the shop) 
 -- Following the Roshan Theme, I'll make some big mobs that hang around in spots on the map, 
 I'll need help getting them to drop stuff (again rapiers or whatever, I need to refine this idea)
 
@@ -68,3 +72,4 @@ KV STUFF:
 -- Razor Static link is AOE and effects creeps
 
 -- Razor passive replaced with something more useful
+-

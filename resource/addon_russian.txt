@@ -1,0 +1,274 @@
+"lang"
+{
+	"Language"		"Russian"
+	"Tokens"
+	{		
+		"addon_game_name"			"HORDE MODE"
+		"VictoryMessage_BadGuys"    "ВЫ БЫЛИ ПОВЕРЖЕНЫ ОРДОЙ"
+		"VictoryMessage_GoodGuys"   "ВЫ ПОБЕДИЛИ ОРДУ"
+		
+		//Units
+		"dota_fountain_good"        "Трусливый Фонтан"
+		"npc_dota_hoard_tower"        "Башня"
+		"npc_dota_mega_tower"        "Мегабашня"
+		"npc_dota_hoard_tower_easy"        "Мегабашня"
+		
+		"npc_dota_creature_gnoll_assassin"        "Гнолл"
+		"npc_dota_creature_bazz"        "Берсерк"
+		"npc_dota_creature_kobold_ripper"        "Кобольд"
+		"npc_dota_creature_kobold_guard"        "Кобольд-солдат"
+		"npc_dota_creature_troll_healer"        "Тролль-целитель"
+		"npc_dota_creature_beast"         "Дикий зверь"
+		
+		"npc_dota_creature_spiderling"        "Паучок"
+		"npc_dota_creature_cool_spiders"        "Паук"
+		"npc_dota_creature_mini_spiders"        "Паукообразный"
+		"npc_dota_medium_spiders"        "Выводка-воин"
+		"npc_dota_big_spiders"        "Выводка-надзиратель"
+		
+		"npc_dota_creature_basic_zombie"        "Зомби"
+		"npc_dota_creature_berserk_zombie"        "Ползущий зомби"
+		"npc_dota_creature_corpselord"        "Ходячий"
+		
+		"npc_dota_creature_roshan_boss"        "Рошан"
+		"npc_dota_roshan_mob"        "Рошан"
+		
+		"npc_dota_creature_ogre_melee"        "Огр"
+		"npc_dota_creature_ogre"        "Огр-чародей"
+		"npc_dota_creature_ogre_boss"        "Огр-командующий"
+		
+		"npc_dota_creature_bird"          "Дикокрыл"
+		"npc_dota_creature_satyr"        "Сатир-колдун"
+		"npc_dota_creature_medium_satyr"        "Сатир-воин"
+		"npc_dota_creature_big_satyr"        "Огр-командующий"
+		
+		"npc_dota_creature_spooki"        "Жутко-страшный скелет"
+		"npc_dota_creature_drake"        "Гарпия"
+		"npc_dota_creature_fuck_you"        "Самый большой и жуткий скелет"
+		
+		"npc_dota_creature_king_treant"        "Король Энтов"
+		"npc_dota_creature_forest_prophet"        "Энт-пророк"
+		"npc_dota_creature_treant"        "Энт"
+		"npc_dota_creature_thing"        "Грибной Эльф"
+		"npc_dota_creature_shroom"        "Энт-гриб"
+		"npc_dota_creature_stump"        "Старый пень"
+		"npc_dota_creature_fang"        "Дендрокхрон"
+	
+		"npc_dota_creature_small_spirit_bear"        "Медведь"
+		"npc_dota_creature_large_spirit_bear"        "Большой медведь"
+		"npc_dota_creature_big_bear"        "Отец медведей"
+		
+
+     	"npc_dota_splitter_c"        "Голем"
+		"npc_dota_splitter_baby"     "Малый голем"
+		"npc_dota_ghost_meele"        "Дух"
+		"npc_dota_ghost"        "Призрак"
+     	"npc_dota_rhino"        "Волк"
+		"npc_dota_hellbear"        "Помидор"
+		
+		"npc_dota_creature_big_splitter"        "Гигантский голем"
+		
+
+		"npc_dota_hell_demon"        "Демон"
+		"npc_dota_demon"        "Исчадие ада"
+		"npc_dota_demon_dog"        "Адская гончая"
+		"npc_dota_mini_demon"        "Адский медведь"
+		
+		"npc_dota_dragon"        "Чёрный дракон"
+		"npc_dota_stalker"        "Сталкер"
+	
+     	"npc_dota_nyx"        "Скорпион"
+		"npc_dota_centaur_boss"   "Вождь кентавров"
+		"npc_dota_centaur"        "Кентавр"
+		
+		"npc_dota_creature_ancient_apparition"		"Мороженное"
+		"npc_dota_lizard"		"Дино"
+		
+        //abilities
+		
+		"DOTA_Tooltip_ability_holdout_culling_blade"										"A Cut Above"
+		"DOTA_Tooltip_ability_holdout_culling_blade_Description"							"<font color='#70EA72'>Axe врывается в бой. Приземляясь, Axe наносит удар всем врагам вокруг себя на небольшом расстоянии.</font> Если здоровье врага ниже порога убийства, враг мгновенно умирает, что дает Axe и ближайшим союзникам временный бонус к скорости."
+		"DOTA_Tooltip_ability_holdout_culling_blade_Lore"									"Могул Хан — воплощение битвы и ярости, превращающееся в ужасную смерть для того, кто осмелится сразиться с ним."
+		"DOTA_Tooltip_ability_holdout_culling_blade_Note0"									"Проходит сквозь иммунитет к магии."
+		"DOTA_Tooltip_ability_holdout_culling_blade_leap_distance"							"<font color='#70EA72'>ДИСТАНЦИЯ ПРЫЖКА:</font>"
+		"DOTA_Tooltip_ability_holdout_culling_blade_radius"									"<font color='#70EA72'>РАДИУС:</font>"
+		"DOTA_Tooltip_ability_holdout_culling_blade_kill_threshold"							"ГРАНИЦА УБИЙСТВА:"
+		"DOTA_Tooltip_ability_holdout_culling_blade_kill_threshold_scepter"					"ГРАНИЦА УБИЙСТВА СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_holdout_culling_blade_damage"									"УРОН:"
+		"DOTA_Tooltip_ability_holdout_culling_blade_speed_bonus"							"%ДОП. СКОРОСТЬ:"
+		"DOTA_Tooltip_ability_holdout_culling_blade_speed_aoe"								"РАДИУС УСКОРЕНИЯ:"
+		"DOTA_Tooltip_ability_holdout_culling_blade_speed_duration"							"ДЛИТЕЛЬНОСТЬ УСКОРЕНИЯ:"
+		"DOTA_Tooltip_ability_holdout_culling_blade_speed_duration_scepter"					"ДЛИТЕЛЬНОСТЬ УСКОРЕНИЯ СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_holdout_culling_blade_aghanim_description"					"Увеличивает порог убийства и продолжительность скорости."
+		
+		"DOTA_Tooltip_ability_holdout_shackleshot"									"Shackleshot"
+		"DOTA_Tooltip_ability_holdout_shackleshot_Description"						"Связывает цель с вражеским юнитом или деревом, находящимся позади. Если сзади цели нет дерева или юнита, то время оглушения уменьшается до 0,75 секунды. <font color='#70EA72'>Если связывает цель с вражеским юнитом, находящимся позади, то веревка будет перепрыгивать на следующие цель позади связанной цели, пока не достигнет максимума или позади никого не будет.</font>"
+		"DOTA_Tooltip_ability_holdout_shackleshot_Lore"								"Разнообразие умений владения луком у Windranger включает в себя трюк со стрелой и привязанной к ней веревкой, позволяющий остановить любую убегающую жертву."
+		"DOTA_Tooltip_ability_holdout_shackleshot_shackle_count"						"<font color='#70EA72'>МАКС. ЦЕЛЕЙ ПОЗАДИ:</font>"
+		"DOTA_Tooltip_ability_holdout_shackleshot_Note0"								"Эта способность может связать двух противников, оглушая обоих"
+		"DOTA_Tooltip_ability_holdout_shackleshot_Note1"								"Связывает с вражеским юнитом или деревом позади цели, если расстояние между ними не превышает 525/500 единиц.""
+		"DOTA_Tooltip_ability_holdout_shackleshot_Note2"								"Снаряд этой способности нельзя сбить с цели."
+		"DOTA_Tooltip_ability_holdout_shackleshot_stun_duration"						"<font color='#70EA72'>ДЛИТЕЛЬНОСТЬ СВЯЗЫВАНИЯ:</font>"
+		
+		"npc_dota_venomancer_scourge_ward_1"		"Scourge Ward"
+		"npc_dota_venomancer_scourge_ward_2"		"Scourge Ward"
+		"npc_dota_venomancer_scourge_ward_3"		"Scourge Ward"
+		"npc_dota_venomancer_scourge_ward_4"		"Scourge Ward"
+		
+		"DOTA_Tooltip_modifier_holdout_scourge_gale"								"Scourge Gale"
+		"DOTA_Tooltip_modifier_holdout_scourge_gale_Description"					"Замедлен и получает периодический урон."
+		"DOTA_Tooltip_ability_holdout_scourge_ward"									"Scourge Ward"
+		"DOTA_Tooltip_ability_holdout_scourge_ward_Description"						"<font color='#70EA72'>Призывает вард, атакующий противников и их строения. Вард имеет иммунитет к магии. Scourge Ward может использоваться как более слабая версия Venomous Gale, а его уровень эквивалентен уровню Venomous Gale.</font>"
+		"DOTA_Tooltip_ability_holdout_scourge_ward_Lore"								"Смесь давних талантов травника и новообретенных умений в создании ядов создает живое воплощение чумы."
+		"DOTA_Tooltip_ability_holdout_scourge_ward_duration"							"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_holdout_scourge_ward_ward_hp_tooltip"					"ЗДОРОВЬЕ ВАРДА:"
+		"DOTA_Tooltip_ability_holdout_scourge_ward_ward_damage_tooltip"				"УРОН ВАРДА:"
+		"DOTA_Tooltip_ability_holdout_poison_nova"									"Poison Nova"
+		"DOTA_Tooltip_ability_holdout_poison_nova_Description"						"Venomancer распыляет кольцо яда вокруг себя. Яд наносит периодический урон всем отравленным врагам, однако он не способен убить жертв, всегда оставляя им как минимум 1 единицу здоровья.\n\nУлучшается с Aghanim's Scepter."
+		"DOTA_Tooltip_ability_holdout_poison_nova_Lore"								""В кислотных джунглях существа, использующие яд — обычное дело. Но благодаря Venomancer это бедствие вышло за пределы острова Джиди."
+		"DOTA_Tooltip_ability_holdout_poison_nova_Note0"							"Урон от этой способности не смертельный (у цели останется 1 единица здоровья)."
+		"DOTA_Tooltip_ability_holdout_poison_nova_radius"							"РАДИУС:"
+		"DOTA_Tooltip_ability_holdout_poison_nova_duration"							"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_holdout_poison_nova_damage"							"УРОН:"
+		"DOTA_Tooltip_ability_holdout_poison_nova_duration_scepter"					"ДЛИТЕЛЬНОСТЬ СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_holdout_poison_nova_damage_scepter"					"УРОН СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_holdout_poison_nova_cooldown_scepter"					"ПЕРЕЗАРЯДКА СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_holdout_poison_nova_aghanim_description"				"Увеличивает урон и длительность, а также уменьшает время восстановления."
+		
+		"DOTA_Tooltip_modifier_keeper_of_the_light_mana_leak_hoard_mode"								"Health Pot"
+		"DOTA_Tooltip_modifier_keeper_of_the_light_mana_leak_hoard_mode_heal_tooltip"			"ЛЕЧЕНИЕ:"
+		
+		"DOTA_Tooltip_ability_templar_assassin_psionic_trap_holdout"				"Psionic Trap"
+		"DOTA_Tooltip_ability_templar_assassin_psionic_trap_holdout_Lore"			"Зов Сокрытого храма не позволит никому скрыться от ока темпларов."
+		"DOTA_Tooltip_ability_templar_assassin_psionic_trap_holdout_Description"	"Templar Assassin ставит загадочную ловушку, которая незаметно отслеживает передвижения противника. При срабатывании, по ее команде, ловушка замедляет противников в зоне действия на 30%%. Ловушки заряжаются энергией, что усиливает их на 5%% каждую секунду до максимума в 50%%."
+		"DOTA_Tooltip_ability_templar_assassin_psionic_trap_holdout_Note0"			"Время существования ловушек не ограничено."
+		"DOTA_Tooltip_ability_templar_assassin_psionic_trap_holdout_Note1"			"Ловушки становятся невидимыми через две секунды после появления. Они имеют иммунитет к магии и 100 очков здоровья."
+		"DOTA_Tooltip_ability_templar_assassin_psionic_trap_holdout_Note2"			"Ловушка дает обзор в пределах 400 единиц и не препятствует появлению нейтральных крипов."
+		"DOTA_Tooltip_ability_templar_assassin_psionic_trap_holdout_max_traps"		"МАКС. ЛОВУШЕК:"
+	
+		"DOTA_Tooltip_ability_keeper_of_the_light_mana_overload"					"Mana Overload"
+		"DOTA_Tooltip_ability_keeper_of_the_light_mana_overload_Description"		"Атакует врага чистой магической сущностью, нанося тяжелые повреждения. Если противник умрет во время атаки, энергия высвободится, нанося повреждения всем находящимся врагам поблизости."
+		"DOTA_Tooltip_ability_keeper_of_the_light_mana_overload_Lore"				"Эзалор взывает к Изначальной гармонии, подавляющей врагов своей силой."
+		"DOTA_Tooltip_ability_keeper_of_the_light_mana_overlord_damage"				"УРОНА ЗА ИНТЕРВАЛ:"
+		"DOTA_Tooltip_ability_keeper_of_the_light_mana_overlord_think_interval"		"ИНТЕРВАЛ:"
+		"DOTA_Tooltip_ability_keeper_of_the_light_mana_overlord_explode_damage"		"УРОН ОТ ВЗРЫВА:"
+		"DOTA_Tooltip_ability_keeper_of_the_light_mana_overlord_explode_radius"		"РАДИУС ВЗРЫВА:"
+		
+		"DOTA_Tooltip_ability_holdout_gush"											"Gush"
+		"DOTA_Tooltip_ability_holdout_gush_Description"								"Призывает струю воды, замедляющую и снижающую броню врагов, оказавшихся на её пути."
+		"DOTA_Tooltip_ability_holdout_gush_Lore"										"Во время уничтожения Затонувших островов Левиафан получил власть над самим морем."
+		"DOTA_Tooltip_ability_holdout_gush_movement_speed"							"%ЗАМЕДЛЕНИЕ:"
+		"DOTA_Tooltip_ability_holdout_gush_armor_bonus"								"СНИЖЕНИЕ БРОНИ:"
+		"DOTA_Tooltip_ability_holdout_gush_duration"								"ДЛИТЕЛЬНОСТЬ:"
+		
+		"DOTA_Tooltip_ability_holdout_multishot"										"Quelling Shot"
+		"DOTA_Tooltip_ability_holdout_multishot_Description"							"<font color='#70EA72'>Стрела Дроу разделяется на несколько стрел, летящих в форме конуса и наносящих меньше урона, но поражающих при этом несколько целей. Каждая стрела может поразить цель только один раз. Если активируется способность Frost Arrows, стрелы Quelling Shot будет преобразованы во Frost Arrows, увеличивая при этом затраты маны за каждую стрелу.</font>\n\nQuelling Shot — уникальный модификатор атаки, он не будет сочетаться с другими уникальными модификаторами атаки."
+		"DOTA_Tooltip_ability_holdout_multishot_arrow_range"							"РАССТОЯНИЕ:"
+		"DOTA_Tooltip_ability_holdout_multishot_arrow_count"							"КОЛИЧЕСТВО СТРЕЛ:"
+		"DOTA_Tooltip_ability_holdout_multishot_damage_reduction_pct"					"%СНИЖЕНИЕ УРОНА:"
+
+		"DOTA_Tooltip_ability_holdout_glacier_arrows"									"Frost Arrows"
+		"DOTA_Tooltip_ability_holdout_glacier_arrows_Description"						"Добавляет замораживающий эффект к атакам Drow Ranger, замедляя передвижение врага. <font color='#70EA72'>Первое попадание отбрасывает юнит назад.</font>\n\nFrost Arrows — уникальный модификатор атаки, он не будет сочетаться с другими уникальными модификаторами атаки."
+		"DOTA_Tooltip_ability_holdout_glacier_arrows_Lore"								"Покрытые льдом стрелы беззвучно пронзают воздух, насквозь промораживая врагов."
+		"DOTA_Tooltip_ability_holdout_glacier_arrows_Note0"								"С каждым попаданием отсчет до окончания замедления обновляется."
+		"DOTA_Tooltip_ability_holdout_glacier_arrows_frost_arrows_movement_speed"		"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:"
+		"DOTA_Tooltip_ability_holdout_glacier_arrows_duration"							"<font color='#70EA72'>ПРОДОЛЖИТЕЛЬНОСТЬ ОТТАЛКИВАНИЯ:</font>"
+		"DOTA_Tooltip_ability_holdout_glacier_arrows_slow_duration"						"ПРОДОЛЖИТЕЛЬНОСТЬ ОТТАЛКИВАНИЯ:
+		"DOTA_Tooltip_ability_holdout_glacier_arrows_knockback_distance"				"<font color='#70EA72'>РАССТОЯНИЕ ОТТАЛКИВАНИЯ:</font>"
+			
+		"DOTA_Tooltip_ability_hammer_time"								"Hammer Time"
+		"DOTA_Tooltip_ability_hammer_time_Description"			"Omniknight пассивно получает возможность нанести дополнительный урон при атаке."
+		"DOTA_Tooltip_ability_hammer_time_Lore"	            "Время молота, детка."
+        "DOTA_Tooltip_ability_hammer_time_crit_multiplier"   "%КРИТИЧЕСКИЙ УРОН:"
+	    "DOTA_Tooltip_ability_hammer_time_bonus_movespeed"   "%ЗАМЕДЛЕНИЕ СКОРОСТИ:"	
+		
+		"DOTA_Tooltip_ability_creature_split_b"       "После смерти голем распадается на двух Малых големов." 
+		"DOTA_Tooltip_ability_golem_armour_aura"       "Small Armour Aura"
+		"DOTA_Tooltip_ability_wolf_damage_aura"        "Wolf Damage Aura"
+		
+		"DOTA_Tooltip_Ability_holdout_ancient_apparition_ice_blast"			"Ice Blast"
+		"DOTA_Tooltip_ability_holdout_ancient_apparition_ice_blast_Description"			"Запускает снаряд в направлении выбранной точки на карте."
+		"DOTA_Tooltip_ice_blast_slow"										"Замедление от Ice Blast"
+		
+		"DOTA_Tooltip_ability_horde_rum"										"Horde Rum"
+		"DOTA_Tooltip_ability_horde_rum_Description"							"Kunkka опьяняет ромом врагов в небольшой области, из-за чего те могут промахнуться при атаке."
+		"DOTA_Tooltip_ability_horde_rum_miss_chance"	                        "ШАНС ПРОМАХА:"
+				
+		"DOTA_Tooltip_ability_holdout_electric_vortex"								"Electric Vortex"
+		"DOTA_Tooltip_ability_holdout_electric_vortex_Description"					"Создает воронку, <font color='#70EA72'>притягивающую всех врагов к месту нахождения Storm Spirit</font>, заодно замедляя их на 50% на 3 секунды."
+		"DOTA_Tooltip_ability_holdout_electric_vortex_Lore"							"Неистовая и неудержимая энергичность Райджина часто втягивает других в напряженную ситуацию."
+		"DOTA_Tooltip_ability_holdout_electric_vortex_duration"						"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_holdout_electric_vortex_self_slow"					"ЗАМЕДЛЕНИЕ:"
+		"DOTA_Tooltip_ability_holdout_electric_vortex_radius"						"<font color='#70EA72'>РАДИУС:</font>"
+
+		"DOTA_Tooltip_ability_sniper_assassinate_horde"								"High Calibre"
+		"DOTA_Tooltip_ability_sniper_assassinate_horde_Description"					"Снайпер."
+		"DOTA_Tooltip_ability_sniper_assassinate_horde_Lore"							"Неистовая и неудержимая энергичность Райджина часто втягивает других в напряженную ситуацию."
+		"DOTA_Tooltip_ability_sniper_assassinate_horde_duration"						"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_sniper_assassinate_horde_self_slow"					"ЗАМЕДЛЕНИЕ:"
+		"DOTA_Tooltip_ability_sniper_assassinate_horde_radius"						"<font color='#70EA72'>РАДИУС:</font>"
+		
+		"DOTA_Tooltip_ability_dark_seer_wall_of_discord"								"Wall of Discord"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_discord_Description"					"Создает стену преломленного света, которая наносит проходящим сквозь нее врагам урон."
+		"DOTA_Tooltip_ability_dark_seer_wall_of_discord_Lore"							"Пусть Dark Seer и не в состоянии вернуться домой, силой своего разума он может призвать отрывок призматической стены, вызывая смятение в рядах врагов."
+		"DOTA_Tooltip_ability_dark_seer_wall_of_discord_Note1"							"Создается стена длиной в 1000 единиц, перпендикулярная линии между вами и точкой применения заклинания."
+		"DOTA_Tooltip_ability_dark_seer_wall_of_discord_damage"							"УРОН:"
+		"DOTA_Tooltip_ability_dark_seer_wall_of_discord_duration"						"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_modifier_dark_seer_wall_of_discord_target"						"Wall of Discord"
+		"DOTA_Tooltip_modifier_dark_seer_wall_of_discord_target_Description"			"Прошёл через стену преломленного света."
+		
+		"DOTA_Tooltip_ability_dazzle_toughness_aura"								"Contagious Flamboyance"
+		"DOTA_Tooltip_ability_dazzle_toughness_aura_Description"					"Увеличивает броню всех союзников на карте."
+		"DOTA_Tooltip_ability_dazzle_toughness_aura_bonus_armor"							"ДОП. БРОНЯ:"
+
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance"									"Thundergod's Vengeance"
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance_Description"						"Бьет %num_targets% врагов молнией в большом радиусе вокруг Zeus, с приоритетом на их текущее здоровье. Thundergod's Vengeance также вызывает True Sight вокруг каждого ударенного врага. Если враг в это время невидим, то он не получает урона, однако эффект True Sight вокруг него вызывается всё равно.\n\nУлучшается с Aghanim's Scepter."
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance_Lore"								"Повелитель небес сокрушает всех, кто противостоит ему, независимо от того, близко или далеко они находятся."
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance_damage"							"УРОН:"
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance_damage_scepter"					"УРОН СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance_true_sight_radius"					"РАДИУС РАСКРЫТИЯ НЕВИДИМОСТИ:"
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance_sight_duration"					"ДЛИТЕЛЬНОСТЬ:"
+		"DOTA_Tooltip_ability_zuus_thundergods_vengeance_aghanim_description"				"Увеличивает урон."
+
+		"DOTA_Tooltip_ability_vengefulspirit_rage"									"Flightless Revenge"
+		"DOTA_Tooltip_ability_vengefulspirit_rage_Description"						"Одержимая жаждой мести, Vengeful Spirit увиличивает свою скорость атаки и передвижения.\n\nУлучшается с Aghanim's Scepter."
+		"DOTA_Tooltip_ability_vengefulspirit_rage_bonus_attack_speed"							"ДОП. СКОРОСТЬ АТАКИ:"
+		"DOTA_Tooltip_ability_vengefulspirit_rage_bonus_range_scepter"					"ДАЛЬНОСТЬ СО СКИПЕТРОМ:"
+		"DOTA_Tooltip_ability_vengefulspirit_rage_bonus_movement_speed"					"ДОП. СКОРОСТЬ ПЕРЕДВИЖЕНИЯ:"
+		"DOTA_Tooltip_ability_vengefulspirit_rage_aghanim_description"				"Увеличивает дальность атаки.
+		
+		
+		//items
+		
+		"DOTA_Tooltip_ability_item_king_rapier"	                                 "King Rapier"
+	    "DOTA_Tooltip_ability_item_king_rapier_Description"	                                 "Могущественное оружие для убийства толп врагов.\n
+	    Пассивная: Mini-Bash — дает шанс нанести дополнительный урон и кратковременно оглушить цель при каждой атаке.\nПассивная: True Strike — исключает шанс промаха при атаке, если только целью не является вражеская постройка. "
+	    "DOTA_Tooltip_ability_item_king_rapier_bonus_damage"	                                 "ДОП. УРОН:"
+	    "DOTA_Tooltip_ability_item_king_rapier_bonus_attack_speed"	                                 "ДОП. СКОРОСТЬ АТАКИ:"
+	    "DOTA_Tooltip_ability_item_king_rapier_bash_chance"	                                 "ШАНС ОГЛУШЕНИЯ:"
+	    "DOTA_Tooltip_ability_item_king_rapier_bash_damage"	                                  "УРОН ОГЛУШЕНИЯ:"
+	    "DOTA_Tooltip_ability_item_king_rapier_bash_stun"	                                  "ДЛИТЕЛЬНОСТЬ ОГЛУШЕНИЯ:"	
+	
+		"DOTA_Tooltip_ability_item_hoard_dagon"	                                          "Horde Dagon"
+	    "DOTA_Tooltip_ability_item_hoard_dagon_Description"	                              "Выпускает мощный всплеск энергии, наносящий урон в выбранной области. Улучшаемый."
+	    "DOTA_Tooltip_ability_item_hoard_dagon_damage"	                                  "УРОН:"
+	    "DOTA_Tooltip_ability_item_hoard_dagon_cooldown"	                              "ПЕРЕЗАРЯДКА:"
+	    "DOTA_Tooltip_ability_item_hoard_dagon_bonus_intellect"	                          "ДОП. ИНТЕЛЛЕКТ:"
+	    "DOTA_Tooltip_ability_item_hoard_dagon_range_tooltip"	                          "ДАЛЬНОСТЬ ПРИМЕНЕНИЯ:"
+	    "DOTA_Tooltip_ability_item_hoard_dagon_radius"	                                  "РАДИУС:"	
+
+		"DOTA_Tooltip_ability_item_hoard_magic_stick"	                                          "Horde Stick"
+	    "DOTA_Tooltip_ability_item_hoard_magic_stick_Description"	                              "За каждого убитого врага, добавляется один заряд. Восстанавливает здоровье и ману в зависимости от количества имеющихся зарядов."	    
+	    "DOTA_Tooltip_ability_item_hoard_magic_stick_cooldown"	                                  "ПЕРЕЗАРЯДКА:"
+	    "DOTA_Tooltip_ability_item_hoard_magic_stick_restore_per_charge"	                       "ВОССТАНОВЛЕНИЕ ЗА ЗАРЯД:"
+	    "DOTA_Tooltip_ability_item_hoard_magic_stick_max_charges"	                       "МАКС. ЗАРЯДОВ:"
+
+		"DOTA_Tooltip_ability_item_hoard_magic_wand"	                                          "Horde Stick"
+	    "DOTA_Tooltip_ability_item_hoard_magic_wand_Description"	                              "За каждого убитого врага, добавляется один заряд. Восстанавливает здоровье и ману в зависимости от количества имеющихся зарядов."	    
+	    "DOTA_Tooltip_ability_item_hoard_magic_wand_cooldown"	                                  "ПЕРЕЗАРЯДКА:"
+	    "DOTA_Tooltip_ability_item_hoard_magic_wand_restore_per_charge"	                       "ВОССТАНОВЛЕНИЕ ЗА ЗАРЯД:"
+	    "DOTA_Tooltip_ability_item_hoard_magic_wand_max_charges"	                       "МАКС. ЗАРЯДОВ:"
+	    "DOTA_Tooltip_ability_item_hoard_magic_wand_bonus_all_stats"	                       "БОНУС КО ВСЕМ ХАРАКТЕРИСТИКАМ:"
+	    
+	}
+}

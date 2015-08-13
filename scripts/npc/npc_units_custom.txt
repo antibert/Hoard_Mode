@@ -1141,7 +1141,7 @@
 		"Level"						"1"
 		"ModelScale" 				"1.2"
 		"CanBeDominated"			"0"
-		"ConsideredHero"			"1"
+		"IsAncient"                    "1"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -2047,8 +2047,9 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
 		"ModelScale"				"1.12"
 		"Level"						"1"
-		"ConsideredHero"			"1"
 		"CanBeDominated"			"0"
+        "IsAncient"                    "1"
+		
 		"precache"
 		{
 			"particle_folder"		"particles/units/heroes/hero_undying"
@@ -2196,7 +2197,6 @@
 		"SoundSet"					"Roshan"					        // Name of sound set.
 		"ModelScale"				"1.3"
 		"Level"						"1"
-		"ConsideredHero"			"1"
 		"CanBeDominated"			"0"
 		
 		// Abilities
@@ -2297,8 +2297,8 @@
 		"SoundSet"					"Roshan"					        // Name of sound set.
 		"ModelScale"				"1.3"
 		"Level"						"1"
-		"ConsideredHero"			"1"
 		"CanBeDominated"			"0"
+		"IsAncient"                    "1"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -2502,7 +2502,6 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
 		"ModelScale" 				"2"
-		"ConsideredHero"			"1"
 		"MinimapIcon"				"minimap_enemyicon"
 		"MinimapIconSize"			"275"
 		"CanBeDominated"			"0"
@@ -3186,7 +3185,7 @@
 		"Model"						"models/heroes/furion/furion.vmdl"	// Model.
 		"ModelScale"				"0.9"
 		"Level"						"1"
-		"ConsideredHero"			"1"
+		"IsAncient"                 "1"
 		"CanBeDominated"			"0"
 		
 		// Abilities
@@ -3383,7 +3382,7 @@
 		"Level"						"1"
 		"ModelScale" 				"1.4"
 		"CanBeDominated"			"0"
-		"ConsideredHero"			"1"
+		"IsAncient"                 "1"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -3462,7 +3461,6 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts"
 		"Level"						"4"
 		"ModelScale" 				"1.3"
-		"ConsideredHero"			"1"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -3831,7 +3829,7 @@
 		"Level"						"1"
 		"IsSummoned"				"1"
 		"CanBeDominated"			"0"
-		"ConsideredHero"			"1"
+		"IsAncient"                    "1"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -3991,7 +3989,7 @@
 		"Model"						"models/creeps/neutral_creeps/n_creep_golem_b/n_creep_golem_b.vmdl"	// Model.
 		"ModelScale"				"1.2"
 		"Level"						"1"
-		"ConsideredHero"			"1"
+		"IsAncient"                    "1"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -4502,7 +4500,7 @@
 		"Model"						"models\creeps\neutral_creeps\n_creep_furbolg\n_creep_furbolg_disrupter.vmdl"	// Model.
 		"ModelScale"				"1.3"
 		"Level"						"1"
-		"ConsideredHero"			"1"
+		"IsAncient"                    "1"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -4694,7 +4692,6 @@
 		"ModelScale"				"3"
 		"Level"						"1"
 		"CanBeDominated"			"0"
-		"ConsideredHero"			"1"
 		
 		
 		// Abilities

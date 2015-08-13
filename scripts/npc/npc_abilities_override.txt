@@ -476,6 +476,26 @@
 		}		
 	}
 	//=================================================================================================================
+	// Ability: Axe Counter Helix
+	//=================================================================================================================
+	"axe_counter_helix"
+	{
+		"AbilityDamage"					"50 65 80 95"
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"trigger_chance"			"20"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"cooldown"					"1 0.8 0.6 0.4"
+			}
+		}
+	}
+	//=================================================================================================================
 	// Tiny: Avalanche
 	//=================================================================================================================
 	"tiny_avalanche"
@@ -3260,6 +3280,153 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"max_stacks"					"7 9 11"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Shadow Shaman: Ether Shock
+	//=================================================================================================================
+	"shadow_shaman_ether_shock"
+	{
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"targets"					"3 5 7 9"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"200 300 400 500"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Shadow Shaman: Mass Serpent Ward
+	//=================================================================================================================
+	"shadow_shaman_mass_serpent_ward"
+	{
+		"AbilityCooldown"				"90"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ward_count"		"10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"full_splash_radius"	"50 75 85"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"mid_splash_radius"		"75 100 110"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"min_splash_radius"		"150 200 220"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_min"			"40 55 70"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_max"			"45 60 75"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"60.0 60.0 60.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_min_scepter"	"85 105 125"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_max_scepter"	"90 110 130"
+			}
+
+		}
+	}
+	//=================================================================================================================
+	// Ability: Warlock's Fatal Bonds
+	//=================================================================================================================
+	"warlock_fatal_bonds"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"count"						"5 7 9 11"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Warlock's Rain of Chaos / Chaotic Offering
+	//=================================================================================================================
+	"warlock_rain_of_chaos"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"5.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"golem_hp_tooltip"			"900 1200 1500"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"golem_regen_tooltip"		"25 50 75"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"number_of_golems_scepter"	"3"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"golem_hp_tooltip_scepter"			"675 900 1125"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Chen: Holy Persuasion
+	//=================================================================================================================
+	"chen_holy_persuasion"
+	{
+		"AbilityCooldown"				"40.0 40.0 40.0 40.0"
+		"AbilityManaCost"				"100 200 300 400"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_units"				"1 2 3 4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_min"			"500 700 900 1100"
 			}
 		}
 	}

@@ -98,7 +98,6 @@ function CHoard_ModeGameMode:SetRules()
 
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 5 )
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 0 )
-	GameRules:SetTimeOfDay( 0.75 )
 	GameRules:SetUseUniversalShopMode( true )
 	GameRules:SetHeroSelectionTime( 34.0 )
 	GameRules:SetPreGameTime( 23.0 )

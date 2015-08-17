@@ -96,6 +96,85 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Axe: Battle Rage
+	//=================================================================================================================
+	"axe_battle_rage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"holdout_battle_rage"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityCastAnimation"			"ACT_DOTA_SPAWN"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75 85 95 105"
+	
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target" "TARGET"
+				"ModifierName" "axe_battle_rage_modifier"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"axe_battle_rage_modifier"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target" "TARGET"
+						"EffectName"		"particles/units/heroes/hero_axe/axe_battle_hunger.vpcf"
+						"EffectAttachType"	"follow_overhead"
+					}
+				}
+	
+				"Duration" "%duration"
+	
+				"OnDealDamage"
+				{
+					"Lifesteal"
+					{
+						"Target"			"ATTACKER"
+						"LifestealPercent"	"%heal_multiplier"
+					}
+				}
+			}
+		}
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"20.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"heal_multiplier"			"10.0 13.0 17.0 20.0"
+			}
+		}
+	}
 //=================================================================================================================
 // Holdout: Death Ward
 //=================================================================================================================
@@ -328,7 +407,7 @@
 
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15.0"
+		"AbilityCooldown"				"13.0"
 		
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -341,7 +420,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"60.0 65.0 70.0 75.0"
+				"duration"				"40 40 40 40"
 			}
 			"02"
 			{
@@ -1759,17 +1838,322 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	// Venge: Rage
-	//=================================================================================================================
-	"vengefulspirit_rage"
+	"faceless_void_chronosphere_hoard"
 	{
 		// General
-		//-------------------------------------------------------------------------------------------------------------		
-        "BaseClass"                     "ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityTextureName"			"zuus_thundergods_wrath"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"faceless_void_chronosphere"
+		"AOERadius"						"%radius"
+	
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
+			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
+			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.35 0.35 0.35"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"100.0 90.0 80.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"200 250 300"
+	
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportBonus"		"50"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"700"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0 5.5 6.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration_scepter"		"6.0 8.0 10.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cooldown_scepter"		"60.0 60.0 60.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_radius"			"475"
+			}
+			// Extra
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"aura_interval"			"0.1"
+			}
+			// If you want the Chronosphere to ignore Faceless Void then keep it at 1 otherwise set it to 0
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ignore_void"			"1"
+			}
+	
+		}
+	
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_FacelessVoid.Chronosphere"
+				"Target"			"CASTER"
+			}
+	
+			"RunScript"
+			{
+				"ScriptFile"		"scripts/vscripts/heroes/hero_faceless_void/chronosphere.lua"
+				"Function"			"Chronosphere"
+				"Target"			"POINT"
+				"dummy_aura"		"modifier_chronosphere_aura_datadriven"
+			}
+		}
+	
+		"Modifiers"
+		{
+			// Cosmetic
+			"modifier_chronosphere_tooltip_datadriven"
+			{
+				"IsDebuff"		"1"
+				"IsPurgable"	"0"
+			}
+	
+			"modifier_chronosphere_aura_datadriven"
+			{
+				"Duration"	"%duration"
+	
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"	"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
+						"EffectAttachType"	"attach_origin"
+						"Target"		"TARGET"
+	
+						"ControlPoints"
+						{
+							"01"	"%radius %radius 0"
+						}
+					}
+				}
+				
+				"ThinkInterval"		"%aura_interval"
+	
+				"OnIntervalThink"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"	"TARGET"
+							"Types"		"DOTA_UNIT_TARGET_ALL"
+							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Radius"	"%radius"
+						}
+	
+						"Action"
+						{
+							"RunScript"
+							{
+								"ScriptFile"		"scripts/vscripts/heroes/hero_faceless_void/chronosphere.lua"
+								"Function"			"ChronosphereAura"
+								"Target"			"TARGET"
+								"aura_modifier"		"modifier_chronosphere_datadriven"
+								"caster_modifier"	"modifier_chronosphere_caster_datadriven"
+							}
+						}
+					}
+				}
+	
+				"States"
+				{
+					"MODIFIER_STATE_INVULNERABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_HEALTH_BAR" 	"MODIFIER_STATE_VALUE_ENABLED"				
+					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_UNSELECTABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+	
+			"modifier_chronosphere_datadriven"
+			{
+				"IsHidden"	"1"
+				"Duration"	"%aura_interval"
+	
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_chronosphere_tooltip_datadriven"
+						"Target"		"TARGET"
+					}
+				}
+	
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_chronosphere_tooltip_datadriven"
+						"Target"		"TARGET"
+					}
+				}
+	
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_FROZEN"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+	
+			"modifier_chronosphere_caster_datadriven"
+			{
+				"IsHidden"	"1"
+				"Duration"	"%aura_interval * 2"
+	
+				"EffectName"	"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
+				"EffectAttachType"	"follow_origin"
+	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"	"1000"
+				}
+	
+				"States"
+				{
+					"MODIFIER_STATE_FLYING"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	"furion_force_of_nature_hoard"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"furion_force_of_nature"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+		"AbilityCooldown"				"60 60 60 60"
+		"AbilityManaCost"				"100 100 100 100"
+		"AOERadius"						"%area_of_effect"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"area_of_effect"		"150 225 300 375"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_treants"			"1 2 3 4"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"60 60 60 60"
+			}
+	
+			// If this is set to 1, the spell wont go on cooldown and waste mana if cast on a position with no trees
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"check_trees_precast"	"0"
+			}
+		}
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_furion/furion_force_of_nature_cast.vpcf"
+			"particle" 	"particles/units/heroes/hero_furion/furion_wrath_of_nature.vpcf"			
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+			"model"		"models/heroes/furion/treant.vmdl"
+		}
+	
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_furion/force_of_nature.lua"
+				"Function"		"CheckTrees"
+				"Target"		"POINT"
+			}
+		}
+	
+		"OnSpellStart"
+		{		
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_furion/force_of_nature.lua"
+				"Function"		"ForceOfNature"
+				"Target"		"POINT"
+				"UnitName"		"npc_dota_creature_treant"
+			}	
+	
+			"DestroyTrees"
+			{
+				"Target" 		"POINT"
+				"Radius"		"%area_of_effect"
+			}
+	
+			"FireSound"
+			{
+				"EffectName"	"Hero_Furion.ForceOfNature"
+				"Target" 		"CASTER"
+			}									
+		}
+	}
+    //=================================================================================================================
+	// Sniper: Assassinate
+	//=================================================================================================================
+	"horde_sniper_assassinate"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityTextureName"			"sniper_assassinate"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"2000 2500 3000"
+		"AbilityCastPoint"				"2.0 2.0 2.0"
+		"AbilityManaCost"				"50 75 100"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -1778,51 +2162,420 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"0 0 0"
+				"range"						"2000 2500 3000"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_attack_speed"		"25 50 75"
+				"radius"					"100 300 500"
 			}
-			"03"
+			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"40 50 60"
+				"mana_cost"					"50 75 100"
 			}
-			"04"
+		}
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"OnToggleOn"
+		{
+			"ApplyModifier"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"grow_bonus_damage_pct"		"0 0 0"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_range_scepter"		 "450"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_cleave_radius_scepter"	"0"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_cleave_damage_scepter"	"0"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_building_damage_scepter"	"0"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"grow_bonus_damage_pct_scepter"		"0 0 0"
+				"Target"					"CASTER"
+				"ModifierName"				"modifier_horde_sniper_assassinate"
 			}
 
+			"ApplyModifier"
+			{
+				"Target"					"CASTER"
+				"ModifierName"				"modifier_horde_sniper_assassinate_range_dummy"
+			}
+		}
+		
+		"OnToggleOff"
+		{
+			"RemoveModifier"
+			{
+				"Target"					"CASTER"
+				"ModifierName"				"modifier_horde_sniper_assassinate"
+			}
+
+			"RemoveModifier"
+			{
+				"Target"					"CASTER"
+				"ModifierName"				"modifier_horde_sniper_assassinate_range_dummy"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_horde_sniper_assassinate"
+			{
+				"IsHidden"					"1"
+
+				"EffectName"			"particles/units/heroes/hero_sniper/sniper_crosshair.vpcf"
+				"EffectAttachType"		"follow_overhead"
+
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_sniper/sniper.lua"
+						"Function"			"AssinateProjectile"
+
+						"projectile"		"particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_sniper/sniper.lua"
+						"Function"			"AssinateProjectile"
+
+						"projectile"		"particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
+					}
+				}
+
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_sniper/sniper.lua"
+						"Function"			"AssassinateThink"
+					}
+				}
+
+				"OnAttackStart"
+				{
+					"FireSound"
+					{
+						"Target"				"CASTER"
+						"EffectName"			"Ability.AssassinateLoad"
+					}
+				}
+
+				"OnAttack"
+				{
+					"FireSound"
+					{
+						"Target"				"CASTER"
+						"EffectName"			"Ability.Assassinate"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"			"heroes/hero_sniper/sniper.lua"
+						"Function"				"AssassinateMana"
+					}
+				}
+
+				"OnAttackLanded"
+				// "%attack_damage" is set to the damage value before mitigation
+				{
+					"FireSound"
+					{
+						"Target"				"TARGET"
+						"EffectName"			"Hero_Sniper.AssassinateDamage"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"			"heroes/hero_sniper/sniper.lua"
+						"Function"				"AssassinateHit"
+					}
+				}
+			}
+
+			"modifier_horde_sniper_assassinate_range_dummy"
+			{
+				"IsHidden"			"1"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" 				"1"
+				}
+			}
 		}
 	}
 
+	//=================================================================================================================
+	// Slardar: Sprint
+	//=================================================================================================================
+	"horde_slardar_sprint"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"								"ability_datadriven"
+		"AbilityBehavior"						"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+		"AbilityTextureName" 					"slardar_sprint"
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"							"soundevents/game_sounds_heroes/game_sounds_slardar.vsndevts"
+			"particle"							"particles/units/heroes/hero_slardar/slardar_sprint.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"						"0"
+		"AbilityCastPoint"						"0.0 0.0 0.0 0.0"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"						"17"
+		
+		"AbilitySpecial"	
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"					"0"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_speed"					"30 45 60 75"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_attack_speed"			"60 80 100 120"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"8.0 9.0 10.0 11.0"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"						"CASTER"
+				"ModifierName"					"modifier_sprint"
+			}
+			"FireSound"
+			{
+				"EffectName"					"Hero_Slardar.Sprint"
+				"Target"						"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sprint"
+			{
+				"IsBuff"						"1"
+				"Duration"						"%duration"
+				"EffectName"					"particles/units/heroes/hero_slardar/slardar_sprint.vpcf"
+				"EffectAttachType"				"follow_origin"
+
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"%bonus_damage"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_speed"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+				}
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Shadow Shaman: Shackles
+	//=================================================================================================================
+	"horde_shadow_shaman_shackles"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"shadow_shaman_shackles"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"%cast_range"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityChannelTime"			"2.75 3.5 4.25 5.0"
+		"AbilityCooldown"				"16.0 16.0 16.0 16.0"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"40 40 40 40"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"140 150 160 170"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"tick_interval"		"0.1 0.1 0.1 0.1"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"channel_time"		"2.75 3.5 4.25 5.0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"total_damage"		"120 160 160 200"
+			}
+			// Extra, calculated as total_damage / channel_time * tick_interval
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_tick"	"4.3 4.6 3.8 4"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"cast_range"		"300 350 400 450"
+			}
+
+		}
+
+		"precache"
+		{
+			"particle"  "particles/status_fx/status_effect_shaman_shackle.vpcf" 	
+			"particle"	"particles/units/heroes/hero_shadowshaman/shadowshaman_shackle.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_ShadowShaman.Shackles.Cast"
+				"Target" 		"CASTER"
+			}
+
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"CASTER"
+					"Radius" 	"%cast_range"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_shackles"
+						"Target" 		"TARGET"
+						"Duration"		"%channel_time"
+					}
+				}
+			}
+		}
+
+		"OnChannelFinish"
+		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"CASTER"
+					"Radius" 	"%cast_range"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shackles"
+						"Target" 		"TARGET"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_shadow_shaman/shackles.lua"
+						"Function"		"StopSound"
+					}
+				}
+			}
+
+			
+		}
+
+		"Modifiers"
+		{
+			"modifier_shackles"
+			{
+				"IsDebuff"			"1"
+		
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"StatusEffectName" 		"particles/status_fx/status_effect_shaman_shackle.vpcf" 	   
+				"StatusEffectPriority"  "10"
+
+				"OverrideAnimation"     "ACT_DOTA_DISABLED"
+
+				"ThinkInterval"  "%tick_interval"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%damage_per_tick"
+					}
+				}
+
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_ShadowShaman.Shackles"
+						"Target" 		"TARGET"
+					}
+					
+					"AttachEffect"
+					{
+						"EffectName"			"particles/units/heroes/hero_shadowshaman/shadowshaman_shackle.vpcf"
+						"EffectAttachType"		"follow_origin"
+						"Target"				"TARGET"
+						"ControlPointEntities"
+						{
+							"TARGET"	"attach_hitloc"
+							"TARGET"	"attach_hitloc"
+							"TARGET"	"attach_hitloc"
+							"TARGET"	"attach_hitloc"
+							"TARGET"	"attach_hitloc"
+							"CASTER"	"attach_hitloc" //Attach to the hands or any desired attach point of the hero
+							"CASTER"	"attach_hitloc"
+						}
+					}
+				}
+			}
+		}
+	}
 
 }

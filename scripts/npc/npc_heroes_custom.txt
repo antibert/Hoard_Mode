@@ -9,6 +9,7 @@
 	"npc_dota_hero_axe_holdout"
 	{
 		"override_hero"			"npc_dota_hero_axe"	
+		"Ability2"              "axe_battle_rage"
 		"Ability4"				"holdout_culling_blade"
 	}
     //=================================================================================================================
@@ -118,7 +119,8 @@
 	"npc_dota_hero_treant_holdout"
 	{
 		"override_hero"			"npc_dota_hero_treant"
-		"Ability1"				"furion_force_of_nature"
+		"Ability1"				"furion_force_of_nature_hoard"
+		"Ability2"              "furion_wrath_of_nature"  
 	}
     //=================================================================================================================
 	// HERO: Dark Seer
@@ -162,12 +164,44 @@
 		"AttackRange"           "700"
 	}
 	//=================================================================================================================
-	// HERO: Venge
+	// HERO: Witch Doctor
 	//=================================================================================================================
 	"npc_dota_hero_witch_doctor_holdout"
 	{
 		"override_hero"			"npc_dota_hero_witch_doctor"
 		"Ability4"				"holdout_death_ward"
+	}
+	//=================================================================================================================
+	// HERO: Sniper
+	//=================================================================================================================
+	"npc_dota_hero_sniper_holdout"
+	{
+		"override_hero"			"npc_dota_hero_sniper"
+		"Ability4"				"horde_sniper_assassinate"
+	}
+	//=================================================================================================================
+	// HERO: Slardar
+	//=================================================================================================================
+	"npc_dota_hero_slardar_holdout"
+	{
+		"override_hero"			"npc_dota_hero_slardar"
+		"Ability1"				"horde_slardar_sprint"
+	}
+	//=================================================================================================================
+	// HERO: Shadow Sharman
+	//=================================================================================================================
+	"npc_dota_hero_shadow_shaman_holdout"
+	{
+		"override_hero"			"npc_dota_hero_shadow_shaman"
+		"Ability3"				"horde_shadow_shaman_shackles"
+	}
+	//=================================================================================================================
+	// HERO: Void
+	//=================================================================================================================
+	"npc_dota_hero_faceless_void_holdout"
+	{
+		"override_hero"			"npc_dota_hero_faceless_void"
+		"Ability4"				"faceless_void_chronosphere_hoard"
 
 	}
 }

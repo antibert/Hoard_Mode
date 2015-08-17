@@ -197,8 +197,8 @@
 	//"item_recipe_diffusal_blade_2"	"REMOVE"
 	//"item_diffusal_blade"			"REMOVE"
 	//"item_diffusal_blade_2"			"REMOVE"
-	//"item_recipe_ethereal_blade"	"REMOVE"
-	//"item_ethereal_blade"			"REMOVE"
+	"item_recipe_ethereal_blade"	"REMOVE"
+	"item_ethereal_blade"			"REMOVE"
 	//"item_recipe_soul_ring"			"REMOVE"
 	//"item_soul_ring"				"REMOVE"
 	//"item_recipe_arcane_boots"		"REMOVE"
@@ -483,13 +483,13 @@
 	//=================================================================================================================
 	"axe_counter_helix"
 	{
-		"AbilityDamage"					"50 65 80 95"
+		"AbilityDamage"					"50 75 100 125"
 		"AbilitySpecial"
 		{
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"trigger_chance"			"20"
+				"trigger_chance"			"17"
 			}
 			"03"
 			{
@@ -794,22 +794,6 @@
 	"sniper_assassinate"
 	{
 			"AbilityDamage"					"400 600 800"
-	}
-	//=================================================================================================================
-	// Ability: Slardar Sprint
-	//=================================================================================================================
-	"slardar_sprint"
-	{
-		"AbilityCooldown"				"23"
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"0"
-			}
-        }
 	}	
 	//=================================================================================================================
 	// Ability: Slardar Slithereen Crush
@@ -818,7 +802,7 @@
 	{
 		"AbilityDuration"				"1.6 1.9 2.2 2.5"
 		
-		"AbilityDamage"					"100 250 400 550"
+		"AbilityDamage"					"200 300 400 500"
 		
 		"AbilitySpecial"
 		{
@@ -859,7 +843,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"chance"				"30 40 50 60"
+				"chance"				"15 17 19 21"
 			}
 			"02"
 			{
@@ -982,6 +966,7 @@
 	//=================================================================================================================
 	"morphling_adaptive_strike"
 	{
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 		"AbilitySpecial"
 		{
 			"01"
@@ -1975,13 +1960,14 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"static_remnant_damage"			"180 210 250 300"
+				"static_remnant_damage"			"180 230 280 330"
 			}
 		}
 	}
 	"storm_spirit_electric_vortex"
 	{
 		"AbilityDuration"				"2 3 4 5"
+		"AbilityCooldown"               "23 23 23 23"
 	}
 	"storm_spirit_overload"
 	{
@@ -2232,22 +2218,12 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"40 65 90 115"
+				"damage"					"50 80 115 150"
 			}
-		}
-	}
-	//=================================================================================================================
-	// Venomancer: Plague Ward
-	//=================================================================================================================
-	"venomancer_plague_ward"
-	{
-		"AbilityCooldown"				"6.0"
-		"AbilitySpecial"
-		{
-			"01"
+			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"40.0"
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed"			"-10 -13 -16 -19"
 			}
 		}
 	}
@@ -2562,46 +2538,7 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	// Faceless Void: Chronosphere
-	//=================================================================================================================
-	"faceless_void_chronosphere"
-	{
-		"AbilityCooldown"				"60.0 45.0 30.0"        
-		"AbilitySpecial"
-		{
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"5 6.5 8"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_scepter"		"10 13 16"
-			}
-		    "04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown_scepter"		"50.0 35.0 20.0"
-			}
-		}
-	}
 
-	//=================================================================================================================
-	// Faceless Void: Time Lock
-	//=================================================================================================================
-	"faceless_void_time_lock"
-	{
-		"AbilitySpecial"
-		{
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"100 200 300 400"
-			}
-		}
-	}
 	//=================================================================================================================
 	// Faceless Void: Time Walk
 	//=================================================================================================================
@@ -2614,6 +2551,20 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"tooltip_range"		"800 1100 1400 1700"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Faceless Void: Time Lock
+	//=================================================================================================================
+	"faceless_void_time_lock"
+	{
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"100 200 300 400"
 			}
 		}
 	}
@@ -2664,13 +2615,26 @@
 	//=================================================================================================================
 	"tidehunter_anchor_smash"
 	{
-		"AbilityDamage"					"110 190 310 475"
 		"AbilitySpecial"
 		{
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"radius"				"430"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Tidehunter: Kraken Shell
+	//=================================================================================================================
+	"tidehunter_kraken_shell"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"		"10 20 30 40"
 			}
 		}
 	}
@@ -2970,67 +2934,42 @@
 			}
 		}
 	}
+
 	//=================================================================================================================
-	// Furion: Force of Nature
+	// Furion: Wrath of Nature
 	//=================================================================================================================
-	"furion_force_of_nature"
+	"furion_wrath_of_nature"
 	{
-		"AbilityCooldown"				"40 40 40 40"
+		"MaxLevel"						"4"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityCooldown"				"60 50 40 30"
+		"AbilityManaCost"				"175 225 275"
 		"AbilitySpecial"
 		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_targets"			"5 7 9 11"
+			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_treants"			"3 4 5 6"
+				"damage"				"100 125 150 175"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"40 48 54 60"
-			}
-			"04"
-			{
 				"var_type"				"FIELD_INTEGER"
-				"treant_health_tooltip"				"550"
+				"damage_percent_add"	"7"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"treant_min_dmg_tooltip"				"22"
+				"max_targets_scepter"	"10 14 18 22"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"treant_max_dmg_tooltip"				"28"
-			}
-		}
-	}
-	//=================================================================================================================
-	// Treant Protector: Leech Seed
-	//=================================================================================================================
-	"treant_leech_seed"
-	{
-		"AbilityManaCost"				"75"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-	
-        	"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"leech_damage"					"50 75 110 140"
-			}		
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"radius"						"600"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"duration"						"6"
+				"damage_scepter"		"200 225 250 275"
 			}
 		}
 	}
@@ -3190,6 +3129,102 @@
 		}
 	}
 	//=================================================================================================================
+	// Lifestealer: Rage
+	//=================================================================================================================
+	"life_stealer_rage"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed_bonus"	"100 135 165 200"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Lifestealer: Infest
+	//=================================================================================================================
+	"life_stealer_infest"
+	{
+		"AbilityCooldown"				"100 100 100"
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"300 400 500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"infest_scepter_duration"		"8"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_increase_pct"				"50"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Elder Titan: Echo Stomp
+	//=================================================================================================================
+	"elder_titan_echo_stomp"
+	{
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"stomp_damage"					"100 135 170 200"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Elder Titan: Echo Stomp (Spirit Version)
+	//=================================================================================================================
+	"elder_titan_echo_stomp_spirit"
+	{
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"stomp_damage"					"100 135 170 200"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Elder Titan: Ancestral Spirit
+	//=================================================================================================================
+	"elder_titan_ancestral_spirit"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"pass_damage"					"150 185 220 250"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Elder Titan: Earth Splitter
+	//=================================================================================================================
+	"elder_titan_earth_splitter"
+	{
+		"AbilityCooldown"				"80.0 80.0 80.0"
+		"AbilitySpecial"
+		{
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_pct"				"45"
+			}
+		}
+	}
+	//=================================================================================================================
 	// Ursa: Earthshock
 	//=================================================================================================================
 	"ursa_earthshock"
@@ -3225,6 +3260,14 @@
 	"earthshaker_echo_slam"
 	{
 		"AbilityCooldown"				"110.0 100.0 90.0"
+	    "AbilitySpecial"
+		{
+				"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"echo_slam_echo_damage"		"60 80 100"
+			}
+		}
 	}
 	//=================================================================================================================
 	// Ability: Earthshaker Fissure
@@ -3292,7 +3335,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"targets"					"3 5 7 9"
+				"targets"					"6 8 10 13"
 			}
 			"05"
 			{
@@ -3337,7 +3380,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_max"			"45 60 75"
+				"damage_max"			"65 80 100"
 			}
 			"07"
 			{
@@ -3352,7 +3395,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_max_scepter"	"90 110 130"
+				"damage_max_scepter"	"130 150 170"
 			}
 
 		}
@@ -3805,13 +3848,13 @@
 	//=================================================================================================================
 	"item_tranquil_boots"
 	{
-		"AbilityCooldown"				"0.3"
+		"AbilityCooldown"				"0.6"
 		"AbilitySpecial"
 		{
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"break_time"			"0.3"
+				"break_time"			"0.6"
 			}
 		}
 	}

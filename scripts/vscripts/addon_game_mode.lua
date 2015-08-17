@@ -73,7 +73,9 @@ end
 
 function CHoard_ModeGameMode:InitGameMode()
 	print( "Template addon is loaded." )
-	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )
+	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )	
+	PlayerResource:SetCustomTeamAssignment( 0, DOTA_TEAM_GOODGUYS )
+    GameRules:SetCustomGameSetupTimeout( 0 )
 end
 
 -- Evaluate the state of the game
@@ -97,6 +99,8 @@ function CHoard_ModeGameMode:SetRules()
 	self.m_VictoryMessages[DOTA_TEAM_BADGUYS]  = "#VictoryMessage_BadGuys"
 	self.m_VictoryMessages[DOTA_TEAM_GOODGUYS]  = "#VictoryMessage_GoodGuys"
 
+	
+	
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 5 )
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 0 )
 	GameRules:SetUseUniversalShopMode( true )

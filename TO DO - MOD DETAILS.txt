@@ -2,10 +2,20 @@ Next Update Patch Notes:
 
 Alpha 2.3
 General:
+-- There is no longer a team selection screen before the game starts
+-- Bot lane now spawns "Radiant Defenders" rather than standard creeps, 
+these units have low attack damage but high resistance to damage. 
+a squad of 3 will spawn every 70 seconds after 17 seconds into the game.
+-- A couple of radiant defenders now spawn and hang around by the ancient ready to defend it 
+(don't let those cute little fellas die)
+-- Furthest Dire jungle camp now spawns "Toll Masters" which provide large gold bounties when farmed,
+they will stack up in their camp as time goes on until the camp reaches maximum capacity at 20 minutes
+-- Shrike HP increased by 300 and gold bounty increased greatly
 
 Items:
 -- Etheral Blade renamed "Ether Cannon" and now has a large AOE
 -- Dagon Recipe cost reduced from 1000 to 600 gold
+-- Bloodstone charges increased from 10 to 12
 
 Heroes:
 //Sniper:
@@ -19,12 +29,14 @@ there is no incoming damage penalty
 -- Slardar Bash chance reduced from "30 40 50 60" to "15 17 19 21" 
 //Shadow Sharman:
 -- Shackles now disable all units in an AOE around Shadow Sharman
-
+-- Ether Shock mana cost increased from "95 105 135 160" to "100 135 165 200"
+//Ember Spirit: 
+-- Fire remnant max charges increased from 3 to 6
+-- Fire remnant charge restore time decreased from 35 to 15 seconds
 
 MOD STUFF TO DO:
 -- Fix/reduce broken/too loud sounds for Shadow Shaman Shackles and storm spirit pull, possibly sniper ulti also
 -- Zombie + skeltons at 40 mins
--- ADD Some static friendly creep spawns in base to defend
 -- Radiance not working on ancient type mobs
 
 Bigger Jobs:
@@ -33,10 +45,7 @@ Bigger Jobs:
 (The towers in question are currently called "npc_dota_hoard_tower" on the 4p map and "npc_dota_hoard_tower_easy" on the 5p map.
 
 2. The bot lane friendly creep spawn stops spawning when there is a certain number of units lingering around
-(Important to stop lag issues from banking them too much - 
-If I need to put another scipted spawner there which spawns radiant creeps instead of the default dota spawner
- let me know - If it becomes a scripted spawner though I assume destorying dire rax will no longer give you super creeps -
- I want to keep that feature in the game so that will need to be coded back in if it stops)
+(Important to stop lag issues from banking them too much - It would be nice if the friendly units could be upgraded by killing rax/purchasing upgrades)
  
 3. npc_dota_creature_roshan needs to be a more viable objective:
 -- Roshan drops rapiers? (I'll make rapiers no longer purchasable from the shop) 
@@ -61,6 +70,8 @@ KV STUFF:
 
 //ABILITES:
 
+-- Ursa fury swipes does increasing %hp based damage instead of a static damage increment
+
 -- A rework of Dazzle's Poison Touch (Make it hit multiple targets or have aoe would be good)
 
 -- Magnus Skewer effects creeps (I tried doing this myself, again should be easy but I failed)
@@ -73,7 +84,7 @@ KV STUFF:
 
 -- Brewmaster Ultimate spawns spirit pandas to control (like visiage familiars) Earth Panda lvl 1, Wind Panda lvl 2, Fire panda on lvl 3
 
--- PA Dagger shoots through creeps dealing damage to all the creeps it passes through 
+-- PA Dagger does something cool, like fans out in front of her like whirling axes or something, idk.
 
 -- Invoker forge spirit melting strike hits creeps
 

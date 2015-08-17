@@ -698,6 +698,19 @@ Timers:CreateTimer("largebears", {
 
 
 -- Neutral Camps/Map Spawns
+
+    Timers:CreateTimer(17, function()
+		Spawners:SpawnFriend()
+		return 70.0
+    end)	
+	Timers:CreateTimer(0, function()
+		Spawners:SpawnFriend2()
+		return 3600.0
+    end)
+	Timers:CreateTimer(0, function()
+		Spawners:SpawnFriend3()
+		return 3600.0
+    end)
 	
 	Timers:CreateTimer("money", {
 		useGameTime = true,
@@ -714,9 +727,6 @@ Timers:CreateTimer("largebears", {
 	
 	
 	end
-
-
-
 
 
 

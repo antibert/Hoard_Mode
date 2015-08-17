@@ -1,7 +1,6 @@
 Next Update Patch Notes:
 
 Alpha 2.3
-
 General:
 
 Items:
@@ -13,22 +12,20 @@ Heroes:
 -- Replaced assassinate with High Caliber: 
 A togglable ability that allows sniper's attacks to hit all units in a radius around his 
 primary target - costs mana
-
 //Slardar:
 -- Replaced sprint with Slither: Slardar gains bonus attack speed as well as movement speed,
 there is no incoming damage penalty
 -- Slithereen Crush damage rescaled from "100 250 400 550" to "200 300 400 500"
 -- Slardar Bash chance reduced from "30 40 50 60" to "15 17 19 21" 
-
 //Shadow Sharman:
 -- Shackles now disable all units in an AOE around Shadow Sharman
 
 
 MOD STUFF TO DO:
+-- Fix/reduce broken/too loud sounds for Shadow Shaman Shackles and storm spirit pull, possibly sniper ulti also
 -- Zombie + skeltons at 40 mins
 -- ADD Some static friendly creep spawns in base to defend
 -- Radiance not working on ancient type mobs
-
 
 Bigger Jobs:
 
@@ -59,7 +56,6 @@ I tried just using different spawners of either map. but that just breaks the LU
 KV STUFF:
 
 //ITEMS:
-
 
 -- New Consumable 7/8th slot item
 

@@ -2,22 +2,44 @@ Next Update Patch Notes:
 
 Alpha 2.3
 General:
--- There is no longer a team selection screen before the game starts
 -- Bot lane now spawns "Radiant Defenders" rather than standard creeps, 
 these units have low attack damage but high resistance to damage. 
-a squad of 3 will spawn every 70 seconds after 17 seconds into the game.
+a squad of 3 will spawn every 60 seconds after 17 seconds into the game.
 -- A couple of radiant defenders now spawn and hang around by the ancient ready to defend it 
 (don't let those cute little fellas die)
 -- Furthest Dire jungle camp now spawns "Toll Masters" which provide large gold bounties when farmed,
 they will stack up in their camp as time goes on until the camp reaches maximum capacity at 20 minutes
+-- Various mobs now spawn a random amount between two values,
+(there is only a different of 1 or 2 units per spawn at most)
 -- Shrike HP increased by 300 and gold bounty increased greatly
+-- Satyr Warrior gold bounty increased by 10
+-- Slightly lowered default camera height
+-- Increased hero selection time by 6 seconds
 
 Items:
 -- Etheral Blade renamed "Ether Cannon" and now has a large AOE
 -- Dagon Recipe cost reduced from 1000 to 600 gold
 -- Bloodstone charges increased from 10 to 12
+-- Observer Ward is now visible in the shop but costs 350 gold 
+(you know why sniper pickers - you sneaky mother****ers)
+-- Various items completely disabled from the game (you could search them in the shop thing before to find them)
+-- Cheese is now purchasable from the shop, it costs 1000 gold 
 
 Heroes:
+//Added Naga Siren
+Changes:
+-- Mirror Images illusion duration increased from 30 to 40 seconds
+-- Mirror Images illusion outgoing damage increased from "-80 -75 -70 -65" % to -50% on all levels
+-- Mirror Images Illusion incoming damage decreased from "500 400 300 200" % to 100% all levels
+-- Mirror Images illusion count rescaled from 3 all levels to "1 2 3 4"
+-- Song of the Siren duration increased from 7 to 10 seconds
+-- Rip Tide damage increased from "130 160 190 220" to "150 220 310 400"
+//Added Legion Commander
+Changes:
+-- Duel replaced with Gladiators Unite from Holdout (with some adjustments)
+//Added Mirana
+Changes:
+-- Replaced ultimate with Moonfall and Arrow from Holdout with some adjustments
 //Sniper:
 -- Replaced assassinate with High Caliber: 
 A togglable ability that allows sniper's attacks to hit all units in a radius around his 
@@ -30,12 +52,19 @@ there is no incoming damage penalty
 //Shadow Sharman:
 -- Shackles now disable all units in an AOE around Shadow Sharman
 -- Ether Shock mana cost increased from "95 105 135 160" to "100 135 165 200"
+-- Ether Shock targets reduced from "6 8 10 13" to "6 7 8 9"
 //Ember Spirit: 
 -- Fire remnant max charges increased from 3 to 6
 -- Fire remnant charge restore time decreased from 35 to 15 seconds
+//Treant Protector:
+-- Leech seed is back by popular demand! (I coulden't add nature's call as a 5th ability)
+-- Living armour block instances increased from "10 11 12 13" to "10 15 20 25"
+//Keeper of the Light:
+-- Spirit Form illuminate damage per second reduced from 200 to 120 and range reduced to vanilla
+
 
 MOD STUFF TO DO:
--- Fix/reduce broken/too loud sounds for Shadow Shaman Shackles and storm spirit pull, possibly sniper ulti also
+-- Fix/reduce noise level of Shadow Shaman Shackles and storm spirit pull, possibly sniper ulti also
 -- Zombie + skeltons at 40 mins
 -- Radiance not working on ancient type mobs
 
@@ -52,9 +81,6 @@ Bigger Jobs:
 -- Following the Roshan Theme, I'll make some big mobs that hang around in spots on the map, 
 I'll need help getting them to drop stuff (again rapiers or whatever, I need to refine this idea)
 
-4. Randomly detirmined spawns (Some of the spawners spawn a number of units randomly between two integers - 
-would be nice to expand this to a few randomly detirmined mob types also) 
-
 5. Big Job: Different spawns for differnet maps (Currently both maps use the same spawners and spawn the same stuff. 
 I don't know how to change what a spawner is spawning based on the map - 
 I tried just using different spawners of either map. but that just breaks the LUA)
@@ -69,6 +95,10 @@ KV STUFF:
 -- New Consumable 7/8th slot item
 
 //ABILITES:
+
+-- Batrider Lasso grabs an AOE of targets
+
+-- Naga Ensnare is AOE (like earthbind)
 
 -- Ursa fury swipes does increasing %hp based damage instead of a static damage increment
 

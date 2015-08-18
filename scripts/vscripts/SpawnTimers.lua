@@ -701,7 +701,7 @@ Timers:CreateTimer("largebears", {
 
     Timers:CreateTimer(17, function()
 		Spawners:SpawnFriend()
-		return 70.0
+		return 60.0
     end)	
 	Timers:CreateTimer(0, function()
 		Spawners:SpawnFriend2()

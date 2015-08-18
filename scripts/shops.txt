@@ -5,11 +5,13 @@
 		"item"		"item_flask"
 		"item"      "item_tango"
 		"item"		"item_greater_salve"
+		"item"      "item_ward_observer"
 		"item"		"item_tpscroll"
 		"item"		"item_bottle"
 		"item"		"item_enchanted_mango"
 		"item"		"item_courier"
 		"item"		"item_flying_courier"
+		"item"      "item_cheese"
 	}
 
 	"attributes"
@@ -141,6 +143,7 @@
 		"item"		"item_butterfly"
 		"item"		"item_rapier"
 		"item"		"item_abyssal_blade"
+		"item"      "item_horde_demon_sabre"
 		"item"      "item_king_rapier"
 	}
 	

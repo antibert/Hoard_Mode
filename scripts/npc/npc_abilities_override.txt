@@ -39,7 +39,7 @@
 	//"item_ring_of_regen"			"REMOVE"
 	//"item_sobi_mask"				"REMOVE"
 	//"item_boots"					"REMOVE"
-	//"item_gem"						"REMOVE"
+	"item_gem"						"REMOVE"
 	//"item_cloak"					"REMOVE"
 	//"item_talisman_of_evasion"		"REMOVE"
 	//"item_cheese"					"REMOVE"
@@ -49,10 +49,10 @@
 	//"item_ghost"					"REMOVE"
 	//"item_clarity"					"REMOVE"
 	//"item_flask"					"REMOVE"
-	//"item_dust"						"REMOVE"
+	"item_dust"						"REMOVE"
 	//"item_bottle"					"REMOVE"
 	//"item_ward_observer"			"REMOVE"
-	//"item_ward_sentry"				"REMOVE"
+	"item_ward_sentry"				"REMOVE"
 	//"item_tango"					"REMOVE"
 	//"item_tango_single"				"REMOVE"
 	//"item_courier"					"REMOVE"
@@ -171,8 +171,8 @@
 	//"item_lesser_crit"				"REMOVE"
 	//"item_recipe_armlet"			"REMOVE"
 	//"item_armlet"					"REMOVE"
-	//"item_recipe_invis_sword"		"REMOVE"
-	//"item_invis_sword"				"REMOVE"
+	"item_recipe_invis_sword"		"REMOVE"
+	"item_invis_sword"				"REMOVE"
 	//"item_recipe_sange_and_yasha"	"REMOVE"
 	//"item_sange_and_yasha"			"REMOVE"
 	//"item_recipe_satanic"			"REMOVE"
@@ -208,11 +208,11 @@
 	//"item_ancient_janggo"			"REMOVE"
 	//"item_recipe_medallion_of_courage"	"REMOVE"
 	//"item_medallion_of_courage"		"REMOVE"
-	//"item_smoke_of_deceit"			"REMOVE"
+	"item_smoke_of_deceit"			"REMOVE"
 	//"item_recipe_veil_of_discord"	"REMOVE"
 	//"item_veil_of_discord"			"REMOVE"
-	//"item_recipe_rod_of_atos"		"REMOVE"
-	//"item_rod_of_atos"				"REMOVE"
+	"item_recipe_rod_of_atos"		"REMOVE"
+	"item_rod_of_atos"				"REMOVE"
 	//"item_recipe_abyssal_blade"		"REMOVE"
 	//"item_abyssal_blade"			"REMOVE"
 	//"item_recipe_heavens_halberd"	"REMOVE"
@@ -221,7 +221,7 @@
 	//"item_ring_of_aquila"			"REMOVE"
 	//"item_recipe_tranquil_boots"	"REMOVE"
 	//"item_tranquil_boots"			"REMOVE"
-	//"item_shadow_amulet"			"REMOVE"
+	"item_shadow_amulet"			"REMOVE"
   	//"item_halloween_candy_corn"		"REMOVE"
 	//"item_mystery_hook"				"REMOVE"
 	//"item_mystery_arrow"			"REMOVE"
@@ -252,16 +252,18 @@
     //"item_lotus_orb"				"REMOVE"
     //"item_recipe_crimson_guard"		"REMOVE"
     //"item_crimson_guard"			"REMOVE"
-    //"item_recipe_silver_edge"		"REMOVE"
-    //"item_silver_edge"				"REMOVE"
+    "item_recipe_silver_edge"		"REMOVE"
+    "item_silver_edge"				"REMOVE"
     //"item_recipe_octarine_core"		"REMOVE"
     //"item_octarine_core"			"REMOVE"
     //"item_recipe_solar_crest"		"REMOVE"
     //"item_solar_crest"				"REMOVE"
     //"item_recipe_guardian_greaves"	"REMOVE"
     //"item_guardian_greaves"			"REMOVE"
-    //"item_recipe_glimmer_cape"		"REMOVE"
+    "item_recipe_glimmer_cape"		"REMOVE"
     //"item_glimmer_cape"				"REMOVE"
+    "item_horde_demon_sabre"				"REMOVE"
+	
 	//Abilities 
 
 	//=================================================================================================================
@@ -1356,6 +1358,72 @@
 		}
 	}
 	//=================================================================================================================
+	// Naga Siren: Mirror Image
+	//=================================================================================================================
+	"naga_siren_mirror_image"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"illusion_duration"			"40.0 40.0 40.0 40.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"outgoing_damage"			"-50 -50 -50 -50"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"outgoing_damage_tooltip"	"50 50 50 50"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"incoming_damage"			"100 100 100 100"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tooltip_incoming_damage_total_pct"			"100 100 100 100"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"images_count"				"1 2 3 4"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"invuln_duration"			"0.3"
+			}			
+		}
+	}
+	//=================================================================================================================
+	// Naga Siren: Rip Tide
+	//=================================================================================================================
+	"naga_siren_rip_tide"
+	{
+		"AbilityDamage"					"150 220 310 400"
+	}
+	//=================================================================================================================
+	// Naga Siren: Song of the Siren
+	//=================================================================================================================
+	"naga_siren_song_of_the_siren"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"10.0 10.0 10.0"
+			}
+		}
+	}
+	
+	//=================================================================================================================
 	// Ability: Phantom Lancer's Spirit Lance
 	//=================================================================================================================
 	"phantom_lancer_spirit_lance"
@@ -1680,41 +1748,6 @@
 		}
 	}
 	//=================================================================================================================
-	// Ability: Skeleton King
-	//=================================================================================================================
-	"skeleton_king_hellfire_blast"
-	{
-		"AbilityDamage"					"200 300 400 500"
-		"AbilityManaCost"				"30 45 60 75"
-		"AbilitySpecial"
-		{
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"blast_dot_damage"		"50 75 100 125"
-			}
-		}
-	}
-	//=================================================================================================================
-	// Keeper of the Light: Illuminate
-	//=================================================================================================================
-	"keeper_of_the_light_illuminate"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_per_second"		"100.0 100.0 100.0 100.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"1550"
-			}
-		}
-	}
-	//=================================================================================================================
 	// Keeper of the Light: Spirit Form Illuminate
 	//=================================================================================================================
 	"keeper_of_the_light_spirit_form_illuminate"
@@ -1724,12 +1757,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_per_second"		"200.0 200.0 200.0 200.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"2000"
+				"damage_per_second"		"120.0 120.0 120.0 120.0"
 			}
 		}
 	}
@@ -2993,6 +3021,20 @@
 		}
 	}
 	//=================================================================================================================
+	// Treant Protector: Leech Seed
+	//=================================================================================================================
+	"treant_leech_seed"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"leech_damage"					"100 150 200 250"
+			}		
+		}
+	}
+	//=================================================================================================================
 	// Treant Protector: Living Armor
 	//=================================================================================================================
 	"treant_living_armor"
@@ -3002,7 +3044,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_count"		"10 11 12 13"
+				"damage_count"		"10 15 20 25"
 			}
 			"02"
 			{
@@ -3355,7 +3397,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"targets"					"6 8 10 13"
+				"targets"					"6 7 8 9"
 			}
 			"05"
 			{
@@ -3668,6 +3710,21 @@
 		"ItemCost"                      "900"
 	}
 	//=================================================================================================================
+	// Obs Ward
+	//=================================================================================================================
+	"item_ward_observer"
+	{
+		"ItemCost"                      "350"
+	}
+	//=================================================================================================================
+	// Cheese
+	//=================================================================================================================
+	"item_cheese"
+	{
+		"ItemCost"                      "1000"
+		"ItemPurchasable"				"1"
+	}
+	//=================================================================================================================
 	// Javelin
 	//=================================================================================================================
 	"item_javelin"
@@ -3897,15 +3954,19 @@
 			}	
 		}
 	}
+   	//=================================================================================================================
+	// Recipe: Cyclone
+	//=================================================================================================================
+	"item_recipe_cyclone"
+	{
+		"ItemCost"						"150"	
+	}
+	
 	//=================================================================================================================
 	// Cyclone
 	//=================================================================================================================
 	"item_cyclone"
 	{
 		"AbilityCooldown"				"10.0"
-	}
-   "item_recipe_cyclone"
-	{
-		"ItemCost"						"150"	
 	}
 }

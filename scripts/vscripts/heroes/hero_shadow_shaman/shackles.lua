@@ -1,4 +1,4 @@
- function StopSound( event )
-local target = event.caster
-target:StopSound("Hero_ShadowShaman.Shackles")
+function StopSound( keys )
+	local caster = keys.caster
+	caster:StopSound("Hero_ShadowShaman.Shackles")
 end

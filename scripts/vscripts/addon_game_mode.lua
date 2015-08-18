@@ -11,6 +11,10 @@ require('spawners')
 function Precache( context )
 	PrecacheResource( "particle_folder", "particles/frostivus_gameplay", context )
     PrecacheItemByNameSync("item_king_rapier", context)
+    PrecacheItemByNameSync("item_horde_demon_sabre", context)
+    PrecacheItemByNameSync("item_horde_ethereal_blade", context)
+    PrecacheItemByNameSync("item_horde_ghost", context)
+    PrecacheItemByNameSync("item_hoard_dagon", context)
 	PrecacheUnitByNameSync("npc_dummy_blank", context)	
 	PrecacheUnitByNameSync("npc_dota_creature_ancient_apparition", context)
 	PrecacheUnitByNameSync("npc_dota_creature_gnoll_assassin", context)
@@ -74,8 +78,6 @@ end
 function CHoard_ModeGameMode:InitGameMode()
 	print( "Template addon is loaded." )
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, "GlobalThink", 2 )	
-	PlayerResource:SetCustomTeamAssignment( 0, DOTA_TEAM_GOODGUYS )
-    GameRules:SetCustomGameSetupTimeout( 0 )
 end
 
 -- Evaluate the state of the game
@@ -99,12 +101,10 @@ function CHoard_ModeGameMode:SetRules()
 	self.m_VictoryMessages[DOTA_TEAM_BADGUYS]  = "#VictoryMessage_BadGuys"
 	self.m_VictoryMessages[DOTA_TEAM_GOODGUYS]  = "#VictoryMessage_GoodGuys"
 
-	
-	
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 5 )
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 0 )
 	GameRules:SetUseUniversalShopMode( true )
-	GameRules:SetHeroSelectionTime( 34.0 )
+	GameRules:SetHeroSelectionTime( 40.0 )
 	GameRules:SetPreGameTime( 23.0 )
 	GameRules:SetPostGameTime( 120.0 )
 	GameRules:SetTreeRegrowTime( 60.0 )
@@ -117,11 +117,13 @@ function CHoard_ModeGameMode:SetRules()
 	GameRules:GetGameModeEntity():SetRuneEnabled( 3, false ) --Invis Rune
 	GameRules:GetGameModeEntity():SetRuneEnabled( 4, true ) --Regen
 	GameRules:GetGameModeEntity():SetRuneEnabled( 5, true ) --Bounty
+	GameRules:GetGameModeEntity():SetRuneEnabled( 6, true ) -- ?
+	GameRules:GetGameModeEntity():SetRuneEnabled( 7, true ) -- ?
 	GameRules:GetGameModeEntity():SetFixedRespawnTime(23)
 	GameRules:GetGameModeEntity():SetFountainPercentageHealthRegen( 4 )
 	GameRules:GetGameModeEntity():SetFountainPercentageManaRegen( 6 )
 	GameRules:GetGameModeEntity():SetFountainConstantManaRegen( 1 )
-	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1300 )	
+	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1200 )	
 end
 
 -- This function is called once and only once when the game begins

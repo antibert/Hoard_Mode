@@ -97,6 +97,23 @@
 		"Ability6"              "skeleton_king_reincarnation"
 		"Ability7"				"attribute_bonus"
 	}
+	//=================================================================================================================
+	// HERO: Mirana
+	//=================================================================================================================
+	"npc_dota_hero_mirana_holdout"
+	{
+		"override_hero"			"npc_dota_hero_mirana"
+		"Ability2"				"holdout_mirana_arrow"
+		"Ability4"				"mirana_moonfall"
+	}
+	//=================================================================================================================
+	// HERO: Leigon Commander
+	//=================================================================================================================
+	"npc_dota_hero_legion_commander_holdout"
+	{
+		"override_hero"			"npc_dota_hero_legion_commander"
+		"Ability4"					"holdout_gladiators_unite"									
+	}
     //=================================================================================================================
 	// HERO: Kunkka
 	//=================================================================================================================
@@ -119,8 +136,7 @@
 	"npc_dota_hero_treant_holdout"
 	{
 		"override_hero"			"npc_dota_hero_treant"
-		"Ability1"				"furion_force_of_nature_hoard"
-		"Ability2"              "furion_wrath_of_nature"  
+		"Ability1"				"furion_wrath_of_nature" 
 	}
     //=================================================================================================================
 	// HERO: Dark Seer

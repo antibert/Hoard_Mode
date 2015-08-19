@@ -1,5 +1,5 @@
-if SpawnTimers == nil then
-	SpawnTimers = class({})
+if SpawnTimersHard == nil then
+	SpawnTimersHard = class({})
 end
 
 require('libraries/timers')

@@ -105,8 +105,8 @@
 	//"item_headdress"				"REMOVE"
 	//"item_recipe_sheepstick"		"REMOVE"
 	//"item_sheepstick"				"REMOVE"
-	//"item_recipe_orchid"			"REMOVE"
-	//"item_orchid"					"REMOVE"
+	"item_recipe_orchid"			"REMOVE"
+	"item_orchid"					"REMOVE"
 	//"item_recipe_cyclone"			"REMOVE"
 	//"item_cyclone"					"REMOVE"
 	//"item_recipe_force_staff"		"REMOVE"
@@ -329,6 +329,25 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bounces"				"6 9 12 15"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Legion Commander: Overwhelming Odds
+	//=================================================================================================================
+	"legion_commander_overwhelming_odds"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"50 100 150 200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_unit"		"15 22 28 35"
 			}
 		}
 	}
@@ -786,7 +805,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_range"			"200 325 450 575"
+				"bonus_attack_range"			"150 250 350 450"
 			}
 		}
 	}
@@ -1994,6 +2013,9 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 	}
+	//=================================================================================================================
+	// Storm Spirit
+	//=================================================================================================================
 	"storm_spirit_static_remnant"
 	{
 		"AbilityManaCost"				"20 40 60 80"
@@ -2010,11 +2032,6 @@
 				"static_remnant_damage"			"180 230 280 330"
 			}
 		}
-	}
-	"storm_spirit_electric_vortex"
-	{
-		"AbilityDuration"				"2 3 4 5"
-		"AbilityCooldown"               "23 23 23 23"
 	}
 	"storm_spirit_overload"
 	{
@@ -2042,6 +2059,26 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"tooltip_duration"				"0.6 0.6 0.6 0.6"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Storm Spirit Ball Lightning
+	//=================================================================================================================
+	"storm_spirit_ball_lightning"
+	{
+		"AbilityDamage"					"10 15 20"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"ball_lightning_initial_mana_percentage"		"3"		
+			}
+			"06"
+			{
+				"var_type"								"FIELD_FLOAT"
+				"ball_lightning_travel_cost_percent"	"0.1"		
 			}
 		}
 	}

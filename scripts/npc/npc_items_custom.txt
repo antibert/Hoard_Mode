@@ -1100,7 +1100,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"blast_damage_base"		"100"
+				"blast_damage_base"		"500"
 			}
 			"08"
 			{

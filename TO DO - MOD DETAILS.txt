@@ -2,9 +2,23 @@ Next Update Patch Notes:
 
 Alpha 2.3b
 
+Items:
+-- Ether Cannon base damage increased from 100 to 500
+
+Heroes:
+//Sniper:
+-- High Caliber manacost reduced to "35 25 15" and loud sound reduced a bit
+-- Take aim bonus range decreased from "200 325 450 575" to "150 250 350 450"
+//Legion Commander:
+-- Overwhelming Odds base damage increased from "40 80 120 160" to "50 100 150 200"
+-- Overwhelming Odds damage per creep hit increased from "14 16 18 20" to "15 22 28 35"
+//Storm Spirit:
+-- Ball Lightening initial mana percentage cost decreased from 7% to 3%
+-- Ball Lightening mana cost percentage reduced from 0.7% to 0.1%
+-- Ball Lightening damage per unit distance travelled increased from "8 12 16" to "10 15 20"
 
 MOD STUFF TO DO:
--- Fix/reduce noise level of Shadow Shaman Shackles and storm spirit pull, possibly sniper ulti also
+-- Fix shaman shackes sound
 -- Zombie + skeltons at 40 mins
 -- Radiance not working on ancient type mobs
 

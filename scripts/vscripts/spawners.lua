@@ -1,10 +1,11 @@
 if Spawners == nil then
 	Spawners = class({})
+	math.randomseed(os.clock())
 end
 
 require('SpawnTimers')
+
 -- MID Lane Spawners
--- math.randomseed(os.time())
 
 function Spawners:SpawnGnollsMid()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()

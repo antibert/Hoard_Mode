@@ -1,6 +1,12 @@
 Next Update Patch Notes:
 
 Alpha 2.3b
+General:
+-- Some mob spawns are now randomised in number
+(creeps will spawn a certain number between two values, this is never more than a difference of 2)
+-- Gnoll gold bounty increased greatly for the 5p_easy map (remains the same for the hard map)
+-- Skeleton gold bounty increased for the 5p_easy map 
+-- Radiant Defenders have an extra 200 hp and 1 hp regen on the 5p_easy map
 
 Items:
 -- Ether Cannon base damage increased from 100 to 500
@@ -35,11 +41,7 @@ Bigger Jobs:
 -- Following the Roshan Theme, I'll make some big mobs that hang around in spots on the map, 
 I'll need help getting them to drop stuff (again rapiers or whatever, I need to refine this idea)
 
-5. Big Job: Different spawns for differnet maps (Currently both maps use the same spawners and spawn the same stuff. 
-I don't know how to change what a spawner is spawning based on the map - 
-I tried just using different spawners of either map. but that just breaks the LUA)
-
-6. Instead of steady creep spawn top, players can purchase waves of creeps to spawn there and attack towards the dire ancient. 
+4. Instead of steady creep spawn top, players can purchase waves of creeps to spawn there and attack towards the dire ancient. 
 
 
 KV STUFF:

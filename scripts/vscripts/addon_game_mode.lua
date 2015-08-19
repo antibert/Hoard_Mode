@@ -7,6 +7,7 @@ end
 gameInitialized = false
 
 require('spawners')
+require('spawnersHard')
 
 function Precache( context )
 	PrecacheResource( "particle_folder", "particles/frostivus_gameplay", context )
@@ -130,5 +131,9 @@ end
 
 function CHoard_ModeGameMode:OnGameInProgress()
 	print("[HOARDMODE] The game has officially begun")
-	Spawners:StartSpawners()
+	if GetMapName() == 'Horde_5p_Easy' then
+		Spawners:StartSpawners()
+	elseif GetMapName() == 'Horde_4p_Hard' then
+		SpawnersHard:StartSpawners()
+	end	
 end

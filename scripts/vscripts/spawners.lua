@@ -1306,7 +1306,7 @@ end
 -- Neutral Camps/Map
 
 function Spawners:SpawnFriend()
-	amount = Entities:FindAllByName("npc_dota_creature_friend")
+	amount = Entities:FindAllByName("npc_dota_creature_friend_easy")
 	print('Current amount of creeps bot: ' .. tostring(table.getn(amount)))
 	local point = Entities:FindByName(nil, "spawner7"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_goodguys_2"):GetAbsOrigin()
@@ -1320,7 +1320,7 @@ function Spawners:SpawnFriend()
 			print("Move ",unit:GetEntityIndex()," to ", waypoint)
 		end)
 	end
-	amount = Entities:FindAllByName("npc_dota_creature_friend")
+	amount = Entities:FindAllByName("npc_dota_creature_friend_easy")
 	print('Current amount of creeps bot: ' .. tostring(table.getn(amount)))
 end
 

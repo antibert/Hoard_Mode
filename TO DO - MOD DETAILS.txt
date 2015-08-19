@@ -24,6 +24,7 @@ Heroes:
 -- Ball Lightening damage per unit distance travelled increased from "8 12 16" to "10 15 20"
 
 MOD STUFF TO DO:
+-- give new easy units names
 -- Fix shaman shackes sound
 -- Zombie + skeltons at 40 mins
 -- Radiance not working on ancient type mobs

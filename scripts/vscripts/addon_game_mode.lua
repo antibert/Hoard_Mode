@@ -131,6 +131,7 @@ end
 
 function CHoard_ModeGameMode:OnGameInProgress()
 	print("[HOARDMODE] The game has officially begun")
+	print(GetMapName())
 	if GetMapName() == 'Horde_5p_Easy' then
 		Spawners:StartSpawners()
 	elseif GetMapName() == 'Horde_4p_Hard' then

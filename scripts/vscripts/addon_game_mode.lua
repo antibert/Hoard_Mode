@@ -98,10 +98,8 @@ end
 
 function CHoard_ModeGameMode:SetRules()
 	
-	self.m_VictoryMessages = {}
-	self.m_VictoryMessages[DOTA_TEAM_BADGUYS]  = "#VictoryMessage_BadGuys"
-	self.m_VictoryMessages[DOTA_TEAM_GOODGUYS]  = "#VictoryMessage_GoodGuys"
-
+	GameRules:EnableCustomGameSetupAutoLaunch( true )
+    GameRules:SetCustomGameSetupAutoLaunchDelay( 0 )	
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 5 )
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 0 )
 	GameRules:SetUseUniversalShopMode( true )

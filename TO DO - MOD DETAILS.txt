@@ -1,15 +1,6 @@
 Next Update Patch Notes:
 
-Alpha 2.3b
-General:
--- Fixed tether breaking immediatly 
--- Fixed backdoor protection not becoming disabled for top rax on 4p_hard map
--- The game now skips the setup screen and launches immediatly 
--- Minor 4p_hard map updates
-
-Heroes:
-//Wisp:
--- Tether Cooldown reduced from 12 to 3 seconds
+Alpha 2.4
 
 
 Items:
@@ -19,7 +10,6 @@ Heroes:
 
 
 MOD STUFF TO DO:
--- Fix backdoor protection on 4p hard
 -- Fix sounds
 -- Zombie + skeltons at 40 mins
 -- Radiance not working on ancient type mobs

@@ -6,8 +6,10 @@ end
 
 gameInitialized = false
 
-require('spawners')
-require('spawnersHard')
+require('Spawners')
+require('SpawnersHard')
+require('SpawnersUltra')
+require('Spawners2p')
 
 function Precache( context )
 	PrecacheResource( "particle_folder", "particles/frostivus_gameplay", context )
@@ -134,5 +136,9 @@ function CHoard_ModeGameMode:OnGameInProgress()
 		Spawners:StartSpawners()
 	elseif GetMapName() == 'Horde_4p_hard' then
 		SpawnersHard:StartSpawners()
+	elseif GetMapName() == 'Horde_4p_ultra' then
+		SpawnersUltra:StartSpawners()
+	elseif GetMapName() == 'Horde_2p_easy' then
+		Spawners2p:StartSpawners()
 	end	
 end

@@ -1322,7 +1322,7 @@ end
 function SpawnersHard:SpawnFriend2()
 	local point = Entities:FindByName(nil, "spawner8"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_3"):GetAbsOrigin()
-	local units_to_spawn = 1
+	local units_to_spawn = 0
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_friend_base", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
@@ -1336,7 +1336,7 @@ end
 function SpawnersHard:SpawnFriend3()
 	local point = Entities:FindByName(nil, "spawner9"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_2b"):GetAbsOrigin()
-	local units_to_spawn = 1
+	local units_to_spawn = 0
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_friend_base", point, true, nil, nil, DOTA_TEAM_GOODGUYS)

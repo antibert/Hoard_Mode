@@ -465,7 +465,7 @@ end
 function Spawners:SpawnSpiderlings()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = RandomInt(5,8)
+	local units_to_spawn = RandomInt(1,2)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_spiderling", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -510,7 +510,7 @@ end
 function Spawners:SpawnSpiders()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = RandomInt(5,6)
+	local units_to_spawn = RandomInt(5,7)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_medium_spiders", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -571,7 +571,7 @@ end
 function Spawners:SpawnLargeBears()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 2
+	local units_to_spawn = 1
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_large_spirit_bear", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -631,7 +631,7 @@ end
 function Spawners:SpawnGuardTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = RandomInt(8,10)
+	local units_to_spawn = RandomInt(8,9)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_kobold_guard", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -676,7 +676,7 @@ end
 function Spawners:SpawnGhostMeele()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = RandomInt(6,8)
+	local units_to_spawn = RandomInt(6,7)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_ghost_Meele", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -752,7 +752,7 @@ end
 function Spawners:SpawnMiniDemonTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = RandomInt(5,7)
+	local units_to_spawn = RandomInt(5,6)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_mini_demon", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -782,7 +782,7 @@ end
 function Spawners:SpawnLizardTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 3
+	local units_to_spawn = 2
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_lizard", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -797,7 +797,7 @@ end
 function Spawners:SpawnStalkerTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = RandomInt(4,6)
+	local units_to_spawn = RandomInt(4,5)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_stalker", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -868,7 +868,7 @@ end
 function Spawners:SpawnRippers()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = RandomInt(3,5)
+	local units_to_spawn = RandomInt(3,4)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_kobold_ripper", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -914,7 +914,7 @@ end
 function Spawners:Prophet()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 2
+	local units_to_spawn = 1
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_forest_prophet", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -1034,7 +1034,7 @@ end
 function Spawners:SpawnGuardBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = RandomInt(8,10)
+	local units_to_spawn = RandomInt(8,9)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_kobold_guard", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -1049,7 +1049,7 @@ end
 function Spawners:SpawnCentaurBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = RandomInt(3,6)
+	local units_to_spawn = RandomInt(3,5)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_centaur", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -1124,7 +1124,7 @@ end
 function Spawners:SpawnLizardBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = 3
+	local units_to_spawn = 1
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_lizard", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -1139,7 +1139,7 @@ end
 function Spawners:SpawnMiniDemonBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = RandomInt(2,4)
+	local units_to_spawn = RandomInt(2,3)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_mini_demon", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -1154,7 +1154,7 @@ end
 function Spawners:SpawnStalkerBot()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = RandomInt(4,6)
+	local units_to_spawn = RandomInt(4,5)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_stalker", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -1338,6 +1338,7 @@ function Spawners:SpawnFriend2()
 		end)
 	end
 end
+
 function Spawners:SpawnFriend3()
 	local point = Entities:FindByName(nil, "spawner9"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_2b"):GetAbsOrigin()

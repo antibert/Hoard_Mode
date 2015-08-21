@@ -1,13 +1,19 @@
 Next Update Patch Notes:
 
 Alpha 2.4
-
+General:
+-- Added 2p_easy map, a two player one lane version of Horde Mode.
+-- Added new 4p_Ultra map 
+(This is really really difficult, don't even play it... Actaully do, it needs testing)
+-- 5p_Easy map is now easier, 
+many mob spawns slightly decreased in number and some mobs gold bounties greatly increased
 
 Items:
 
 
 Heroes:
-
+//Faceless Void:
+-- Chronosphere duration increased from "5.0 5.5 6.0" ("6.0 8.0 10.0") to "8.0 10.0 12.0" ("11.0 13.0 15.0")
 
 MOD STUFF TO DO:
 -- Fix sounds
@@ -24,7 +30,7 @@ Bigger Jobs:
 (Important to stop lag issues from banking them too much - It would be nice if the friendly units could be upgraded by killing rax/purchasing upgrades)
  
 3. npc_dota_creature_roshan needs to be a more viable objective:
--- Roshan drops rapiers? (I'll make rapiers no longer purchasable from the shop) 
+-- Roshan drops rapiers? (I'll make rapiers no longer purchasable from the shop maybe) 
 -- Following the Roshan Theme, I'll make some big mobs that hang around in spots on the map, 
 I'll need help getting them to drop stuff (again rapiers or whatever, I need to refine this idea)
 

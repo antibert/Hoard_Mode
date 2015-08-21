@@ -1,13 +1,21 @@
 "AddonInfo"
 {
-	maps			"Horde_5p_Easy Horde_4p_Hard"
+	maps			"Horde_5p_easy Horde_4p_hard Horde_4p_ultra Horde_2p_easy"
 	"IsPlayable"	"1"
-	"Horde_5p_Easy"
+	"Horde_5p_easy"
 	{
 					"MaxPlayers"                    "5"
 	}
-	"Horde_4p_Hard"
+	"Horde_4p_hard"
 	{
 					"MaxPlayers"                    "4"
+	}
+	"Horde_4p_ultra"
+	{
+					"MaxPlayers"                    "4"
+	}
+	"Horde_2p_easy"
+	{
+					"MaxPlayers"                    "2"
 	}
 }

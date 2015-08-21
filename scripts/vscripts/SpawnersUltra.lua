@@ -1,5 +1,9 @@
 if SpawnersUltra == nil then
 	SpawnersUltra = class({})
+	bottomFriends = {}
+	for i=1, 12 do
+		bottomFriends[i] = nil
+	end
 end
 
 require('SpawnTimersUltra')
@@ -1308,14 +1312,29 @@ function SpawnersUltra:SpawnFriend()
 	local point = Entities:FindByName(nil, "spawner7"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_goodguys_2"):GetAbsOrigin()
 	local units_to_spawn = 1
-	for i=1,units_to_spawn do
-		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_friend", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
-			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
-									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
-		end)
+	local spawned_units = 0
+	for j=1, 12 do
+		if spawned_units > 0 then
+			break
+		end
+		if bottomFriends[j] ~= nil then
+			if bottomFriends[j]:IsAlive() == false then
+				bottomFriends[j] = nil
+			end
+		end
+		if bottomFriends[j] == nil then
+			Timers:CreateTimer(function()
+				bottomFriends[j] = CreateUnitByName("npc_dota_creature_friend", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+				-- for testing purposes
+				-- bottomFriends[j]:SetMaxHealth(100)
+				ExecuteOrderFromTable({	UnitIndex = bottomFriends[j]:GetEntityIndex(),
+										OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+										Position = waypoint, Queue = true} )
+				print("Move ",bottomFriends[j]:GetEntityIndex()," to ", waypoint)
+				print("Friendly bot creep spawned at index: " .. tostring(j))
+			end)
+			spawned_units = spawned_units + 1
+		end
 	end
 end
 

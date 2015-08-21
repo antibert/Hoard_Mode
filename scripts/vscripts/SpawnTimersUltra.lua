@@ -701,15 +701,15 @@ Timers:CreateTimer("largebears", {
 
     Timers:CreateTimer(17, function()
 		SpawnersUltra:SpawnFriend()
-		return 60.0
+		return 40.0
     end)
     Timers:CreateTimer(18, function()
 		SpawnersUltra:SpawnFriend()
-		return 60.0
+		return 40.0
     end)	
     Timers:CreateTimer(19, function()
 		SpawnersUltra:SpawnFriend()
-		return 60.0
+		return 40.0
     end)		
 	Timers:CreateTimer(0, function()
 		SpawnersUltra:SpawnFriend2()

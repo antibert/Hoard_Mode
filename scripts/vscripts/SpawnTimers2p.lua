@@ -665,11 +665,11 @@ Timers:CreateTimer("largebears", {
 
     Timers:CreateTimer(17, function()
 		Spawners2p:SpawnFriend()
-		return 60.0
+		return 30.0
     end)	
     Timers:CreateTimer(18, function()
 		Spawners2p:SpawnFriend()
-		return 60.0
+		return 30.0
     end)
 	Timers:CreateTimer("money", {
 		useGameTime = true,

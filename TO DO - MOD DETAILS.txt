@@ -8,10 +8,11 @@ General:
 -- 5p_Easy map is now easier, 
 many mob spawns slightly decreased in number and some mobs gold bounties increased
 -- 4p_Hard map various tweaks and changes to spawns
--- Radiant Defenders (bot lane) now no longer spawn if there is a max of 12 of them.
-Their spawn time has been decreased by 20-30 seconds for most maps
+-- Radiant Defenders (bot lane) now no longer spawn if there is a maximum of 12 of them.
+Their spawn time has been decreased by 20-30 seconds for most maps.
 -- Given wolf mob a nicer model
 -- Some bosses are now slightly tougher
+-- Tree Prophet renamed "Baumi Prophet", thanks for the video dude!
 
 Items:
 -- Shivas guard cooldown increased from 30 to 65 seconds
@@ -48,7 +49,7 @@ MOD STUFF TO DO:
 
 Bigger Jobs:
 
-1. Instead of steady creep spawn top, players can purchase waves of creeps to spawn there and attack towards the dire ancient. 
+1. Players can purchase waves of creeps to spawn and attack towards the dire ancient. 
 
 2. npc_dota_creature_roshan needs to be a more viable objective:
 -- Roshan drops rapiers? (I'll make rapiers no longer purchasable from the shop maybe) 

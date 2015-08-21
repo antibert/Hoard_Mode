@@ -22,15 +22,15 @@ function Spawners2p:StartSpawners()
 	
 -- BOSSES
 	
-	Timers:CreateTimer(500, function()
+	Timers:CreateTimer(400, function()
 		Spawners2p:SpawnRoshan()
 		return 1680.0
     end)
-    Timers:CreateTimer(700, function()
+    Timers:CreateTimer(600, function()
 		Spawners2p:SpawnBigBear()
 		return 1520.0
     end)
-    Timers:CreateTimer(900, function()
+    Timers:CreateTimer(800, function()
 		Spawners2p:SpawnOgreBoss()
 		return 1400.0
     end)
@@ -63,22 +63,32 @@ function Spawners2p:StartSpawners()
 	})
 	Timers:CreateTimer(180, function()
 		Spawners2p:StopSpawner("bazz")
-	end)
-	
+	end)	
     Timers:CreateTimer("beast", {
 		useGameTime = true,
 		endTime = 100,
 		callback = function()
 			Spawners2p:SpawnBeast()
-			return 80.0
+			return 70.0
 		end
 	})
-	Timers:CreateTimer(260, function()
+	Timers:CreateTimer(320, function()
 		Spawners2p:StopSpawner("beast")
 	end)
+   Timers:CreateTimer("frostogres", {
+		useGameTime = true,
+		endTime = 17,
+		callback = function()
+			Spawners2p:SpawnFrostOgres()
+			return 60.0
+		end
+	})
+	Timers:CreateTimer(450, function()
+		Spawners2p:StopSpawner("frostogres")
+	end)  
 	Timers:CreateTimer("zombie", {
 		useGameTime = true,
-		endTime = 150,
+		endTime = 230,
 		callback = function()
 			Spawners2p:SpawnZombies()
 			return 23.0
@@ -100,10 +110,10 @@ function Spawners2p:StartSpawners()
 	end)
 	Timers:CreateTimer("zombie2", {
 		useGameTime = true,
-		endTime = 250,
+		endTime = 300,
 		callback = function()
 			Spawners2p:SpawnZombies2()
-			return 30.0
+			return 36.0
 		end
 	})
 	Timers:CreateTimer(450, function()
@@ -114,7 +124,7 @@ function Spawners2p:StartSpawners()
 		endTime = 360,
 		callback = function()
 			Spawners2p:SpawnCorpse()
-			return 40.0
+			return 60.0
 		end
 	})
 	Timers:CreateTimer(450, function()
@@ -142,13 +152,35 @@ function Spawners2p:StartSpawners()
 	Timers:CreateTimer(300, function()
 		Spawners2p:StopSpawner("big")
 	end)
+    Timers:CreateTimer("cool", {
+		useGameTime = true,
+		endTime = 210,
+		callback = function()
+			Spawners2p:SpawnCoolSpiders()
+			return 38.0
+		end
+	})
+	Timers:CreateTimer(330, function()
+		Spawners2p:StopSpawner("cool")
+	end)
+    Timers:CreateTimer("mini", {
+		useGameTime = true,
+		endTime = 210,
+		callback = function()
+			Spawners2p:SpawnMiniSpiders()
+			return 23.0
+		end
+	})
+	Timers:CreateTimer(330, function()
+		Spawners2p:StopSpawner("mini")
+	end)
 	Timers:CreateTimer("spooki1", {
 		useGameTime = true,
 		endTime = 480,
 		callback = function()
 			Spawners2p:SpawnSpookiMid()
 			Spawners2p:SpawnSpookiBot()
-			return 13.0
+			return 17.0
 		end
 	})
 	Timers:CreateTimer(6000, function()
@@ -164,6 +196,72 @@ function Spawners2p:StartSpawners()
 	})
 	Timers:CreateTimer(540, function()
 		Spawners2p:StopSpawner("nyx")
+	end)
+   Timers:CreateTimer("ogres", {
+		useGameTime = true,
+		endTime = 600,
+		callback = function()
+			Spawners2p:SpawnOgre()
+			return 45.0
+		end
+	})
+	Timers:CreateTimer(960, function()
+		Spawners2p:StopSpawner("ogres")
+	end)  
+	Timers:CreateTimer("minisatyrs", {
+		useGameTime = true,
+		endTime = 200,
+		callback = function()
+			Spawners2p:SpawnMiniSatyrs()
+			return 29.0
+		end
+	})
+	Timers:CreateTimer(930, function()
+		Spawners2p:StopSpawner("minisatyrs")
+	end) 
+	Timers:CreateTimer("rippers", {
+		useGameTime = true,
+		endTime = 480,
+		callback = function()
+			Spawners2p:SpawnRippers()
+			return 17.0
+		end
+	})
+	Timers:CreateTimer(930, function()
+		Spawners2p:StopSpawner("rippers")
+	end) 
+	Timers:CreateTimer("satyrs", {
+		useGameTime = true,
+		endTime = 500,
+		callback = function()
+			Spawners2p:SpawnSatyrs()
+			return 33.0
+		end
+	})
+	Timers:CreateTimer(930, function()
+		Spawners2p:StopSpawner("satyrs")
+	end) 
+	Timers:CreateTimer("bigsatyrs", {
+		useGameTime = true,
+		endTime = 780,
+		callback = function()
+			Spawners2p:SpawnBigSatyrs()
+			return 41.0
+		end
+	})
+	Timers:CreateTimer(930, function()
+		Spawners2p:StopSpawner("bigsatyrs")
+	end) 
+	Timers:CreateTimer("hellbear", {
+		useGameTime = true,
+		endTime = 780,
+		callback = function()
+			Spawners2p:SpawnHellBear()
+			return 1000.0
+		end
+	})
+	Timers:CreateTimer(1380, function()
+		Spawners2p:StopSpawner("hellbear")
 	end)
 	Timers:CreateTimer("ghostmeele", {
 		useGameTime = true,
@@ -569,6 +667,10 @@ Timers:CreateTimer("largebears", {
 		Spawners2p:SpawnFriend()
 		return 60.0
     end)	
+    Timers:CreateTimer(18, function()
+		Spawners2p:SpawnFriend()
+		return 60.0
+    end)
 	Timers:CreateTimer("money", {
 		useGameTime = true,
 		endTime = 0,

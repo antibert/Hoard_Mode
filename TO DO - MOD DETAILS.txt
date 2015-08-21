@@ -6,18 +6,39 @@ General:
 -- Added new 4p_Ultra map 
 (This is really really difficult, don't even play it... Actaully do, it needs testing)
 -- 5p_Easy map is now easier, 
-many mob spawns slightly decreased in number and some mobs gold bounties greatly increased
+many mob spawns slightly decreased in number and some mobs gold bounties increased
+-- 4p_Hard map various tweaks and changes to spawns
+-- Some bosses are now slightly tougher
 
 Items:
-
-
+-- Shivas guard cooldown increased from 30 to 65 seconds
+-- Daedalus crit multiplier increased from 240 to 300
+                                                
 Heroes:
+//Added Lycan:
+Changes:
+-- Wolves now last for ages (5 minutes)
+-- Wolves hp increased from "200 240 280 320" to "1000 1500 2000 2500"
+-- Wolves damage increased from "18 29 37 46" to "25 50 75 100"
+-- Shapeshift cooldown reduced from "120.0 90.0 60.0" to "75.0 60.0 45.0"
+-- Feral Impulse range increased from 900 to 2000
+-- Feral Impuse bonus damage increased from "15 20 25 30" to "15 25 35 45"
+//Phantom Assassin:
+-- PA dagger changed for new ability Fan of Daggers (Almost from Hearthstone, but not quite)
+PA basically throws some daggers in an AOE
 //Faceless Void:
 -- Chronosphere duration increased from "5.0 5.5 6.0" ("6.0 8.0 10.0") to "8.0 10.0 12.0" ("11.0 13.0 15.0")
+//Shadow Shaman:
+-- Ether Shock damage reduced from "200 300 400 500" to "200 275 350 425"
+//Magnus:
+-- Friendly Skewer replaced with a dank meme
+//Bristleback:
+-- Quill Sprey base damage back to vanilla
 
 MOD STUFF TO DO:
--- Fix sounds
--- Zombie + skeltons at 40 mins
+-- Fix storm spirit pull too loud
+-- Enigma Midnight pulse doesn't work on bosses
+-- something interesting 40 minutes in
 -- Radiance not working on ancient type mobs
 -- PLAYERS GET GOLD FROM DISCONNECTED PLAYERS
 
@@ -36,6 +57,7 @@ I'll need help getting them to drop stuff (again rapiers or whatever, I need to 
 
 4. Instead of steady creep spawn top, players can purchase waves of creeps to spawn there and attack towards the dire ancient. 
 
+5. Map where one player plays withteh horde and can summon and control some units and has certain abilities, obviously the model would be a skeleton because meme
 
 KV STUFF:
 
@@ -47,13 +69,9 @@ KV STUFF:
 
 -- Batrider Lasso grabs an AOE of targets
 
--- Naga Ensnare is AOE (like earthbind)
-
 -- Ursa fury swipes does increasing %hp based damage instead of a static damage increment
 
 -- A rework of Dazzle's Poison Touch (Make it hit multiple targets or have aoe would be good)
-
--- Magnus Skewer effects creeps (I tried doing this myself, again should be easy but I failed)
 
 -- A new ultimate for Vengeful Spirit (This can be literally anything you think would be fun/useful in Horde Mode)
 
@@ -62,8 +80,6 @@ KV STUFF:
 -- Beast Master Roar does AOE damage and Knockback 
 
 -- Brewmaster Ultimate spawns spirit pandas to control (like visiage familiars) Earth Panda lvl 1, Wind Panda lvl 2, Fire panda on lvl 3
-
--- PA Dagger does something cool, like fans out in front of her like whirling axes or something, idk.
 
 -- Invoker forge spirit melting strike hits creeps
 

@@ -68,10 +68,10 @@ function SpawnersUltra:StartSpawners()
 	end)
 	Timers:CreateTimer("zombie", {
 		useGameTime = true,
-		endTime = 160,
+		endTime = 0,
 		callback = function()
 			SpawnersUltra:SpawnZombies()
-			return 20.0
+			return 23.0
 		end
 	})
 	Timers:CreateTimer(430, function()
@@ -702,7 +702,15 @@ Timers:CreateTimer("largebears", {
     Timers:CreateTimer(17, function()
 		SpawnersUltra:SpawnFriend()
 		return 60.0
+    end)
+    Timers:CreateTimer(18, function()
+		SpawnersUltra:SpawnFriend()
+		return 60.0
     end)	
+    Timers:CreateTimer(19, function()
+		SpawnersUltra:SpawnFriend()
+		return 60.0
+    end)		
 	Timers:CreateTimer(0, function()
 		SpawnersUltra:SpawnFriend2()
 		return 3600.0

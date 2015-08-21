@@ -702,12 +702,20 @@ Timers:CreateTimer("largebears", {
     Timers:CreateTimer(17, function()
 		SpawnersHard:SpawnFriend()
 		return 60.0
+    end)
+    Timers:CreateTimer(18, function()
+		SpawnersHard:SpawnFriend()
+		return 60.0
+    end)
+    Timers:CreateTimer(19, function()
+		SpawnersHard:SpawnFriend()
+		return 60.0
     end)	
-	Timers:CreateTimer(0, function()
+	Timers:CreateTimer(300, function()
 		SpawnersHard:SpawnFriend2()
 		return 3600.0
     end)
-	Timers:CreateTimer(0, function()
+	Timers:CreateTimer(300, function()
 		SpawnersHard:SpawnFriend3()
 		return 3600.0
     end)

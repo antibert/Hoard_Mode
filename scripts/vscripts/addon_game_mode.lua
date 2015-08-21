@@ -118,8 +118,6 @@ function CHoard_ModeGameMode:SetRules()
 	GameRules:GetGameModeEntity():SetRuneEnabled( 3, false ) --Invis Rune
 	GameRules:GetGameModeEntity():SetRuneEnabled( 4, true ) --Regen
 	GameRules:GetGameModeEntity():SetRuneEnabled( 5, true ) --Bounty
-	GameRules:GetGameModeEntity():SetRuneEnabled( 6, true ) -- ?
-	GameRules:GetGameModeEntity():SetRuneEnabled( 7, true ) -- ?
 	GameRules:GetGameModeEntity():SetFixedRespawnTime(23)
 	GameRules:GetGameModeEntity():SetFountainPercentageHealthRegen( 4 )
 	GameRules:GetGameModeEntity():SetFountainPercentageManaRegen( 6 )

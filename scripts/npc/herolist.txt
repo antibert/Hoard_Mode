@@ -68,12 +68,12 @@
     "npc_dota_hero_legion_commander"	"1"
 	"npc_dota_hero_mirana"       "1"
     "npc_dota_hero_wisp"        "1"
+	"npc_dota_hero_lycan"   "1"
 	
     "npc_dota_hero_batrider"       "0"
 	"npc_dota_hero_obsidian_destroyer"  "0"
 	"npc_dota_hero_tinker"    "0"
     "npc_dota_hero_vengefulspirit"     "0"	
-	"npc_dota_hero_lycan"   "0"
 	"npc_dota_hero_puck"			"0"
 	"npc_dota_hero_viper"   "0"
 }

@@ -40,26 +40,20 @@ PA basically throws some daggers in an AOE
 //Bristleback:
 -- Quill Sprey base damage back to vanilla
 
-MOD STUFF TO DO:
+Notes:
 -- Fix storm spirit pull too loud
 -- Enigma Midnight pulse doesn't work on bosses
--- something interesting 40 minutes in
+-- something interesting 40 minutes in (yo HewDraw, what was that Void boss you were talking about?)
 -- Radiance not working on ancient type mobs
 -- PLAYERS GET GOLD FROM DISCONNECTED PLAYERS
 
-Bigger Jobs:
+BIG JOBS TO DO BEFORE BETA:
 
-1. Players can purchase waves of creeps to spawn and attack towards the dire ancient. 
+1. Get some mobs (Particularly roshan in question) to drop items (an item like a sacred relic or something, possibly an item otherwise not available in the shop)
+This will allow me to make plenty of interesting objectives around the map, some extra mobs you can beat for item drops. 
 
-2. npc_dota_creature_roshan needs to be a more viable objective:
--- Roshan drops rapiers? (I'll make rapiers no longer purchasable from the shop maybe) 
--- Following the Roshan Theme, I'll make some big mobs that hang around in spots on the map, 
-I'll need help getting them to drop stuff (again rapiers or whatever, I need to refine this idea)
+2. Players can purchase waves of creeps to spawn and attack towards the dire ancient. (Hero Line Wars uses a creep spawning thing similar)
 
-3. Add way to buy upgrades like buying back buildings (towers in the base) through a purchasable item. 
-(The towers in question are currently called "npc_dota_hoard_tower" on the 4p map and "npc_dota_hoard_tower_easy" on the 5p map.
-
-4. Map where one player plays with thE horde and can summon and control some units and has certain abilities, obviously the model would be a skeleton because meme
 
 KV STUFF:
 
@@ -90,3 +84,9 @@ KV STUFF:
 -- Razor passive replaced with something more useful
 
 -- Venomancer Scourge Wards have a limit (like pugna ward fpr example) instead of just a death timer
+
+
+
+Ideas:
+
+ Map where one player plays with thE horde and can summon and control some units and has certain abilities, obviously the model would be a skeleton because meme

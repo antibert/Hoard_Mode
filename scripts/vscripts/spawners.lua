@@ -1319,7 +1319,7 @@ function Spawners:SpawnFriend()
 			break
 		end
 		if bottomFriends[j] ~= nil then
-			if bottomFriends[j]:IsAlive() == false then
+			if bottomFriends[j]:GetHealth() == 0 then
 				bottomFriends[j] = nil
 			end
 		end

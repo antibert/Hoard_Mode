@@ -157,14 +157,14 @@ function SpawnersUltra:StartSpawners()
 	end)
     Timers:CreateTimer("spooki", {
 		useGameTime = true,
-		endTime = 1700,
+		endTime = 1980,
 		callback = function()
-			SpawnersUltra:SpawnSpooki()
+			Spawners:SpawnSpookiMid()
 			return 13.0
 		end
 	})
 	Timers:CreateTimer(2160, function()
-		SpawnersUltra:StopSpawner("spooki")
+		Spawners:StopSpawner("spooki")
 	end)
 	Timers:CreateTimer("prophet", {
 		useGameTime = true,

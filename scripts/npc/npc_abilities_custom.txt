@@ -407,12 +407,12 @@
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				“12”
+	"AbilityCooldown"				"12"
 	"AbilityDuration"				"1.0 2.0 3.0 4.0"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"25 25 25 25"
+	"AbilityManaCost"				"30 30 30 30"
 	
 	//Damage
 	"AbilityDamage"					"100 130 160 190"
@@ -450,6 +450,12 @@
 
 	"OnSpellStart"
 	{
+	
+	"FireSound"
+	{
+		"EffectName"		"Hero_PhantomAssassin.Dagger.Cast"
+		"Target"			"CASTER"
+	}
 		"ActOnTargets"
 		{
 			"Target"
@@ -473,11 +479,6 @@
 				    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
 				}
 
-				"FireSound"
-				{
-					"EffectName"		"Hero_PhantomAssassin.Dagger.Cast"
-					"Target"			"CASTER"
-				}
 			}
 		}
 		
@@ -507,12 +508,6 @@
 			"Damage"		"%AbilityDamage"
 		}
 
-		"FireSound"
-		{
-			"EffectName"		"Hero_PhantomAssassin.Dagger.Target"
-			"Target"			"TARGET"
-		}
-
 		"ApplyModifier"
 		{
 			"ModifierName"		"modifier_stifling_dagger_slow_datadriven"
@@ -537,6 +532,1085 @@
 		}
 	}
 }
+	"beastmaster_call_of_the_wild_boar_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"MaxLevel"						"1"
+	 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	    "AbilityTextureName"			"beastmaster_call_of_the_wild_boar"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40.0 40.0 40.0 40.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"15"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hawk_duration"				"60 60 60 60"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"boar_hp_tooltip"			"900"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"boar_damage_tooltip"		"105"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"boar_moveslow_tooltip"		"40"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"boar_attackslow_tooltip"	"40"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"poison_duration_tooltip"	"3"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"boar_duration"				"60 60 60 60"
+			}
+	
+			// Extra		
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"boar_1_count"			"1 0 0 0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"boar_2_count"			"0 1 0 0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"boar_3_count"			"0 0 1 0"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"boar_4_count"			"0 0 0 1"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"150" // The distance in front of the target at which units will be created
+			}
+		}
+	
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_beastmaster/beastmaster_call_boar.vpcf"
+			"particle"	"particles/units/heroes/hero_lone_druid/lone_druid_spirit_bear_death.vpcf"
+			"particle"	"particles/units/heroes/hero_beastmaster/beastmaster_boar_attack.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
+			"model"		"models/heroes/beastmaster/beastmaster_beast.vmdl"
+		}
+	
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
+				"Function"		"LevelUpAbility"
+				"ability_name"	"beastmaster_call_of_the_wild_datadriven"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"FireSound"
+		    {
+		    	"EffectName"	"Hero_Beastmaster.Call.Boar"
+		    	"Target"		"CASTER"
+		    }
+	
+			"SpawnUnit"
+			{
+				"UnitName"			"npc_dota_creature_mega_boar_4"
+				"Target"
+				{
+					"Center"				"CASTER"
+					"ScriptSelectPoints"
+					{
+						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
+	        			"Function"      "GetFrontPoint"
+						"Target"		"CASTER"
+						"Distance"		"%distance"
+					}
+				}
+	
+				"UnitCount"			"%boar_1_count"
+				"Duration"			"%boar_duration"
+	
+				"GrantsGold"		"1"
+				"GrantsXP"			"1"
+	
+				// This makes sure units never get stuck
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_phased"
+						"Target"		"TARGET"
+						"Duration"		"0.03"
+					}
+	
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_beastmaster_boar"
+						"Target"		"TARGET"
+					}
+	
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
+						"Function"		"SetUnitsMoveForward"
+					}
+				}
+			}
+	
+			"SpawnUnit"
+			{
+				"UnitName"			"npc_dota_creature_mega_boar_2"
+				"Target"
+				{
+					"Center"				"CASTER"
+					"ScriptSelectPoints"
+					{
+						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
+	        			"Function"      "GetFrontPoint"
+						"Target"		"CASTER"
+						"Distance"		"%distance"
+					}
+				}
+	
+				"UnitCount"			"%boar_2_count"
+				"Duration"			"%boar_duration"
+	
+				"GrantsGold"		"1"
+				"GrantsXP"			"1"
+	
+				// This makes sure units never get stuck
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_phased"
+						"Target"		"TARGET"
+						"Duration"		"0.03"
+					}
+	
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_beastmaster_boar"
+						"Target"		"TARGET"
+					}
+	
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
+						"Function"		"SetUnitsMoveForward"
+					}
+				}
+			}
+	
+			"SpawnUnit"
+			{
+				"UnitName"			"npc_dota_creature_mega_boar_4"
+				"Target"
+				{
+					"Center"				"CASTER"
+					"ScriptSelectPoints"
+					{
+						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
+	        			"Function"      "GetFrontPoint"
+						"Target"		"CASTER"
+						"Distance"		"%distance"
+					}
+				}
+	
+				"UnitCount"			"%boar_3_count"
+				"Duration"			"%boar_duration"
+	
+				"GrantsGold"		"1"
+				"GrantsXP"			"1"
+	
+				// This makes sure units never get stuck
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_phased"
+						"Target"		"TARGET"
+						"Duration"		"0.03"
+					}
+	
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_beastmaster_boar"
+						"Target"		"TARGET"
+					}
+	
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
+						"Function"		"SetUnitsMoveForward"
+					}
+				}
+			}
+	
+			"SpawnUnit"
+			{
+				"UnitName"			"npc_dota_creature_mega_boar_4"
+				"Target"
+				{
+					"Center"				"CASTER"
+					"ScriptSelectPoints"
+					{
+						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
+	        			"Function"      "GetFrontPoint"
+						"Target"		"CASTER"
+						"Distance"		"%distance"
+					}
+				}
+	
+				"UnitCount"			"%boar_4_count"
+				"Duration"			"%boar_duration"
+	
+				"GrantsGold"		"1"
+				"GrantsXP"			"1"
+	
+				// This makes sure units never get stuck
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_phased"
+						"Target"		"TARGET"
+						"Duration"		"0.03"
+					}
+	
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_beastmaster_boar"
+						"Target"		"TARGET"
+					}
+					
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
+						"Function"		"SetUnitsMoveForward"
+					}
+				}
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_beastmaster_boar"
+			{
+				"IsHidden"		"1"
+	
+				"OnCreated"
+				{
+					"FireEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_beastmaster/beastmaster_call_boar.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+				}
+	
+				"OnDeath"
+				{
+					"FireEffect"
+					{
+						"Target"			
+						{
+							"Center"	"UNIT"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						"EffectName"		"particles/units/heroes/hero_lone_druid/lone_druid_spirit_bear_death.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+					
+					"FireSound"
+					{
+						"Target"			
+						{
+							"Center"	"UNIT"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						"EffectName"	"Hero_Beastmaster_Boar.Death"
+					}
+				}
+			}
+		}
+	}
+	"lina_laguna_blade_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"							// Changes dynamically with scepter	
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"lina_laguna_blade"
+	
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+			"particle"			"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.45 0.45 0.45"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"70.0 60.0 50.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"280 420 680"
+			
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// Modifier just delays damage
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"450 675 950"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_scepter"		"900 900 900"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"damage_delay"				"0.25"
+			}
+			"4"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"150 200 250 300"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Ability.LagunaBladeImpact"
+				"Target"		"TARGET"
+			}
+	
+			"FireSound"
+			{
+				"EffectName"	"Ability.LagunaBlade"
+				"Target"		"CASTER"
+			}
+	
+			"FireEffect"
+			{
+				"EffectName"	"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf"
+				"EffectAttachType"	"start_at_customorigin"
+				
+	
+				"ControlPointEntities"
+				{
+					"CASTER"	"attach_attack1"
+					"TARGET"	"attach_hitloc"
+				}
+			}
+	
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_laguna_blade_datadriven"
+				"Target"			"TARGET"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_laguna_blade_datadriven"
+			{
+				"IsHidden"	"1"
+				"Duration"	"%damage_delay"
+	
+				"OnDestroy"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"%damage"
+					}
+				}
+			}
+		}
+	}
+	"dazzle_poison_touch_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"dazzle_poison_touch"
+	
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
+			"particle"			"particles/units/heroes/hero_dazzle/dazzle_poison_touch.vpcf"
+			"particle"			"particles/units/heroes/hero_dazzle/dazzle_poison_debuff.vpcf"
+			"particle"			"particles/status_fx/status_effect_poison_dazzle.vpcf"
+		}
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15 13 11 7"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 115 130 145"
+		
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"14 20 26 32"
+		"AbilityDuration"				"10"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.35"	// Can apply multiple modifiers
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"set_time"			"3"
+			}
+			"02"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"slow_1"			"-33 -33 -33 -33"
+			}
+			"03"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"slow_2"			"-33 -33 -66 -66"
+			}
+			"04"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"slow_3"			"-33 -66 -100 -100"
+			}
+			"05"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"projectile_speed"	"1300"
+			}
+			"06"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"should_stun"		"0 0 0 1"
+			}
+			"07"
+			{	
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"1"
+			}
+			"08"
+			{	
+				"var_type"			"FIELD_FLOAT"
+				"duration_tooltip"		"10"
+			}
+			// Extra
+			"09"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow_1_duration"	"3 2 1 1"
+			}
+			"10"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow_2_duration"	"0 1 1 1"
+			}
+			"11"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"slow_3_duration"	"0 0 1 0"
+			}
+			"12"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_duration"	"7"
+			}
+			"13"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"tick_interval"		"1"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"150 200 250 300"
+			}
+		}
+	"OnSpellStart"
+	{
+	
+		"FireSound"
+		{
+			"EffectName"	"Hero_Dazzle.Poison_Cast"
+			"Target" 		"CASTER"
+		}
+		"FireSound"
+		{
+			"EffectName"	"Hero_Dazzle.Poison_Touch"
+			"Target" 		"TARGET"
+		}
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"  	"TARGET"
+				"Radius" 	"%radius"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+		
+			"Action"    
+			{
+				"TrackingProjectile"
+				{
+					"Target"           	"TARGET"
+					"EffectName"		"particles/units/heroes/hero_dazzle/dazzle_poison_touch.vpcf"
+					"Dodgeable"			"1"
+					"ProvidesVision"	"0"
+					"MoveSpeed"        	"%projectile_speed"
+					"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+				}
+
+			}
+		}
+		
+	}
+	
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+	
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_poison_touch_slow_1_datadriven"
+				"Target" 		"TARGET"
+				"Duration"		"%slow_1_duration"
+			}
+	
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_poison_touch_debuff_datadriven"
+				"Target" 		"TARGET"
+				"Duration"		"%duration_tooltip"
+			}
+	
+			"DelayedAction"
+			{
+				"Delay"     "%set_time"
+				"Action"    
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_poison_touch_damage_datadriven"
+						"Target" 		"TARGET"
+						"Duration"		"%damage_duration"
+					}
+				}
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_poison_touch_debuff_datadriven"
+			{
+				"IsDebuff"		"1"
+				"IsPurgable"	"1"
+	
+				"EffectName"		"particles/units/heroes/hero_dazzle/dazzle_poison_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+			}
+	
+			"modifier_poison_touch_damage_datadriven"
+			{
+				"IsHidden"		"1"
+	
+				"OnCreated"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_PHYSICAL"
+						"Damage"		"%AbilityDamage"
+					}
+				}
+	
+				"ThinkInterval"  "%tick_interval"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_PHYSICAL"
+						"Damage"		"%AbilityDamage"
+					}
+				}
+			}
+	
+			"modifier_poison_touch_slow_1_datadriven"
+			{
+				"IsHidden"		"1"
+	
+				"StatusEffectName" 		"particles/status_fx/status_effect_poison_dazzle.vpcf" 	   
+				"StatusEffectPriority"  "10"
+	
+				"OnDestroy"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_poison_touch_slow_2_datadriven"
+						"Target" 		"TARGET"
+						"Duration"		"%slow_2_duration"
+					}
+				}
+	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_1" 
+				}
+			}
+	
+			"modifier_poison_touch_slow_2_datadriven"
+			{
+				"IsHidden"		"1"
+	
+				"OnDestroy"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_poison_touch_slow_3_datadriven"
+						"Target" 		"TARGET"
+						"Duration"		"%slow_3_duration"
+					}
+	
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_dazzle/poison_touch.lua"
+						"Function"		"PoisonTouchStun"
+					}
+				}
+	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_2" 
+				}
+			}
+	
+			"modifier_poison_touch_slow_3_datadriven"
+			{
+				"IsHidden"		"1"
+	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%slow_3" 
+				}
+			}
+		}
+	}
+	//End of file beastmaster_call_of_the_wild_boar_datadriven.txt
+
+
+	//Start of file beastmaster_call_of_the_wild_datadriven.txt
+	// Rewrite of Beastmaster Call of the Wild
+	// Author: Noya
+	// Date: April 5, 2015
+	// This ability is used with beastmaster_call_of_the_wild_boar_datadriven, skilling one will attempt to upgrade the other
+	//TODO: Check if its necessary to kill the hawk or there's no limit
+	"beastmaster_call_of_the_wild_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	    "AbilityTextureName"			"beastmaster_call_of_the_wild"
+			
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"60"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"15"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"boar_duration"				"60 60 60 60"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hawk_hp_tooltip"			"600 600 600 600"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hawk_speed_tooltip"		"250 270 290 310"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hawk_daysight_tooltip"		"700 1000 1300 1600"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hawk_nightsight_tooltip"	"700 800 900 1000"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hawk_duration"				"60 60 60 60"
+			}
+	
+			// Extra		
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hawk_1_count"			"1 0 0 0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hawk_2_count"			"0 1 0 0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hawk_3_count"			"0 0 1 0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hawk_4_count"			"0 0 0 1"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"150" // The distance in front of the target at which units will be created
+			}
+		}
+	
+		"OnUpgrade"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
+				"Function"		"LevelUpAbility"
+				"ability_name"	"beastmaster_call_of_the_wild_boar_datadriven"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"FireSound"
+		    {
+		    	"EffectName"	"Hero_Beastmaster.Call.Hawk"
+		    	"Target"		"CASTER"
+		    }
+	
+			"SpawnUnit"
+			{
+				"UnitName"			"npc_dota_creature_mega_hawk_1"
+				"Target"
+				{
+					"Center"				"CASTER"
+					"ScriptSelectPoints"
+					{
+						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
+	        			"Function"      "GetFrontPoint"
+						"Target"		"CASTER"
+						"Distance"		"%distance"
+					}
+				}
+	
+				"UnitCount"			"%hawk_1_count"
+				"Duration"			"%hawk_duration"
+	
+				"GrantsGold"		"1"
+				"GrantsXP"			"1"
+	
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_phased"
+						"Target"		"TARGET"
+						"Duration"		"0.03"
+					}
+	
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
+						"Function"		"SetUnitsMoveForward"
+					}
+	
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_beastmaster_hawk"
+						"Target"		"TARGET"
+					}
+				}
+			}
+	
+			"SpawnUnit"
+			{
+				"UnitName"			"npc_dota_creature_mega_hawk_2"
+				"Target"
+				{
+					"Center"				"CASTER"
+					"ScriptSelectPoints"
+					{
+						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
+	        			"Function"      "GetFrontPoint"
+						"Target"		"CASTER"
+						"Distance"		"%distance"
+					}
+				}
+	
+				"UnitCount"			"%hawk_2_count"
+				"Duration"			"%hawk_duration"
+	
+				"GrantsGold"		"1"
+				"GrantsXP"			"1"
+	
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_phased"
+						"Target"		"TARGET"
+						"Duration"		"0.03"
+					}
+	
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_beastmaster_hawk"
+						"Target"		"TARGET"
+					}
+	
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
+						"Function"		"SetUnitsMoveForward"
+					}
+				}
+			}
+	
+			"SpawnUnit"
+			{
+				"UnitName"			"npc_dota_creature_mega_hawk_3"
+				"Target"
+				{
+					"Center"				"CASTER"
+					"ScriptSelectPoints"
+					{
+						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
+	        			"Function"      "GetFrontPoint"
+						"Target"		"CASTER"
+						"Distance"		"%distance"
+					}
+				}
+	
+				"UnitCount"			"%hawk_3_count"
+				"Duration"			"%hawk_duration"
+	
+				"GrantsGold"		"1"
+				"GrantsXP"			"1"
+	
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_phased"
+						"Target"		"TARGET"
+						"Duration"		"0.03"
+					}
+	
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_beastmaster_hawk"
+						"Target"		"TARGET"
+					}
+	
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
+						"Function"		"SetUnitsMoveForward"
+					}
+				}
+			}
+	
+			"SpawnUnit"
+			{
+				"UnitName"			"npc_dota_creature_mega_hawk_4"
+				"Target"
+				{
+					"Center"				"CASTER"
+					"ScriptSelectPoints"
+					{
+						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
+	        			"Function"      "GetFrontPoint"
+						"Target"		"CASTER"
+						"Distance"		"%distance"
+					}
+				}
+	
+				"UnitCount"			"%hawk_4_count"
+				"Duration"			"%hawk_duration"
+	
+				"GrantsGold"		"1"
+				"GrantsXP"			"1"
+	
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_phased"
+						"Target"		"TARGET"
+						"Duration"		"0.03"
+					}
+	
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_beastmaster_hawk"
+						"Target"		"TARGET"
+					}
+	
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
+						"Function"		"SetUnitsMoveForward"
+					}
+				}
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_beastmaster_hawk"
+			{
+				"IsHidden"		"1"
+	
+				"OnCreated"
+				{
+					"FireEffect"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"particles/units/heroes/hero_beastmaster/beastmaster_call_bird.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+				}
+	
+				"OnDeath"
+				{
+					"FireEffect"
+					{
+						"Target"			
+						{
+							"Center"	"UNIT"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						"EffectName"		"particles/units/heroes/hero_lone_druid/lone_druid_spirit_bear_death.vpcf"
+						"EffectAttachType"	"follow_origin"
+					}
+	
+					"FireSound"
+					{
+						"Target"			
+						{
+							"Center"	"UNIT"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						"EffectName"	"Hero_Beastmaster_Bird.Death"
+					}
+				}
+			}
+		}
+	}
+
 
 	//=================================================================================================================
 	// Axe: Battle Rage
@@ -2160,21 +3234,28 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
-
+	
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 		"AbilityCastRange"				"300 325 350 375"
-
+	
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"23.0"
+		"AbilityCooldown"				"10.0"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100 110 120 130"
-
+		
+		"precache"
+		{
+			"soundfile"						"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+			"particle"						"particles/units/heroes/hero_stormspirit/stormspirit_electric_vortex_owner.vpcf"
+			"particle"						"particles/units/heroes/hero_stormspirit/stormspirit_electric_vortex.vpcf"
+		}
+	
 		"OnSpellStart"
 		{
 			"FireSound"
@@ -2192,7 +3273,12 @@
 					"Radius"			"%radius"
 				}				
 				"Duration"				"%duration"
-				"ModifierName"			"modifier_storm_spirit_electric_vortex_pull"
+				"ModifierName"			"modifier_electric_vortex_target_datadriven"		
+				"RunScript"
+				{
+					"ScriptFile"				"heroes/hero_stormspirit/electric_vortex.lua"
+					"Function"					"electric_vortex_pull"
+				}
 			}
 			"ApplyModifier"
 			{
@@ -2206,7 +3292,33 @@
 				"Target"			"CASTER"
 			}
 		}
-
+		"Modifiers"
+		{			
+			"modifier_electric_vortex_target_datadriven"
+			{
+				"IsDebuff"					"1"
+			
+				"Duration"					"%duration"
+				
+				"OverrideAnimation"			"ACT_DOTA_FLAIL"
+			
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"Hero_StormSpirit.ElectricVortex"
+					}
+				}
+			
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -2239,7 +3351,196 @@
 			"06"
 			{
 				"var_type"										"FIELD_INTEGER"
+				"radius"										"300 325 350 375"
+			}
+		}
+	}
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"electric_vortex_pull_units_per_second"			"100"		
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"electric_vortex_pull_tether_range"				"1200.0"		
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"electric_vortex_self_slow"						"-50"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"electric_vortex_self_slow_duration"			"3.0"
+			}	
+			"05"
+			{
+				"var_type"										"FIELD_FLOAT"
+				"duration"										"2.0 2.5 3.0 3.5"
+			}	
+			"06"
+			{
+				"var_type"										"FIELD_INTEGER"
+				"radius"										"300 325 350 375"
+			}
+		}
+	}
+	"storm_spirit_electric_vortex_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"storm_spirit_electric_vortex"
+	
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastRange"				"300"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"21.0 20.0 19.0 18.0"
+		"AbilityDuration"				"1.0 1.5 2.0 2.5"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 110 120 130"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"electric_vortex_pull_units_per_second"			"100"		
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"electric_vortex_pull_tether_range"			"1200.0"		// what is this variable ??
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"electric_vortex_self_slow"	"-50"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"electric_vortex_self_slow_duration"	"3.0"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"	"1.0 1.5 2.0 2.5"
+			}
+			"06"
+			{
+				"var_type"										"FIELD_INTEGER"
 				"radius"										"500 575 650 725"
+			}
+		}
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"						"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+			"particle"						"particles/units/heroes/hero_stormspirit/stormspirit_electric_vortex_owner.vpcf"
+			"particle"						"particles/units/heroes/hero_stormspirit/stormspirit_electric_vortex.vpcf"
+		}
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"
+				{
+					"Center"			"CASTER"
+					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+					"Radius"			"%radius"
+				}
+			}	
+			"FireSound"
+			{
+				"Target"					"CASTER"
+				"EffectName"				"Hero_StormSpirit.ElectricVortexCast"
+			}
+		
+			"ApplyModifier"
+			{
+				"Target"					"CASTER"
+				"ModifierName"				"modifier_electric_vortex_caster_datadriven"
+			}
+			
+			"ApplyModifier"
+			{
+				"Target"					"TARGET"
+				"ModifierName"				"modifier_electric_vortex_target_datadriven"
+			}
+		
+			"RunScript"
+			{
+				"ScriptFile"				"heroes/hero_stormspirit/electric_vortex.lua"
+				"Function"					"electric_vortex_pull"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_electric_vortex_caster_datadriven"
+			{
+				"IsDebuff"					"1"
+			
+				"Duration"					"%electric_vortex_self_slow_duration"
+				
+				"EffectName"				"particles/units/heroes/hero_stormspirit/stormspirit_electric_vortex_owner.vpcf"
+				"EffectAttachType"			"follow_origin"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%electric_vortex_self_slow"
+				}
+			}
+			
+			"modifier_electric_vortex_target_datadriven"
+			{
+				"IsDebuff"					"1"
+			
+				"Duration"					"%duration"
+				
+				"OverrideAnimation"			"ACT_DOTA_FLAIL"
+			
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"Target"			"TARGET"
+						"EffectName"		"Hero_StormSpirit.ElectricVortex"
+					}
+				}
+			
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"			"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
 			}
 		}
 	}
@@ -2770,9 +4071,9 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"2000 2500 3000"
+		"AbilityCastRange"				"550 600 650"
 		"AbilityCastPoint"				"2.0 2.0 2.0"
-		"AbilityManaCost"				"35 25 15"
+		"AbilityManaCost"				"30 30 30"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -2781,17 +4082,17 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"range"						"2000 2500 3000"
+				"range"						"550 600 650"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"150 250 350"
+				"radius"					"100 150 200"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"mana_cost"					"35 25 15"
+				"mana_cost"					"30 30 30"
 			}
 		}
 		
@@ -2915,7 +4216,288 @@
 			}
 		}
 	}
-
+	//=================================================================================================================
+	// Generic: Gold Bag Fountain 180g
+	//=================================================================================================================
+	"generic_gold_bag_fountain_500"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"item_hand_of_midas"
+	
+		"OnOwnerDied"
+		{
+			"CreateItem"
+			{
+				"Target"
+				{
+					"Center" 	"CASTER"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}			
+				"ItemName"			"item_bag_of_gold"
+				"ItemCount"			"%bag_count"
+				"SpawnRadius"		"25"
+				"ItemChargeCount"	"%gold_value"
+				"AutoUse"			"1"
+				"LaunchHeight"		"300"
+				"LaunchDistance"	"?50 350"
+				"LaunchDuration"	"0.75"
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_value"			"180"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bag_count"				"5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Generic: Gold Bag Fountain 100g
+	//=================================================================================================================
+	"generic_gold_bag_fountain_5000"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"item_hand_of_midas"
+	
+		"OnOwnerDied"
+		{
+			"CreateItem"
+			{
+				"Target"
+				{
+					"Center" 	"CASTER"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}			
+				"ItemName"			"item_bag_of_gold"
+				"ItemCount"			"%bag_count"
+				"SpawnRadius"		"25"
+				"ItemChargeCount"	"%gold_value"
+				"AutoUse"			"1"
+				"LaunchHeight"		"300"
+				"LaunchDistance"	"?50 350"
+				"LaunchDuration"	"0.75"
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_value"			"100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bag_count"				"5"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Generic: Gold Bag Fountain 40g
+	//=================================================================================================================
+	"generic_gold_bag_fountain_50"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"item_hand_of_midas"
+	
+		"OnOwnerDied"
+		{
+			"CreateItem"
+			{
+				"Target"
+				{
+					"Center" 	"CASTER"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}			
+				"ItemName"			"item_bag_of_gold"
+				"ItemCount"			"%bag_count"
+				"SpawnRadius"		"10"
+				"ItemChargeCount"	"%gold_value"
+				"AutoUse"			"1"
+				"LaunchHeight"		"300"
+				"LaunchDistance"	"?50 350"
+				"LaunchDuration"	"0.75"
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_value"			"40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bag_count"				"1"
+			}
+		}
+	}
+	"medusa_split_shot_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetFlag"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"holdout_multishot"
+	
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
+			"particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
+			"particle"			"particles/units/heroes/hero_medusa/medusa_base_attack.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_modifier"		"-35"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_modifier_tooltip"		"65"
+			}
+			"03"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"arrow_count"				"1 2 3 4"
+			}
+			"04"
+			{	
+				"var_type"					"FIELD_INTEGER"
+				"total_arrow_count"				"2 3 4 5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"625"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"1000"
+			}
+		}
+	
+		"OnToggleOn"
+		{
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "CASTER"
+			}
+	
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_split_shot_datadriven"
+				"Target" 		"CASTER"
+			}
+		}
+	
+		"OnToggleOff"
+		{
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "CASTER"
+			}
+	
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_split_shot_datadriven"
+				"Target"
+				{
+					"Center"	"CASTER"
+					"Flags" 	"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}
+			}
+		}
+	
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			
+			"FireSound"
+			{
+				"EffectName"	"Hero_Medusa.AttackSplit"
+				"Target" 		"TARGET"
+			}
+	
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_medusa/split_shot.lua"
+				"Function"		"SplitShotDamage"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_split_shot_datadriven"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+		
+				"OnAttack"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_medusa/split_shot.lua"
+						"Function"		"SplitShotLaunch"
+						"split_shot_projectile"	"particles/units/heroes/hero_medusa/medusa_base_attack.vpcf"
+					}
+				}
+	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%damage_modifier" 
+				}
+			}
+		}
+	}
+	
 	//=================================================================================================================
 	// Slardar: Sprint
 	//=================================================================================================================

@@ -149,7 +149,7 @@ function SpawnersHard:StartSpawners()
 		endTime = 540,
 		callback = function()
 			SpawnersHard:SpawnDrake()
-			return 23.0
+			return 30.0
 		end
 	})
 	Timers:CreateTimer(840, function()
@@ -157,14 +157,14 @@ function SpawnersHard:StartSpawners()
 	end)
     Timers:CreateTimer("spooki", {
 		useGameTime = true,
-		endTime = 1700,
+		endTime = 1980,
 		callback = function()
-			SpawnersHard:SpawnSpooki()
+			Spawners:SpawnSpookiMid()
 			return 13.0
 		end
 	})
 	Timers:CreateTimer(2160, function()
-		SpawnersHard:StopSpawner("spooki")
+		Spawners:StopSpawner("spooki")
 	end)
 	Timers:CreateTimer("prophet", {
 		useGameTime = true,
@@ -656,7 +656,7 @@ Timers:CreateTimer("largebears", {
 		endTime = 270,
 		callback = function()
 			SpawnersHard:SpawnMiniSatyrs()
-			return 29.0
+			return 40.0
 		end
 	})
 	Timers:CreateTimer(930, function()

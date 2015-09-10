@@ -7,14 +7,15 @@ end
 gameInitialized = false
 
 require('Spawners')
+require('SpawnersMedium')
 require('SpawnersHard')
 require('SpawnersUltra')
 require('Spawners2p')
 
 function Precache( context )
 	PrecacheResource( "particle_folder", "particles/frostivus_gameplay", context )
+	PrecacheItemByNameSync( "item_bag_of_gold", context )
     PrecacheItemByNameSync("item_king_rapier", context)
-    PrecacheItemByNameSync("item_horde_demon_sabre", context)
     PrecacheItemByNameSync("item_horde_ethereal_blade", context)
     PrecacheItemByNameSync("item_horde_ghost", context)
     PrecacheItemByNameSync("item_hoard_dagon", context)
@@ -105,7 +106,7 @@ function CHoard_ModeGameMode:SetRules()
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_GOODGUYS, 5 )
 	GameRules:SetCustomGameTeamMaxPlayers( DOTA_TEAM_BADGUYS, 0 )
 	GameRules:SetUseUniversalShopMode( true )
-	GameRules:SetHeroSelectionTime( 40.0 )
+	GameRules:SetHeroSelectionTime( 60.0 )
 	GameRules:SetPreGameTime( 23.0 )
 	GameRules:SetPostGameTime( 120.0 )
 	GameRules:SetTreeRegrowTime( 60.0 )
@@ -132,6 +133,8 @@ function CHoard_ModeGameMode:OnGameInProgress()
 	ShowMessage('Map name when called upon in the test client:' .. GetMapName())
 	if GetMapName() == 'Horde_5p_easy' then
 		Spawners:StartSpawners()
+	elseif GetMapName() == 'Horde_4p_medium' then
+		SpawnersMedium:StartSpawners()
 	elseif GetMapName() == 'Horde_4p_hard' then
 		SpawnersHard:StartSpawners()
 	elseif GetMapName() == 'Horde_4p_ultra' then

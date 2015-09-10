@@ -43,12 +43,21 @@
 		"Ability2"				"keeper_of_the_light_mana_overload"
     }
 	//=================================================================================================================
-	// HERO: Keeper of the Light
+	// HERO: Lycan
 	//=================================================================================================================
 	"npc_dota_hero_lycan_holdout"
 	{
 		"override_hero"			"npc_dota_hero_lycan"
 		"Ability1"				"lycan_summon_wolves_datadriven"
+    }
+	//=================================================================================================================
+	// HERO: Beastmaster
+	//=================================================================================================================
+	"npc_dota_hero_lycan_holdout"
+	{
+		"override_hero"			"npc_dota_hero_beastmaster"
+		"Ability2"				"beastmaster_call_of_the_wild_boar_datadriven"
+		"Ability3"              "beastmaster_call_of_the_wild_datadriven"
     }
 	//=================================================================================================================
 	// HERO: Magnus
@@ -80,7 +89,7 @@
 	"npc_dota_hero_drow_ranger_holdout"
 	{
 		"override_hero"			"npc_dota_hero_drow_ranger"
-		"Ability1"				"ancient_apparition_chilling_touch"
+		"Ability1"				"medusa_split_shot_datadriven"
 	}
     //=================================================================================================================
 	// HERO: Omniknight
@@ -168,7 +177,8 @@
 	"npc_dota_hero_dazzle_holdout"
 	{
 		"override_hero"			"npc_dota_hero_dazzle"
-		"Ability1"				"dazzle_toughness_aura"
+		"Ability1"				"dazzle_poison_touch_datadriven"
+		"Ability2"				"dazzle_toughness_aura"
 	}
 	//=================================================================================================================
 	// HERO: Zuus

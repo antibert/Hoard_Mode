@@ -1,51 +1,20 @@
 Next Update Patch Notes:
+4277
 
-Alpha 2.4
-General:
--- Added 2p_easy map, a two player one lane version of Horde Mode.
--- Added new 4p_Ultra map 
-(This is really really difficult, don't even play it... Actaully do, it needs testing)
--- 5p_Easy map is now easier, 
-many mob spawns slightly decreased in number and some mobs gold bounties increased
--- 4p_Hard map various tweaks and changes to spawns
--- Radiant Defenders (bot lane) now no longer spawn if there is a maximum of 12 of them.
-Their spawn time has been decreased by 20-30 seconds for most maps.
--- Given wolf mob a nicer model
--- Some bosses are now slightly tougher
--- Tree Prophet renamed "Baumi Prophet", thanks for the video dude!
-
-Items:
--- Shivas guard cooldown increased from 30 to 65 seconds
--- Daedalus crit multiplier increased from 240 to 300
--- Cheese cost reduced from 1000 to 600 gold
-                                                
-Heroes:
-//Added Lycan:
-Changes:
--- Wolves now last for ages (5 minutes)
--- Wolves damage, hp and armour increased
--- Wolves have crit at all levels
--- Shapeshift cooldown reduced from "120.0 90.0 60.0" to "75.0 60.0 45.0"
--- Feral Impulse range increased from 900 to 2000
--- Feral Impuse bonus damage increased from "15 20 25 30" to "15 25 35 45"
-//Phantom Assassin:
--- PA dagger changed for new ability Fan of Daggers (Almost from Hearthstone, but not quite)
-PA basically throws some daggers in an AOE
-//Faceless Void:
--- Chronosphere duration increased from "5.0 5.5 6.0" ("6.0 8.0 10.0") to "8.0 10.0 12.0" ("11.0 13.0 15.0")
-//Shadow Shaman:
--- Ether Shock damage reduced from "200 300 400 500" to "200 275 350 425"
-//Magnus:
--- Friendly Skewer replaced with a dank meme
-//Bristleback:
--- Quill Sprey base damage back to vanilla
+Alpha 2.7
+-- Boss money bag bounty reduced slightly
+-- Prophets and centaurs now drop some money bags
+-- Hero selection time increased to 60 seconds
+-- Stifling Dagger, Poison Touch and sound reduced 
 
 Notes:
--- Fix storm spirit pull too loud
--- Enigma Midnight pulse doesn't work on bosses
+-- Change loading screen to a rotating skeleton
+-- post 40 minute too easy
+-- Fix storm spirit pull too loud - Lion figer too loud 
 -- something interesting 40 minutes in (yo HewDraw, what was that Void boss you were talking about?)
--- Radiance not working on ancient type mobs
 -- PLAYERS GET GOLD FROM DISCONNECTED PLAYERS
+
+"Has neither cars nor balls, 4/10" ~ Harold
 
 BIG JOBS TO DO BEFORE BETA:
 
@@ -73,8 +42,6 @@ KV STUFF:
 
 -- Ogre Magi Fireblast and Unrefined Fireblast AOE or something like that
 
--- Beast Master Roar does AOE damage and Knockback 
-
 -- Brewmaster Ultimate spawns spirit pandas to control (like visiage familiars) Earth Panda lvl 1, Wind Panda lvl 2, Fire panda on lvl 3
 
 -- Invoker forge spirit melting strike hits creeps
@@ -85,7 +52,94 @@ KV STUFF:
 
 -- Venomancer Scourge Wards have a limit (like pugna ward fpr example) instead of just a death timer
 
+20:19 - Hewdraw: add an abilityspecial value for percentage
+20:19 - Hewdraw: then get the targets hp
+20:19 - Hewdraw: and do target_hp * stack_amount * damage_percentage for the damage
+20:19 - Hewdraw: max hp not current
 
+
+	"ursa_fury_swipes_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"ursa_fury_swipes"
+				
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_reset_time"				"15"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"bonus_reset_time_roshan"		"10"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_per_stack"				"15 20 25 30"
+			}
+			"4"
+			{
+			    "var_type"                      "FIELD_INTEGER"
+				"damage_percentage"             "1 2 3 4"
+		    }
+		
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"							"particles/units/heroes/hero_ursa/ursa_fury_swipes.vpcf"
+			"particle"							"particles/units/heroes/hero_ursa/ursa_fury_swipes_debuff.vpcf"
+		}
+		
+		"Modifiers"
+		{
+			"modifier_fury_swipes_caster_datadriven"
+			{
+				"Passive"						"1"
+				"IsHidden"						"0"
+				"IsPurgable"					"0"
+			
+				"OnAttackLanded"
+				{
+					"RunScript"
+					{
+						"ScriptFile"			"heroes/hero_ursa/fury_swipes.lua"
+						"Function"				"fury_swipes_attack"
+					}
+				}
+			}
+			
+			"modifier_fury_swipes_target_datadriven"
+			{
+				"IsHidden"					"0"
+				"IsPurgable"				"0"
+				"IsDebuff"					"1"
+				
+				"EffectName"				"particles/units/heroes/hero_ursa/ursa_fury_swipes_debuff.vpcf"
+				"EffectAttachType"			"follow_overhead"
+				
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"				"TARGET"
+						"EffectName"			"particles/units/heroes/hero_ursa/ursa_fury_swipes.vpcf"
+						"EffectAttachType"		"follow_overhead"
+					}
+				}
+			}
+		}
+	}
 
 Ideas:
 

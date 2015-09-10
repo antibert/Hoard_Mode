@@ -23,33 +23,33 @@ function Spawners:StartSpawners()
 	
 -- BOSSES
 	
-	Timers:CreateTimer(480, function()
+	Timers:CreateTimer(500, function()
 		Spawners:SpawnRoshan()
-		return 1680.0
+		return 3000.0
     end)
-    Timers:CreateTimer(690, function()
+    Timers:CreateTimer(700, function()
 		Spawners:SpawnBigBear()
-		return 1520.0
+		return 3000.0
     end)
-    Timers:CreateTimer(840, function()
+    Timers:CreateTimer(860, function()
 		Spawners:SpawnOgreBoss()
-		return 1400.0
+		return 3000.0
     end)
-    Timers:CreateTimer(1110, function()
+    Timers:CreateTimer(1130, function()
 		Spawners:SpawnKingTree()
-		return 1400.0
+		return 3000.0
     end)
-    Timers:CreateTimer(1290, function()
+    Timers:CreateTimer(1320, function()
 		Spawners:SpawnBigSplitter()
-		return 1400.0
+		return 3000.0
     end)
-    Timers:CreateTimer(1570, function()
+    Timers:CreateTimer(1600, function()
 		Spawners:SpawnCentaurBoss()
-		return 1400.0
+		return 3000.0
     end)
     Timers:CreateTimer(2060, function()
 		Spawners:SpawnFuckYou()
-		return 1400.0
+		return 3000.0
     end)
  
 -- MID LANE/All Lanes
@@ -157,9 +157,9 @@ function Spawners:StartSpawners()
 	end)
     Timers:CreateTimer("spooki", {
 		useGameTime = true,
-		endTime = 1700,
+		endTime = 1980,
 		callback = function()
-			Spawners:SpawnSpooki()
+			Spawners:SpawnSpookiMid()
 			return 13.0
 		end
 	})
@@ -656,7 +656,7 @@ Timers:CreateTimer("largebears", {
 		endTime = 270,
 		callback = function()
 			Spawners:SpawnMiniSatyrs()
-			return 29.0
+			return 40.0
 		end
 	})
 	Timers:CreateTimer(930, function()

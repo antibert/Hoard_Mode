@@ -2,13 +2,14 @@ Next Update Patch Notes:
 4277
 
 Alpha 2.7
+(The last patch of Alpha)
 -- Boss money bag bounty reduced slightly
 -- Prophets and centaurs now drop some money bags
 -- Hero selection time increased to 60 seconds
--- Stifling Dagger, Poison Touch and sound reduced 
+-- Stifling Dagger and Poison Touch sounds reduced 
 
 Notes:
--- Change loading screen to a rotating skeleton
+-- add a rotating skeleton to loading screen
 -- post 40 minute too easy
 -- Fix storm spirit pull too loud - Lion figer too loud 
 -- something interesting 40 minutes in (yo HewDraw, what was that Void boss you were talking about?)

@@ -3248,13 +3248,6 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100 110 120 130"
-		
-		"precache"
-		{
-			"soundfile"						"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
-			"particle"						"particles/units/heroes/hero_stormspirit/stormspirit_electric_vortex_owner.vpcf"
-			"particle"						"particles/units/heroes/hero_stormspirit/stormspirit_electric_vortex.vpcf"
-		}
 	
 		"OnSpellStart"
 		{
@@ -3273,12 +3266,7 @@
 					"Radius"			"%radius"
 				}				
 				"Duration"				"%duration"
-				"ModifierName"			"modifier_electric_vortex_target_datadriven"		
-				"RunScript"
-				{
-					"ScriptFile"				"heroes/hero_stormspirit/electric_vortex.lua"
-					"Function"					"electric_vortex_pull"
-				}
+				"ModifierName"			"modifier_storm_spirit_electric_vortex_pull"
 			}
 			"ApplyModifier"
 			{
@@ -3292,69 +3280,6 @@
 				"Target"			"CASTER"
 			}
 		}
-		"Modifiers"
-		{			
-			"modifier_electric_vortex_target_datadriven"
-			{
-				"IsDebuff"					"1"
-			
-				"Duration"					"%duration"
-				
-				"OverrideAnimation"			"ACT_DOTA_FLAIL"
-			
-				"OnCreated"
-				{
-					"FireSound"
-					{
-						"Target"			"TARGET"
-						"EffectName"		"Hero_StormSpirit.ElectricVortex"
-					}
-				}
-			
-				"States"
-				{
-					"MODIFIER_STATE_STUNNED"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"electric_vortex_pull_units_per_second"			"100"		
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"electric_vortex_pull_tether_range"				"1200.0"		
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"electric_vortex_self_slow"						"-50"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"electric_vortex_self_slow_duration"			"3.0"
-			}	
-			"05"
-			{
-				"var_type"										"FIELD_FLOAT"
-				"duration"										"2.0 2.5 3.0 3.5"
-			}	
-			"06"
-			{
-				"var_type"										"FIELD_INTEGER"
-				"radius"										"300 325 350 375"
-			}
-		}
-	}
 	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -3397,7 +3322,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
@@ -3451,8 +3376,8 @@
 			}
 			"06"
 			{
-				"var_type"										"FIELD_INTEGER"
-				"radius"										"500 575 650 725"
+				"var_type"			"FIELD_FLOAT"
+				"radius"			"400 500 600 700"
 			}
 		}
 		
@@ -3467,16 +3392,6 @@
 		
 		"OnSpellStart"
 		{
-			"ApplyModifier"
-			{
-				"Target"
-				{
-					"Center"			"CASTER"
-					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-					"Radius"			"%radius"
-				}
-			}	
 			"FireSound"
 			{
 				"Target"					"CASTER"
@@ -3491,8 +3406,15 @@
 			
 			"ApplyModifier"
 			{
-				"Target"					"TARGET"
-				"ModifierName"				"modifier_electric_vortex_target_datadriven"
+				"Target"
+				{
+					"Center"			"CASTER"
+					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+					"Radius"			"%radius"
+				}				
+				"Duration"				"%duration"
+				"ModifierName"			"modifier_electric_vortex_target_datadriven"		
 			}
 		
 			"RunScript"

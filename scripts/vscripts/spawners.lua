@@ -514,7 +514,7 @@ end
 function Spawners:SpawnSpiders()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = RandomInt(2,3)
+	local units_to_spawn = RandomInt(3,4)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_medium_spiders_easy", point, true, nil, nil, DOTA_TEAM_BADGUYS)
@@ -859,7 +859,7 @@ end
 function Spawners:SpawnBird()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = RandomInt(3,4)
+	local units_to_spawn = RandomInt(4,5)
 	for i=1,units_to_spawn do
 		local unit = CreateUnitByName("npc_dota_creature_bird_easy", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
@@ -1314,7 +1314,7 @@ function Spawners:SpawnFriend()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_goodguys_2"):GetAbsOrigin()
 	local units_to_spawn = 1
 	local spawned_units = 0
-	for j=1, 12 do
+	for j=1, 8 do
 		if spawned_units > 0 then
 			break
 		end

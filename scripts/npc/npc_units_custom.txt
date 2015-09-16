@@ -6225,7 +6225,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"generic_gold_bag_fountain_500"			// Ability 1.
+		"Ability1"					"generic_gold_bag_fountain_5000"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -6313,6 +6313,7 @@
 			"DisableClumpingBehavior"	"1"
 		}
 	}
+
 	//=================================================================================
 	// Demon Dog
 	//=================================================================================
@@ -8518,7 +8519,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"generic_gold_bag_fountain_5000"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -8546,9 +8547,9 @@
 
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"35"		// Experience earn.
-		"BountyGoldMin"				"65"			// Gold earned min.
-		"BountyGoldMax"				"75"			// Gold earned max.
+		"BountyXP"					"10"		// Experience earn.
+		"BountyGoldMin"				"0"			// Gold earned min.
+		"BountyGoldMax"				"0"			// Gold earned max.
 
 		// Movement
 		//----------------------------------------------------------------

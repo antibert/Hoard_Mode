@@ -47,7 +47,7 @@ function SpawnersMedium:StartSpawners()
 		SpawnersMedium:SpawnCentaurBoss()
 		return 3000.0
     end)
-    Timers:CreateTimer(2060, function()
+    Timers:CreateTimer(2040, function()
 		SpawnersMedium:SpawnFuckYou()
 		return 3000.0
     end)
@@ -487,7 +487,7 @@ function SpawnersMedium:StartSpawners()
 	end)
 	Timers:CreateTimer("roshan", {
 		useGameTime = true,
-		endTime = 2100,
+		endTime = 2115,
 		callback = function()
 			SpawnersMedium:SpawnRoshTop()
 			SpawnersMedium:SpawnRoshMid()
@@ -631,15 +631,15 @@ Timers:CreateTimer("largebears", {
 	end)  
    Timers:CreateTimer("bird", {
 		useGameTime = true,
-		endTime = 240,
+		endTime = 35,
 		callback = function()
 			SpawnersMedium:SpawnBird()
 			return 32.0
 		end
 	})
-	Timers:CreateTimer(600, function()
+	Timers:CreateTimer(400, function()
 		SpawnersMedium:StopSpawner("bird")
-	end)  
+	end)   
    Timers:CreateTimer("ogres", {
 		useGameTime = true,
 		endTime = 600,

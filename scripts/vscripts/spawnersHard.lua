@@ -1313,12 +1313,12 @@ function SpawnersHard:SpawnFriend()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_goodguys_2"):GetAbsOrigin()
 	local units_to_spawn = 1
 	local spawned_units = 0
-	for j=1, 12 do
+	for j=1, 8 do
 		if spawned_units > 0 then
 			break
 		end
 		if bottomFriends[j] ~= nil then
-			if bottomFriends[j]:IsAlive() == false then
+			if bottomFriends[j]:IsNull() == true then
 				bottomFriends[j] = nil
 			end
 		end

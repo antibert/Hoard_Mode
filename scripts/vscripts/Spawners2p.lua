@@ -778,7 +778,7 @@ function Spawners2p:SpawnFriend()
 			break
 		end
 		if bottomFriends[j] ~= nil then
-			if bottomFriends[j]:IsAlive() == false then
+			if bottomFriends[j]:IsNull() == true then
 				bottomFriends[j] = nil
 			end
 		end

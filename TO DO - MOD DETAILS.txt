@@ -1,21 +1,77 @@
 Next Update Patch Notes:
 4277
 
-Alpha 2.7
-(The last patch of Alpha)
--- Boss money bag bounty reduced slightly
--- Prophets and centaurs now drop some money bags
--- Hero selection time increased to 60 seconds
--- Stifling Dagger and Poison Touch sounds reduced 
+Beta 2.8
+General:
+-- Demons on easy map drop a smaller gold bag
+-- Medium and large gold bag bounty reduced slightly
+-- Skeleton boss and roshan wave spawn times slightly adjusted
+-- Added Spooki Aura Tooltip
+-- Toll Masters (Dire jungle) now drop medium gold bags instead of give a normal gold bounty
+-- Toll Masters added to 2p map
+-- Updated various spell icons to make new/edited abilities more obvious
+
+Heroes:
+//Added Broodmother
+//Treant Protector:
+-- Wrath of Nature cooldown reduced from  "60 50 40 30" to "30 25 20 15"
+-- Wrath of Nature damage increased from "100 125 150 175" ("200 225 250 275") to "135 170 205 240" ("235 275 320 400")
+-- Living Armor now blocks 100 instances of damage on all levels
+-- Overgrowth cooldown reduced from 70 to 40 seconds
+//Lina:
+-- Replaced Laguna Blade with Laguna Storm which is similar to Laguna Blade but with a small AOE
+-- Dragon Slave set back to vanilla damage scaling
+//Wraith King:
+-- Can now munch down on creeps much faster
+//Queen of Pain:
+-- Shadow Strike replaced with Poison Flurry (Same as Shadow Strike but AOE)
+-- Various skills increased and rescaled in damage
+//Tidehunter:
+-- Kraken Shell damage block reduced from "10 20 30 40" to "10 17 24 31"
+//Kunkka:
+-- Torrent manacost back to vanilla
+//Lion:
+-- Hex back to vanilla duration
+-- Finger of Death cooldown increased from "40.0 30.0 20.0" ("20.0 15.0 10.0") to "30.0 25.0 20.0"
+//Shadow Demon:
+-- Shadow Poison back to vanilla
+//Tiny:
+-- Avalanche radius reduced from "275 385 495 605" to "275 325 375 425"
+-- Toss manacost back to vanilla
+
+Items:
+-- New Power Treads upgrade, Boots of Power which can be upgraded again into 3 different powerful boot types:
+Boots of Strength, Boots of Agility or Boots of Intellect.
+-- New Phase boots upgrade, Lithe Boots - Phase boots combined with desolator
+-- Hand of Midas cooldown decreased from 100 to 70 seconds
+-- King Rapier attack speed bonus removed
+-- Mjolnir recipe back to vanilla
 
 Notes:
+-- Agility Boots give huge armor bonus on activate
+-- Make alternative wofl wave that has 50% to trigger instead of tree wave (lycan wolf models and beasmaters boars)
+-- Make ghost and golem wave 50%
+-- Buff warlock golem hps
+-- Stop people kiting on harder maps, zombies movement speed buff abut mix some kind of ranged unit earlier on in mid with a slow
+-- Fix treant q not anmination
 -- add a rotating skeleton to loading screen
 -- post 40 minute too easy
 -- Fix storm spirit pull too loud - Lion figer too loud 
 -- something interesting 40 minutes in (yo HewDraw, what was that Void boss you were talking about?)
 -- PLAYERS GET GOLD FROM DISCONNECTED PLAYERS
 
-"Has neither cars nor balls, 4/10" ~ Harold
+			"RunScript"
+			{
+				"ScriptFile"			"items/item_boots_of_intellect.lua"
+				"Function"				"item_boots_of_intellect_start"
+				"ManaRestore"			"%mana_restore"
+			}
+			"ApplyModifier"
+			{
+				"Target"					"CASTER"
+				"ModifierName"				"modifier_sick_of_making_new_things_for_horde_mode"
+				"Duration"					"%duration"
+			)
 
 BIG JOBS TO DO BEFORE BETA:
 
@@ -144,4 +200,5 @@ KV STUFF:
 
 Ideas:
 
+-- yolo
  Map where one player plays with thE horde and can summon and control some units and has certain abilities, obviously the model would be a skeleton because meme

@@ -884,7 +884,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"							// Changes dynamically with scepter	
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"FightRecapLevel"				"2"
-		"AbilityTextureName"			"lina_laguna_blade"
+		"AbilityTextureName"			"laguna_storm"
 	
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -901,7 +901,7 @@
 	
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70.0 60.0 50.0"
+		"AbilityCooldown"				"45.0 35.0 25.0"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -918,27 +918,22 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"450 675 950"
+				"damage"					"500 750 1000"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"cast_range_scepter"		"900 900 900"
 			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"damage_delay"				"0.25"
-			}
-			"4"
+			"3"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"				"150 200 250 300"
+				"radius"				"300 300 300"
 			}
 		}
 	
 		"OnSpellStart"
-		{
+		{	   
 			"FireSound"
 			{
 				"EffectName"	"Ability.LagunaBladeImpact"
@@ -950,44 +945,47 @@
 				"EffectName"	"Ability.LagunaBlade"
 				"Target"		"CASTER"
 			}
-	
-			"FireEffect"
+			"ActOnTargets"
 			{
-				"EffectName"	"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf"
-				"EffectAttachType"	"start_at_customorigin"
-				
-	
-				"ControlPointEntities"
+				"Target"
 				{
-					"CASTER"	"attach_attack1"
-					"TARGET"	"attach_hitloc"
+					"Center"  	"TARGET"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				}
-			}
-	
-			"ApplyModifier"
-			{
-				"ModifierName"		"modifier_laguna_blade_datadriven"
-				"Target"			"TARGET"
-			}
-		}
-	
-		"Modifiers"
-		{
-			"modifier_laguna_blade_datadriven"
-			{
-				"IsHidden"	"1"
-				"Duration"	"%damage_delay"
-	
-				"OnDestroy"
+				"Action"    
 				{
+					"TrackingProjectile"
+					{
+						"Target"           	"TARGET"
+						"EffectName"		"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf"
+						"Dodgeable"			"1"
+						"ProvidesVision"	"0"
+						"MoveSpeed"        	"%projectile_speed"
+						"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+					}
+					"FireEffect"
+					{
+						"EffectName"	"particles/units/heroes/hero_lina/lina_spell_laguna_blade.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						
+	
+						"ControlPointEntities"
+						{
+							"CASTER"	"attach_attack1"
+							"TARGET"	"attach_hitloc"
+						}
+					}
 					"Damage"
 					{
-						"Target"	"TARGET"
-						"Type"		"DAMAGE_TYPE_MAGICAL"
-						"Damage"	"%damage"
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%damage"
 					}
 				}
 			}
+	
 		}
 	}
 	"dazzle_poison_touch_datadriven"
@@ -2635,7 +2633,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityTextureName"			"legion_commander_duel"
+		"AbilityTextureName"			"dueling_icon"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -3989,7 +3987,7 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"AbilityTextureName"			"sniper_assassinate"
+		"AbilityTextureName"			"high_caliber"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -4139,7 +4137,7 @@
 		}
 	}
 	//=================================================================================================================
-	// Generic: Gold Bag Fountain 180g
+	// Generic: Gold Bag Fountain 160g
 	//=================================================================================================================
 	"generic_gold_bag_fountain_500"
 	{
@@ -4176,7 +4174,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold_value"			"180"
+				"gold_value"			"160"
 			}
 			"02"
 			{
@@ -4186,7 +4184,7 @@
 		}
 	}
 	//=================================================================================================================
-	// Generic: Gold Bag Fountain 100g
+	// Generic: Gold Bag Fountain 80g
 	//=================================================================================================================
 	"generic_gold_bag_fountain_5000"
 	{
@@ -4223,12 +4221,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold_value"			"100"
+				"gold_value"			"80"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bag_count"				"5"
+				"bag_count"				"3"
 			}
 		}
 	}
@@ -4519,7 +4517,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"shadow_shaman_shackles"
+		"AbilityTextureName"			"shackles_icon"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -4704,6 +4702,294 @@
 				"Passive"			"0"
 				"IsHidden"			"1"
 				"IsDebuff"			"0"
+			}
+		}
+	}
+	"queenofpain_shadow_strike_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"poison_flurry"
+	
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts"
+			"particle"			"particles/units/heroes/hero_queenofpain/queen_shadow_strike.vpcf"
+			"particle"			"particles/units/heroes/hero_queenofpain/queen_shadow_strike_body.vpcf"
+			"particle"			"particles/units/heroes/hero_queenofpain/queen_shadow_strike_debuff.vpcf"
+		}
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450 475 500 525"
+		"AbilityCastPoint"				"0.452 0.452 0.452 0.452"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16.0 12.0 8.0 4.0"
+		"AbilityDuration"				"15.0 15.0 15.0 15.0"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110"
+	
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strike_damage"			"50 75 100 125"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration_damage"		"30 40 50 60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow"			"-20 -30 -40 -50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"900"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_tooltip"		"450 475 500 525"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow_small"			"-1.33 -2 -2.67 -3.33"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"250 250 250 250"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"           "TARGET"
+			    "EffectName"       "particles/units/heroes/hero_queenofpain/queen_shadow_strike.vpcf"
+			    "Dodgeable"        "1"
+			    "ProvidesVision"   "0"
+			    "MoveSpeed"        "%projectile_speed"
+			    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+			}
+	
+			"FireSound"
+			{
+				"EffectName"		"Hero_QueenOfPain.ShadowStrike"
+				"Target"			"CASTER"
+			}
+	
+			"AttachEffect"
+			{
+				"Target"			"CASTER"
+				"EffectAttachType"	"attach_origin"
+				"EffectName"		"particles/units/heroes/hero_queenofpain/queen_shadow_strike_body.vpcf"
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"TARGET"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"TrackingProjectile"
+					{
+						"Target"           "TARGET"
+						"EffectName"       "particles/units/heroes/hero_queenofpain/queen_shadow_strike_body.vpcf"
+						"Dodgeable"        "1"
+						"ProvidesVision"   "1"
+						"VisionRadius"     "300"
+						"MoveSpeed"        "%projectile_speed"
+						"SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+					}
+
+				}
+			}	
+		}
+	
+		"OnProjectileHitUnit"
+		{
+			"Damage"
+			{
+				"Target"		"TARGET"
+				"Type"			"DAMAGE_TYPE_MAGICAL"
+				"Damage"		"%strike_damage"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_debuff_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_thinker_datadriven"
+				"Target"		"TARGET"
+			}
+	
+			// Slow stacks(15 of them)
+	
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			// 5
+	
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			// 10
+	
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			// 15
+		}
+	
+		"Modifiers"
+		{
+			"modifier_shadow_strike_debuff_datadriven"
+			{
+				"Duration"	"%AbilityDuration"
+				"IsDebuff"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+	
+				"EffectName"	"particles/units/heroes/hero_queenofpain/queen_shadow_strike_debuff.vpcf"
+				"EffectAttachType"	"follow_chest"
+	
+				"ThinkInterval"	"3.0"
+	
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%duration_damage"
+					}
+				}
+			}
+	
+			"modifier_shadow_strike_thinker_datadriven"
+			{
+				"IsHidden"	"1"
+				"Duration"	"%AbilityDuration"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+	
+				"ThinkInterval"	"1.0"
+	
+				"OnIntervalThink"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+						"Target"		"TARGET"
+					}
+				}
+			}
+	
+			"modifier_shadow_strike_slow_datadriven"
+			{
+				"IsHidden"		"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+	
+	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%movement_slow_small"
+				}
 			}
 		}
 	}

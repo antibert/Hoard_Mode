@@ -858,7 +858,7 @@ end
 function SpawnersUltra:SpawnBird()
 	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
-	local units_to_spawn = RandomInt(3,5)
+	local units_to_spawn = RandomInt(4,5)
 	for i=1,units_to_spawn do
 		local unit = CreateUnitByName("npc_dota_creature_bird", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
@@ -1313,12 +1313,12 @@ function SpawnersUltra:SpawnFriend()
 	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_goodguys_2"):GetAbsOrigin()
 	local units_to_spawn = 1
 	local spawned_units = 0
-	for j=1, 12 do
+	for j=1, 8 do
 		if spawned_units > 0 then
 			break
 		end
 		if bottomFriends[j] ~= nil then
-			if bottomFriends[j]:IsAlive() == false then
+			if bottomFriends[j]:IsNull() == true then
 				bottomFriends[j] = nil
 			end
 		end

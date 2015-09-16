@@ -47,7 +47,7 @@ function SpawnersUltra:StartSpawners()
 		SpawnersUltra:SpawnCentaurBoss()
 		return 1400.0
     end)
-    Timers:CreateTimer(1960, function()
+    Timers:CreateTimer(2040, function()
 		SpawnersUltra:SpawnFuckYou()
 		return 1400.0
     end)
@@ -631,13 +631,13 @@ Timers:CreateTimer("largebears", {
 	end)  
    Timers:CreateTimer("bird", {
 		useGameTime = true,
-		endTime = 240,
+		endTime = 35,
 		callback = function()
 			SpawnersUltra:SpawnBird()
 			return 32.0
 		end
 	})
-	Timers:CreateTimer(600, function()
+	Timers:CreateTimer(400, function()
 		SpawnersUltra:StopSpawner("bird")
 	end)  
    Timers:CreateTimer("ogres", {
@@ -701,15 +701,15 @@ Timers:CreateTimer("largebears", {
 
     Timers:CreateTimer(17, function()
 		SpawnersUltra:SpawnFriend()
-		return 40.0
+		return 30.0
     end)
     Timers:CreateTimer(18, function()
 		SpawnersUltra:SpawnFriend()
-		return 40.0
+		return 30.0
     end)	
     Timers:CreateTimer(19, function()
 		SpawnersUltra:SpawnFriend()
-		return 40.0
+		return 30.0
     end)		
 	Timers:CreateTimer(0, function()
 		SpawnersUltra:SpawnFriend2()

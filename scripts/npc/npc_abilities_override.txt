@@ -73,6 +73,7 @@
 	//"item_point_booster"			"REMOVE"
 	//"item_vitality_booster"			"REMOVE"
 	//"item_recipe_power_treads"		"REMOVE"
+	//"item_recipe_power_treads_datadriven"		"REMOVE"
 	//"item_power_treads"				"REMOVE"
 	//"item_recipe_hand_of_midas"		"REMOVE"
 	//"item_hand_of_midas"			"REMOVE"
@@ -340,7 +341,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY | DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_SUMMONED | DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
-		
+		"AbilityTextureName"			"lich_sacrifice"		
 		"AbilitySpecial"
 		{
 			"01"
@@ -585,7 +586,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
 	    "AbilityTextureName"			"horde_devour"
-		"AbilityCooldown"				"40.0 35.0 30.0 25.0"
+		"AbilityCooldown"				"35.0 30.0 25.0 20.0"
 	    "AbilitySpecial"
 		{
 			"01"
@@ -596,37 +597,10 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_per_second"		"20 20 20 20"
+				"health_per_second"		"20 40 60 80"
 			}
 		}
 
-	}
-	//=================================================================================================================
-	// Ability: Axe Battle Hunger
-	//=================================================================================================================
-	"axe_battle_hunger"
-	{
-
-		"AbilityDamage"					"35 50 65 80"
-
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"10.0"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"slow"						"-12"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"speed_bonus"						"20"
-			}
-		}		
 	}
 	//=================================================================================================================
 	// Ability: Axe Counter Helix
@@ -660,25 +634,10 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"275 385 495 605"
+				"radius"					"275 325 375 425"
 			}
 		}
 	}
-	
-	//=================================================================================================================
-	// Tiny: Toss
-	//=================================================================================================================
-	"tiny_toss"
-	{
-		"AbilityManaCost"				"30 40 50 60"
-	}
-  	//=================================================================================================================
-	// Kunkka: Torrent
-	//=================================================================================================================
-	"kunkka_torrent"
-	{
-		"AbilityManaCost"				"55 75 95 120"
-    }
 	//=================================================================================================================
 	// Ability: Skeleton King Reincarnation
 	//=================================================================================================================
@@ -756,24 +715,12 @@
 			}
 		}
 	}
-    //=================================================================================================================
-	// Queen of Pain: Blink
-	//=================================================================================================================
-	"queenofpain_blink"
-	{
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15.0 12.0 9.0 6.0"
-		
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0 0 0 0"
-	}
 	//=================================================================================================================
 	// Queen of Pain: Scream of Pain
 	//=================================================================================================================
 	"queenofpain_scream_of_pain"
 	{
-		"AbilityDamage"					"100 200 350 500"
+		"AbilityDamage"					"135 240 375 500"
 		"AbilityManaCost"				"110 120 130 140"
 		"AbilityCooldown"				"7.0 6.0 5.0 4.0"
 	}
@@ -808,7 +755,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"300 475 700"
+				"damage"			"400 600 800"
 			}
 			"06"
 			{
@@ -818,7 +765,7 @@
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_scepter"	"400 650 875"
+				"damage_scepter"	"600 800 1000"
 			}
 		}
 	}
@@ -1167,27 +1114,6 @@
 		}
 	}
 	//=================================================================================================================
-	// Ability: Lina Stuff
-	//=================================================================================================================
-	"lina_dragon_slave"
-	{
-		"AbilityDamage"					"150 250 360 500"
-	}
-		
-	"lina_laguna_blade"
-	{	
-		"AbilityCooldown"				"20.0 14.0 8.0"
-		"AbilityManaCost"				"300 200 100"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"800 1200 1600"
-			}
-		}
-	}
-	//=================================================================================================================
 	// Beastmaster: Primal Roar
 	//=================================================================================================================
 	"beastmaster_primal_roar"
@@ -1335,20 +1261,6 @@
 		}
 	}
 	//=================================================================================================================
-	// Lion: Voodoo
-	//=================================================================================================================
-	"lion_voodoo"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"4 5 6 7"
-			}
-		}
-	}
-	//=================================================================================================================
 	// Lion: Mana Drain
 	//=================================================================================================================
 	"lion_mana_drain"
@@ -1367,7 +1279,7 @@
 	//=================================================================================================================
 	"lion_finger_of_death"
 	{
-		"AbilityCooldown"				"40.0 30.0 20.0"
+		"AbilityCooldown"				"30.0 25.0 20.0"
 		"AbilityManaCost"				"100 150 200"
 		"AbilitySpecial"
 		{
@@ -1389,7 +1301,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"20.0 15.0 10.0"
+				"cooldown_scepter"			"30.0 25.0 20.0"
 			}
 		}
 	}
@@ -1815,25 +1727,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_second"		"100 130 160"
-			}
-		}
-	}
-	//=================================================================================================================
-	// Shredder: Reactive Armor
-	//=================================================================================================================
-	"shredder_reactive_armor"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_armor"						"2"
-			}
-			"02"
-			{
-				"var_type"							"FIELD_INTEGER"
-				"bonus_hp_regen"							"2"
 			}
 		}
 	}
@@ -2966,7 +2859,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_reduction"		"10 20 30 40"
+				"damage_reduction"		"10 17 24 31"
 			}
 		}
 	}
@@ -3276,7 +3169,7 @@
 	{
 		"MaxLevel"						"4"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityCooldown"				"60 50 40 30"
+		"AbilityCooldown"				"30 25 20 15"
 		"AbilityManaCost"				"175 225 275"
 		"AbilitySpecial"
 		{
@@ -3288,7 +3181,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 125 150 175"
+				"damage"				"135 170 205 240"
 			}
 			"03"
 			{
@@ -3303,7 +3196,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_scepter"		"200 225 250 275"
+				"damage_scepter"		"235 275 320 400"
 			}
 		}
 	}
@@ -3341,7 +3234,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_block"		"20 40 60 80"
+				"damage_block"		"100 100 100 100"
 			}
 			"04"
 			{
@@ -3356,6 +3249,7 @@
 	//=================================================================================================================
 	"treant_overgrowth"
 	{
+		"AbilityCooldown"				"40"
 		"AbilitySpecial"
 		{
 			"01"
@@ -3386,6 +3280,279 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"damage"		"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Broodmother: Spawn Spiderlings
+	//=================================================================================================================
+	"broodmother_spawn_spiderlings"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5279"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"FightRecapLevel"				"1"
+		
+		// Unit Targeting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+		"AbilityCooldown"				"10.0 10.0 10.0 10.0"
+		"AbilityManaCost"				"120 120 120 120"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// Modifier has no support value
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"buff_duration"			"2.0 2.0 2.0 2.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"spiderling_duration"	"60.0 60.0 60.0 60.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"75 150 225 300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"count"					"1 2 3 4"
+			}	 
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"	"1200"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Broodmother: Poison Sting
+	//=================================================================================================================
+	"broodmother_poison_sting"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5284"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportBonus"		"15"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6.0"
+			}
+			"02"
+			{		
+				"var_type"				"FIELD_FLOAT"
+				"duration_hero"			"2.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"8"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_speed"		"-12"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Broodmother: Spawn Spiderites
+	//=================================================================================================================
+	"broodmother_spawn_spiderite"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5283"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"spiderite_duration"			"60.0"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"buff_duration"					"2.0"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Broodmother: Spin Web
+	//=================================================================================================================
+	"broodmother_spin_web"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5280"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCooldown"				"0.0"
+		"AbilityManaCost"				"50"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"count"					"2 4 6 8"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heath_regen"			"2 4 6 8"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movespeed"		"20 25 30 35"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"invis_movespeed_tooltip"		"40 50 60 70"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"fade_delay"			"2.0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_time"			"6.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_charges"			"1 2 3 4"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"charge_restore_time"	"40.0"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Broodmother: Incapacitating Bite
+	//=================================================================================================================
+	"broodmother_incapacitating_bite"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5281"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"miss_chance"			"30 40 50 60"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movespeed"		"-10 -20 -30 -40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"			"2.0 2.0 2.0 2.0"
+			}
+		}
+	}
+	
+	//=================================================================================================================
+	// Broodmother: Insatiable Hunger
+	//=================================================================================================================
+	"broodmother_insatiable_hunger"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5282"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"FightRecapLevel"				"2"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.2 0.2 0.2"
+		"AbilityCooldown"				"45.0 45.0 45.0"
+		"AbilityManaCost"				"100 100 100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"60 90 120"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal_pct"			"60 80 100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"14.0 14.0 14.0"
 			}
 		}
 	}
@@ -3682,21 +3849,6 @@
 		}
 	}
 	//=================================================================================================================
-	// Shadow Demon: Shadow Demon Shadow Poison
-	//=================================================================================================================
-	"shadow_demon_shadow_poison"
-	{
-		"AbilityManaCost"				"10 20 30 40"
-		"AbilitySpecial"
-		{
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_multiply_stacks"	"10"
-			}
-		}
-	}
-	//=================================================================================================================
 	// Shadow Demon: Shadow Demon Demonic Purge
 	//=================================================================================================================
 	"shadow_demon_demonic_purge"
@@ -3885,6 +4037,14 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Rubick: Spell Steal
+	//=================================================================================================================
+	"rubick_spell_steal"
+	{
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	}
 
 //Items
 	
@@ -3964,9 +4124,9 @@
 	//=================================================================================================================
 	// Midas
 	//=================================================================================================================
-	"item_recipe_hand_of_midas"
+	"item_hand_of_midas"
 	{
-		"ItemCost"                   "1500"
+		"AbilityCooldown"				"70"
 	}
 	//=================================================================================================================
 	// Quelling Blade
@@ -4002,13 +4162,6 @@
 	"item_recipe_maelstrom"
 	{
 		"ItemCost"                   "1300"
-	}
-	//=================================================================================================================
-	// Mjollnir recipe
-	//=================================================================================================================
-	"item_recipe_mjollnir"
-	{
-		"ItemCost"                   "1500"
 	}
 	//=================================================================================================================
 	// Dagon Recipe

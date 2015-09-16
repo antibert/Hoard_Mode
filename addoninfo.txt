@@ -1,6 +1,6 @@
 "AddonInfo"
 {
-	maps			"Horde_5p_easy Horde_4p_medium Horde_4p_hard Horde_4p_ultra Horde_2p_easy"
+	maps			"Horde_5p_easy Horde_4p_medium Horde_2p_easy Horde_4p_hard Horde_4p_ultra"
 	"IsPlayable"	"1"
 	"Horde_5p_easy"
 	{

@@ -3,6 +3,7 @@
 	"consumables"
 	{
 		"item"		"item_flask"
+		"item"      "item_clarity"
 		"item"      "item_tango"
 		"item"		"item_greater_salve"
 		"item"      "item_ward_observer"
@@ -119,7 +120,6 @@
 		"item"		"item_blade_mail"
 		"item"		"item_vanguard"
 		"item"		"item_soul_booster"
-		"item"		"item_black_king_bar"
 		"item"		"item_shivas_guard"
 		"item"		"item_manta"
 		"item"		"item_bloodstone"

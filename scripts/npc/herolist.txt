@@ -73,7 +73,10 @@
     "npc_dota_hero_beastmaster"    "1"
     "npc_dota_hero_winter_wyvern"   "1"
 	"npc_dota_hero_lich"        "1"
-	
+	"npc_dota_hero_broodmother"   "1"
+ 
+    "npc_dota_hero_ogre_magi"     "0"
+	"npc_dota_hero_rubick"       "0"	
     "npc_dota_hero_batrider"       "0"
 	"npc_dota_hero_obsidian_destroyer"  "0"
 	"npc_dota_hero_tinker"    "0"

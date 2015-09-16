@@ -16,6 +16,9 @@ function Precache( context )
 	PrecacheResource( "particle_folder", "particles/frostivus_gameplay", context )
 	PrecacheItemByNameSync( "item_bag_of_gold", context )
     PrecacheItemByNameSync("item_king_rapier", context)
+    PrecacheItemByNameSync("item_boots_of_strength", context)	
+    PrecacheItemByNameSync("item_boots_of_agility", context)	
+    PrecacheItemByNameSync("item_boots_of_intellect", context)	
     PrecacheItemByNameSync("item_horde_ethereal_blade", context)
     PrecacheItemByNameSync("item_horde_ghost", context)
     PrecacheItemByNameSync("item_hoard_dagon", context)
@@ -124,6 +127,8 @@ function CHoard_ModeGameMode:SetRules()
 	GameRules:GetGameModeEntity():SetFountainPercentageManaRegen( 6 )
 	GameRules:GetGameModeEntity():SetFountainConstantManaRegen( 1 )
 	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1200 )	
+	
+
 end
 
 -- This function is called once and only once when the game begins

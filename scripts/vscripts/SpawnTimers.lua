@@ -1,3 +1,26 @@
+	-- EXAMPLE FOR NYE
+	-- EXAMPLE FOR NYE
+	-- EXAMPLE FOR NYE
+	--[[
+	Timers:CreateTimer("RandomSpawnExample", {
+		useGameTime = true,
+		endTime = 0,
+		callback = function()
+			local rand = RandomInt(1,10)
+			if rand > 5 then
+				Spawners:SpawnMob1()
+				return 10
+			else
+				Spawners:SpawnMob2()
+				return 10
+			end
+		end
+	})
+	]]
+	-- EXAMPLE FOR NYE
+	-- EXAMPLE FOR NYE
+	-- EXAMPLE FOR NYE
+
 if SpawnTimers == nil then
 	SpawnTimers = class({})
 end

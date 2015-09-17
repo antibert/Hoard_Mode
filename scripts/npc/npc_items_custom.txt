@@ -189,11 +189,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_attack_speed"	"80"
 			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"	        "30"
-			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -251,7 +246,6 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%bonus_strength"
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%bonus_armor"
 				}
 			}
 		}
@@ -285,7 +279,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"1058"  //Valve's version of this item uses the ID "63".
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 		"AbilityTextureName"			"boots_of_agility"
@@ -322,6 +316,30 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_stat2"			"20"
 			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			    "100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"			    "6"
+			}
+		}
+		"OnSpellStart" 
+		{
+			"ApplyModifier"
+			{
+				"Target"					"CASTER"
+				"ModifierName"				"modifier_item_boots_of_agility_armor"
+				"Duration"					"%duration"
+			}		
+			"FireSound"
+			{
+				"EffectName"				"DOTA_Item.Armlet.Activate"
+				"Target"					"CASTER"
+			}
 		}
 		
 		"Modifiers"
@@ -340,6 +358,17 @@
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%bonus_stat2"
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"			"%bonus_movement_speed"
+				}
+			}
+			"modifier_item_boots_of_agility_armor"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+				"EffectName"            	"particles\customgames\capturepoints\cp_allied_wood.vpcf"
+				"EffectAttachType"      	"PATTACH_ABSORIGIN"	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%bonus_armor"
 				}
 			}
 		}

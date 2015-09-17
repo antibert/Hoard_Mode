@@ -38,14 +38,19 @@ Heroes:
 //Tiny:
 -- Avalanche radius reduced from "275 385 495 605" to "275 325 375 425"
 -- Toss manacost back to vanilla
+//Faceless Void:
+-- Chronosphere cooldown reduced from "100.0 90.0 80.0" (60) to "60.0 55.0 50.0" (30)
+-- Time Lock back to vanilla
 
 Items:
 -- New Power Treads upgrade, Boots of Power which can be upgraded again into 3 different powerful boot types:
 Boots of Strength, Boots of Agility or Boots of Intellect.
+(Currently Not working with meepo clones)
 -- New Phase boots upgrade, Lithe Boots - Phase boots combined with desolator
 -- Hand of Midas cooldown decreased from 100 to 70 seconds
 -- King Rapier attack speed bonus removed
 -- Mjolnir recipe back to vanilla
+-- Morbid Mask item cost back to vanilla
 
 Notes:
 -- Agility Boots give huge armor bonus on activate

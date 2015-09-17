@@ -28,6 +28,23 @@ end
 require('libraries/timers')
 
 function Spawners:StartSpawners()
+	-- RANDOM SPAWNER BLOCK 50/50 CHANCE TO TRIGGER EITHER
+	local rand = RandomInt(1,2)
+	if rand == 1 then
+		-- PUT SPAWNERBLOCK 1 HERE JUST COPY PASTA THE FUNCTIONS LIKE SHOWN BELOW
+		Timers:CreateTimer("EXAMPLELOL", {
+			--CANCERCODE
+		})
+		
+		Timers:CreateTimer("LAMBORGHINI", {
+			--f
+		})
+	else
+		-- PUT SPAWNERBLOCK 2 HERE
+	end
+	
+	-- YOU CAN JUST LEAVE SOME SPAWNERS OUT IF YOU WANT THEM TO ALWAYS SPAWN OK 10000 NIGERION DOLERS PLS
+	
     -- First Gnoll spawn example
 	-- Start spawning gnolls every 30 seconds.
 	Timers:CreateTimer("gnolls", {

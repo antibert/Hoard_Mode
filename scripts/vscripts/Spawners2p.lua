@@ -205,7 +205,7 @@ function Spawners2p:SpawnSpookiMid()
 	local units_to_spawn = RandomInt(1,4)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_spooki_easy", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			local unit = CreateUnitByName("npc_dota_creature_spooki", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
@@ -220,7 +220,7 @@ function Spawners2p:SpawnSpookiBot()
 	local units_to_spawn = RandomInt(1,4)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_spooki_easy", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			local unit = CreateUnitByName("npc_dota_creature_spooki", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )

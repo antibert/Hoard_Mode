@@ -1,69 +1,41 @@
 Next Update Patch Notes:
 4277
 
-Beta 2.8
+Beta 1.02
+
 General:
--- Demons on easy map drop a smaller gold bag
--- Medium and large gold bag bounty reduced slightly
--- Skeleton boss and roshan wave spawn times slightly adjusted
--- Added Spooki Aura Tooltip
--- Toll Masters (Dire jungle) now drop medium gold bags instead of give a normal gold bounty
--- Toll Masters added to 2p map
--- Updated various spell icons to make new/edited abilities more obvious
+-- Fixed level 3 boots of travel not giving bonus movement speed
+
+2p_easy map:
+-- Skeletons gold bounty reduced
 
 Heroes:
-//Added Broodmother
-//Treant Protector:
--- Wrath of Nature cooldown reduced from  "60 50 40 30" to "30 25 20 15"
--- Wrath of Nature damage increased from "100 125 150 175" ("200 225 250 275") to "135 170 205 240" ("235 275 320 400")
--- Living Armor now blocks 100 instances of damage on all levels
--- Overgrowth cooldown reduced from 70 to 40 seconds
-//Lina:
--- Replaced Laguna Blade with Laguna Storm which is similar to Laguna Blade but with a small AOE
--- Dragon Slave set back to vanilla damage scaling
-//Wraith King:
--- Can now munch down on creeps much faster
-//Queen of Pain:
--- Shadow Strike replaced with Poison Flurry (Same as Shadow Strike but AOE)
--- Various skills increased and rescaled in damage
-//Tidehunter:
--- Kraken Shell damage block reduced from "10 20 30 40" to "10 17 24 31"
-//Kunkka:
--- Torrent manacost back to vanilla
-//Lion:
--- Hex back to vanilla duration
--- Finger of Death cooldown increased from "40.0 30.0 20.0" ("20.0 15.0 10.0") to "30.0 25.0 20.0"
-//Shadow Demon:
--- Shadow Poison back to vanilla
-//Tiny:
--- Avalanche radius reduced from "275 385 495 605" to "275 325 375 425"
--- Toss manacost back to vanilla
-//Faceless Void:
--- Chronosphere cooldown reduced from "100.0 90.0 80.0" (60) to "60.0 55.0 50.0" (30)
--- Time Lock back to vanilla
+//Legion Commander
+-- Overwhelming Odds damage per unit reduced from "15 22 28 35" to "15 18 21 24"
 
 Items:
--- New Power Treads upgrade, Boots of Power which can be upgraded again into 3 different powerful boot types:
-Boots of Strength, Boots of Agility or Boots of Intellect.
-(Currently Not working with meepo clones)
--- New Phase boots upgrade, Lithe Boots - Phase boots combined with desolator
--- Hand of Midas cooldown decreased from 100 to 70 seconds
--- King Rapier attack speed bonus removed
--- Mjolnir recipe back to vanilla
--- Morbid Mask item cost back to vanilla
+-- Daedalus crit multiplier back to vanilla
+
+Waves to make:
+SPIDERS/ZOMBIES
+Split guard wave into guard/centaur
+Split demon wave into demon/dragon
+-- post 40 minute ramps up in difficulty more and more, summons medium mobs from various waves 
+and they give low gold bounty
 
 Notes:
--- Agility Boots give huge armor bonus on activate
--- Make alternative wofl wave that has 50% to trigger instead of tree wave (lycan wolf models and beasmaters boars)
--- Make ghost and golem wave 50%
--- Buff warlock golem hps
--- Stop people kiting on harder maps, zombies movement speed buff abut mix some kind of ranged unit earlier on in mid with a slow
--- Fix treant q not anmination
--- add a rotating skeleton to loading screen
--- post 40 minute too easy
+-- reduce treant protector q aghs damage
+-- increase wolf and great hound movement speed
+-- update refresher icon
+-- Void chronosphere dosen't work on bosses
+-- Resend unit orders so abilities can be used by the AI
+-- Fix side shops
+-- Rubick two new abilities then port
+-- give big satyrs buffed version of saruken
+-- Make eye of skadi give some kinda of aoe thing to heroes
 -- Fix storm spirit pull too loud - Lion figer too loud 
 -- something interesting 40 minutes in (yo HewDraw, what was that Void boss you were talking about?)
--- PLAYERS GET GOLD FROM DISCONNECTED PLAYERS
+-- Buff warlock golem hps
 
 			"RunScript"
 			{
@@ -95,10 +67,6 @@ KV STUFF:
 //ABILITES:
 
 -- Batrider Lasso grabs an AOE of targets
-
--- Ursa fury swipes does increasing %hp based damage instead of a static damage increment
-
--- A rework of Dazzle's Poison Touch (Make it hit multiple targets or have aoe would be good)
 
 -- A new ultimate for Vengeful Spirit (This can be literally anything you think would be fun/useful in Horde Mode)
 

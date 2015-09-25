@@ -484,7 +484,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_unit"		"15 22 28 35"
+				"damage_per_unit"		"15 18 21 24"
 			}
 		}
 	}
@@ -954,21 +954,7 @@
 	//=================================================================================================================
 	"morphling_waveform"
 	{
-		"AbilityCastRange"				"3000"
-		"AbilityDamage"					"200 300 400 500"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"1250"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"width"					"300"
-			}
-		}
+		"AbilityDamage"					"150 250 350 450"
 	}
 	//=================================================================================================================
 	// Morphling: Replicate
@@ -1214,7 +1200,7 @@
 		    "04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"creep_damage_penalty"			"0"
+				"creep_damage_penalty"			"15"
 			}
 		}
 	}
@@ -2360,7 +2346,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"base_damage"			"70"
+				"base_damage"			"200"
 			}
 			"09"
 			{
@@ -2401,7 +2387,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"burn_duration"			"6.0"
+				"burn_duration"			"10.0"
 			}
 			"10"
 			{
@@ -2421,7 +2407,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"200 300 425 560 700 900 1300"
+				"damage"				"600 900 1200 1500 1800 2100 2400"
 				"levelkey"				"exortlevel"
 			}
 		}
@@ -2431,7 +2417,7 @@
 	//=================================================================================================================
 	"invoker_deafening_blast"
 	{
-		"AbilityCooldown"				"15"
+		"AbilityCooldown"				"10"
 	}
 	//=================================================================================================================
 	// Venomancer: Poison Sting
@@ -3054,7 +3040,6 @@
 	"enigma_midnight_pulse"
 	{
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityUnitTargetFlags"		""
 		"AbilitySpecial"
 		{
 			"01"
@@ -3065,7 +3050,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_percent"			"5 5.5 6 6.5"
+				"damage_percent"			"2 2.5 3 3.5"
 			}
 		}
 	}
@@ -3156,13 +3141,13 @@
 		"MaxLevel"						"4"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityCooldown"				"30 25 20 15"
-		"AbilityManaCost"				"175 225 275"
+		"AbilityManaCost"				"60 90 120 150"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"max_targets"			"5 7 9 11"
+				"max_targets"			"5 8 11 15"
 			}
 			"02"
 			{
@@ -3196,7 +3181,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"leech_damage"					"100 150 200 250"
+				"leech_damage"					"50 80 110 140"
 			}		
 		}
 	}
@@ -3610,7 +3595,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"polarity_damage"		"300 600 900"
+				"polarity_damage"		"500 1000 1500"
 			}
 			"03"
 			{
@@ -3760,7 +3745,7 @@
 	//=================================================================================================================
 	"earthshaker_echo_slam"
 	{
-		"AbilityCooldown"				"110.0 100.0 90.0"
+		"AbilityCooldown"				"85.0 85.0 85.0"
 	    "AbilitySpecial"
 		{
 				"04"
@@ -3769,13 +3754,6 @@
 				"echo_slam_echo_damage"		"60 80 100"
 			}
 		}
-	}
-	//=================================================================================================================
-	// Ability: Earthshaker Fissure
-	//=================================================================================================================
-	"earthshaker_fissure"
-	{
-		"AbilityDamage"					"200 235 270 315"
 	}
 	//=================================================================================================================
 	// Shadow Demon: Shadow Demon Disruption
@@ -3796,7 +3774,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"illusion_duration"			"10.0 12.0 17.0 20.0"
+				"illusion_duration"			"10.0 12.0 14.0 16.0"
 			}
 			"03"
 			{
@@ -4031,6 +4009,59 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	}
+	//=================================================================================================================
+	// Satyr Hellcaller: Shockwave
+	//=================================================================================================================
+	"satyr_hellcaller_shockwave"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"5316"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"MaxLevel"						"1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
+		// Unit Targeting
+		//-------------------------------------------------------------------------------------------------------------		
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"8.0"
+		"AbilityDamage"					"400"
+		"AbilityManaCost"				"100"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"800"
+			}
+			
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_start"			"180"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_end"			"180"
+			}
+			
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"1300"
+			}
+		}
+	}
 
 //Items
 	
@@ -4126,7 +4157,23 @@
 	//=================================================================================================================
 	"item_recipe_travel_boots"
 	{
-		"ItemCost"                   "250"
+		"ItemCost"                   "500"
+	}
+	//=================================================================================================================
+	// Travel Boots
+	//=================================================================================================================
+	"item_travel_boots"
+	{
+		"MaxUpgradeLevel"				"3"
+	}
+	//=================================================================================================================
+	// Travel Boots 2
+	//=================================================================================================================
+	"item_travel_boots_2"
+	{
+		"MaxUpgradeLevel"				"3"
+		"UpgradesItems"					"item_travel_boots_3"
+		"UpgradeRecipe"					"item_recipe_travel_boots"
 	}
 	//=================================================================================================================
 	// TP
@@ -4279,7 +4326,7 @@
 	}
     "item_recipe_radiance"
 	{
-		"ItemCost"						"1150"	
+		"ItemCost"						"800"	
 	}
     "item_recipe_black_king_bar"
 	{
@@ -4479,20 +4526,6 @@
 		"AbilityCooldown"				"65"
     }
 	//=================================================================================================================
-	// Greater Crit
-	//=================================================================================================================
-	"item_greater_crit"
-	{
-		"AbilitySpecial"
-		{
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_multiplier"		"300"
-			}
-		}
-	}
-	//=================================================================================================================
 	// Helm of the Dominator
 	//=================================================================================================================
 	"item_helm_of_the_dominator"
@@ -4507,4 +4540,12 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Recipe: Necronomicon
+	//=================================================================================================================
+	"item_recipe_necronomicon"
+	{
+		"ItemCost"						"400"	
+	}
+	
 }	

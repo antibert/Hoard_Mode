@@ -100,7 +100,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"50"
+				"bonus_attack_speed"	"40"
 			}
 		}
 		
@@ -155,7 +155,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"			"boots_of_strength"
+		"AbilityTextureName"			"item_boots_of_strength"
 		
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"30"
@@ -187,7 +187,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"80"
+				"bonus_attack_speed"	"50"
 			}
 			"05"
 			{
@@ -282,7 +282,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"			"boots_of_agility"
+		"AbilityTextureName"			"item_boots_of_agility"
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -291,6 +291,9 @@
 		"ItemQuality"					"epic"
 		"ItemAliases"					"boots of agility"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		"AbilityCooldown"				"60.0"
+	    "AbilityManaCost"				"100"
 			
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -309,7 +312,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"80"
+				"bonus_attack_speed"	"50"
 			}
 			"04"
 			{
@@ -405,7 +408,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"			"boots_of_intellect"
+		"AbilityTextureName"			"item_boots_of_intellect"
 
 		"AbilityCastPoint"              "0"
 		"AbilityCooldown"				"60.0"
@@ -436,7 +439,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"80"
+				"bonus_attack_speed"	"50"
 			}
 			"04"
 			{
@@ -556,7 +559,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"			"lithe_boots"
+		"AbilityTextureName"			"item_lithe_boots"
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
@@ -712,6 +715,173 @@
 		}
 	}
 	//=================================================================================================================
+	// Recipe: Travel Boots
+	//=================================================================================================================
+	"item_recipe_travel_boots_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"99219"	
+		"BaseClass"							"item_datadriven"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.mdl"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_travel_boots_3"
+		"ItemRequirements"
+		{
+			"01"						"item_travel_boots_2;item_hyperstone;item_recipe_travel_boots"
+		}
+	}
+	
+	//=================================================================================================================
+	// Travel Boots 3
+	//=================================================================================================================
+	"item_travel_boots_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"99220"
+		"BaseClass"                     "item_datadriven"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"AbilityTextureName"			"item_boots_of_travel_3"
+		"precache"
+		{
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+		}
+
+		// Stats		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"30.0"
+		"AbilitySharedCooldown"			"teleport"
+		"AbilityCastPoint"				"3"
+		"AbilityChannelTime"			"3"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"75"
+		"ItemCost"						"3950"
+		"ItemShopTags"					"teleport;move_speed"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"bot;boots of travel"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel"				"3"
+		"ItemBaseLevel"					"3"		
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movement_speed"	"125"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"60"
+			}
+		}
+		"OnAbilityPhaseStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_teleportation"
+				"Target" 		"CASTER"
+				"Duration"		"3"
+			}
+	
+			"FireSound"
+			{
+				"EffectName"	"Hero_Furion.Teleport_Grow"
+				"Target" 		"CASTER"
+			}
+	
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_furion/teleportation.lua"
+				"Function"		"CreateTeleportParticles"
+				"Target"		"POINT"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Furion.Teleport_Disappear"
+				"Target" 		"CASTER"
+			}
+	
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_furion/teleportation.lua"
+				"Function"		"Teleport"
+				"Target"		"POINT"
+			}
+	
+			"FireSound"
+			{
+				"EffectName"	"Hero_Furion.Teleport_Appear"
+				"Target" 		"CASTER"
+			}
+		}
+	
+		"Modifiers"
+		{
+			"modifier_teleportation"
+			{
+				"IsHidden"			"0"
+		
+				"EffectName"		"particles\econ\events\league_teleport_2014\teleport_start_league_gold.vpcf"
+				"EffectAttachType"	"follow_origin"
+	
+				"OnOrder"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Hero_Furion.Teleport_Disappear"
+						"Target" 		"CASTER"
+					}
+	
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_furion/teleportation.lua"
+						"Function"		"EndTeleport"
+					}
+	
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_teleportation"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+			"modifier_item_travel_boots_3"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"			"%bonus_movement_speed"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
 	// Recipe: King Rapier
 	//=================================================================================================================
 	"item_recipe_king_rapier"
@@ -747,7 +917,7 @@
 		"ID"							"1666"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"BaseClass"                     "item_monkey_king_bar"
-		"AbilityTextureName"            "king_rapier"
+		"AbilityTextureName"            "item_king_rapier"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -779,7 +949,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_damage"			"100"
+				"bash_damage"			"50"
 			}
 			"05"
 			{
@@ -914,7 +1084,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"500"
+		"ItemCost"						"465"
 		"ItemShopTags"					"regen_health;regen_mana;boost_health;boost_mana;int;agi;str"
 		"ItemQuality"					"common"
 		"ItemAliases"					"magic wand"
@@ -1137,7 +1307,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2720"
+		"ItemCost"						"2070"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"dagon 1"
@@ -1238,7 +1408,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2720"
+		"ItemCost"						"2670"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"dagon 2"
@@ -1339,7 +1509,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2720"
+		"ItemCost"						"3270"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"dagon 3"
@@ -1440,7 +1610,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2720"
+		"ItemCost"						"3870"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"dagon 4"
@@ -1541,7 +1711,7 @@
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2720"
+		"ItemCost"						"4470"
 		"ItemShopTags"					"damage;int;str;agi;hard_to_tag"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"dagon 5"
@@ -1618,7 +1788,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"1037"
+		"ID"							"9037"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
@@ -1723,7 +1893,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"2092"
+		"ID"							"9092"
 		"BaseClass"						"item_datadriven"
 		"AbilityTextureName"			"item_recipe"
 		
@@ -1749,7 +1919,7 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"1176"
+		"ID"							"9176"
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY | DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -1767,7 +1937,7 @@
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100"
-		"ItemCost"						"4700"
+		"ItemCost"						"4800"
 		"ItemShopTags"					"agi;str;int;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"

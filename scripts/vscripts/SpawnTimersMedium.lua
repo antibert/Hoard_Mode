@@ -5,22 +5,7 @@ end
 require('libraries/timers')
 
 function SpawnersMedium:StartSpawners()
-    -- First Gnoll spawn example
-	-- Start spawning gnolls every 30 seconds.
-	Timers:CreateTimer("gnolls", {
-		useGameTime = true,
-		endTime = 0,
-		callback = function()
-			SpawnersMedium:SpawnGnollsTop()
-			SpawnersMedium:SpawnGnollsMid()
-			return 30.0
-		end
-	})
-	-- Stop spawning gnolls after 3.5 minutes.
-	Timers:CreateTimer(180, function()
-		SpawnersMedium:StopSpawner("gnolls")
-	end)
-	
+
 -- BOSSES
 	
 	Timers:CreateTimer(500, function()
@@ -35,14 +20,6 @@ function SpawnersMedium:StartSpawners()
 		SpawnersMedium:SpawnOgreBoss()
 		return 3000.0
     end)
-    Timers:CreateTimer(1130, function()
-		SpawnersMedium:SpawnKingTree()
-		return 3000.0
-    end)
-    Timers:CreateTimer(1320, function()
-		SpawnersMedium:SpawnBigSplitter()
-		return 3000.0
-    end)
     Timers:CreateTimer(1600, function()
 		SpawnersMedium:SpawnCentaurBoss()
 		return 3000.0
@@ -52,8 +29,20 @@ function SpawnersMedium:StartSpawners()
 		return 3000.0
     end)
  
--- MID LANE/All Lanes
-		
+-- FIRST WAVE: Gnolls and Birds. 
+
+	Timers:CreateTimer("gnolls", {
+		useGameTime = true,
+		endTime = 0,
+		callback = function()
+			SpawnersMedium:SpawnGnollsTop()
+			SpawnersMedium:SpawnGnollsMid()
+			return 30.0
+		end
+	})
+	Timers:CreateTimer(180, function()
+		SpawnersMedium:StopSpawner("gnolls")
+	end)		
 	Timers:CreateTimer("bazz", {
 		useGameTime = true,
 		endTime = 60,
@@ -66,6 +55,9 @@ function SpawnersMedium:StartSpawners()
 	Timers:CreateTimer(180, function()
 		SpawnersMedium:StopSpawner("bazz")
 	end)
+
+-- SECOND WAVE: Zombies/bears
+
 	Timers:CreateTimer("zombie", {
 		useGameTime = true,
 		endTime = 180,
@@ -166,56 +158,191 @@ function SpawnersMedium:StartSpawners()
 	Timers:CreateTimer(2160, function()
 		SpawnersMedium:StopSpawner("spooki")
 	end)
+-----------------------------------------------------------------------------------------------	
+---------------- START OF TREE AND WOLF PHASE SPAWNERS --------------------------------
+-----------------------------------------------------------------------------------------------	
+
+	-- RANDOM SPAWNER BLOCK 50/50 CHANCE TO TRIGGER EITHER
+	local rand = RandomInt(1,2)
+	if rand == 1 then
+	
+	---------------- Tree Wave
+
 	Timers:CreateTimer("prophet", {
 		useGameTime = true,
 		endTime = 1050,
 		callback = function()
-			SpawnersMedium:SpawnProphet()
+			Spawners:SpawnProphet()
 			return 48.0
 		end 
 	})
 	Timers:CreateTimer(1200, function()
-		SpawnersMedium:StopSpawner("prophet")
+		Spawners:StopSpawner("prophet")
 	end)
 	Timers:CreateTimer("tree", {
 		useGameTime = true,
 		endTime = 1030,
 		callback = function()
-			SpawnersMedium:SpawnTreesTop()
-			SpawnersMedium:SpawnTreesMid()
-			SpawnersMedium:SpawnTreesBot()
+			Spawners:SpawnTreesTop()
+			Spawners:SpawnTreesMid()
+			Spawners:SpawnTreesBot()
 			return 12.0
 		end
 	})
 	Timers:CreateTimer(1200, function()
-		SpawnersMedium:StopSpawner("tree")
+		Spawners:StopSpawner("tree")
 	end)
 	Timers:CreateTimer("shroom", {
 		useGameTime = true,
 		endTime = 1065,
 		callback = function()
-			SpawnersMedium:SpawnShroomTop()
-			SpawnersMedium:SpawnShroomMid()
-			SpawnersMedium:SpawnShroomBot()
+			Spawners:SpawnShroomTop()
+			Spawners:SpawnShroomMid()
+			Spawners:SpawnShroomBot()
 			return 45.0
 		end
 	})
 	Timers:CreateTimer(1200, function()
-		SpawnersMedium:StopSpawner("shroom")
+		Spawners:StopSpawner("shroom")
 	end)
 	Timers:CreateTimer("shroom2", {
 		useGameTime = true,
 		endTime = 2280,
 		callback = function()
-			SpawnersMedium:SpawnShroomTop()
-			SpawnersMedium:SpawnShroomMid()
-			SpawnersMedium:SpawnShroomBot()
+			Spawners:SpawnShroomTop()
+			Spawners:SpawnShroomMid()
+			Spawners:SpawnShroomBot()
 			return 43.0
 		end
 	})
 	Timers:CreateTimer(6000, function()
-		SpawnersMedium:StopSpawner("shroom2")
+		Spawners:StopSpawner("shroom2")
 	end)
+	Timers:CreateTimer("fang", {
+		useGameTime = true,
+		endTime = 1100,
+		callback = function()
+			Spawners:SpawnFangTop()
+			Spawners:SpawnFangMid()
+			Spawners:SpawnFangBot()
+			return 25.0
+		end
+	})
+	Timers:CreateTimer(1200, function()
+		Spawners:StopSpawner("fang")
+	end)    
+	Timers:CreateTimer("thing", {
+		useGameTime = true,
+		endTime = 1035,
+		callback = function()
+			Spawners:SpawnThing()
+			return 35.0
+		end
+	})
+	Timers:CreateTimer(1200, function()
+		Spawners:StopSpawner("thing")
+	end)
+	Timers:CreateTimer("stump", {
+		useGameTime = true,
+		endTime = 1020,
+		callback = function()
+			Spawners:SpawnStump()
+			return 3000.0
+		end
+	})
+	Timers:CreateTimer(1200, function()
+		Spawners:StopSpawner("stump")
+	end)
+    Timers:CreateTimer(1130, function()
+		Spawners:SpawnKingTree()
+		return 3000.0
+    end)
+	
+	---------------- Wolf Wave
+	
+	else
+	Timers:CreateTimer("rhino", {
+		useGameTime = true,
+		endTime = 1100,
+		callback = function()
+			Spawners:SpawnRhinoTop()
+			Spawners:SpawnRhinoMid()
+			Spawners:SpawnRhinoBot()
+			return 90.0
+		end
+	})
+	Timers:CreateTimer(1200, function()
+		Spawners:StopSpawner("rhino")
+	end)
+	Timers:CreateTimer("wolffang", {
+		useGameTime = true,
+		endTime = 1030,
+		callback = function()
+			Spawners:SpawnWolfFangTop()
+			Spawners:SpawnWolfFangMid()
+			Spawners:SpawnWolfFangBot()
+			return 35.0
+		end
+	})
+	Timers:CreateTimer(1200, function()
+		Spawners:StopSpawner("wolffang")
+	end)
+	Timers:CreateTimer("greathound", {
+		useGameTime = true,
+		endTime = 1050,
+		callback = function()
+			Spawners:SpawnGreatHound()
+			return 60.0
+		end 
+	})
+	Timers:CreateTimer(1200, function()
+		Spawners:StopSpawner("greathound")
+	end)
+	Timers:CreateTimer("packleader", {
+		useGameTime = true,
+		endTime = 1100,
+		callback = function()
+			Spawners:SpawnPackLeaderMid()
+			Spawners:SpawnPackLeaderBot()
+			Spawners:SpawnPackLeaderTop()
+			return 60.0
+		end
+	})
+	Timers:CreateTimer(1200, function()
+		Spawners:StopSpawner("packleader")
+	end)
+	Timers:CreateTimer("hound", {
+		useGameTime = true,
+		endTime = 1090,
+		callback = function()
+			Spawners:SpawnHoundTop()
+			Spawners:SpawnHoundMid()
+			Spawners:SpawnHoundBot()
+			return 25.0
+		end
+	})
+	Timers:CreateTimer(1200, function()
+		Spawners:StopSpawner("hound")
+	end)    
+	Timers:CreateTimer("rabid", {
+		useGameTime = true,
+		endTime = 1035,
+		callback = function()
+			Spawners:SpawnRabid()
+			return 30.0
+		end
+	})
+	Timers:CreateTimer(1200, function()
+		Spawners:StopSpawner("rabid")
+	end)
+    Timers:CreateTimer(1130, function()
+		Spawners:SpawnKingWolf()
+		return 3000.0
+    end)
+	end
+------------------------------------------------------------------------------------------------	
+---------------- END OF TREE AND WOLF PHASE SPAWNERS ------------------------------------------------
+------------------------------------------------------------------------------------------------
 	Timers:CreateTimer("ogreboss", {
 		useGameTime = true,
 		endTime = 2280,
@@ -227,54 +354,81 @@ function SpawnersMedium:StartSpawners()
 	Timers:CreateTimer(6000, function()
 		SpawnersMedium:StopSpawner("ogreboss")
 	end)
-	Timers:CreateTimer("fang", {
-		useGameTime = true,
-		endTime = 1100,
-		callback = function()
-			SpawnersMedium:SpawnFangTop()
-			SpawnersMedium:SpawnFangMid()
-			SpawnersMedium:SpawnFangBot()
-			return 25.0
-		end
-	})
-	Timers:CreateTimer(1200, function()
-		SpawnersMedium:StopSpawner("fang")
-	end)    
-	Timers:CreateTimer("thing", {
-		useGameTime = true,
-		endTime = 1035,
-		callback = function()
-			SpawnersMedium:SpawnThing()
-			return 35.0
-		end
-	})
-	Timers:CreateTimer(1200, function()
-		SpawnersMedium:StopSpawner("thing")
-	end)
-	Timers:CreateTimer("stump", {
-		useGameTime = true,
-		endTime = 1020,
-		callback = function()
-			SpawnersMedium:SpawnStump()
-			return 3000.0
-		end
-	})
-	Timers:CreateTimer(1200, function()
-		SpawnersMedium:StopSpawner("stump")
-	end)
+------------------------------------------------------------------------------------------------
+---------------- START OF GOLEM AND GHOST PHASE SPAWNERS ---------------------------------------
+------------------------------------------------------------------------------------------------
+	local rand = RandomInt(1,2)
+	if rand == 1 then
+
+	---------------- Golem Wave
+    Timers:CreateTimer(1320, function()
+		Spawners:SpawnBigSplitter()
+		return 3000.0
+    end)	
 	Timers:CreateTimer("splitter", {
 		useGameTime = true,
 		endTime = 1260,
 		callback = function()
-			SpawnersMedium:SpawnSplitterTop()
-			SpawnersMedium:SpawnSplitterMid()
-			SpawnersMedium:SpawnSplitterBot()
-			return 30.0
+			Spawners:SpawnSplitterTop()
+			Spawners:SpawnSplitterMid()
+			Spawners:SpawnSplitterBot()
+			return 23.0
 		end
 	})
 	Timers:CreateTimer(1380, function()
-		SpawnersMedium:StopSpawner("splitter")
+		Spawners:StopSpawner("splitter")
 	end)
+
+  ---------------- Ghost Wave	
+	
+	else
+	
+    Timers:CreateTimer(1320, function()
+		Spawners:SpawnBigGhost()
+		return 3000.0
+    end)
+	Timers:CreateTimer("ghostmeele", {
+		useGameTime = true,
+		endTime = 1270,
+		callback = function()
+			Spawners:SpawnGhostMeeleTop()
+		    Spawners:SpawnGhostMeeleMid()
+		    Spawners:SpawnGhostMeeleBot()
+			return 27.0
+		end
+	})
+	Timers:CreateTimer(1380, function()
+		Spawners:StopSpawner("ghostmeele")
+	end)
+	Timers:CreateTimer("ghost", {
+		useGameTime = true,
+		endTime = 1270,
+		callback = function()
+			Spawners:SpawnGhostTop()
+			Spawners:SpawnGhostMid()
+			Spawners:SpawnGhostBot()
+			return 14.0
+		end
+	})
+	Timers:CreateTimer(1380, function()
+		Spawners:StopSpawner("ghost")
+	end)
+	Timers:CreateTimer("ghost2", {
+		useGameTime = true,
+		endTime = 1315,
+		callback = function()
+			Spawners:SpawnGhostMeele2()
+			return 40.0
+		end
+	})
+	Timers:CreateTimer(1380, function()
+		Spawners:StopSpawner("ghost2")
+	end)
+		
+	end
+------------------------------------------------------------------------------------------------	
+---------------- END OF GOLEM AND GHOST PHASE SPAWNERS -----------------------------------------
+------------------------------------------------------------------------------------------------
 	Timers:CreateTimer("splitter2", {
 		useGameTime = true,
 		endTime = 2280,

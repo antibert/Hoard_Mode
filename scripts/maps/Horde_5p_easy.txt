@@ -1,0 +1,59 @@
+"hoard_mode"
+{
+	
+	"RandomSpawns"
+	{
+		"1"
+		{
+			"SpawnerName"			"spawner1"
+			"Waypoint"				"lane_mid_pathcorner_badguys_7"
+		}
+		"2"
+		{
+			"SpawnerName"			"spawner2"
+			"Waypoint"				"lane_bot_pathcorner_badguys_4"
+		}
+		"3"
+		{
+			"SpawnerName"			"spawner3"
+			"Waypoint"				"lane_top_pathcorner_badguys_4"
+		}
+		"4"
+		{
+			"SpawnerName"			"spawner4"
+			"Waypoint"				"lane_mid_pathcorner_badguys_7"
+		}
+		"5"
+		{
+			"SpawnerName"			"Spawner5"	
+			"Waypoint"				"lane_mid_pathcorner_badguys_7"
+		}
+		
+		// Duplicating to reduce of alternate path chosen
+		"6"
+		{
+			"SpawnerName"			"spawner1"
+			"Waypoint"				"lane_mid_pathcorner_badguys_7"
+		}
+		"7"
+		{
+			"SpawnerName"			"spawner2"
+			"Waypoint"				"lane_bot_pathcorner_badguys_4"
+		}
+		"8"
+		{
+			"SpawnerName"			"spawner3"
+			"Waypoint"				"lane_top_pathcorner_badguys_4"
+		}
+		"9"
+		{
+			"SpawnerName"			"spawner4"
+			"Waypoint"				"lane_mid_pathcorner_badguys_7"
+		}
+		"10"
+		{
+			"SpawnerName"			"Spawner5"	
+			"Waypoint"				"lane_mid_pathcorner_badguys_7"
+		}
+	}
+}

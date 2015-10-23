@@ -58,10 +58,6 @@ function Spawners:StartSpawners()
 		Spawners:SpawnOgreBoss()
 		return 3000.0
     end)
-    Timers:CreateTimer(1600, function()
-		Spawners:SpawnCentaurBoss()
-		return 3000.0
-    end)
     Timers:CreateTimer(2040, function()
 		Spawners:SpawnFuckYou()
 		return 3000.0
@@ -489,6 +485,16 @@ function Spawners:StartSpawners()
 	Timers:CreateTimer(6000, function()
 		Spawners:StopSpawner("hellbear2")
 	end)
+	
+-----------------------------------------------------------------------------------------------	
+---------------- START OF GUARD AND CENTAUR PHASE SPAWNERS --------------------------------
+-----------------------------------------------------------------------------------------------	
+
+	local rand = RandomInt(1,2)
+	if rand == 1 then
+
+-------- Guard Wave
+
 	Timers:CreateTimer("guard", {
 		useGameTime = true,
 		endTime = 1440,
@@ -496,25 +502,13 @@ function Spawners:StartSpawners()
 			Spawners:SpawnGuardTop()
 			Spawners:SpawnGuardMid()
 			Spawners:SpawnGuardBot()
-			return 25.0
+			return 23.0
 		end
 	})
 	Timers:CreateTimer(1680, function()
 		Spawners:StopSpawner("guard")
 	end)
-	Timers:CreateTimer("centaur", {
-		useGameTime = true,
-		endTime = 1560,
-		callback = function()
-			Spawners:SpawnCentaurTop()
-			Spawners:SpawnCentaurMid()
-			Spawners:SpawnCentaurBot()
-			return 37.0
-		end
-	})
-	Timers:CreateTimer(1680, function()
-		Spawners:StopSpawner("centaur")
-	end)
+	
 	Timers:CreateTimer("troll", {
 		useGameTime = true,
 		endTime = 1440,
@@ -522,12 +516,61 @@ function Spawners:StartSpawners()
 		Spawners:SpawnTrollTop()
 		Spawners:SpawnTrollMid()
 		Spawners:SpawnTrollBot()
-			return 25.0
+			return 23.0
 		end
 	})
 	Timers:CreateTimer(1680, function()
 		Spawners:StopSpawner("troll")
 	end)
+  
+   Timers:CreateTimer(1600, function()
+		Spawners:SpawnGuardBoss()
+		return 3000.0
+    end)
+	
+	else 
+	
+-------   Centaur Wave
+	
+	Timers:CreateTimer("centaur", {
+		useGameTime = true,
+		endTime = 1440,
+		callback = function()
+			Spawners:SpawnCentaurTop()
+			Spawners:SpawnCentaurMid()
+			Spawners:SpawnCentaurBot()
+			return 30.0
+		end
+	})
+	Timers:CreateTimer(1680, function()
+		Spawners:StopSpawner("centaur")
+	end)
+	Timers:CreateTimer("minion", {
+		useGameTime = true,
+		endTime = 1440,
+		callback = function()
+			Spawners:SpawnMinionTop()
+			Spawners:SpawnMinionMid()
+			Spawners:SpawnMinionBot()
+			return 36.0
+		end
+	})
+	Timers:CreateTimer(1680, function()
+		Spawners:StopSpawner("minion")
+	end)
+	
+    Timers:CreateTimer(1600, function()
+		Spawners:SpawnCentaurBoss()
+		return 3000.0
+    end)
+	
+	end
+	
+---------------------------------------------------------------------------------------------	
+---------------- END OF GUARD AND CENTAUR PHASE SPAWNERS --------------------------------
+-----------------------------------------------------------------------------------------------	
+	
+
 	Timers:CreateTimer("troll2", {
 		useGameTime = true,
 		endTime = 2260,

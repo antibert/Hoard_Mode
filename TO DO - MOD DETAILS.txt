@@ -1,32 +1,48 @@
 Next Update Patch Notes:
-4277
 
 Beta 1.02
 
 General:
 -- Fixed level 3 boots of travel not giving bonus movement speed
+-- Wolf and Great hound movement speed increased
+-- Updated icon for refresher orb
+-- Necronomicon warrior Last Will damage rescaled to "100 750 1750"
+
+5p_easy map: 
+-- Kobold Guard wave is now split into either Guard wave or Centaur wave
+-- New boss: Ripper Sharpshooter
+-- New mob: Minion (part of centaur wave)
+
+4p_medium map:
+-- Added wolf/tree wave split
 
 2p_easy map:
 -- Skeletons gold bounty reduced
 
 Heroes:
+//Added Viper
+Changes:
+-- Poison attack now applies it's modifer and does a set amount of physical targets in an AOE
+-- Viper Strike now has a large AOE
+
 //Legion Commander
--- Overwhelming Odds damage per unit reduced from "15 22 28 35" to "15 18 21 24"
+-- Overwhelming Odds damage per unit back to vanilla
+-- Overwhelming Odds base damage increased from "50 100 150 200" to "75 130 190 250"
+//Treant Protector:
+-- Wrath of Nature scepter damage decreased from "235 275 320 400" to "240 270 300 330"
 
 Items:
 -- Daedalus crit multiplier back to vanilla
 
 Waves to make:
 SPIDERS/ZOMBIES
-Split guard wave into guard/centaur
+Split guard wave into guard/centaur (Easy map done)
 Split demon wave into demon/dragon
 -- post 40 minute ramps up in difficulty more and more, summons medium mobs from various waves 
 and they give low gold bounty
 
 Notes:
--- reduce treant protector q aghs damage
--- increase wolf and great hound movement speed
--- update refresher icon
+-- WD death ward not targetting bosses again
 -- Void chronosphere dosen't work on bosses
 -- Resend unit orders so abilities can be used by the AI
 -- Fix side shops
@@ -34,7 +50,6 @@ Notes:
 -- give big satyrs buffed version of saruken
 -- Make eye of skadi give some kinda of aoe thing to heroes
 -- Fix storm spirit pull too loud - Lion figer too loud 
--- something interesting 40 minutes in (yo HewDraw, what was that Void boss you were talking about?)
 -- Buff warlock golem hps
 
 			"RunScript"
@@ -56,7 +71,6 @@ BIG JOBS TO DO BEFORE BETA:
 This will allow me to make plenty of interesting objectives around the map, some extra mobs you can beat for item drops. 
 
 2. Players can purchase waves of creeps to spawn and attack towards the dire ancient. (Hero Line Wars uses a creep spawning thing similar)
-
 
 KV STUFF:
 

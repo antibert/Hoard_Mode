@@ -1,6 +1,4 @@
-	-- EXAMPLE FOR NYE
-	-- EXAMPLE FOR NYE
-	-- EXAMPLE FOR NYE
+	-- EXAMPLE
 	--[[
 	Timers:CreateTimer("RandomSpawnExample", {
 		useGameTime = true,
@@ -17,9 +15,6 @@
 		end
 	})
 	]]
-	-- EXAMPLE FOR NYE
-	-- EXAMPLE FOR NYE
-	-- EXAMPLE FOR NYE
 
 if SpawnTimers == nil then
 	SpawnTimers = class({})
@@ -584,6 +579,16 @@ function Spawners:StartSpawners()
 	Timers:CreateTimer(6000, function()
 		Spawners:StopSpawner("troll2")
 	end)
+	---------------------------------------------------------------------------------------------	
+---------------- START OF DEMON AND DRAGON PHASE SPAWNERS --------------------------------
+-----------------------------------------------------------------------------------------------		
+
+	local rand = RandomInt (1,2)
+	if rand == 1 then
+
+
+------ Demon Wave
+
 	Timers:CreateTimer("demon", {
 		useGameTime = true,
 		endTime = 1800,
@@ -597,25 +602,14 @@ function Spawners:StartSpawners()
 	Timers:CreateTimer(2000, function()
 		Spawners:StopSpawner("demon")
 	end)
-	Timers:CreateTimer("demon2", {
-		useGameTime = true,
-		endTime = 2280,
-		callback = function()
-			Spawners:SpawnDemonBot()
-			return 55.0
-		end
-	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("demon2")
-	end)
 	Timers:CreateTimer("demondog", {
 		useGameTime = true,
-		endTime = 3500,
+		endTime = 1800,
 		callback = function()
 			Spawners:SpawnDemonDogTop()
 			Spawners:SpawnDemonDogMid()
 			Spawners:SpawnDemonDogBot()
-			return 35.0
+			return 60.0
 		end
 	})
 	Timers:CreateTimer(6000, function()
@@ -623,7 +617,7 @@ function Spawners:StartSpawners()
 	end)
 	Timers:CreateTimer("minidemon", {
 		useGameTime = true,
-		endTime = 1800,
+		endTime = 1830,
 		callback = function()
 			Spawners:SpawnMiniDemonTop()
 			Spawners:SpawnMiniDemonMid()
@@ -634,9 +628,16 @@ function Spawners:StartSpawners()
 	Timers:CreateTimer(2000, function()
 		Spawners:StopSpawner("minidemon")
 	end)
+	
+
+	
+------- Dragon Wave
+
+	else
+
 	Timers:CreateTimer("dragon", {
 		useGameTime = true,
-		endTime = 1860,
+		endTime = 1815,
 		callback = function()
 			Spawners:SpawnDragonTop()
 			Spawners:SpawnDragonMid()
@@ -647,6 +648,50 @@ function Spawners:StartSpawners()
 	Timers:CreateTimer(2000, function()
 		Spawners:StopSpawner("dragon")
 	end)
+	Timers:CreateTimer("stalker", {
+		useGameTime = true,
+		endTime = 1800,
+		callback = function()
+			Spawners:SpawnStalkerTop()
+			Spawners:SpawnStalkerMid()
+			Spawners:SpawnStalkerBot()
+			return 30.0
+		end
+	})
+	Timers:CreateTimer(2000, function()
+		Spawners:StopSpawner("stalker")
+	end)
+	Timers:CreateTimer("gargoyle", {
+		useGameTime = true,
+		endTime = 0,
+		callback = function()
+			Spawners:SpawnGargoyleTop()
+			Spawners:SpawnGargoyleMid()
+			Spawners:SpawnGargoyleBot()
+			return 28.0
+		end
+	})
+	Timers:CreateTimer(2000, function()
+		Spawners:StopSpawner("gargoyle")
+	end)
+	Timers:CreateTimer("AA", {
+		useGameTime = true,
+		endTime = 2160,
+		callback = function()
+			Spawners:SpawnAA()
+			return 150.0
+		end
+	})
+	Timers:CreateTimer(2170, function()
+		Spawners:StopSpawner("AA")
+	end)
+	
+	end
+---------------------------------------------------------------------------------------------	
+---------------- END OF DEMON AND DRAGON PHASE SPAWNERS --------------------------------
+-----------------------------------------------------------------------------------------------		
+
+
 	Timers:CreateTimer("dragon2", {
 		useGameTime = true,
 		endTime = 2280,
@@ -660,19 +705,19 @@ function Spawners:StartSpawners()
 	Timers:CreateTimer(6000, function()
 		Spawners:StopSpawner("dragon2")
 	end)
-	Timers:CreateTimer("stalker", {
+
+	Timers:CreateTimer("demon2", {
 		useGameTime = true,
-		endTime = 1840,
+		endTime = 2280,
 		callback = function()
-			Spawners:SpawnStalkerTop()
-			Spawners:SpawnStalkerMid()
-			Spawners:SpawnStalkerBot()
-			return 30.0
+			Spawners:SpawnDemonBot()
+			return 55.0
 		end
 	})
-	Timers:CreateTimer(2000, function()
-		Spawners:StopSpawner("stalker")
+	Timers:CreateTimer(6000, function()
+		Spawners:StopSpawner("demon2")
 	end)
+
 	Timers:CreateTimer("roshan", {
 		useGameTime = true,
 		endTime = 2115,
@@ -698,17 +743,6 @@ function Spawners:StartSpawners()
 	})
 	Timers:CreateTimer(2250, function()
 		Spawners:StopSpawner("lizard")
-	end)
-	Timers:CreateTimer("AA", {
-		useGameTime = true,
-		endTime = 2160,
-		callback = function()
-			Spawners:SpawnAA()
-			return 150.0
-		end
-	})
-	Timers:CreateTimer(2170, function()
-		Spawners:StopSpawner("AA")
 	end)
 	
 -- TOP LANE
@@ -874,7 +908,7 @@ Timers:CreateTimer("largebears", {
 	end) 
 	Timers:CreateTimer("bigsatyrs", {
 		useGameTime = true,
-		endTime = 0,
+		endTime = 780,
 		callback = function()
 			Spawners:SpawnBigSatyrs()
 			return 41.0

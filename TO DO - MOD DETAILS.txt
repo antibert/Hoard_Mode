@@ -10,7 +10,9 @@ General:
 
 5p_easy map: 
 -- Kobold Guard wave is now split into either Guard wave or Centaur wave
+-- Demon wave now split into Demon/Dragon wave
 -- New boss: Ripper Sharpshooter
+-- New mob: Gargoyle
 -- New mob: Minion (part of centaur wave)
 
 4p_medium map:
@@ -22,7 +24,6 @@ General:
 Heroes:
 //Added Viper
 Changes:
--- Poison attack now applies it's modifer and does a set amount of physical targets in an AOE
 -- Viper Strike now has a large AOE
 
 //Legion Commander
@@ -36,7 +37,6 @@ Items:
 
 Waves to make:
 SPIDERS/ZOMBIES
-Split guard wave into guard/centaur (Easy map done)
 Split demon wave into demon/dragon
 -- post 40 minute ramps up in difficulty more and more, summons medium mobs from various waves 
 and they give low gold bounty

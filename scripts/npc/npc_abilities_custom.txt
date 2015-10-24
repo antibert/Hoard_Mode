@@ -3994,6 +3994,27 @@
 		}	
 		"Modifiers"
 		{
+			"OnSpellStart"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"  	"TARGET"
+						"Radius" 	"%radius"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+					"Action"    
+					{
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_viper_poison_attack_debuff_datadriven"
+							"Target"		"TARGET"
+						}
+					}
+				}
+			}
 			"modifier_viper_poison_attack_orb_datadriven"
 			{
 				"Passive"	"1"

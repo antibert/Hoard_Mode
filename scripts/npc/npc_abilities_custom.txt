@@ -3928,7 +3928,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"viper_poison_attack"
+		"AbilityTextureName"			"poison_attack2"
 	
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -3954,7 +3954,7 @@
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"20 20 20 20"
+		"AbilityManaCost"				"0 0 0 0"
 	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------

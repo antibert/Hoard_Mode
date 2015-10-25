@@ -49,7 +49,6 @@ and they give low gold bounty
 Notes:
 		"vscripts"					"UnitAI.lua"
 -- Add new units to Ultra map
--- Void chronosphere dosen't work on bosses
 -- Resend unit orders so abilities can be used by the AI
 -- Fix side shops
 -- Rubick two new abilities then port

@@ -679,7 +679,7 @@ function Spawners:StartSpawners()
 			Spawners:SpawnGargoyleTop()
 			Spawners:SpawnGargoyleMid()
 			Spawners:SpawnGargoyleBot()
-			return 23.0
+			return 5.0
 		end
 	})
 	Timers:CreateTimer(2000, function()
@@ -951,6 +951,11 @@ Timers:CreateTimer("largebears", {
 	Timers:CreateTimer(0, function()
 		Spawners:SpawnFriend3()
 		return 3600.0
+    end)
+
+	Timers:CreateTimer(0, function()
+		Spawners:SpawnMapBoss()
+		return 3000.0
     end)
 	
 	Timers:CreateTimer("money", {

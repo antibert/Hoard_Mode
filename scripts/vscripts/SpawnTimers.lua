@@ -604,12 +604,12 @@ function Spawners:StartSpawners()
 	end)
 	Timers:CreateTimer("demondog", {
 		useGameTime = true,
-		endTime = 1800,
+		endTime = 1900,
 		callback = function()
 			Spawners:SpawnDemonDogTop()
 			Spawners:SpawnDemonDogMid()
 			Spawners:SpawnDemonDogBot()
-			return 60.0
+			return 69.0
 		end
 	})
 	Timers:CreateTimer(6000, function()
@@ -627,6 +627,17 @@ function Spawners:StartSpawners()
 	})
 	Timers:CreateTimer(2000, function()
 		Spawners:StopSpawner("minidemon")
+	end)
+	Timers:CreateTimer("AA", {
+		useGameTime = true,
+		endTime = 2160,
+		callback = function()
+			Spawners:SpawnAA()
+			return 150.0
+		end
+	})
+	Timers:CreateTimer(2170, function()
+		Spawners:StopSpawner("AA")
 	end)
 	
 
@@ -663,12 +674,12 @@ function Spawners:StartSpawners()
 	end)
 	Timers:CreateTimer("gargoyle", {
 		useGameTime = true,
-		endTime = 0,
+		endTime = 1845,
 		callback = function()
 			Spawners:SpawnGargoyleTop()
 			Spawners:SpawnGargoyleMid()
 			Spawners:SpawnGargoyleBot()
-			return 28.0
+			return 23.0
 		end
 	})
 	Timers:CreateTimer(2000, function()

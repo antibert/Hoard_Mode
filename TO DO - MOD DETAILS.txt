@@ -24,11 +24,17 @@ General:
 Heroes:
 //Added Viper
 Changes:
--- Viper Strike now has a large AOE
+-- Viper Poison attack now works similar to split shot, can be toggled on to split your attack over multiple targets.
+Still has a poison attack.
+-- Viper Strike now has a large AOE (Aghs upgrade currently not available)
+
+//Venomancer:
+-- Scourge Ward damage increased from "38 50 75 100" to "40 70 100 130"
 
 //Legion Commander
 -- Overwhelming Odds damage per unit back to vanilla
 -- Overwhelming Odds base damage increased from "50 100 150 200" to "75 130 190 250"
+
 //Treant Protector:
 -- Wrath of Nature scepter damage decreased from "235 275 320 400" to "240 270 300 330"
 
@@ -37,12 +43,12 @@ Items:
 
 Waves to make:
 SPIDERS/ZOMBIES
-Split demon wave into demon/dragon
 -- post 40 minute ramps up in difficulty more and more, summons medium mobs from various waves 
 and they give low gold bounty
 
 Notes:
--- WD death ward not targetting bosses again
+		"vscripts"					"UnitAI.lua"
+-- Add new units to Ultra map
 -- Void chronosphere dosen't work on bosses
 -- Resend unit orders so abilities can be used by the AI
 -- Fix side shops

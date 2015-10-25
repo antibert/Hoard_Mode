@@ -2836,12 +2836,11 @@
 		//----------------------------------------------------------------
 		"RingRadius"				"70"
 		"HealthBarOffset"			"160"
-		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"	
 
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-		"MovementSpeed"				"300"		// Speed
+		"MovementSpeed"				"325"		// Speed
 		"MovementTurnRate"			"0.5"		// Turning rate.
         "modifierstate"             "MODIFIER_STATE_NO_UNIT_COLLISION" 
 
@@ -8011,7 +8010,7 @@
 		"SoundSet"					"n_creep_ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				"0.25"
+		"ModelScale" 				"0.35"
 
 		// Abilities
 		//----------------------------------------------------------------
@@ -8033,13 +8032,14 @@
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"290"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles\units\heroes\hero_visage\visage_familiar_base_attack_hit_glow.vpcf"          // Particle system model for projectile.
-		"ProjectileSpeed"			"1450"		    // Speed of projectile.		     
+		"ProjectileModel"			"particles\base_attacks\generic_projectile.vpcf"          // Particle system model for projectile.
+		"ProjectileSpeed"			"800"		    // Speed of projectile.		     
 
 		// Bounds
 		//----------------------------------------------------------------
 		"RingRadius"				"40"
 		"HealthBarOffset"			"100"
+		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"	
 
 		// Bounty
 		//----------------------------------------------------------------
@@ -8049,7 +8049,7 @@
 
 		// Movement
 		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
 		"MovementSpeed"				"325"		// Speed.			
 
 		// Status
@@ -8079,10 +8079,10 @@
 						"Invade"
 				{
 					"Name"				"Invade"
-					"Aggression"		"80.0"
-					"Avoidance"			"20.0"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
 					"Support"			"0.0"
-					"RoamDistance"		"2000.0"
+					"RoamDistance"		"0.0"
 				}
 			//Level Up
 			"HPGain"					"10"
@@ -8412,8 +8412,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"36"			// Damage range min.
-		"AttackDamageMax"			"40"		// Damage range max.
+		"AttackDamageMin"			"38"			// Damage range min.
+		"AttackDamageMax"			"42"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1.5"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
@@ -8490,8 +8490,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"48"		// Damage range min.
-		"AttackDamageMax"			"52"		// Damage range max.
+		"AttackDamageMin"			"68"		// Damage range min.
+		"AttackDamageMax"			"72"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1.5"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
@@ -8569,8 +8569,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"73"		// Damage range min.
-		"AttackDamageMax"			"77"		// Damage range max.
+		"AttackDamageMin"			"96"		// Damage range min.
+		"AttackDamageMax"			"104"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1.5"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
@@ -8648,8 +8648,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"95"		// Damage range min.
-		"AttackDamageMax"			"105"		// Damage range max.
+		"AttackDamageMin"			"125"		// Damage range min.
+		"AttackDamageMax"			"135"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1.5"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.

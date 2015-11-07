@@ -16,10 +16,13 @@ function Precache( context )
 	PrecacheResource( "particle_folder", "particles/frostivus_gameplay", context )
 	PrecacheItemByNameSync("item_bag_of_gold", context )
     PrecacheItemByNameSync("item_king_rapier", context)
+    PrecacheItemByNameSync("item_bloodstone_datadriven", context)
+    PrecacheItemByNameSync("item_death_stone", context)
     PrecacheItemByNameSync("item_travel_boots_3", context)	
     PrecacheItemByNameSync("item_boots_of_strength", context)	
     PrecacheItemByNameSync("item_boots_of_agility", context)	
     PrecacheItemByNameSync("item_boots_of_intellect", context)
+    PrecacheItemByNameSync("item_bfury_datadriven", context)
     PrecacheItemByNameSync("item_lithe_boots", context)		
     PrecacheItemByNameSync("item_horde_ethereal_blade", context)
     PrecacheItemByNameSync("item_horde_ghost", context)
@@ -45,11 +48,15 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_creature_big_satyr", context)
     PrecacheUnitByNameSync("npc_dota_creature_spooki", context)
 	PrecacheUnitByNameSync("npc_dota_creature_drake", context)
+	PrecacheUnitByNameSync("npc_dota_creature_chicken", context)
+	PrecacheUnitByNameSync("npc_dota_creature_big_nyx", context)
 	PrecacheUnitByNameSync("npc_dota_creature_king_treant", context)
 	PrecacheUnitByNameSync("npc_dota_creature_forest_prophet", context)
 	PrecacheUnitByNameSync("npc_dota_creature_treant", context)
+	PrecacheUnitByNameSync("npc_dota_creature_lesser_nightcrawler", context)
 	PrecacheUnitByNameSync("npc_dota_creature_large_spirit_bear", context)
 	PrecacheUnitByNameSync("npc_dota_creature_small_spirit_bear", context)
+	PrecacheUnitByNameSync("npc_dota_creature_small_spirit_bear_easy", context)
 	PrecacheUnitByNameSync("npc_dota_creature_big_bear", context)
 	PrecacheUnitByNameSync("npc_dota_splitter_c", context)
     PrecacheUnitByNameSync("npc_dota_creature_fuck_you", context)
@@ -83,10 +90,13 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_mini_demon", context)
 	PrecacheUnitByNameSync("npc_dota_creature_beast", context)
 	PrecacheUnitByNameSync("npc_dota_centaur_boss", context)
-    PrecacheUnitByNameSync("npc_dota_centaur", context)
 	PrecacheUnitByNameSync("npc_dota_hero_venomancer_holdout", context)
 	PrecacheUnitByNameSync("npc_dota_nyx", context)
 	PrecacheUnitByNameSync("npc_dota_roshan_mob", context)
+	PrecacheUnitByNameSync("npc_dota_creature_mini_roshan", context)
+	PrecacheUnitByNameSync("npc_dota_ghost_bane", context)
+	PrecacheUnitByNameSync("npc_dota_creature_big_bird", context)
+	
 	end
 	
 -- Create the game mode when we activate
@@ -139,10 +149,7 @@ function CHoard_ModeGameMode:SetRules()
 	GameRules:GetGameModeEntity():SetFixedRespawnTime(23)
 	GameRules:GetGameModeEntity():SetFountainPercentageHealthRegen( 4 )
 	GameRules:GetGameModeEntity():SetFountainPercentageManaRegen( 6 )
-	GameRules:GetGameModeEntity():SetFountainConstantManaRegen( 1 )
-	GameRules:GetGameModeEntity():SetCameraDistanceOverride( 1200 )	
-	
-
+	GameRules:GetGameModeEntity():SetFountainConstantManaRegen( 1 )	
 end
 
 -- This function is called once and only once when the game begins
@@ -152,13 +159,18 @@ function CHoard_ModeGameMode:OnGameInProgress()
 	ShowMessage('Map name when called upon in the test client:' .. GetMapName())
 	if GetMapName() == 'Horde_5p_easy' then
 		Spawners:StartSpawners()
+		print(" Loading Easy Map Spawners")
 	elseif GetMapName() == 'Horde_4p_medium' then
 		SpawnersMedium:StartSpawners()
+		print(" Loading Medium Map Spawners")
 	elseif GetMapName() == 'Horde_4p_hard' then
 		SpawnersHard:StartSpawners()
+		print(" Loading Hard Map Spawners")
 	elseif GetMapName() == 'Horde_4p_ultra' then
 		SpawnersUltra:StartSpawners()
+		print(" Loading Ultra Map Spawners")
 	elseif GetMapName() == 'Horde_2p_easy' then
 		Spawners2p:StartSpawners()
+		print(" Loading Two Player Map Spawners")
 	end	
 end

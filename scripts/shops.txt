@@ -5,8 +5,10 @@
 		"item"		"item_flask"
 		"item"      "item_clarity"
 		"item"      "item_tango"
+		"item"		"item_dust"
 		"item"		"item_greater_salve"
 		"item"      "item_ward_observer"
+		"item"		"item_ward_sentry"
 		"item"		"item_tpscroll"
 		"item"		"item_bottle"
 		"item"		"item_enchanted_mango"
@@ -78,6 +80,7 @@
 		"item"		"item_pers"
 		"item"		"item_hand_of_midas"
 		"item"		"item_travel_boots"
+		"item"		"item_travel_boots_3"
 		"item"      "item_moon_shard"
 	}
 
@@ -111,18 +114,23 @@
 		"item"		"item_sheepstick"
 		"item"      "item_solar_crest"
 		"item"      "item_octarine_core"
+		"item"		"item_bloodstone_datadriven"
+		"item"		"item_death_stone"
 	}
 	
 	// Level 3 - Purple Recipes
 	"defense"
 	{
 		"item"		"item_hood_of_defiance"
+		"item"		"item_boots_of_strength"
+		"item"		"item_boots_of_intellect"
+		"item"		"item_boots_of_agility"
+		"item"		"item_lithe_boots"
 		"item"		"item_blade_mail"
 		"item"		"item_vanguard"
 		"item"		"item_soul_booster"
 		"item"		"item_shivas_guard"
 		"item"		"item_manta"
-		"item"		"item_bloodstone"
 		"item"		"item_sphere"
 		"item"		"item_assault"
 		"item"		"item_heart"
@@ -144,6 +152,7 @@
 		"item"		"item_rapier"
 		"item"		"item_abyssal_blade"
 		"item"      "item_horde_demon_sabre"
+		"item"		"item_bfury_datadriven"
 		"item"      "item_king_rapier"
 	}
 	
@@ -163,8 +172,22 @@
  		"item"		"item_skadi"
  		"item"		"item_satanic"
 	}
-	
 	"secretshop"
+	{
+		"item"		"item_orb_of_venom"
+		"item"		"item_ring_of_health"
+		"item"		"item_void_stone"
+		"item"		"item_energy_booster"
+		"item"		"item_vitality_booster"
+		"item"		"item_point_booster"
+		"item"		"item_hyperstone"
+		"item"		"item_demon_edge"
+		"item"		"item_mystic_staff"
+		"item"		"item_reaver"
+		"item"		"item_eagle"
+		"item"		"item_relic"
+	}
+	"sideshop"
 	{
 		"item"		"item_orb_of_venom"
 		"item"		"item_ring_of_health"

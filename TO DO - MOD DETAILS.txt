@@ -1,61 +1,61 @@
 Next Update Patch Notes:
 
-Beta 1.02
+Beta 1.06
 
 General:
--- Fixed level 3 boots of travel not giving bonus movement speed
--- Wolf and Great hound movement speed increased
--- Updated icon for refresher orb
--- Necronomicon warrior Last Will damage rescaled to "100 750 1750"
+-- Added new unit: Shrike Heavy to Dragon wave
+-- Rapier Ogre and all Radiant Defenders are now tethered to their location they intend to wait in
+-- Ripper Sharpshooter damage greatly increased
+-- Spookiest Skelleton HP aura greatly reduced
+-- Adjusted Gaygoyle unit 
+-- Golem armor reduced by 2
+-- Reduced Rock Golem spawn rate
+-- Walker no longer cancels his Summoning spell channel
+-- Medium Golem magic immunity removed
 
-5p_easy map: 
--- Kobold Guard wave is now split into either Guard wave or Centaur wave
--- Demon wave now split into Demon/Dragon wave
--- New boss: Ripper Sharpshooter
--- New mob: Gargoyle
--- New mob: Minion (part of centaur wave)
+Temporarily Removed Ultra map until reworked
 
-4p_medium map:
--- Added wolf/tree wave split
+5P_easy:
+-- Reduced number of Spider, Zombie and Bear spawns
+-- Base Tower moved to fountain
+-- Small spirit bear armor reduced by 1 and spawn slightly delayed
+-- Daddy Bear base damage reduced
 
-2p_easy map:
--- Skeletons gold bounty reduced
-
-Heroes:
-//Added Viper
-Changes:
--- Viper Poison attack now works similar to split shot, can be toggled on to split your attack over multiple targets.
-Still has a poison attack.
--- Viper Strike now has a large AOE (Aghs upgrade currently not available)
-
-//Venomancer:
--- Scourge Ward damage increased from "38 50 75 100" to "40 70 100 130"
-
-//Legion Commander
--- Overwhelming Odds damage per unit back to vanilla
--- Overwhelming Odds base damage increased from "50 100 150 200" to "75 130 190 250"
-
-//Treant Protector:
--- Wrath of Nature scepter damage decreased from "235 275 320 400" to "240 270 300 330"
+4p_medium:
+-- Reduced number of Spider spawns
 
 Items:
--- Daedalus crit multiplier back to vanilla
+-- New item: War Fury - Combine S&Y with battlefury for a more powerful cleave weapon
+-- Bloodstone no longer looses charges on death
+-- Lithe Boots grant bonus preattack damage instead of Base damage (will no longer give illusions it's bonus damage)
 
-Waves to make:
-SPIDERS/ZOMBIES
--- post 40 minute ramps up in difficulty more and more, summons medium mobs from various waves 
-and they give low gold bounty
+Heroes:
+//Added Weaver
+//Antimage:
+-- Spell sheild resistance increased from "26 34 42 50" to "25 50 75 100"
+//Treant Protector:
+-- Overgrowth stun duration back to vanilla
+-- Overgrowth cooldown reduced from 40 to 30 seconds
 
 Notes:
-		"vscripts"					"UnitAI.lua"
--- Add new units to Ultra map
--- Resend unit orders so abilities can be used by the AI
--- Fix side shops
--- Rubick two new abilities then port
--- give big satyrs buffed version of saruken
--- Make eye of skadi give some kinda of aoe thing to heroes
--- Fix storm spirit pull too loud - Lion figer too loud 
+-- make sure weaver isn't completetly stupid
+-- Give War Fury an active
+-- Fix dominated units wanting to attack ancient
+-- post 40 minute ramps up in difficulty more and more
+-- millions of warlock golem models
+-- PRO MANS SHIELD
+-- Fix shop icons, redo shop folders, ask on reddit/moddota
+-- make horde mode video
+-- More map bosses than drop super items you can't buy in shop
+-- REWORK ULTRA MAP COMPLTETLY
+-- Make eye of skadi give some kinda aoe thing to ranged heroes
 -- Buff warlock golem hps
+
+"This loading screen has become my personal twitter page"
+
+//Added Slark
+Changes:
+-- Dark Pact number of damage pulses doubled
 
 			"RunScript"
 			{
@@ -72,10 +72,7 @@ Notes:
 
 BIG JOBS TO DO BEFORE BETA:
 
-1. Get some mobs (Particularly roshan in question) to drop items (an item like a sacred relic or something, possibly an item otherwise not available in the shop)
-This will allow me to make plenty of interesting objectives around the map, some extra mobs you can beat for item drops. 
-
-2. Players can purchase waves of creeps to spawn and attack towards the dire ancient. (Hero Line Wars uses a creep spawning thing similar)
+1. Players can purchase waves of creeps to spawn and attack towards the dire ancient. (Hero Line Wars uses a creep spawning thing similar)
 
 KV STUFF:
 
@@ -101,94 +98,6 @@ KV STUFF:
 
 -- Venomancer Scourge Wards have a limit (like pugna ward fpr example) instead of just a death timer
 
-20:19 - Hewdraw: add an abilityspecial value for percentage
-20:19 - Hewdraw: then get the targets hp
-20:19 - Hewdraw: and do target_hp * stack_amount * damage_percentage for the damage
-20:19 - Hewdraw: max hp not current
-
-
-	"ursa_fury_swipes_datadriven"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"			"ursa_fury_swipes"
-				
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_reset_time"				"15"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"bonus_reset_time_roshan"		"10"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_per_stack"				"15 20 25 30"
-			}
-			"4"
-			{
-			    "var_type"                      "FIELD_INTEGER"
-				"damage_percentage"             "1 2 3 4"
-		    }
-		
-		// Data driven
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"particle"							"particles/units/heroes/hero_ursa/ursa_fury_swipes.vpcf"
-			"particle"							"particles/units/heroes/hero_ursa/ursa_fury_swipes_debuff.vpcf"
-		}
-		
-		"Modifiers"
-		{
-			"modifier_fury_swipes_caster_datadriven"
-			{
-				"Passive"						"1"
-				"IsHidden"						"0"
-				"IsPurgable"					"0"
-			
-				"OnAttackLanded"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"heroes/hero_ursa/fury_swipes.lua"
-						"Function"				"fury_swipes_attack"
-					}
-				}
-			}
-			
-			"modifier_fury_swipes_target_datadriven"
-			{
-				"IsHidden"					"0"
-				"IsPurgable"				"0"
-				"IsDebuff"					"1"
-				
-				"EffectName"				"particles/units/heroes/hero_ursa/ursa_fury_swipes_debuff.vpcf"
-				"EffectAttachType"			"follow_overhead"
-				
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target"				"TARGET"
-						"EffectName"			"particles/units/heroes/hero_ursa/ursa_fury_swipes.vpcf"
-						"EffectAttachType"		"follow_overhead"
-					}
-				}
-			}
-		}
-	}
 
 Ideas:
 

@@ -176,7 +176,7 @@ function BehaviorAttackAncient:Evaluate()
 	local nonAAFriendCount = 0
 	local allFriends = FindUnitsInRadius( DOTA_TEAM_BADGUYS, thisEntity:GetOrigin(), nil, -1, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC, 0, 0, false )
 	for _,friend in pairs(allFriends) do
-		if not friend:IsNull() and friend:IsAlive() and friend:GetUnitName() ~= "npc_dota_creature_ancient_apparition" then
+		if not friend:IsNull() and friend:IsAlive() and friend:GetUnitName() ~= "npc_dota_creature_money" then
 			nonAAFriendCount = nonAAFriendCount + 1
 		end
 	end

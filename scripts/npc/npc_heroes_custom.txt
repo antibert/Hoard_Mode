@@ -140,12 +140,12 @@
 		"Ability3"				"horde_rum"
 	}
     //=================================================================================================================
-	// HERO: Storm
+	// HERO: Treant
 	//=================================================================================================================
-	"storm_spirit_electric_vortex_datadriven"
+	"npc_dota_hero_undying_holdout"
 	{
-		"override_hero"			"npc_dota_hero_storm_spirit"
-		"Ability2"				"holdout_electric_vortex"
+		"override_hero"			"npc_dota_hero_undying"
+		"Ability1"				"creature_summon_undead3" 
 	}
     //=================================================================================================================
 	// HERO: Treant

@@ -1,18 +1,54 @@
-function BehaviorOrbit:Think(dt)
-        local currentPos = thisEntity:GetOrigin()
-        currentPos.z = 0
- 
-        if ( self.order.Position - currentPos ):Length() < 500 then
-                self:GetNextPosition()
-        end
-        if self.order.OrderType ~= DOTA_UNIT_ORDER_ATTACK_MOVE then
-       
-                self.order =
-                {
-                        OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-                        UnitIndex = thisEntity:entindex(),
-                        Position = hAncient:GetOrigin()
-                }
-       
-        end
+--[[
+Unit AI
+]]
+require( "ai_core" )
+
+behaviorSystem = {} -- create the global so we can assign to it
+
+function Spawn( entityKeyValues )
+	thisEntity:SetContextThink( "AIThink", AIThink, 0.25 )
+	behaviorSystem = AICore:CreateBehaviorSystem( { BehaviorAttackAncient } )--, BehaviorRun }-- } )
+end
+
+function AIThink()
+	if thisEntity:IsNull() or not thisEntity:IsAlive() then
+		return nil -- deactivate this think function
+	end
+	return behaviorSystem:Think()
+end
+
+BehaviorAttackAncient = {}
+
+function BehaviorAttackAncient:Evaluate()
+	local desire = 0
+	
+	local nonAAFriendCount = 0
+	local allFriends = FindUnitsInRadius( DOTA_TEAM_BADGUYS, thisEntity:GetOrigin(), nil, -1, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC, 0, 0, false )
+	for _,friend in pairs(allFriends) do
+		if not friend:IsNull() and friend:IsAlive() and friend:GetUnitName() ~= "npc_dota_creature_ancient_apparition" then
+			nonAAFriendCount = nonAAFriendCount + 1
+		end
+	end
+
+	if nonAAFriendCount < 3 then
+		desire = 3
+	end
+
+	return desire
+end
+
+function BehaviorAttackAncient:Begin()
+	self.endTime = GameRules:GetGameTime() + 5
+	local hAncient = Entities:FindByName( nil, "dota_goodguys_fort" )
+	self.order =
+	{
+		OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+		UnitIndex = thisEntity:entindex(),
+		Position = hAncient:GetOrigin()
+	}
+end
+
+BehaviorAttackAncient.Continue = BehaviorAttackAncient.Begin
+
+function BehaviorAttackAncient:Think(dt)
 end

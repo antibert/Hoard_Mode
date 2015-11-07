@@ -66,7 +66,7 @@ function AICore:CreateBehaviorSystem( behaviors )
 	local BehaviorSystem = {}
 
 	BehaviorSystem.possibleBehaviors = behaviors
-	BehaviorSystem.thinkDuration = 1.0
+	BehaviorSystem.thinkDuration = 3
 	BehaviorSystem.repeatedlyIssueOrders = true -- if you're paranoid about dropped orders, leave this true
 
 	BehaviorSystem.currentBehavior =

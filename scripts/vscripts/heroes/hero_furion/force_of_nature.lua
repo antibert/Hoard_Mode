@@ -6,7 +6,6 @@
 function CheckTrees( event )
 	if event.ability:GetSpecialValueFor("check_trees_precast") == 1 then
 		local caster = event.caster
-		local pID = caster:GetPlayerID()
 		local ability = event.ability
 		local point = event.target_points[1]
 		local area_of_effect = ability:GetLevelSpecialValueFor( "area_of_effect", ability:GetLevel() - 1 )
@@ -15,7 +14,7 @@ function CheckTrees( event )
 			--print(ability,"Trees found")
 		else
 			caster:Interrupt()
-			FireGameEvent( 'custom_error_show', { player_ID = pID, _error = "Must target a tree." } )
+			print("shit ain't workin' bro")
 		end
 	end
 end
@@ -27,7 +26,6 @@ end
 ]]
 function ForceOfNature( event )
 	local caster = event.caster
-	local pID = event.caster:GetPlayerID()
 	local ability = event.ability
 	local point = event.target_points[1]
 	local area_of_effect = ability:GetLevelSpecialValueFor( "area_of_effect", ability:GetLevel() - 1 )
@@ -68,7 +66,6 @@ function ForceOfNature( event )
 			-- Spawn as many treants as possible
 			for i=1,treants_spawned do
 				local treant = CreateUnitByName(unit_name, point, true, caster, caster, caster:GetTeamNumber())
-				treant:SetControllableByPlayer(pID, true)
 				treant:AddNewModifier(caster, ability, "modifier_kill", {duration = duration})
 				FindClearSpaceForUnit(treant, point, true)
 			end

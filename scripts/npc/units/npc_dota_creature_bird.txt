@@ -1,0 +1,90 @@
+//=================================================================================	
+// Creature: Bird
+//=================================================================================
+"npc_dota_creature_bird"	
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models\creeps\neutral_creeps\n_creep_vulture_b\n_creep_vulture_b.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"n_creep_melee"
+	"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+	"Level"						"1"
+	"ModelScale" 				"0.75"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					""			// Ability 1
+	"Ability2"					""			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"2"			// Physical protection.
+        "MagicalResistance"			"0"	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"20"		// Damage range min.
+	"AttackDamageMax"			"25"		// Damage range max.
+	"AttackRate"				"1.35"		// Speed of attack.
+	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+	"AttackRange"				"100"		// Range within a target can be attacked.
+	"ProjectileModel"			""          // Particle system model for projectile.
+	"ProjectileSpeed"			"0"		    // Speed of projectile.		     
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"45"
+	"HealthBarOffset"			"160"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"13"		// Experience earn.
+	"BountyGoldMin"				"23"		// Gold earned min.
+	"BountyGoldMax"				"28"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"300"		// Speed.			
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"650"		// Base health.
+	"StatusHealthRegen"			"1"		// Health regeneration rate.
+	"StatusMana"				"150"			// Base mana.
+	"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"700"		// Range of vision during day light.
+	"VisionNighttimeRange"		"650"		// Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"						// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"vscripts"					"UnitAI.lua"
+
+	// Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+	{
+	//	"Aggression"				"50.0"
+	//	"Avoidance"					"0.0"
+	//	"Support"					"50.0"
+		//Level Up
+		"HPGain"					"10"
+		"DamageGain"				"20"
+		"ArmorGain"					"0.25"
+		"MagicResistGain"			"0"
+		"MoveSpeedGain"				"1"
+		"BountyGain"				"3"
+		"XPGain"					"15"
+	}
+}

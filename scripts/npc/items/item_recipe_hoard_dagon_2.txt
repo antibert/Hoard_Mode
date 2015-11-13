@@ -1,0 +1,22 @@
+"item_recipe_hoard_dagon_2"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"ID"							"2033"
+	"BaseClass"						"item_datadriven"
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"AbilityTextureName"			"item_recipe"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"0"	"ItemShopTags"					""
+	
+	// Recipe
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_hoard_dagon_2"
+	"ItemRequirements"
+	{
+		"02"						"item_hoard_dagon;item_recipe_hoard_dagon"
+	}
+}

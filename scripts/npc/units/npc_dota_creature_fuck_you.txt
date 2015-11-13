@@ -1,0 +1,115 @@
+//=================================================================================
+// Creature: INSANE FUCKING SPOOKI MEME MEGA BOSS SKELETON
+//=================================================================================
+"npc_dota_creature_fuck_you"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
+	"Model"						"models\creeps\neutral_creeps\n_creep_troll_skeleton\n_creep_skeleton_melee.vmdl"	// Model.
+	"SoundSet"					"n_creep_Melee"					// Name of sound set.
+	"ModelScale"				"3"
+	"Level"						"24"
+	"ConsideredHero"			"1"
+	"MinimapIcon"				"minimap_enemyicon"
+	"MinimapIconSize"			"313"
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"spooki_hp_aura"	        // Ability 1.
+	"Ability2"					"necrolyte_heartstopper_aura"	 		// Ability 2.
+	"Ability3"					"generic_gold_bag_fountain_500"			// Ability 3.
+	"Ability4"					"doom_bringer_doom"			// Ability 4.
+	"Ability5"					""			// Ability 5.
+	"Ability6"					""			// Ability 6 - Extra.
+	"Ability7"					""			// Ability 7 - Extra.
+	"Ability8"					""			// Ability 8 - Extra.
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"66"			// Physical protection.
+	"MagicalResistance"			"66"		// Magical protection (percentage).
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"2800"		// Damage range min.
+	"AttackDamageMax"			"3100"		// Damage range max.
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackRate"				"0.9"			// Speed of attack.
+	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
+	"AttackRange"				"128"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/base_attacks/melee_goodguy.vpcf" // Particle system model for projectile.
+	"ProjectileSpeed"			"1000"		// Speed of projectile.
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"400"		// Experience earn.
+	"BountyGoldMin"				"666"		// Gold earned min.
+	"BountyGoldMax"				"666"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"BoundsHullName"			"DOTA_HULL_SIZE_HERO"			// Hull type used for navigation/locomotion.
+	"RingRadius"				"130"
+	"HealthBarOffset"			"300"
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"420"		// Speed
+	"MovementTurnRate"			"1.0"		// Turning rate.
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"66666"		// Base health.
+	"StatusHealthRegen"			"130"		// Health regeneration rate.
+	"StatusMana"				"666"		// Base mana.
+	"StatusManaRegen"			"13"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1300"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1300"		// Range of vision at night time.
+	"vscripts"					"UnitAI.lua"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
+	"VoiceFile"					"soundevents/voscripts/game_sounds_vo_treant.vsndevts"
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		"CanRespawn"				"0"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0"
+				"Avoidance"			"0.0"
+				"Support"			"0.0"
+			}
+		}
+		"OffensiveAbilities"
+		{
+			"Ability1"                
+			{
+				"Name"      		  "doom_bringer_scorched_earth"
+			}
+			"Ability2"                
+			{
+				"Name"      		  "doom_bringer_doom"
+			}
+		}
+		"DefaultState"				"Invade"
+
+	}
+}

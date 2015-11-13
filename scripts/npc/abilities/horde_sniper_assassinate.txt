@@ -1,0 +1,159 @@
+//=================================================================================================================
+// Sniper: Assassinate
+//=================================================================================================================
+"horde_sniper_assassinate"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
+	"AbilityTextureName"			"high_caliber"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"550 600 650"
+	"AbilityCastPoint"				"2.0 2.0 2.0"
+	"AbilityManaCost"				"30 30 30"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"range"						"550 600 650"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"100 150 200"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"mana_cost"					"30 30 30"
+		}
+	}
+	
+	// Data driven
+	//-------------------------------------------------------------------------------------------------------------
+	"OnToggleOn"
+	{
+		"ApplyModifier"
+		{
+			"Target"					"CASTER"
+			"ModifierName"				"modifier_horde_sniper_assassinate"
+		}
+
+		"ApplyModifier"
+		{
+			"Target"					"CASTER"
+			"ModifierName"				"modifier_horde_sniper_assassinate_range_dummy"
+		}
+	}
+	
+	"OnToggleOff"
+	{
+		"RemoveModifier"
+		{
+			"Target"					"CASTER"
+			"ModifierName"				"modifier_horde_sniper_assassinate"
+		}
+
+		"RemoveModifier"
+		{
+			"Target"					"CASTER"
+			"ModifierName"				"modifier_horde_sniper_assassinate_range_dummy"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_horde_sniper_assassinate"
+		{
+			"IsHidden"					"1"
+
+			"EffectName"			"particles/units/heroes/hero_sniper/sniper_crosshair.vpcf"
+			"EffectAttachType"		"follow_overhead"
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_sniper/sniper.lua"
+					"Function"			"AssinateProjectile"
+
+					"projectile"		"particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_sniper/sniper.lua"
+					"Function"			"AssinateProjectile"
+
+					"projectile"		"particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
+				}
+			}
+
+			"ThinkInterval"  "0.1"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_sniper/sniper.lua"
+					"Function"			"AssassinateThink"
+				}
+			}
+
+			"OnAttackStart"
+			{
+				"FireSound"
+				{
+					"Target"				"CASTER"
+					"EffectName"			"Ability.Assassinate"
+				}
+			}
+
+			"OnAttack"
+			{
+
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/hero_sniper/sniper.lua"
+					"Function"				"AssassinateMana"
+				}
+			}
+
+			"OnAttackLanded"
+			// "%attack_damage" is set to the damage value before mitigation
+			{
+				"FireSound"
+				{
+					"Target"				"TARGET"
+					"EffectName"			"Hero_Sniper.AssassinateDamage"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"			"heroes/hero_sniper/sniper.lua"
+					"Function"				"AssassinateHit"
+				}
+			}
+		}
+
+		"modifier_horde_sniper_assassinate_range_dummy"
+		{
+			"IsHidden"			"1"
+		
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" 				"1"
+			}
+		}
+	}
+}

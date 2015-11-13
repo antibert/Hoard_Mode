@@ -1,6 +1,3 @@
-// Dota Heroes File
-// NOTE: This is not for creating new heroes, this is for taking a currently existing hero as a template and overriding
-// the specified key-value combinations.  Use override_hero <hero_to_override> for this.
 "DOTAHeroes"
 {
 	//=================================================================================================================
@@ -12,27 +9,56 @@
 		"Ability2"              "axe_battle_rage"
 		"Ability4"				"holdout_culling_blade"
 	}
-    //=================================================================================================================
-	// HERO: Windrunner
 	//=================================================================================================================
-	"npc_dota_hero_windrunner_holdout"
+	// HERO: Brood
+	//=================================================================================================================
+	"npc_dota_hero_broodmother_holdout"
 	{
-		"override_hero"			"npc_dota_hero_windrunner"
-		"Ability1"				"holdout_shackleshot"
+		"override_hero"			"npc_dota_hero_broodmother"
+		"Ability1"				"broodmother_spawn_spiderlings_datadriven"
+		"Ability4"				"broodmother_insatiable_hunger_datadriven"
 	}
 	//=================================================================================================================
-	// HERO: Venomancer
+	// HERO: Dark Seer
 	//=================================================================================================================
-	"npc_dota_hero_venomancer_holdout"
+	"npc_dota_hero_dark_seer_holdout"
 	{
-		"override_hero"			"npc_dota_hero_venomancer"
-		// Abilities
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityLayout"				"5"
+		"override_hero"			"npc_dota_hero_dark_seer"
+		"Ability4"				"dark_seer_wall_of_discord"
+	}
+	//=================================================================================================================
+	// HERO: Dazzle
+	//=================================================================================================================
+	"npc_dota_hero_dazzle_holdout"
+	{
+		"override_hero"			"npc_dota_hero_dazzle"
+		"Ability1"				"dazzle_poison_touch_datadriven"
+		"Ability2"				"dazzle_toughness_aura"
+	}
+	//=================================================================================================================
+	// HERO: Drow Ranger
+	//=================================================================================================================
+	"npc_dota_hero_drow_ranger_holdout"
+	{
+		"override_hero"			"npc_dota_hero_drow_ranger"
+		"Ability1"				"medusa_split_shot_datadriven"
+	}
+	//=================================================================================================================
+	// HERO: Ench
+	//=================================================================================================================
+	"npc_dota_hero_enchantress_holdout"
+	{
+		"override_hero"			"npc_dota_hero_enchantress"
+		"AttackRange"           "700"
+	}
+	//=================================================================================================================
+	// HERO: Void
+	//=================================================================================================================
+	"npc_dota_hero_faceless_void_holdout"
+	{
+		"override_hero"			"npc_dota_hero_faceless_void"
+		"Ability4"				"faceless_void_chronosphere_hoard"
 	
-		"Ability4"					"holdout_scourge_ward"					// Ability 3
-		"Ability5"					"venomancer_poison_nova"					// Ability 4
-		"Ability6"					"attribute_bonus"						// Ability 6 - Bonuses.
 	}
 	//=================================================================================================================
 	// HERO: Keeper of the Light
@@ -41,15 +67,40 @@
 	{
 		"override_hero"			"npc_dota_hero_keeper_of_the_light"
 		"Ability2"				"keeper_of_the_light_mana_overload"
-    }
+	    }
 	//=================================================================================================================
-	// HERO: Lycan
+	// HERO: Kunkka
 	//=================================================================================================================
-	"npc_dota_hero_lycan_holdout"
+	"npc_dota_hero_kunkka_holdout"
 	{
-		"override_hero"			"npc_dota_hero_lycan"
-		"Ability1"				"lycan_summon_wolves_datadriven"
-    }
+		"override_hero"			"npc_dota_hero_kunkka"
+		"Ability3"				"horde_rum"
+	}
+	//=================================================================================================================
+	// HERO: Leigon Commander
+	//=================================================================================================================
+	"npc_dota_hero_legion_commander_holdout"
+	{
+		"override_hero"			"npc_dota_hero_legion_commander"
+		"Ability4"					"holdout_gladiators_unite"									
+	}
+	//=================================================================================================================
+	// HERO: Lifestealer
+	//=================================================================================================================
+	"npc_dota_hero_life_stealer_holdout"
+	{
+		"override_hero"			"npc_dota_hero_life_stealer"
+		"Ability3"				"life_stealer_open_wounds_datadriven"
+	}	
+	//=================================================================================================================
+	// HERO: Lina
+	//=================================================================================================================
+	"npc_dota_hero_lina_holdout"
+	{
+		"override_hero"			"npc_dota_hero_lina"
+		"Ability4"				"lina_laguna_blade_datadriven"
+	
+	}
 	//=================================================================================================================
 	// HERO: Beastmaster
 	//=================================================================================================================
@@ -58,7 +109,7 @@
 		"override_hero"			"npc_dota_hero_beastmaster"
 		"Ability2"				"beastmaster_call_of_the_wild_boar_datadriven"
 		"Ability3"              "beastmaster_call_of_the_wild_datadriven"
-    }
+	    }
 	//=================================================================================================================
 	// HERO: Magnus
 	//=================================================================================================================
@@ -76,22 +127,24 @@
 		"Ability5"					"attribute_bonus"				
 	}
 	//=================================================================================================================
-	// HERO: Tidehunter
+	// HERO: Mirana
 	//=================================================================================================================
-	"npc_dota_hero_tidehunter_holdout"
+	"npc_dota_hero_mirana_holdout"
 	{
-		"override_hero"			"npc_dota_hero_tidehunter"
-		"Ability1"				"holdout_gush"
+		"override_hero"			"npc_dota_hero_mirana"
+		"Ability2"				"holdout_mirana_arrow"
+		"Ability4"				"mirana_moonfall"
 	}
- 	//=================================================================================================================
-	// HERO: Drow Ranger
 	//=================================================================================================================
-	"npc_dota_hero_drow_ranger_holdout"
+	// HERO: Ogre Magi
+	//=================================================================================================================
+	"npc_dota_hero_ogre_magi_holdout"
 	{
-		"override_hero"			"npc_dota_hero_drow_ranger"
-		"Ability1"				"medusa_split_shot_datadriven"
+		"override_hero"			"npc_dota_hero_ogre_magi"
+		"Ability1"				"ogre_magi_fireblast_datadriven"
+	
 	}
-    //=================================================================================================================
+	//=================================================================================================================
 	// HERO: Omniknight
 	//=================================================================================================================
 	"npc_dota_hero_omniknight_holdout"
@@ -99,7 +152,31 @@
 		"override_hero"			"npc_dota_hero_omniknight"
 		"Ability2"				"hammer_time"
 	}
-    //=================================================================================================================
+	//=================================================================================================================
+	// HERO: PA
+	//=================================================================================================================
+	"npc_dota_hero_phantom_assassin"
+	{
+		"override_hero"			"npc_dota_hero_phantom_assassin"
+		"Ability1"				"phantom_assassin_stifling_dagger_datadriven" 
+	}
+	//=================================================================================================================
+	// HERO: QOP
+	//=================================================================================================================
+	"npc_dota_hero_queenofpain_holdout"
+	{
+		"override_hero"			"npc_dota_hero_queenofpain"
+		"Ability1"				"queenofpain_shadow_strike_datadriven" 
+	}
+	//=================================================================================================================
+	// HERO: Shadow Sharman
+	//=================================================================================================================
+	"npc_dota_hero_shadow_shaman_holdout"
+	{
+		"override_hero"			"npc_dota_hero_shadow_shaman"
+		"Ability3"				"horde_shadow_shaman_shackles"
+	}
+	//=================================================================================================================
 	// HERO: Wraith King
 	//=================================================================================================================
 	"npc_dota_hero_skeleton_king_holdout"
@@ -115,39 +192,30 @@
 		"Ability7"				"attribute_bonus"
 	}
 	//=================================================================================================================
-	// HERO: Mirana
+	// HERO: Slardar
 	//=================================================================================================================
-	"npc_dota_hero_mirana_holdout"
+	"npc_dota_hero_slardar_holdout"
 	{
-		"override_hero"			"npc_dota_hero_mirana"
-		"Ability2"				"holdout_mirana_arrow"
-		"Ability4"				"mirana_moonfall"
+		"override_hero"			"npc_dota_hero_slardar"
+		"Ability1"				"horde_slardar_sprint"
 	}
 	//=================================================================================================================
-	// HERO: Leigon Commander
+	// HERO: Sniper
 	//=================================================================================================================
-	"npc_dota_hero_legion_commander_holdout"
+	"npc_dota_hero_sniper_holdout"
 	{
-		"override_hero"			"npc_dota_hero_legion_commander"
-		"Ability4"					"holdout_gladiators_unite"									
+		"override_hero"			"npc_dota_hero_sniper"
+		"Ability4"				"horde_sniper_assassinate"
 	}
-    //=================================================================================================================
-	// HERO: Kunkka
 	//=================================================================================================================
-	"npc_dota_hero_kunkka_holdout"
-	{
-		"override_hero"			"npc_dota_hero_kunkka"
-		"Ability3"				"horde_rum"
-	}
-    //=================================================================================================================
-	// HERO: Treant
+	// HERO: Tidehunter
 	//=================================================================================================================
-	"npc_dota_hero_undying_holdout"
+	"npc_dota_hero_tidehunter_holdout"
 	{
-		"override_hero"			"npc_dota_hero_undying"
-		"Ability1"				"creature_summon_undead3" 
+		"override_hero"			"npc_dota_hero_tidehunter"
+		"Ability1"				"holdout_gush"
 	}
-    //=================================================================================================================
+	//=================================================================================================================
 	// HERO: Treant
 	//=================================================================================================================
 	"npc_dota_hero_treant_holdout"
@@ -155,63 +223,13 @@
 		"override_hero"			"npc_dota_hero_treant"
 		"Ability1"				"furion_wrath_of_nature" 
 	}
-    //=================================================================================================================
-	// HERO: PA
 	//=================================================================================================================
-	"npc_dota_hero_phantom_assassin"
+	// HERO: Treant
+	//=================================================================================================================
+	"npc_dota_hero_undying_holdout"
 	{
-		"override_hero"			"npc_dota_hero_phantom_assassin"
-		"Ability1"				"phantom_assassin_stifling_dagger_datadriven" 
-	}
-    //=================================================================================================================
-	// HERO: QOP
-	//=================================================================================================================
-	"npc_dota_hero_queenofpain_holdout"
-	{
-		"override_hero"			"npc_dota_hero_queenofpain"
-		"Ability1"				"queenofpain_shadow_strike_datadriven" 
-	}
-    //=================================================================================================================
-	// HERO: Dark Seer
-	//=================================================================================================================
-	"npc_dota_hero_dark_seer_holdout"
-	{
-		"override_hero"			"npc_dota_hero_dark_seer"
-		"Ability4"				"dark_seer_wall_of_discord"
-	}
-    //=================================================================================================================
-	// HERO: Brood
-	//=================================================================================================================
-	"npc_dota_hero_broodmother_holdout"
-	{
-		"override_hero"			"npc_dota_hero_broodmother"
-		"Ability1"				"broodmother_spawn_spiderlings_datadriven"
-		"Ability4"				"broodmother_insatiable_hunger_datadriven"
-	}
-    //=================================================================================================================
-	// HERO: Lifestealer
-	//=================================================================================================================
-	"npc_dota_hero_life_stealer_holdout"
-	{
-		"override_hero"			"npc_dota_hero_life_stealer"
-		"Ability3"				"life_stealer_open_wounds_datadriven"
-	}	
-    //=================================================================================================================
-	// HERO: Dazzle
-	//=================================================================================================================
-	"npc_dota_hero_dazzle_holdout"
-	{
-		"override_hero"			"npc_dota_hero_dazzle"
-		"Ability1"				"dazzle_poison_touch_datadriven"
-		"Ability2"				"dazzle_toughness_aura"
-	}
-	//=================================================================================================================
-	// HERO: Zuus
-	//=================================================================================================================
-	"npc_dota_hero_zuus_holdout"
-	{
-		"override_hero"			"npc_dota_hero_zuus"
-		"Ability4"				"zuus_thundergods_vengeance"
+		"override_hero"			"npc_dota_hero_undying"
+		"Ability1"				"creature_summon_undead3" 
 	}
 	//=================================================================================================================
 	// HERO: Venge
@@ -220,6 +238,20 @@
 	{
 		"override_hero"			"npc_dota_hero_vengefulspirit"
 		"Ability4"				"vengefulspirit_rage"
+	}
+	//=================================================================================================================
+	// HERO: Venomancer
+	//=================================================================================================================
+	"npc_dota_hero_venomancer_holdout"
+	{
+		"override_hero"			"npc_dota_hero_venomancer"
+		// Abilities
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityLayout"				"5"
+	
+		"Ability4"					"holdout_scourge_ward"					// Ability 3
+		"Ability5"					"venomancer_poison_nova"					// Ability 4
+		"Ability6"					"attribute_bonus"						// Ability 6 - Bonuses.
 	}
 	//=================================================================================================================
 	// HERO: Viper
@@ -231,12 +263,12 @@
 		"Ability4"				"viper_viper_strike_datadriven"
 	}
 	//=================================================================================================================
-	// HERO: Ench
+	// HERO: Windrunner
 	//=================================================================================================================
-	"npc_dota_hero_enchantress_holdout"
+	"npc_dota_hero_windrunner_holdout"
 	{
-		"override_hero"			"npc_dota_hero_enchantress"
-		"AttackRange"           "700"
+		"override_hero"			"npc_dota_hero_windrunner"
+		"Ability1"				"holdout_shackleshot"
 	}
 	//=================================================================================================================
 	// HERO: Witch Doctor
@@ -247,54 +279,11 @@
 		"Ability4"				"holdout_death_ward"
 	}
 	//=================================================================================================================
-	// HERO: Sniper
+	// HERO: Zuus
 	//=================================================================================================================
-	"npc_dota_hero_sniper_holdout"
+	"npc_dota_hero_zuus_holdout"
 	{
-		"override_hero"			"npc_dota_hero_sniper"
-		"Ability4"				"horde_sniper_assassinate"
-	}
-	//=================================================================================================================
-	// HERO: Slardar
-	//=================================================================================================================
-	"npc_dota_hero_slardar_holdout"
-	{
-		"override_hero"			"npc_dota_hero_slardar"
-		"Ability1"				"horde_slardar_sprint"
-	}
-	//=================================================================================================================
-	// HERO: Shadow Sharman
-	//=================================================================================================================
-	"npc_dota_hero_shadow_shaman_holdout"
-	{
-		"override_hero"			"npc_dota_hero_shadow_shaman"
-		"Ability3"				"horde_shadow_shaman_shackles"
-	}
-	//=================================================================================================================
-	// HERO: Void
-	//=================================================================================================================
-	"npc_dota_hero_faceless_void_holdout"
-	{
-		"override_hero"			"npc_dota_hero_faceless_void"
-		"Ability4"				"faceless_void_chronosphere_hoard"
-
-	}
-	//=================================================================================================================
-	// HERO: Lina
-	//=================================================================================================================
-	"npc_dota_hero_lina_holdout"
-	{
-		"override_hero"			"npc_dota_hero_lina"
-		"Ability4"				"lina_laguna_blade_datadriven"
-
-	}
-	//=================================================================================================================
-	// HERO: Ogre Magi
-	//=================================================================================================================
-	"npc_dota_hero_ogre_magi_holdout"
-	{
-		"override_hero"			"npc_dota_hero_ogre_magi"
-		"Ability1"				"ogre_magi_fireblast_datadriven"
-
+		"override_hero"			"npc_dota_hero_zuus"
+		"Ability4"				"zuus_thundergods_vengeance"
 	}
 }

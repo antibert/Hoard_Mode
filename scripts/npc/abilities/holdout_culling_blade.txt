@@ -1,0 +1,91 @@
+//=================================================================================================================
+// Holdout: Culling Blade
+//=================================================================================================================
+"holdout_culling_blade"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityTextureName"					"axe_culling_blade"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"500 600 700"
+	"AbilityCastPoint"				"0.0"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25.0 15.5 10.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"250 180 110"		
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"leap_distance"			"500 600 700"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"leap_speed"			"1200 1250 1300"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"leap_acceleration"		"7000.0"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"leap_radius"			"175 225 275"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"kill_threshold"			"250 350 500"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"					"200 300 400"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"speed_bonus"				"40"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"speed_duration"			"6"
+		}
+		"09"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"speed_aoe"					"900"
+		}
+		"10"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"cooldown_scepter"			"10.0 8.0 6.0"
+		}
+		"11"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"kill_threshold_scepter"	"350 500 700"
+		}
+		"12"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"speed_duration_scepter"	"10"
+		}
+	}
+}

@@ -1,57 +1,36 @@
+MPG
+BASCA
+
 Next Update Patch Notes:
 
-Beta 1.06
+Beta 1.07
 
 General:
--- Added new unit: Shrike Heavy to Dragon wave
--- Rapier Ogre and all Radiant Defenders are now tethered to their location they intend to wait in
--- Ripper Sharpshooter damage greatly increased
--- Spookiest Skelleton HP aura greatly reduced
--- Adjusted Gaygoyle unit 
--- Golem armor reduced by 2
--- Reduced Rock Golem spawn rate
--- Walker no longer cancels his Summoning spell channel
--- Medium Golem magic immunity removed
-
-Temporarily Removed Ultra map until reworked
-
-5P_easy:
--- Reduced number of Spider, Zombie and Bear spawns
--- Base Tower moved to fountain
--- Small spirit bear armor reduced by 1 and spawn slightly delayed
--- Daddy Bear base damage reduced
-
-4p_medium:
--- Reduced number of Spider spawns
+-- Finally fixed item shop icons not showing for certain items
+-- Tidied up all item information UIs to look consistent with standard Dota items
 
 Items:
--- New item: War Fury - Combine S&Y with battlefury for a more powerful cleave weapon
--- Bloodstone no longer looses charges on death
--- Lithe Boots grant bonus preattack damage instead of Base damage (will no longer give illusions it's bonus damage)
-
-Heroes:
-//Added Weaver
-//Antimage:
--- Spell sheild resistance increased from "26 34 42 50" to "25 50 75 100"
-//Treant Protector:
--- Overgrowth stun duration back to vanilla
--- Overgrowth cooldown reduced from 40 to 30 seconds
+-- War Fury is built up from Armlet and can now use the Armlet active
 
 Notes:
--- make sure weaver isn't completetly stupid
--- Give War Fury an active
--- Fix dominated units wanting to attack ancient
+-- add armor to War Fury build?
+-- adjust stat item recipe costs to compensate for new item build up 
+-- Boots of power build up is only 2 stat items (3 possibilities) Extra stat item for each final upgrade
+-- lower and correct stats for various new boots items
+-- new hero
+-- 5p easy easier?
+-- Less shit coming at you on Easy 2p Map
+-- Check new boots have the +9 damage that they are supposef to have and readjust stat level
+-- linkens 2 with soul ring _ damage item
 -- post 40 minute ramps up in difficulty more and more
 -- millions of warlock golem models
 -- PRO MANS SHIELD
--- Fix shop icons, redo shop folders, ask on reddit/moddota
 -- make horde mode video
 -- More map bosses than drop super items you can't buy in shop
 -- REWORK ULTRA MAP COMPLTETLY
 -- Make eye of skadi give some kinda aoe thing to ranged heroes
 -- Buff warlock golem hps
 
-"This loading screen has become my personal twitter page"
 
 //Added Slark
 Changes:

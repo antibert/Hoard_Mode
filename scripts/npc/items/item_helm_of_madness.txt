@@ -1,0 +1,50 @@
+//=================================================================================================================
+// Helm of madness
+//=================================================================================================================
+"item_helm_of_madness"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"ID"							"1164"			// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+	"BaseClass"						"item_helm_of_the_dominator"	// Stats
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"AbilityTextureName"            "item_helm_of_madness"
+	"AbilityCooldown"				"45.0"
+	"ItemCost"						"4600"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"40"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_armor"			"15"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_regen"			"3"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"lifesteal_percent"		"20"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"dominate_duration"		"1200.0"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"health_bonus"			"500"
+		}
+	}
+}

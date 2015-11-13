@@ -287,7 +287,7 @@ Timers:CreateTimer("big", {
 		callback = function()
 			Spawners:SpawnChickenTop()
 			Spawners:SpawnChickenMid()
-			return 17.0
+			return 30.0
 		end
 	})
 	Timers:CreateTimer(840, function()

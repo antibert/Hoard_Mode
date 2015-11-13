@@ -1,0 +1,23 @@
+"item_recipe_bfury_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"1144"  //Valve's version of this item uses the ID "144".
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"AbilityTextureName"			"item_recipe"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"550"	
+	"ItemShopTags"					""
+	
+	// Recipe
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_bfury_datadriven"
+	"ItemRequirements"
+	{
+		"01"						"item_bfury;item_sange_and_yasha"
+	}
+}

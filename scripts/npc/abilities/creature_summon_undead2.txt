@@ -1,0 +1,119 @@
+//=================================================================================================================
+// Ability: Summon Undead
+//=================================================================================================================
+"creature_summon_undead2"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName" 			"undying_soul_rip"
+			
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"0"
+	"AbilityCastPoint"				"2.0"
+	"AbilityCastAnimation"			"ACT_DOTA_VICTORY"
+
+	// Time
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"17.0 17.0 17.0 17.0"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50 50 50 50"
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"Target"				"CASTER"
+			"ModifierName"			"Effect"
+			"Duration"				"2.0"
+		}
+		
+		"FireSound"
+		{
+			"EffectName"			"Ability.SummonUndead"
+			"Target"				"CASTER"
+		}
+		
+		"SpawnUnit"
+		{
+			"UnitName"			"npc_dota_creature_spooki_easy"
+			"UnitCount"			"%number_of_zombies"
+			"UnitLimit"			"16"
+			"SpawnRadius"		"175"
+			"Target"			"CASTER"
+			"GrantsGold"		"1"
+			"OnSpawn"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"			"TARGET"
+					
+					"ControlPoints"
+					{
+						"00"		"0 0 0"
+						"01"		"50 100 0"
+						"02"		"4 10 .5"
+						"03"		"20 200 0"
+						"04"		"0 0 0"
+						"05"		"0 0 0"
+					}
+				}
+				
+				"FireSound"
+				{
+					"EffectName"		"Ability.SummonUndeadSuccess"
+					"Target"			"CASTER"
+				}
+			}
+		}
+	}
+	
+	// Modifiers
+	//-------------------------------------------------------------------------------------------------------------	
+	"Modifiers"
+	{
+		"ApplyModifier"
+		{
+			"Effect"
+			{
+				"EffectName"		"particles/generic_aoe_persistent_circle_1/generic_aoe_persist_summon_1.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"			"CASTER"
+			}
+		}
+		
+		"summoned_units"
+		{				
+			"AttachEffect"
+			{
+				"EffectName"		"particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
+				"EffectAttachType"	"follow_origin"
+				"Target"			"TARGET"
+				
+				"ControlPoints"
+				{
+					"00"		"0 0 0"
+					"01"		"200 0 0"
+					"02"		"0 0 0"
+				}
+			}
+		}
+	}
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"number_of_zombies"		"5"
+		}
+	}
+}

@@ -1,0 +1,23 @@
+"item_recipe_boots_of_intellect"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"1057"  //Valve's version of this item uses the ID "62".
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"AbilityTextureName"			"item_recipe"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"0"	
+	"ItemShopTags"					""
+	
+	// Recipe
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_boots_of_intellect"
+	"ItemRequirements"
+	{
+		"01"						"item_boots_of_power;item_mystic_staff"
+	}
+}

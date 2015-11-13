@@ -1,0 +1,9 @@
+//=================================================================================================================
+// HERO: Dazzle
+//=================================================================================================================
+"npc_dota_hero_dazzle_holdout"
+{
+	"override_hero"			"npc_dota_hero_dazzle"
+	"Ability1"				"dazzle_poison_touch_datadriven"
+	"Ability2"				"dazzle_toughness_aura"
+}

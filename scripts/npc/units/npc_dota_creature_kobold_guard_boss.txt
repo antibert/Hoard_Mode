@@ -1,0 +1,118 @@
+//=================================================================================
+// Creature: Guard Boss
+//=================================================================================
+"npc_dota_creature_kobold_guard_boss"
+{										
+	// General
+	//----------------------------------------------------------------
+	"Model"						"models\creeps\item_creeps\i_creep_necro_archer\necro_archer.vmdl"	// Model.
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"n_creep_Ranged"
+	"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+	"Level"						"1.0"
+	"ModelScale" 				"2.3"
+	"ConsideredHero"			"1"
+	"CanBeDominated"			"0"
+
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"					"generic_gold_bag_fountain_500"			// Ability 1
+	"Ability2"					"sven_storm_bolt_datadriven"			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"40"			// Physical protection.
+    "MagicalResistance"		    "20"			// Magical protection.
+
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"400"		// Damage range min.
+	"AttackDamageMax"			"440"		// Damage range max.
+	"AttackRate"				"1.1"		// Speed of attack.
+	"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
+	"AttackRange"				"1550"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles\boss_arrow.vpcf"      
+	// Particle system model for projectile.
+	"ProjectileSpeed"			"2000"		    // Speed of projectile.		   
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"100"
+	"HealthBarOffset"			"560"
+	"BoundsHullName"			"DOTA_HULL_SIZE_HUGE"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"200"		// Experience earn.
+	"BountyGoldMin"				"150"		// Gold earned min.
+	"BountyGoldMax"				"170"		// Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"275"		// Speed.			
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"25000"		// Base health.
+	"StatusHealthRegen"			"34"		// Health regeneration rate.
+	"StatusMana"				"10000"			// Base mana.
+	"StatusManaRegen"			"10.0"		// Mana regeneration rate.		 
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1500"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"vscripts"					"UnitAI.lua"
+
+	
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+	//	"Aggression"				"100.0"
+	//	"Avoidance"					"20.0"
+	//	"Support"					"30.0"
+		//"CanRespawn"				"0"
+		
+		//Level Up
+		"HPGain"					"45"
+		"DamageGain"				"2"
+		"ArmorGain"					"0.25"
+		"MagicResistGain"			"0.1"
+		"MoveSpeedGain"				"1"
+		"BountyGain"				"2"
+		"XPGain"					"13"
+		
+		"States"
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0"
+				"Avoidance"			"0.0"
+				"Support"			"0.0"
+			}
+		}
+		"OffensiveAbilities"
+		{
+			"Ability1"                
+			{
+				"Name"        "sven_storm_bolt_datadriven"
+				"MinimumTargets"	"1"
+			}
+		}
+	}
+}

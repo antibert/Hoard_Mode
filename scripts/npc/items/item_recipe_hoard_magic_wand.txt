@@ -1,0 +1,26 @@
+//=================================================================================================================
+// Recipe: Magic Wand
+//=================================================================================================================
+"item_recipe_hoard_magic_wand"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_recipe_magic_wand"
+	"ID"							"1035"  //Valve's version of this item uses the ID "35".
+	"Model"							"models/props_gameplay/recipe.mdl"
+	"AbilityTextureName"			"item_recipe"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"0"	
+	"ItemShopTags"					""
+	
+	// Recipe
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_hoard_magic_wand"
+	"ItemRequirements"
+	{
+		"01"						"item_hoard_magic_stick;item_branches;item_branches;item_circlet"
+	}
+}

@@ -1,0 +1,85 @@
+"furion_force_of_nature_hoard"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityTextureName"			"furion_force_of_nature"
+	
+	// Stats
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"750"
+	"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+	"AbilityCooldown"				"25 25 25 25"
+	"AbilityManaCost"				"100 100 100 100"
+	"AOERadius"						"%area_of_effect"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"area_of_effect"		"150 225 300 375"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"max_treants"			"1 2 3 4"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"60 60 60 60"
+		}
+
+		// If this is set to 1, the spell wont go on cooldown and waste mana if cast on a position with no trees
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"check_trees_precast"	"0"
+		}
+	}
+
+	"precache"
+	{
+		"particle" 	"particles/units/heroes/hero_furion/furion_force_of_nature_cast.vpcf"
+		"particle" 	"particles/units/heroes/hero_furion/furion_wrath_of_nature.vpcf"			
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
+		"model"		"models/heroes/furion/treant.vmdl"
+	}
+
+	"OnAbilityPhaseStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_furion/force_of_nature.lua"
+			"Function"		"CheckTrees"
+			"Target"		"POINT"
+		}
+	}
+
+	"OnSpellStart"
+	{		
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_furion/force_of_nature.lua"
+			"Function"		"ForceOfNature"
+			"Target"		"POINT"
+			"UnitName"		"npc_dota_creature_treant"
+		}	
+
+		"DestroyTrees"
+		{
+			"Target" 		"POINT"
+			"Radius"		"%area_of_effect"
+		}
+
+		"FireSound"
+		{
+			"EffectName"	"Hero_Furion.ForceOfNature"
+			"Target" 		"CASTER"
+		}									
+	}
+}

@@ -230,7 +230,7 @@ function SpawnersMedium:StartSpawners()
 		callback = function()
 			SpawnersMedium:SpawnChickenTop()
 			SpawnersMedium:SpawnChickenMid()
-			return 17.0
+			return 30.0
 		end
 	})
 	Timers:CreateTimer(840, function()

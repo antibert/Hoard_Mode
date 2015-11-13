@@ -1,0 +1,104 @@
+"item_boots_of_strength"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"item_datadriven"
+	"ID"							"1060"  //Valve's version of this item uses the ID "63".
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_boots_of_strength"
+	
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"30"
+    "AbilityManaCost"				"100"
+	
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"5880"
+	"ItemShopTags"					"attack_speed;move_speed;str"
+	"ItemQuality"					"epic"
+	"ItemAliases"					"boots of strength"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+
+		
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_movement_speed"  "100"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_stat"			"50"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack_speed"	"50"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"			"100"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"			    "6"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_stat2"			"20"
+		}
+	}
+	"OnSpellStart" 
+	{
+		"ApplyModifier"
+		{
+			"Target"					"CASTER"
+			"ModifierName"				"modifier_item_boots_of_strength_ultimate_strength"
+			"Duration"					"%duration"
+		}		
+		"FireSound"
+		{
+			"EffectName"				"DOTA_Item.Armlet.Activate"
+			"Target"					"CASTER"
+		}
+	}
+	
+	"Modifiers"
+	{
+		"modifier_item_boots_of_strength"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%bonus_stat"
+				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_stat2"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%bonus_stat2"
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"			"%bonus_movement_speed"
+			}
+		}
+		"modifier_item_boots_of_strength_ultimate_strength"
+		{
+			"IsPurgable"		"0"
+			"IsBuff"			"1"
+			"EffectName"            	"particles/customgames/capturepoints/cp_earth_captured.vpcf"
+			"EffectAttachType"      	"PATTACH_ABSORIGIN"	
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%bonus_strength"
+			}
+		}
+	}
+}

@@ -129,3 +129,5 @@ function AICore:CreateBehaviorSystem( behaviors )
 
 	return BehaviorSystem
 end
+
+

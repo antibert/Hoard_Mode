@@ -585,6 +585,19 @@ Timers:CreateTimer("big", {
 	Timers:CreateTimer(1380, function()
 		Spawners:StopSpawner("ghostmeele")
 	end)
+	Timers:CreateTimer("ghostmeelesmall", {
+		useGameTime = true,
+		endTime = 1270,
+		callback = function()
+			Spawners:SpawnGhostMeeleSmallTop()
+		    Spawners:SpawnGhostMeeleSmallMid()
+		    Spawners:SpawnGhostMeeleSmallBot()
+			return 17.0
+		end
+	})
+	Timers:CreateTimer(1380, function()
+		Spawners:StopSpawner("ghostmeelesmall")
+	end)
 	Timers:CreateTimer("ghost", {
 		useGameTime = true,
 		endTime = 1270,
@@ -614,7 +627,7 @@ Timers:CreateTimer("big", {
 		endTime = 1270,
 		callback = function()
 			Spawners:SpawnGhostBane()
-			return 120.0
+			return 60.0
 		end
 	})
 	Timers:CreateTimer(1380, function()
@@ -652,7 +665,7 @@ Timers:CreateTimer("big", {
 	
 	Timers:CreateTimer("troll", {
 		useGameTime = true,
-		endTime = 1440,
+		endTime = 1445,
 		callback = function()
 		Spawners:SpawnTrollTop()
 		Spawners:SpawnTrollMid()
@@ -699,6 +712,18 @@ Timers:CreateTimer("big", {
 	Timers:CreateTimer(1680, function()
 		Spawners:StopSpawner("minion")
 	end)
+	Timers:CreateTimer("bigdrake", {
+		useGameTime = true,
+		endTime = 1440,
+		callback = function()
+			Spawners:SpawnBigDrake()
+			return 46.0
+		end
+	})
+	Timers:CreateTimer(1680, function()
+		Spawners:StopSpawner("bigdrake")
+	end)
+
 	
     Timers:CreateTimer(1600, function()
 		Spawners:SpawnCentaurBoss()
@@ -950,7 +975,7 @@ Timers:CreateTimer("big", {
 	end)	
 	Timers:CreateTimer("ghost3", {
 		useGameTime = true,
-		endTime = 2410,
+		endTime = 2400,
 		callback = function()
 			Spawners:SpawnGhostTop()
 			Spawners:SpawnGhostBot()

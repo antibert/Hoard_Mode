@@ -1,35 +1,41 @@
 MPG
 BASCA
+475
 
 Next Update Patch Notes:
 
-Beta 1.07
+Beta 1.07b
+-- Fixed Kobolds not spawning during Kobold wave on easy map
+-- Fixed Night Crawler not granting gold bounty
+-- Fixed Gargoyle attack particles not showing correctly
+-- Increased Great Harpy attack damage and spell damage
 
-General:
--- Finally fixed item shop icons not showing for certain items
--- Tidied up all item information UIs to look consistent with standard Dota items
+4p_medium:
+-- T4 Towers replaced with one super tower (same as 5p_easy fountain tower) next to ancient 
+
+Heroes:
+//Added Pugna
+Changes:
+-- Pugna Ward now behaves like a turret, attacking enemies consistently.
+-- Nether Blast damage increased from "100 175 250 325" to "115 215 315 415"
 
 Items:
--- War Fury is built up from Armlet and can now use the Armlet active
+-- Quelling Blade cost reduced back to vanilla
+-- Quelling Blade bonus damage reduced from +20% to +10%
 
 Notes:
--- add armor to War Fury build?
--- adjust stat item recipe costs to compensate for new item build up 
--- Boots of power build up is only 2 stat items (3 possibilities) Extra stat item for each final upgrade
--- lower and correct stats for various new boots items
--- new hero
--- 5p easy easier?
--- Less shit coming at you on Easy 2p Map
--- Check new boots have the +9 damage that they are supposef to have and readjust stat level
+-- PARTICLES FOR DEVOUR WRAITH KING
+-- Lifestealer hotkeys gettting messed up
 -- linkens 2 with soul ring _ damage item
--- post 40 minute ramps up in difficulty more and more
 -- millions of warlock golem models
--- PRO MANS SHIELD
 -- make horde mode video
 -- More map bosses than drop super items you can't buy in shop
 -- REWORK ULTRA MAP COMPLTETLY
+-- update russian and chinese lang
 -- Make eye of skadi give some kinda aoe thing to ranged heroes
--- Buff warlock golem hps
+-- Buff warlock golem hps - do like lycan passive on one of his abilities
+
+"I dream of a loading screen full of MingLee"
 
 
 //Added Slark

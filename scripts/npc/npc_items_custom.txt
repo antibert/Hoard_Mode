@@ -84,6 +84,11 @@
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"0"
+		"precache"
+		{
+			"soundfile"      "sounds\items\item_armlet_activate.vsnd"
+			"soundfile"      "sounds\items\item_armlet_deactivate.vsnd"
+		}
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -241,7 +246,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"1145"  //Valve's version of this item uses the ID "145".
+		"ID"							"1147"  //Valve's version of this item uses the ID "145".
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
@@ -668,22 +673,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"  "100"
+				"bonus_movement_speed"  "60"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"50"
+				"bonus_stat"			"45"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"50"
+				"bonus_attack_speed"	"40"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat2"			"20"
+				"bonus_stat2"			"17"
 			}
 			"06"
 			{
@@ -698,7 +703,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat3"			"20"
+				"bonus_stat3"			"17"
 			}
 			"08"
 			{
@@ -783,22 +788,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"  "100"
+				"bonus_movement_speed"  "60"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"50"
+				"bonus_stat"			"45"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"50"
+				"bonus_attack_speed"	"40"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat2"			"20"
+				"bonus_stat2"			"17"
 			}
 			"05"
 			{
@@ -823,7 +828,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat3"			"20"
+				"bonus_stat3"			"17"
 			}			
 			"10"
 			{
@@ -843,7 +848,7 @@
 					"Center"			"CASTER"
 					"Radius"			"%null_radius"
 					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_ROSHAN"
+					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
 				}
 			}			
 		}	
@@ -905,7 +910,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2880"
+		"ItemCost"						"3350"
 		"ItemShopTags"					"attack_speed;move_speed;int;agi;str"
 		"ItemQuality"					"rare"
 		"ItemAliases"					"boots of power"
@@ -918,32 +923,32 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"  "75"
+				"bonus_movement_speed"  "60"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"			"18"
+				"bonus_strength"			"14"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"18"
+				"bonus_agility"			"14"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"			"18"
+				"bonus_intellect"			"14"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"40"
+				"bonus_attack_speed"	"35"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"9"
+				"bonus_damage"			"6"
 			}
 		}
 		
@@ -998,17 +1003,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movement_speed"  "100"
+				"bonus_movement_speed"  "60"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"50"
+				"bonus_stat"			"45"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"50"
+				"bonus_attack_speed"	"40"
 			}
 			"05"
 			{
@@ -1023,12 +1028,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat2"			"20"
+				"bonus_stat2"			"17"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat3"			"20"
+				"bonus_stat3"			"17"
 			}
 			"09"
 			{
@@ -2467,7 +2472,7 @@
 		"ItemResult"					"item_boots_of_agility"
 		"ItemRequirements"
 		{
-			"01"						"item_boots_of_power;item_eagle"
+			"01"						"item_boots_of_power;item_eagle;item_wraith_band"
 		}
 	}
 	"item_recipe_boots_of_intellect"
@@ -2490,7 +2495,7 @@
 		"ItemResult"					"item_boots_of_intellect"
 		"ItemRequirements"
 		{
-			"01"						"item_boots_of_power;item_mystic_staff"
+			"01"						"item_boots_of_power;item_mystic_staff;item_null_talisman"
 		}
 	}
 	"item_recipe_boots_of_power"
@@ -2538,7 +2543,7 @@
 		"ItemResult"					"item_boots_of_strength"
 		"ItemRequirements"
 		{
-			"01"						"item_boots_of_power;item_reaver"
+			"01"						"item_boots_of_power;item_reaver;item_bracer"
 		}
 	}
 	"item_recipe_death_stone"
@@ -2969,4 +2974,5 @@
 			}
 		}
 	}
+
 }

@@ -1235,6 +1235,51 @@ function SpawnersMedium:SpawnGhostBane()
 	end
 end
 
+function SpawnersMedium:SpawnGhostMeeleSmallMid()
+	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = RandomInt(4,6)
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_ghost_meele_small", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function SpawnersMedium:SpawnGhostMeeleSmallTop()
+	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = RandomInt(4,6)
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_ghost_meele_small", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function SpawnersMedium:SpawnGhostMeeleSmallBot()
+	local point = Entities:FindByName(nil, "spawner2"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_badguys_4"):GetAbsOrigin()
+	local units_to_spawn = RandomInt(4,6)
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_ghost_meele_small", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
 function SpawnersMedium:SpawnGhostMeeleMid()
 	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
@@ -1249,6 +1294,7 @@ function SpawnersMedium:SpawnGhostMeeleMid()
 		end)
 	end
 end
+
 
 function SpawnersMedium:SpawnGhostMeeleTop()
 	local point = Entities:FindByName(nil, "spawner3"):GetAbsOrigin()
@@ -2067,6 +2113,21 @@ function SpawnersMedium:SpawnBigBear()
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_big_bear", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+									Position = waypoint, Queue = true} )
+			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		end)
+	end
+end
+
+function SpawnersMedium:SpawnBigDrake()
+	local point = Entities:FindByName(nil, "spawner4"):GetAbsOrigin()
+	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+	local units_to_spawn = 3
+	for i=1,units_to_spawn do
+		Timers:CreateTimer(function()
+			local unit = CreateUnitByName("npc_dota_creature_drake_boss", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )

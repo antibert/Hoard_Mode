@@ -546,6 +546,19 @@ Timers:CreateTimer("largebears", {
 	Timers:CreateTimer(1380, function()
 		SpawnersMedium:StopSpawner("ghostmeele")
 	end)
+	Timers:CreateTimer("ghostmeelesmall", {
+		useGameTime = true,
+		endTime = 1270,
+		callback = function()
+			SpawnersMedium:SpawnGhostMeeleSmallTop()
+		    SpawnersMedium:SpawnGhostMeeleSmallMid()
+		    SpawnersMedium:SpawnGhostMeeleSmallBot()
+			return 17.0
+		end
+	})
+	Timers:CreateTimer(1380, function()
+		SpawnersMedium:StopSpawner("ghostmeelesmall")
+	end)
 	Timers:CreateTimer("ghost", {
 		useGameTime = true,
 		endTime = 1270,
@@ -575,7 +588,7 @@ Timers:CreateTimer("largebears", {
 		endTime = 1270,
 		callback = function()
 			SpawnersMedium:SpawnGhostBane()
-			return 120.0
+			return 50.0
 		end
 	})
 	Timers:CreateTimer(1380, function()
@@ -670,6 +683,17 @@ Timers:CreateTimer("largebears", {
 	})
 	Timers:CreateTimer(1680, function()
 		SpawnersMedium:StopSpawner("minion")
+	end)
+	Timers:CreateTimer("bigdrake", {
+		useGameTime = true,
+		endTime = 1440,
+		callback = function()
+			SpawnersMedium:SpawnBigDrake()
+			return 40.0
+		end
+	})
+	Timers:CreateTimer(1680, function()
+		SpawnersMedium:StopSpawner("bigdrake")
 	end)
 	
     Timers:CreateTimer(1600, function()
@@ -829,7 +853,7 @@ Timers:CreateTimer("largebears", {
 		callback = function()
 			SpawnersMedium:SpawnOgreBossBot()
 			SpawnersMedium:SpawnOgreBossTop()
-			return 145.0
+			return 125.0
 		end
 	})
 	Timers:CreateTimer(6000, function()

@@ -79,12 +79,6 @@
 	"npc_dota_hero_rubick"       "1"	
 	"npc_dota_hero_undying"		"1"
 	"npc_dota_hero_weaver" 		"1"
-
-	"npc_dota_hero_slark" 		"0" 
-    "npc_dota_hero_ogre_magi"     "0"
-    "npc_dota_hero_batrider"       "0"
-	"npc_dota_hero_obsidian_destroyer"  "0"
-	"npc_dota_hero_tinker"    "0"
-    "npc_dota_hero_vengefulspirit"     "0"	
-	"npc_dota_hero_puck"			"0"
+    "npc_dota_hero_vengefulspirit"     "1"
+	"npc_dota_hero_pugna"        	"1"
 }

@@ -4,36 +4,34 @@ BASCA
 
 Next Update Patch Notes:
 
-Beta 1.07b
--- Fixed Kobolds not spawning during Kobold wave on easy map
--- Fixed Night Crawler not granting gold bounty
--- Fixed Gargoyle attack particles not showing correctly
--- Increased Great Harpy attack damage and spell damage
+1.08
 
-4p_medium:
--- T4 Towers replaced with one super tower (same as 5p_easy fountain tower) next to ancient 
 
-Heroes:
-//Added Pugna
-Changes:
--- Pugna Ward now behaves like a turret, attacking enemies consistently.
--- Nether Blast damage increased from "100 175 250 325" to "115 215 315 415"
+/////////////// Critical Importance:
+-- Rework Mirana Arrow
+-- Fix old sniper ulti
+-- meepo clones not sharing stats
 
-Items:
--- Quelling Blade cost reduced back to vanilla
--- Quelling Blade bonus damage reduced from +20% to +10%
-
-Notes:
--- PARTICLES FOR DEVOUR WRAITH KING
+Secondary importance:
+-- Dragon Lance buff
+-- Aether Lens Buff
+-- sTAT INCONSISTENCIES 
+-- Aghanims scepter on SK is useless
 -- Lifestealer hotkeys gettting messed up
--- linkens 2 with soul ring _ damage item
--- millions of warlock golem models
--- make horde mode video
--- More map bosses than drop super items you can't buy in shop
+-- PARTICLES FOR DEVOUR WRAITH KING
 -- REWORK ULTRA MAP COMPLTETLY
 -- update russian and chinese lang
 -- Make eye of skadi give some kinda aoe thing to ranged heroes
 -- Buff warlock golem hps - do like lycan passive on one of his abilities
+-- linkens 2 with soul ring _ damage item
+
+Not Neccisary:
+-- make horde mode video
+-- More map bosses than drop super items you can't buy in shop
+
+Notes:
+
+-- millions of warlock golem models
 
 "I dream of a loading screen full of MingLee"
 

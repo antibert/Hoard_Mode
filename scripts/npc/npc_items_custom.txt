@@ -87,6 +87,7 @@
 		"precache"
 		{
 			"soundfile"      "sounds\items\item_armlet_activate.vsnd"
+			"soundfile"      "sounds\items\item_bfury.vsnd"
 			"soundfile"      "sounds\items\item_armlet_deactivate.vsnd"
 		}
 		
@@ -95,8 +96,7 @@
 		"ItemCost"						"7500"
 		"ItemShopTags"					"damage;health_regen;mana_regen;hard_to_tag"
 		"ItemQuality"					"epic"
-		"ItemAliases"					"bf;battle fury;cleave"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"ItemAliases"					"wf;war fury;cleave"
 			
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -150,12 +150,7 @@
 				"ScriptFile"			"items/item_armlet.lua"
 				"Function"				"item_bfury_datadriven_on_spell_start"
 			}
-			
-			"FireSound"
-			{
-				"EffectName"				"DOTA_Item.Armlet.Activate"
-				"Target"					"CASTER"
-			}
+		
 		}
 		
 		"Modifiers"
@@ -220,11 +215,6 @@
 						"CleaveEffect"		"particles/items_fx/battlefury_cleave.vpcf"
 					}
 					
-					"FireSound"
-					{
-						"EffectName"				"DOTA_Item.BattleFury"
-						"Target"					"TARGET"
-					}
 				}
 				
 				//Continually check to see if the hero this modifier is on is still melee 
@@ -262,7 +252,6 @@
 		"ItemShopTags"					"damage;health_regen;mana_regen;hard_to_tag"
 		"ItemQuality"					"epic"
 		"ItemAliases"					"bf;battle fury;cleave"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 	
 		"ItemPurchasable"				"0"
 		
@@ -353,12 +342,6 @@
 				"ScriptFile"			"items/item_armlet.lua"
 				"Function"				"item_bfury_datadriven_active_on_spell_start"
 			}
-			
-			"FireSound"
-			{
-				"EffectName"				"DOTA_Item.Armlet.Activate"
-				"Target"					"CASTER"
-			}
 		}
 		"OnUnequip"
 		{		
@@ -440,11 +423,6 @@
 						"CleaveEffect"		"particles/items_fx/battlefury_cleave.vpcf"
 					}
 					
-					"FireSound"
-					{
-						"EffectName"				"DOTA_Item.BattleFury"
-						"Target"					"TARGET"
-					}
 				}
 				
 				//Continually check to see if the hero this modifier is on is still melee 

@@ -8,7 +8,6 @@ All Heroes not in game:
 "npc_dota_hero_bloodseeker
 "npc_dota_hero_bounty_hunter
 "npc_dota_hero_brewmaster
-"npc_dota_hero_chaos_knight
 "npc_dota_hero_clinkz
 "npc_dota_hero_rattletrap
 "npc_dota_hero_disruptor

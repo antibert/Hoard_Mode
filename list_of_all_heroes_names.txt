@@ -8,10 +8,8 @@ All Heroes not in game:
 "npc_dota_hero_bloodseeker
 "npc_dota_hero_bounty_hunter
 "npc_dota_hero_brewmaster
-"npc_dota_hero_chaos_knight
 "npc_dota_hero_clinkz
 "npc_dota_hero_rattletrap
-"npc_dota_hero_death_prophet
 "npc_dota_hero_disruptor
 "npc_dota_hero_doom_bringer
 "npc_dota_hero_earth_spirit
@@ -33,7 +31,6 @@ All Heroes not in game:
 "npc_dota_hero_spectre
 "npc_dota_hero_spirit_breaker
 "npc_dota_hero_terrorblade
-"npc_dota_hero_tinker
 "npc_dota_hero_tusk
 "npc_dota_hero_visage
 )

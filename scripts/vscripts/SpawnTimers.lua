@@ -47,6 +47,7 @@ function Spawners:StartSpawners()
 		callback = function()
 			Spawners:SpawnGnollsTop()
 			Spawners:SpawnGnollsMid()
+			Spawners:SpawnGnollsBot()
 			return 30.0
 		end
 	})
@@ -60,6 +61,7 @@ function Spawners:StartSpawners()
 		callback = function()
 			Spawners:SpawnBazzTop()
 			Spawners:SpawnBazzMid()
+			Spawners:SpawnBazzBot()
 			return 23.0
 		end
 	})
@@ -122,7 +124,7 @@ function Spawners:StartSpawners()
 -----------------------------------------------------------------------------------------------	
 
 	-- RANDOM SPAWNER BLOCK 50/50 CHANCE TO TRIGGER EITHER
-	local rand = RandomInt(1,2)
+	local rand = RandomInt(1,3)
 	if rand == 1 then
 	
 --------------------- Zombie Wave
@@ -164,7 +166,7 @@ function Spawners:StartSpawners()
 		Spawners:StopSpawner("corpse")
 	end)
 
-	else
+	elseif rand == 2 then
 	
 -------------------- Spider Wave
 	
@@ -229,6 +231,49 @@ Timers:CreateTimer("big", {
 		Spawners:StopSpawner("big")
 	end)
 	
+	elseif rand == 3 then
+	
+------------------------------- Scorpion Wave
+
+	Timers:CreateTimer("hulk", {
+		useGameTime = true,
+		endTime = 180,
+		callback = function()
+			Spawners:SpawnHulkTop()
+			Spawners:SpawnHulk()
+			return 23.0
+		end
+	})
+	Timers:CreateTimer(450, function()
+		Spawners:StopSpawner("hulk")
+	end)
+	
+	Timers:CreateTimer("hulkbig", {
+		useGameTime = true,
+		endTime = 250,
+		callback = function()
+			Spawners:SpawnHulkBigTop()
+			Spawners:SpawnHulkBig()
+			return 35.0
+		end
+	})
+	Timers:CreateTimer(450, function()
+		Spawners:StopSpawner("hulkbig")
+	end)
+	
+	Timers:CreateTimer("kappa", {
+		useGameTime = true,
+		endTime = 360,
+		callback = function()
+			Spawners:SpawnKappaTop()
+			Spawners:SpawnKappa()
+			return 190.0
+		end
+	})
+	Timers:CreateTimer(450, function()
+		Spawners:StopSpawner("kappa")
+	end)
+	
 	end
 	
 -----------------------------------------------------------------------------------------------	
@@ -287,7 +332,7 @@ Timers:CreateTimer("big", {
 		callback = function()
 			Spawners:SpawnChickenTop()
 			Spawners:SpawnChickenMid()
-			return 30.0
+			return 100.0
 		end
 	})
 	Timers:CreateTimer(840, function()

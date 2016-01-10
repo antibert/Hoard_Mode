@@ -43,6 +43,9 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_creature_troll_healer", context)
 	PrecacheUnitByNameSync("npc_dota_medium_spiders", context)
 	PrecacheUnitByNameSync("npc_dota_creature_spiderling", context)
+	PrecacheUnitByNameSync("npc_dota_creature_hulk", context)
+	PrecacheUnitByNameSync("npc_dota_creature_hulk_big", context)
+	PrecacheUnitByNameSync("npc_dota_creature_kappapult", context)
 	PrecacheUnitByNameSync("npc_dota_creature_basic_zombie", context)
 	PrecacheUnitByNameSync("npc_dota_creature_berserk_zombie", context)
 	PrecacheUnitByNameSync("npc_dota_creature_corpselord", context)
@@ -107,8 +110,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_pugna_ward_hoard2", context)
 	PrecacheUnitByNameSync("npc_dota_pugna_ward_hoard3", context)
 	PrecacheUnitByNameSync("npc_dota_pugna_ward_hoard4", context)
-	
-	
+
 	end
 	
 -- Create the game mode when we activate

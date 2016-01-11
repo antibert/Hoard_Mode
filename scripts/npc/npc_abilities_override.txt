@@ -5204,7 +5204,11 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
+<<<<<<< HEAD
 				"fade_delay"			"0.1"
+=======
+				"fade_delay"			"0.3 0.2 0.1"
+>>>>>>> origin/master
 			}
 			"02"
 			{

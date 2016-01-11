@@ -141,7 +141,6 @@
 	{
 		"override_hero"			"npc_dota_hero_mirana"
 		"Ability2"				"holdout_mirana_arrow"
-		"Ability4"				"mirana_moonfall"
 	}
 	//=================================================================================================================
 	// HERO: Ogre Magi
@@ -218,7 +217,7 @@
 	//=================================================================================================================
 	// HERO: Tidehunter
 	//=================================================================================================================
-	"npc_dota_hero_tinker_holdout"
+	"npc_dota_hero_tinker"
 	{
 		"override_hero"			"npc_dota_hero_tinker"
 		"Ability2"				"tinker_heat_seeking_missile_datadriven"

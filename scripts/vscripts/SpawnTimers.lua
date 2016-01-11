@@ -263,15 +263,28 @@ Timers:CreateTimer("big", {
 	
 	Timers:CreateTimer("kappa", {
 		useGameTime = true,
-		endTime = 360,
+		endTime = 310,
 		callback = function()
 			Spawners:SpawnKappaTop()
 			Spawners:SpawnKappa()
-			return 190.0
+			return 200.0
 		end
 	})
 	Timers:CreateTimer(450, function()
 		Spawners:StopSpawner("kappa")
+	end)
+	
+	Timers:CreateTimer("babykappa", {
+		useGameTime = true,
+		endTime = 200,
+		callback = function()
+			Spawners:SpawnBabyKappaTop()
+			Spawners:SpawnBabyKappa()
+			return 37.0
+		end
+	})
+	Timers:CreateTimer(450, function()
+		Spawners:StopSpawner("babykappa")
 	end)
 	
 	end

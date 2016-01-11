@@ -522,7 +522,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_scepter"	"900"
+				"cast_range_scepter"	"1000"
 			}
 		}
 	}
@@ -533,7 +533,7 @@
 	{
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"20 35 60 75"
+		"AbilityDamage"					"15 25 35 45"
 	}
 	//=================================================================================================================
 	// Centaur Khan: War Stomp
@@ -5140,22 +5140,22 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stun_min"				"1 1 2 3"
+				"stun_min"				"1 2 3 4"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"stun_max"				"2 3 4 4"
+				"stun_max"				"3 4 5 6"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_min"			"100 150 200 250"
+				"damage_min"			"200 250 300 350"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_max"			"300 400 500 600"
+				"damage_max"			"300 500 700 900"
 			}
 		}
 	}
@@ -5168,6 +5168,24 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"100.0 80.0 60.0"
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"illusion_duration"			"60"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"incoming_damage"			"0"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"incoming_damage_tooltip"			"100"
+			}				
+		}
 	}
 
 	//=================================================================================================================
@@ -5186,7 +5204,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fade_delay"			"0"
+				"fade_delay"			"0.1"
 			}
 			"02"
 			{

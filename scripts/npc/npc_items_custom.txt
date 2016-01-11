@@ -1770,7 +1770,7 @@
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13.0"
+		"AbilityCooldown"				"17.0"
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
 		"AbilitySharedCooldown"			"magicwand"
@@ -1799,7 +1799,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"restore_per_charge"	"6"
+				"restore_per_charge"	"8"
 			}
 		}
 		
@@ -1845,7 +1845,7 @@
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10.0"
+		"AbilityCooldown"				"17.0"
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
 		"AbilitySharedCooldown"			"magicwand"
@@ -1874,7 +1874,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"restore_per_charge"	"7"
+				"restore_per_charge"	"10"
 			}
 			"03"
 			{

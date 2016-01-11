@@ -4,32 +4,13 @@ BASCA
 
 Next Update Patch Notes:
 
-1.08
+1.08b
+-- Tinker Heat Seeker Missile damage and rocket number back to vanilla
 
-General:
--- Radiant base defenders now have more damage and hp
--- Fixed Faeiry Fire not filling up inventory propperly and decreased cost to 40g
 
-// 5p_easy map
-(Now Much easier)
--- All lanes now spawn the same number of gnolls and berzerkers at the start
--- Fewer shrikes spawn bot
--- Fewer zombies now spawn (gold bounty increased per unit)
--- Fewer Spooki Skelletons spawn (gold bounty increased per unit) 
--- Brood Warrior and spiderling gold bounty greatly increased and damage slightly reduced
--- Fewer scorpions now spawn
--- Fewer Drakes now spawn (Gold bounty increased per unit)
--- Suicide chickens now spawn much less frequently
--- Fewer Trees now spawn (gold bounty increased)
--- Fewer wolves now spawn
--- Fewer Kobold Guards, Golems, Ghosts, Demons, Mini-Roshans, bears and Minions now spawn
 
-//4p_medium
--- Zombies are now tougher but fewer spawn
 
 /////////////// Critical Importance:
--- Rework Mirana Arrow
--- Fix old sniper ulti
 -- meepo clones not sharing stats
 
 Secondary importance:

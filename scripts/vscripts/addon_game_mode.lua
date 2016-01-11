@@ -155,7 +155,7 @@ function CHoard_ModeGameMode:SetRules()
 	GameRules:SetGoldPerTick( 1 )
 	GameRules:GetGameModeEntity():SetLoseGoldOnDeath( false )
 	GameRules:GetGameModeEntity():SetRuneEnabled( 0, true ) --Double Damage
-	GameRules:GetGameModeEntity():SetRuneEnabled( 1, true ) -- haste rune
+	GameRules:GetGameModeEntity():SetRuneEnabled( 1, false ) -- haste rune
 	GameRules:GetGameModeEntity():SetRuneEnabled( 2, true ) -- illu
 	GameRules:GetGameModeEntity():SetRuneEnabled( 3, false ) --Invis Rune
 	GameRules:GetGameModeEntity():SetRuneEnabled( 4, true ) --Regen

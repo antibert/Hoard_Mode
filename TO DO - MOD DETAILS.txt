@@ -4,8 +4,15 @@ BASCA
 
 Next Update Patch Notes:
 
-1.08b
--- Tinker Heat Seeker Missile damage and rocket number back to vanilla
+1.08c
+-- Fixed tooltips of items to show all their bonuses (they always gave the bonuses, but it wasn't shown in the tooltip)
+--- Includes: Horde Dagon, Blood Stone, Death Stone, Ghost Scepter
+-- Increased bonus damage of Helm of Oppression from 40 to 45 (item components were a total of 41)
+-- Changed King Rapier to better reflect the changes to Monkey King Bar
+--- Damage changed from 420 to 400
+--- Attack speed changed from 0 to 15
+--- Bash chance increased from 17 to 35
+--- Bash damage increased from 50 to 160
 
 
 

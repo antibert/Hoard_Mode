@@ -1225,7 +1225,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"40"
+				"bonus_damage"			"45"
 			}
 			"02"
 			{
@@ -1250,7 +1250,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_bonus"			"500"
+				"health_min"			"1400"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed_base"			"350"
 			}
 		}
 	}
@@ -2219,22 +2224,22 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"420"
+				"bonus_damage"			"400"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"0"
+				"bonus_attack_speed"	"15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_chance"			"17"
+				"bash_chance"			"35"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_damage"			"50"
+				"bash_damage"			"160"
 			}
 			"05"
 			{

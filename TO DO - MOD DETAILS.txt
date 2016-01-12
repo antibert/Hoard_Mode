@@ -16,6 +16,10 @@ Grants +500 Mana, +16 HP Regeneration, +30% Spell Resistance, +300 Cast Range, +
 -- Recipe: Battle Fury, 2000 gold recipe
 -- 70 damage, 9 HP Regeneration, 200% Mana Regeneration, 50% Cleave damage, 350 Cleave radius
 
+Heroes:
+//Tinker:
+-- Heat Seeking Missile damage increased from "125 200 275 350" to "150 300 450 600"
+
 ////// Important Changes:
 -- meepo clones not sharing stats
 -- WR Shackle not working correctly

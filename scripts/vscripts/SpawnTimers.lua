@@ -120,7 +120,7 @@ function Spawners:StartSpawners()
 	end)
 	
 -----------------------------------------------------------------------------------------------	
----------------- START OF ZOMBIE AND SPIDER PHASE SPAWNERS --------------------------------
+---------------- START OF ZOMBIE, SPIDER AND MECH PHASE SPAWNERS --------------------------------
 -----------------------------------------------------------------------------------------------	
 
 	-- RANDOM SPAWNER BLOCK 50/50 CHANCE TO TRIGGER EITHER
@@ -233,7 +233,7 @@ Timers:CreateTimer("big", {
 	
 	elseif rand == 3 then
 	
-------------------------------- Scorpion Wave
+------------------------------- Hulk Wave
 
 	Timers:CreateTimer("hulk", {
 		useGameTime = true,
@@ -247,14 +247,26 @@ Timers:CreateTimer("big", {
 	Timers:CreateTimer(450, function()
 		Spawners:StopSpawner("hulk")
 	end)
+	Timers:CreateTimer("hulkmedium", {
+		useGameTime = true,
+		endTime = 200,
+		callback = function()
+			Spawners:SpawnHulkMediumTop()
+			Spawners:SpawnHulkMedium()
+			return 30.0
+		end
+	})
+	Timers:CreateTimer(450, function()
+		Spawners:StopSpawner("hulkmedium")
+	end)
 	
 	Timers:CreateTimer("hulkbig", {
 		useGameTime = true,
-		endTime = 250,
+		endTime = 275,
 		callback = function()
 			Spawners:SpawnHulkBigTop()
 			Spawners:SpawnHulkBig()
-			return 35.0
+			return 50.0
 		end
 	})
 	Timers:CreateTimer(450, function()
@@ -280,7 +292,7 @@ Timers:CreateTimer("big", {
 		callback = function()
 			Spawners:SpawnBabyKappaTop()
 			Spawners:SpawnBabyKappa()
-			return 37.0
+			return 40.0
 		end
 	})
 	Timers:CreateTimer(450, function()

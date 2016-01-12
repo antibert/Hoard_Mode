@@ -2173,7 +2173,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"bash_stun"				"0.5"
+				"bash_stun"				"0.1"
 			}
 		}
 	}

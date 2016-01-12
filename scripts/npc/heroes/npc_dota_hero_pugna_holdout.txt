@@ -1,8 +1,9 @@
 //=================================================================================================================
-// HERO: Sniper
+// HERO: Pugna
 //=================================================================================================================
-"npc_dota_hero_sniper_holdout"
+"npc_dota_hero_pugna_holdout"
 {
-	"override_hero"			"npc_dota_hero_sniper"
-	"Ability4"				"horde_sniper_assassinate"
+	"override_hero"			"npc_dota_hero_pugna"
+	"Ability3"				"pugna_nether_ward_datadriven"
+	"Ability4"				"pugna_life_drain_datadriven"
 }

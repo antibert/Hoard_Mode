@@ -9,7 +9,7 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"Model"							"models/props_gameplay/red_box.vmdl" 
 	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-	"AbilityTextureName" 			"item_bloodstone2"
+	"AbilityTextureName" 			"item_death_stone"
 	"FightRecapLevel"				"1"
 	"ItemInitialCharges"			"24"
 	"ItemDisplayCharges"			"1"

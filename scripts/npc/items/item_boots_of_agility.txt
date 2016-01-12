@@ -27,22 +27,22 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_movement_speed"  "100"
+			"bonus_movement_speed"  "60"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_stat"			"50"
+			"bonus_stat"			"45"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_attack_speed"	"50"
+			"bonus_attack_speed"	"40"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_stat2"			"20"
+			"bonus_stat2"			"17"
 		}
 		"06"
 		{
@@ -53,6 +53,16 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"duration"			    "6"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_stat3"			"17"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"9"
 		}
 	}
 	"OnSpellStart" 
@@ -86,6 +96,7 @@
 				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%bonus_stat2"
 				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"			"%bonus_movement_speed"
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
 			}
 		}
 		"modifier_item_boots_of_agility_armor"

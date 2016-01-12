@@ -18,6 +18,6 @@
 	"ItemResult"					"item_boots_of_strength"
 	"ItemRequirements"
 	{
-		"01"						"item_boots_of_power;item_reaver"
+		"01"						"item_boots_of_power;item_reaver;item_bracer"
 	}
 }

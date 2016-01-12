@@ -1,0 +1,65 @@
+"vengefulspirit_command_aura_datadriven"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityTextureName"			"vengefulspirit_fury_aura"
+
+	// Precache
+	//-------------------------------------------------------------------------------------------------------------
+	"precache"
+	{
+		"particle"			"particles/units/heroes/hero_vengeful/vengeful_negative_aura.vpcf"
+	}	
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"900"
+	
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_attack_speed"	"20 35 50"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"aura_radius"		"900"
+		}	
+	}
+
+	"Modifiers"
+	{
+	
+		"modifier_command_aura_caster_datadriven"
+		{
+			"Passive"			"1"
+			"IsHidden"			"1"
+			"IsDebuff"			"0"
+	
+			"Aura"					"modifier_command_aura_friendly_datadriven"
+			"Aura_Radius"			"%aura_radius"
+			"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+		}
+
+		"modifier_command_aura_friendly_datadriven"
+		{
+			"IsBuff"	"1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed" 
+			}			
+		}
+
+	}
+
+}

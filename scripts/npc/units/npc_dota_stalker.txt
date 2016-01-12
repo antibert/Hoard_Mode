@@ -33,7 +33,7 @@
 	"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 	"AttackRange"				"400"		// Range within a target can be attacked.
 	"ProjectileModel"			"particles\neutral_fx\black_drake_attack.vpcf"          // Particle system model for projectile.
-	"ProjectileSpeed"			"1450"		    // Speed of projectile.		     
+	"ProjectileSpeed"			"900"		    // Speed of projectile.		     
 
 	// Bounds
 	//----------------------------------------------------------------

@@ -32,7 +32,7 @@
 	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 	"AttackRange"				"290"		// Range within a target can be attacked.
-	"ProjectileModel"			"particles\econ\items\visage\immortal_familiar\visage_immortal_ti5\visage_familiar_base_attack_core_ti5.vpcf"          // Particle system model for projectile.
+	"ProjectileModel"			"particles\neutral_fx\black_drake_attack.vpcf"          // Particle system model for projectile.
 	"ProjectileSpeed"			"800"		    // Speed of projectile.		     
 
 	// Bounds

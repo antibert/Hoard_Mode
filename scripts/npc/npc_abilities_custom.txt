@@ -2285,59 +2285,6 @@
 				
 		}
 	}
-	"warlock_command_aura"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"warlock_burning_flesh"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"40 60 80 100"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"5 10 15 20"
-			}
-		}
-		"Modifiers"
-		{
-			"modifier_warlock_command_aura"
-			{
-				"Passive" 	"1"
-				
-				"Aura"        "warlock_command_aura"
-				"Aura_Radius" 	"%radius"
-				"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types" 	"DOTA_UNIT_TARGET_ALL"
-				"Aura_Flags"  "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-				"Aura_ApplyToCaster" "0"
-			}
-			"warlock_command_aura"
-			{
-				"IsBuff"		"1"
-				"IsPurgable"	"0"	
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%bonus_damage" 
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
-				}
-			}
-		}	
-	}
 	//=================================================================================================================
 	// Zombie: Berserk
 	//=================================================================================================================
@@ -2840,6 +2787,134 @@
 			{
 				"var_type"			"FIELD_INTEGER"
 				"radius"			"1000000"
+			}
+		}
+	}
+	// Rewrite of Death Prophet Silence
+	// Author: Noya
+	// Date: 02.02.2015.
+	"death_prophet_silence_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"death_prophet_silence"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15 14 13 12"
+		"AbilityDuration"				"3 4 5 6"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 80 80 80"
+	
+		"AOERadius"						"%radius"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"425"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"3.0 4.0 5.0 6.0"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"negative_damage_pct"	"-20 -30 -40 -50"
+			}
+		}
+	
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_death_prophet/death_prophet_silence.vpcf"
+			"particle"	"particles/units/heroes/hero_death_prophet/death_prophet_silence_impact.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts"
+		}
+	
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_silenced"
+				"Target"
+				{
+					"Center"	"POINT"
+					"Radius"	"%radius"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+				"Duration"		"%duration"
+			}
+	
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_death_prophet/death_prophet_silence.vpcf"
+				"EffectAttachType"  "world_origin"
+				"TargetPoint"       "POINT"
+				"ControlPoints"
+				{
+					"01"	"%radius 0 0"
+				}
+			}
+	
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_death_prophet/death_prophet_silence_impact.vpcf"
+				"EffectAttachType"  "follow_overhead"
+				"Target"
+				{
+					"Center"	"POINT"
+					"Radius"	"%radius"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+				"ControlPoints"
+				{
+					"00"	"1 0 0"
+				}				
+			}
+	
+			"FireSound"
+			{
+				"EffectName"	"Hero_DeathProphet.Silence"
+				"TargetPoint" 	"POINT"	// This works but its actually fired at the caster
+			}			
+		}
+	
+		//modifier_silence is a Built-In modifier, _silenced is custom
+		"Modifiers"
+		{
+			"modifier_silenced"
+			{
+				"IsDebuff"			"1"
+	
+				"EffectName"		"particles/generic_gameplay/generic_silenced.vpcf"
+				"EffectAttachType"	"follow_overhead"
+	
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%negative_damage_pct" 
+				}
 			}
 		}
 	}
@@ -4157,7 +4232,7 @@
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"				"false"
-
+	
 			"FireSound"
 			{
 				"EffectName"			"Hero_Mirana.ArrowImpact"
@@ -6042,649 +6117,158 @@
 		}
 	}
 	}
-	"queenofpain_shadow_strike_datadriven"
+	// Rewrite of Pugna Life Drain
+	// Author: Noya
+	// Date: April 5, 2015
+	"pugna_life_drain_datadriven"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"poison_flurry"
-	
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts"
-			"particle"			"particles/units/heroes/hero_queenofpain/queen_shadow_strike.vpcf"
-			"particle"			"particles/units/heroes/hero_queenofpain/queen_shadow_strike_body.vpcf"
-			"particle"			"particles/units/heroes/hero_queenofpain/queen_shadow_strike_debuff.vpcf"
-		}
+		"AbilityTextureName"			"pugna_life_drain"
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"450 475 500 525"
-		"AbilityCastPoint"				"0.452 0.452 0.452 0.452"
+		"AbilityCastRange"				"1100"
+		"AbilityCastPoint"				"0.2 0.2 0.2"
+		"AbilityChannelTime"			"10.0"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"16.0 12.0 8.0 4.0"
-		"AbilityDuration"				"15.0 15.0 15.0 15.0"
+		"AbilityCooldown"				"22.0 22.0 22.0"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110"
-	
+		"AbilityManaCost"				"125 175 225"
 		
-		// Special	
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// All about the damage
+	
+		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"strike_damage"			"50 75 100 125"
+				"var_type"					"FIELD_INTEGER"
+				"health_drain"				"120 160 200"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"duration_damage"		"30 40 50 60"
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_tooltip"		"850"
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"movement_slow"			"-20 -30 -40 -50"
+				"var_type"					"FIELD_INTEGER"
+				"duration_tooltip"		"10"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"900"
+				"var_type"					"FIELD_INTEGER"
+				"health_drain_scepter"		"180 240 300"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range_tooltip"		"450 475 500 525"
+				"var_type"					"FIELD_FLOAT"
+				"scepter_cooldown"			"0.0 0.0 0.0"
 			}
 			"06"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"movement_slow_small"			"-1.33 -2 -2.67 -3.33"
+				"var_type"					"FIELD_FLOAT"
+				"tick_rate"					"0.25 0.25 0.25"
 			}
 			"07"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"250 250 250 250"
+				"var_type"					"FIELD_INTEGER"
+				"bonus_range_scepter"		"50"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_scepter_tooltip"		"900"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"175"
 			}
 		}
 	
-		"OnSpellStart"
-		{
-			"TrackingProjectile"
-			{
-				"Target"           "TARGET"
-			    "EffectName"       "particles/units/heroes/hero_queenofpain/queen_shadow_strike.vpcf"
-			    "Dodgeable"        "1"
-			    "ProvidesVision"   "0"
-			    "MoveSpeed"        "%projectile_speed"
-			    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
-			}
-	
-			"FireSound"
-			{
-				"EffectName"		"Hero_QueenOfPain.ShadowStrike"
-				"Target"			"CASTER"
-			}
-	
-			"AttachEffect"
-			{
-				"Target"			"CASTER"
-				"EffectAttachType"	"attach_origin"
-				"EffectName"		"particles/units/heroes/hero_queenofpain/queen_shadow_strike_body.vpcf"
-			}
-			"ActOnTargets"
-			{
-				"Target"
-				{
-					"Center"  	"TARGET"
-					"Radius" 	"%radius"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				}
-			
-				"Action"    
-				{
-					"TrackingProjectile"
-					{
-						"Target"           "TARGET"
-						"EffectName"       "particles/units/heroes/hero_queenofpain/queen_shadow_strike_body.vpcf"
-						"Dodgeable"        "1"
-						"ProvidesVision"   "1"
-						"VisionRadius"     "300"
-						"MoveSpeed"        "%projectile_speed"
-						"SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
-					}
-	
-				}
-			}	
-		}
-	
-		"OnProjectileHitUnit"
-		{
-			"Damage"
-			{
-				"Target"		"TARGET"
-				"Type"			"DAMAGE_TYPE_MAGICAL"
-				"Damage"		"%strike_damage"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_debuff_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_thinker_datadriven"
-				"Target"		"TARGET"
-			}
-	
-			// Slow stacks(15 of them)
-	
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			// 5
-	
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			// 10
-	
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			// 15
-		}
-	
-		"Modifiers"
-		{
-			"modifier_shadow_strike_debuff_datadriven"
-			{
-				"Duration"	"%AbilityDuration"
-				"IsDebuff"	"1"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-	
-				"EffectName"	"particles/units/heroes/hero_queenofpain/queen_shadow_strike_debuff.vpcf"
-				"EffectAttachType"	"follow_chest"
-	
-				"ThinkInterval"	"3.0"
-	
-				"OnIntervalThink"
-				{
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%duration_damage"
-					}
-				}
-			}
-	
-			"modifier_shadow_strike_thinker_datadriven"
-			{
-				"IsHidden"	"1"
-				"Duration"	"%AbilityDuration"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-	
-				"ThinkInterval"	"1.0"
-	
-				"OnIntervalThink"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-						"Target"		"TARGET"
-					}
-				}
-			}
-	
-			"modifier_shadow_strike_slow_datadriven"
-			{
-				"IsHidden"		"1"
-				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
-	
-	
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%movement_slow_small"
-				}
-			}
-		}
-	}
-	
-	//=================================================================================================================
-	// Spooki HP Aura
-	//=================================================================================================================
-	"spooki_hp_aura"
-	{
-		"BaseClass"						"granite_golem_hp_aura"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"bonus_hp"			"300"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"5000"
-			}
-		}
-	}
-	"sven_storm_bolt_datadriven"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"sven_storm_bolt"
-		"AOERadius"						"%bolt_aoe"
-	
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
 		"precache"
 		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
-			"particle"			"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
-			"particle"			"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
-			"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
-		}
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1300"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-	
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"17.0"
-	
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"350 350 350 350"
-	
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"500"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bolt_speed"			"700"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bolt_stun_duration"	"2.0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bolt_aoe"			"300"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"vision_radius"		"225"
-			}
+			"particle"	"particles/units/heroes/hero_pugna/pugna_life_drain.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
 		}
 	
 		"OnSpellStart"
 		{
-			"TrackingProjectile"
+			"ApplyModifier"
 			{
-				"Target"           	"TARGET"
-			    "EffectName"       	"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
-			    "Dodgeable"        	"1"
-			    "ProvidesVision"   	"1"
-			    "VisionRadius"		"%vision_radius"
-			    "MoveSpeed"        	"%bolt_speed"
-			    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+				"ModifierName" 	"modifier_life_drain"
+				"Target" 		"TARGET"
+				"Radius"		"%radius"
 			}
 	
 			"FireSound"
 			{
-				"EffectName"		"Hero_Sven.StormBolt"
-				"Target"			"CASTER"
-			}
-		}
-	
-		"OnProjectileHitUnit"
-		{
-			"FireSound"
-			{
-				"EffectName"		"Hero_Sven.StormBoltImpact"
-				"Target"			"TARGET"
-			}
-	
-			"FireEffect"
-			{
-				"EffectName"	"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
-				"EffectAttachType"	"attach_origin"
-				"Target"		"TARGET"
-				"ControlPointEntities"
-				{
-					"TARGET"	"attach_origin"
-					"TARGET"	"attach_origin"
-					"TARGET"	"attach_origin"
-					"TARGET"	"attach_origin"	//CP3 has a child explosion origin
-				}
-			}
-	
-			"ActOnTargets"
-			{
-				"Target"
-				{
-					"Center" "POINT"
-	                "Radius" "%bolt_aoe"
-	                "Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY" 
-	                "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-				}
-	
-				"Action"
-				{
-					"Damage"
-					{
-						"Target"	"TARGET"
-						"Type"		"DAMAGE_TYPE_MAGICAL"
-						"Damage"	"%AbilityDamage"
-					}
-	
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_storm_bolt_datadriven"
-						"Target"		"TARGET"
-					}
-	
-				}
-			}
-		}
-	
-		"Modifiers"
-		{
-			"modifier_storm_bolt_datadriven"
-			{
-				"Duration"		"%bolt_stun_duration"
-				"IsDebuff"		"1"
-				"OverrideAnimation"	"ACT_DOTA_DISABLED"
-	
-				"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
-				"EffectAttachType"	"follow_overhead"
-	
-				"States"
-				{
-					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
-	"vengefulspirit_magic_missile_datadriven"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"vengefulspirit_magic_missile"
-	
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
-			"particle"			"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"		
-		}
-	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"500"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13.0 12.0 11.0 10.0"
-	
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"100 175 250 325"
-	
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"110 120 130 140"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"magic_missile_speed"	"1250"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"magic_missile_stun"	"1.0 1.4 1.8 2.2"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"radius"				"200"
-			}
-		}
-	
-		"OnSpellStart"
-		{
-			"FireSound"
-			{
-				"EffectName"	"Hero_VengefulSpirit.MagicMissile"
+				"EffectName"	"Hero_Pugna.LifeDrain.Target"
 				"Target" 		"CASTER"
 			}
-			"ActOnTargets"
-			{
-				"Target"
-				{
-					"Center"  	"TARGET"
-					"Radius" 	"%radius"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				}
-				"Action"
-				{
-					"TrackingProjectile"
-					{
-						"Target"           	"TARGET"
-						"EffectName"		"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
-						"Dodgeable"			"1"
-						"ProvidesVision"	"0"
-						"MoveSpeed"        	"%magic_missile_speed"
-						"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
-					}
-				}
-			}	
 		}
 	
-		"OnProjectileHitUnit"
+		"OnChannelFinish"
 		{
-			"DeleteOnHit"	"1"
-			"FireSound"
+			"RemoveModifier"
 			{
-				"EffectName"	"Hero_VengefulSpirit.MagicMissileImpact"
+				"ModifierName" 	"modifier_life_drain"
 				"Target" 		"TARGET"
 			}
-			
-			"Stun"
-			{
-				"Duration"   "%magic_missile_stun"
-				"Target" 	 "TARGET"
-			}
-	
-			"Damage"
-			{
-				"Target"		"TARGET"
-				"Type"			"DAMAGE_TYPE_MAGICAL"
-				"Damage"		"%AbilityDamage"
-			}						
-		}	
-	}
-	"vengefulspirit_command_aura_datadriven"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityTextureName"			"vengefulspirit_fury_aura"
-	
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"particle"			"particles/units/heroes/hero_vengeful/vengeful_negative_aura.vpcf"
-		}	
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"bonus_attack_speed"	"20 35 50"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"aura_radius"		"900"
-			}	
 		}
 	
 		"Modifiers"
 		{
-		
-			"modifier_command_aura_caster_datadriven"
+			"modifier_life_drain"
 			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-		
-				"Aura"					"modifier_command_aura_friendly_datadriven"
-				"Aura_Radius"			"%aura_radius"
-				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
-			}
-
-			"modifier_command_aura_friendly_datadriven"
-			{
-				"IsBuff"	"1"
-	
-				"Properties"
+				"IsDebuff"	"1"
+				"OnCreated"
 				{
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed" 
-				}			
-			}
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_pugna/life_drain.lua"
+						"Function"		"LifeDrainParticle"
+					}
+				}
 	
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_pugna/life_drain.lua"
+						"Function"		"LifeDrainParticleEnd"
+					}
+				}
+	
+				"ThinkInterval"		"%tick_rate"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_pugna/life_drain.lua"
+						"Function"		"LifeDrainHealthTransfer"
+					}
+				}
+			}
 		}
-
 	}
 	"pugna_nether_ward_datadriven"
 	{
@@ -6706,8 +6290,8 @@
 		"AbilityCooldown"				"3.0 3.0 3.0 3.0"
 		"AbilityDuration"				"100.0"
 		"AbilityDamage"					"260"
-
-
+	
+	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"100 150 200 250"		
@@ -7010,41 +6594,355 @@
 			}
 		}
 	}
-	// Rewrite of Pugna Life Drain
-	// Author: Noya
-	// Date: April 5, 2015
-	"pugna_life_drain_datadriven"
+	"queenofpain_shadow_strike_datadriven"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"pugna_life_drain"
+		"AbilityTextureName"			"poison_flurry"
+	
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_queenofpain.vsndevts"
+			"particle"			"particles/units/heroes/hero_queenofpain/queen_shadow_strike.vpcf"
+			"particle"			"particles/units/heroes/hero_queenofpain/queen_shadow_strike_body.vpcf"
+			"particle"			"particles/units/heroes/hero_queenofpain/queen_shadow_strike_debuff.vpcf"
+		}
 	
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1100"
-		"AbilityCastPoint"				"0.2 0.2 0.2"
-		"AbilityChannelTime"			"10.0"
+		"AbilityCastRange"				"450 475 500 525"
+		"AbilityCastPoint"				"0.452 0.452 0.452 0.452"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22.0 22.0 22.0"
+		"AbilityCooldown"				"16.0 12.0 8.0 4.0"
+		"AbilityDuration"				"15.0 15.0 15.0 15.0"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 175 225"
+		"AbilityManaCost"				"110"
+	
 		
-		// Stats
+		// Special	
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.0"	// All about the damage
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strike_damage"			"50 75 100 125"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration_damage"		"30 40 50 60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow"			"-20 -30 -40 -50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"900"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_tooltip"		"450 475 500 525"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow_small"			"-1.33 -2 -2.67 -3.33"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"250 250 250 250"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"           "TARGET"
+			    "EffectName"       "particles/units/heroes/hero_queenofpain/queen_shadow_strike.vpcf"
+			    "Dodgeable"        "1"
+			    "ProvidesVision"   "0"
+			    "MoveSpeed"        "%projectile_speed"
+			    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+			}
+	
+			"FireSound"
+			{
+				"EffectName"		"Hero_QueenOfPain.ShadowStrike"
+				"Target"			"CASTER"
+			}
+	
+			"AttachEffect"
+			{
+				"Target"			"CASTER"
+				"EffectAttachType"	"attach_origin"
+				"EffectName"		"particles/units/heroes/hero_queenofpain/queen_shadow_strike_body.vpcf"
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"TARGET"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"TrackingProjectile"
+					{
+						"Target"           "TARGET"
+						"EffectName"       "particles/units/heroes/hero_queenofpain/queen_shadow_strike_body.vpcf"
+						"Dodgeable"        "1"
+						"ProvidesVision"   "1"
+						"VisionRadius"     "300"
+						"MoveSpeed"        "%projectile_speed"
+						"SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+					}
+	
+				}
+			}	
+		}
+	
+		"OnProjectileHitUnit"
+		{
+			"Damage"
+			{
+				"Target"		"TARGET"
+				"Type"			"DAMAGE_TYPE_MAGICAL"
+				"Damage"		"%strike_damage"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_debuff_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_thinker_datadriven"
+				"Target"		"TARGET"
+			}
+	
+			// Slow stacks(15 of them)
+	
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			// 5
+	
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			// 10
+	
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+				"Target"		"TARGET"
+			}
+			// 15
+		}
+	
+		"Modifiers"
+		{
+			"modifier_shadow_strike_debuff_datadriven"
+			{
+				"Duration"	"%AbilityDuration"
+				"IsDebuff"	"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+	
+				"EffectName"	"particles/units/heroes/hero_queenofpain/queen_shadow_strike_debuff.vpcf"
+				"EffectAttachType"	"follow_chest"
+	
+				"ThinkInterval"	"3.0"
+	
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%duration_damage"
+					}
+				}
+			}
+	
+			"modifier_shadow_strike_thinker_datadriven"
+			{
+				"IsHidden"	"1"
+				"Duration"	"%AbilityDuration"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+	
+				"ThinkInterval"	"1.0"
+	
+				"OnIntervalThink"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_shadow_strike_slow_datadriven"
+						"Target"		"TARGET"
+					}
+				}
+			}
+	
+			"modifier_shadow_strike_slow_datadriven"
+			{
+				"IsHidden"		"1"
+				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+	
+	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%movement_slow_small"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Spooki HP Aura
+	//=================================================================================================================
+	"spooki_hp_aura"
+	{
+		"BaseClass"						"granite_golem_hp_aura"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"bonus_hp"			"300"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"5000"
+			}
+		}
+	}
+	"sven_storm_bolt_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"sven_storm_bolt"
+		"AOERadius"						"%bolt_aoe"
+	
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+			"particle"			"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
+			"particle"			"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+			"particle"			"particles/generic_gameplay/generic_stunned.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1300"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"17.0"
+	
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"350 350 350 350"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"500"
 	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -7052,113 +6950,111 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"health_drain"				"120 160 200"
+				"var_type"				"FIELD_INTEGER"
+				"bolt_speed"			"700"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_tooltip"		"850"
+				"var_type"				"FIELD_FLOAT"
+				"bolt_stun_duration"	"2.0"
 			}
 			"03"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"duration_tooltip"		"10"
+				"var_type"			"FIELD_INTEGER"
+				"bolt_aoe"			"300"
 			}
 			"04"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"health_drain_scepter"		"180 240 300"
+				"var_type"			"FIELD_INTEGER"
+				"vision_radius"		"225"
 			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"scepter_cooldown"			"0.0 0.0 0.0"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"tick_rate"					"0.25 0.25 0.25"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_range_scepter"		"50"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_scepter_tooltip"		"900"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"175"
-			}
-		}
-	
-		"precache"
-		{
-			"particle"	"particles/units/heroes/hero_pugna/pugna_life_drain.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
 		}
 	
 		"OnSpellStart"
 		{
-			"ApplyModifier"
+			"TrackingProjectile"
 			{
-				"ModifierName" 	"modifier_life_drain"
-				"Target" 		"TARGET"
-				"Radius"		"%radius"
+				"Target"           	"TARGET"
+			    "EffectName"       	"particles/units/heroes/hero_sven/sven_spell_storm_bolt.vpcf"
+			    "Dodgeable"        	"1"
+			    "ProvidesVision"   	"1"
+			    "VisionRadius"		"%vision_radius"
+			    "MoveSpeed"        	"%bolt_speed"
+			    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
 			}
 	
 			"FireSound"
 			{
-				"EffectName"	"Hero_Pugna.LifeDrain.Target"
-				"Target" 		"CASTER"
+				"EffectName"		"Hero_Sven.StormBolt"
+				"Target"			"CASTER"
 			}
 		}
 	
-		"OnChannelFinish"
+		"OnProjectileHitUnit"
 		{
-			"RemoveModifier"
+			"FireSound"
 			{
-				"ModifierName" 	"modifier_life_drain"
-				"Target" 		"TARGET"
+				"EffectName"		"Hero_Sven.StormBoltImpact"
+				"Target"			"TARGET"
+			}
+	
+			"FireEffect"
+			{
+				"EffectName"	"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+				"EffectAttachType"	"attach_origin"
+				"Target"		"TARGET"
+				"ControlPointEntities"
+				{
+					"TARGET"	"attach_origin"
+					"TARGET"	"attach_origin"
+					"TARGET"	"attach_origin"
+					"TARGET"	"attach_origin"	//CP3 has a child explosion origin
+				}
+			}
+	
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center" "POINT"
+	                "Radius" "%bolt_aoe"
+	                "Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY" 
+	                "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				}
+	
+				"Action"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+						"Damage"	"%AbilityDamage"
+					}
+	
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_storm_bolt_datadriven"
+						"Target"		"TARGET"
+					}
+	
+				}
 			}
 		}
 	
 		"Modifiers"
 		{
-			"modifier_life_drain"
+			"modifier_storm_bolt_datadriven"
 			{
-				"IsDebuff"	"1"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_pugna/life_drain.lua"
-						"Function"		"LifeDrainParticle"
-					}
-				}
+				"Duration"		"%bolt_stun_duration"
+				"IsDebuff"		"1"
+				"OverrideAnimation"	"ACT_DOTA_DISABLED"
 	
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_pugna/life_drain.lua"
-						"Function"		"LifeDrainParticleEnd"
-					}
-				}
+				"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"	"follow_overhead"
 	
-				"ThinkInterval"		"%tick_rate"
-				"OnIntervalThink"
+				"States"
 				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_pugna/life_drain.lua"
-						"Function"		"LifeDrainHealthTransfer"
-					}
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}
 		}
@@ -7330,6 +7226,311 @@
 				}
 			}	
 		}
+	}
+	"tinker_heat_seeking_missile_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"tinker_heat_seeking_missile"
+	
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0 0 0 0"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15"
+	
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"125 200 275 350"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"120 135 150 165"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{ 
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"2500 2500 2500 2500"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"targets"			"2"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"speed"				"800 800 800 800"
+			}
+		}
+		
+		// Datadriven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+			"particle"				"particles/units/heroes/hero_tinker/tinker_missile.vpcf"
+			"particle"				"particles/units/heroes/hero_tinker/tinker_missle_explosion.vpcf"
+			"particle"				"particles/units/heroes/hero_tinker/tinker_missile_dud.vpcf"
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"Target"			"CASTER"
+				"EffectName"		"Hero_Tinker.Heat-Seeking_Missile"
+			}
+		
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_tinker/heat_seeking_missile"
+				"Function"			"heat_seeking_missile_seek_targets"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"FireSound"
+			{
+				"Target"			"TARGET"
+				"EffectName"		"Hero_Tinker.Heat-Seeking_Missile.Impact"
+			}
+		
+			"FireEffect"
+			{
+				"Target"			"TARGET"
+				"EffectName"		"particles/units/heroes/hero_tinker/tinker_missle_explosion.vpcf"
+				"EffectAttachType"	"start_at_customorigin"
+				"ControlPointEntities"
+				{
+					"TARGET"		"attach_origin"
+				}
+			}
+		
+			"Damage"
+			{
+				"Target"			"TARGET"
+				"Damage"			"%AbilityDamage"
+				"Type"				"DAMAGE_TYPE_MAGICAL"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_heat_seeking_missile_dud"
+			{
+				"IsHidden"			"1"
+				"IsPurgable"		"0"
+				
+				"Duration"			"1.0"
+				
+				"EffectName"		"particles/units/heroes/hero_tinker/tinker_missile_dud.vpcf"
+				"EffectAttachType"	"start_at_origin"
+				
+				"OnCreated"
+				{
+					"FireSound"
+					{
+						"Target"	"TARGET"
+						"EffectName"	"Hero_Tinker.Heat-Seeking_Missile_Dud"
+					}
+				}
+			}
+		}
+	}
+	"vengefulspirit_command_aura_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityTextureName"			"vengefulspirit_fury_aura"
+	
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_vengeful/vengeful_negative_aura.vpcf"
+		}	
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"900"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_attack_speed"	"20 35 50"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_radius"		"900"
+			}	
+		}
+	
+		"Modifiers"
+		{
+		
+			"modifier_command_aura_caster_datadriven"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+				"IsDebuff"			"0"
+		
+				"Aura"					"modifier_command_aura_friendly_datadriven"
+				"Aura_Radius"			"%aura_radius"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO"
+			}
+	
+			"modifier_command_aura_friendly_datadriven"
+			{
+				"IsBuff"	"1"
+	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed" 
+				}			
+			}
+	
+		}
+	
+	}
+	"vengefulspirit_magic_missile_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"vengefulspirit_magic_missile"
+	
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
+			"particle"			"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"		
+		}
+	
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"13.0 12.0 11.0 10.0"
+	
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"100 175 250 325"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110 120 130 140"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_missile_speed"	"1250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"magic_missile_stun"	"1.0 1.4 1.8 2.2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"radius"				"200"
+			}
+		}
+	
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_VengefulSpirit.MagicMissile"
+				"Target" 		"CASTER"
+			}
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"TARGET"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+				"Action"
+				{
+					"TrackingProjectile"
+					{
+						"Target"           	"TARGET"
+						"EffectName"		"particles/units/heroes/hero_vengeful/vengeful_magic_missle.vpcf"
+						"Dodgeable"			"1"
+						"ProvidesVision"	"0"
+						"MoveSpeed"        	"%magic_missile_speed"
+						"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+					}
+				}
+			}	
+		}
+	
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+			"FireSound"
+			{
+				"EffectName"	"Hero_VengefulSpirit.MagicMissileImpact"
+				"Target" 		"TARGET"
+			}
+			
+			"Stun"
+			{
+				"Duration"   "%magic_missile_stun"
+				"Target" 	 "TARGET"
+			}
+	
+			"Damage"
+			{
+				"Target"		"TARGET"
+				"Type"			"DAMAGE_TYPE_MAGICAL"
+				"Damage"		"%AbilityDamage"
+			}						
+		}	
 	}
 	"venomancer_plague_ward_horde"
 	{
@@ -7887,6 +8088,59 @@
 			}
 		}
 	}
+	"warlock_command_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"warlock_burning_flesh"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"40 60 80 100"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"1000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"5 10 15 20"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_warlock_command_aura"
+			{
+				"Passive" 	"1"
+				
+				"Aura"        "warlock_command_aura"
+				"Aura_Radius" 	"%radius"
+				"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types" 	"DOTA_UNIT_TARGET_ALL"
+				"Aura_Flags"  "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"Aura_ApplyToCaster" "0"
+			}
+			"warlock_command_aura"
+			{
+				"IsBuff"		"1"
+				"IsPurgable"	"0"	
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%bonus_damage" 
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+				}
+			}
+		}	
+	}
 	//=================================================================================================================
 	// Alpha Wolf: Command Aura
 	//=================================================================================================================
@@ -8003,263 +8257,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"range"					"1500"
-			}
-		}
-	}
-
-	"tinker_heat_seeking_missile_datadriven"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"tinker_heat_seeking_missile"
-
-		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
-		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_NO_INVIS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
-	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0 0 0 0"
-		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15"
-	
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"125 200 275 350"
-	
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 135 150 165"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{ 
-			"01"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"2500 2500 2500 2500"
-			}
-			"02"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"targets"			"2"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"speed"				"800 800 800 800"
-			}
-		}
-		
-		// Datadriven
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
-			"particle"				"particles/units/heroes/hero_tinker/tinker_missile.vpcf"
-			"particle"				"particles/units/heroes/hero_tinker/tinker_missle_explosion.vpcf"
-			"particle"				"particles/units/heroes/hero_tinker/tinker_missile_dud.vpcf"
-		}
-		
-		"OnSpellStart"
-		{
-			"FireSound"
-			{
-				"Target"			"CASTER"
-				"EffectName"		"Hero_Tinker.Heat-Seeking_Missile"
-			}
-		
-			"RunScript"
-			{
-				"ScriptFile"		"heroes/hero_tinker/heat_seeking_missile"
-				"Function"			"heat_seeking_missile_seek_targets"
-			}
-		}
-		
-		"OnProjectileHitUnit"
-		{
-			"FireSound"
-			{
-				"Target"			"TARGET"
-				"EffectName"		"Hero_Tinker.Heat-Seeking_Missile.Impact"
-			}
-		
-			"FireEffect"
-			{
-				"Target"			"TARGET"
-				"EffectName"		"particles/units/heroes/hero_tinker/tinker_missle_explosion.vpcf"
-				"EffectAttachType"	"start_at_customorigin"
-				"ControlPointEntities"
-				{
-					"TARGET"		"attach_origin"
-				}
-			}
-		
-			"Damage"
-			{
-				"Target"			"TARGET"
-				"Damage"			"%AbilityDamage"
-				"Type"				"DAMAGE_TYPE_MAGICAL"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_heat_seeking_missile_dud"
-			{
-				"IsHidden"			"1"
-				"IsPurgable"		"0"
-				
-				"Duration"			"1.0"
-				
-				"EffectName"		"particles/units/heroes/hero_tinker/tinker_missile_dud.vpcf"
-				"EffectAttachType"	"start_at_origin"
-				
-				"OnCreated"
-				{
-					"FireSound"
-					{
-						"Target"	"TARGET"
-						"EffectName"	"Hero_Tinker.Heat-Seeking_Missile_Dud"
-					}
-				}
-			}
-		}
-	}
-
-	// Rewrite of Death Prophet Silence
-	// Author: Noya
-	// Date: 02.02.2015.
-	"death_prophet_silence_datadriven"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"death_prophet_silence"
-	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
-	
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15 14 13 12"
-		"AbilityDuration"				"3 4 5 6"
-	
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"80 80 80 80"
-	
-		"AOERadius"						"%radius"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"425"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"3.0 4.0 5.0 6.0"
-			}
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"negative_damage_pct"	"-20 -30 -40 -50"
-			}
-		}
-	
-		"precache"
-		{
-			"particle" 	"particles/units/heroes/hero_death_prophet/death_prophet_silence.vpcf"
-			"particle"	"particles/units/heroes/hero_death_prophet/death_prophet_silence_impact.vpcf"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_death_prophet.vsndevts"
-		}
-	
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_silenced"
-				"Target"
-				{
-					"Center"	"POINT"
-					"Radius"	"%radius"
-					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				}
-				"Duration"		"%duration"
-			}
-	
-			"FireEffect"
-			{
-				"EffectName"        "particles/units/heroes/hero_death_prophet/death_prophet_silence.vpcf"
-				"EffectAttachType"  "world_origin"
-				"TargetPoint"       "POINT"
-				"ControlPoints"
-				{
-					"01"	"%radius 0 0"
-				}
-			}
-	
-			"FireEffect"
-			{
-				"EffectName"        "particles/units/heroes/hero_death_prophet/death_prophet_silence_impact.vpcf"
-				"EffectAttachType"  "follow_overhead"
-				"Target"
-				{
-					"Center"	"POINT"
-					"Radius"	"%radius"
-					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				}
-				"ControlPoints"
-				{
-					"00"	"1 0 0"
-				}				
-			}
-	
-			"FireSound"
-			{
-				"EffectName"	"Hero_DeathProphet.Silence"
-				"TargetPoint" 	"POINT"	// This works but its actually fired at the caster
-			}			
-		}
-	
-		//modifier_silence is a Built-In modifier, _silenced is custom
-		"Modifiers"
-		{
-			"modifier_silenced"
-			{
-				"IsDebuff"			"1"
-	
-				"EffectName"		"particles/generic_gameplay/generic_silenced.vpcf"
-				"EffectAttachType"	"follow_overhead"
-	
-				"States"
-				{
-					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%negative_damage_pct" 
-				}
 			}
 		}
 	}

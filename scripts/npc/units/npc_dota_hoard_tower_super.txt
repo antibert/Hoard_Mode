@@ -35,7 +35,7 @@
 	"AttackDamageMin"			"160"		// Damage range min.
 	"AttackDamageMax"			"175"		// Damage range max.
 	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-	"AttackRate"				"0.75"			// Speed of attack.
+	"AttackRate"				"0.85"			// Speed of attack.
 	"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"700"		// Range within a target can be acquired.
 	"AttackRange"				"700"		// Range within a target can be attacked.

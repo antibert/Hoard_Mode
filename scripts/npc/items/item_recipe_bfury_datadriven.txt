@@ -9,7 +9,7 @@
 	
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-	"ItemCost"						"550"	
+	"ItemCost"						"2000"	
 	"ItemShopTags"					""
 	
 	// Recipe
@@ -18,6 +18,6 @@
 	"ItemResult"					"item_bfury_datadriven"
 	"ItemRequirements"
 	{
-		"01"						"item_bfury;item_sange_and_yasha"
+		"01"						"item_bfury"
 	}
 }

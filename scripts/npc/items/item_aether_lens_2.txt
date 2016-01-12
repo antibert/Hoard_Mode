@@ -1,0 +1,48 @@
+"item_aether_lens_2"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"ID"							"99222"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+	"BaseClass"                     "item_aether_lens"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"item_aether_lens"
+
+	// Item Info
+	//-------------------------------------------------------------------------------------------------------------
+	"ItemCost"						"4600"
+	"ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
+	"ItemQuality"					"epic"
+	"ItemAliases"					"aether lens 2"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	
+	// Special	
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_mana"			"500"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_health_regen"	"16"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_magical_armor"	"30"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cast_range_bonus"			"300"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"spell_amp"				"20"
+		}
+	}
+}

@@ -30,8 +30,8 @@
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageMin"			"400"		// Damage range min.
-	"AttackDamageMax"			"440"		// Damage range max.
+	"AttackDamageMin"			"600"		// Damage range min.
+	"AttackDamageMax"			"540"		// Damage range max.
 	"AttackRate"				"1.1"		// Speed of attack.
 	"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
@@ -44,7 +44,7 @@
 	//----------------------------------------------------------------
 	"RingRadius"				"100"
 	"HealthBarOffset"			"560"
-	"BoundsHullName"			"DOTA_HULL_SIZE_HUGE"
+	"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 
 	// Bounty
 	//----------------------------------------------------------------

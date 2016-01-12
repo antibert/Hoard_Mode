@@ -90,7 +90,7 @@
 			{
 				"Name"				"Invade"
 				"Aggression"		"100.0"
-				"Avoidance"			"35.0"
+				"Avoidance"			"5.0"
 				"Support"			"0.0"
 				"RoamDistance"		"150.0"
 			}

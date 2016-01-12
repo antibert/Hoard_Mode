@@ -32,8 +32,8 @@
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"			"13"		// Damage range min.
-	"AttackDamageMax"			"17"		// Damage range max.
+	"AttackDamageMin"			"12"		// Damage range min.
+	"AttackDamageMax"			"14"		// Damage range max.
 	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 	"AttackRate"				"1.4"		// Speed of attack.
 	"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
@@ -45,8 +45,8 @@
 	// Bounty
 	//----------------------------------------------------------------
 	"BountyXP"					"6"		// Experience earn.
-	"BountyGoldMin"				"6"		// Gold earned min.
-	"BountyGoldMax"				"8"		// Gold earned max.
+	"BountyGoldMin"				"14"		// Gold earned min.
+	"BountyGoldMax"				"16"		// Gold earned max.
 
 	// Bounds
 	//----------------------------------------------------------------

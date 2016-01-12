@@ -1,206 +1,66 @@
 "item_bfury_datadriven"
 {
 	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"item_datadriven"
-	"ID"							"1145"  //Valve's version of this item uses the ID "145".
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"Model"							"models/props_gameplay/red_box.vmdl" 
-	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-	"AbilityTextureName"			"item_war_fury"
-	
-	// Item Info
-	//-------------------------------------------------------------------------------------------------------------
-	"ItemCost"						"9000"
-	"ItemShopTags"					"damage;health_regen;mana_regen;hard_to_tag"
-	"ItemQuality"					"epic"
-	"ItemAliases"					"bf;battle fury;cleave"
-	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1145"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"                     "item_bfury"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"6525"
+		"ItemAliases"					"wf;war fury"
 		
-	// Special	
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
 		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_damage"					"80"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_health_regen"			"6"
-		}
-		"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_mana_regen_percentage"	"150"
-		}
-		"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"cleave_damage_percent"			"40"
-		}
-		"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"cleave_radius"					"300"
-		}
-		"06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"maim_chance"					"17"
-		}
-		"07"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"maim_slow_movement"			"-32"
-		}			
-		"08"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"maim_slow_attack"				"-32"
-		}
-		"09"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_strength"				"16"
-		}
-		"10"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_agility"					"16"
-		}			
-		"11"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_attack_speed"			"16"
-		}
-		"12"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"movement_speed_percent_bonus"	"17"
-		}			
-		"13"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"maim_duration"					"5.0"
-		}
-	}
-	
-	"Modifiers"
-	{
-		"modifier_item_bfury_datadriven"
-		{
-			"Passive"			"1"
-			"IsHidden"			"1"
-			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-			
-			"Properties"
+			"01"
 			{
-				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-				"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
-				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
-				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_agility"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"70"
 			}
-			
-			"OnCreated"
+			"02"
 			{
-				"RunScript"
-				{
-					"ScriptFile"		"items/item_bfury.lua"
-					"Function"			"modifier_item_bfury_datadriven_on_created"
-				}
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"9"
 			}
-			
-			"OnDestroy"
+			"03"
 			{
-				"RunScript"
-				{
-					"ScriptFile"		"items/item_bfury.lua"
-					"Function"			"modifier_item_bfury_datadriven_on_destroy"
-				}
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen"		"200"
 			}
-			
-			//Continually check to see if the hero this modifier is on has switched from ranged
-			//to melee, in which case they should be given cleave modifier(s).
-			"ThinkInterval" ".03"
-			"OnIntervalThink"
+			"04"
 			{
-				"RunScript"
-				{
-					"ScriptFile"		"items/item_bfury.lua"
-					"Function"			"modifier_item_bfury_datadriven_on_interval_think"
-				}
+				"var_type"				"FIELD_INTEGER"
+				"cleave_damage_percent"	"50"
 			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quelling_bonus"			"160"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quelling_bonus_ranged"	"125"
+			}			
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_radius"			"350"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_tooltip"			"350"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_ward"			"450"
+			}			
 		}
-		"OnAttackLanded"
-		{
-			"Random"
-			{
-				"Chance"		"%maim_chance"
-				"OnSuccess"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"items/item_sange_and_yasha.lua"
-						"Function"				"modifier_item_sange_and_yasha_datadriven_on_attack_landed_random_on_success"
-					}
-				}
-			}
-		}
-		"modifier_item_bfury_datadriven_cleave"  //Only melee units can cleave, so only melee units should get this modifier.
-		{
-			"Passive"			"0"
-			"IsHidden"			"1"
-			"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-			
-			"OnAttackLanded"
-			{
-				"CleaveAttack"
-				{
-					"CleavePercent"		"%cleave_damage_percent"
-					"CleaveRadius"		"%cleave_radius"
-					"CleaveEffect"		"particles/items_fx/battlefury_cleave.vpcf"
-				}
-				
-				"FireSound"
-				{
-					"EffectName"				"DOTA_Item.BattleFury"
-					"Target"					"TARGET"
-				}
-			}
-			
-			//Continually check to see if the hero this modifier is on is still melee 
-			//(since some units, like Troll Warlord, can switch between ranged/melee forms).
-			"ThinkInterval" ".03"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"ScriptFile"		"items/item_bfury.lua"
-					"Function"			"modifier_item_bfury_datadriven_cleave_on_interval_think"
-				}
-			}
-		}
-		"modifier_item_sange_and_yasha_datadriven_greater_maim"
-		{
-			"Duration"				"%maim_duration"
-			"Passive"				"0"
-			"IsHidden"				"0"
-			"IsBuff"				"0"
-			"IsDebuff"				"1"
-			"IsPurgable"			"1"
-			
-			"EffectName"            "particles/items2_fx/sange_maim.vpcf"
-			"EffectAttachType"      "PATTACH_ABSORIGIN"
-			
-			"Properties"
-			{
-				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%maim_slow_attack"
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%maim_slow_movement"
-			}
-		}
-	}
 }

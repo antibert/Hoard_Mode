@@ -1,16 +1,16 @@
 //=================================================================================
-// Creature: Kobold Guard
+// Creature: Hulk
 //=================================================================================
-"npc_dota_creature_kobold_guard_easy"
-{										
+"npc_dota_creature_hulk_big"
+{
 	// General
 	//----------------------------------------------------------------
-	"Model"						"models\creeps\neutral_creeps\n_creep_kobold\kobold_b\n_creep_kobold_b.vmdl"	// Model.
+	"Model"						"models\creeps\lane_creeps\creep_radiant_hulk\creep_radiant_ancient_hulk.vmdl"
 	"BaseClass"					"npc_dota_creature"
-	"SoundSet"					"n_creep_Melee"
 	"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-	"Level"						"1.0"
-	"ModelScale" 				"1.3"
+	"SoundSet"					"n_creep_Melee"
+	"Level"						"1"
+	"ModelScale" 				"1.1"
 
 	// Abilities
 	//----------------------------------------------------------------
@@ -26,38 +26,37 @@
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"			"150"		// Damage range min.
-	"AttackDamageMax"			"180"		// Damage range max.	
+	"AttackDamageMin"			"75"		// Damage range min.
+	"AttackDamageMax"			"82"		// Damage range max.
 	"AttackRate"				"1.0"		// Speed of attack.
-	"AttackAnimationPoint"		"0.38"		// Normalized time in animation cycle to attack.
+	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
-	"AttackRange"				"190"		// Range within a target can be attacked.
+	"AttackRange"				"115"		// Range within a target can be attacked.
 	"ProjectileModel"			""			// Particle system model for projectile.
 	"ProjectileSpeed"			"0"			// Speed of projectile.		   
 
 	// Bounds
 	//----------------------------------------------------------------
-	"RingRadius"				"40"
+	"RingRadius"				"60"
 	"HealthBarOffset"			"200"
-        "BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 
 	// Bounty
 	//----------------------------------------------------------------
-	"BountyXP"					"45"		// Experience earn.
-	"BountyGoldMin"				"58"		// Gold earned min.
-	"BountyGoldMax"				"67"		// Gold earned max.
+	"BountyXP"					"33"		// Experience earn.
+	"BountyGoldMin"				"84"			// Gold earned min.
+	"BountyGoldMax"				"98"			// Gold earned max.
 
 	// Movement
 	//----------------------------------------------------------------
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-	"MovementSpeed"				"260"		// Speed.
+	"MovementSpeed"				"150"		// Speed.
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"1200"		// Base health.
-	"StatusHealthRegen"			"2"		// Health regeneration rate.
-	"StatusMana"				"2500"			// Base mana.
-	"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+	"StatusHealth"				"1500"		// Base health.
+	"StatusHealthRegen"			"4"			// Health regeneration rate.
+	"StatusMana"				"675"			// Base mana.
+	"StatusManaRegen"			"0"			// Mana regeneration rate.		 
 	
 	// Vision
 	//----------------------------------------------------------------
@@ -66,29 +65,39 @@
 
 	// Team
 	//----------------------------------------------------------------
-	"TeamName"					"DOTA_TEAM_BADGUYS"							// Team name.
-	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_LIGHT"
-	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"TeamName"					"DOTA_TEAM_BADGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
 	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	"vscripts"				"UnitAI.lua"
 
-	
+
 	// Creature Data
-	//----------------------------------------------------------------------------------------------------------------------
+	//----------------------------------------------------------------
 	"Creature"
 	{
-	//	"Aggression"				"50.0"
-	//	"Avoidance"					"20.0"
-	//	"Support"					"30.0"
-		//"CanRespawn"				"0"
-		
-		//Level Up
-		"HPGain"					"45"
-		"DamageGain"				"2"
-		"ArmorGain"					"0.25"
-		"MagicResistGain"			"0.1"
+		//Basic AI State
+		//------------------------------------------------------------
+		"DefaultState"				"Invade"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0"
+				"Avoidance"			"0.0"
+				"Support"			"0.0"
+			}
+		}
+
+		//Level Up Parameters
+		//------------------------------------------------------------
+		"HPGain"					"75"
+		"DamageGain"				"15"
+		"ArmorGain"					"1"
+		"MagicResistGain"			"1"
 		"MoveSpeedGain"				"1"
-		"BountyGain"				"2"
-		"XPGain"					"13"
+		"BountyGain"				"5"
+		"XPGain"					"20"
 	}
-}
+}	

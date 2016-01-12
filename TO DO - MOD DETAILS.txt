@@ -4,6 +4,14 @@ BASCA
 
 Next Update Patch Notes:
 
+1.08d
+-- Added Aether Lens upgrade: Focused Aether Lens
+--- Recipe: two Aether Lens
+--- +500 Mana, +16 HP Regeneration, +30% Spell Resistance, +300 Cast Range, +20% Spell Amp
+-- Re-enabled War Fury as simple upgrade to Battle Fury
+--- Recipe: Battle Fury, 2000 gold recipe
+--- 70 damage, 9 HP Regeneration, 200% Mana Regeneration, 50% Cleave damage, 350 Cleave radius
+
 1.08c
 -- Fixed tooltips of items to show all their bonuses (they always gave the bonuses, but it wasn't shown in the tooltip)
 --- Includes: Horde Dagon, Blood Stone, Death Stone, Ghost Scepter

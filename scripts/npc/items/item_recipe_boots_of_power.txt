@@ -18,6 +18,8 @@
 	"ItemResult"					"item_boots_of_power"
 	"ItemRequirements"
 	{
-		"01"						"item_power_treads;item_null_talisman;item_bracer;item_wraith_band"
+		"01"						"item_power_treads;item_null_talisman;item_bracer"
+		"02"						"item_power_treads;item_bracer;item_wraith_band"
+		"03"						"item_power_treads;item_null_talisman;item_wraith_band"
 	}
 }

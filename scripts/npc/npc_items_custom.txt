@@ -1,5 +1,53 @@
 "DOTAAbilities"
 {
+	"item_aether_lens_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"99222"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"                     "item_aether_lens"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_aether_lens"
+	
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"4600"
+		"ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
+		"ItemQuality"					"epic"
+		"ItemAliases"					"aether lens 2"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana"			"500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"16"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_magical_armor"	"30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cast_range_bonus"			"300"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"20"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Bag of Gold
 	//=================================================================================================================
@@ -31,205 +79,71 @@
 		"ItemInitialCharges"			"1"
 		"ItemKillable"					"0"
 	}
-	"item_dummy"  //A dummy item that is used to take up item slots in the swap_to_item() Lua function.
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"                            "2001"
-		"BaseClass"                     "item_datadriven"
-		"ItemBaseLevel"                 "1"
-	}
-	"item_dummy_datadriven"  //A dummy item that is used to take up item slots in the swap_to_item() Lua function.
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"                            "2002"
-		"BaseClass"                     "item_datadriven"
-		"ItemBaseLevel"                 "1"
-	}
-	"item_recipe_bfury_datadriven"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"1144"  //Valve's version of this item uses the ID "144".
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"300"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_bfury_datadriven"
-		"ItemRequirements"
-		{
-			"01"						"item_bfury;item_armlet"
-		}
-	}
 	"item_bfury_datadriven"
 	{
 		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"1145"  //Valve's version of this item uses the ID "145".
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"Model"							"models/props_gameplay/red_box.vmdl" 
-		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"			"item_bfury_datadriven"
-
-		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"0"
-		"AbilityManaCost"				"0"
-		"precache"
-		{
-			"soundfile"      "sounds\items\item_armlet_activate.vsnd"
-			"soundfile"      "sounds\items\item_bfury.vsnd"
-			"soundfile"      "sounds\items\item_armlet_deactivate.vsnd"
-		}
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"7500"
-		"ItemShopTags"					"damage;health_regen;mana_regen;hard_to_tag"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"wf;war fury;cleave"
+			//-------------------------------------------------------------------------------------------------------------
+			"ID"							"1145"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+			"BaseClass"                     "item_bfury"
+			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+	
+			// Item Info
+			//-------------------------------------------------------------------------------------------------------------
+			"ItemCost"						"6525"
+			"ItemAliases"					"wf;war fury"
 			
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
+			// Special	
+			//-------------------------------------------------------------------------------------------------------------
+			"AbilitySpecial"
 			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"					"70"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_health_regen"			"13"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_mana_regen_percentage"	"150"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"cleave_damage_percent"			"40"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"cleave_radius"					"300"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_strength"				"16"
-			}			
-			"07"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_attack_speed"			"16"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"bonus_armor"					"5"
-			}			
-		}
-		"OnSpellStart"  //Switch to the active version of Armlet.
-		{
-			"RunScript"
-			{
-				"ScriptFile"			"items/item_armlet.lua"
-				"Function"				"item_bfury_datadriven_on_spell_start"
-			}
-		
-		}
-		
-		"Modifiers"
-		{
-			"modifier_item_bfury_datadriven"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				"Properties"
+				"01"
 				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-					"MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
-					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
+					"var_type"				"FIELD_INTEGER"
+					"bonus_damage"			"70"
 				}
-				
-				"OnCreated"
+				"02"
 				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_bfury.lua"
-						"Function"			"modifier_item_bfury_datadriven_on_created"
-					}
+					"var_type"				"FIELD_INTEGER"
+					"bonus_health_regen"	"9"
 				}
-				
-				"OnDestroy"
+				"03"
 				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_bfury.lua"
-						"Function"			"modifier_item_bfury_datadriven_on_destroy"
-					}
+					"var_type"				"FIELD_INTEGER"
+					"bonus_mana_regen"		"200"
 				}
-				
-				//Continually check to see if the hero this modifier is on has switched from ranged
-				//to melee, in which case they should be given cleave modifier(s).
-				"ThinkInterval" ".03"
-				"OnIntervalThink"
+				"04"
 				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_bfury.lua"
-						"Function"			"modifier_item_bfury_datadriven_on_interval_think"
-					}
+					"var_type"				"FIELD_INTEGER"
+					"cleave_damage_percent"	"50"
 				}
+				"05"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"quelling_bonus"			"160"
+				}
+				"06"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"quelling_bonus_ranged"	"125"
+				}			
+				"07"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cleave_radius"			"350"
+				}
+				"08"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cast_range_tooltip"			"350"
+				}
+				"09"
+				{
+					"var_type"				"FIELD_INTEGER"
+					"cast_range_ward"			"450"
+				}			
 			}
-			"modifier_item_bfury_datadriven_cleave"  //Only melee units can cleave, so only melee units should get this modifier.
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				"OnAttackLanded"
-				{
-					"CleaveAttack"
-					{
-						"CleavePercent"		"%cleave_damage_percent"
-						"CleaveRadius"		"%cleave_radius"
-						"CleaveEffect"		"particles/items_fx/battlefury_cleave.vpcf"
-					}
-					
-				}
-				
-				//Continually check to see if the hero this modifier is on is still melee 
-				//(since some units, like Troll Warlord, can switch between ranged/melee forms).
-				"ThinkInterval" ".03"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"items/item_bfury.lua"
-						"Function"			"modifier_item_bfury_datadriven_cleave_on_interval_think"
-					}
-				}
-			}
-		}
 	}
 	"item_bfury_datadriven_active"
 	{
@@ -241,7 +155,7 @@
 		"Model"							"models/props_gameplay/red_box.vmdl" 
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 		"AbilityTextureName"			"item_bfury_datadriven_active"
-
+	
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"0"
@@ -476,7 +390,6 @@
 			}
 		}
 	}
-
 	"item_bloodstone_datadriven"
 	{
 		// General
@@ -1203,6 +1116,22 @@
 				"Function"		"DagonSpellStart"
 			}
 		}
+	}
+	"item_dummy"  //A dummy item that is used to take up item slots in the swap_to_item() Lua function.
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"                            "2001"
+		"BaseClass"                     "item_datadriven"
+		"ItemBaseLevel"                 "1"
+	}
+	"item_dummy_datadriven"  //A dummy item that is used to take up item slots in the swap_to_item() Lua function.
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"                            "2002"
+		"BaseClass"                     "item_datadriven"
+		"ItemBaseLevel"                 "1"
 	}
 	//=================================================================================================================
 	// Helm of madness
@@ -2412,6 +2341,52 @@
 			}
 		}
 	}
+	"item_recipe_aether_lens_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"99221"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"Model"							"models/props_gameplay/recipe.vmdl"
+		"AbilityTextureName"			"item_recipe"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_aether_lens_2"
+		"ItemRequirements"
+		{
+			"01"						"item_aether_lens;item_aether_lens"
+		}
+	}
+	"item_recipe_bfury_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"1144"  //Valve's version of this item uses the ID "144".
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"2000"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_bfury_datadriven"
+		"ItemRequirements"
+		{
+			"01"						"item_bfury"
+		}
+	}
 	"item_recipe_bloodstone_datadriven"
 	{
 		// General
@@ -2957,5 +2932,4 @@
 			}
 		}
 	}
-
 }

@@ -11,7 +11,7 @@
 	
 	// Item Info
 	//-------------------------------------------------------------------------------------------------------------
-	"ItemCost"						"2880"
+	"ItemCost"						"3350"
 	"ItemShopTags"					"attack_speed;move_speed;int;agi;str"
 	"ItemQuality"					"rare"
 	"ItemAliases"					"boots of power"
@@ -24,27 +24,32 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_movement_speed"  "75"
+			"bonus_movement_speed"  "60"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"			"18"
+			"bonus_strength"			"14"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_agility"			"18"
+			"bonus_agility"			"14"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_intellect"			"18"
+			"bonus_intellect"			"14"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_attack_speed"	"40"
+			"bonus_attack_speed"	"35"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"6"
 		}
 	}
 	
@@ -63,6 +68,7 @@
 				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%bonus_intellect"
 				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"			"%bonus_movement_speed"
+			    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
 			}
 		}
 	}

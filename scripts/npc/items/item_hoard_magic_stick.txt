@@ -10,11 +10,11 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"Model"							"models/props_gameplay/magic_wand.mdl"
 //		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-	"AbilityTextureName"			"item_magic_stick3"
+	"AbilityTextureName"			"item_hoard_magic_stick"
 	
 	// Stats		
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"13.0"
+	"AbilityCooldown"				"17.0"
 	"AbilityCastPoint"				"0.0"
 	"AbilityManaCost"				"0"
 	"AbilitySharedCooldown"			"magicwand"
@@ -43,7 +43,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"restore_per_charge"	"6"
+			"restore_per_charge"	"8"
 		}
 	}
 	

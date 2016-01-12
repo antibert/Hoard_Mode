@@ -8,21 +8,13 @@ General:
 -- New Unit! Ancient Mech - added to the Mech wave. (5p_easy map)
 -- Re-adjusted Mech spawn numbers and spawn times
 
-<<<<<<< HEAD
 Items:
 -- Added Aether Lens upgrade: Focused Aether Lens - 
 Grants +500 Mana, +16 HP Regeneration, +30% Spell Resistance, +300 Cast Range, +20% Spell Amp
-=======
-1.08d
 -- Reduced King Rapier bash duration from 0.5 to 0.1 (same as Monkey King Bar), since it has no cooldown (unlike Skull Basher and Abyssal Blade)
--- Added Aether Lens upgrade: Focused Aether Lens
---- Recipe: two Aether Lens
---- +500 Mana, +16 HP Regeneration, +30% Spell Resistance, +300 Cast Range, +20% Spell Amp
->>>>>>> origin/master
 -- Re-enabled War Fury as simple upgrade to Battle Fury
 -- Recipe: Battle Fury, 2000 gold recipe
 -- 70 damage, 9 HP Regeneration, 200% Mana Regeneration, 50% Cleave damage, 350 Cleave radius
-
 
 ////// Important Changes:
 -- meepo clones not sharing stats

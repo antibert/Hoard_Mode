@@ -7,7 +7,15 @@ General:
 -- Hulks re-named and re-skinned to Mech theme 
 -- New Unit! Ancient Mech - added to the Mech wave. (5p_easy map)
 -- Re-adjusted Mech spawn numbers and spawn times
+-- Rapier Ogre movement speed increased from 200 to 240
 
+Heroes:
+//Faceless Void:
+-- Time Dialation replaced with classic Backtrack! So you can still experience part of the old faceless void again. 
+//Tinker:
+-- Heat Seeking Missile damage increased from "125 200 275 350" to "150 300 450 600"
+//Arc Warden:
+-- 
 Items:
 -- Added Aether Lens upgrade: Focused Aether Lens - 
 Grants +500 Mana, +16 HP Regeneration, +30% Spell Resistance, +300 Cast Range, +20% Spell Amp
@@ -16,23 +24,17 @@ Grants +500 Mana, +16 HP Regeneration, +30% Spell Resistance, +300 Cast Range, +
 -- Recipe: Battle Fury, 2000 gold recipe
 -- 70 damage, 9 HP Regeneration, 200% Mana Regeneration, 50% Cleave damage, 350 Cleave radius
 
-Heroes:
-//Tinker:
--- Heat Seeking Missile damage increased from "125 200 275 350" to "150 300 450 600"
-
 ////// Important Changes:
 -- meepo clones not sharing stats
 -- WR Shackle not working correctly
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working
--- Void new ability needs reworking
--- Easy Map easier, balance farm across all three lanes more
+-- Make easy map easier?
 -- Dragon Lance buff
 -- REWORK ULTRA MAP COMPLTETLY
 -- Make eye of skadi give some kinda aoe thing to ranged heroes
 -- Buff warlock golem hps - do like lycan passive on one of his abilities possibly to get around this
--- linkens 2 with soul ring + damage item
 
 Not Important:
 -- update russian and chinese lang
@@ -46,7 +48,9 @@ BIG JOBS TO DO:
 1. Players can purchase waves of creeps to spawn and attack towards the dire ancient. (Hero Line Wars uses a creep spawning thing similar)
 	
 
-//ITEMS:
+//ITEM IDEAS:
+
+-- linkens 2 with soul ring + damage item
 
 -- New Consumable 7/8th slot item
 

@@ -65,6 +65,7 @@
 	"npc_dota_hero_faceless_void_holdout"
 	{
 		"override_hero"			"npc_dota_hero_faceless_void"
+		"Ability2"				"faceless_void_backtrack"
 		"Ability4"				"faceless_void_chronosphere_hoard"
 	
 	}

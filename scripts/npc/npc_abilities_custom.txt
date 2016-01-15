@@ -6116,160 +6116,7 @@
 			}
 		}
 	}
-	}
-	// Rewrite of Pugna Life Drain
-	// Author: Noya
-	// Date: April 5, 2015
-	"pugna_life_drain_datadriven"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"pugna_life_drain"
-	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1100"
-		"AbilityCastPoint"				"0.2 0.2 0.2"
-		"AbilityChannelTime"			"10.0"
-		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22.0 22.0 22.0"
-	
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 175 225"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.0"	// All about the damage
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"health_drain"				"120 160 200"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_tooltip"		"850"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"duration_tooltip"		"10"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"health_drain_scepter"		"180 240 300"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"scepter_cooldown"			"0.0 0.0 0.0"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"tick_rate"					"0.25 0.25 0.25"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_range_scepter"		"50"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_scepter_tooltip"		"900"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"175"
-			}
-		}
-	
-		"precache"
-		{
-			"particle"	"particles/units/heroes/hero_pugna/pugna_life_drain.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
-		}
-	
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName" 	"modifier_life_drain"
-				"Target" 		"TARGET"
-				"Radius"		"%radius"
-			}
-	
-			"FireSound"
-			{
-				"EffectName"	"Hero_Pugna.LifeDrain.Target"
-				"Target" 		"CASTER"
-			}
-		}
-	
-		"OnChannelFinish"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName" 	"modifier_life_drain"
-				"Target" 		"TARGET"
-			}
-		}
-	
-		"Modifiers"
-		{
-			"modifier_life_drain"
-			{
-				"IsDebuff"	"1"
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_pugna/life_drain.lua"
-						"Function"		"LifeDrainParticle"
-					}
-				}
-	
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_pugna/life_drain.lua"
-						"Function"		"LifeDrainParticleEnd"
-					}
-				}
-	
-				"ThinkInterval"		"%tick_rate"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_pugna/life_drain.lua"
-						"Function"		"LifeDrainHealthTransfer"
-					}
-				}
-			}
-		}
-	}
+}
 	"pugna_nether_ward_datadriven"
 	{
 		// General
@@ -6882,6 +6729,86 @@
 			}
 		}
 	}
+	"lone_druid_synergy"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"	"lone_druid_synergy"
+	
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bear_bonus_damage"		"100 130 150 170"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bear_bonus_speed"		"10 20 30 40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"rabid_duration_bonus"	"5.0 10.0 15.0 20.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"true_form_hp_bonus"	"100 200 300 400"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bear_bonus_armor"		"6 9 12 15"
+			}
+		}
+	
+		"OnUpgrade"
+		{
+			"RunScript"
+		    {
+		        "ScriptFile"    "heroes/hero_lone_druid/synergy.lua"
+		        "Function"      "SynergyLevel"
+	        	"Target"
+				{
+					"Center"  				"CASTER"
+					"Radius" 				"GLOBAL"
+					"Teams" 				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types" 				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+				"unit_name"		"npc_dota_lone_druid_bear"
+		    }
+		}
+	
+		"Modifiers"
+		{
+			"modifier_bear_synergy"
+			{
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%bear_bonus_damage"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT"	"%bear_bonus_speed"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bear_bonus_armor"
+				}
+			}
+	
+			"modifier_true_form_synergy"
+			{
+				"IsHidden"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS"	"%true_form_hp_bonus"
+				}
+			}
+		}
+	}
 	//=================================================================================================================
 	// Spooki HP Aura
 	//=================================================================================================================
@@ -6894,7 +6821,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"bonus_hp"			"300"
+				"bonus_hp"			"200"
 			}
 			"02"
 			{

@@ -1,40 +1,34 @@
 Next Update Patch Notes:
 (17/1 Release)
 
-1.09
+1.09b
+
 General:
--- Hulks re-named and re-skinned to Mech theme 
--- New Unit! Ancient Mech - added to the Mech wave. (5p_easy map)
--- Re-adjusted Mech spawn numbers and spawn times
--- Rapier Ogre movement speed increased from 200 to 240
+-- Spookiest Skelleton HP aura reduced from 300% to 200%
+
+5p_easy map:
+-- Added some more units to spawn in final wave after ~45 minutes
 
 Heroes:
-//Faceless Void:
--- Time Dialation replaced with classic Backtrack! So you can still experience part of the old faceless void again. 
-//Tinker:
--- Heat Seeking Missile damage increased from "125 200 275 350" to "150 300 450 600"
-//Arc Warden:
--- 
+//Pugna:
+-- Life Drain replaced with vanilla ability with some buffs
+//Lone Druid:
+-- Replaced Savage Roar with old Synergy ability
+-- Synergy now grants "6 9 12 15" bonus armor to the spirit bear
+
 Items:
--- Added Aether Lens upgrade: Focused Aether Lens - 
-Grants +500 Mana, +16 HP Regeneration, +30% Spell Resistance, +300 Cast Range, +20% Spell Amp
--- Reduced King Rapier bash duration from 0.5 to 0.1 (same as Monkey King Bar), since it has no cooldown (unlike Skull Basher and Abyssal Blade)
--- Re-enabled War Fury as simple upgrade to Battle Fury
--- Recipe: Battle Fury, 2000 gold recipe
--- 70 damage, 9 HP Regeneration, 200% Mana Regeneration, 50% Cleave damage, 350 Cleave radius
+-- Fixed Bloodstone not giving enough mana regen
+-- Focused Aether Lens now has a new icon
+-- Boots of Intellect null field magic resistance decrease from -20% to -35%
 
 ////// Important Changes:
--- bloodstone not giving correct regen
--- Aether lens new iconZ
--- tINKE aghs is misleading
+-- tinker aghs does nothing - maybe LUA some stuff up for missile to have extra projectiles?
 -- meepo clones not sharing stats
 -- WR Shackle not working correctly
 
 /////// Secondary importance:
--- Post 45~ mins (after second skelly boss dies, is much much easier than while he is alive
--- Nerf skelly hp aura
 -- Fix Giant Mech particles not working
--- Make easy map easier?
+-- Test out CK
 -- Dragon Lance buff
 -- REWORK ULTRA MAP COMPLTETLY
 -- Make eye of skadi give some kinda aoe thing to ranged heroes

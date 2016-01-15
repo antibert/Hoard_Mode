@@ -175,7 +175,14 @@
 	{
 		"override_hero"			"npc_dota_hero_pugna"
 		"Ability3"				"pugna_nether_ward_datadriven"
-		"Ability4"				"pugna_life_drain_datadriven"
+	}
+	//=================================================================================================================
+	// HERO: Lone Druid
+	//=================================================================================================================
+	"npc_dota_hero_lone_druid"
+	{
+		"override_hero"			"npc_dota_hero_lone_druid"
+		"Ability3"				"lone_druid_synergy"
 	}
 	//=================================================================================================================
 	// HERO: QOP

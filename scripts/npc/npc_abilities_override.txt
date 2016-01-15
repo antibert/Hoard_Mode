@@ -3017,41 +3017,6 @@
 		}
 	}
 	//=================================================================================================================
-	// Lone Druid: Summon Spirit Bear
-	//=================================================================================================================
-	"lone_druid_spirit_bear"
-	{
-			"AbilityCooldown"				"120.0 110.0 100.0 90.0"
-			"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bear_hp"					"1500 2000 2500 3000"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"bear_bat"					"1.75 1.65 1.55 1.45"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bear_armor"				"6 8 10 12"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"backlash_damage"			"10.0"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"120.0 110.0 100.0 90.0"
-			}
-		}
-	}
-	//=================================================================================================================
 	// Lone Druid: True Form
 	//=================================================================================================================
 	"lone_druid_true_form"
@@ -3131,35 +3096,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"blink_range"			"2000 2300 2600 2900"
 			}			
-		}
-	}
-	//=================================================================================================================
-	// Lone Druid: Synergy
-	//=================================================================================================================
-	"lone_druid_synergy"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bear_bonus_damage"		"100 130 150 170"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bear_bonus_speed"		"10 20 30 40"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"rabid_duration_bonus"	"10.0 20.0 30.0 40.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"true_form_hp_bonus"	"100 200 300 400"
-			}
 		}
 	}
 	//=================================================================================================================
@@ -4227,7 +4163,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"stun_duration"				"5.0"
+				"stun_duration"				"7.0"
 			}
 		}
 	}
@@ -5120,6 +5056,77 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"ghost_spawn_rate"	"0.3"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Pugna: Life Drain
+	//=================================================================================================================
+	"pugna_life_drain"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"					"5189"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000 1200 1400"
+		"AbilityCastPoint"				"0.2 0.2 0.2"
+		"AbilityChannelTime"			"15.0"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"22.0 22.0 22.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"125 175 225"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// All about the damage
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"health_drain"				"180 220 260"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"cast_range_tooltip"		"1000 1200 1400"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration_tooltip"			"15"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"health_drain_scepter"		"220 260 300"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"scepter_cooldown"			"0.0 0.0 0.0"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tick_rate"					"0.25 0.25 0.25"
 			}
 		}
 	}

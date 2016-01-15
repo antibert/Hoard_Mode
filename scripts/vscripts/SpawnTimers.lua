@@ -233,7 +233,7 @@ Timers:CreateTimer("big", {
 	
 	elseif rand == 3 then
 	
-------------------------------- Hulk Wave
+------------------------------- Mech Wave
 
 	Timers:CreateTimer("hulk", {
 		useGameTime = true,
@@ -1150,6 +1150,41 @@ Timers:CreateTimer("big", {
 	Timers:CreateTimer(6000, function()
 		Spawners:StopSpawner("splitter2")
 	end)
+	Timers:CreateTimer("chickenfinal", {
+		useGameTime = true,
+		endTime = 2690,
+		callback = function()
+			Spawners:SpawnChickenTop()
+			Spawners:SpawnChickenMid()
+			return 90.0
+		end
+	})
+	Timers:CreateTimer(6000, function()
+		Spawners:StopSpawner("chickenfinal")
+	end)
+	Timers:CreateTimer("kappafinal", {
+		useGameTime = true,
+		endTime = 2690,
+		callback = function()
+			Spawners:SpawnKappaTop()
+			Spawners:SpawnKappa()
+			return 200.0
+		end
+	})
+	Timers:CreateTimer(6000, function()
+		Spawners:StopSpawner("kappafinal")
+	end)
+	Timers:CreateTimer("bigsatyrsfinal", {
+		useGameTime = true,
+		endTime = 2710,
+		callback = function()
+			Spawners:SpawnBigSatyrs()
+			return 45.0
+		end
+	})
+	Timers:CreateTimer(6000, function()
+		Spawners:StopSpawner("bigsatyrsfinal")
+	end) 
 
 ---------------------------------------------------------------------------------------------	
 ---------------- END OF FINAL PHASE SPAWNERS --------------------------------

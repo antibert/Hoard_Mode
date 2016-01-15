@@ -484,7 +484,7 @@
 			"13"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_mana_regen_per_charge"		"1"
+				"bonus_mana_regen_per_charge"		"7.0"
 			}
 			"14"
 			{
@@ -714,7 +714,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"null_amount"			    "-20"
+				"null_amount"			    "-35"
 			}	
 			"09"
 			{

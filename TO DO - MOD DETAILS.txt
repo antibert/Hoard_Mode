@@ -1,6 +1,17 @@
 Next Update Patch Notes:
 (17/1 Release)
 
+1.10
+
+Heroes:
+Doom
+-- Scorched Earth damage increased to 20/30/40/50
+-- Devour moved to Doom from Wraith King
+Wraith King
+-- Replaced Devour with Wraithfire Blast
+-- Changed Wraithfire Blast to an AoE
+-- Increased Wraithfire Blast DoT damage to 30/40/60/100
+
 1.09b
 
 General:

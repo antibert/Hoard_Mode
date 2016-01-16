@@ -3525,7 +3525,7 @@
 			{
 				"Ability1"                
 				{
-					"Name"      		  "doom_bringer_scorched_earth"
+					"Name"      		  "holdout_scorched_earth"
 				}
 				"Ability2"                
 				{

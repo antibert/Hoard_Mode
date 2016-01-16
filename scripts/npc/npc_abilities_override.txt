@@ -3730,7 +3730,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"		"50"
+				"damage_per_second"		"20 30 40 50"
 			}
 		}
 	}

@@ -4,7 +4,11 @@ Next Update Patch Notes:
 1.10
 
 Heroes:
+Chaos Knight
+-- Return Chaos Bolt damage back to vanilla
+-- Turned Chaos Bolt into an AoE
 Doom
+-- ENABLED!
 -- Scorched Earth damage increased to 20/30/40/50
 -- Devour moved to Doom from Wraith King
 -- Reduced Doom ultimate cooldown to 60/50/40

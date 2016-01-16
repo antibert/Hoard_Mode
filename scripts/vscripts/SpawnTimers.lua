@@ -1109,7 +1109,7 @@ Timers:CreateTimer("big", {
 		endTime = 2270,
 		callback = function()
 			Spawners:SpawnCorpseTop()
-			return 33.0
+			return 30.0
 		end
 	})
 	Timers:CreateTimer(6000, function()
@@ -1132,7 +1132,7 @@ Timers:CreateTimer("big", {
 		endTime = 2280,
 		callback = function()
 			Spawners:SpawnHellBear()
-			return 120.0
+			return 100.0
 		end
 	})
 	Timers:CreateTimer(6000, function()
@@ -1168,7 +1168,7 @@ Timers:CreateTimer("big", {
 		callback = function()
 			Spawners:SpawnKappaTop()
 			Spawners:SpawnKappa()
-			return 200.0
+			return 100.0
 		end
 	})
 	Timers:CreateTimer(6000, function()
@@ -1179,7 +1179,7 @@ Timers:CreateTimer("big", {
 		endTime = 2710,
 		callback = function()
 			Spawners:SpawnBigSatyrs()
-			return 45.0
+			return 35.0
 		end
 	})
 	Timers:CreateTimer(6000, function()

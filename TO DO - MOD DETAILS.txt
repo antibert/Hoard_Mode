@@ -7,6 +7,7 @@ Heroes:
 Doom
 -- Scorched Earth damage increased to 20/30/40/50
 -- Devour moved to Doom from Wraith King
+-- Reduced Doom ultimate cooldown to 60/50/40
 Wraith King
 -- Replaced Devour with Wraithfire Blast
 -- Changed Wraithfire Blast to an AoE

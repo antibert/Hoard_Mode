@@ -28,6 +28,7 @@ Items:
 -- Boots of Intellect null field magic resistance decrease from -20% to -35%
 
 ////// Important Changes:
+-- Medium and hard map spawners not spawning kobold guards for some reason
 -- tinker aghs does nothing - maybe LUA some stuff up for missile to have extra projectiles?
 -- meepo clones not sharing stats
 -- WR Shackle not working correctly

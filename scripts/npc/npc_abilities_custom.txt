@@ -7257,6 +7257,11 @@
 				"var_type"			"FIELD_INTEGER"
 				"speed"				"800 800 800 800"
 			}
+			"04"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "targets_scepter"			"4"
+            }
 		}
 		
 		// Datadriven

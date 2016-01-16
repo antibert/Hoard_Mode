@@ -12,7 +12,12 @@ function heat_seeking_missile_seek_targets( keys )
 	local targetFlag = ability:GetAbilityTargetFlags() -- DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES + DOTA_UNIT_TARGET_FLAG_NO_INVIS + DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS
 	local projectileDodgable = false
 	local projectileProvidesVision = false
-	
+	local has_scepter = caster:HasScepter()
+
+	if has_scepter then
+		max_targets = ability:GetLevelSpecialValueFor("targets_scepter", ability:GetLevel() - 1)
+	end
+
 	-- pick up x nearest target heroes and create tracking projectile targeting the number of targets
 	local units = FindUnitsInRadius(
 		caster:GetTeamNumber(), caster:GetAbsOrigin(), caster, radius, targetTeam, targetType, targetFlag, FIND_CLOSEST, false

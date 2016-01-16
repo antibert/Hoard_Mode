@@ -3935,8 +3935,8 @@
 		// Bounty
 		//----------------------------------------------------------------
 		"BountyXP"					"23"		// Experience earn.
-		"BountyGoldMin"				"55"			// Gold earned min.
-		"BountyGoldMax"				"65"			// Gold earned max.
+		"BountyGoldMin"				"35"			// Gold earned min.
+		"BountyGoldMax"				"35"			// Gold earned max.
 	
 		// Movement
 		//----------------------------------------------------------------
@@ -4011,7 +4011,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"generic_gold_bag_fountain_5000"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4

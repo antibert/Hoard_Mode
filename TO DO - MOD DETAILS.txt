@@ -4,7 +4,9 @@ Next Update Patch Notes:
 1.09b
 
 General:
--- Spookiest Skelleton HP aura reduced from 300% to 200%
+-- Spookiest Skelleton HP aura reduced from 300% to 250%
+-- Reduced gold bounty and spawn numbers for Mechs 
+-- Giant Mech now drops medium gold bags
 
 5p_easy map:
 -- Added some more units to spawn in final wave after ~45 minutes
@@ -15,9 +17,13 @@ Heroes:
 //Lone Druid:
 -- Replaced Savage Roar with old Synergy ability
 -- Synergy now grants "6 9 12 15" bonus armor to the spirit bear
+//Treant Protector:
+-- Overgrowth cooldown back to vanilla
+-- Eyes in the Forest damage per second back to vanilla
 
-Items:
+Items: 
 -- Fixed Bloodstone not giving enough mana regen
+-- Fixed War Fury icon not showing up
 -- Focused Aether Lens now has a new icon
 -- Boots of Intellect null field magic resistance decrease from -20% to -35%
 

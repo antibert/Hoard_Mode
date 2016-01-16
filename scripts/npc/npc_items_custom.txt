@@ -85,6 +85,7 @@
 			//-------------------------------------------------------------------------------------------------------------
 			"ID"							"1145"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 			"BaseClass"                     "item_bfury"
+			"AbilityTextureName"			"item_bfury_datadriven"			
 			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
 			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"

@@ -8499,7 +8499,7 @@
         }
     }
 
-    "chaos_bolt_datadriven"
+    "chaos_knight_chaos_bolt_datadriven"
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
@@ -8624,6 +8624,110 @@
                         "ScriptFile"	"heroes/hero_chaos_knight/chaos_bolt.lua"
                         "Function"		"ChaosBolt"
                         "chaos_bolt_particle"	"particles/units/heroes/hero_chaos_knight/chaos_knight_bolt_msg.vpcf"
+                    }
+                }
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Spectre: Haunt
+    //=================================================================================================================
+    "spectre_haunt_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"ability_datadriven"
+        "ID"							"95337"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "FightRecapLevel"				"2"
+        "AbilityTextureName"			"spectre_haunt"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.3 0.3 0.3"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"80 60 40"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"150 150 150"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "duration"					"10"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "illusion_damage_outgoing"	"0"
+            }
+            "03"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "tooltip_outgoing"	"100"
+            }
+            "04"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "illusion_damage_incoming"	"0"
+            }
+            "05"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "tooltip_illusion_total_damage_incoming"	"100"
+            }
+        }
+
+        // Data driven
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"					"soundevents/game_sounds_heroes/game_sounds_spectre.vsndevts"
+            "particle"					"particles/units/heroes/hero_spectre/spectre_haunt.vpcf"
+        }
+
+        "OnSpellStart"
+        {
+            "FireSound"
+            {
+                "EffectName"	"Hero_Spectre.HauntCast"
+                "Target"		"CASTER"
+            }
+
+            "ActOnTargets"
+            {
+
+                "Target"
+                {
+                    "Center" "CASTER"
+                    "Radius" "GLOBAL"
+                    "Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+                    "Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BUILDING"
+                    "Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+                }
+
+                "Action"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"    "heroes/hero_spectre/haunt.lua"
+                        "Function"      "Haunt"
+                    }
+
+                    "FireSound"
+                    {
+                        "EffectName"	"Hero_Spectre.Haunt"
+                        "Target"		"TARGET"
                     }
                 }
             }

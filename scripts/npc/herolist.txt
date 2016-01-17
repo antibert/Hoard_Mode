@@ -82,4 +82,5 @@
 	"npc_dota_hero_chaos_knight" "1"
 	"npc_dota_hero_mirana"       "1"
 	"npc_dota_hero_doom_bringer"	"1"
+	"npc_dota_hero_spectre" "1"
 }

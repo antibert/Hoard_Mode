@@ -12,6 +12,15 @@ Doom
 -- Scorched Earth damage increased to 20/30/40/50
 -- Devour moved to Doom from Wraith King
 -- Reduced Doom ultimate cooldown to 60/50/40
+Spectre
+-- ENABLED!
+-- Increased Spectral Dagger damage to 100/150/200/250
+-- Reduced Spectral Dagger mana cost to 110/120/130/140
+-- Changed Desolate to always activate
+-- Reworked Haunt
+--- Spawns an illusion by each ally and each allied building
+--- Illusions last 10 seconds, deal and receive full damage
+--- Cooldown 80/60/40
 Wraith King
 -- Replaced Devour with Wraithfire Blast
 -- Changed Wraithfire Blast to an AoE

@@ -4,55 +4,30 @@ Next Update Patch Notes:
 1.10
 
 Heroes:
-Chaos Knight
+//Chaos Knight
+Changes:
 -- Return Chaos Bolt damage back to vanilla
 -- Turned Chaos Bolt into an AoE
-Doom
--- ENABLED!
+//Added Doom
+Changes:
 -- Scorched Earth damage increased to 20/30/40/50
 -- Devour moved to Doom from Wraith King
 -- Reduced Doom ultimate cooldown to 60/50/40
-Spectre
--- ENABLED!
+//Added Spectre
+Changes:
 -- Increased Spectral Dagger damage to 100/150/200/250
 -- Reduced Spectral Dagger mana cost to 110/120/130/140
 -- Changed Desolate to always activate
--- Reworked Haunt
---- Spawns an illusion by each ally and each allied building
---- Illusions last 10 seconds, deal and receive full damage
---- Cooldown 80/60/40
-Wraith King
+-- Reworked Haunt: Now spawns an illusion by each ally and each allied building, illusions last 10 seconds, deal and receive full damage
+-- Haunt cooldown reduced to 80/60/40
+//Wraith King
 -- Replaced Devour with Wraithfire Blast
 -- Changed Wraithfire Blast to an AoE
 -- Increased Wraithfire Blast DoT damage to 30/40/60/100
 
-1.09b
-
-General:
--- Spookiest Skelleton HP aura reduced from 300% to 250%
--- Reduced gold bounty and spawn numbers for Mechs 
--- Giant Mech now drops medium gold bags
-
-5p_easy map:
--- Added some more units to spawn in final wave after ~45 minutes
-
-Heroes:
-//Pugna:
--- Life Drain replaced with vanilla ability with some buffs
-//Lone Druid:
--- Replaced Savage Roar with old Synergy ability
--- Synergy now grants "6 9 12 15" bonus armor to the spirit bear
-//Treant Protector:
--- Overgrowth cooldown back to vanilla
--- Eyes in the Forest damage per second back to vanilla
-
-Items: 
--- Fixed Bloodstone not giving enough mana regen
--- Fixed War Fury icon not showing up
--- Focused Aether Lens now has a new icon
--- Boots of Intellect null field magic resistance decrease from -20% to -35%
 
 ////// Important Changes:
+-- Lone Druid bear not recieving synergy bonuses correctly (losing them on re-summon, seems to only be applied once to the bear)
 -- Medium and hard map spawners not spawning kobold guards for some reason
 -- tinker aghs does nothing - maybe LUA some stuff up for missile to have extra projectiles?
 -- meepo clones not sharing stats
@@ -60,10 +35,8 @@ Items:
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working
--- Test out CK
 -- Dragon Lance buff
 -- REWORK ULTRA MAP COMPLTETLY
--- Make eye of skadi give some kinda aoe thing to ranged heroes
 -- Buff warlock golem hps - do like lycan passive on one of his abilities possibly to get around this
 
 Not Important:
@@ -79,6 +52,8 @@ BIG JOBS TO DO:
 	
 
 //ITEM IDEAS:
+
+-- Make eye of skadi give some kinda aoe thing to ranged heroes
 
 -- linkens 2 with soul ring + damage item
 

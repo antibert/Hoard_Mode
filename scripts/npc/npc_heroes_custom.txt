@@ -116,7 +116,6 @@
 	{
 		"override_hero"			"npc_dota_hero_lina"
 		"Ability4"				"lina_laguna_blade_datadriven"
-	
 	}
 	//=================================================================================================================
 	// HERO: Beastmaster

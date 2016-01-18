@@ -324,7 +324,7 @@ function SpawnersMedium:SpawnGuardMid()
 	local units_to_spawn = RandomInt(9,11)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_kobold_guard_easy", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			local unit = CreateUnitByName("npc_dota_creature_kobold_guard", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
@@ -1152,7 +1152,7 @@ function SpawnersMedium:SpawnGuardTop()
 	local units_to_spawn = RandomInt(9,11)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_kobold_guard_easy", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			local unit = CreateUnitByName("npc_dota_creature_kobold_guard", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
@@ -1765,7 +1765,7 @@ function SpawnersMedium:SpawnGuardBot()
 	local units_to_spawn = RandomInt(9,11)
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_kobold_guard_easy", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+			local unit = CreateUnitByName("npc_dota_creature_kobold_guard", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )

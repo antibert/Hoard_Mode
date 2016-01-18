@@ -12,6 +12,9 @@ Doom
 -- Scorched Earth damage increased to 20/30/40/50
 -- Devour moved to Doom from Wraith King
 -- Reduced Doom ultimate cooldown to 60/50/40
+Puck
+-- ENABLED!
+-- Changed Dream Coil to target all enemies in the radius and not just heroes
 Spectre
 -- ENABLED!
 -- Increased Spectral Dagger damage to 100/150/200/250

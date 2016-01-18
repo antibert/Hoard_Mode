@@ -3,42 +3,37 @@ Next Update Patch Notes:
 
 1.10
 
+General:
+-- Fixed Kobold guards not spawning on 4p_medium map
+
 Heroes:
-//Chaos Knight
-Changes:
--- Return Chaos Bolt damage back to vanilla
--- Turned Chaos Bolt into an AoE
 //Added Doom
 Changes:
 -- Scorched Earth damage increased to 20/30/40/50
 -- Devour moved to Doom from Wraith King
 -- Reduced Doom ultimate cooldown to 60/50/40
-<<<<<<< HEAD
 //Added Spectre
 Changes:
-=======
-Puck
--- ENABLED!
--- Changed Dream Coil to target all enemies in the radius and not just heroes
-Spectre
--- ENABLED!
->>>>>>> origin/master
 -- Increased Spectral Dagger damage to 100/150/200/250
 -- Reduced Spectral Dagger mana cost to 110/120/130/140
 -- Changed Desolate to always activate
 -- Reworked Haunt: Now spawns an illusion by each ally and each allied building, illusions last 10 seconds, deal and receive full damage
 -- Haunt cooldown reduced to 80/60/40
+//Added Puck
+Changes:
+-- Changed Dream Coil to target all enemies in the radius and not just heroes
+//Chaos Knight
+-- Return Chaos Bolt damage back to vanilla
+-- Turned Chaos Bolt into an AoE
 //Wraith King
 -- Replaced Devour with Wraithfire Blast
 -- Changed Wraithfire Blast to an AoE
 -- Increased Wraithfire Blast DoT damage to 30/40/60/100
-
+//Tinker:
+-- Aghanims now doubles missile count
 
 ////// Important Changes:
--- Lone Druid bear not recieving synergy bonuses correctly (losing them on re-summon, seems to only be applied once to the bear)
--- Medium and hard map spawners not spawning kobold guards for some reason
--- tinker aghs does nothing - maybe LUA some stuff up for missile to have extra projectiles?
--- meepo clones not sharing stats
+-- Lone Druid bear not recieving synergy bonuses correctly (losing them on re-summon, seems to only be applied once to the bear - needs to do a check every few ticks)
 -- WR Shackle not working correctly
 
 /////// Secondary importance:
@@ -46,6 +41,7 @@ Spectre
 -- Dragon Lance buff
 -- REWORK ULTRA MAP COMPLTETLY
 -- Buff warlock golem hps - do like lycan passive on one of his abilities possibly to get around this
+-- meepo clones not sharing stats at all without scepter
 
 Not Important:
 -- update russian and chinese lang

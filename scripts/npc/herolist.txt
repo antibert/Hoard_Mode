@@ -78,14 +78,11 @@
 	"npc_dota_hero_viper"   "1"
 	"npc_dota_hero_warlock"      "1"
 	"npc_dota_hero_weaver" 		"1"
-<<<<<<< HEAD
 	"npc_dota_hero_windrunner"		"1"
     "npc_dota_hero_winter_wyvern"   "1"
     "npc_dota_hero_wisp"        "1"
 	"npc_dota_hero_witch_doctor"	"1"
     "npc_dota_hero_zuus"       "1"
-	
-=======
     "npc_dota_hero_vengefulspirit"     "1"
 	"npc_dota_hero_pugna"        	"1"
 	"npc_dota_hero_arc_warden"		"1"
@@ -96,5 +93,4 @@
 	"npc_dota_hero_doom_bringer"	"1"
 	"npc_dota_hero_spectre" "1"
 	"npc_dota_hero_puck" "1"
->>>>>>> origin/master
 }

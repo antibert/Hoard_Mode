@@ -1,5 +1,4 @@
 Next Update Patch Notes:
-(17/1 Release)
 
 1.10
 
@@ -38,13 +37,13 @@ Changes:
 //Chaos Knight
 -- Return Chaos Bolt damage back to vanilla
 -- Turned Chaos Bolt into an AoE
-//Wraith King
+//Wraith King:
 -- Replaced Devour with Wraithfire Blast
 -- Changed Wraithfire Blast to an AoE
 -- Increased Wraithfire Blast DoT damage to 30/40/60/100
 //Tinker:
 -- Aghanims now doubles missile count
-//Windranger
+//Windranger:
 -- Fixed shackleshot not working correctly
 
 ////// Important Changes:

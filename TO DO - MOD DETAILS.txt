@@ -41,15 +41,26 @@ Changes:
 -- Replaced Devour with Wraithfire Blast
 -- Changed Wraithfire Blast to an AoE
 -- Increased Wraithfire Blast DoT damage to 30/40/60/100
+<<<<<<< HEAD
 //Tinker
+=======
+//Lone Druid
+-- Fixed Synergy not reapplying to Spirit Bear
+-- Put Rabid back to vanilla (because it is much stronger in vanilla now)
+-- Reduced the effects of Synergy (because the bear is stronger in the latest patch)
+//Tinker:
+>>>>>>> origin/master
 -- Aghanims now doubles missile count
 //Windranger
 -- Fixed shackleshot not working correctly
 
+<<<<<<< HEAD
 
 ////// Important Changes:
 -- Lone Druid bear not recieving synergy bonuses correctly (losing them on re-summon, seems to only be applied once to the bear - needs to do a check every few ticks)
 
+=======
+>>>>>>> origin/master
 /////// Secondary importance:
 -- Fix Giant Mech particles not working
 -- Dragon Lance buff

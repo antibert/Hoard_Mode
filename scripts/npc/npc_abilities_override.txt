@@ -5270,4 +5270,39 @@
             }
         }
     }
+
+    //=================================================================================================================
+    // Windrunner: Shackleshot
+    //=================================================================================================================
+    "windrunner_shackleshot"
+    {
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "fail_stun_duration"	"0.75"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "stun_duration"			"2.5 3.0 3.5 4.0"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "shackle_distance"		"550 600 650 700"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "arrow_speed"			"1515"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "shackle_count"			"3 5 7 9"
+            }
+        }
+    }
 }	

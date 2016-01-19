@@ -31,10 +31,11 @@ Changes:
 -- Increased Wraithfire Blast DoT damage to 30/40/60/100
 //Tinker:
 -- Aghanims now doubles missile count
+//Windranger
+-- Fixed shackleshot not working correctly
 
 ////// Important Changes:
 -- Lone Druid bear not recieving synergy bonuses correctly (losing them on re-summon, seems to only be applied once to the bear - needs to do a check every few ticks)
--- WR Shackle not working correctly
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

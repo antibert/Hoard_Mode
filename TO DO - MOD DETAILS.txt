@@ -6,6 +6,10 @@ Next Update Patch Notes:
 General:
 -- Fixed Kobold guards not spawning on 4p_medium map
 
+4p_medium map:
+-- Added Mech wave - Giant mech does not drop gold bags and has a slight armor increase
+-- Added some new units to final wave
+
 Heroes:
 //Disruptor
 Changes:

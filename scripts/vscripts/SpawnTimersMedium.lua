@@ -49,11 +49,11 @@ function SpawnersMedium:StartSpawners()
 	end)
 
 -----------------------------------------------------------------------------------------------	
----------------- START OF ZOMBIE AND SPIDER PHASE SPAWNERS --------------------------------
+---------------- START OF ZOMBIE, SPIDER AND MECH PHASE SPAWNERS --------------------------------
 -----------------------------------------------------------------------------------------------	
 
 	-- RANDOM SPAWNER BLOCK 50/50 CHANCE TO TRIGGER EITHER
-	local rand = RandomInt(1,2)
+	local rand = RandomInt(1,3)
 	if rand == 1 then
 	
 --------------------- Zombie Wave
@@ -95,7 +95,7 @@ function SpawnersMedium:StartSpawners()
 		SpawnersMedium:StopSpawner("corpse")
 	end)
 
-	else
+	elseif rand == 2 then
 	
 -------------------- Spider Wave
 	
@@ -159,6 +159,75 @@ function SpawnersMedium:StartSpawners()
 	Timers:CreateTimer(450, function()
 		SpawnersMedium:StopSpawner("big")
 	end)
+	
+	elseif rand == 3 then
+	
+------------------------------- Mech Wave
+
+	Timers:CreateTimer("hulk", {
+		useGameTime = true,
+		endTime = 180,
+		callback = function()
+			SpawnersMedium:SpawnHulkTop()
+			SpawnersMedium:SpawnHulk()
+			return 22.0
+		end
+	})
+	Timers:CreateTimer(450, function()
+		Spawners:StopSpawner("hulk")
+	end)
+	Timers:CreateTimer("hulkmedium", {
+		useGameTime = true,
+		endTime = 200,
+		callback = function()
+			SpawnersMedium:SpawnHulkMediumTop()
+			SpawnersMedium:SpawnHulkMedium()
+			return 30.0
+		end
+	})
+	Timers:CreateTimer(450, function()
+		Spawners:StopSpawner("hulkmedium")
+	end)
+	
+	Timers:CreateTimer("hulkbig", {
+		useGameTime = true,
+		endTime = 275,
+		callback = function()
+			SpawnersMedium:SpawnHulkBigTop()
+			SpawnersMedium:SpawnHulkBig()
+			return 50.0
+		end
+	})
+	Timers:CreateTimer(450, function()
+		Spawners:StopSpawner("hulkbig")
+	end)
+	
+	Timers:CreateTimer("kappa", {
+		useGameTime = true,
+		endTime = 310,
+		callback = function()
+			SpawnersMedium:SpawnKappaTop()
+			SpawnersMedium:SpawnKappa()
+			return 200.0
+		end
+	})
+	Timers:CreateTimer(450, function()
+		Spawners:StopSpawner("kappa")
+	end)
+	
+	Timers:CreateTimer("babykappa", {
+		useGameTime = true,
+		endTime = 200,
+		callback = function()
+			SpawnersMedium:SpawnBabyKappaTop()
+			SpawnersMedium:SpawnBabyKappa()
+			return 40.0
+		end
+	})
+	Timers:CreateTimer(450, function()
+		Spawners:StopSpawner("babykappa")
+	end)	
+	
 	
 	end
 	
@@ -1025,6 +1094,29 @@ Timers:CreateTimer("largebears", {
 	Timers:CreateTimer(6000, function()
 		SpawnersMedium:StopSpawner("splitter2")
 	end)
+	Timers:CreateTimer("kappafinal", {
+		useGameTime = true,
+		endTime = 2690,
+		callback = function()
+			SpawnersMedium:SpawnKappaTop()
+			SpawnersMedium:SpawnKappa()
+			return 100.0
+		end
+	})
+	Timers:CreateTimer(6000, function()
+		Spawners:StopSpawner("kappafinal")
+	end)
+	Timers:CreateTimer("bigsatyrsfinal", {
+		useGameTime = true,
+		endTime = 2710,
+		callback = function()
+			SpawnersMedium:SpawnBigSatyrs()
+			return 35.0
+		end
+	})
+	Timers:CreateTimer(6000, function()
+		Spawners:StopSpawner("bigsatyrsfinal")
+	end) 
 
 ---------------------------------------------------------------------------------------------	
 ---------------- END OF FINAL PHASE SPAWNERS --------------------------------

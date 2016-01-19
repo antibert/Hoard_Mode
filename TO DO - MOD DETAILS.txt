@@ -10,7 +10,7 @@ General:
 -- Added some new units to final wave
 
 Heroes:
-//Disruptor
+//Added Disruptor
 Changes:
 -- Increased radius of Thunder Strike to 300
 -- Reduced cooldown of glimpse to 16/14/12/10
@@ -37,14 +37,15 @@ Changes:
 //Chaos Knight
 -- Return Chaos Bolt damage back to vanilla
 -- Turned Chaos Bolt into an AoE
-//Wraith King:
+//Wraith King
 -- Replaced Devour with Wraithfire Blast
 -- Changed Wraithfire Blast to an AoE
 -- Increased Wraithfire Blast DoT damage to 30/40/60/100
-//Tinker:
+//Tinker
 -- Aghanims now doubles missile count
-//Windranger:
+//Windranger
 -- Fixed shackleshot not working correctly
+
 
 ////// Important Changes:
 -- Lone Druid bear not recieving synergy bonuses correctly (losing them on re-summon, seems to only be applied once to the bear - needs to do a check every few ticks)

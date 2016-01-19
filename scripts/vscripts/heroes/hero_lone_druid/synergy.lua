@@ -12,6 +12,8 @@ function SynergyLevel( event )
 	-- Unit name contains a part of the unit name, so you can make different levels of the unit and they will still be registered
 	-- If you change this to "npc_" in the parameter passed, it will affect all self-controlled units
 	local unit_name = event.unit_name
+
+	print("Checking synergy")
 	
 	-- Re-apply modifier_bear_synergy, only check for units that start with the unit_name
 	for _,unit in pairs(targets) do
@@ -27,11 +29,4 @@ function SynergyLevel( event )
 			end
 		end
 	end
-
-	-- Re-apply modifier_true_form on the caster
-	if caster:HasModifier("modifier_true_form_synergy") then
-		caster:RemoveModifierByName("modifier_true_form_synergy")
-		ability:ApplyDataDrivenModifier(caster, caster, "modifier_true_form_synergy", {} )
-	end
-
 end

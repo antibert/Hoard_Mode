@@ -7,6 +7,15 @@ General:
 -- Fixed Kobold guards not spawning on 4p_medium map
 
 Heroes:
+//Disruptor
+Changes:
+-- Increased radius of Thunder Strike to 300
+-- Reduced cooldown of glimpse to 16/14/12/10
+-- Glimpse only works on bosses and mini-bosses (like Undying)
+-- Increased send back of glimpse to 4/5/6/7 seconds
+-- Reduced formation time of Kinetic Field to 0.1 seconds
+-- Reduced cooldown of Static Storm to 40/30/20
+-- Increased radius of Static Storm to 450/550/650
 //Added Doom
 Changes:
 -- Scorched Earth damage increased to 20/30/40/50

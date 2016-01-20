@@ -5173,6 +5173,7 @@
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"110 110 110 110"
+		"AbilityDamage"					"12 16 20 24"
 			
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -5234,6 +5235,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"radius"				"180"
 			}
+			"12"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"tick_interval"		"0.5"
+			}
 		}
 	
 		"OnSpellStart"
@@ -5265,9 +5271,16 @@
 						"Target" 		"TARGET"
 						"Duration"		"%duration"
 					}
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_wounds_damage_datadriven"
+						"Target" 		"TARGET"
+						"Duration"		"%duration"
+					}
 				
 				}
 			}
+
 		}
 	
 		"Modifiers"
@@ -5304,6 +5317,31 @@
 						"Duration"		"2"
 					}
 				}			
+			}
+			"modifier_wounds_damage_datadriven"
+			{
+				"IsHidden"		"1"
+	
+				"OnCreated"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_PHYSICAL"
+						"Damage"		"%AbilityDamage"
+					}
+				}
+	
+				"ThinkInterval"  "%tick_interval"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_PHYSICAL"
+						"Damage"		"%AbilityDamage"
+					}
+				}
 			}
 	
 			"modifier_open_wounds_70"
@@ -5397,6 +5435,39 @@
 			}
 		}
 	}
+	"rubick_amp_field"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"rubick_spell_amp"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"15 20 25 100"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_spell_amp"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICDAMAGEOUTGOING_PERCENTAGE" "%spell_amp" 
+				}
+			}
+		}
+	}
+	
+	
 	"lina_laguna_blade_datadriven"
 	{
 		// General
@@ -7158,6 +7229,33 @@
 			}	
 		}
 	}
+	//=================================================================================================================
+	// Phantom Assassin: Swiftness
+	//=================================================================================================================
+	"phantom_assassin_swiftness"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"beastmaster_inner_beast"					
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"phantom_assassin_swiftness"
+		
+		// Casting
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"20 30 40 50"
+			}
+		}
+	}
+	
 	"tinker_heat_seeking_missile_datadriven"
 	{
 		// General

@@ -1491,6 +1491,25 @@
 		}
 	}
 	//=================================================================================================================
+	// Leshrac: Pulse Nova
+	//=================================================================================================================
+	"leshrac_pulse_nova"
+	{
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"115 145 175"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_scepter"	"180 210 240"
+			}
+		}
+	}
+	//=================================================================================================================
 	// Naga Siren: Mirror Image
 	//=================================================================================================================
 	"naga_siren_mirror_image"
@@ -1567,7 +1586,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_out_pct"	"-50 -50 -50 -50"
+				"illusion_damage_out_pct"	"-30 -30 -30 -30"
 			}
 			"06"
 			{
@@ -1577,12 +1596,12 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_in_pct"	"125 125 125 125"
+				"illusion_damage_in_pct"	"100 100 100 100"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_illusion_total_damage_in_pct"	"125 125 125 125"
+				"tooltip_illusion_total_damage_in_pct"	"100 100 100 100"
 			}			
 		}	
 	}
@@ -1596,22 +1615,22 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_1_damage_out_pct"	"-50"
+				"illusion_1_damage_out_pct"	"-30"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_1_damage_in_pct"	"125"
+				"illusion_1_damage_in_pct"	"100"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_2_damage_out_pct"	"-50"
+				"illusion_2_damage_out_pct"	"-30"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_2_damage_in_pct"	"125"
+				"illusion_2_damage_in_pct"	"100"
 			}
 		}
 	}
@@ -1625,27 +1644,27 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_out_pct"	"-50"
+				"illusion_damage_out_pct"	"-30"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_illusion_damage"	"50"
+				"tooltip_illusion_damage"	"70"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_in_pct"	"125"
+				"illusion_damage_in_pct"	"100"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_total_illusion_damage_in_pct"	"125"
+				"tooltip_total_illusion_damage_in_pct"	"100"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_from_illusion_duration"	"4"
+				"illusion_from_illusion_duration"	"5"
 			}
 		}
 	}
@@ -1736,12 +1755,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pass_damage"			"150 180 230"
+				"pass_damage"			"170 210 250"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"		"100 130 160"
+				"damage_per_second"		"100 140 180"
 			}
 		}
 	}
@@ -1756,15 +1775,48 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pass_damage"			"150 180 230"
+				"pass_damage"			"170 210 250"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_second"		"100 130 160"
+				"damage_per_second"		"100 140 180"
 			}
 		}
 	}
+	//=================================================================================================================
+	// Ability: Juggernaut Blade Fury
+	//=================================================================================================================
+	"juggernaut_blade_fury"
+	{
+		"AbilityCooldown"				"25 21 17 13"
+		"AbilityDuration"				"5.0 5.0 5.0 5.0"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"110 140 170 200"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"60 60 60 60"		
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"blade_fury_damage_tick"	"0.2"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"blade_fury_radius"			"250"
+			}
+		}
+	}
+
 	//=====================================================================================================
 	// Lycan: Feral Impulse
 	//=================================================================================================================
@@ -1865,17 +1917,30 @@
 	//=================================================================================================================
 	"sandking_burrowstrike"
 	{
-		"AbilityCastRange"				"400 600 800 1000"
-		"AbilityDamage"					"100 180 250 320"
-		"AbilityDuration"				"5.0 6.0 7.0"
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"160 240 320 400"
+	}
+	//=================================================================================================================
+	// Ability: Sand King Sand Storm
+	//=================================================================================================================
+	"sandking_sand_storm"
+	{
+		"AbilityDamage"					"25 50 75 100"
 		"AbilitySpecial"
 		{
-			"05"
+			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"tooltip_range"		"400 600 800 1000"
+				"var_type"				"FIELD_FLOAT"
+				"sand_storm_invis_delay"	"0.1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"sand_storm_radius"		"425"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"AbilityDuration"		"20.0 40.0 60.0 80.0"
 			}
 		}
 	}
@@ -2190,7 +2255,7 @@
 	}
 	"storm_spirit_overload"
 	{
-		"AbilityDamage"					"50 70 90 110"
+		"AbilityDamage"					"75 100 125 150"
 		"AbilitySpecial"
 		{
 			"01"
@@ -2262,7 +2327,7 @@
 			"01"
 			{
 				"var_type"										"FIELD_INTEGER"
-				"ball_lightning_initial_mana_percentage"		"3"		
+				"ball_lightning_initial_mana_percentage"		"2"		
 			}
 			"06"
 			{
@@ -2385,7 +2450,7 @@
 	//=================================================================================================================
 	"dragon_knight_breathe_fire"
 	{
-		"AbilityManaCost"				"50 60 70 80"
+		"AbilityManaCost"				"40 40 40 40"
 	    "AbilityCooldown"				"12 10 8 6"
 	}
 	//=================================================================================================================
@@ -2598,7 +2663,7 @@
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"duration"			"7.0"
+				"duration"			"9.0"
 			}
 			"06"
 			{
@@ -2661,7 +2726,58 @@
 			}
 		}
 	}
+	//=================================================================================================================
+	// Ability: Nevermore Necromastery
+	//=================================================================================================================
+	"nevermore_necromastery"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"necromastery_damage_per_soul"	"1"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"necromastery_max_souls"	"50 100 150 200"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"necromastery_soul_release"		"0.5"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"necromastery_souls_hero_bonus"	"50"
+			}
+			
+		}
+	}
+	//=================================================================================================================
+	// Ability: Nevermore Shadowraze #1
+	//=================================================================================================================
+	"nevermore_shadowraze1"
+	{
+		"AbilityManaCost"				"45 45 45 45"
+	}
+	//=================================================================================================================
+	// Ability: Nevermore Shadowraze #2
+	//=================================================================================================================
+	"nevermore_shadowraze2"
+	{
+		"AbilityManaCost"				"45 45 45 45"
+	}
 
+	//=================================================================================================================
+	// Ability: Nevermore Shadowraze #3
+	//=================================================================================================================
+	"nevermore_shadowraze3"
+	{
+		"AbilityManaCost"				"45 45 45 45"
+	}
 
 	//=================================================================================================================
 	// Phoenix: Sun Ray
@@ -2880,37 +2996,51 @@
 		"AbilityDamage"					"100 230 375 500"
 	}
 	//=================================================================================================================
+	// Luna: Lunar Blessing
+	//=================================================================================================================
+	"luna_lunar_blessing"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"20 30 40 50"
+			}
+		}
+	}
+	//=================================================================================================================
 	// Luna: Eclipse
 	//=================================================================================================================
 	"luna_eclipse"
 	{
-		"AbilityCooldown"				"90 70 50"
+		"AbilityCooldown"				"100 100 100"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"beams"						"10 20 30"
+				"beams"						"30 45 60"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hit_count"					"15"
+				"hit_count"					"100"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"beam_interval"				"0.3 0.2 0.1"
+				"beam_interval"				"0.1 0.1 0.1"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"beams_scepter"				"30 40 50"
+				"beams_scepter"				"60 75 90"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hit_count_scepter"			"6 10 14"
+				"hit_count_scepter"			"100 100 100"
 			}
 		}
 	}
@@ -2972,20 +3102,6 @@
 			}
 		}
 	}
-    //=================================================================================================================
-	// Tidehunter: Anchor Smash
-	//=================================================================================================================
-	"tidehunter_anchor_smash"
-	{
-		"AbilitySpecial"
-		{
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"430"
-			}
-		}
-	}
 	//=================================================================================================================
 	// Tidehunter: Kraken Shell
 	//=================================================================================================================
@@ -3005,14 +3121,13 @@
 	//=================================================================================================================
 	"tidehunter_ravage"
 	{
-		"AbilityCooldown"				"100 100 100"
 		"AbilityDamage"					"350 600 900"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"2600"
+				"radius"			"2300"
 			}
 		}
 	}

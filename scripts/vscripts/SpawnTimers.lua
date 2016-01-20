@@ -241,7 +241,7 @@ Timers:CreateTimer("big", {
 		callback = function()
 			Spawners:SpawnHulkTop()
 			Spawners:SpawnHulk()
-			return 23.0
+			return 30.0
 		end
 	})
 	Timers:CreateTimer(450, function()

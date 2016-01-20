@@ -1,17 +1,67 @@
 Next Update Patch Notes:
 
-1.10b
+1.10c
+
+General:
+-- Pre-game time increased by 7 seconds
 
 Heroes:
-//Spectre
-Changes:
--- Haunt now properly only targets towers and heroes
+//Phantom Assassin:
+-- Phantom Strike replaced with new ability: Swiftness - grants passive bonus attack speed
+//Timbersaw
+-- Chakram pass damage and damage per second increased
+//Phantom Lancer:
+-- Illusions now take no extra damage
+-- Illusions damage reduction decreased from -50% to -30%
+//Dragon Knight:
+-- Breathe Fire manacost reduced to 40 at all levels
+//Venomancer:
+-- Scourge Ward damage increased across all levels
+//Juggernaught:
+-- Blade Fury mana cost reduced to 60 on all levels
+-- Blade Fury damage increased 
+-- Blade Fury cooldown greatly reduced
+//Sand King:
+-- Sand Storm no longer grants invisibility
+-- Burrowstrike back to vanilla cast range
+-- Burrowstrike damage increased
+//Leshrac:
+-- Pulse Nove damage increased
+//Storm Spirit:
+-- Overload damage increased
+//Shadow Fiend:
+-- Necromastery max souls increased from "15 22 29 36" to "50 100 150 200"
+-- Necromastery damage per soul decreased from 2 to 1
+-- Raze manacost reduced from 75 to 45
+//Lifestealer:
+-- Open Wounds now deals damage over time on its targets
+//Phoenix:
+-- Fire Spirit duration increased from 7 to 9 seconds
+//Rubick:
+-- Null Field replaced with Amp Field - increases spell damage on targets in a 700 unit AOE around Rubick
+//Drow Ranger:
+-- Damage reduction for split shot increased to 50%
+//Luna:
+-- Eclipse beams increased from "10 20 30" to "30 45 60" ("60 75 90")
+-- Eclipse beam interval is now 0.1 on all levels
+-- Eclipse cooldown increased to 100 seconds on all levels
+-- Lunar Blessing bonus damage increased from "14 22 30 38" to "20 30 40 50"
+//Tide Hunter:
+-- Anchor Smash AOE back to vanilla
+-- Ravage cooldown back to vanilla
+-- Ravage radius decreased slightly
+//Witch Doctor:
+-- Death Ward cooldown increased from 30 to 60 seconds
 
-Secondary importance:
+////// Important Changes:
+-- Arc Warden needs asome reworks on some of his abilities
+-- Buff warlock golem hps - do like lycan passive on one of his abilities possibly to get around this
+
+
+/////// Secondary importance:
 -- Fix Giant Mech particles not working
 -- Dragon Lance buff
 -- REWORK ULTRA MAP COMPLTETLY
--- Buff warlock golem hps - do like lycan passive on one of his abilities possibly to get around this
 -- meepo clones not sharing stats at all without scepter
 
 Not Important:

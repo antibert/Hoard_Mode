@@ -6738,11 +6738,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-<<<<<<< HEAD
 				"bear_bonus_damage"		"30 60 90 120"
-=======
-				"bear_bonus_damage"		"70 100 120 140"
->>>>>>> origin/master
 			}
 			"02"
 			{
@@ -6752,7 +6748,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bear_bonus_armor"		"3 6 9 12"
+				"bear_bonus_armor"		"3 5 7 9"
 			}
 		}
 	

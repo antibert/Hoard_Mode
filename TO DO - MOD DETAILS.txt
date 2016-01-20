@@ -1,71 +1,20 @@
 Next Update Patch Notes:
 
-1.10
+1.10b
 
 General:
--- Fixed Kobold guards not spawning on 4p_medium map
+-- Reduce HP of all mech wave units (Both Maps)
+-- Reduced spawn numbers of various mech wave units 
 
-4p_medium map:
--- Added Mech wave - Giant mech does not drop gold bags and has a slight armor increase
--- Added some new units to final wave
-
-Heroes:
-//Added Disruptor
-Changes:
--- Increased radius of Thunder Strike to 300
--- Reduced cooldown of glimpse to 16/14/12/10
--- Glimpse only works on bosses and mini-bosses (like Undying)
--- Increased send back of glimpse to 4/5/6/7 seconds
--- Reduced formation time of Kinetic Field to 0.1 seconds
--- Reduced cooldown of Static Storm to 40/30/20
--- Increased radius of Static Storm to 450/550/650
-//Added Doom
-Changes:
--- Scorched Earth damage increased to 20/30/40/50
--- Devour moved to Doom from Wraith King
--- Reduced Doom ultimate cooldown to 60/50/40
-//Added Spectre
-Changes:
--- Increased Spectral Dagger damage to 100/150/200/250
--- Reduced Spectral Dagger mana cost to 110/120/130/140
--- Changed Desolate to always activate
--- Reworked Haunt: Now spawns an illusion by each ally and each allied building, illusions last 10 seconds, deal and receive full damage
--- Haunt cooldown reduced to 80/60/40
-//Added Puck
-Changes:
--- Changed Dream Coil to target all enemies in the radius and not just heroes
-//Chaos Knight
--- Return Chaos Bolt damage back to vanilla
--- Turned Chaos Bolt into an AoE
-//Wraith King
--- Replaced Devour with Wraithfire Blast
--- Changed Wraithfire Blast to an AoE
--- Increased Wraithfire Blast DoT damage to 30/40/60/100
-<<<<<<< HEAD
-//Tinker
-=======
-//Lone Druid
--- Fixed Synergy not reapplying to Spirit Bear
--- Put Rabid back to vanilla (because it is much stronger in vanilla now)
--- Reduced the effects of Synergy (because the bear is stronger in the latest patch)
-//Tinker:
->>>>>>> origin/master
--- Aghanims now doubles missile count
-//Windranger
--- Fixed shackleshot not working correctly
-
-<<<<<<< HEAD
 
 ////// Important Changes:
--- Lone Druid bear not recieving synergy bonuses correctly (losing them on re-summon, seems to only be applied once to the bear - needs to do a check every few ticks)
+-- Buff warlock golem hps - do like lycan passive on one of his abilities possibly to get around this
 
-=======
->>>>>>> origin/master
+
 /////// Secondary importance:
 -- Fix Giant Mech particles not working
 -- Dragon Lance buff
 -- REWORK ULTRA MAP COMPLTETLY
--- Buff warlock golem hps - do like lycan passive on one of his abilities possibly to get around this
 -- meepo clones not sharing stats at all without scepter
 
 Not Important:

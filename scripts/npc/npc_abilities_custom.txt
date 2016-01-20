@@ -8655,9 +8655,10 @@
                 "Target"		"CASTER"
             }
 
-            "ActOnTargets"
+            "RunScript"
             {
-
+                "ScriptFile"    "heroes/hero_spectre/haunt.lua"
+                "Function"      "Haunt"
                 "Target"
                 {
                     "Center" "CASTER"
@@ -8667,49 +8668,30 @@
                     "Flags" "DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_PLAYER_CONTROLLED"
                     "MaxTargets" "5"
                 }
-
-                "Action"
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"    "heroes/hero_spectre/haunt.lua"
-                        "Function"      "Haunt"
-                    }
-
-                    "FireSound"
-                    {
-                        "EffectName"	"Hero_Spectre.Haunt"
-                        "Target"		"TARGET"
-                    }
-                }
             }
 
-            "ActOnTargets"
+            "RunScript"
             {
+                "ScriptFile"    "heroes/hero_spectre/haunt.lua"
+                "Function"      "Haunt"
+               "Target"
+               {
+                   "Center" "CASTER"
+                   "Radius" "GLOBAL"
+                   "Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+                   "Types" "DOTA_UNIT_TARGET_BUILDING"
+                   "Flags" "DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_RANGED_ONLY"
+                   "MaxTargets" "5"
+               }
+            }
 
+            "FireSound"
+            {
+                "EffectName"	"Hero_Spectre.Haunt"
                 "Target"
                 {
                     "Center" "CASTER"
                     "Radius" "GLOBAL"
-                    "Teams"	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-                    "Types" "DOTA_UNIT_TARGET_BUILDING"
-                    "Flags" "DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_RANGED_ONLY"
-                    "MaxTargets" "5"
-                }
-
-                "Action"
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"    "heroes/hero_spectre/haunt.lua"
-                        "Function"      "Haunt"
-                    }
-
-                    "FireSound"
-                    {
-                        "EffectName"	"Hero_Spectre.Haunt"
-                        "Target"		"TARGET"
-                    }
                 }
             }
         }

@@ -239,6 +239,8 @@
         "AbilityLayout"         "4"
         "override_hero"			"npc_dota_hero_spectre"
         "Ability4"				"spectre_haunt_datadriven"
+        "Ability5"              "attribute_bonus"
+        "Ability6"              ""
     }
 	//=================================================================================================================
 	// HERO: Tidehunter

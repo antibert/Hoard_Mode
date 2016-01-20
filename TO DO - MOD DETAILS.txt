@@ -2,6 +2,7 @@ Next Update Patch Notes:
 
 1.10b
 
+<<<<<<< HEAD
 General:
 -- Reduce HP of all mech wave units (Both Maps)
 -- Reduced spawn numbers of various mech wave units 
@@ -12,6 +13,14 @@ General:
 
 
 /////// Secondary importance:
+=======
+Heroes:
+//Spectre
+Changes:
+-- Haunt now properly only targets towers and heroes
+
+Secondary importance:
+>>>>>>> origin/master
 -- Fix Giant Mech particles not working
 -- Dragon Lance buff
 -- REWORK ULTRA MAP COMPLTETLY

@@ -118,7 +118,6 @@
 		"item"      "item_octarine_core"
 		"item"		"item_bloodstone_datadriven"
 		"item"		"item_death_stone"
-		"item"		"item_black_king_bar"
 	}
 	
 	// Level 3 - Purple Recipes
@@ -138,7 +137,8 @@
 		"item"		"item_assault"
 		"item"		"item_heart"
         "item"      "item_lotus_orb"
-		"item"      "item_crimson_guard"
+		"item"      "item_crimson_guard"		
+		"item"		"item_bfury_datadriven"
 	}
 	
 	"weapons"

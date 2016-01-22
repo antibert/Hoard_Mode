@@ -1076,8 +1076,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
-		"AbilityCooldown"				"10.0 10.0 10.0 10.0"
-		"AbilityManaCost"				"120 120 120 120"
+		"AbilityCooldown"				"15.0 20.0 25.0 30.0"
+		"AbilityManaCost"				"120 130 140 150"
 	
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -1105,7 +1105,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"spiderling_duration"	"60.0 60.0 60.0 60.0"
+				"spiderling_duration"	"40.0 40.0 40.0 40.0"
 			}
 			"03"
 			{
@@ -1200,7 +1200,7 @@
 	
 					"SpawnUnit"
 					{
-						"UnitName"	"npc_dota_broodmother_spiderling"
+						"UnitName"	"npc_dota_medium_spiders"
 						"UnitCount"	"%count"
 						"SpawnRadius"	"50"
 						"Duration"	"%spiderling_duration"

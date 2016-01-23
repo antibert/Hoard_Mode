@@ -1,7 +1,15 @@
 Next Update Patch Notes:
 
 1.11
-
+Items:
+// Eye of Skadi
+--- Now applies the cold debuff in a 225 radius around the target
+--- Now deals 50 magical damage in a 225 radius around the target
+// Dragon Javelin 1-5
+--- New item that comes in 5 levels
+--- First item made from a quelling blade, a dragon spear, a perseverence, and a 1000 gold recipe
+--- Passive: ranged attacks will cause two spears to hit nearby targets, dealing 80% of attack damage
+--- Higher levels increase the number of spears, range of the spear, and the bonus damage and attack speed of the item
 
 
 ////// Important Changes:

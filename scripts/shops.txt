@@ -157,6 +157,7 @@
 		"item"		"item_abyssal_blade"
 		"item"      "item_horde_demon_sabre"
 		"item"      "item_king_rapier"
+		"item"      "item_dragon_javelin"
 	}
 	
 	// Level 4 - Orange / Orb / Artifacts
@@ -172,7 +173,7 @@
  		"item"		"item_heavens_halberd"
  		"item"		"item_sange_and_yasha"
  		"item"		"item_mjollnir"
- 		"item"		"item_skadi"
+ 		"item"		"item_skadi_datadriven"
 		"item"		"item_helm_of_madness"
  		"item"		"item_satanic"
 	}

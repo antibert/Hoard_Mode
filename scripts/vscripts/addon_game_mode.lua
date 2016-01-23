@@ -28,9 +28,11 @@ function Precache( context )
     PrecacheItemByNameSync("item_horde_ethereal_blade", context)
     PrecacheItemByNameSync("item_horde_ghost", context)
     PrecacheItemByNameSync("item_hoard_dagon", context)
+	PrecacheItemByNameSync("item_dragon_javelin", context)
     PrecacheItemByNameSync("item_bfury", context)
     PrecacheItemByNameSync("item_armlet", context)
     PrecacheItemByNameSync("item_helm_of_madness", context)
+	PrecacheItemByNameSync("item_skadi_datadriven", context)
     PrecacheItemByNameSync("item_dummy", context)
     PrecacheItemByNameSync("item_dummy_datadriven", context)
 	PrecacheUnitByNameSync("npc_dummy_blank", context)	
@@ -111,6 +113,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_pugna_ward_hoard2", context)
 	PrecacheUnitByNameSync("npc_dota_pugna_ward_hoard3", context)
 	PrecacheUnitByNameSync("npc_dota_pugna_ward_hoard4", context)
+	PrecacheItemByNameSync("spectre_haunt_datadriven", context)
 
 	end
 	
@@ -153,7 +156,7 @@ function CHoard_ModeGameMode:SetRules()
 	GameRules:SetPostGameTime( 120.0 )
 	GameRules:SetTreeRegrowTime( 60.0 )
 	GameRules:SetGoldTickTime( 0.6 )
-	GameRules:SetGoldPerTick( 1 )
+	GameRules:SetGoldPerTick( 1000 )
 	GameRules:GetGameModeEntity():SetLoseGoldOnDeath( false )
 	GameRules:GetGameModeEntity():SetRuneEnabled( 0, true ) --Double Damage
 	GameRules:GetGameModeEntity():SetRuneEnabled( 1, false ) -- haste rune

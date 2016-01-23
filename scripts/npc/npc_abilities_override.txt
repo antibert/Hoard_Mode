@@ -182,8 +182,8 @@
 	//"item_satanic"					"REMOVE"
 	//"item_recipe_mjollnir"			"REMOVE"
 	//"item_mjollnir"					"REMOVE"
-	//"item_recipe_skadi"				"REMOVE"
-	//"item_skadi"					"REMOVE"
+	"item_recipe_skadi"				"REMOVE"
+	"item_skadi"					"REMOVE"
 	//"item_recipe_sange"				"REMOVE"
 	//"item_sange"					"REMOVE"
 	//"item_recipe_helm_of_the_dominator"	"REMOVE"
@@ -1431,8 +1431,13 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"mana_regen"		"2.0 3.0 4.5 6.0"
+				"mana_regen"		"2.0 3.0 4.0 6.0"
 			}
+			"02"
+            {
+                "var_type"			"FIELD_FLOAT"
+                "mana_restore"		"120 180 240 360"
+            }
 		}
 	}
 	//=================================================================================================================

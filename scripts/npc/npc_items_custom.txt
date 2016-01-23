@@ -1,5 +1,8 @@
 "DOTAAbilities"
 {
+    //=================================================================================================================
+	// Focused Aether Lens
+	//=================================================================================================================
 	"item_aether_lens_2"
 	{
 		// General
@@ -7,7 +10,7 @@
 		"ID"							"99222"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"BaseClass"                     "item_aether_lens"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_aether_lens"
+		"AbilityTextureName"			"item_aether_lens_2"
 	
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -1118,6 +1121,282 @@
 			}
 		}
 	}
+	//=================================================================================================================
+    // Recipe: Dragon Javelins
+    //=================================================================================================================
+    "item_recipe_dragon_javelin"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"99234"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"			"item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"1000"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_dragon_javelin"
+        "ItemRequirements"
+        {
+            "01"						"item_quelling_blade;item_dragon_lance;item_pers"
+        }
+    }
+    "item_recipe_dragon_javelin_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"99235"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"			"item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_dragon_javelin_2"
+        "ItemRequirements"
+        {
+            "01"						"item_dragon_javelin;item_recipe_dragon_javelin"
+        }
+    }
+    "item_recipe_dragon_javelin_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"99235"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"			"item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_dragon_javelin_3"
+        "ItemRequirements"
+        {
+            "01"						"item_dragon_javelin_2;item_recipe_dragon_javelin"
+        }
+    }
+    "item_recipe_dragon_javelin_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"99235"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"			"item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_dragon_javelin_4"
+        "ItemRequirements"
+        {
+            "01"						"item_dragon_javelin_3;item_recipe_dragon_javelin"
+        }
+    }
+    "item_recipe_dragon_javelin_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"99235"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"			"item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_dragon_javelin_5"
+        "ItemRequirements"
+        {
+            "01"						"item_dragon_javelin_4;item_recipe_dragon_javelin"
+        }
+    }
+    //=================================================================================================================
+    // Dragon Javelins
+    //=================================================================================================================
+	"item_dragon_javelin"
+	{
+    	// General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"99236"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetFlag"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"Model"							"models/props_gameplay/red_box.vmdl"
+		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+		"AbilityTextureName"			"item_dragon_javelin"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"3785"
+        "ItemBaseLevel"                 "1"
+        "ItemShopTags"					"agi;damage;unique"
+        "ItemQuality"					"artifact"
+        "ItemAliases"					"dragon javelin"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"UpgradesItems"					"item_dragon_javelin;item_dragon_javelin_2;item_dragon_javelin_3;item_dragon_javelin_4;item_dragon_javelin_5"
+		"UpgradeRecipe"					"item_recipe_dragon_javelin"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_damage"			"20 30 40 50 60"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_speed"			"10 20 30 40 50"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_strength"		"10"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "base_attack_range"		"150"
+            }
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"625 650 675 700 725"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"projectile_speed"		"1000"
+			}
+            "07"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "arrow_count"            "2 3 4 5 6"
+            }
+            "08"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "arrow_damage"            "80"  //as percentage of attack damage
+            }
+            "09"
+            {
+                "var_type"							"FIELD_INTEGER"
+                "bonus_health_regen"				"5"
+            }
+            "10"
+            {
+                "var_type"							"FIELD_INTEGER"
+                "bonus_mana_regen_percentage"		"125"
+            }
+        }
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+            "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
+            "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+        }
+
+        "Modifiers"
+        {
+            "modifier_item_dragon_javelin_range"
+            {
+                "Passive"				"1"
+                "IsHidden"				"1"
+                "IsDebuff"			"0"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"		"%base_attack_range"
+                }
+
+                "OnAttack"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"items/item_dragon_javelin.lua"
+                        "Function"		"SplitShotLaunch"
+                        "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+                        "range"         "%range"
+                        "projectile_speed" "%projectile_speed"
+                        "arrow_count" "%arrow_count"
+                    }
+                }
+            }
+            "modifier_item_dragon_javelin"
+            {
+                "Passive"				"1"
+                "IsHidden"				"1"
+				"IsDebuff"			"0"
+                "Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_speed"
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+                    "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
+                }
+            }
+        }
+
+        "OnProjectileHitUnit"
+        {
+            "DeleteOnHit"	"1"
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_Huskar.ProjectileImpact"
+                "Target" 		"TARGET"
+            }
+
+            "RunScript"
+            {
+                "ScriptFile"	"items/item_dragon_javelin.lua"
+                "Function"		"SplitShotDamage"
+                "arrow_damage"  "%arrow_damage"
+            }
+        }
+	}
 	"item_dummy"  //A dummy item that is used to take up item slots in the swap_to_item() Lua function.
 	{
 		// General
@@ -1134,6 +1413,626 @@
 		"BaseClass"                     "item_datadriven"
 		"ItemBaseLevel"                 "1"
 	}
+	"item_dragon_javelin_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"99237"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetFlag"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "Model"							"models/props_gameplay/red_box.vmdl"
+        "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+        "AbilityTextureName"			"item_dragon_javelin_2"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"3785"
+        "ItemBaseLevel"                 "2"
+        "ItemShopTags"					"agi;damage;unique"
+        "ItemQuality"					"artifact"
+        "ItemAliases"					"dragon javelin 2"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"UpgradesItems"					"item_dragon_javelin_2;item_dragon_javelin_3;item_dragon_javelin_4;item_dragon_javelin_5"
+		"UpgradeRecipe"					"item_recipe_dragon_javelin"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_damage"			"20 30 40 50 60"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_speed"			"10 20 30 40 50"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_strength"		"10"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "base_attack_range"		"150"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "range"					"625 650 675 700 725"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "projectile_speed"		"1000"
+            }
+            "07"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "arrow_count"            "2 3 4 5 6"
+            }
+            "08"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "arrow_damage"            "80"  //as percentage of attack damage
+            }
+            "09"
+            {
+                "var_type"							"FIELD_INTEGER"
+                "bonus_health_regen"				"5"
+            }
+            "10"
+            {
+                "var_type"							"FIELD_INTEGER"
+                "bonus_mana_regen_percentage"		"125"
+            }
+        }
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+            "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
+            "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+        }
+
+        "Modifiers"
+        {
+            "modifier_item_dragon_javelin_range"
+            {
+                "Passive"				"1"
+                "IsHidden"				"1"
+                "IsDebuff"			"0"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"		"%base_attack_range"
+                }
+
+                "OnAttack"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"items/item_dragon_javelin.lua"
+                        "Function"		"SplitShotLaunch"
+                        "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+                        "range"         "%range"
+                        "projectile_speed" "%projectile_speed"
+                        "arrow_count" "%arrow_count"
+                    }
+                }
+            }
+            "modifier_item_dragon_javelin"
+            {
+                "Passive"				"1"
+                "IsHidden"				"1"
+                "IsDebuff"			"0"
+                "Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_speed"
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+                    "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
+                }
+            }
+        }
+
+        "OnProjectileHitUnit"
+        {
+            "DeleteOnHit"	"1"
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_Huskar.ProjectileImpact"
+                "Target" 		"TARGET"
+            }
+
+            "RunScript"
+            {
+                "ScriptFile"	"items/item_dragon_javelin.lua"
+                "Function"		"SplitShotDamage"
+                "arrow_damage"  "%arrow_damage"
+            }
+        }
+    }
+    "item_dragon_javelin_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"99238"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetFlag"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "Model"							"models/props_gameplay/red_box.vmdl"
+        "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+        "AbilityTextureName"			"item_dragon_javelin_3"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"3785"
+        "ItemBaseLevel"                 "3"
+        "ItemShopTags"					"agi;damage;unique"
+        "ItemQuality"					"artifact"
+        "ItemAliases"					"dragon javelin 3"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"UpgradesItems"					"item_dragon_javelin_3;item_dragon_javelin_4;item_dragon_javelin_5"
+		"UpgradeRecipe"					"item_recipe_dragon_javelin"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_damage"			"20 30 40 50 60"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_speed"			"10 20 30 40 50"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_strength"		"10"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "base_attack_range"		"150"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "range"					"625 650 675 700 725"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "projectile_speed"		"1000"
+            }
+            "07"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "arrow_count"            "2 3 4 5 6"
+            }
+            "08"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "arrow_damage"            "80"  //as percentage of attack damage
+            }
+            "09"
+            {
+                "var_type"							"FIELD_INTEGER"
+                "bonus_health_regen"				"5"
+            }
+            "10"
+            {
+                "var_type"							"FIELD_INTEGER"
+                "bonus_mana_regen_percentage"		"125"
+            }
+        }
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+            "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
+            "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+        }
+
+        "Modifiers"
+        {
+            "modifier_item_dragon_javelin_range"
+            {
+                "Passive"				"1"
+                "IsHidden"				"1"
+                "IsDebuff"			"0"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"		"%base_attack_range"
+                }
+
+                "OnAttack"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"items/item_dragon_javelin.lua"
+                        "Function"		"SplitShotLaunch"
+                        "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+                        "range"         "%range"
+                        "projectile_speed" "%projectile_speed"
+                        "arrow_count" "%arrow_count"
+                    }
+                }
+            }
+            "modifier_item_dragon_javelin"
+            {
+                "Passive"				"1"
+                "IsHidden"				"1"
+                "IsDebuff"			"0"
+                "Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_speed"
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+                    "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
+                }
+            }
+        }
+
+        "OnProjectileHitUnit"
+        {
+            "DeleteOnHit"	"1"
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_Huskar.ProjectileImpact"
+                "Target" 		"TARGET"
+            }
+
+            "RunScript"
+            {
+                "ScriptFile"	"items/item_dragon_javelin.lua"
+                "Function"		"SplitShotDamage"
+                "arrow_damage"  "%arrow_damage"
+            }
+        }
+    }
+    "item_dragon_javelin_4"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"99236"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetFlag"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "Model"							"models/props_gameplay/red_box.vmdl"
+        "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+        "AbilityTextureName"			"item_dragon_javelin_4"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"3785"
+        "ItemBaseLevel"                 "4"
+        "ItemShopTags"					"agi;damage;unique"
+        "ItemQuality"					"artifact"
+        "ItemAliases"					"dragon javelin 4"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"UpgradesItems"					"item_dragon_javelin_4;item_dragon_javelin_5"
+		"UpgradeRecipe"					"item_recipe_dragon_javelin"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_damage"			"20 30 40 50 60"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_speed"			"10 20 30 40 50"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_strength"		"10"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "base_attack_range"		"150"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "range"					"625 650 675 700 725"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "projectile_speed"		"1000"
+            }
+            "07"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "arrow_count"            "2 3 4 5 6"
+            }
+            "08"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "arrow_damage"            "80"  //as percentage of attack damage
+            }
+            "09"
+            {
+                "var_type"							"FIELD_INTEGER"
+                "bonus_health_regen"				"5"
+            }
+            "10"
+            {
+                "var_type"							"FIELD_INTEGER"
+                "bonus_mana_regen_percentage"		"125"
+            }
+        }
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+            "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
+            "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+        }
+
+        "Modifiers"
+        {
+            "modifier_item_dragon_javelin_range"
+            {
+                "Passive"				"1"
+                "IsHidden"				"1"
+                "IsDebuff"			"0"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"		"%base_attack_range"
+                }
+
+                "OnAttack"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"items/item_dragon_javelin.lua"
+                        "Function"		"SplitShotLaunch"
+                        "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+                        "range"         "%range"
+                        "projectile_speed" "%projectile_speed"
+                        "arrow_count" "%arrow_count"
+                    }
+                }
+            }
+            "modifier_item_dragon_javelin"
+            {
+                "Passive"				"1"
+                "IsHidden"				"1"
+                "IsDebuff"			"0"
+                "Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_speed"
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+                    "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
+                }
+            }
+        }
+
+        "OnProjectileHitUnit"
+        {
+            "DeleteOnHit"	"1"
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_Huskar.ProjectileImpact"
+                "Target" 		"TARGET"
+            }
+
+            "RunScript"
+            {
+                "ScriptFile"	"items/item_dragon_javelin.lua"
+                "Function"		"SplitShotDamage"
+                "arrow_damage"  "%arrow_damage"
+            }
+        }
+    }
+    "item_dragon_javelin_5"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"99236"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetFlag"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "Model"							"models/props_gameplay/red_box.vmdl"
+        "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+        "AbilityTextureName"			"item_dragon_javelin_5"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"3785"
+        "ItemBaseLevel"                 "5"
+        "ItemShopTags"					"agi;damage;unique"
+        "ItemQuality"					"artifact"
+        "ItemAliases"					"dragon javelin 5"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+		"UpgradesItems"					"item_dragon_javelin_5"
+		"UpgradeRecipe"					"item_recipe_dragon_javelin"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_damage"			"20 30 40 50 60"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_speed"			"10 20 30 40 50"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_strength"		"10"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "base_attack_range"		"150"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "range"					"625 650 675 700 725"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "projectile_speed"		"1000"
+            }
+            "07"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "arrow_count"            "2 3 4 5 6"
+            }
+            "08"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "arrow_damage"            "80"  //as percentage of attack damage
+            }
+            "09"
+            {
+                "var_type"							"FIELD_INTEGER"
+                "bonus_health_regen"				"5"
+            }
+            "10"
+            {
+                "var_type"							"FIELD_INTEGER"
+                "bonus_mana_regen_percentage"		"125"
+            }
+        }
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+            "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
+            "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+        }
+
+        "Modifiers"
+        {
+            "modifier_item_dragon_javelin_range"
+            {
+                "Passive"				"1"
+                "IsHidden"				"1"
+                "IsDebuff"			"0"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"		"%base_attack_range"
+                }
+
+                "OnAttack"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"items/item_dragon_javelin.lua"
+                        "Function"		"SplitShotLaunch"
+                        "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+                        "range"         "%range"
+                        "projectile_speed" "%projectile_speed"
+                        "arrow_count" "%arrow_count"
+                    }
+                }
+            }
+            "modifier_item_dragon_javelin"
+            {
+                "Passive"				"1"
+                "IsHidden"				"1"
+                "IsDebuff"			"0"
+                "Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_speed"
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+                    "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
+                }
+            }
+        }
+
+        "OnProjectileHitUnit"
+        {
+            "DeleteOnHit"	"1"
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_Huskar.ProjectileImpact"
+                "Target" 		"TARGET"
+            }
+
+            "RunScript"
+            {
+                "ScriptFile"	"items/item_dragon_javelin.lua"
+                "Function"		"SplitShotDamage"
+                "arrow_damage"  "%arrow_damage"
+            }
+        }
+    }
 	//=================================================================================================================
 	// Helm of madness
 	//=================================================================================================================
@@ -2934,4 +3833,191 @@
 			}
 		}
 	}
+	//=================================================================================================================
+    // Recipe: Skadi
+    //=================================================================================================================
+    "item_recipe_skadi_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"99159"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"			"item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_skadi_datadriven"
+        "ItemRequirements"
+        {
+            "01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster;item_orb_of_venom"
+        }
+    }
+	"item_skadi_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"99160"  //Valve's version of this item uses the ID "160".
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "Model"							"models/props_gameplay/red_box.vmdl"
+        "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+        "AbilityTextureName"			"item_skadi_datadriven"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemShopTags"					"agi;str;int;hard_to_tag;mana_pool;health_pool;unique"
+        "ItemQuality"					"artifact"
+        "ItemAliases"					"eos;eye of skadi"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_all_stats"		"25"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_health"			"250"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_mana"			"250"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cold_movement_speed"	"-35"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cold_attack_speed"		"-45"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "cold_duration"	"5.0"
+            }
+            "07"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "cold_radius"	        "225"
+            }
+            "08"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "cold_damage"           "50"
+            }
+        }
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"			"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+            "particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_frost.vpcf"
+            "particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_frost_explosion.vpcf"
+        }
+
+        "Modifiers"
+        {
+            "modifier_item_skadi_splash"
+            {
+                "Passive" "1"
+            	"IsHidden" "1"
+            	"AllowIllusionDuplicate"    "0"
+            	"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+            	"OnAttackLanded"
+                {
+                    "ActOnTargets"
+                    {
+                        "Target"
+                        {
+                            "Center"	"TARGET"
+                            "Radius"	"%cold_radius"
+                            "Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                            "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                            "Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+                        }
+                        "Action"
+                        {
+                            "Damage"
+                            {
+                                "Target"	"TARGET"
+                                "Type"		"DAMAGE_TYPE_MAGICAL"
+                                "Damage"	"%cold_damage"
+                            }
+
+                            "ApplyModifier"
+                            {
+                                "Target"                "TARGET"
+                                "ModifierName"				"modifier_item_skadi_datadriven_cold_attack"
+                                "Duration"					"%cold_duration"
+                            }
+
+                            "FireSound"
+                            {
+                                "EffectName"	"Hero_DragonKnight.ProjectileImpact"
+                                "Target" 		"TARGET"
+                            }
+
+                            "FireEffect"
+                            {
+                                "TargetPoint"			"POINT"
+                                "EffectName"			"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_frost_explosion.vpcf"
+                                "EffectAttachType"		"world_origin"
+                                "ControlPoints"
+                                {
+                                    "01"				"%cold_radius 2 %cold_radius*2"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            "modifier_item_skadi_datadriven"
+            {
+                "Passive"				"1"
+                "IsHidden"				"1"
+                "Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_all_stats"
+                    "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_all_stats"
+                    "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%bonus_all_stats"
+                    "MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
+                    "MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
+                }
+            }
+            "modifier_item_skadi_datadriven_cold_attack"
+            {
+                "Passive"				"0"
+                "IsHidden"				"0"
+
+                "StatusEffectName"     "particles/status_fx/status_effect_frost.vpcf"
+                "StatusEffectPriority" "10"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%cold_attack_speed"
+                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%cold_movement_speed"
+                }
+            }
+        }
+    }
 }

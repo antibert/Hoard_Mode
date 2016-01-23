@@ -1,6 +1,9 @@
 Next Update Patch Notes:
 
 1.11
+Heroes:
+// Shadow Fiend
+--- Reduced max souls to 50/50/100/100 and increased damage per soul to 1/2/2/3
 Items:
 // Eye of Skadi
 --- Now applies the cold debuff in a 225 radius around the target
@@ -13,8 +16,8 @@ Items:
 
 
 ////// Important Changes:
--- Shadow Fiend ultimate gettting rid of new soul cap
--- Arc Warden needs asome reworks on some of his abilities
+-- Shadow Fiend ultimate getting rid of new soul cap
+-- Arc Warden needs some reworks on some of his abilities
 -- Buff warlock golem hps - do like lycan passive on one of his abilities possibly to get around this
 
 

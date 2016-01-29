@@ -1,25 +1,25 @@
 Next Update Patch Notes:
 
 1.11
+
 Heroes:
 // Shadow Fiend
---- Reduced max souls to 50/50/100/100 and increased damage per soul to 1/2/2/3
+-- Reduced max souls to 50/50/100/100 and increased damage per soul to 1/2/2/3
 Items:
 // Eye of Skadi
---- Now applies the cold debuff in a 225 radius around the target
---- Now deals 50 magical damage in a 225 radius around the target
+-- Now applies the cold debuff in a 225 radius around the target
+-- Now deals 50 magical damage in a 225 radius around the target
 // Dragon Javelin 1-5
---- New item that comes in 5 levels
---- First item made from a quelling blade, a dragon spear, a perseverence, and a 1000 gold recipe
---- Passive: ranged attacks will cause two spears to hit nearby targets, dealing 80% of attack damage
---- Higher levels increase the number of spears, range of the spear, and the bonus damage and attack speed of the item
-
+-- New item that comes in 5 levels
+-- First item made from a quelling blade, a dragon spear, a perseverence, and a 1000 gold recipe
+-- Passive: ranged attacks will cause two spears to hit nearby targets, dealing 80% of attack damage
+-- Higher levels increase the number of spears, range of the spear, and the bonus damage and attack speed of the item
 
 ////// Important Changes:
+-- Make new icons for Dragon javelins and Skadi
 -- Shadow Fiend ultimate getting rid of new soul cap
 -- Arc Warden needs some reworks on some of his abilities
 -- Buff warlock golem hps - do like lycan passive on one of his abilities possibly to get around this
-
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working
@@ -28,10 +28,11 @@ Items:
 -- meepo clones not sharing stats at all without scepter
 
 To Do:
--- update russian and chinese lang
+-- update russian lang
 -- Lifestealer hotkeys gettting messed up
 -- make horde mode video
 -- More map bosses than drop super items you can't buy in shop
+-- Old stumpy is not affected by lithe boots, but is affected by deolator minus armour
 
 
 BIG JOBS TO DO:

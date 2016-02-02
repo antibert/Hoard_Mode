@@ -156,7 +156,7 @@ function CHoard_ModeGameMode:SetRules()
 	GameRules:SetPostGameTime( 120.0 )
 	GameRules:SetTreeRegrowTime( 60.0 )
 	GameRules:SetGoldTickTime( 0.6 )
-	GameRules:SetGoldPerTick( 10 )
+	GameRules:SetGoldPerTick( 1 )
 	GameRules:GetGameModeEntity():SetLoseGoldOnDeath( false )
 	GameRules:GetGameModeEntity():SetRuneEnabled( 0, true ) --Double Damage
 	GameRules:GetGameModeEntity():SetRuneEnabled( 1, false ) -- haste rune

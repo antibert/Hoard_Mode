@@ -5,6 +5,9 @@ Next Update Patch Notes:
 Heroes:
 // Shadow Fiend
 -- Reduced max souls to 50/50/100/100 and increased damage per soul to 1/2/2/3
+// Spectre
+-- Enabled once again
+-- Changed script to be more efficient (hopefully)
 Items:
 // Eye of Skadi
 -- Now applies the cold debuff in a 225 radius around the target

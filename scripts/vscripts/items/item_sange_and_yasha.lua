@@ -6,7 +6,8 @@
 ================================================================================================================= ]]
 function modifier_item_sange_and_yasha_datadriven_on_attack_landed_random_on_success(keys)
 	if keys.target.GetInvulnCount == nil then  --If the target is not a structure.
+		local modifier = keys.modifier
 		keys.target:EmitSound("DOTA_Item.Maim")
-		keys.ability:ApplyDataDrivenModifier(keys.attacker, keys.target, "modifier_item_sange_and_yasha_datadriven_greater_maim", nil)
+		keys.ability:ApplyDataDrivenModifier(keys.attacker, keys.target, modifier, nil)
 	end
 end

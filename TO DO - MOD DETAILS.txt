@@ -14,6 +14,15 @@ Items:
 -- First item made from a quelling blade, a dragon spear, a perseverence, and a 1000 gold recipe
 -- Passive: ranged attacks will cause two spears to hit nearby targets, dealing 80% of attack damage
 -- Higher levels increase the number of spears, range of the spear, and the bonus damage and attack speed of the item
+// Manta Style 2
+-- Upgrade to Manta Style
+-- Combines from Manta Style, Ultimate Orb, and the Manta Style recipe
+-- Has stronger passive buffs and stronger illusions
+// Rod of Atos
+-- Enabled once again
+// Sange, Yasha, and Atos
+-- Combined from Sange and Yasha, Rod of Atos, and a recipe
+-- Has the active effect of Atos, the passive maim effect of Sange and Yasha, and increased stats
 
 ////// Important Changes:
 -- Make new icons for Dragon javelins and Skadi

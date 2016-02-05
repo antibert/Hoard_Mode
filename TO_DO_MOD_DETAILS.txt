@@ -4,7 +4,7 @@ Next Update Patch Notes:
 
 Heroes:
 // Shadow Fiend
--- Reduced max souls to 50/50/100/100 and increased damage per soul to 1/2/2/3
+-- Reduced max souls to 36 and increased damage per soul to 2/3/4/5
 // Spectre
 -- Enabled once again
 -- Changed script to be more efficient (hopefully)

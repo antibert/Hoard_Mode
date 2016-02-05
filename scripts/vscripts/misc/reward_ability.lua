@@ -3,6 +3,7 @@ function GrantBuff(keys)
 	local building = Entities:FindByName(nil, keys.unit_to_target)
 	if building ~= nil then
 		local ability = building:FindAbilityByName(keys.ability_to_grant)
+		ShowMessage("The strength of your Ancient has increased!")
 		if ability == nil then
 			building:AddAbility(keys.ability_to_grant)
 			building.SetLevel(1)

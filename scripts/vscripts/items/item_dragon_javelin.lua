@@ -57,7 +57,7 @@ function SplitShotDamage( keys )
     damage_table.attacker = caster
     damage_table.victim = target
     damage_table.damage_type = ability:GetAbilityDamageType()
-    damage_table.damage = caster:GetAttackDamage() * arrow_damage / 100
+    damage_table.damage = caster:GetAverageTrueAttackDamage() * arrow_damage / 100
 
     ApplyDamage(damage_table)
 end

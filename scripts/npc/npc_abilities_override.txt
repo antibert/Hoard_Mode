@@ -2741,12 +2741,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_damage_per_soul"	"1 2 2 3"
+				"necromastery_damage_per_soul"	"2 3 4 5"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_max_souls"	"50 50 100 100"
+				"necromastery_max_souls"	"36"
 			}
 			"03"
 			{
@@ -2756,7 +2756,7 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_souls_hero_bonus"	"50"
+				"necromastery_souls_hero_bonus"	"36"
 			}
 		}
 	}
@@ -4643,7 +4643,7 @@
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_damage_incoming_melee_total_pct"			"130"
+				"tooltip_damage_incoming_melee_total_pct"			"230"
 			}			
 			"12"
 			{
@@ -4653,7 +4653,7 @@
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_damage_outgoing_ranged"			"28"
+				"tooltip_damage_outgoing_ranged"			"100"
 			}
 			"14"
 			{
@@ -4663,7 +4663,7 @@
 			"15"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_damage_incoming_ranged_total_pct"			"130"
+				"tooltip_damage_incoming_ranged_total_pct"			"230"
 			}
 		
 		}

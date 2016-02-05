@@ -3055,7 +3055,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"400"
+				"bonus_damage"			"420"
 			}
 			"02"
 			{
@@ -4117,12 +4117,12 @@
             "08"
             {
                 "var_type"				"FIELD_INTEGER"
-                "images_do_damage_percent_melee"	"-34"
+                "images_do_damage_percent_melee"	"-0"
             }
             "09"
             {
                 "var_type"				"FIELD_INTEGER"
-                "tooltip_damage_outgoing_melee"			"66"
+                "tooltip_damage_outgoing_melee"			"100"
             }
             "10"
             {
@@ -4137,12 +4137,12 @@
             "12"
             {
                 "var_type"				"FIELD_INTEGER"
-                "images_do_damage_percent_ranged"	"-36"
+                "images_do_damage_percent_ranged"	"-0"
             }
             "13"
             {
                 "var_type"				"FIELD_INTEGER"
-                "tooltip_damage_outgoing_ranged"			"64"
+                "tooltip_damage_outgoing_ranged"			"100"
             }
             "14"
             {

@@ -3,12 +3,12 @@ Next Update Patch Notes:
 1.11c
 
 
-
-notes:
--- Make mid game harder on medium map - everyone is basically 6 slotted by then - daemons, ghost etc... 
-
 ////// Important Changes:
--- Make new icons for Dragon javelins and Skadi
+-- Make mid game harder on medium map - everyone is basically 6 slotted by then - daemons, ghost etc... 
+-- add spectre back
+-- Rebalance gold for medium map a bit
+-- make more raxes and make pushing harder, rewards for only taking different raxes
+-- friendly creeps get hp buffs and stuff (maybe 2x is possible)
 -- Arc Warden needs some reworks on some of his abilities
 -- Buff warlock golem hps - do like lycan passive on one of his abilities possibly to get around this
 

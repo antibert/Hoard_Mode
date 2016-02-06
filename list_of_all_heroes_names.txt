@@ -28,4 +28,5 @@ All Heroes not in game:
 "npc_dota_hero_terrorblade
 "npc_dota_hero_tusk
 "npc_dota_hero_visage
+"npc_dota_hero_spectre
 )

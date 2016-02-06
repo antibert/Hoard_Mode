@@ -13,7 +13,7 @@ TREE_REGROW_TIME = 60.0                 -- How long should it take individual tr
 GOLD_PER_TICK = 1                     -- How much gold should players get per tick?
 GOLD_TICK_TIME = 0.6                      -- How long should we wait in seconds between gold ticks?
 
-RECOMMENDED_BUILDS_DISABLED = false     -- Should we disable the recommened builds for heroes
+RECOMMENDED_BUILDS_DISABLED = true     -- Should we disable the recommened builds for heroes
 CAMERA_DISTANCE_OVERRIDE = 1134.0       -- How far out should we allow the camera to go?  1134 is the default in Dota
 
 MINIMAP_ICON_SIZE = 1                   -- What icon size should we use for our heroes?
@@ -22,7 +22,7 @@ MINIMAP_RUNE_ICON_SIZE = 1              -- What icon size should we use for rune
 
 RUNE_SPAWN_TIME = 120                   -- How long in seconds should we wait between rune spawns?
 CUSTOM_BUYBACK_COST_ENABLED = true      -- Should we use a custom buyback cost setting?
-CUSTOM_BUYBACK_COOLDOWN_ENABLED = true  -- Should we use a custom buyback time?
+CUSTOM_BUYBACK_COOLDOWN_ENABLED = false  -- Should we use a custom buyback time?
 BUYBACK_ENABLED = true                 -- Should we allow people to buyback when they die?
 
 DISABLE_FOG_OF_WAR_ENTIRELY = false     -- Should we disable fog of war entirely for both teams?
@@ -64,7 +64,7 @@ FIXED_RESPAWN_TIME = 23                 -- What time should we use for a fixed r
 FOUNTAIN_CONSTANT_MANA_REGEN = 1       -- What should we use for the constant fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_MANA_REGEN = 6     -- What should we use for the percentage fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_HEALTH_REGEN = 4   -- What should we use for the percentage fountain health regen?  Use -1 to keep the default dota behavior.
-MAXIMUM_ATTACK_SPEED = 600              -- What should we use for the maximum attack speed?
+MAXIMUM_ATTACK_SPEED = 1000              -- What should we use for the maximum attack speed?
 MINIMUM_ATTACK_SPEED = 20               -- What should we use for the minimum attack speed?
 
 

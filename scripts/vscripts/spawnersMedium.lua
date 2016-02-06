@@ -15,7 +15,7 @@ function SpawnersMedium:SpawnGnollsMid()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
 	local units_to_spawn = RandomInt(7,9)
 	for i=1,units_to_spawn do
-		local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin_easy", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+		local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin_medium", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 								OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 								Position = waypoint, Queue = true} )
@@ -811,7 +811,7 @@ function SpawnersMedium:SpawnGnollsTop()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = RandomInt(5,6)
 	for i=1,units_to_spawn do
-		local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin_easy", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+		local unit = CreateUnitByName("npc_dota_creature_gnoll_assassin_medium", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 								OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 								Position = waypoint, Queue = true} )
@@ -2441,7 +2441,7 @@ end
 function SpawnersMedium:SpawnMoney()
 	local point = Entities:FindByName(nil, "spawner6"):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
-	local units_to_spawn = 2
+	local units_to_spawn = 1
 	for i=1,units_to_spawn do
 		Timers:CreateTimer(function()
 			local unit = CreateUnitByName("npc_dota_creature_money", point, true, nil, nil, DOTA_TEAM_BADGUYS)

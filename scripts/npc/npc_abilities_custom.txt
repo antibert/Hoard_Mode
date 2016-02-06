@@ -3220,7 +3220,7 @@
 	//=================================================================================================================
 	// Generic: Gold Bag Fountain 30g
 	//=================================================================================================================
-	"generic_gold_bag_fountain_50"
+	"generic_gold_bag_fountain_medium"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -3256,6 +3256,53 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"gold_value"			"30"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bag_count"				"1"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Generic: Gold Bag Fountain 50g
+	//=================================================================================================================
+	"generic_gold_bag_fountain_50"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"item_hand_of_midas"
+	
+		"OnOwnerDied"
+		{
+			"CreateItem"
+			{
+				"Target"
+				{
+					"Center" 	"CASTER"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}			
+				"ItemName"			"item_bag_of_gold"
+				"ItemCount"			"%bag_count"
+				"SpawnRadius"		"10"
+				"ItemChargeCount"	"%gold_value"
+				"AutoUse"			"1"
+				"LaunchHeight"		"300"
+				"LaunchDistance"	"?50 350"
+				"LaunchDuration"	"0.75"
+			}
+		}
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_value"			"50"
 			}
 			"02"
 			{
@@ -3349,7 +3396,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold_value"			"80"
+				"gold_value"			"100"
 			}
 			"02"
 			{
@@ -7341,7 +7388,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"700 700 700 700"
+				"damage"					"450 450 450 450"
 			}
 			"04"
 			{
@@ -9253,7 +9300,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"						"ability_datadriven"
-        "AbilityTextureName"			"contagious_flamboyance"
+        "AbilityTextureName"			"global_armor"
 
         "OnOwnerDied"
         {
@@ -9275,7 +9322,7 @@
         "BaseClass"				"ability_datadriven"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-        "AbilityTextureName"			"contagious_flamboyance"
+        "AbilityTextureName"			"global_armor"
 
         "MaxLevel"						"10"
 
@@ -9295,7 +9342,7 @@
             "02"
             {
                 "var_type"			"FIELD_INTEGER"
-                "bonus_armor"	"0 3 6 9 12 15 18 21 24 27"
+                "bonus_armor"	"0 1 2 3 4 5 6 7 8 9"
             }
             "03"
             {
@@ -9410,7 +9457,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "BaseClass"						"ability_datadriven"
-        "AbilityTextureName"			"vengefulspirit_fury_aura"
+        "AbilityTextureName"			"global_damage"
 
         "OnOwnerDied"
         {
@@ -9432,7 +9479,7 @@
         "BaseClass"				"ability_datadriven"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-        "AbilityTextureName"			"vengefulspirit_fury_aura"
+        "AbilityTextureName"			"global_damage"
 
         "MaxLevel"						"10"
 
@@ -9447,7 +9494,7 @@
             "01"
             {
                 "var_type"			"FIELD_INTEGER"
-                "bonus_attack_speed"	"0 10 20 30 40 50 60 70 80 90 100"
+                "bonus_attack_speed"	"0 5 10 15 20 25 30 35 40 45 50"
             }
             "02"
             {

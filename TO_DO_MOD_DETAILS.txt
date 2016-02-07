@@ -3,9 +3,9 @@ Next Update Patch Notes:
 1.11c
 
 
+
 ////// Important Changes:
--- Make mid game harder on medium map - everyone is basically 6 slotted by then - daemons, ghost etc... 
--- add spectre back
+-- TOOLTIP FOR LARGE GOLEM SP;IT
 -- Rebalance gold for medium map a bit
 -- make more raxes and make pushing harder, rewards for only taking different raxes
 -- friendly creeps get hp buffs and stuff (maybe 2x is possible)
@@ -19,6 +19,7 @@ Next Update Patch Notes:
 -- meepo clones not sharing stats at all without scepter
 
 To Do:
+-- rename 2p_easy to 2p_medium
 -- update russian lang
 -- Lifestealer hotkeys gettting messed up
 -- make horde mode video

@@ -823,7 +823,7 @@ Timers:CreateTimer("big", {
 			Spawners:SpawnDemonTop()
 			Spawners:SpawnDemonMid()
 			Spawners:SpawnDemonBot()
-			return 46.0
+			return 38.0
 		end
 	})
 	Timers:CreateTimer(2000, function()
@@ -849,7 +849,7 @@ Timers:CreateTimer("big", {
 			Spawners:SpawnMiniDemonTop()
 			Spawners:SpawnMiniDemonMid()
 			Spawners:SpawnMiniDemonBot()
-			return 27.0
+			return 25.0
 		end
 	})
 	Timers:CreateTimer(2000, function()
@@ -893,7 +893,7 @@ Timers:CreateTimer("big", {
 			Spawners:SpawnStalkerTop()
 			Spawners:SpawnStalkerMid()
 			Spawners:SpawnStalkerBot()
-			return 30.0
+			return 20.0
 		end
 	})
 	Timers:CreateTimer(2000, function()
@@ -919,7 +919,7 @@ Timers:CreateTimer("big", {
 			Spawners:SpawnGargoyleTop()
 			Spawners:SpawnGargoyleMid()
 			Spawners:SpawnGargoyleBot()
-			return 4.0
+			return 30.0
 		end
 	})
 	Timers:CreateTimer(2000, function()

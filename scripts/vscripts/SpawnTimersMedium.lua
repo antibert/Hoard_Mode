@@ -794,7 +794,7 @@ Timers:CreateTimer("largebears", {
 			SpawnersMedium:SpawnDemonTop()
 			SpawnersMedium:SpawnDemonMid()
 			SpawnersMedium:SpawnDemonBot()
-			return 40.0
+			return 33.0
 		end
 	})
 	Timers:CreateTimer(2000, function()
@@ -851,7 +851,7 @@ Timers:CreateTimer("largebears", {
 			SpawnersMedium:SpawnDragonTop()
 			SpawnersMedium:SpawnDragonMid()
 			SpawnersMedium:SpawnDragonBot()
-			return 33.0
+			return 30.0
 		end
 	})
 	Timers:CreateTimer(2000, function()
@@ -864,7 +864,7 @@ Timers:CreateTimer("largebears", {
 			SpawnersMedium:SpawnStalkerTop()
 			SpawnersMedium:SpawnStalkerMid()
 			SpawnersMedium:SpawnStalkerBot()
-			return 30.0
+			return 20.0
 		end
 	})
 	Timers:CreateTimer(2000, function()
@@ -890,7 +890,7 @@ Timers:CreateTimer("largebears", {
 			SpawnersMedium:SpawnGargoyleTop()
 			SpawnersMedium:SpawnGargoyleMid()
 			SpawnersMedium:SpawnGargoyleBot()
-			return 4.0
+			return 30.0
 		end
 	})
 	Timers:CreateTimer(2000, function()

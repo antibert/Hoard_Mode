@@ -266,8 +266,6 @@
     //"item_recipe_glimmer_cape"		"REMOVE"
     //"item_glimmer_cape"				"REMOVE"
     "item_horde_demon_sabre"				"REMOVE"
-	
-	//Abilities 
 
 	//=================================================================================================================
 	// Witch Doctor: Maledict
@@ -2823,11 +2821,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"radius"						"500"
-			}
 			"03"
 			{
 				"var_type"						"FIELD_INTEGER"
@@ -2847,11 +2840,6 @@
 				"var_type"						"FIELD_INTEGER"
 				"edge_damage"					"200 300 400 500"
 			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"radius"						"350"
-			}
 		}
 	}
 	//=================================================================================================================
@@ -2859,7 +2847,7 @@
 	//=================================================================================================================
 	"centaur_return"
 	{
-		"AbilitySpecial"
+	    "AbilitySpecial"
 		{
 			"02"
 			{
@@ -2885,12 +2873,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"base_damage"		"0"
+				"base_damage"		"100"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"strength_damage"	"5 10 15"
+				"strength_damage"	"3 6 9"
 			}
 			"04"
 			{

@@ -1,7 +1,15 @@
 Next Update Patch Notes:
 
-1.11c
-
+1.12
+Heroes:
+// Centaur Warrunner
+-- Reverted the radii of his abilities back to vanilla
+-- Reduced the damage dealt by his ultimate
+Items:
+Aghanim's Regalia
+-- Upgrade to Aghanim's Scepter
+-- Made from scepter and two Ultimate Orbs
+-- Grants +30 to all stats, +400 health, +300 mana
 
 
 ////// Important Changes:

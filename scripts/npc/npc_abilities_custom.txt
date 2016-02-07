@@ -9346,28 +9346,58 @@
             }
             "03"
             {
-                "var_type"          "FIELD_INTEGER"
-                "bonus_health"      "0 100 200 300 400 500 600 700 800 900"
+                "var_type"			"FIELD_INTEGER"
+                "bonus_armor_lvl"	"1"
             }
             "04"
             {
-                "var_type"			"FIELD_INTEGER"
-                "bonus_armor_tower"	"0 5 10 15 20 25 30 35 40 45"
+                "var_type"          "FIELD_INTEGER"
+                "bonus_health"      "0 100 200 300 400 500 600 700 800 900"
             }
             "05"
             {
                 "var_type"          "FIELD_INTEGER"
-                "bonus_health_tower"      "0 200 400 600 800 1000 1200 1400 1600"
+                "bonus_health_lvl"      "100"
             }
             "06"
             {
                 "var_type"			"FIELD_INTEGER"
-                "bonus_armor_creep"	"0 5 10 15 20 25 30 35 40 45"
+                "bonus_armor_tower"	"0 5 10 15 20 25 30 35 40 45"
             }
             "07"
             {
+                "var_type"			"FIELD_INTEGER"
+                "bonus_armor_lvl_tower"	"5"
+            }
+            "08"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "bonus_health_tower"      "0 200 400 600 800 1000 1200 1400 1600"
+            }
+            "09"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "bonus_health_lvl_tower"      "200"
+            }
+            "10"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "bonus_armor_creep"	"0 5 10 15 20 25 30 35 40 45"
+            }
+            "11"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "bonus_armor_lvl_creep"	"5"
+            }
+            "12"
+            {
                 "var_type"          "FIELD_INTEGER"
                 "bonus_health_creep"      "0 200 400 600 800 1000 1200 1400 1600 1800"
+            }
+            "13"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "bonus_health_lvl_creep"      "200"
             }
         }
 
@@ -9499,9 +9529,19 @@
             "02"
             {
                 "var_type"			"FIELD_INTEGER"
-                "aura_radius"		"100000"
+                "bonus_attack_speed_lvl"	"3"
             }
             "03"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "aura_radius"		"100000"
+            }
+            "04"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "bonus_damage_lvl"  "5"
+            }
+            "05"
             {
                 "var_type"          "FIELD_INTEGER"
                 "bonus_damage"  "0 5 10 15 20 25 30 35 40 45 50"

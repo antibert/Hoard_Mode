@@ -10,6 +10,9 @@ Aghanim's Regalia
 -- Upgrade to Aghanim's Scepter
 -- Made from scepter and two Ultimate Orbs
 -- Grants +30 to all stats, +400 health, +300 mana
+Dragon Javelin
+-- No longer gives increasing amounts of strength and attack speed
+-- No longer can hit towers with the extra spears (same as Cleave)
 
 
 ////// Important Changes:

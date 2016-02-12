@@ -1434,7 +1434,7 @@
 			"02"
             {
                 "var_type"			"FIELD_FLOAT"
-                "mana_restore"		"120 180 240 360"
+                "mana_regen_self"	"2.0 4.0 6.0 8.0"
             }
 		}
 	}

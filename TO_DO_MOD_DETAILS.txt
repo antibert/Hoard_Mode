@@ -5,6 +5,8 @@ Heroes:
 // Centaur Warrunner
 -- Reverted the radii of his abilities back to vanilla
 -- Reduced the damage dealt by his ultimate
+// Crystal Maiden
+-- Fixed bug with Arcana Aura not giving her any mana recovery
 Items:
 Aghanim's Regalia
 -- Upgrade to Aghanim's Scepter

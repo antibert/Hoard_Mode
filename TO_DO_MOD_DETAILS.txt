@@ -15,7 +15,9 @@ Aghanim's Regalia
 Dragon Javelin
 -- No longer gives increasing amounts of strength and attack speed
 -- No longer can hit towers with the extra spears (same as Cleave)
-
+Radiance 2
+-- Upgrade to Radiance, using a recipe and a Talisman of Evasion
+-- Increases blind percentage and burn damage
 
 ////// Important Changes:
 -- TOOLTIP FOR LARGE GOLEM SP;IT

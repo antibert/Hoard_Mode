@@ -9578,4 +9578,173 @@
 
         }
     }
+
+    //=================================================================================================================
+	// Tower: Overpower
+	//=================================================================================================================
+	"tower_overpower"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"ID"							"95358"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "AbilityTextureName"			"clinkz_strafe"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"0"
+
+		// Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "duration"					"4.0 6.0 8.0 10.0"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "attack_speed_bonus_pct"	"200"
+            }
+        }
+
+        "precache"
+        {
+            "particle"  "particles/units/heroes/hero_clinkz/clinkz_strafe_fire.vpcf"
+            "soundfile" "soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+        }
+
+        "Modifiers"
+        {
+            "modifier_overpower_trigger"
+            {
+                "Passive"					"1"
+                "IsHidden"					"1"
+                "IsPurgable"				"0"
+
+                "OnAttackLanded"
+                {
+                    "FireEffect"
+                    {
+                        "EffectName"        "particles/units/heroes/hero_clinkz/clinkz_strafe_fire.vpcf"
+                        "EffectAttachType"  "follow_origin"
+                        "Target"            "CASTER"
+                    }
+
+                    "FireSound"
+                    {
+                        "EffectName"	"Hero_Clinkz.Strafe"
+                        "Target" 		"CASTER"
+                    }
+
+                    "RunScript"
+                    {
+                        "ScriptFile"		"misc/cooldown.lua"
+                        "Function"			"ApplyModifierIfCooldownReady"
+                        "modifier"          "modifier_overpower_strafe"
+                        "duration"		"%duration"
+                    }
+                }
+            }
+            "modifier_overpower_strafe"
+            {
+                "EffectName"		"particles/units/heroes/hero_clinkz/clinkz_strafe.vpcf"
+                "EffectAttachType"	"follow_origin"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed_bonus_pct"
+                }
+            }
+        }
+	}
+
+	"tower_stats"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"			"global_armor"
+
+        "MaxLevel"						"10"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "bonus_armor"	"1 2 3 4 5 6 7 8 9 10"
+            }
+            "02"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "bonus_armor_lvl"	"1"
+            }
+            "03"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "bonus_health"      "100 200 300 400 500 600 700 800 900 1000"
+            }
+            "04"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "bonus_health_lvl"      "100"
+            }
+            "05"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "bonus_damage"      "20 40 60 80 100 120 140 160 180 200"
+            }
+            "06"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "bonus_damage_lvl"      "20"
+            }
+            "07"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "bonus_attack_speed"      "20 40 60 80 100 120 140 160 180 200"
+            }
+            "08"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "bonus_attack_speed_lvl"      "20"
+            }
+        }
+
+        "Modifiers"
+        {
+
+            "modifier_tower_stats"
+            {
+                "Passive"			"1"
+                "IsHidden"  "1"
+                "IsBuff"	"1"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+                    "MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+                    "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%bonus_damage"
+                }
+            }
+        }
+    }
 }

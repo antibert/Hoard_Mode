@@ -88,7 +88,13 @@ function GameMode:OnAllPlayersLoaded()
 
     -- Identify the building type
     if string.find(building_name, "tower") then
+      building:AddAbility("tower_overpower")
+      local tower_overpower = building:FindAbilityByName("tower_overpower")
+      tower_overpower:SetLevel(0)
 
+      building:AddAbility("tower_stats")
+      local tower_stats = building:FindAbilityByName("tower_stats")
+      tower_stats:SetLevel(0)
 
     elseif string.find(building_name, "rax_melee") then
 

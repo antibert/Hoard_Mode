@@ -4179,7 +4179,7 @@
     }
 
     //=================================================================================================================
-    // Recipe: Manta 2
+    // Recipe: SnYnA
     //=================================================================================================================
     "item_recipe_sange_and_yasha_and_atos_datadriven"
     {
@@ -4206,7 +4206,7 @@
     }
 
     //=================================================================================================================
-    // Manta
+    // SnYnA
     //=================================================================================================================
     "item_sange_and_yasha_and_atos_datadriven"
     {
@@ -4544,4 +4544,70 @@
 		}
 	}
 
+    //=================================================================================================================
+    // Building Upgrade
+    //=================================================================================================================
+    "item_building_upgrade_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"99999"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
+        "Model"							"models/props_gameplay/red_box.vmdl"
+        "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+        "AbilityTextureName"			"item_recipe"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"0"
+        "AbilityCastRange"				"600"
+        "AbilityCastPoint"				"0.0"
+        "AbilityManaCost"				"0"
+
+        "ItemInitialCharges" "1" //How many charges should the item start with - Tango x3
+        "ItemDisplayCharges" "1" //Hide the charges of the item - Aegis
+        "ItemRequiresCharges" "1" //The active ability needs charges to be used - Urn
+        "ItemStackable" "1"
+        "ItemPermanent" "0"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"1500"
+        "ItemShopTags"					"unique"
+        "ItemQuality"					"epic"
+        "ItemAliases"					"upgrade"
+        "ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_NEVER"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "heal_amount"			"500"
+            }
+        }
+
+        "OnSpellStart"
+        {
+            "FireSound"
+            {
+                "EffectName"		"DOTA_Item.RodOfAtos.Activate"
+                "Target"			"TARGET"
+            }
+            "RunScript"
+            {
+                "ScriptFile"			"items/item_upgrade.lua"
+                "Function"				"item_upgrade_tower"
+                "Target"                "TARGET"
+                "heal_amount"           "%heal_amount"
+            }
+            "SpendCharge" {}
+        }
+    }
 }

@@ -1,6 +1,10 @@
 Next Update Patch Notes:
 
 1.12
+Feature:
+UPGRADING TOWERS!
+-- Towers have abilities that are upgraded via a new consumable item
+
 Heroes:
 // Centaur Warrunner
 -- Reverted the radii of his abilities back to vanilla
@@ -12,6 +16,10 @@ Aghanim's Regalia
 -- Upgrade to Aghanim's Scepter
 -- Made from scepter and two Ultimate Orbs
 -- Grants +30 to all stats, +400 health, +300 mana
+Building Upgrade
+-- Consume on a target building to upgrade it
+-- Towers learn abilities up to level 10, is healed if used on it again
+-- Other buildings are healed
 Dragon Javelin
 -- No longer gives increasing amounts of strength and attack speed
 -- No longer can hit towers with the extra spears (same as Cleave)

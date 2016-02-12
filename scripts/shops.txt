@@ -64,7 +64,8 @@
 		"item"		"item_talisman_of_evasion"
 		"item"		"item_ring_of_health"
 		"item"		"item_void_stone"
-		"item"		"item_blink"		
+		"item"		"item_blink"
+		"item"      "item_building_upgrade_datadriven"
 	}	
 	
 	// Level 1 - Green Recipes

@@ -36,7 +36,7 @@ function item_shivas_guard_2_on_spell_start(keys)
 			DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
 
 			for i, individual_unit in ipairs(nearby_enemy_units) do
-				if not individual_unit:HasModifier("modifier_item_shivas_guard_datadriven_blast_debuff") then
+				if not individual_unit:HasModifier("modifier_item_shivas_guard_2_blast_debuff") then
 					ApplyDamage({victim = individual_unit, attacker = keys.caster, damage = keys.BlastDamage, damage_type = DAMAGE_TYPE_MAGICAL,})
 					
 					--This impact particle effect should radiate away from the caster of Shiva's Guard.

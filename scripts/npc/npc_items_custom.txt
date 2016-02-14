@@ -4718,7 +4718,7 @@
             "10"
             {
                 "var_type"						"FIELD_INTEGER"
-                "blast_final_radius"			"900"
+                "blast_radius"			"900"
             }
             "11"
             {
@@ -4733,7 +4733,7 @@
             "13"
             {
                 "var_type"						"FIELD_INTEGER"
-                "blast_movement_speed_debuff"	"-40"
+                "blast_movement_speed"	"-40"
             }
             "14"
             {
@@ -4756,9 +4756,9 @@
         {
             "RunScript"
             {
-                "ScriptFile"					"items/item_shivas_guard.lua"
+                "ScriptFile"					"items/item_shivas_guard_2.lua"
                 "Function"						"item_shivas_guard_2_on_spell_start"
-                "BlastFinalRadius"				"%blast_final_radius"
+                "BlastFinalRadius"				"%blast_radius"
                 "BlastSpeedPerSecond"			"%blast_speed_per_second"
                 "BlastDamage"					"%blast_damage"
                 "BlastVisionRadius"				"%blast_vision_radius"
@@ -4831,7 +4831,7 @@
 
                 "Properties"
                 {
-                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%blast_movement_speed_debuff"
+                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%blast_movement_speed"
                 }
             }
         }

@@ -20,6 +20,15 @@ function item_upgrade_tower( keys )
 				if ability ~= nil then
 					ability:SetLevel(math.min(4, math.floor(level / 2)))
 				end
+
+				local tower_splash = target:FindAbilityByName("tower_splash")
+				if tower_splash ~= nil then
+					tower_splash:SetLevel(math.min(4, math.floor((level - 1) / 2)))
+                    if tower_splash:GetAutoCastState() == false then
+                        tower_splash:ToggleAutoCast()
+                    end
+				end
+
 			end
 		end
 	end

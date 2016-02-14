@@ -96,6 +96,10 @@ function GameMode:OnAllPlayersLoaded()
       local tower_stats = building:FindAbilityByName("tower_stats")
       tower_stats:SetLevel(0)
 
+      building:AddAbility("tower_splash")
+      local tower_splash = building:FindAbilityByName("tower_splash")
+      tower_splash:SetLevel(0)
+
     elseif string.find(building_name, "rax_melee") then
 
 

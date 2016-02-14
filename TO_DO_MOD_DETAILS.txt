@@ -26,6 +26,10 @@ Dragon Javelin
 Radiance 2
 -- Upgrade to Radiance, using a recipe and a Talisman of Evasion
 -- Increases blind percentage and burn damage
+Shiva's Armaments
+-- Made from Shiva's Guard, Veil of Discord, and a recipe
+-- Passive: Aura of -attack speed and -spell resistance
+-- Active: Area of Effect movement slow and damage
 
 ////// Important Changes:
 -- TOOLTIP FOR LARGE GOLEM SP;IT

@@ -30,6 +30,10 @@ Shiva's Armaments
 -- Made from Shiva's Guard, Veil of Discord, and a recipe
 -- Passive: Aura of -attack speed and -spell resistance
 -- Active: Area of Effect movement slow and damage
+Vladmir's Cuirass
+-- Made from Vladmir's Offering, Assault Cuirass, and a recipe
+-- Combines effects of both items
+-- Stacks with Vladmir's Offering or Assault Cuirass (or Ring of Basilius or Ring of Aquila)
 
 ////// Important Changes:
 -- TOOLTIP FOR LARGE GOLEM SP;IT

@@ -4219,7 +4219,7 @@
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
         "Model"							"models/props_gameplay/red_box.vmdl"
         "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-        "AbilityTextureName"			"item_sange_and_yasha"
+        "AbilityTextureName"			"item_sange_and_yasha_and_atos_datadriven"
 
         // Stats
         //-------------------------------------------------------------------------------------------------------------
@@ -4435,7 +4435,7 @@
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
         "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
-        "AbilityTextureName"			"item_ultimate_scepter"
+        "AbilityTextureName"			"item_ultimate_scepter_2"
 
         "AbilityCastRange"				"600"
 
@@ -4507,7 +4507,7 @@
 		"BaseClass"						"item_radiance"
 		"ID"							"99137"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"AbilityTextureName"			"item_radiance"
+		"AbilityTextureName"			"item_radiance_2"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -4558,7 +4558,7 @@
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
         "Model"							"models/props_gameplay/red_box.vmdl"
         "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-        "AbilityTextureName"			"item_recipe"
+        "AbilityTextureName"			"item_building_upgrade"
 
         // Stats
         //-------------------------------------------------------------------------------------------------------------
@@ -4650,7 +4650,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
         "Model"							"models/props_gameplay/red_box.vmdl"
         "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-        "AbilityTextureName"			"item_shivas_guard"
+        "AbilityTextureName"			"item_shivas_guard_2"
         "FightRecapLevel"				"1"
 
         // Stats
@@ -4877,7 +4877,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "Model"							"models/props_gameplay/red_box.vmdl"
         "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-        "AbilityTextureName"			"item_vladmir"
+        "AbilityTextureName"			"item_vladmir_2"
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------

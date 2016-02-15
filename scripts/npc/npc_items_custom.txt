@@ -4846,7 +4846,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_datadriven"
-        "ID"							"1118"  //Valve's version of this item uses the ID "118".
+        "ID"							"91080"  //Valve's version of this item uses the ID "118".
         "Model"							"models/props_gameplay/recipe.mdl"
         "AbilityTextureName"			"item_recipe"
 

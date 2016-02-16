@@ -9691,7 +9691,7 @@
 
         // Stats
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"20 15 10 4"
+        "AbilityCooldown"				"5"
         "AbilityDuration"				"5.0 5.0 5.0 5.0"
         "AbilityCastRange"				"600"
         "AbilityCastPoint"				"0.0 0.0 0.0 0.0"
@@ -9717,7 +9717,7 @@
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "damage"				"15 20 25 30"
+                "damage"				"20 40 60 80"
             }
             "04"
             {
@@ -9915,6 +9915,121 @@
                     "MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
                     "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
                     "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"	"%bonus_damage"
+                }
+            }
+        }
+    }
+
+    "slark_essence_shift_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "AbilityTextureName" 			"slark_essence_shift"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "agi_gain"				"3"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "stat_loss"				"-1"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "duration"				"15 30 45 60"
+            }
+        }
+
+
+        "Modifiers"
+        {
+            "modifier_slark_essence_shift_datadriven"  //This modifier is always on Slark and simply triggers a script when an autoattack lands on an enemy.
+            {
+                "Passive"   "1"
+                "IsHidden"  "1"
+
+                "OnAttackLanded"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"        		"heroes/hero_slark/essence_shift.lua"
+                        "Function"         			"modifier_slark_essence_shift_datadriven_on_attack_landed"
+                        "StatLoss"					"%stat_loss"
+                    }
+                }
+            }
+            "modifier_slark_essence_shift_datadriven_buff_counter"  //A visible counter that will appear in Slark's modifier bar.
+            {
+                "Duration"			"%duration"
+                "Passive"			"0"
+                "IsHidden"			"0"
+            }
+            "modifier_slark_essence_shift_datadriven_debuff_counter"  //A visible counter that will appear in Slark's target's modifier bar.
+            {
+                "Duration"			"%duration"
+                "Passive"			"0"
+                "IsHidden"			"0"
+                "IsBuff"			"0"
+                "IsDebuff"			"1"
+                "IsPurgable"		"0"
+            }
+            "modifier_slark_essence_shift_datadriven_buff"
+            {
+                "Duration"				"%duration"
+                "Passive"				"0"
+                "IsHidden"  			"1"
+                "Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%agi_gain"
+                }
+
+                "OnDestroy"  //Decrement the visible counter.
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"        		"heroes/hero_slark/essence_shift.lua"
+                        "Function"         			"modifier_slark_essence_shift_datadriven_buff_on_destroy"
+                    }
+                }
+            }
+            "modifier_slark_essence_shift_datadriven_debuff"
+            {
+                "Duration"				"%duration"
+                "Passive"				"0"
+                "IsHidden"  			"1"
+                "Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                // loses 19 maximum health, 0.03 health regen, 0.14 armor, 1 attack speed, 13 maximum mana, 0.04 mana regen and 1 attack damage
+                    "MODIFIER_PROPERTY_HEALTH_BONUS"		"%stat_loss * 19"
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%stat_loss * 0.03"
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%stat_loss * 0.14"
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%stat_loss"
+                    "MODIFIER_PROPERTY_MANA_BONUS"		"%stat_loss * 13"
+                    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"%stat_loss * 0.04"
+                    "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"			"%stat_loss"
+                }
+
+                "OnDestroy"  //Decrement the visible counter.
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"        		"heroes/hero_slark/essence_shift.lua"
+                        "Function"         			"modifier_slark_essence_shift_datadriven_debuff_on_destroy"
+                    }
                 }
             }
         }

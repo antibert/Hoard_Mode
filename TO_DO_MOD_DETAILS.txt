@@ -11,6 +11,13 @@ Heroes:
 -- Reduced the damage dealt by his ultimate
 // Crystal Maiden
 -- Fixed bug with Arcana Aura not giving her any mana recovery
+// Mirana
+-- Reduced cooldown on Leap
+// Slark
+-- Added!
+-- Replaced Pounce with Leap (shared with Mirana)
+-- Dark Pact damage increased
+-- Essence Shift altered to work on all units, has reduced duration
 Items:
 Aghanim's Regalia
 -- Upgrade to Aghanim's Scepter

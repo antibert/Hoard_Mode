@@ -13,7 +13,7 @@ TREE_REGROW_TIME = 60.0                 -- How long should it take individual tr
 GOLD_PER_TICK = 1                     -- How much gold should players get per tick?
 GOLD_TICK_TIME = 0.6                      -- How long should we wait in seconds between gold ticks?
 
-RECOMMENDED_BUILDS_DISABLED = true     -- Should we disable the recommened builds for heroes
+RECOMMENDED_BUILDS_DISABLED = false     -- Should we disable the recommened builds for heroes
 CAMERA_DISTANCE_OVERRIDE = 1134.0       -- How far out should we allow the camera to go?  1134 is the default in Dota
 
 MINIMAP_ICON_SIZE = 1                   -- What icon size should we use for our heroes?
@@ -21,7 +21,7 @@ MINIMAP_CREEP_ICON_SIZE = 1             -- What icon size should we use for cree
 MINIMAP_RUNE_ICON_SIZE = 1              -- What icon size should we use for runes?
 
 RUNE_SPAWN_TIME = 120                   -- How long in seconds should we wait between rune spawns?
-CUSTOM_BUYBACK_COST_ENABLED = true      -- Should we use a custom buyback cost setting?
+CUSTOM_BUYBACK_COST_ENABLED = false      -- Should we use a custom buyback cost setting?
 CUSTOM_BUYBACK_COOLDOWN_ENABLED = false  -- Should we use a custom buyback time?
 BUYBACK_ENABLED = true                 -- Should we allow people to buyback when they die?
 

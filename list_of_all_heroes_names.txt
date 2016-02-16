@@ -15,7 +15,6 @@ All Heroes not in game:
 "npc_dota_hero_furion
 "npc_dota_hero_necrolyte
 "npc_dota_hero_nyx_assassin
-"npc_dota_hero_ogre_magi
 "npc_dota_hero_oracle
 "npc_dota_hero_obsidian_destroyer
 "npc_dota_hero_pudge

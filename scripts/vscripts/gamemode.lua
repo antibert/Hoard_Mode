@@ -179,6 +179,13 @@ end
 function GameMode:OnHeroInGame(hero)
   DebugPrint("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
 
+
+
+  if hero:GetUnitName() == "npc_dota_hero_ogre_magi" then
+    local multicast = hero:FindAbilityByName("ogre_magi_multicast")
+    multicast:SetLevel(1)
+  end
+
   -- This line for example will set the starting gold of every hero to 500 unreliable gold
   -- hero:SetGold(50000, false)
 

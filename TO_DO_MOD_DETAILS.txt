@@ -11,10 +11,17 @@ Heroes:
 -- Reduced the damage dealt by his ultimate
 // Crystal Maiden
 -- Fixed bug with Arcana Aura not giving her any mana recovery
+// Ogre Magi
+-- Enabled!
+-- Increased damage of Fireblast
+-- Increased damage and reduced mana cost of Unrefined Fireblast
+-- Increased damage and reduced cooldown of Ignite
+-- Multicast is now 4 levels, of which the first level is granted for free at level 1
+-- The first level only turns Ignite into an AoE
 // Mirana
 -- Reduced cooldown on Leap
 // Slark
--- Added!
+-- Enabled!
 -- Replaced Pounce with Leap (shared with Mirana)
 -- Dark Pact damage increased
 -- Essence Shift altered to work on all units, has reduced duration

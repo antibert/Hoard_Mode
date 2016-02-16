@@ -11,6 +11,10 @@ Heroes:
 -- Reduced the damage dealt by his ultimate
 // Crystal Maiden
 -- Fixed bug with Arcana Aura not giving her any mana recovery
+// Earth Spirit
+-- Enabled!
+-- Increased damage of all his abilities
+-- Reduced cooldown on several of his abilities
 // Ogre Magi
 -- Enabled!
 -- Increased damage of Fireblast

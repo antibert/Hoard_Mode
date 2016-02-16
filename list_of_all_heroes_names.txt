@@ -10,7 +10,6 @@ All Heroes not in game:
 "npc_dota_hero_brewmaster
 "npc_dota_hero_clinkz
 "npc_dota_hero_rattletrap
-"npc_dota_hero_earth_spirit
 "npc_dota_hero_huskar
 "npc_dota_hero_furion
 "npc_dota_hero_necrolyte

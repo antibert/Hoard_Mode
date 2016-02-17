@@ -6,6 +6,11 @@ UPGRADING TOWERS!
 -- Towers have abilities that are upgraded via a new consumable item
 
 Heroes:
+// Batrider
+-- Enabled!
+-- Increased damage and duration of Flamebreak DoT
+-- Reduced cooldown and mana cost, and increased cast range of Flaming Lasso
+-- Increased damage of Flaming Lasso aghanim's scepter
 // Centaur Warrunner
 -- Reverted the radii of his abilities back to vanilla
 -- Reduced the damage dealt by his ultimate

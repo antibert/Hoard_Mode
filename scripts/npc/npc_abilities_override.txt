@@ -6070,4 +6070,114 @@
             }
         }
     }
+
+    //=================================================================================================================
+    // Batrider: Flamebreak
+    //=================================================================================================================
+    "batrider_flamebreak"
+    {
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"25 35 45 55"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_duration"		"6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_total_tooltip"		"150 210 270 330"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"explosion_radius"		"375 375 375 375"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"collision_radius"		"100 100 100 100"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"0.5 0.5 0.5 0.5"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"speed"					"900 900 900 900"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_max_distance"	"400"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_height"		"100 100 100 100"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"0.25 0.25 0.25 0.25"
+			}
+		}
+    }
+
+    //=================================================================================================================
+    // Batrider: Flaming Lasso
+    //=================================================================================================================
+    "batrider_flaming_lasso"{
+        "AbilityCastRange"				"300"
+        "AbilityCooldown"				"20 15 10"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"135"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "duration"				"3.0 3.5 4.0"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "drag_distance"			"300 300 300"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "break_distance"		"425"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "grab_radius"		"400"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "grab_radius_scepter"		"400"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "scepter_damage"		"200"
+            }
+        }
+    }
 }	

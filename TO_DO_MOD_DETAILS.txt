@@ -39,7 +39,10 @@ Heroes:
 -- Dark Pact damage increased
 -- Essence Shift altered to work on all units, has reduced duration
 // Spirit Breaker
--- Increased movement speed and aura radius of Empowering Haste
+-- Increased movement speed of Empowering Haste
+-- Changed Empowering Haste to grant extra speed to Spirit Breaker
+-- Removed Empowering Haste's active effect
+-- Reduced cooldown and changed damage scaling of Greater Bash
 -- Increased radius of Aghanim's Scepter Nether Strike
 // Tusk
 -- Enabled!

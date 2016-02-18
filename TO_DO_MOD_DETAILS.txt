@@ -38,6 +38,10 @@ Heroes:
 -- Replaced Pounce with Leap (shared with Mirana)
 -- Dark Pact damage increased
 -- Essence Shift altered to work on all units, has reduced duration
+// Tusk
+-- Enabled!
+-- Increased damage of Ice Shards
+-- Increased damage of Snowball
 Items:
 Aghanim's Regalia
 -- Upgrade to Aghanim's Scepter

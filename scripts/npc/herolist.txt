@@ -70,6 +70,7 @@
 	"npc_dota_hero_slark"       "1"
 	"npc_dota_hero_sniper"   "1"
 	"npc_dota_hero_spectre"     "1"
+	"npc_dota_hero_spirit_breaker"  "1"
 	"npc_dota_hero_storm_spirit"		"1"
 	"npc_dota_hero_sven"			"1"
     "npc_dota_hero_techies"    "1"

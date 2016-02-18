@@ -275,6 +275,14 @@
         "Ability5"              "attribute_bonus"
         "Ability6"              ""
     }
+    //=================================================================================================================
+    // HERO: Spirit Breaker
+    //=================================================================================================================
+    "npc_dota_hero_spirit_breaker_holdout"
+    {
+        "override_hero"			"npc_dota_hero_spirit_breaker"
+        "Ability2"				"spirit_breaker_empowering_haste_datadriven"
+    }
 	//=================================================================================================================
 	// HERO: Tidehunter
 	//=================================================================================================================
@@ -299,119 +307,6 @@
 		"override_hero"			"npc_dota_hero_treant"
 		"Ability1"				"furion_wrath_of_nature" 
 	}
-	//=================================================================================================================
-    // Tusk: Ice Shards
-    //=================================================================================================================
-    "tusk_ice_shards"
-    {
-        // Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"shard_width"				"200"
-			}
-
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"shard_damage"				"100 200 300 400"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"shard_count"				"7"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"shard_speed"				"1100.0"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"shard_duration"				"7.0"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"shard_angle_step"			"40.0"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"shard_distance"			"200"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_tooltip"			"1800"
-			}
-		}
-    }
-    //=================================================================================================================
-    // Tusk: Snowball
-    //=================================================================================================================
-    "tusk_snowball"
-    {
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "snowball_damage"			"100 200 300 400"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "snowball_speed"			"675"
-            }
-            "03"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "snowball_damage_bonus"		"50 50 100 100"
-            }
-            "04"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "stun_duration"				"0.5 0.75 1.0 1.25"
-            }
-            "05"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "snowball_windup_radius"	"100"
-            }
-            "06"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "snowball_duration"			"3.0"
-            }
-            "07"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "snowball_radius"			"200"
-            }
-            "08"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "snowball_grow_rate"		"40"
-            }
-            "09"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "snowball_windup"			"3.0"
-            }
-            "10"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "snowball_grab_radius"		"350"
-            }
-        }
-    }
 	//=================================================================================================================
 	// HERO: Undying
 	//=================================================================================================================

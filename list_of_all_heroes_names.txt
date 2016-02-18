@@ -18,7 +18,6 @@ All Heroes not in game:
 "npc_dota_hero_riki
 "npc_dota_hero_silencer
 "npc_dota_hero_skywrath_mage
-"npc_dota_hero_spirit_breaker
 "npc_dota_hero_terrorblade
 "npc_dota_hero_visage
 )

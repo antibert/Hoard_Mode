@@ -38,10 +38,13 @@ Heroes:
 -- Replaced Pounce with Leap (shared with Mirana)
 -- Dark Pact damage increased
 -- Essence Shift altered to work on all units, has reduced duration
+// Spirit Breaker
+-- Increased movement speed and aura radius of Empowering Haste
+-- Increased radius of Aghanim's Scepter Nether Strike
 // Tusk
 -- Enabled!
 -- Increased damage of Ice Shards
--- Increased damage of Snowball
+-- Increased damage and radius of Snowball
 Items:
 Aghanim's Regalia
 -- Upgrade to Aghanim's Scepter

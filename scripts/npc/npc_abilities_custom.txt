@@ -10034,4 +10034,48 @@
             }
         }
     }
+
+    //=================================================================================================================
+    // Bloodseeker: Thirst
+    //=================================================================================================================
+    "bloodseeker_thirst_datadriven"
+    {
+        // General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"bloodseeker_thirst"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_damage"	"15 30 45 60"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_movespeed"						"10 20 30 40"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_thirst_datadriven"
+			{
+				"Passive"						"1"
+				"IsHidden"						"1"
+				"IsPurgable"					"0"
+
+				"Properties"
+                {
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%bonus_movespeed"
+                }
+			}
+		}
+    }
 }

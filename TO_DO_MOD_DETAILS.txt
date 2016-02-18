@@ -11,6 +11,10 @@ Heroes:
 -- Increased damage and duration of Flamebreak DoT
 -- Reduced cooldown and mana cost, and increased cast range of Flaming Lasso
 -- Increased damage of Flaming Lasso aghanim's scepter
+// Bloodseeker
+-- Enabled!
+-- Increased damage and reduced cooldown of Blood Rite
+-- Thirst now grants flat damage and movespeed bonus per level
 // Centaur Warrunner
 -- Reverted the radii of his abilities back to vanilla
 -- Reduced the damage dealt by his ultimate

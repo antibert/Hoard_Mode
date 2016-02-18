@@ -97,4 +97,5 @@
 	"npc_dota_hero_ogre_magi"   "1"
 	"npc_dota_hero_earth_spirit"    "1"
 	"npc_dota_hero_batrider"    "1"
+	"npc_dota_hero_rattletrap"  "1"
 }

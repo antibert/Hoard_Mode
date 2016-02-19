@@ -5,7 +5,6 @@ All Heroes not in game:
 "npc_dota_hero_ancient_apparition
 "npc_dota_hero_bane
 "npc_dota_hero_bounty_hunter
-"npc_dota_hero_brewmaster
 "npc_dota_hero_clinkz
 "npc_dota_hero_huskar
 "npc_dota_hero_furion

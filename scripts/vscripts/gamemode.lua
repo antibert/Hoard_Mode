@@ -101,10 +101,14 @@ function GameMode:OnAllPlayersLoaded()
       tower_splash:SetLevel(0)
 
     elseif string.find(building_name, "rax_melee") then
-
+      building:AddAbility("building_stats")
+      local building_stats = building:FindAbilityByName("building_stats")
+      building_stats:SetLevel(0)
 
     elseif string.find(building_name, "rax_range") then
-
+      building:AddAbility("building_stats")
+      local building_stats = building:FindAbilityByName("building_stats")
+      building_stats:SetLevel(0)
 
     elseif string.find(building_name, "fort") then
       DebugPrint("Adding abilities to ancient")

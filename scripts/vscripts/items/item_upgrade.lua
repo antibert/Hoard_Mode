@@ -31,6 +31,16 @@ function item_upgrade_tower( keys )
 
 			end
 		end
+	else
+		local building_stats = target:FindAbilityByName("building_stats")
+		if building_stats ~= nil then
+			local level = building_stats:GetLevel()
+			if level < 10 then
+				level = level + 1
+				building_stats:SetLevel(level)
+				heal_target = false
+			end
+		end
 	end
 
 	if heal_target then

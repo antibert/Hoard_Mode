@@ -4,6 +4,10 @@ Next Update Patch Notes:
 Feature:
 UPGRADING TOWERS!
 -- Towers have abilities that are upgraded via a new consumable item
+UPGRADING BARRACKS!
+-- Upgrading your melee barracks will increase the maximum amount of friendly creeps, as well as the amount spawned at a time.
+-- Upgrading your ranged barracks will increase the level of your friendly creeps.
+-- Currently only implemented in 2p medium, will be in other maps soon!
 
 Heroes:
 // Batrider

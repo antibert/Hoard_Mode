@@ -9920,6 +9920,60 @@
         }
     }
 
+    "building_stats"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"			"global_armor"
+
+        "MaxLevel"						"10"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "bonus_armor"	"1 2 3 4 5 6 7 8 9 10"
+            }
+            "02"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "bonus_armor_lvl"	"1"
+            }
+            "03"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "bonus_health"      "100 200 300 400 500 600 700 800 900 1000"
+            }
+            "04"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "bonus_health_lvl"      "100"
+            }
+        }
+
+        "Modifiers"
+        {
+
+            "modifier_tower_stats"
+            {
+                "Passive"			"1"
+                "IsHidden"  "1"
+                "IsBuff"	"1"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+                    "MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
+                }
+            }
+        }
+    }
+
     "slark_essence_shift_datadriven"
     {
         // General

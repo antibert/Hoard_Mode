@@ -4556,6 +4556,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BUILDING"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
         "Model"							"models/props_gameplay/red_box.vmdl"
         "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
         "AbilityTextureName"			"item_building_upgrade"
@@ -4575,7 +4576,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"1500"
+        "ItemCost"						"1250"
         "ItemShopTags"					"unique"
         "ItemQuality"					"epic"
         "ItemAliases"					"upgrade"

@@ -3415,8 +3415,8 @@
 			"HPGain"					"75"
 			"DamageGain"				"15"
 			"ArmorGain"					"1"
-			"MagicResistGain"			"1"
-			"MoveSpeedGain"				"1"
+			"MagicResistGain"			"3"
+			"MoveSpeedGain"				"5"
 			"BountyGain"				"5"
 			"XPGain"					"20"
 		}

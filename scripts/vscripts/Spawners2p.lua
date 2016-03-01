@@ -7,8 +7,6 @@ if Spawners2p == nil then
 end
 
 require('SpawnTimers2p')
-require('libraries/spawners')
-
 
 -- bOSEES
 

@@ -190,7 +190,7 @@ function GameMode:OnHeroInGame(hero)
     multicast:SetLevel(1)
   end
 
-  -- This line for example will set the starting gold of every hero to 500 unreliable gold
+  -- This line for example will set the starting gold of every hero to 50000 unreliable gold
   -- hero:SetGold(50000, false)
 
   -- These lines will create an item and add it to the player, effectively ensuring they start with the item

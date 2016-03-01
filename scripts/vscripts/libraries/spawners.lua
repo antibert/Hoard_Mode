@@ -2,6 +2,21 @@ if Spawner == nil then
   print ( '[Spawner] creating Spawner' )
   Spawner = {}
   Spawner.__index = Spawner
+
+  bottomFriends = {}
+  for i=1, 30 do
+    bottomFriends[i] = nil
+  end
+
+  topFriends = {}
+  for i=1, 30 do
+    topFriends[i] = nil
+  end
+
+  midFriends = {}
+  for i=1, 30 do
+    midFriends[i] = nil
+  end
 end
 
 require('libraries/timers')
@@ -9,6 +24,7 @@ require('libraries/timers')
 function Spawner:new( o )
   o = o or {}
   setmetatable( o, Spawner )
+
   return o
 end
 
@@ -64,4 +80,81 @@ function Spawner:SpawnTimer(keys)
     end
     return nextCall
   end)
+end
+
+function Spawner:SpawnFriend(keys)
+  local pointEntity = keys.point
+  local waypointEntity = keys.waypoint
+  local lane = keys.lane
+  local unit = keys.unit
+  local max_spawn = keys.max_spawn
+  local meleeBarracksEntity = "good_rax_melee_mid"
+  local rangedBarracksEntity = "good_rax_melee_mid"
+  local unitArray = midFriends
+
+  if lane == "top" then
+    meleeBarracksEntity = "good_rax_melee_top"
+    rangedBarracksEntity = "good_rax_melee_top"
+    unitArray = topFriends
+  elseif lane == "bot" then
+    meleeBarracksEntity = "good_rax_melee_bot"
+    rangedBarracksEntity = "good_rax_melee_bot"
+    unitArray = bottomFriends
+  end
+
+  local point = Entities:FindByName(nil, pointEntity):GetAbsOrigin()
+  local waypoint = Entities:FindByName(nil, waypointEntity):GetAbsOrigin()
+  local spawned_units = 0
+  local extra_spawn = 0
+
+  local melee_barracks = Entities:FindByName(nil, meleeBarracksEntity)
+  if melee_barracks ~= nil then
+    local building_stats = melee_barracks:FindAbilityByName("building_stats")
+    if building_stats ~= nil then
+      max_spawn = max_spawn + math.floor(building_stats:GetLevel() / 2)
+
+      if building_stats:GetLevel() > 9 then
+        extra_spawn = 2
+      elseif building_stats:GetLevel() > 4 then
+        extra_spawn = 1
+      end
+    end
+  end
+
+  local ranged_barracks = Entities:FindByName(nil, rangedBarracksEntity)
+  local unit_level = 0
+  if ranged_barracks ~= nil then
+    local ranged_building_stats = ranged_barracks:FindAbilityByName("building_stats")
+    if ranged_building_stats ~= nil then
+      unit_level = ranged_building_stats:GetLevel()
+    end
+  end
+
+  for j=1, max_spawn do
+    if spawned_units > extra_spawn then
+      break
+    end
+    if unitArray[j] ~= nil then
+      if unitArray[j]:IsNull() == true then
+        unitArray[j] = nil
+      end
+    end
+    if unitArray[j] == nil then
+      Timers:CreateTimer(function()
+        unitArray[j] = CreateUnitByName(unit, point, true, nil, nil, DOTA_TEAM_GOODGUYS)
+        -- for testing purposes
+        -- bottomFriends[j]:SetMaxHealth(100)
+        if unit_level > 0 then
+          unitArray[j]:CreatureLevelUp(unit_level)
+        end
+
+        ExecuteOrderFromTable({	UnitIndex = unitArray[j]:GetEntityIndex(),
+          OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+          Position = waypoint, Queue = true} )
+        print("Move ",unitArray[j]:GetEntityIndex()," to ", waypoint)
+        print("Friendly bot creep spawned at index: " .. tostring(j))
+      end)
+      spawned_units = spawned_units + 1
+    end
+  end
 end

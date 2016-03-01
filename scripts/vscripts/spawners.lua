@@ -1,12 +1,9 @@
 if Spawners == nil then
 	Spawners = class({})
-	bottomFriends = {}
-	for i=1, 12 do
-		bottomFriends[i] = nil
-	end
 end
 
 require('SpawnTimers')
+require('libraries/spawners')
 
 -- MID Lane Spawners
 
@@ -2401,63 +2398,33 @@ end
 -- Neutral Camps/Map
 
 function Spawners:SpawnFriend()
-	local point = Entities:FindByName(nil, "spawner7"):GetAbsOrigin()
-	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_goodguys_2"):GetAbsOrigin()
-	local units_to_spawn = 1
-	local spawned_units = 0
-	for j=1, 8 do
-		if spawned_units > 0 then
-			break
-		end
-		if bottomFriends[j] ~= nil then
-			if bottomFriends[j]:IsNull() == true then
-				bottomFriends[j] = nil
-			end
-		end
-		if bottomFriends[j] == nil then
-			Timers:CreateTimer(function()
-				bottomFriends[j] = CreateUnitByName("npc_dota_creature_friend_easy", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
-				-- for testing purposes
-				-- bottomFriends[j]:SetMaxHealth(100)
-				ExecuteOrderFromTable({	UnitIndex = bottomFriends[j]:GetEntityIndex(),
-										OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-										Position = waypoint, Queue = true} )
-				print("Move ",bottomFriends[j]:GetEntityIndex()," to ", waypoint)
-				print("Friendly bot creep spawned at index: " .. tostring(j))
-			end)
-			spawned_units = spawned_units + 1
-		end
-	end
+	Spawner:SpawnFriend({
+		point = "spawner7",
+		waypoint = "lane_bot_pathcorner_goodguys_2",
+		lane = "bot",
+		unit = "npc_dota_creature_friend_easy",
+		max_spawn = 8
+	})
 end
 
 function Spawners:SpawnFriend2()
-	local point = Entities:FindByName(nil, "spawner8"):GetAbsOrigin()
-	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_3"):GetAbsOrigin()
-	local units_to_spawn = 1
-	for i=1,units_to_spawn do
-		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_friend_base", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
-			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
-									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
-		end)
-	end
+	Spawner:SpawnFriend({
+		point = "spawner8",
+		waypoint = "lane_top_pathcorner_badguys_3",
+		lane = "top",
+		unit = "npc_dota_creature_friend_base",
+		max_spawn = 8
+	})
 end
 
 function Spawners:SpawnFriend3()
-	local point = Entities:FindByName(nil, "spawner9"):GetAbsOrigin()
-	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_2b"):GetAbsOrigin()
-	local units_to_spawn = 1
-	for i=1,units_to_spawn do
-		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_friend_base2", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
-			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
-									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
-		end)
-	end
+	Spawner:SpawnFriend({
+		point = "spawner9",
+		waypoint = "lane_top_pathcorner_badguys_2b",
+		lane = "mid",
+		unit = "npc_dota_creature_friend_base",
+		max_spawn = 8
+	})
 end
 
 function Spawners:SpawnMoney()

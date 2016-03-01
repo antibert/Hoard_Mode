@@ -1,12 +1,9 @@
 if Spawners2p == nil then
 	Spawners2p = class({})
-	bottomFriends = {}
-	for i=1, 30 do
-		bottomFriends[i] = nil
-	end
 end
 
 require('SpawnTimers2p')
+require('libraries/spawners')
 
 -- bOSEES
 
@@ -504,62 +501,13 @@ end
 -- Neutral Camps/Map
 
 function Spawners2p:SpawnFriend()
-	local point = Entities:FindByName(nil, "spawner7"):GetAbsOrigin()
-	local waypoint = Entities:FindByName(nil, "lane_bot_pathcorner_goodguys_2"):GetAbsOrigin()
-	local spawned_units = 0
-    local max_spawn = 12
-    local extra_spawn = 0
-
-    local melee_barracks = Entities:FindByName(nil, "good_rax_melee_mid")
-    if melee_barracks ~= nil then
-        local building_stats = melee_barracks:FindAbilityByName("building_stats")
-        if building_stats ~= nil then
-            max_spawn = max_spawn + Math.floor(building_stats:GetLevel() / 2)
-
-            if building_stats:GetLevel() > 9 then
-                extra_spawn = 2
-            elseif building_stats:GetLevel() > 4 then
-                extra_spawn = 1
-            end
-        end
-    end
-
-    local ranged_barracks = Entities:FindByName(nil, "good_rax_range_mid")
-    local unit_level = 0
-    if ranged_barracks ~= nil then
-        local ranged_building_stats = ranged_barracks:FindAbilityByName("building_stats")
-        if ranged_building_stats ~= nil then
-            unit_level = ranged_building_stats:GetLevel()
-        end
-    end
-
-	for j=1, max_spawn do
-		if spawned_units > extra_spawn then
-			break
-		end
-		if bottomFriends[j] ~= nil then
-			if bottomFriends[j]:IsNull() == true then
-				bottomFriends[j] = nil
-			end
-		end
-		if bottomFriends[j] == nil then
-			Timers:CreateTimer(function()
-				bottomFriends[j] = CreateUnitByName("npc_dota_creature_friend_easy", point, true, nil, nil, DOTA_TEAM_GOODGUYS)
-				-- for testing purposes
-				-- bottomFriends[j]:SetMaxHealth(100)
-                if unit_level > 0 then
-                    bottomFriends[j]:CreatureLevelUp(unit_level)
-                end
-
-				ExecuteOrderFromTable({	UnitIndex = bottomFriends[j]:GetEntityIndex(),
-										OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-										Position = waypoint, Queue = true} )
-				print("Move ",bottomFriends[j]:GetEntityIndex()," to ", waypoint)
-				print("Friendly bot creep spawned at index: " .. tostring(j))
-			end)
-			spawned_units = spawned_units + 1
-		end
-	end
+    Spawner:SpawnFriend({
+        point = "spawner7",
+        waypoint = "lane_bot_pathcorner_goodguys_2",
+        lane = "mid",
+        unit = "npc_dota_creature_friend_easy",
+        max_spawn = 12
+    })
 end
 
 function Spawners2p:SpawnMoney()

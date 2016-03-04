@@ -89,16 +89,16 @@ function Spawner:SpawnFriend(keys)
   local unit = keys.unit
   local max_spawn = keys.max_spawn
   local meleeBarracksEntity = "good_rax_melee_mid"
-  local rangedBarracksEntity = "good_rax_melee_mid"
+  local rangedBarracksEntity = "good_rax_range_mid"
   local unitArray = midFriends
 
   if lane == "top" then
     meleeBarracksEntity = "good_rax_melee_top"
-    rangedBarracksEntity = "good_rax_melee_top"
+    rangedBarracksEntity = "good_rax_range_top"
     unitArray = topFriends
   elseif lane == "bot" then
     meleeBarracksEntity = "good_rax_melee_bot"
-    rangedBarracksEntity = "good_rax_melee_bot"
+    rangedBarracksEntity = "good_rax_range_bot"
     unitArray = bottomFriends
   end
 

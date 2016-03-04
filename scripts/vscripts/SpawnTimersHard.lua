@@ -713,11 +713,11 @@ Timers:CreateTimer("largebears", {
     end)	
 	Timers:CreateTimer(300, function()
 		SpawnersHard:SpawnFriend2()
-		return 3600.0
+		return 60.0
     end)
 	Timers:CreateTimer(300, function()
 		SpawnersHard:SpawnFriend3()
-		return 3600.0
+		return 60.0
     end)
 	
 	Timers:CreateTimer("money", {

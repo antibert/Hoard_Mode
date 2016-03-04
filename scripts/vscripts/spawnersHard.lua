@@ -1321,7 +1321,7 @@ function SpawnersHard:SpawnFriend2()
 		waypoint = "lane_top_pathcorner_badguys_3",
 		lane = "top",
 		unit = "npc_dota_creature_friend",
-		max_spawn = 8
+		max_spawn = 1
 	})
 end
 
@@ -1331,7 +1331,7 @@ function SpawnersHard:SpawnFriend3()
 		waypoint = "lane_top_pathcorner_badguys_2b",
 		lane = "mid",
 		unit = "npc_dota_creature_friend_base",
-		max_spawn = 8
+		max_spawn = 1
 	})
 end
 

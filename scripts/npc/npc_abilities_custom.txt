@@ -9990,7 +9990,7 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "agi_gain"				"3"
+                "agi_gain"				"3 4 5 6"
             }
             "02"
             {
@@ -10000,7 +10000,7 @@
             "03"
             {
                 "var_type"				"FIELD_FLOAT"
-                "duration"				"15 30 45 60"
+                "duration"				"15"
             }
         }
 

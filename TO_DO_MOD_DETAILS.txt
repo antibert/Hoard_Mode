@@ -21,6 +21,9 @@ Heroes:
 // Centaur Warrunner
 -- Reverted the radii of his abilities back to vanilla
 -- Reduced the damage dealt by his ultimate
+// Clockwerk
+-- Enabled!
+-- Reduced duration and increased damage on most abilities
 // Crystal Maiden
 -- Fixed bug with Arcana Aura not giving her any mana recovery
 // Earth Spirit
@@ -40,7 +43,7 @@ Heroes:
 -- Enabled!
 -- Replaced Pounce with Leap (shared with Mirana)
 -- Dark Pact damage increased
--- Essence Shift altered to work on all units, has reduced duration
+-- Essence Shift altered to work on all units, has reduced duration, grants higher agility per rank
 // Spirit Breaker
 -- Increased movement speed of Empowering Haste
 -- Changed Empowering Haste to grant extra speed to Spirit Breaker

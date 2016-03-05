@@ -37,6 +37,11 @@ Heroes:
 -- Reduced cooldown on several of his abilities
 // Mirana
 -- Reduced cooldown on Leap
+// Necrophos
+-- Enabled!
+-- Capped Heartstopper Aura damage to 50 per second
+-- Reduced Sadist mana and hp regeneration
+-- Capped Reaper's Scythe damage to 3000 (4500 with scepter)
 // Ogre Magi
 -- Enabled!
 -- Increased damage of Fireblast

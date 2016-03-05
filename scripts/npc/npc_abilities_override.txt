@@ -6804,4 +6804,34 @@
             }
         }
     }
+
+    //=================================================================================================================
+    // Ability: Necrolyte's Sadist
+    //=================================================================================================================
+    "necrolyte_sadist"
+    {
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "mana_regen"		"1 2 3 4"
+            }
+            "02"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "hero_multiplier"	"10"
+            }
+            "03"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "health_regen"		"0.5 1 1.5 2"
+            }
+            "04"
+            {
+                "var_type"			"FIELD_FLOAT"
+                "regen_duration"			"6.0"
+            }
+        }
+    }
 }

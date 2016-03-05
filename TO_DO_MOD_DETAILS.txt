@@ -2,11 +2,11 @@ Next Update Patch Notes:
 
 1.12
 Feature:
-UPGRADING TOWERS!
--- Towers have abilities that are upgraded via a new consumable item
-UPGRADING BARRACKS!
--- Upgrading your melee barracks will increase the maximum amount of friendly creeps, as well as the amount spawned at a time.
--- Upgrading your ranged barracks will increase the level of your friendly creeps.
+BETA FEATURE: BUILDING UPGRADES!
+-- There is a new consumable item in the store, called "Building Upgrade".
+-- Using this item on a tower will increase the building's level up to 10.
+-- Towers have abilities that are gained as it levels
+-- If a building cannot be upgraded (either due to being max level or not a tower), it will be healed
 
 Heroes:
 // Batrider

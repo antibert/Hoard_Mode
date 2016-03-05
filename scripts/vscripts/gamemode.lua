@@ -100,27 +100,27 @@ function GameMode:OnAllPlayersLoaded()
       local tower_splash = building:FindAbilityByName("tower_splash")
       tower_splash:SetLevel(0)
 
-    elseif string.find(building_name, "rax_melee") then
-      building:AddAbility("building_stats")
-      local building_stats = building:FindAbilityByName("building_stats")
-      building_stats:SetLevel(0)
-
-    elseif string.find(building_name, "rax_range") then
-      building:AddAbility("building_stats")
-      local building_stats = building:FindAbilityByName("building_stats")
-      building_stats:SetLevel(0)
+--    elseif string.find(building_name, "rax_melee") then
+--      building:AddAbility("building_stats")
+--      local building_stats = building:FindAbilityByName("building_stats")
+--      building_stats:SetLevel(0)
+--
+--    elseif string.find(building_name, "rax_range") then
+--      building:AddAbility("building_stats")
+--      local building_stats = building:FindAbilityByName("building_stats")
+--      building_stats:SetLevel(0)
 
     elseif string.find(building_name, "fort") then
       DebugPrint("Adding abilities to ancient")
       -- Add passive buff
       building:AddAbility("global_armor_buff")
       local ancient_ability = building:FindAbilityByName("global_armor_buff")
-      ancient_ability:SetLevel(1)
+      ancient_ability:SetLevel(0)
 
       -- Add passive buff
       building:AddAbility("global_offense_buff")
       local ancient_ability = building:FindAbilityByName("global_offense_buff")
-      ancient_ability:SetLevel(1)
+      ancient_ability:SetLevel(0)
 
     elseif string.find(building_name, "fountain") then
       -- Do nothing (fountain was already modified previously)
@@ -191,7 +191,7 @@ function GameMode:OnHeroInGame(hero)
   end
 
   -- This line for example will set the starting gold of every hero to 50000 unreliable gold
-  hero:SetGold(50000, false)
+  -- hero:SetGold(50000, false)
 
   -- These lines will create an item and add it to the player, effectively ensuring they start with the item
   -- local item = CreateItem("item_example_item", hero, hero)

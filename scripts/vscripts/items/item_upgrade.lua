@@ -45,5 +45,7 @@ function item_upgrade_tower( keys )
 
 	if heal_target then
 		target:Heal(heal, caster)
+	else
+		target:Heal(heal * 0.2, caster)
 	end
 end

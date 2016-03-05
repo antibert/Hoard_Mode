@@ -6824,7 +6824,7 @@
             }
             "03"
             {
-                "var_type"			"FIELD_INTEGER"
+                "var_type"			"FIELD_FLOAT"
                 "health_regen"		"0.5 1 1.5 2"
             }
             "04"

@@ -8,8 +8,16 @@ function ReapersScythe( keys )
 	local ability = keys.ability
 	local target_missing_hp = target:GetMaxHealth() - target:GetHealth()
 	local damage_per_health = ability:GetLevelSpecialValueFor("damage_per_health", (ability:GetLevel() - 1))
+	local damage_per_health_scepter = ability:GetLevelSpecialValueFor("damage_per_health_scepter", (ability:GetLevel() - 1))
 	local respawn_time = ability:GetLevelSpecialValueFor("respawn_constant", (ability:GetLevel() - 1))
 	local max_damage = ability:GetLevelSpecialValueFor("max_damage", (ability:GetLevel() - 1))
+	local max_damage_scepter = ability:GetLevelSpecialValueFor("max_damage_scepter", (ability:GetLevel() - 1))
+	local has_scepter = caster:HasScepter()
+
+	if has_scepter then
+		damage_per_health = damage_per_health_scepter
+		max_damage = max_damage_scepter
+	end
 
 	local damage_table = {}
 

@@ -35,6 +35,9 @@ Heroes:
 -- Enabled!
 -- Increased damage of all his abilities
 -- Reduced cooldown on several of his abilities
+// Huskar
+-- Enabled!
+-- Capped Life Break damage to 2000 (3500 with scepter)
 // Mirana
 -- Reduced cooldown on Leap
 // Necrophos

@@ -1,5 +1,13 @@
 Next Update Patch Notes:
 
+1.13
+Heroes:
+// Riki
+-- Enabled!
+-- Tricks of the Trade targets creeps
+// Sven
+-- Reduced cleave damage
+
 1.12b
 Fix particle effect on tower strafe
 Reduced cost of Building Upgrade to 1000

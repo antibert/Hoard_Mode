@@ -11,7 +11,6 @@ All Heroes not in game:
 "npc_dota_hero_obsidian_destroyer
 "npc_dota_hero_pudge
 "npc_dota_hero_razor
-"npc_dota_hero_riki
 "npc_dota_hero_silencer
 "npc_dota_hero_skywrath_mage
 "npc_dota_hero_terrorblade

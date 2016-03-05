@@ -9637,7 +9637,7 @@
 
                 "OnAttackLanded"
                 {
-                    "FireEffect"
+                    "AttachEffect"
                     {
                         "EffectName"        "particles/units/heroes/hero_clinkz/clinkz_strafe_fire.vpcf"
                         "EffectAttachType"  "follow_origin"
@@ -9866,7 +9866,7 @@
             "02"
             {
                 "var_type"			"FIELD_INTEGER"
-                "bonus_armor_lvl"	"1"
+                "bonus_armor_lvl"	"2"
             }
             "03"
             {
@@ -9937,12 +9937,12 @@
             "01"
             {
                 "var_type"			"FIELD_INTEGER"
-                "bonus_armor"	"1 2 3 4 5 6 7 8 9 10"
+                "bonus_armor"	"2 4 6 8 10 12 14 16 18 20"
             }
             "02"
             {
                 "var_type"			"FIELD_INTEGER"
-                "bonus_armor_lvl"	"1"
+                "bonus_armor_lvl"	"2"
             }
             "03"
             {

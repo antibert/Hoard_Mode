@@ -1,5 +1,10 @@
 Next Update Patch Notes:
 
+1.12b
+Fix particle effect on tower strafe
+Reduced cost of Building Upgrade to 1000
+Fixed tooltip to show accurate armor gained per rank of tower
+
 1.12
 Feature:
 BETA FEATURE: BUILDING UPGRADES!

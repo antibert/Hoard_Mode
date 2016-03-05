@@ -4576,7 +4576,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"1250"
+        "ItemCost"						"1000"
         "ItemShopTags"					"unique"
         "ItemQuality"					"epic"
         "ItemAliases"					"upgrade"

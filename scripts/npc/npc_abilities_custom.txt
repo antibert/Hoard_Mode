@@ -10915,4 +10915,204 @@
             }
         }
     }
+
+    //=================================================================================================================
+    // Nyx Assassin: Mana Burn
+    //=================================================================================================================
+    "nyx_assassin_mana_burn_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"							"95463"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "FightRecapLevel"				"1"
+        "AbilityTextureName"			"nyx_assassin_mana_burn"
+
+        // Unit Targeting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"600 600 600 600"
+        "AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"28.0 20.0 12.0 4.0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"100"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "float_multiplier"		"3.5 4 4.5 5"
+            }
+        }
+
+        // Data drive
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "particle"					"particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn_msg.vpcf"
+        }
+
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"			"heroes/hero_nyx_assassin/mana_burn.lua"
+                "Function"				"mana_burn_function"
+            }
+        }
+    }
+
+     //=================================================================================================================
+    // Nyx Assassin: Spiked Carapace
+    //=================================================================================================================
+    // Need to fix attachment point for particles/units/heroes/hero_nyx_assassin/nyx_assassin_spiked_carapace_hit.vpcf
+    "nyx_assassin_spiked_carapace_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "ID"							"95464"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "FightRecapLevel"				"1"
+        "AbilityTextureName"			"nyx_assassin_spiked_carapace"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"23 20 17 14"
+        "AbilityCastPoint"				"0 0 0 0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"40 40 40 40"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "reflect_duration"			"4" // 2.25"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "stun_duration"				"3" // 0.6 1.2 1.8 2.4"
+            }
+            "03"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bonus_damage"				"0"
+            }
+            "04"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bonus_armor"				"0"
+            }
+            "05"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bonus_intellect"				"0"
+            }
+        }
+
+        // Data driven
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "particle"						"particles/generic_gameplay/generic_stunned.vpcf"
+            "particle"						"particles/units/heroes/hero_nyx_assassin/nyx_assassin_spiked_carapace.vpcf"
+            "particle"						"particles/units/heroes/hero_nyx_assassin/nyx_assassin_spiked_carapace_hit.vpcf"
+        }
+
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"				"heroes/hero_nyx_assassin/spiked_carapace.lua"
+                "Function"					"spiked_carapace_init"
+            }
+
+            "ApplyModifier"
+            {
+                "Target"					"CASTER"
+                "ModifierName"				"modifier_spiked_carapace_buff_datadriven"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_spiked_carapace_buff_datadriven"
+            {
+                "IsBuff"				"0"
+                "IsPurgable"			"0"
+
+                "Duration"				"%reflect_duration"
+
+                "EffectName"			"particles/units/heroes/hero_nyx_assassin/nyx_assassin_spiked_carapace.vpcf"
+
+                "OnTakeDamage"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"heroes/hero_nyx_assassin/spiked_carapace.lua"
+                        "Function"		"spiked_carapace_reflect"
+                        "DamageTaken"	"%attack_damage"
+                    }
+                }
+            }
+
+            "modifier_spiked_carapaced_stun_datadriven"
+            {
+                "IsDebuff"				"1"
+
+                "Duration"				"%stun_duration"
+
+                "OverrideAnimation"		"ACT_DOTA_DISABLED"
+
+                "OnCreated"
+                {
+                    "AttachEffect"
+                    {
+                        "Target"			"TARGET"
+                        "EffectName"		"particles/units/heroes/hero_nyx_assassin/nyx_assassin_spiked_carapace_hit.vpcf"
+                        "EffectAttachType"	"follow_origin"
+                        "ControlPoints"
+                        {
+                            "02"			"%stun_duration %stun_duration %stun_duration"
+                        }
+                    }
+
+                    "AttachEffect"
+                    {
+                        "Target"			"TARGET"
+                        "EffectName"		"particles/generic_gameplay/generic_stunned.vpcf"
+                        "EffectAttachType"	"follow_overhead"
+                    }
+                }
+
+                "States"
+                {
+                    "MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+        }
+    }
 }

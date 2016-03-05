@@ -184,6 +184,15 @@
         "Ability2"              "necrolyte_heartstopper_aura_datadriven"
         "Ability4"              "necrolyte_reapers_scythe_datadriven"
     }
+    //=================================================================================================================
+    // HERO: Nyx Assassin
+    //=================================================================================================================
+    "npc_dota_hero_nyx_assassin_holdout"
+    {
+        "override_hero"			"npc_dota_hero_nyx_assassin"
+        "Ability2"              "nyx_assassin_mana_burn_datadriven"
+        "Ability3"              "nyx_assassin_spiked_carapace_datadriven"
+    }
 	//=================================================================================================================
 	// HERO: Sand King
 	//=================================================================================================================

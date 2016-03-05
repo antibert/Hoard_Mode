@@ -35,6 +35,8 @@ Heroes:
 -- Enabled!
 -- Increased damage of all his abilities
 -- Reduced cooldown on several of his abilities
+// Mirana
+-- Reduced cooldown on Leap
 // Ogre Magi
 -- Enabled!
 -- Increased damage of Fireblast
@@ -42,8 +44,9 @@ Heroes:
 -- Increased damage and reduced cooldown of Ignite
 -- Multicast is now 4 levels, of which the first level is granted for free at level 1
 -- The first level only turns Ignite into an AoE
-// Mirana
--- Reduced cooldown on Leap
+// Oracle
+-- Enabled!
+-- Increased damage and reduced cooldown of Fortune's End
 // Slark
 -- Enabled!
 -- Replaced Pounce with Leap (shared with Mirana)

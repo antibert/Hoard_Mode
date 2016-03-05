@@ -18,6 +18,11 @@ Heroes:
 -- Enabled!
 -- Increased damage and reduced cooldown of Blood Rite
 -- Thirst now grants flat damage and movespeed bonus per level
+// Brewmaster
+-- Enabled!
+-- Changed recharge and mana cost of Thunder Clap
+-- Changed recharge of Drunken Haze
+-- Increased damage of Earth and Fire abilities
 // Centaur Warrunner
 -- Reverted the radii of his abilities back to vanilla
 -- Reduced the damage dealt by his ultimate

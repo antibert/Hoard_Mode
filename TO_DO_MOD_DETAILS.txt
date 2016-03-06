@@ -19,6 +19,8 @@ Heroes:
 // Riki
 -- Enabled!
 -- Tricks of the Trade targets creeps
+// Slark
+-- Essence Shift no longer works on buildings, but does work on neutral creeps
 // Sven
 -- Reduced cleave damage
 

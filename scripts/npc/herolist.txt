@@ -54,7 +54,7 @@
     "npc_dota_hero_naga_siren"     "1"
     "npc_dota_hero_necrolyte"       "1"
 	"npc_dota_hero_nevermore"		"1"	// Shadow Fiend
-	"npc_dota_hero_nyx_assassin"    "1"
+	"npc_dota_hero_nyx_assassin"    "0"
 	"npc_dota_hero_obsidian_destroyer"  "1"
 	"npc_dota_hero_ogre_magi"   "1"
 	"npc_dota_hero_omniknight"		"1"

@@ -1,5 +1,13 @@
 Next Update Patch Notes:
 
+1.14
+Heroes:
+// Nyx
+-- Enabled!
+-- Mana Burn changed to work on all targets, burns mana based on a percentage of total mana if the target has no Int score
+-- Mana Burn gets range increase with levels, no longer increased by burrow
+-- Spiked Carapace changed to work on any source of damage and not just heroes
+
 1.13
 Stat Collection!
 -- We now use getdotastats.com to store statistics on games
@@ -7,11 +15,6 @@ Stat Collection!
 Heroes:
 // Elder Titan
 -- Reduced Natural Order's armor reduction to 15/30/45/60 (this will go back up when boss armor is changed in the future)
-// Nyx
--- Enabled!
--- Mana Burn changed to work on all targets, burns mana based on a percentage of total mana if the target has no Int score
--- Mana Burn gets range increase with levels, no longer increased by burrow
--- Spiked Carapace changed to work on any source of damage and not just heroes
 // Outhouse Decorator
 -- Enabled!
 -- Arcane Orb gains Int from all targets, but lasts shorter

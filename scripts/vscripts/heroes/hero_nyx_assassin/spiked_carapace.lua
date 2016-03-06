@@ -5,9 +5,10 @@
 ]]
 function spiked_carapace_init( keys )
 	keys.caster.carapaced_units = {}
-	local targets = event.target_entities
+	local targets = keys.target_entities
+	local caster = keys.caster
 
-	local is_burrowed = caster.HasModifier("modifier_nyx_assassin_burrow")
+	local is_burrowed = caster:HasModifier("modifier_nyx_assassin_burrow")
 
 	if is_burrowed then
 		for _,target in pairs(targets) do

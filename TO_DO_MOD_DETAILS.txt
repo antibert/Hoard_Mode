@@ -25,7 +25,10 @@ Heroes:
 -- Enabled!
 -- Arcane Bolt deals damage in an AoE around the target
 -- Concussive Shot targets the nearest enemy, has shorter cooldown and greater damage
--- Mystic Flare now has a minimum damage of 1/3rd (meaning that its damage won't get smaller if it hits more than 3 units)
+-- Mystic Flare no longer divides damage amongst targets hit
+-- Mystic Flare damage reduced to 450/600/750
+-- Mystic Flare cooldown is now 60/30/0
+-- Aghanim's Scepter changes Mystic Flare to deal 600/1000/1400 damage
 // Sven
 -- Reduced cleave damage
 

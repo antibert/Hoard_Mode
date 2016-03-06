@@ -25,6 +25,11 @@ function mystic_flare_start( keys )
 	local targetFlag = ability:GetAbilityTargetFlags() -- DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS
 	local damageType = ability:GetAbilityDamageType() -- DAMAGE_TYPE_MAGICAL
 	local soundTarget = "Hero_SkywrathMage.MysticFlare.Target"
+	local has_scepter = caster:HasScepter()
+
+	if has_scepter then
+		total_damage = ability:GetLevelSpecialValueFor( "damage_scepter", ability:GetLevel() - 1 )
+	end
 	
 	-- Create for VFX particles on ground
 	local dummy = CreateUnitByName( "npc_dummy_blank", target, false, caster, caster, caster:GetTeamNumber() )
@@ -40,7 +45,7 @@ function mystic_flare_start( keys )
 				targetType, targetFlag, FIND_ANY_ORDER, false
 			)
 			if #units > 0 then
-				local damage_per_hero = damage_per_interval / math.min(#units, 3)
+				local damage_per_hero = damage_per_interval
 				for k, v in pairs( units ) do
 					-- Apply damage
 					local damageTable = {

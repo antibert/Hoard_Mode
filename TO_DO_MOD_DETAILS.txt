@@ -5,6 +5,7 @@ Heroes:
 // Nyx
 -- Enabled!
 -- Mana Burn changed to work on all targets, burns mana based on a percentage of total mana if the target has no Int score
+-- Mana Burn gets range increase with levels, no longer increased by burrow
 -- Spiked Carapace changed to work on any source of damage and not just heroes
 // Riki
 -- Enabled!

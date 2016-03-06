@@ -10977,7 +10977,7 @@
         }
     }
 
-     //=================================================================================================================
+    //=================================================================================================================
     // Nyx Assassin: Spiked Carapace
     //=================================================================================================================
     // Need to fix attachment point for particles/units/heroes/hero_nyx_assassin/nyx_assassin_spiked_carapace_hit.vpcf
@@ -11107,6 +11107,307 @@
                 "States"
                 {
                     "MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+        }
+    }
+
+    // Rewrite of the Obsidian Destroyer Arcane Orb
+    // Author: chrislotix
+    // Edit: YOLOSPAGHETTI
+    // Date: 02.02.2016
+    //=================================================================================================================
+    // Obsidian Destroyer: Arcane Orb
+    //=================================================================================================================
+    "obsidian_destroyer_arcane_orb_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "AbilityTextureName"			"obsidian_destroyer_arcane_orb"
+        "AbilityCastRange"				"450"
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"		"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+            "particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_arcane_orb.vpcf"
+        }
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"100 100 100 100"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "mana_pool_damage_pct"	"6 7 8 9"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "illusion_damage"		"100 200 300 400"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "int_gain"				"2 3 4 5"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "int_steal"				"-2 -3 -4 -5"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "steal_duration"		"15"
+            }
+
+        }
+
+        "OnUpgrade"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"scripts/vscripts/heroes/hero_obsidian_destroyer/arcane_orb.lua"
+                "Function"	"LevelTime"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_arcane_orb_datadriven"
+            {
+                "Passive"	"1"
+                "IsHidden"	"1"
+
+                "Orb"
+                {
+                    "Priority"	"DOTA_ORB_PRIORITY_ABILITY"
+                    "ProjectileName"	"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_arcane_orb.vpcf"
+                    "CastAttack"	"1"
+                }
+
+                "OnOrbFire"
+                {
+                    "SpendMana"
+                    {
+                        "Mana"	"%AbilityManaCost"
+                    }
+                    "FireSound"
+                    {
+                        "EffectName"	"Hero_ObsidianDestroyer.ArcaneOrb"
+                        "Target"	"TARGET"
+                    }
+                }
+
+                "OnOrbImpact"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"scripts/vscripts/heroes/hero_obsidian_destroyer/arcane_orb.lua"
+                        "Function"	"ArcaneOrb"
+                        "Target"	"TARGET"
+                    }
+
+                    "ApplyModifier"
+                    {
+                        "Target"	"TARGET"
+                        "ModifierName"	"modifier_arcane_orb_int_steal_target_datadriven"
+                    }
+
+                    "ApplyModifier"
+                    {
+                        "Target"	"CASTER"
+                        "ModifierName"	"modifier_arcane_orb_int_steal_datadriven"
+                    }
+                }
+            }
+
+            "modifier_arcane_orb_int_steal_target_datadriven"
+            {
+                "Duration"	"%steal_duration"
+                "IsPurgable"	"0"
+                "IsHidden"		"1"
+
+                "Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "OnCreated"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"scripts/vscripts/heroes/hero_obsidian_destroyer/arcane_orb.lua"
+                        "Function"	"AddStacks"
+                    }
+                }
+
+                "OnDestroy"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"scripts/vscripts/heroes/hero_obsidian_destroyer/arcane_orb.lua"
+                        "Function"	"RemoveStacks"
+                    }
+                }
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_steal"
+                }
+            }
+
+            "modifier_arcane_orb_int_steal_datadriven"
+            {
+                "Duration"	"%steal_duration"
+                "IsPurgable"	"0"
+                "IsHidden"		"1"
+
+                "Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_gain"
+                }
+            }
+
+            //Aesthetic Stack Modifiers
+            "modifier_arcane_orb_status_target"
+            {
+                "IsDebuff"	"1"
+            }
+
+            "modifier_arcane_orb_status"
+            {
+                "IsBuff"	"1"
+            }
+
+        }
+    }
+
+    //=================================================================================================================
+    // Obsidian Destroyer: Sanity's Eclipse
+    //=================================================================================================================
+    "obsidian_destroyer_sanity_eclipse_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "AbilityCastRange"				"700 700 700"
+        "AbilityCastPoint"				"0.25 0.25 0.25"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "FightRecapLevel"				"2"
+        "AbilityTextureName"			"obsidian_destroyer_sanity_eclipse"
+        "AOERadius"						"%radius"
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"		"soundevents/game_sounds_heroes/game_sounds_obsidian_destroyer.vsndevts"
+            "particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_area.vpcf"
+            "particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_area_aoe.vpcf"
+            "particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_area_embers.vpcf"
+            "particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_area_glow.vpcf"
+            "particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_damage.vpcf"
+            "particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_mana_loss.vpcf"
+            "particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_smoke_main.vpcf"
+
+        }
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"160.0 160.0 160.0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"175 250 325"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "damage_multiplier"				"8 9 10"
+            }
+            "02"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "mana_drain"				"40"
+            }
+            "03"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "radius"					"375 475 575"
+            }
+            "04"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "damage_multiplier_scepter"		"10 12 14"
+            }
+        }
+
+        "OnSpellStart"
+        {
+            "FireSound"
+            {
+                "EffectName"	"Hero_ObsidianDestroyer.SanityEclipse.Cast"
+                "Target"	"CASTER"
+            }
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_ObsidianDestroyer.SanityEclipse"
+                "Target"	"CASTER"
+            }
+
+            "FireEffect"
+            {
+                "EffectName"	"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_area.vpcf"
+                "EffectAttachType"	"start_at_customorigin"
+                "TargetPoint"	"POINT"
+
+                "ControlPoints"
+                {
+                    "00" "POINT"
+                    "01" "%radius 0 0"
+                    "02" "%radius 0 0"
+                    "03" "%radius 0 0"
+                }
+            }
+
+            "ActOnTargets"
+            {
+                "Target"
+                {
+                    "Center"	"POINT"
+                    "Radius"	"%radius"
+                    "Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Type"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+
+                "Action"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"scripts/vscripts/heroes/hero_obsidian_destroyer/sanity_eclipse.lua"
+                        "Function"		"SanityEclipseDamage"
+                        "Target"		"POINT"
+                    }
                 }
             }
         }

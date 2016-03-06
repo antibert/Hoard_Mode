@@ -176,6 +176,15 @@
 		"Ability2"				"hammer_time"
 	}
 	//=================================================================================================================
+    // HERO: Obsidian Destroyer
+    //=================================================================================================================
+    "npc_dota_hero_obsidian_destroyer_holdout"
+    {
+        "override_hero"			"npc_dota_hero_obsidian_destroyer"
+        "Ability1"				"obsidian_destroyer_arcane_orb_datadriven"
+        "Ability4"              "obsidian_destroyer_sanity_eclipse_datadriven"
+    }
+	//=================================================================================================================
     // HERO: Necrolyte
     //=================================================================================================================
     "npc_dota_hero_necrolyte_holdout"

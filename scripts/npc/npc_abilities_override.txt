@@ -6882,4 +6882,14 @@
             }
         }
     }
+
+    "skywrath_mage_concussive_shot"
+    {
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    }
+
+    "skywrath_mage_mystic_flare"
+    {
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    }
 }

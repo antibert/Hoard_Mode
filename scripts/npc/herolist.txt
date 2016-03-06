@@ -73,6 +73,7 @@
 	"npc_dota_hero_shadow_shaman"		"1"
     "npc_dota_hero_shredder"   "1"
     "npc_dota_hero_skeleton_king"   "1"
+    "npc_dota_hero_skywrath_mage"   "1"
 	"npc_dota_hero_slardar"   "1"
 	"npc_dota_hero_slark"       "1"
 	"npc_dota_hero_sniper"   "1"

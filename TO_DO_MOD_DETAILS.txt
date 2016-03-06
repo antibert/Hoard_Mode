@@ -1,6 +1,9 @@
 Next Update Patch Notes:
 
 1.13
+Stat Collection!
+-- We now use getdotastats.com to store statistics on games
+
 Heroes:
 // Nyx
 -- Enabled!

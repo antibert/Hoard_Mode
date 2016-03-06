@@ -5,6 +5,8 @@ Stat Collection!
 -- We now use getdotastats.com to store statistics on games
 
 Heroes:
+// Elder Titan
+-- Reduced Natural Order's armor reduction to 15/30/45/60 (this will go back up when boss armor is changed in the future)
 // Nyx
 -- Enabled!
 -- Mana Burn changed to work on all targets, burns mana based on a percentage of total mana if the target has no Int score

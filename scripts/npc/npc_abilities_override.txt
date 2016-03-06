@@ -6883,13 +6883,30 @@
         }
     }
 
-    "skywrath_mage_concussive_shot"
+    //=================================================================================================================
+    // Elder Titan: Natural Order
+    //=================================================================================================================
+    "elder_titan_natural_order"
     {
-        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-    }
-
-    "skywrath_mage_mystic_flare"
-    {
-        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "radius"					"275 275 275 275"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "armor_reduction_pct"	    "15 30 45 60"
+            }
+            "03"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "magic_resistance_pct"		"12 19 26 33"
+            }
+        }
     }
 }

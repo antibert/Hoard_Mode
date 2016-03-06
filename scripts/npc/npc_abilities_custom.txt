@@ -10995,7 +10995,7 @@
 
         // Stats
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"23 20 17 14"
+        "AbilityCooldown"				"22 18 14 10"
         "AbilityCastPoint"				"0 0 0 0"
 
         // Cost
@@ -11009,27 +11009,17 @@
             "01"
             {
                 "var_type"					"FIELD_FLOAT"
-                "reflect_duration"			"4" // 2.25"
+                "reflect_duration"			"2.25"
             }
             "02"
             {
                 "var_type"					"FIELD_FLOAT"
-                "stun_duration"				"3" // 0.6 1.2 1.8 2.4"
+                "stun_duration"				"0.6 1.2 1.8 2.4"
             }
             "03"
             {
-                "var_type"					"FIELD_INTEGER"
-                "bonus_damage"				"0"
-            }
-            "04"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "bonus_armor"				"0"
-            }
-            "05"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "bonus_intellect"				"0"
+                "var_type"					"FIELD_FLOAT"
+                "burrow_range"				"300"
             }
         }
 
@@ -11048,6 +11038,12 @@
             {
                 "ScriptFile"				"heroes/hero_nyx_assassin/spiked_carapace.lua"
                 "Function"					"spiked_carapace_init"
+                "Target"
+                    {
+                        "Center"	"CASTER"
+                        "Radius"	"%burrow_range"
+                        "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    }
             }
 
             "ApplyModifier"

@@ -5,6 +5,15 @@
 ]]
 function spiked_carapace_init( keys )
 	keys.caster.carapaced_units = {}
+	local targets = event.target_entities
+
+	local is_burrowed = caster.HasModifier("modifier_nyx_assassin_burrow")
+
+	if is_burrowed then
+		for _,target in pairs(targets) do
+			keys.ability:ApplyDataDrivenModifier( caster, target, "modifier_spiked_carapaced_stun_datadriven", { } )
+		end
+	end
 end
 
 --[[

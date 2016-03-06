@@ -21,6 +21,11 @@ Heroes:
 -- Tricks of the Trade targets creeps
 // Slark
 -- Essence Shift no longer works on buildings, but does work on neutral creeps
+// Skywrath Mage
+-- Enabled!
+-- Arcane Bolt deals damage in an AoE around the target
+-- Concussive Shot targets the nearest enemy, has shorter cooldown and greater damage
+-- Mystic Flare now has a minimum damage of 1/3rd (meaning that its damage won't get smaller if it hits more than 3 units)
 // Sven
 -- Reduced cleave damage
 

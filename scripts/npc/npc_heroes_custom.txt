@@ -289,7 +289,8 @@
     "npc_dota_hero_skywrath_mage_holdout"
     {
         "override_hero"			"npc_dota_hero_skywrath_mage"
-        //"Ability2"				"skywrath_mage_concussive_shot_datadriven"
+        "Ability2"				"skywrath_mage_concussive_shot_datadriven"
+        "Ability4"				"skywrath_mage_mystic_flare_datadriven"
     }
 	//=================================================================================================================
 	// HERO: Slardar

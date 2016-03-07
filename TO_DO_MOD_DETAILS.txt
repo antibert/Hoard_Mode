@@ -30,8 +30,11 @@ Heroes:
 // Riki
 -- Enabled!
 -- Tricks of the Trade targets creeps
-// Slark
--- Essence Shift no longer works on buildings, but does work on neutral creeps
+// Shadow Demon
+-- Reduced radius of Soul Catcher to make it easier to target specific enemies
+-- Increased damage dealt per hit of Shadow Poison from 50 to 100
+-- Increased maximum multiple of Shadow Poison to 6
+-- Increased damage dealt per excess of cap from 50 to 100
 // Skywrath Mage
 -- Enabled!
 -- Arcane Bolt deals damage in an AoE around the target
@@ -40,6 +43,8 @@ Heroes:
 -- Mystic Flare damage reduced to 450/600/750
 -- Mystic Flare cooldown is now 60/30/0
 -- Aghanim's Scepter changes Mystic Flare to deal 600/1000/1400 damage
+// Slark
+-- Essence Shift no longer works on buildings, but does work on neutral creeps
 // Sven
 -- Reduced cleave damage
 

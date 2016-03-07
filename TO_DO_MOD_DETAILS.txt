@@ -15,6 +15,9 @@ Stat Collection!
 Heroes:
 // Abaddon
 -- Death Coil strength reverted to normal, but converted to AoE
+// Bloodseeker
+-- Thirst removes his movespeed cap once again
+-- Increased Thirst damage and movespeed to 15/30/45/60
 // Elder Titan
 -- Reduced Natural Order's armor reduction to 15/30/45/60 (this will go back up when boss armor is changed in the future)
 // Outhouse Decorator

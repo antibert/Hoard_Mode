@@ -10100,6 +10100,13 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"bloodseeker_thirst"
 
+		"precache"
+        {
+            "particle"			"particles/units/heroes/hero_bloodseeker/bloodseeker_thirst_owner.vpcf"
+            "particle"			"particles/status_fx/status_effect_thirst_vision.vpcf"
+            "particle"			"particles/units/heroes/hero_bloodseeker/bloodseeker_vision.vpcf"
+        }
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -10107,14 +10114,37 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_damage"	"10 20 30 40"
+				"bonus_damage"	"15 30 45 60"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"bonus_movespeed"						"10 20 30 40"
+				"bonus_movespeed"						"15 30 45 60"
+			}
+			"03"
+			{
+			    "var_type"						"FIELD_INTEGER"
+                "max_movespeed"						"600 700 800 900"
 			}
 		}
+
+		"OnRespawn"
+        {
+            "RunScript"
+            {
+                "ScriptFile"    "heroes/hero_bloodseeker/thirst.lua"
+                "Function"      "RemoveMovespeed"
+            }
+        }
+
+		"OnUpgrade"
+        {
+            "RunScript"
+            {
+                "ScriptFile"    "heroes/hero_bloodseeker/thirst.lua"
+                "Function"      "RemoveMovespeed"
+            }
+        }
 
 		"Modifiers"
 		{
@@ -10130,6 +10160,16 @@
                     "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%bonus_movespeed"
                 }
 			}
+
+			"modifier_thirst_visual"
+            {
+                "Passive"						"1"
+                "IsHidden"						"1"
+                "IsPurgable"					"0"
+
+                "EffectName" "particles/units/heroes/hero_bloodseeker/bloodseeker_thirst_owner.vpcf"
+                "EffectAttachType" "follow_origin"
+            }
 		}
     }
 

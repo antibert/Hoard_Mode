@@ -6828,7 +6828,7 @@
             "01"
             {
                 "var_type"			"FIELD_INTEGER"
-                "mana_regen"		"1 2 3 4"
+                "mana_regen"		"2 4 6 8"
             }
             "02"
             {
@@ -6838,7 +6838,7 @@
             "03"
             {
                 "var_type"			"FIELD_FLOAT"
-                "health_regen"		"0.5 1 1.5 2"
+                "health_regen"		"1 2 3 4"
             }
             "04"
             {

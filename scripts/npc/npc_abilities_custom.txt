@@ -11905,7 +11905,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"				"ability_datadriven"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
         "SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
@@ -11967,21 +11967,76 @@
 
         "OnSpellStart"
         {
+            "FireSound"
+            {
+                "Target"				"CASTER"
+                "EffectName"			"Hero_Abaddon.DeathCoil.Cast"
+            }
+
+            "TrackingProjectile"
+            {
+                "Target"				"TARGET"
+                "EffectName"			"particles/units/heroes/hero_abaddon/abaddon_death_coil.vpcf"
+                "Dodgeable"				"0"
+                "MoveSpeed"				"%projectile_speed"
+            }
+        }
+        "OnProjectileHitUnit"
+        {
+            "FireSound"
+            {
+                "Target"		"TARGET"
+                "EffectName"		"Hero_Abaddon.DeathCoil.Target"
+            }
+
+            "Damage"
+            {
+                "Target"	"CASTER"
+                "Type"		"DAMAGE_TYPE_PURE"
+                "Damage"	"%self_damage"
+            }
+
             "ActOnTargets"
             {
                 "Target"
                 {
                     "Center"			"TARGET"
                     "Radius"			"%radius"
-                    "Teams"				"DOTA_UNIT_TARGET_TEAM_BOTH"
+                    "Teams"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
                     "Flags"				"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
                     "Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
                 }
+
+                "Action"
+                {
+                    "Heal"
+                    {
+                        "Target"        "TARGET"
+                        "HealAmount"	"%heal_amount"
+                    }
+                }
             }
-            "RunScript"
+
+            "ActOnTargets"
             {
-                "ScriptFile"	"heroes/hero_abaddon/death_coil.lua"
-                "Function"		"DeathCoil"
+                "Target"
+                {
+                    "Center"			"TARGET"
+                    "Radius"			"%radius"
+                    "Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Flags"				"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+                    "Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+                }
+
+                "Action"
+                {
+                    "Damage"
+                    {
+                        "Target"	"TARGET"
+                        "Type"		"DAMAGE_TYPE_MAGICAL"
+                        "Damage"	"%target_damage"
+                    }
+                }
             }
         }
     }

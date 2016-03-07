@@ -32,6 +32,8 @@ Heroes:
 -- Disabled pending bugfixes
 // Morphling
 -- Reduced damage and mana cost of waveform
+// Necrolyte
+-- Reverted Sadist to old values
 // Riki
 -- Enabled!
 -- Tricks of the Trade targets creeps

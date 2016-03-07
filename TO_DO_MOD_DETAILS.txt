@@ -20,6 +20,8 @@ Heroes:
 -- Increased Thirst damage and movespeed to 15/30/45/60
 // Elder Titan
 -- Reduced Natural Order's armor reduction to 15/30/45/60 (this will go back up when boss armor is changed in the future)
+// Juggernaut
+-- Omnislash dramatically reduced in power
 // Outhouse Decorator
 -- Enabled!
 -- Arcane Orb gains Int from all targets, but lasts shorter
@@ -50,6 +52,8 @@ Heroes:
 -- Essence Shift no longer works on buildings, but does work on neutral creeps
 // Sven
 -- Reduced cleave damage
+// Tiny
+-- Avalanche reverted to normal
 
 Items:
 // Manta Style

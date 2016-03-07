@@ -585,8 +585,6 @@
 	//=================================================================================================================
 	"juggernaut_omni_slash"
 	{
-	    "AbilityTextureName"			"holdout_omnislash"
-		"AbilityManaCost"				"100 150 200"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -594,27 +592,27 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"omni_slash_damage"			"400 550 750"
+				"omni_slash_damage"			"300 450 600"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"omni_slash_jumps"			"12 18 25"
+				"omni_slash_jumps"			"3 6 9"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"omni_slash_bounce_tick"	"0.15"
+				"omni_slash_bounce_tick"	"0.4"
 			}
 			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"omni_slash_jumps_scepter"		"20 30 40"
+				"omni_slash_jumps_scepter"		"6 9 12"
 			}
 			"06"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"omni_slash_cooldown_scepter"	"15"
+				"omni_slash_cooldown_scepter"	"30"
 			}
 		}
 	}
@@ -694,22 +692,6 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"cooldown"					"1 0.8 0.6 0.4"
-			}
-		}
-	}
-	//=================================================================================================================
-	// Tiny: Avalanche
-	//=================================================================================================================
-	"tiny_avalanche"
-	{
-		"AbilityManaCost"				"120"
-		"AbilityDamage"					"150 230 310 400"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"275 325 375 425"
 			}
 		}
 	}

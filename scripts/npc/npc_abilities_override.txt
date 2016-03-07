@@ -1010,7 +1010,8 @@
 	//=================================================================================================================
 	"morphling_waveform"
 	{
-		"AbilityDamage"					"150 250 350 450"
+	    "AbilityManaCost"               "80 95 110 135"
+		"AbilityDamage"					"100 200 300 400"
 	}
 	//=================================================================================================================
 	// Morphling: Replicate
@@ -1071,7 +1072,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"tooltip_illusion_damage_out_pct"		"50 50 50"
+				"tooltip_illusion_damage_out_pct"		"100 100 100"
 			}
 			"03"
 			{
@@ -1091,7 +1092,7 @@
 			"06"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"illusion_damage_out_pct_scepter"	"-20"
+				"illusion_damage_out_pct_scepter"	"0"
 			}
 			"07"
 			{
@@ -4641,42 +4642,42 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"images_do_damage_percent_melee"	"-0"
+				"images_do_damage_percent_melee"	"-34"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_damage_outgoing_melee"			"100"
+				"tooltip_damage_outgoing_melee"			"66"
 			}	
 			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"images_take_damage_percent_melee"	"130"
+				"images_take_damage_percent_melee"	"200"
 			}
 			"11"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_damage_incoming_melee_total_pct"			"230"
+				"tooltip_damage_incoming_melee_total_pct"			"300"
 			}			
 			"12"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"images_do_damage_percent_ranged"	"-0"
+				"images_do_damage_percent_ranged"	"-50"
 			}
 			"13"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_damage_outgoing_ranged"			"100"
+				"tooltip_damage_outgoing_ranged"			"50"
 			}
 			"14"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"images_take_damage_percent_ranged"	"130"
+				"images_take_damage_percent_ranged"	"250"
 			}
 			"15"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"tooltip_damage_incoming_ranged_total_pct"			"230"
+				"tooltip_damage_incoming_ranged_total_pct"			"350"
 			}
 		
 		}

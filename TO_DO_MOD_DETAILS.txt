@@ -25,6 +25,8 @@ Heroes:
 -- Scepter no longer makes the ult apply Astral Imprisonment, now just increases damage
 // Meepo
 -- Disabled pending bugfixes
+// Morphling
+-- Reduced damage and mana cost of waveform
 // Riki
 -- Enabled!
 -- Tricks of the Trade targets creeps
@@ -40,6 +42,10 @@ Heroes:
 -- Aghanim's Scepter changes Mystic Flare to deal 600/1000/1400 damage
 // Sven
 -- Reduced cleave damage
+
+Items:
+// Manta Style
+-- Reduced strength of illusions
 
 1.12b
 Fix particle effect on tower strafe

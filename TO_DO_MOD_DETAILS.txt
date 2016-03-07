@@ -13,6 +13,8 @@ Stat Collection!
 -- We now use getdotastats.com to store statistics on games
 
 Heroes:
+// Abaddon
+-- Death Coil strength reverted to normal, but converted to AoE
 // Elder Titan
 -- Reduced Natural Order's armor reduction to 15/30/45/60 (this will go back up when boss armor is changed in the future)
 // Outhouse Decorator
@@ -21,6 +23,8 @@ Heroes:
 -- Astral Imprisonment deals more damage, has a shorter cooldown, and has a scaling duration
 -- Sanity's Eclipse deals damage to all targets, scaled only based on Octagonal Disintegrator's int
 -- Scepter no longer makes the ult apply Astral Imprisonment, now just increases damage
+// Meepo
+-- Disabled pending bugfixes
 // Riki
 -- Enabled!
 -- Tricks of the Trade targets creeps

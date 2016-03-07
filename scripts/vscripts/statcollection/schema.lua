@@ -5,7 +5,7 @@ function customSchema:init()
     -- Check the schema_examples folder for different implementations
 
     -- Flag Example
-    -- statCollection:setFlags({version = GetVersion()})
+    statCollection:setFlags({version = GetVersion()})
 
     -- Listen for changes in the current state
     ListenToGameEvent('game_rules_state_change', function(keys)
@@ -43,6 +43,7 @@ function BuildGameArray()
     local game = {}
 
     -- Add game values here as game.someValue = GetSomeGameValue()
+    game.gl = GAME_TIME_ELAPSED -- Game length, from the horn sound, in seconds
 
     return game
 end
@@ -62,6 +63,14 @@ function BuildPlayersArray()
 
                     -- Example functions for generic stats are defined in statcollection/lib/utilities.lua
                     -- Add player values here as someValue = GetSomePlayerValue(),
+
+	                ph = GetHeroName(playerID), -- Hero by its short name
+	                pl = hero:GetLevel(), -- Hero level at the end of the game
+	                pnw = GetNetworth(hero), -- Sum of hero gold and item worth
+	                pk = hero:GetKills(), -- Number of kills of this players hero
+	                pa = hero:GetAssists(), -- Number of deaths of this players hero
+	                pd = hero:GetDeaths(), -- Number of deaths of this players hero
+	                il = GetItemList(hero)
                 })
             end
         end
@@ -116,3 +125,44 @@ function BuildRoundWinnerArray()
 end
 
 -------------------------------------
+-- MY CUSTOM FUNCTIONS (Borrowed from Imba)
+-------------------------------------
+function GetHeroName(hero)
+	local heroName = hero:GetUnitName()
+	heroName = string.gsub(heroName, "npc_dota_hero_", "") --Cuts the npc_dota_hero_ prefix
+	return heroName
+end
+
+function GetNetworth(hero)
+	local gold = hero:GetGold()
+
+	-- Iterate over item slots adding up its gold cost
+	for i = 0, 15 do
+		local item = hero:GetItemInSlot(i)
+		if item then
+			gold = gold + item:GetCost()
+		end
+	end
+end
+
+function GetItemList(hero)
+	local itemTable = {}
+
+	for i = 0, 5 do
+		local item = hero:GetItemInSlot(i)
+		if item then
+			if string.find(item:GetAbilityName(), "imba") then
+				local itemName = string.gsub(item:GetAbilityName(), "item_imba_", "")
+				table.insert(itemTable, itemName)
+			else
+				local itemName = string.gsub(item:GetAbilityName(), "item_", "")
+				table.insert(itemTable, itemName)
+			end
+		end
+	end
+
+	table.sort(itemTable)
+	local itemList = table.concat(itemTable, ",")
+
+	return itemList
+end

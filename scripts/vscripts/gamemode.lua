@@ -272,3 +272,7 @@ function GameMode:ExampleConsoleCommand()
 
   print( '*********************************************' )
 end
+
+function GetVersion()
+  return GAME_VERSION
+end

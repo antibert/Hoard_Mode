@@ -52,7 +52,8 @@ function mystic_flare_start( keys )
 						victim = v,
 						attacker = caster,
 						damage = damage_per_hero,
-						damage_type = damageType
+						damage_type = damageType,
+						ability = ability
 					}
 					ApplyDamage( damageTable )
 					

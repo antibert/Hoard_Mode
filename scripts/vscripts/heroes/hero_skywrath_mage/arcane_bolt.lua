@@ -26,6 +26,7 @@ function arcane_bolt_hit( keys )
 		attacker = caster,
 		damage = base_damage + intelligence * multiplier,
 		damage_type = damageType,
+		ability = ability
 	}
 	ApplyDamage( damageTable )
 	

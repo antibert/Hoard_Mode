@@ -10,173 +10,15 @@ Heroes:
 -- Mana Burn gets range increase with levels, no longer increased by burrow
 -- Spiked Carapace changed to work on any source of damage and not just heroes
 
-1.13b
-General:
--- Fix to global tower offense buff being one level behind
-
+1.13d
 Heroes:
-// Occidental Defenstrator
--- Fix arcane orb not procing Essence Aura
-// Silencer
--- Enabled!
--- No longer steals Int
--- Arcane Curse works on creeps, deals more damage over a shorter time
--- Last Word triggers immediately, deals more damage
--- Global Silence grants passive Intelligence per level
--- Global Silence makes all enemies take more damage during the duration
--- Aghanim's Scepter increases duration and bonus damage, instead of applying Arcane Curse
-
-1.13
-Stat Collection!
--- We now use getdotastats.com to store statistics on games
-
-Heroes:
-// Abaddon
--- Death Coil strength reverted to normal, but converted to AoE
 // Bloodseeker
--- Thirst removes his movespeed cap once again
--- Increased Thirst damage and movespeed to 15/30/45/60
-// Elder Titan
--- Reduced Natural Order's armor reduction to 15/30/45/60 (this will go back up when boss armor is changed in the future)
-// Juggernaut
--- Omnislash dramatically reduced in power
-// Outhouse Decorator
--- Enabled!
--- Arcane Orb gains Int from all targets, but lasts shorter
--- Astral Imprisonment deals more damage, has a shorter cooldown, and has a scaling duration
--- Sanity's Eclipse deals damage to all targets, scaled only based on Octagonal Disintegrator's int
--- Scepter no longer makes the ult apply Astral Imprisonment, now just increases damage
-// Meepo
--- Disabled pending bugfixes
-// Morphling
--- Reduced damage and mana cost of waveform
-// Necrolyte
--- Reverted Sadist to old values
-// Riki
--- Enabled!
--- Tricks of the Trade targets creeps
-// Shadow Demon
--- Reduced radius of Soul Catcher to make it easier to target specific enemies
--- Increased damage dealt per hit of Shadow Poison from 50 to 100
--- Increased maximum multiple of Shadow Poison to 6
--- Increased damage dealt per excess of cap from 50 to 100
+-- Fix thirst movespeed cap break to persist beyond death
+// Occult Deliverer
+-- Fixed Arcane Orb's damage popup
+-- Fixed Arcane Orb applying anti-illusion damage to non-illusions
 // Skywrath Mage
--- Enabled!
--- Arcane Bolt deals damage in an AoE around the target
--- Concussive Shot targets the nearest enemy, has shorter cooldown and greater damage
--- Mystic Flare no longer divides damage amongst targets hit
--- Mystic Flare damage reduced to 450/600/750
--- Mystic Flare cooldown is now 60/30/0
--- Aghanim's Scepter changes Mystic Flare to deal 600/1000/1400 damage
-// Slark
--- Essence Shift no longer works on buildings, but does work on neutral creeps
-// Sven
--- Reduced cleave damage
-// Tiny
--- Avalanche reverted to normal
-
-Items:
-// Manta Style
--- Reduced strength of illusions
-
-1.12b
-Fix particle effect on tower strafe
-Reduced cost of Building Upgrade to 1000
-Fixed tooltip to show accurate armor gained per rank of tower
-
-1.12
-Feature:
-BETA FEATURE: BUILDING UPGRADES!
--- There is a new consumable item in the store, called "Building Upgrade".
--- Using this item on a tower will increase the building's level up to 10.
--- Towers have abilities that are gained as it levels
--- If a building cannot be upgraded (either due to being max level or not a tower), it will be healed
-
-Heroes:
-// Batrider
--- Enabled!
--- Increased damage and duration of Flamebreak DoT
--- Reduced cooldown and mana cost, and increased cast range of Flaming Lasso
--- Increased damage of Flaming Lasso aghanim's scepter
-// Bloodseeker
--- Enabled!
--- Increased damage and reduced cooldown of Blood Rite
--- Thirst now grants flat damage and movespeed bonus per level
-// Brewmaster
--- Enabled!
--- Changed recharge and mana cost of Thunder Clap
--- Changed recharge of Drunken Haze
--- Increased damage of Earth and Fire abilities
-// Centaur Warrunner
--- Reverted the radii of his abilities back to vanilla
--- Reduced the damage dealt by his ultimate
-// Clockwerk
--- Enabled!
--- Reduced duration and increased damage on most abilities
-// Crystal Maiden
--- Fixed bug with Arcana Aura not giving her any mana recovery
-// Earth Spirit
--- Enabled!
--- Increased damage of all his abilities
--- Reduced cooldown on several of his abilities
-// Huskar
--- Enabled!
--- Capped Life Break damage to 2000 (3500 with scepter)
-// Mirana
--- Reduced cooldown on Leap
-// Necrophos
--- Enabled!
--- Capped Heartstopper Aura damage to 50 per second
--- Reduced Sadist mana and hp regeneration
--- Capped Reaper's Scythe damage to 3000 (4500 with scepter)
-// Ogre Magi
--- Enabled!
--- Increased damage of Fireblast
--- Increased damage and reduced mana cost of Unrefined Fireblast
--- Increased damage and reduced cooldown of Ignite
--- Multicast is now 4 levels, of which the first level is granted for free at level 1
--- The first level only turns Ignite into an AoE
-// Oracle
--- Enabled!
--- Increased damage and reduced cooldown of Fortune's End
-// Slark
--- Enabled!
--- Replaced Pounce with Leap (shared with Mirana)
--- Dark Pact damage increased
--- Essence Shift altered to work on all units, has reduced duration, grants higher agility per rank
-// Spirit Breaker
--- Increased movement speed of Empowering Haste
--- Changed Empowering Haste to grant extra speed to Spirit Breaker
--- Removed Empowering Haste's active effect
--- Reduced cooldown and changed damage scaling of Greater Bash
--- Increased radius of Aghanim's Scepter Nether Strike
-// Tusk
--- Enabled!
--- Increased damage of Ice Shards
--- Increased damage and radius of Snowball
-Items:
-Aghanim's Regalia
--- Upgrade to Aghanim's Scepter
--- Made from scepter and two Ultimate Orbs
--- Grants +30 to all stats, +400 health, +300 mana
-Building Upgrade
--- Consume on a target building to upgrade it
--- Towers learn abilities up to level 10, is healed if used on it again
--- Other buildings are healed
-Dragon Javelin
--- No longer gives increasing amounts of strength and attack speed
--- No longer can hit towers with the extra spears (same as Cleave)
-Radiance 2
--- Upgrade to Radiance, using a recipe and a Talisman of Evasion
--- Increases blind percentage and burn damage
-Shiva's Armaments
--- Made from Shiva's Guard, Veil of Discord, and a recipe
--- Passive: Aura of -attack speed and -spell resistance
--- Active: Area of Effect movement slow and damage
-Vladmir's Cuirass
--- Made from Vladmir's Offering, Assault Cuirass, and a recipe
--- Combines effects of both items
--- Stacks with Vladmir's Offering or Assault Cuirass (or Ring of Basilius or Ring of Aquila)
+-- Fix abilities not working with Octarine Core
 
 ////// Important Changes:
 -- TOOLTIP FOR LARGE GOLEM SP;IT
@@ -187,7 +29,7 @@ Vladmir's Cuirass
 -- Buff warlock golem hps - do like lycan passive on one of his abilities possibly to get around this
 
 /////// Secondary importance:
--- Brood spawns now dorp their opwn spawns
+-- Brood spawns now dorp their own spawns
 -- Fix Giant Mech particles not working
 -- REWORK ULTRA MAP COMPLTETLY
 -- meepo clones not sharing stats at all without scepter
@@ -208,8 +50,6 @@ BIG JOBS TO DO:
 
 //ITEM IDEAS:
 
--- Make eye of skadi give some kinda aoe thing to ranged heroes
-
 -- linkens 2 with soul ring + damage item
 
 -- New Consumable 7/8th slot item
@@ -219,8 +59,6 @@ BIG JOBS TO DO:
 -- Batrider Lasso grabs an AOE of targets
 
 -- A new ultimate for Vengeful Spirit (This can be literally anything you think would be fun/useful in Horde Mode)
-
--- Ogre Magi Fireblast and Unrefined Fireblast AOE or something like that
 
 -- Brewmaster Ultimate spawns spirit pandas to control (like visiage familiars) Earth Panda lvl 1, Wind Panda lvl 2, Fire panda on lvl 3
 

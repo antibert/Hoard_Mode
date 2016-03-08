@@ -1,3 +1,5 @@
+require( "libraries/popups")
+
 --[[Arcane Orb
 	Author: chrislotix
 	Date: 05.01.2015.]]
@@ -10,6 +12,8 @@ function ArcaneOrb( keys )
 	local summon_damage = ability:GetLevelSpecialValueFor("illusion_damage", (ability:GetLevel() -1))
 	local extra_damage = ability:GetLevelSpecialValueFor("mana_pool_damage_pct", (ability:GetLevel() -1)) / 100
 	local essence_aura = "obsidian_destroyer_essence_aura"
+	local essence_aura_sound = "Hero_ObsidianDestroyer.EssenceAura"
+	local essence_aura_particle = "particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"
 
 	local damage_table = {}
 
@@ -19,7 +23,7 @@ function ArcaneOrb( keys )
 	damage_table.victim = target
 
 
-	if not target:IsRealHero() or target:IsSummoned() then
+	if target:IsHero() and not target:IsRealHero() or target:IsSummoned() then
 		damage_table.damage = mana * extra_damage + summon_damage
 	else
 		damage_table.damage = mana * extra_damage
@@ -27,19 +31,24 @@ function ArcaneOrb( keys )
 
 	ApplyDamage(damage_table)
 
+	PopupSpellDamage(target, math.floor(damage_table.damage))
+
 	local essence_aura_ability = caster:FindAbilityByName(essence_aura)
 	if essence_aura_ability ~= nil then
 		local restore_amount = essence_aura_ability:GetLevelSpecialValueFor("restore_amount", (ability:GetLevel() -1))
 		local target_chance = essence_aura_ability:GetLevelSpecialValueFor("restore_chance", (ability:GetLevel() -1))
-		local max_mana = caster:GetMaxMana() * restore_amount / 100
-		local new_mana = caster:GetMana() + max_mana
 		local chance = math.random(100)
 		if chance < target_chance then
+			local max_mana = caster:GetMaxMana() * restore_amount / 100
+			local new_mana = caster:GetMana() + max_mana
 			if new_mana > caster:GetMaxMana() then
 				caster:SetMana(caster:GetMaxMana())
 			else
 				caster:SetMana(new_mana)
 			end
+
+			StartSoundEvent( essence_aura_sound, caster )
+			ParticleManager:CreateParticle(essence_aura_particle, PATTACH_ABSORIGIN_FOLLOW, caster)
 		end
 	end
 end

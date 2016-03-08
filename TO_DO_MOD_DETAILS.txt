@@ -20,6 +20,8 @@ Heroes:
 -- Cold Feet damage increased
 -- Chilling Touch cooldown reduced, damage increased, speed penalty removed
 -- Ice Blast radius now scales with level
+-- Ice Blast damage increased
+-- Ice Blast DoT and shatter removed
 // Bloodseeker
 -- Fix thirst movespeed cap break to persist beyond death
 // Occult Deliverer
@@ -36,6 +38,9 @@ Heroes:
 --- Grants 6/12/18/24 spell resistance
 // Skywrath Mage
 -- Fix abilities not working with Octarine Core
+
+Items:
+-- Fixed Shiva's Guard 2 aura not being visible (it worked, just wasn't shown)
 
 ////// Important Changes:
 -- TOOLTIP FOR LARGE GOLEM SP;IT

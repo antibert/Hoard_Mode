@@ -4800,23 +4800,16 @@
             "modifier_item_shivas_guard_2_enemy_aura"
             {
                 "Passive"			"0"
-                "IsHidden"			"1"
+                "IsHidden"			"0"
+                "IsDebuff"          "1"
+                "IsBuff"            "0"
+                "IsPurgable"        "0"
 
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"			"%aura_attack_speed"
                     "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"		"%resist_debuff"
                 }
-            }
-            //A visible modifier that should appear to enemies only if they are affected by the debuff aura and its emitter
-            //is visible to their team.
-            "modifier_item_shivas_guard_2_enemy_aura_visible"
-            {
-                "Passive"			"0"
-                "IsHidden"			"0"
-                "IsBuff"			"0"
-                "IsDebuff"			"1"
-                "IsPurgable"		"0"
             }
             "modifier_item_shivas_guard_2_blast_debuff"
             {
@@ -5029,6 +5022,9 @@
             {
                 "Passive"			"0"
                 "IsHidden"			"0"
+                "IsDebuff"          "1"
+                "IsBuff"            "0"
+                "IsPurgable"        "0"
 
                 "Properties"
                 {

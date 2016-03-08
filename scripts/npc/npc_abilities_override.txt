@@ -3315,6 +3315,8 @@
     //=================================================================================================================
     "ancient_apparition_cold_feet"
     {
+        "AbilityDuration"				"0.1"
+
         // Special
         //-------------------------------------------------------------------------------------------------------------
         "AbilitySpecial"
@@ -3327,7 +3329,7 @@
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "break_distance"		"740 740 740 740"
+                "break_distance"		"1000"
             }
             "03"
             {
@@ -3379,11 +3381,11 @@
     {
         // Time
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"40.0"
+        "AbilityCooldown"				"40 35 30"
 
         // Damage.
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityDamage"					"250 350 450"
+        "AbilityDamage"					"300 600 900"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -3392,32 +3394,32 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "radius_min"			"275 325 375"
+                "radius_min"			"275 375 475"
             }
             "02"
             {
                 "var_type"				"FIELD_FLOAT"
-                "radius_grow"			"50.0 75.0 100.0"
+                "radius_grow"			"50.0 100.0 150.0"
             }
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "radius_max"			"1000 1500 2000"
+                "radius_max"			"1000 2000 3000"
             }
             "04"
             {
                 "var_type"				"FIELD_INTEGER"
-                "path_radius"			"275 325 375"
+                "path_radius"			"275 375 475"
             }
             "05"
             {
                 "var_type"				"FIELD_FLOAT"
-                "frostbite_duration"	"8.0 9.0 10.0"
+                "frostbite_duration"	"0"
             }
             "06"
             {
                 "var_type"				"FIELD_FLOAT"
-                "dot_damage"			"12.5 20.0 32.0"
+                "dot_damage"			"0"
             }
             "07"
             {
@@ -3427,7 +3429,7 @@
             "08"
             {
                 "var_type"				"FIELD_FLOAT"
-                "kill_pct"				"10.0 11.0 12.0"
+                "kill_pct"				"0"
             }
             "09"
             {
@@ -3437,7 +3439,7 @@
             "10"
             {
                 "var_type"				"FIELD_FLOAT"
-                "frostbite_duration_scepter"	"17"
+                "frostbite_duration_scepter"	"0"
             }
         }
     }

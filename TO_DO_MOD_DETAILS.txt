@@ -15,6 +15,11 @@ Maps:
 -- Fixed missing frost ogres in 2p map
 
 Heroes:
+// Ancient Apparition
+-- Enabled!
+-- Cold Feet damage increased
+-- Chilling Touch cooldown reduced, damage increased, speed penalty removed
+-- Ice Blast radius now scales with level
 // Bloodseeker
 -- Fix thirst movespeed cap break to persist beyond death
 // Occult Deliverer

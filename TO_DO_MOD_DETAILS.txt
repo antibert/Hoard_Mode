@@ -11,12 +11,24 @@ Heroes:
 -- Spiked Carapace changed to work on any source of damage and not just heroes
 
 1.13d
+Maps:
+-- Fixed missing frost ogres in 2p map
+
 Heroes:
 // Bloodseeker
 -- Fix thirst movespeed cap break to persist beyond death
 // Occult Deliverer
 -- Fixed Arcane Orb's damage popup
 -- Fixed Arcane Orb applying anti-illusion damage to non-illusions
+// Pudge
+-- Enabled!
+-- Increased hook damage
+-- Flesh heap reworked slightly:
+--- Grants a stack for every enemy that dies near Pudge
+--- Grants 0.1/0.15/0.2/0.25 strength per stack
+--- Has a maximum of 1000 stacks (250 strength at level 4!)
+--- Is no longer retroactive (so take it at level 1)
+--- Grants 6/12/18/24 spell resistance
 // Skywrath Mage
 -- Fix abilities not working with Octarine Core
 

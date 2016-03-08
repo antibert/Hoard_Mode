@@ -12296,4 +12296,100 @@
             }
         }
     }
+
+    //=================================================================================================================
+    // Ability: Pudge's Flesh Heap
+    //=================================================================================================================
+    "pudge_flesh_heap_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"					"pudge_flesh_heap"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"450"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"flesh_heap_range"		"450"		// If you change this, also change the AbilityCastRange above
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"flesh_heap_magic_resist"		"6 12 18 24"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"flesh_heap_strength_buff_amount"		"0.1 0.15 0.2 0.25"
+			}
+			"04"
+			{
+			    "var_type"			"FIELD_FLOAT"
+                "flesh_heap_max_stacks"		"1000"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_pudge_flesh_heap_datadriven"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+
+				"Aura" 			"modifier_pudge_flesh_heap_debuff_datadriven"
+				"Aura_Radius" 	"%flesh_heap_range"
+				"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+
+			"modifier_pudge_flesh_heap_debuff_datadriven"
+			{
+				"IsDebuff"	"1"
+				"IsHidden"	"1"
+
+				"OnDeath"
+				{
+				    "RunScript"
+                    {
+                        "ScriptFile"	"heroes/hero_pudge/flesh_heap.lua"
+                        "Function"		"modifier_flesh_heap_increment"
+                        "modifier"		"modifier_pudge_flesh_heap_datadriven_buff"
+                    }
+				}
+			}
+
+			"modifier_pudge_flesh_heap_datadriven_buff"
+			{
+			    "Passive"   "0"
+			    "IsPurgable"    "0"
+			    "IsHidden"	"0"
+			    "Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
+
+                "Properties"{
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%flesh_heap_strength_buff_amount"
+                }
+			}
+
+			"modifier_pudge_flesh_heap_passive_datadriven"
+			{
+                "Passive"   "1"
+                "IsHidden"  "1"
+
+                "Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%flesh_heap_magic_resist"
+				}
+			}
+		}
+	}
 }

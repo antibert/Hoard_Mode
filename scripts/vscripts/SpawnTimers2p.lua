@@ -73,6 +73,13 @@ function Spawners2p:StartSpawners()
 		spawn = Spawners2p:SpawnBeast()
 	})
 
+    Spawner:SpawnTimer({
+	    start = 17,
+	    finish = 450,
+	    interval = 60,
+	    spawn = Spawners2p:SpawnFrostOgres()
+    })
+
 	Spawner:SpawnTimer({
 		start = 17,
 		finish = 450,

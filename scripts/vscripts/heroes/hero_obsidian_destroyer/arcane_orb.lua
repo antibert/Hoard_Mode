@@ -9,8 +9,7 @@ function ArcaneOrb( keys )
 	local target = keys.target
 	local summon_damage = ability:GetLevelSpecialValueFor("illusion_damage", (ability:GetLevel() -1))
 	local extra_damage = ability:GetLevelSpecialValueFor("mana_pool_damage_pct", (ability:GetLevel() -1)) / 100
-
-	
+	local essence_aura = "obsidian_destroyer_essence_aura"
 
 	local damage_table = {}
 
@@ -27,6 +26,22 @@ function ArcaneOrb( keys )
 	end 
 
 	ApplyDamage(damage_table)
+
+	local essence_aura_ability = caster:FindAbilityByName(essence_aura)
+	if essence_aura_ability ~= nil then
+		local restore_amount = essence_aura_ability:GetLevelSpecialValueFor("restore_amount", (ability:GetLevel() -1))
+		local target_chance = essence_aura_ability:GetLevelSpecialValueFor("restore_chance", (ability:GetLevel() -1))
+		local max_mana = caster:GetMaxMana() * restore_amount / 100
+		local new_mana = caster:GetMana() + max_mana
+		local chance = math.random(100)
+		if chance < target_chance then
+			if new_mana > caster:GetMaxMana() then
+				caster:SetMana(caster:GetMaxMana())
+			else
+				caster:SetMana(new_mana)
+			end
+		end
+	end
 end
 
 --[[Author: YOLOSPAGHETTI

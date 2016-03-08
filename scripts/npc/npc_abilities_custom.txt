@@ -9524,7 +9524,7 @@
             "01"
             {
                 "var_type"			"FIELD_INTEGER"
-                "bonus_attack_speed"	"0 3 6 9 12 15 18 21 24 27 30"
+                "bonus_attack_speed"	"3 6 9 12 15 18 21 24 27 30"
             }
             "02"
             {
@@ -9544,7 +9544,7 @@
             "05"
             {
                 "var_type"          "FIELD_INTEGER"
-                "bonus_damage"  "0 5 10 15 20 25 30 35 40 45 50"
+                "bonus_damage"  "5 10 15 20 25 30 35 40 45 50"
             }
         }
 
@@ -12035,6 +12035,269 @@
                         "Target"	"TARGET"
                         "Type"		"DAMAGE_TYPE_MAGICAL"
                         "Damage"	"%target_damage"
+                    }
+                }
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Silencer: Last Word
+    //=================================================================================================================
+    // Rewrite of the Silencer Last Word
+    // Author: chrislotix
+    // Date: 11.01.2015.
+    "silencer_global_silence_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "FightRecapLevel"				"2"
+        "AbilityTextureName"			"silencer_global_silence"
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"		"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts"
+            "particle"		"particles/units/heroes/hero_silencer/silencer_global_silence.vpcf"
+        }
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.3 0.3 0.3"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"130"
+        "AbilityDuration"				"4.0 5.0 6.0"
+
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"250 375 500"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityModifierSupportValue"	"0.5"	// Hits all units on the map.
+
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "tooltip_duration"		"4.0 5.0 6.0"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "duration_scepter"		"6 8 10"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "bonus_damage_taken"		"50"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "bonus_damage_taken_scepter"		"100"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "bonus_int"		"30 60 90"
+            }
+        }
+
+        "OnSpellStart"
+        {
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_Silencer.GlobalSilence.Cast"
+                "Target"		"CASTER"
+            }
+
+            "FireEffect"
+            {
+                "EffectName"	"particles/units/heroes/hero_silencer/silencer_global_silence.vpcf"
+                "EffectAttachType"	"follow_origin"
+                "Target"		"CASTER"
+            }
+
+            "ActOnTargets"
+            {
+
+                "Target"
+                {
+                    "Center" "CASTER"
+                    "Radius" "GLOBAL"
+                    "Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                    "Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+                }
+
+                "Action"
+                {
+                    "ApplyModifier"
+                    {
+                        "ModifierName"	"modifier_global_silence_datadriven"
+                        "Target"	"TARGET"
+                    }
+
+                    "FireSound"
+                    {
+                        "EffectName"	"Hero_Silencer.GlobalSilence.Effect"
+                        "Target"		"TARGET"
+                    }
+                }
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_global_silence_datadriven"
+            {
+                "IsDebuff"	"1"
+                "Duration"	"%tooltip_duration"
+                "IsPurgable"	"1"
+                "EffectName"	"particles/generic_gameplay/generic_silence.vpcf"
+                "EffectAttachType"	"follow_overhead"
+
+                "Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%bonus_damage_taken"
+				}
+
+                "States"
+                {
+                    "MODIFIER_STATE_SILENCED"	"MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+
+            "modifier_global_silence_datadriven_int"
+            {
+                "IsBuff"    "1"
+                "Passive"   "1"
+                "IsHidden"	"1"
+
+               "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_int"
+                }
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Outworld Devourer: Essence Aura
+    //=================================================================================================================
+    // Rewrite of the Obsidian Destroyer Essence Aura
+    // Author: chrislotix
+    // Date: 07.01.2015.
+    "obsidian_destroyer_essence_aura_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+        "AbilityTextureName"			"obsidian_destroyer_essence_aura"
+
+            // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"
+        }
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "radius"			"900 900 900 900"
+            }
+            "02"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "bonus_mana"	    "75 150 225 300"
+            }
+            "03"
+            {
+                "var_type"			"FIELD_FLOAT"
+                "restore_amount"	"10 15 20 25"
+            }
+            "04"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "restore_chance"		"40"
+            }
+        }
+
+        "Modifiers"
+        {
+            //Static bonus mana which applies to od only
+
+            "modifier_essence_aura_mana_bonus_datadriven"
+            {
+                "Passive"	"1"
+                "IsPurgable"	"0"
+                "IsHidden"	"1"
+                "Aura" "modifier_essence_aura_effect_datadriven" // this should be the actual mana restore on proc
+                "Aura_Radius" "%radius"
+                "Aura_Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+                "Aura_Types" "DOTA_UNIT_TARGET_HERO"
+                "Aura_ApplyToCaster" "1"
+
+
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_MANA_BONUS"	"%bonus_mana"
+                }
+            }
+
+            "modifier_essence_aura_effect_datadriven"
+            {
+
+                "OnAbilityExecuted"
+                {
+                    "Random"
+                    {
+                        "Chance"	"%restore_chance"
+
+                        "OnSuccess"
+                        {
+                            "RunScript"
+                            {
+                                "ScriptFile"	"scripts/vscripts/heroes/hero_obsidian_destroyer/essence_aura.lua"
+                                "Function"		"RestoreMana"
+                                "Target"	"UNIT"
+                            }
+                            "FireEffect"
+                            {
+                                "EffectName"	"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"
+                                "EffectAttachType"	"follow_origin"
+                                "Target"	"UNIT"
+                            }
+
+                            "FireSound"
+                            {
+                                "EffectName"	"Hero_ObsidianDestroyer.EssenceAura"
+                                "Target"		"UNIT"
+                            }
+                        }
                     }
                 }
             }

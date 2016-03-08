@@ -9,7 +9,6 @@ All Heroes not in game:
 "npc_dota_hero_furion
 "npc_dota_hero_pudge
 "npc_dota_hero_razor
-"npc_dota_hero_silencer
 "npc_dota_hero_terrorblade
 "npc_dota_hero_visage
 )

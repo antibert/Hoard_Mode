@@ -15,8 +15,13 @@ Heroes:
 // Nature's Prophet
 -- Enabled!
 -- Reverted Wrath of Nature to vanilla, but with shorter cooldown
+// Orbital Detonator
+-- Reverted duration of int stacks to 15 seconds
+-- Int stacks no longer disappear when the victim dies
 // Treant Protector
 -- Replaced Wrath of Nature with a new ability, Entangling Roots
+--- Passive attack ability, based on Spirit Bear's Entangling Claws
+--- Chance to root and deal damage over time
 
 ////// Important Changes:
 -- TOOLTIP FOR LARGE GOLEM SP;IT

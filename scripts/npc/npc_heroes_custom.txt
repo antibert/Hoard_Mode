@@ -26,14 +26,22 @@
         "Ability3"              "bloodseeker_thirst_datadriven"
     }
 	//=================================================================================================================
-	// HERO: Brood
+	// HERO: Bounty Hunter
 	//=================================================================================================================
-	"npc_dota_hero_broodmother_holdout"
+	"npc_dota_hero_bounty_hunter_holdout"
 	{
-		"override_hero"			"npc_dota_hero_broodmother"
-		"Ability1"				"broodmother_spawn_spiderlings_datadriven"
-		"Ability4"				"broodmother_insatiable_hunger_datadriven"
+		"override_hero"			"npc_dota_hero_bounty_hunter"
+		"Ability1"				"bounty_hunter_shuriken_toss_datadriven"
 	}
+	//=================================================================================================================
+    // HERO: Brood
+    //=================================================================================================================
+    "npc_dota_hero_broodmother_holdout"
+    {
+        "override_hero"			"npc_dota_hero_broodmother"
+        "Ability1"				"broodmother_spawn_spiderlings_datadriven"
+        "Ability4"				"broodmother_insatiable_hunger_datadriven"
+    }
 	//=================================================================================================================
     // HERO: Chaos Knight
     //=================================================================================================================

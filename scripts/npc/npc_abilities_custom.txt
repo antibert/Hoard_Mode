@@ -12436,4 +12436,153 @@
             }
         }
     }
+
+    // Rewrite of the Shuriken Toss ability, based on Luna moon Glaive
+    // Author: jacklarnes, Pizzalol, Diellan
+    // Date: 09.03.2016
+    // NOTE: ------------------- THIS ABILITY REQUIRES bounty_hunter_shuriken_toss_dummy_datadriven TO WORK ----------------
+    "bounty_hunter_shuriken_toss_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "AbilityTextureName"            "bounty_hunter_shuriken_toss"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+        "precache"
+        {
+            "soundfile"   "soundevents/game_sounds_heroes/game_sounds_bounty_hunter.vsndevts"
+            "particle"	"particles/units/heroes/hero_bounty_hunter/bounty_hunter_suriken_toss.vpcf"
+            "particle"    "particles/units/heroes/hero_bounty_hunter/bounty_hunter_suriken_impact.vpcf"
+        }
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"650"
+        "AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+        "AbilityCooldown"				"10"
+        "AbilityManaCost"				"90 115 135 155"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityModifierSupportValue"	"0.1"	// just a mini stun
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_damage"			"100 200 250 325"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "speed"					"1000 1000 1000 1000"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bounce_aoe"			"900"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "mini_stun"				"0.1"
+            }
+            "05"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bounces"					"5"
+            }
+            "06"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "damage_reduction_percent"					"0"
+            }
+        }
+
+        "OnSpellStart"
+        {
+            "TrackingProjectile"
+            {
+                "Target"           "TARGET"
+                "EffectName"       "particles/units/heroes/hero_bounty_hunter/bounty_hunter_suriken_toss.vpcf"
+                "Dodgeable"        "1"
+                "ProvidesVision"   "0"
+                //"VisionRadius"     "300"
+                "MoveSpeed"        "%speed"
+                "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+            }
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_BountyHunter.Shuriken"
+                "Target"	"CASTER"
+            }
+
+
+        }
+
+        "OnProjectileHitUnit"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"scripts/vscripts/heroes/hero_bounty_hunter/shuriken_toss.lua"
+                "Function"		"shuriken_toss_start_create_dummy"
+            }
+        }
+    }
+
+    // Rewrite of the Luna Moon Glaive ability
+    // Author: jacklarnes, Pizzalol
+    // Date: 29.09.2015.
+    // NOTE: ------------------- THIS ABILITY REQUIRES luna_moon_glaive_datadriven TO WORK ----------------
+    "bounty_hunter_shuriken_toss_dummy_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+        "OnProjectileHitUnit"
+        {
+            "DeleteOnHit"	"1"
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_BountyHunter.Shuriken.Impact"
+                "Target" 		"TARGET"
+            }
+
+            "RunScript"
+            {
+                "ScriptFile"	"scripts/vscripts/heroes/hero_bounty_hunter/shuriken_toss.lua
+                "Function"		"shuriken_toss_bounce"
+            }
+
+        }
+
+        "Modifiers"
+        {
+            "modifier_shuriken_toss_dummy_unit"
+            {
+                "States"
+                {
+                    "MODIFIER_STATE_INVULNERABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NO_HEALTH_BAR"					"MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_UNSELECTABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_FLYING"							"MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+        }
+    }
 }

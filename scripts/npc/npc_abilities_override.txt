@@ -3449,38 +3449,7 @@
 	//=================================================================================================================
 	"furion_wrath_of_nature"
 	{
-		"MaxLevel"						"4"
-		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityCooldown"				"30 25 20 15"
-		"AbilityManaCost"				"60 90 120 150"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_targets"			"5 8 11 15"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"135 170 205 240"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_percent_add"	"7"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_targets_scepter"	"10 14 18 22"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_scepter"		"240 270 300 330"
-			}
-		}
+		"AbilityCooldown"				"60 40 20"
 	}
 	//=================================================================================================================
 	// Treant Protector: Leech Seed

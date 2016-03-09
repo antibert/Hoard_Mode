@@ -10,14 +10,13 @@ Heroes:
 -- Mana Burn gets range increase with levels, no longer increased by burrow
 -- Spiked Carapace changed to work on any source of damage and not just heroes
 
-1.13e
+1.13f
 Heroes:
-// Optical Diffusor
--- Increased steal duration to 25
--- Reduced cooldown of Sanity's Eclispe to 160/140/120
-// Pudge
--- Increased radius of Flesh Heap from 450 to 900
--- Increased spell resistance of Flesh Heap to 25/40/55/70
+// Nature's Prophet
+-- Enabled!
+-- Reverted Wrath of Nature to vanilla, but with shorter cooldown
+// Treant Protector
+-- Replaced Wrath of Nature with a new ability, Entangling Roots
 
 ////// Important Changes:
 -- TOOLTIP FOR LARGE GOLEM SP;IT

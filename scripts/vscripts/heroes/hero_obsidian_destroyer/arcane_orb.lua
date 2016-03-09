@@ -117,7 +117,7 @@ function RemoveStacks(keys)
 	
 	-- Removes the stacks from the aesthetic modifiers
 	local stacks = caster:GetModifierStackCount( int_steal_modifier, ability )
-	caster:SetModifierStackCount( int_steal_modifier, ability, stacks - int_steal )
+	--caster:SetModifierStackCount( int_steal_modifier, ability, stacks - int_steal )
 	target:SetModifierStackCount( int_steal_modifier_target, ability, stacks - int_steal )
 end
 

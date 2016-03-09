@@ -1,5 +1,5 @@
 "addon"
 {
-	"DOTA_BadGuys"    								"THE HOARD"
+	"DOTA_BadGuys"    								"THE HORDE"
 }
 

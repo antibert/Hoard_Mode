@@ -12,6 +12,10 @@ Heroes:
 
 1.13f
 Heroes:
+// Clinkz
+-- Enabled!
+-- Reduced cooldown and increased duration of strafe
+-- Reduced manacost and increased damage of searing arrows
 // Nature's Prophet
 -- Enabled!
 -- Reverted Wrath of Nature to vanilla, but with shorter cooldown

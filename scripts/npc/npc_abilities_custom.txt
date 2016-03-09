@@ -11203,18 +11203,9 @@
             "05"
             {
                 "var_type"				"FIELD_INTEGER"
-                "steal_duration"		"10"
+                "steal_duration"		"15"
             }
 
-        }
-
-        "OnUpgrade"
-        {
-            "RunScript"
-            {
-                "ScriptFile"	"scripts/vscripts/heroes/hero_obsidian_destroyer/arcane_orb.lua"
-                "Function"	"LevelTime"
-            }
         }
 
         "Modifiers"
@@ -11289,13 +11280,14 @@
                     "RunScript"
                     {
                         "ScriptFile"	"scripts/vscripts/heroes/hero_obsidian_destroyer/arcane_orb.lua"
-                        "Function"	"RemoveStacks"
+                        "Function"	"RemoveStacksTarget"
                     }
                 }
 
                 "Properties"
                 {
-                    "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_steal"
+                    "MODIFIER_PROPERTY_MANA_BONUS"		"%int_steal * 13"
+                    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"%int_steal * 0.04"
                 }
             }
 
@@ -11310,6 +11302,15 @@
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"%int_gain"
+                }
+
+                "OnDestroy"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"scripts/vscripts/heroes/hero_obsidian_destroyer/arcane_orb.lua"
+                        "Function"	"RemoveStacksSelf"
+                    }
                 }
             }
 

@@ -11,6 +11,9 @@ Heroes:
 -- Spiked Carapace changed to work on any source of damage and not just heroes
 
 1.13f
+General:
+-- Changed Stumpy to Creep-Hero
+
 Heroes:
 // Clinkz
 -- Enabled!

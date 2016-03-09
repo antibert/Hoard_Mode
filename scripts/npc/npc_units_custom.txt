@@ -7817,6 +7817,7 @@
 		"Level"						"20"
 		"CanBeDominated"			"0"
 		"IsAncient"                    "1"
+		"ConsideredHero"            "1"
 		
 		// Abilities
 		//----------------------------------------------------------------

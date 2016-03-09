@@ -14,13 +14,13 @@ function shuriken_toss_start_create_dummy( keys )
 	local ability_level = ability:GetLevel() - 1
 
 	-- Create the dummy unit which keeps track of bounces
-	local dummy = CreateUnitByName( "npc_dummy_unit", target:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber() )
+	local dummy = CreateUnitByName( "npc_dummy_blank", target:GetAbsOrigin(), false, caster, caster, caster:GetTeamNumber() )
 	dummy:AddAbility("bounty_hunter_shuriken_toss_dummy_datadriven")
 	local dummy_ability =  dummy:FindAbilityByName("bounty_hunter_shuriken_toss_dummy_datadriven")
 	dummy_ability:ApplyDataDrivenModifier( caster, dummy, "modifier_shuriken_toss_dummy_unit", {} )
 
 	-- Ability variables
-	dummy_ability.damage = caster:GetAverageTrueAttackDamage()
+	dummy_ability.damage = ability:GetLevelSpecialValueFor("bonus_damage", ability_level)
 	dummy_ability.bounceTable = {}
 	dummy_ability.bounceCount = 0
 	dummy_ability.maxBounces = ability:GetLevelSpecialValueFor("bounces", ability_level)
@@ -39,9 +39,11 @@ function shuriken_toss_start_create_dummy( keys )
 	local iFlag = DOTA_UNIT_TARGET_FLAG_NONE
 	local bounce_targets = FindUnitsInRadius(caster:GetTeamNumber(), dummy:GetAbsOrigin(), nil, dummy_ability.bounceRange, iTeam, iType, iFlag, FIND_CLOSEST, false)
 
+	dummy_ability.bounceTable[target] = ((dummy_ability.bounceTable[target] or 0) + 1)
+
 	-- It has to be a target different from the current one
 	for _,v in pairs(bounce_targets) do
-		if v ~= target then
+		if v ~= target and v:CanEntityBeSeenByMyTeam(ability.projectileFrom) then
 			dummy_ability.projectileTo = v
 			break
 		end
@@ -64,6 +66,8 @@ function shuriken_toss_start_create_dummy( keys )
         iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
     	}
     	ProjectileManager:CreateTrackingProjectile( info )
+
+		dummy_ability.bounceTable[dummy_ability.projectileTo] = ((dummy_ability.bounceTable[dummy_ability.projectileTo] or 0) + 1)
     end
 end
 
@@ -80,7 +84,7 @@ function shuriken_toss_bounce( keys )
 	damage_table.attacker = caster:GetOwner()
 	damage_table.victim = target
 	damage_table.ability = ability.original_ability
-	damage_table.damage_type = DAMAGE_TYPE_PHYSICAL
+	damage_table.damage_type = DAMAGE_TYPE_MAGICAL
 	damage_table.damage = ability.damage * (1 - ability.dmgMultiplier)
 
 	ApplyDamage(damage_table)
@@ -104,7 +108,7 @@ function shuriken_toss_bounce( keys )
 
 	-- Find a new target that is not the current one
 	for _,v in pairs(bounce_targets) do
-		if v ~= target then
+		if v ~= target and ability.bounceTable[v] == nil and v:CanEntityBeSeenByMyTeam(ability.projectileFrom) then
 			ability.projectileTo = v
 			break
 		end
@@ -127,6 +131,8 @@ function shuriken_toss_bounce( keys )
         iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_HITLOCATION
     	}
     	ProjectileManager:CreateTrackingProjectile( info )
+
+		ability.bounceTable[ability.projectileTo] = ((ability.bounceTable[ability.projectileTo] or 0) + 1)
     end
 end
 

@@ -23,7 +23,7 @@ function SplitShotLaunch( keys )
 
         -- Create projectiles for units that are not the casters current attack target
         for _,v in pairs(split_shot_targets) do
-            if v ~= attack_target then
+            if v ~= attack_target and v:CanEntityBeSeenByMyTeam(caster) then
                 local projectile_info =
                 {
                     EffectName = split_shot_projectile,

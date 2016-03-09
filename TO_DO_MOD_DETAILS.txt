@@ -15,6 +15,15 @@ General:
 -- Changed Stumpy to Creep-Hero
 
 Heroes:
+// Bounty Hunter
+-- Enabled!
+-- Shuriken damage increased
+-- Shuriken now always bounces to the nearest unit within a medium range
+-- Shuriken won't hit the same target twice
+-- Track reworked:
+--- Passive ability
+--- All enemies that die nearby have a chance to drop a bonus bag of gold
+--- Grants passive movespeed to the Bounty Hunter
 // Clinkz
 -- Enabled!
 -- Reduced cooldown and increased duration of strafe

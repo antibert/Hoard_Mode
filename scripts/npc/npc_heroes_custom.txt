@@ -32,6 +32,7 @@
 	{
 		"override_hero"			"npc_dota_hero_bounty_hunter"
 		"Ability1"				"bounty_hunter_shuriken_toss_datadriven"
+		"Ability4"              "bounty_hunter_track_datadriven"
 	}
 	//=================================================================================================================
     // HERO: Brood

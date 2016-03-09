@@ -18,6 +18,9 @@ Heroes:
 // Orbital Detonator
 -- Reverted duration of int stacks to 15 seconds
 -- Int stacks no longer disappear when the victim dies
+// Razor
+-- Increased minimum damage of Plasma Field
+-- Static Link can target creeps
 // Treant Protector
 -- Replaced Wrath of Nature with a new ability, Entangling Roots
 --- Passive attack ability, based on Spirit Bear's Entangling Claws

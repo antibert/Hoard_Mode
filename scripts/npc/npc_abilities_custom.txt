@@ -11203,7 +11203,7 @@
             "05"
             {
                 "var_type"				"FIELD_INTEGER"
-                "steal_duration"		"15"
+                "steal_duration"		"25"
             }
 
         }
@@ -11362,7 +11362,7 @@
 
         // Time
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"160.0 160.0 160.0"
+        "AbilityCooldown"				"160.0 140.0 120.0"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
@@ -12312,19 +12312,19 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"450"
+		"AbilityCastRange"				"900"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"flesh_heap_range"		"450"		// If you change this, also change the AbilityCastRange above
+				"flesh_heap_range"		"900"		// If you change this, also change the AbilityCastRange above
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"flesh_heap_magic_resist"		"6 12 18 24"
+				"flesh_heap_magic_resist"		"25 40 55 70"
 			}
 			"03"
 			{

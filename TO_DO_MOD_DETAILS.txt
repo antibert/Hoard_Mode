@@ -10,37 +10,14 @@ Heroes:
 -- Mana Burn gets range increase with levels, no longer increased by burrow
 -- Spiked Carapace changed to work on any source of damage and not just heroes
 
-1.13d
-Maps:
--- Fixed missing frost ogres in 2p map
-
+1.13e
 Heroes:
-// Ancient Apparition
--- Enabled!
--- Cold Feet damage increased
--- Chilling Touch cooldown reduced, damage increased, speed penalty removed
--- Ice Blast radius now scales with level
--- Ice Blast damage increased
--- Ice Blast DoT and shatter removed
-// Bloodseeker
--- Fix thirst movespeed cap break to persist beyond death
-// Occult Deliverer
--- Fixed Arcane Orb's damage popup
--- Fixed Arcane Orb applying anti-illusion damage to non-illusions
+// Optical Diffusor
+-- Increased steal duration to 25
+-- Reduced cooldown of Sanity's Eclispe to 160/140/120
 // Pudge
--- Enabled!
--- Increased hook damage
--- Flesh heap reworked slightly:
---- Grants a stack for every enemy that dies near Pudge
---- Grants 0.1/0.15/0.2/0.25 strength per stack
---- Has a maximum of 1000 stacks (250 strength at level 4!)
---- Is no longer retroactive (so take it at level 1)
---- Grants 6/12/18/24 spell resistance
-// Skywrath Mage
--- Fix abilities not working with Octarine Core
-
-Items:
--- Fixed Shiva's Guard 2 aura not being visible (it worked, just wasn't shown)
+-- Increased radius of Flesh Heap from 450 to 900
+-- Increased spell resistance of Flesh Heap to 25/40/55/70
 
 ////// Important Changes:
 -- TOOLTIP FOR LARGE GOLEM SP;IT

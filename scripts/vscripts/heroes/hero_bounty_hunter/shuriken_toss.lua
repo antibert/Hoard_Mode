@@ -43,7 +43,7 @@ function shuriken_toss_start_create_dummy( keys )
 
 	-- It has to be a target different from the current one
 	for _,v in pairs(bounce_targets) do
-		if v ~= target and v:CanEntityBeSeenByMyTeam(ability.projectileFrom) then
+		if v ~= target and v:CanEntityBeSeenByMyTeam(caster) then
 			dummy_ability.projectileTo = v
 			break
 		end
@@ -108,7 +108,7 @@ function shuriken_toss_bounce( keys )
 
 	-- Find a new target that is not the current one
 	for _,v in pairs(bounce_targets) do
-		if v ~= target and ability.bounceTable[v] == nil and v:CanEntityBeSeenByMyTeam(ability.projectileFrom) then
+		if v ~= target and ability.bounceTable[v] == nil and v:CanEntityBeSeenByMyTeam(damage_table.attacker) then
 			ability.projectileTo = v
 			break
 		end

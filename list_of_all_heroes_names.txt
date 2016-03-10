@@ -1,6 +1,0 @@
-(
-
-All Heroes not in game:
-
-"npc_dota_hero_bane
-)

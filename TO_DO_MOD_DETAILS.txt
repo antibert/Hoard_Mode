@@ -12,6 +12,12 @@ Heroes:
 
 1.13g
 Heroes:
+// Bane
+-- Enabled!
+-- Enfeeble is now an AoE, shorter duration
+-- Brain Sap is now an AoE, otherwise the same
+-- Nightmare does more damage over time
+-- Fiend's Grip has much shorter recharge
 // Clinkz
 -- Reduced cost of strafe from 90 to 50
 // Terrorblade

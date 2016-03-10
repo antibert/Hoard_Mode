@@ -12732,4 +12732,144 @@
             }
         }
     }
+
+    //=================================================================================================================
+    // Visage: Soul Assumption
+    //=================================================================================================================
+    "visage_soul_assumption_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"							"95481"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "FightRecapLevel"				"1"
+        "AbilityTextureName"					"visage_soul_assumption"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.2 0.2 0.2 0.2"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"4.0 4.0 4.0 4.0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"120 130 140 150"
+
+        // Cast Range
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"900 900 900 900"
+        "AOERadius"						"%radius"
+
+        "AbilityDamage"					"80 160 240 320"
+
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bolt_speed"				"1000"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "radius"			"325"
+            }
+        }
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"			"soundevents/game_sounds_heroes/game_sounds_visage.vsndevts"
+            "particle"			"particles/units/heroes/hero_visage/visage_soul_assumption_bolt.vpcf"
+            "particle"			"particles/units/heroes/hero_visage/visage_soul_assumption_beam.vpcf"
+            "particle"          "particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+        }
+
+        "OnSpellStart"
+        {
+            "FireSound"
+            {
+                "Target"				"CASTER"
+                "EffectName"			"Hero_Visage.SoulAssumption.Cast"
+            }
+
+            "FireEffect"
+            {
+                "Target"			"CASTER"
+                "EffectName"		"particles/units/heroes/hero_visage/visage_soul_assumption_beam.vpcf"
+                "EffectAttachType"	"follow_origin"
+            }
+
+            "TrackingProjectile"
+            {
+                "Target"				"TARGET"
+                "EffectName"			"particles/units/heroes/hero_visage/visage_soul_assumption_bolt.vpcf"
+                "Dodgeable"				"0"
+                "ProvidesVision"		"0"
+                "MoveSpeed"				"%bolt_speed"
+            }
+        }
+
+        "OnProjectileHitUnit"
+        {
+            "FireSound"
+            {
+                "Target"				"CASTER"
+                "EffectName"			"Hero_Visage.SoulAssumption.Target"
+            }
+
+            "FireEffect"
+            {
+                "EffectName"	"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
+                "EffectAttachType"	"attach_origin"
+                "Target"		"TARGET"
+                "ControlPointEntities"
+                {
+                    "TARGET"	"attach_origin"
+                    "TARGET"	"attach_origin"
+                    "TARGET"	"attach_origin"
+                    "TARGET"	"attach_origin"	//CP3 has a child explosion origin
+                }
+            }
+
+            "ActOnTargets"
+            {
+                "Target"
+                {
+                    "Center"			"TARGET"
+                    "Radius"			"%radius"
+                    "Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Flags"				"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+                    "Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+
+                "Action"
+                {
+                    "FireEffect"
+                    {
+                        "Target"			"CASTER"
+                        "EffectName"		"particles/units/heroes/hero_visage/visage_soul_assumption_beam.vpcf"
+                        "EffectAttachType"	"follow_origin"
+                    }
+                    "Damage"
+                    {
+                        "Target"	"TARGET"
+                        "Type"		"DAMAGE_TYPE_MAGICAL"
+                        "Damage"	"%AbilityDamage"
+                    }
+                }
+            }
+        }
+    }
 }

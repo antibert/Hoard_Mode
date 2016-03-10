@@ -364,13 +364,22 @@
         "Ability2"				"spirit_breaker_empowering_haste_datadriven"
     }
 	//=================================================================================================================
-	// HERO: Tidehunter
+	// HERO: Terrorblade
 	//=================================================================================================================
-	"npc_dota_hero_tidehunter_holdout"
+	"npc_dota_hero_terrorblade_holdout"
 	{
-		"override_hero"			"npc_dota_hero_tidehunter"
-		"Ability1"				"holdout_gush"
+		"override_hero"			"npc_dota_hero_terrorblade"
+		"Ability1"				"terrorblade_zeal_datadriven"
+		"Ability4"				"terrorblade_sunder_datadriven"
 	}
+	//=================================================================================================================
+    // HERO: Tidehunter
+    //=================================================================================================================
+    "npc_dota_hero_tidehunter_holdout"
+    {
+        "override_hero"			"npc_dota_hero_tidehunter"
+        "Ability1"				"holdout_gush"
+    }
 	//=================================================================================================================
 	// HERO: Tidehunter
 	//=================================================================================================================

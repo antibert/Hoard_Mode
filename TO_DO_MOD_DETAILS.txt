@@ -12,6 +12,15 @@ Heroes:
 
 1.13g
 Heroes:
+// Clinkz
+-- Reduced cost of strafe from 90 to 50
+// Terrorblade
+-- Enabled!
+-- Replaced Reflection with a new ability Zeal
+-- Zeal is a passive that adds a flat amount of aoe damage to Terrorblade's attacks
+-- Zeal works on illusions
+-- Sunder works on creeps, but not on bosses
+-- Sunder cooldown reduced
 // Visage
 -- Enabled!
 -- Soul Assumption reworked: aoe damage that doesn't scale

@@ -12872,4 +12872,165 @@
             }
         }
     }
+
+    //=================================================================================================================
+    // Terrorblade: Zeal
+    //=================================================================================================================
+    "terrorblade_zeal_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "AbilityTextureName"			"terrorblade_reflection"
+
+        "AbilityDamage"					"10 25 40 55"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "radius"                "200"
+            }
+        }
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"			"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+            "particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_frost.vpcf"
+            "particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_frost_explosion.vpcf"
+        }
+
+        "Modifiers"
+        {
+            "modifier_terrorblade_zeal_datadriven_splash"
+            {
+                "Passive" "1"
+                "IsHidden" "1"
+                "AllowIllusionDuplicate"    "1"
+
+                "OnAttackLanded"
+                {
+                    "ActOnTargets"
+                    {
+                        "Target"
+                        {
+                            "Center"	"TARGET"
+                            "Radius"	"%radius"
+                            "Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                            "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                            "Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+                        }
+                        "Action"
+                        {
+                            "Damage"
+                            {
+                                "Target"	"TARGET"
+                                "Type"		"DAMAGE_TYPE_MAGICAL"
+                                "Damage"	"%AbilityDamage"
+                            }
+
+                            "FireSound"
+                            {
+                                "EffectName"	"Hero_DragonKnight.ProjectileImpact"
+                                "Target" 		"TARGET"
+                            }
+
+                            "FireEffect"
+                            {
+                                "Target"		"TARGET"
+                                "EffectName"			"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_frost_explosion.vpcf"
+                                "EffectAttachType"		"world_origin"
+                                "ControlPointEntities"
+                                {
+                                    "TARGET"	"attach_origin"
+                                    "TARGET"	"attach_origin"
+                                    "TARGET"	"attach_origin"
+                                    "TARGET"	"attach_origin"	//CP3 has a child explosion origin
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Terrorblade: Zeal
+    //=================================================================================================================
+    // Rewrite of Terrorblade Sunder
+    // Author: Noya
+    // Date: 11.1.2015.
+    // Notes: Spell can be self targeted. If you want to disable self-targeting, check abaddon_aphotic_shield_datadriven
+    "terrorblade_sunder_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "FightRecapLevel"				"2"
+        "AbilityTextureName"			"terrorblade_sunder"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"60 45 30"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"325"
+        "AbilityCastPoint"				"0.35"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"200 100 0"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "hit_point_minimum_pct"		"20"
+            }
+        }
+
+        "precache"
+        {
+            "soundfile"	"soundevents/game_sounds_heroes/game_sounds_terrorblade.vsndevts"
+            "particle"  "particles/units/heroes/hero_terrorblade/terrorblade_sunder.vpcf"
+        }
+
+        "OnSpellStart"
+        {
+            "FireSound"
+            {
+                "EffectName" 	"Hero_Terrorblade.Sunder.Cast"
+                "Target"	 	"CASTER"
+            }
+            "FireSound"
+            {
+                "EffectName" 	"Hero_Terrorblade.Sunder.Target"
+                "Target"	 	"TARGET"
+            }
+            "RunScript"
+            {
+                "ScriptFile"	"heroes/hero_terrorblade/sunder.lua"
+                "Function"		"Sunder"
+            }
+        }
+    }
 }

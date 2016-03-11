@@ -1982,7 +1982,7 @@
 
 			"SpawnUnit"
 			{
-				"UnitName"			"npc_dota_creature_spooki_easy"
+				"UnitName"			"npc_dota_creature_spooki"
 				"UnitCount"			"%number_of_zombies"
 				"UnitLimit"			"16"
 				"SpawnRadius"		"175"

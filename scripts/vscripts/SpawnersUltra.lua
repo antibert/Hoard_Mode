@@ -25,7 +25,7 @@ function SpawnersUltra:SpawnBazzMid()
 	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
 	local units_to_spawn = RandomInt(6,9)
 	for i=1,units_to_spawn do
-		local unit = CreateUnitByName("npc_dota_creature_bazz_hard", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+		local unit = CreateUnitByName("npc_dota_creature_bazz", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 								OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 								Position = waypoint, Queue = true} )
@@ -441,7 +441,7 @@ function SpawnersUltra:SpawnBazzTop()
 	local waypoint = Entities:FindByName(nil, "lane_top_pathcorner_badguys_4"):GetAbsOrigin()
 	local units_to_spawn = RandomInt(5,7)
 	for i=1,units_to_spawn do
-		local unit = CreateUnitByName("npc_dota_creature_bazz_hard", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+		local unit = CreateUnitByName("npc_dota_creature_bazz", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 								OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 								Position = waypoint, Queue = true} )

@@ -11,7 +11,7 @@ function Spawners2p:SpawnRoshan()
     return {
         source =  "spawner4",
         waypoint = "lane_mid_pathcorner_badguys_7",
-        unit = "npc_dota_creature_roshan_boss_easy"
+        unit = "npc_dota_creature_roshan_boss"
     }
 end
 
@@ -19,7 +19,7 @@ function Spawners2p:SpawnOgreBoss()
     return {
         source =  "spawner4",
         waypoint = "lane_mid_pathcorner_badguys_7",
-        unit = "npc_dota_creature_ogre_boss_easy"
+        unit = "npc_dota_creature_ogre_boss"
     }
 end
 
@@ -35,7 +35,7 @@ function Spawners2p:SpawnBigBear()
     return {
         source =  "spawner4",
         waypoint = "lane_mid_pathcorner_badguys_7",
-        unit = "npc_dota_creature_big_bear_easy"
+        unit = "npc_dota_creature_big_bear"
     }
 end
 
@@ -90,7 +90,7 @@ function Spawners2p:SpawnBazzMid()
         waypoint = "lane_mid_pathcorner_badguys_7",
         max = 8,
         min = 6,
-        unit = "npc_dota_creature_bazz_hard"
+        unit = "npc_dota_creature_bazz"
     }
 end
 
@@ -505,7 +505,7 @@ function Spawners2p:SpawnFriend()
         point = "spawner7",
         waypoint = "lane_bot_pathcorner_goodguys_2",
         lane = "mid",
-        unit = "npc_dota_creature_friend_easy",
+        unit = "npc_dota_creature_friend",
         max_spawn = 12
     })
 end

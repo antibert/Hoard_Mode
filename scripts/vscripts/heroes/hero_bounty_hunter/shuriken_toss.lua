@@ -102,7 +102,7 @@ function shuriken_toss_bounce( keys )
 	ability.projectileTo = nil
 
 	local iTeam = DOTA_UNIT_TARGET_TEAM_ENEMY
-	local iType = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BUILDING + DOTA_UNIT_TARGET_MECHANICAL
+	local iType = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_MECHANICAL
 	local iFlag = DOTA_UNIT_TARGET_FLAG_NONE
 	local bounce_targets = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, ability.bounceRange, iTeam, iType, iFlag, FIND_CLOSEST, false)
 

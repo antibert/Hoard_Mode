@@ -164,7 +164,7 @@ end
 function Spawners2p:SpawnBigSpiders()
     return {
         source =  "spawner2",
-        waypoint = "lane_mid_pathcorner_badguys_4",
+        waypoint = "lane_top_pathcorner_badguys_4",
         max = 2,
         unit = "npc_dota_big_spiders"
     }
@@ -211,7 +211,7 @@ end
 function Spawners2p:SpawnMiniSatyrs()
     return {
         source =  "spawner2",
-        waypoint = "lane_mid_pathcorner_badguys_4",
+        waypoint = "lane_top_pathcorner_badguys_4",
         max = 2,
         unit = "npc_dota_creature_satyr"
     }
@@ -230,7 +230,7 @@ end
 function Spawners2p:SpawnRippers()
     return {
         source =  "spawner2",
-        waypoint = "lane_mid_pathcorner_badguys_4",
+        waypoint = "lane_top_pathcorner_badguys_4",
         max = 4,
         min = 3,
         unit = "npc_dota_creature_lesser_nightcrawler"
@@ -251,7 +251,7 @@ end
 function Spawners2p:SpawnBigSatyrs()
     return {
         source =  "spawner1",
-        waypoint = "lane_mid_pathcorner_badguys_4",
+        waypoint = "lane_top_pathcorner_badguys_4",
         max = 4,
         unit = "npc_dota_creature_big_satyr"
     }
@@ -270,7 +270,7 @@ end
 function Spawners2p:SpawnHellBear()
     return {
         source =  "spawner5",
-        waypoint = "lane_mid_pathcorner_badguys_4",
+        waypoint = "lane_top_pathcorner_badguys_4",
         max = 1,
         unit = "npc_dota_hellbear"
     }

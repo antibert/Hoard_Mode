@@ -2,6 +2,7 @@
 
 require("statcollection/init")
 require('internal/util')
+require('maplogic/init')
 require('gamemode')
 
 function Precache( context )

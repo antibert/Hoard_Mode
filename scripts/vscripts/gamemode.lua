@@ -71,106 +71,6 @@ end
 ]]
 function GameMode:OnAllPlayersLoaded()
   DebugPrint("[BAREBONES] All Players have loaded into the game")
-
-  -------------------------------------------------------------------------------------------------
-  -- Add abilities to towers
-  -------------------------------------------------------------------------------------------------
-
-  -- Find all friendly buildings on the map
-  local buildings = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, Vector(0,0,0), nil, 20000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
-
-  -- Iterate through each one
-  for _, building in pairs(buildings) do
-
-    -- Parameters
-    local building_name = building:GetName()
-    DebugPrint(building_name)
-
-    -- Identify the building type
-    if string.find(building_name, "tower") then
-      building:AddAbility("tower_overpower")
-      local tower_overpower = building:FindAbilityByName("tower_overpower")
-      tower_overpower:SetLevel(0)
-
-      building:AddAbility("tower_stats")
-      local tower_stats = building:FindAbilityByName("tower_stats")
-      tower_stats:SetLevel(0)
-
-      building:AddAbility("tower_splash")
-      local tower_splash = building:FindAbilityByName("tower_splash")
-      tower_splash:SetLevel(0)
-
---    elseif string.find(building_name, "rax_melee") then
---      building:AddAbility("building_stats")
---      local building_stats = building:FindAbilityByName("building_stats")
---      building_stats:SetLevel(0)
---
---    elseif string.find(building_name, "rax_range") then
---      building:AddAbility("building_stats")
---      local building_stats = building:FindAbilityByName("building_stats")
---      building_stats:SetLevel(0)
-
-    elseif string.find(building_name, "fort") then
-      DebugPrint("Adding abilities to ancient")
-      -- Add passive buff
-      building:AddAbility("global_armor_buff")
-      local ancient_ability = building:FindAbilityByName("global_armor_buff")
-      ancient_ability:SetLevel(0)
-
-      -- Add passive buff
-      building:AddAbility("global_offense_buff")
-      local ancient_ability = building:FindAbilityByName("global_offense_buff")
-      ancient_ability:SetLevel(0)
-
-    elseif string.find(building_name, "fountain") then
-      -- Do nothing (fountain was already modified previously)
-    else
-
-    end
-
-  end
-
-  -- Find all enemy buildings on the map
-  local buildings = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, Vector(0,0,0), nil, 20000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
-
-  -- Iterate through each one
-  for _, building in pairs(buildings) do
-
-    -- Parameters
-    local building_name = building:GetName()
-    DebugPrint(building_name)
-
-    -- Identify the building type
-    if string.find(building_name, "tower") then
-      DebugPrint("Adding abilities to enemy tower")
-      -- Add passive buff
-      building:AddAbility("reward_global_offense_buff")
-      local ancient_ability = building:FindAbilityByName("reward_global_offense_buff")
-      ancient_ability:SetLevel(1)
-
-    elseif string.find(building_name, "rax_melee") then
-      DebugPrint("Adding abilities to enemy melee rax")
-      -- Add passive buff
-      building:AddAbility("reward_global_armor_buff")
-      local ancient_ability = building:FindAbilityByName("reward_global_armor_buff")
-      ancient_ability:SetLevel(1)
-
-    elseif string.find(building_name, "rax_range") then
-      DebugPrint("Adding abilities to enemy ranged rax")
-      -- Add passive buff
-      building:AddAbility("reward_global_armor_buff")
-      local ancient_ability = building:FindAbilityByName("reward_global_armor_buff")
-      ancient_ability:SetLevel(1)
-
-    elseif string.find(building_name, "fort") then
-
-    elseif string.find(building_name, "fountain") then
-      -- Do nothing (fountain was already modified previously)
-    else
-
-    end
-
-  end
 end
 
 --[[
@@ -182,7 +82,6 @@ end
 ]]
 function GameMode:OnHeroInGame(hero)
   DebugPrint("[BAREBONES] Hero spawned in game for first time -- " .. hero:GetUnitName())
-
 
 
   if hero:GetUnitName() == "npc_dota_hero_ogre_magi" then
@@ -205,11 +104,13 @@ function GameMode:OnHeroInGame(hero)
   hero:AddAbility("example_ability")]]
 end
 
+--[[
 require('Spawners')
 require('SpawnersMedium')
 require('SpawnersHard')
 require('SpawnersUltra')
 require('Spawners2p')
+]]
 
 --[[
   This function is called once and only once when the game completely begins (about 0:00 on the clock).  At this point,
@@ -219,6 +120,7 @@ require('Spawners2p')
 function GameMode:OnGameInProgress()
   DebugPrint("[BAREBONES] The game has officially begun")
 
+  --[[
   ShowMessage('Map name when called upon in the test client:' .. GetMapName())
   if GetMapName() == 'Horde_5p_easy' then
     Spawners:StartSpawners()
@@ -236,6 +138,7 @@ function GameMode:OnGameInProgress()
     Spawners2p:StartSpawners()
     print(" Loading Two Player Map Spawners")
   end
+  ]]
 
 end
 

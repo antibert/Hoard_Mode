@@ -10,9 +10,41 @@ Heroes:
 -- Mana Burn gets range increase with levels, no longer increased by burrow
 -- Spiked Carapace changed to work on any source of damage and not just heroes
 
-1.13h
+1.14
 General:
--- Internal cleanup of some creep code, in preparation for the upcoming overhaul
+-- Complete rework of spawn and difficulties!
+
+Creeps:
+-- Big spider gains Incapacitating Bite
+-- Centaurs gain stomp
+-- Centaur boss gains Slardar bash
+-- Baby Kappapault gains Liquid Fire
+-- Zombies all have poisonous attacks
+-- Berserkers gain Fervor
+-- Bear boss gains thunder clap
+-- Satyrs gain regen aura
+-- Wildkin carry toughness aura
+-- Corpse Lord gains Decay
+-- Harpies gain chain lightning
+-- Treants gain dragon blood
+-- Gnolls gain gnoll poison
+-- Wolves (including the boss!) gain critical strike and invisibility
+-- Mechs gain mana break
+-- Treant boss gains dragon blood and sprout
+-- Kobolds gain the taskmaster aura
+-- Kobold Archer boss gains true sight, mana burn
+-- Medium Satyr gains mana burn
+-- Ogres gain frost armor
+-- Ogre boss gains Fireblast
+-- Roshan boss has spell block, slam, and bash
+-- Small satyr gains purge
+-- Shrooms gain Entangle
+-- Demons gain flaming fists and immolation aura
+-- Black dragon gains dragonhide aura and fireball
+-- All ghosts get frost attack and blur
+-- Lizards gain slam, frenzy, and wardrums aura
+-- Small nyx gain impale
+-- Rock golems gain avalanche
 
 Heroes:
 // Bounty Hunter

@@ -31,7 +31,7 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"broodmother_spawn_spiderlings2"			// Ability 1.
-		"Ability2"					""		    // Ability 2.
+		"Ability2"					"broodmother_incapacitating_bite"		    // Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -160,7 +160,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"generic_gold_bag_fountain_50"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"centaur_khan_war_stomp"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -260,7 +260,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"generic_gold_bag_fountain_500"			// Ability 1
 		"Ability2"					"centaur_khan_war_stomp"			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability3"					"slardar_bash"			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
@@ -439,7 +439,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"jakiro_liquid_fire"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -535,7 +535,7 @@
 				
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"gnoll_assassin_envenomed_weapon"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -650,7 +650,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"troll_warlord_fervor"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -951,7 +951,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"ursa_fury_swipes"			// Ability 1
 		"Ability2"					"generic_gold_bag_fountain_500"			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability3"					"polar_furbolg_ursa_warrior_thunder_clap"			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
@@ -1173,7 +1173,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"ghost_frost_attack"			// Ability 1.
 		"Ability2"					"generic_gold_bag_fountain_500"			// Ability 2.
-		"Ability3"					""			// Ability 3.
+		"Ability3"					"phantom_assassin_blur"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -1416,7 +1416,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"satyr_hellcaller_shockwave"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"satyr_hellcaller_unholy_aura"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -1532,7 +1532,7 @@
 		"Ability1"					"golem_armour_aura"			// Ability 1.
 		"Ability2"					"generic_gold_bag_fountain_500"			// Ability 2.
 		"Ability3"					"creature_split_c"			// Ability 3.
-		"Ability4"					""			// Ability 4.
+		"Ability4"					"brewmaster_earth_pulverize"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -1634,7 +1634,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"enraged_wildkin_toughness_aura"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -1945,7 +1945,7 @@
 		"Ability2"					"creature_summon_undead2"			// Ability 2.
 		"Ability3"					"creature_acid_spray"			// Ability 3.
 		"Ability4"					"generic_gold_bag_fountain_5000"			// Ability 4.
-		"Ability5"					""			// Ability 5.
+		"Ability5"					"undying_decay"			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
@@ -2094,7 +2094,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"harpy_storm_chain_lightning"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -2191,7 +2191,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"harpy_storm_chain_lightning"			// Ability 1
 		"Ability2"					"generic_gold_bag_fountain_500"			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability3"					"zuus_lightning_bolt"			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
@@ -2294,7 +2294,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"dragon_knight_dragon_blood"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -2832,7 +2832,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"gnoll_assassin_envenomed_weapon"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -2927,8 +2927,8 @@
 		
 		"Ability1"					"generic_gold_bag_fountain_5000"			// Ability 1.
 		"Ability2"					"visage_grave_chill"			// Ability 2.
-		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
+		"Ability3"					"lycan_summon_wolves_critical_strike"			// Ability 3.
+		"Ability4"					"lycan_summon_wolves_invisibility"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -3018,8 +3018,8 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"gnoll_assassin_envenomed_weapon"			// Ability 1.
-		"Ability2"					""			// Ability 2.
-		"Ability3"					""			// Ability 3.
+		"Ability2"					"lycan_summon_wolves_invisibility"			// Ability 2.
+		"Ability3"					"lycan_summon_wolves_critical_strike"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -3097,7 +3097,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"antimage_mana_break"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -3203,7 +3203,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"generic_gold_bag_fountain_5000"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"antimage_mana_break"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -3305,7 +3305,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"antimage_mana_break"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -3408,7 +3408,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"jakiro_liquid_fire"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -3512,8 +3512,8 @@
 		//----------------------------------------------------------------
 		"Ability1"					"treant_living_armor"	        // Ability 1.
 		"Ability2"					"generic_gold_bag_fountain_500"	 		// Ability 2.
-		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
+		"Ability3"					"dragon_knight_dragon_blood"			// Ability 3.
+		"Ability4"					"furion_sprout"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -3638,8 +3638,8 @@
 		//----------------------------------------------------------------
 		"Ability1"					"kobold_taskmaster_speed_aura"	        // Ability 1.
 		"Ability2"					"generic_gold_bag_fountain_500"	 		// Ability 2.
-		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
+		"Ability3"					"lycan_summon_wolves_critical_strike"			// Ability 3.
+		"Ability4"					"lycan_summon_wolves_invisibility"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -3751,7 +3751,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"kobold_taskmaster_speed_aura"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -3850,8 +3850,9 @@
 		//----------------------------------------------------------------
 		"Ability1"					"generic_gold_bag_fountain_500"			// Ability 1
 		"Ability2"					"sven_storm_bolt_datadriven"			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability3"					"necronomicon_archer_aoe"			// Ability 3
+		"Ability4"					"necronomicon_warrior_sight			// Ability 4
+		"Ability5"                  "necronomicon_archer_mana_burn"
 	
 		// Armor
 		//----------------------------------------------------------------
@@ -3861,8 +3862,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"600"		// Damage range min.
-		"AttackDamageMax"			"540"		// Damage range max.
+		"AttackDamageMin"			"540"		// Damage range min.
+		"AttackDamageMax"			"600"		// Damage range max.
 		"AttackRate"				"1.1"		// Speed of attack.
 		"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
@@ -3964,7 +3965,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"beastmaster_boar_poison"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"kobold_taskmaster_speed_aura"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -4138,7 +4139,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"lesser_nightcrawler_pounce"			// Ability 1.
-		"Ability2"					"creature_bash"
+		"Ability2"					"slardar_bash"
 	
 		// Armor
 		//----------------------------------------------------------------
@@ -4412,7 +4413,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"satyr_soulstealer_mana_burn"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -5503,7 +5504,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"ogre_magi_frost_armor"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -5612,8 +5613,8 @@
 		//----------------------------------------------------------------
 		"Ability1"					"spirit_breaker_greater_bash"			// Ability 1
 		"Ability2"					"generic_gold_bag_fountain_500"			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability3"					"ogre_magi_frost_armor"			// Ability 3
+		"Ability4"					"ogre_magi_fireblast"			// Ability 4
 	
 		// Armor
 		//----------------------------------------------------------------
@@ -5723,7 +5724,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"slardar_bash"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -5830,8 +5831,8 @@
 		
 		"Ability1"					"generic_gold_bag_fountain_5000"			// Ability 1.
 		"Ability2"					"spectre_dispersion"			// Ability 2.
-		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
+		"Ability3"					"lycan_summon_wolves_critical_strike"			// Ability 3.
+		"Ability4"					"lycan_summon_wolves_invisibility"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -5991,9 +5992,9 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"generic_gold_bag_fountain_500"	        // Ability 1.
-		"Ability2"					""			// Ability 2.
-		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
+		"Ability2"					"roshan_spell_block"			// Ability 2.
+		"Ability3"					"roshan_bash"			// Ability 3.
+		"Ability4"					"roshan_slam"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -6091,7 +6092,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"satyr_trickster_purge"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -6183,7 +6184,7 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"generic_gold_bag_fountain_5000"			// Ability 1.
-		"Ability2"					""			// Ability 2.
+		"Ability2"					"lone_druid_spirit_bear_entangle"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -6262,7 +6263,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"shredder_reactive_armor"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -6337,7 +6338,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"broodmother_poison_sting"			// Ability 1.
 		"Ability2"					""		// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -6663,7 +6664,7 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"antimage_mana_break"			// Ability 1.
-		"Ability2"					""			// Ability 2.
+		"Ability2"					"lone_druid_spirit_bear_entangle"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -7228,7 +7229,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creature_zombie_berserk"			// Ability 1.
-		"Ability2"					""			// Ability 2.
+		"Ability2"					"gnoll_assassin_envenomed_weapon"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -7339,8 +7340,8 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1.
-		"Ability2"					""			// Ability 2.
+		"Ability1"					"warlock_golem_flaming_fists"			// Ability 1.
+		"Ability2"					"warlock_golem_permanent_immolation"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -7356,8 +7357,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"732"		// Damage range min.
-		"AttackDamageMax"			"600"		// Damage range max.
+		"AttackDamageMin"			"600"		// Damage range min.
+		"AttackDamageMax"			"732"		// Damage range max.
 		"AttackRate"				"1.1"		// Speed of attack.
 		"AttackAnimationPoint"		"0.8"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"666"		// Range within a target can be acquired.
@@ -7446,8 +7447,8 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1.
-		"Ability2"					""			// Ability 2.
+		"Ability1"					"warlock_golem_flaming_fists"			// Ability 1.
+        "Ability2"					"warlock_golem_permanent_immolation"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -7551,8 +7552,8 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability1"					"black_dragon_dragonhide_aura"			// Ability 1
+		"Ability2"					"black_dragon_fireball"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -7747,8 +7748,8 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability1"					"ghost_frost_attack"			// Ability 1
+		"Ability2"					"phantom_assassin_blur"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -7851,8 +7852,8 @@
 		"Ability1"					"bane_nightmare"			// Ability 1.
 		"Ability2"					"bane_brain_sap"			// Ability 2.
 		"Ability3"					"generic_gold_bag_fountain_5000"			// Ability 3.
-		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
+		"Ability4"					"ghost_frost_attack"			// Ability 4.
+		"Ability5"					"phantom_assassin_blur"			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
@@ -7962,8 +7963,8 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1.
-		"Ability2"					""			// Ability 2.
+		"Ability1"					"ghost_frost_attack"			// Ability 1.
+		"Ability2"					"phantom_assassin_blur"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -8067,7 +8068,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"phantom_assassin_blur"			// Ability 1.
 		"Ability2"					"phantom_assassin_blur"			// Ability 2.
-		"Ability3"					""			// Ability 3.
+		"Ability3"					"ghost_frost_attack"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -8168,8 +8169,8 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1.
-		"Ability2"					""			// Ability 2.
+		"Ability1"					"ghost_frost_attack"			// Ability 1.
+		"Ability2"					"phantom_assassin_blur			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -8677,9 +8678,9 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability1"					"big_thunder_lizard_frenzy"			// Ability 1
+		"Ability2"					"big_thunder_lizard_slam"			// Ability 2
+		"Ability3"					"big_thunder_lizard_wardrums_aura"			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
@@ -8774,7 +8775,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"broodmother_incapacitating_bite"			// Ability 1.
 		"Ability2"					""		    // Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -9091,7 +9092,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"nyx_assassin_impale"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -9549,7 +9550,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"wolf_damage_aura"			// Ability 1.
-		"Ability2"					""			// Ability 2.
+		"Ability2"					"alpha_wolf_critical_strike"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -9654,7 +9655,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"tiny_craggy_exterior"			// Ability 1.
 		"Ability2"					"generic_gold_bag_fountain_50"			// Ability 2.
-		"Ability3"					""			// Ability 3.
+		"Ability3"					"tiny_avalanche"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -9856,7 +9857,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"brewmaster_earth_pulverize"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -9962,7 +9963,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"creature_split_b"			// Ability 1.
 		"Ability2"					"mud_golem_hurl_boulder"			// Ability 2.
-		"Ability3"					""			// Ability 3.
+		"Ability3"					"brewmaster_earth_pulverize"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -10584,8 +10585,8 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"riki_permanent_invisibility"			// Ability 1.
-		"Ability2"					""			// Ability 2.
+		"Ability1"					"lycan_summon_wolves_critical_strike"			// Ability 1.
+		"Ability2"					"lycan_summon_wolves_invisibility"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.

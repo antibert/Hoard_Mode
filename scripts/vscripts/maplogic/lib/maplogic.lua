@@ -92,12 +92,22 @@ function mapLogic:SetFriendlyBuildings()
 			local tower_splash = building:FindAbilityByName("tower_splash")
 			tower_splash:SetLevel(0)
 
-			--    elseif string.find(building_name, "rax_melee") then
+			building:AddAbility("reward_global_offense_penalty")
+			local ancient_ability = building:FindAbilityByName("reward_global_offense_penalty")
+			ancient_ability:SetLevel(1)
+
+		elseif string.find(building_name, "rax_melee") then
+			building:AddAbility("reward_global_armor_penalty")
+			local ancient_ability = building:FindAbilityByName("reward_global_armor_penalty")
+			ancient_ability:SetLevel(1)
 			--      building:AddAbility("building_stats")
 			--      local building_stats = building:FindAbilityByName("building_stats")
 			--      building_stats:SetLevel(0)
 			--
-			--    elseif string.find(building_name, "rax_range") then
+		elseif string.find(building_name, "rax_range") then
+			building:AddAbility("reward_global_armor_penalty")
+			local ancient_ability = building:FindAbilityByName("reward_global_armor_penalty")
+			ancient_ability:SetLevel(1)
 			--      building:AddAbility("building_stats")
 			--      local building_stats = building:FindAbilityByName("building_stats")
 			--      building_stats:SetLevel(0)
@@ -158,9 +168,6 @@ function mapLogic:SetEnemyBuildings()
 			ancient_ability:SetLevel(1)
 
 		elseif string.find(building_name, "fort") then
-
-		elseif string.find(building_name, "fountain") then
-			-- Do nothing (fountain was already modified previously)
 			-- Add passive buff
 			building:AddAbility("global_armor_buff")
 			local ancient_ability = building:FindAbilityByName("global_armor_buff")
@@ -170,6 +177,9 @@ function mapLogic:SetEnemyBuildings()
 			building:AddAbility("global_offense_buff")
 			local ancient_ability = building:FindAbilityByName("global_offense_buff")
 			ancient_ability:SetLevel(self.DIFFICULTY)
+
+		elseif string.find(building_name, "fountain") then
+			-- Do nothing (fountain was already modified previously)
 		else
 
 		end

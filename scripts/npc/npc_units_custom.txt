@@ -3851,7 +3851,7 @@
 		"Ability1"					"generic_gold_bag_fountain_500"			// Ability 1
 		"Ability2"					"sven_storm_bolt_datadriven"			// Ability 2
 		"Ability3"					"necronomicon_archer_aoe"			// Ability 3
-		"Ability4"					"necronomicon_warrior_sight			// Ability 4
+		"Ability4"					"necronomicon_warrior_sight"			// Ability 4
 		"Ability5"                  "necronomicon_archer_mana_burn"
 	
 		// Armor
@@ -8170,7 +8170,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"ghost_frost_attack"			// Ability 1.
-		"Ability2"					"phantom_assassin_blur			// Ability 2.
+		"Ability2"					"phantom_assassin_blur"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.

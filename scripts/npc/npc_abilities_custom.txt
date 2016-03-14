@@ -9317,6 +9317,27 @@
         }
     }
 
+    "reward_global_armor_penalty"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"						"ability_datadriven"
+        "AbilityTextureName"			"global_armor"
+
+        "OnOwnerDied"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"misc/reward_ability.lua"
+                "Function"		"GrantBuff"
+
+                "ability_to_grant"		"global_armor_buff"
+                "unit_to_target"    "dota_badguys_fort"
+            }
+        }
+    }
+
     "global_armor_buff"
     {
         // General
@@ -9500,6 +9521,27 @@
 
                 "ability_to_grant"		"global_offense_buff"
                 "unit_to_target"    "dota_goodguys_fort"
+            }
+        }
+    }
+
+    "reward_global_offense_penalty"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"						"ability_datadriven"
+        "AbilityTextureName"			"global_damage"
+
+        "OnOwnerDied"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"misc/reward_ability.lua"
+                "Function"		"GrantBuff"
+
+                "ability_to_grant"		"global_offense_buff"
+                "unit_to_target"    "dota_badguys_fort"
             }
         }
     }

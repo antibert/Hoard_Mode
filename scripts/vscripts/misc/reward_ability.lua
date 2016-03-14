@@ -10,5 +10,7 @@ function GrantBuff(keys)
 		else
 			ability:SetLevel(ability:GetLevel() + 1)
 		end
+	else
+		DebugPrint("Could not find entity")
 	end
 end

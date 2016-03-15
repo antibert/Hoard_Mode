@@ -13,8 +13,9 @@ Heroes:
 1.14
 General:
 -- Complete rework of spawn and difficulties!
--- Any enemy creeps missing abilities were granted them
+-- Many enemy creeps missing abilities were granted them (most passive, some active)
 -- Losing towers and barracks now grants the enemy team buffs
+-- Global defense buff now grants spell resistance instead of max hp (it still grants armor)
 
 Creeps:
 -- Big spider gains Incapacitating Bite

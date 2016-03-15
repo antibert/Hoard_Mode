@@ -9375,12 +9375,12 @@
             "04"
             {
                 "var_type"          "FIELD_INTEGER"
-                "bonus_health"      "100 200 300 400 500 600 700 800 900 1000"
+                "bonus_resist"      "3 6 9 12 15 18 21 24 27 30"
             }
             "05"
             {
                 "var_type"          "FIELD_INTEGER"
-                "bonus_health_lvl"      "100"
+                "bonus_resist_lvl"      "3"
             }
             "06"
             {
@@ -9395,12 +9395,12 @@
             "08"
             {
                 "var_type"          "FIELD_INTEGER"
-                "bonus_health_tower"      "200 400 600 800 1000 1200 1400 1600 1800 2000"
+                "bonus_resist_tower"      "5 10 15 20 25 30 35 40 45 50"
             }
             "09"
             {
                 "var_type"          "FIELD_INTEGER"
-                "bonus_health_lvl_tower"      "200"
+                "bonus_resist_lvl_tower"      "5"
             }
             "10"
             {
@@ -9415,12 +9415,12 @@
             "12"
             {
                 "var_type"          "FIELD_INTEGER"
-                "bonus_health_creep"      "200 400 600 800 1000 1200 1400 1600 1800 2000"
+                "bonus_resist_creep"      "5 10 15 20 25 30 35 40 45 50"
             }
             "13"
             {
                 "var_type"          "FIELD_INTEGER"
-                "bonus_health_lvl_creep"      "200"
+                "bonus_resist_lvl_creep"      "5"
             }
         }
 
@@ -9447,7 +9447,7 @@
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
-                    "MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"				"%bonus_health"
                 }
             }
 
@@ -9471,7 +9471,7 @@
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor_tower"
-                    "MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health_tower"
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"				"%bonus_health_tower"
                 }
             }
 
@@ -9495,7 +9495,7 @@
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor_creep"
-                    "MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health_creep"
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"				"%bonus_health_creep"
                 }
             }
         }

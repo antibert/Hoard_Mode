@@ -646,34 +646,7 @@
 	//=================================================================================================================
 	"harpy_storm_chain_lightning"
 	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"initial_damage"		"230"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"jump_range"			"500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"jump_delay"			"0.25"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_percent_loss"	"25.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_targets"			"4"
-			}
-		}
+		"AbilityCooldown"       "10"
 	}
 	//=================================================================================================================
 	// Ability: Axe Counter Helix

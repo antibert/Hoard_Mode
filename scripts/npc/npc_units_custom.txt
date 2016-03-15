@@ -2243,7 +2243,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"harpy_storm_chain_lightning"			// Ability 1
+		"Ability1"					"harpy_storm_chain_lightning_upgraded"			// Ability 1
 		"Ability2"					"generic_gold_bag_fountain_500"			// Ability 2
 		"Ability3"					"zuus_lightning_bolt"			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -3156,7 +3156,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"antimage_mana_break"			// Ability 1
+		"Ability1"					"necronomicon_warrior_mana_burn"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -3262,7 +3262,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"generic_gold_bag_fountain_5000"			// Ability 1
-		"Ability2"					"antimage_mana_break"			// Ability 2
+		"Ability2"					"necronomicon_warrior_mana_burn"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -3364,7 +3364,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"antimage_mana_break"			// Ability 1
+		"Ability1"					"necronomicon_warrior_mana_burn"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -4500,8 +4500,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"96"		// Damage range min.
-		"AttackDamageMax"			"104"		// Damage range max.
+		"AttackDamageMin"			"84"		// Damage range min.
+		"AttackDamageMax"			"94"		// Damage range max.
 		"AttackRate"				"1.0"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -4529,7 +4529,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"420"		// Base health.
 		"StatusHealthRegen"			"2"		// Health regeneration rate.
-		"StatusMana"				"500"			// Base mana.
+		"StatusMana"				"200"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
 		
 		// Vision
@@ -5019,7 +5019,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"harpy_storm_chain_lightning"			// Ability 1
+		"Ability1"					"harpy_storm_chain_lightning_upgraded"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -5091,7 +5091,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"harpy_storm_chain_lightning"			// Ability 1
+		"Ability1"					"harpy_storm_chain_lightning_upgraded"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4

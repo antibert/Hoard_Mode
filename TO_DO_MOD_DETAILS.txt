@@ -10,6 +10,17 @@ Heroes:
 -- Mana Burn gets range increase with levels, no longer increased by burrow
 -- Spiked Carapace changed to work on any source of damage and not just heroes
 
+1.14b
+-- Reduced strength of mech units' mana burn
+
+1.14a
+-- Reduced melee damage and max mana of medium Satyrs
+-- Small harpies now use normal chain lightning instead of mega hawk version
+
+Heroes:
+// Beastmaster
+-- Mega Hawk uses weakened chain lightning at level 1 and 2, returns to normal at level 3
+
 1.14
 General:
 -- Complete rework of spawn and difficulties!

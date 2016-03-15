@@ -238,6 +238,15 @@
 			"BountyGain"				"3"
 			"XPGain"					"15"
 		    "DisableClumpingBehavior"	"1"
+
+		    "OffensiveAbilities"
+            {
+                "Ability2"
+                {
+                    "Name"        "centaur_khan_war_stomp"
+                    "MinimumTargets"	"1"
+                }
+            }
 		}
 	}
 	//=================================================================================	
@@ -517,6 +526,15 @@
 			"MoveSpeedGain"				"1"
 			"BountyGain"				"3"
 			"XPGain"					"15"
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"        "jakiro_liquid_fire"
+                    "MinimumTargets"	"1"
+                }
+            }
 		}
 	}
 	//=================================================================================
@@ -1054,6 +1072,15 @@
 					"ItemDef"			"88"
 				}
 			}
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"        "polar_furbolg_ursa_warrior_thunder_clap"
+                    "MinimumTargets"	"1"
+                }
+            }
 		}
 	}
 	//=================================================================================	
@@ -1616,6 +1643,15 @@
 			"DefaultState"				"Invade"
 			
 			"DisableClumpingBehavior"	"1"
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"        "brewmaster_earth_pulverize"
+                    "MinimumTargets"	"1"
+                }
+            }
 		}
 	}
 	//=================================================================================	
@@ -2056,6 +2092,15 @@
 					"MinimumTargets"	"1"
 				}
 			}
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"        "undying_decay"
+                    "MinimumTargets"	"1"
+                }
+            }
 			
 			"AttachWearables"
 			{
@@ -2171,6 +2216,15 @@
 			"MoveSpeedGain"				"1"
 			"BountyGain"				"3"
 			"XPGain"					"15"
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"        "harpy_storm_chain_lightning"
+                    "MinimumTargets"	"1"
+                }
+            }
 		}
 	}
 	//=================================================================================	
@@ -2264,9 +2318,14 @@
 				"Ability1"                
 				{
 					"Name"        "harpy_storm_chain_lightning"
+					"MinimumTargets"	"1"
 				}
-	
-			}
+                "Ability2"
+                {
+                    "Name"        "zuus_lightning_bolt"
+                    "MinimumTargets"	"1"
+                }
+            }
 			//Level Up
 			"HPGain"					"10"
 			"DamageGain"				"20"
@@ -3486,6 +3545,15 @@
 			"MoveSpeedGain"				"1"
 			"BountyGain"				"3"
 			"XPGain"					"15"
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"        "jakiro_liquid_fire"
+                    "MinimumTargets"	"1"
+                }
+            }
 		}
 	}
 	//=================================================================================
@@ -3603,6 +3671,14 @@
 					"Buff"				"1"
 				}
 			}
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"        "furion_sprout"
+                    "MinimumTargets"	"1"
+                }
+            }
 			"AttachWearables"
 			{
 				"Wearable1" { "ItemDef" "227" }
@@ -4412,8 +4488,8 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
-		"Ability2"					"satyr_soulstealer_mana_burn"			// Ability 2
+		"Ability1"					"satyr_soulstealer_mana_burn"			// Ability 1
+		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -4484,6 +4560,15 @@
 			"MoveSpeedGain"				"1"
 			"BountyGain"				"3"
 			"XPGain"					"15"
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"        "satyr_soulstealer_mana_burn"
+                    "MinimumTargets"	"1"
+                }
+            }
 		}
 	}
 	//=================================================================================	
@@ -5589,6 +5674,15 @@
 			"MoveSpeedGain"				"1"
 			"BountyGain"				"5"
 			"XPGain"					"20"
+
+			"DefensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"        "ogre_magi_frost_armor"
+                    "MinimumTargets"	"1"
+                }
+            }
 		}
 	}	
 	//=================================================================================
@@ -5705,6 +5799,24 @@
 			"DefaultState"				"Invade"
 			
 			"DisableResistance"			"100.0"
+
+			"DefensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"        "ogre_magi_frost_armor"
+                    "MinimumTargets"	"1"
+                }
+            }
+
+            "OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"        "ogre_magi_fireblast"
+                    "MinimumTargets"	"1"
+                }
+            }
 		}
 	}
 	//=================================================================================
@@ -6074,6 +6186,15 @@
 			"BountyGain"				"2"
 			"XPGain"					"13"
 			"DisableClumpingBehavior"	"1"
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"        "roshan_slam"
+                    "MinimumTargets"	"3"
+                }
+            }
 		}
 	}
 	//=================================================================================	
@@ -6164,6 +6285,15 @@
 			"MoveSpeedGain"				"1"
 			"BountyGain"				"3"
 			"XPGain"					"15"
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"        "satyr_trickster_purge"
+                    "MinimumTargets"	"1"
+                }
+            }
 		}
 	}
 	//=======================================================================
@@ -6545,7 +6675,7 @@
 		"Ability2"					"generic_gold_bag_fountain_5000"			// Ability 2.
 		"Ability3"					"tidehunter_kraken_shell"			// Ability 3.
 		"Ability4"					"treant_overgrowth"			// Ability 4.
-		"Ability5"					""			// Ability 5.
+		"Ability5"					"necrolyte_death_pulse"			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
@@ -7632,6 +7762,15 @@
 			"BountyGain"				"3"
 			"XPGain"					"15"
 		    "DisableClumpingBehavior"	"1"
+
+		    "OffensiveAbilities"
+            {
+                "Ability2"
+                {
+                    "Name"				"black_dragon_fireball"
+                    "MinimumTargets"	"1"
+                }
+            }
 		}
 	}
 	//=================================================================================	
@@ -8756,6 +8895,20 @@
 			"BountyGain"				"3"
 			"XPGain"					"15"
 		    "DisableClumpingBehavior"	"1"
+
+		    "OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"				"big_thunder_lizard_frenzy"
+                    "MinimumTargets"	"1"
+                }
+                "Ability2"
+                {
+                    "Name"				"big_thunder_lizard_slam"
+                    "MinimumTargets"	"1"
+                }
+            }
 		}
 	}
 	//=================================================================
@@ -9168,6 +9321,15 @@
 			"MoveSpeedGain"				"1"
 			"BountyGain"				"2"
 			"XPGain"					"13"
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"				"nyx_assassin_impale"
+                    "MinimumTargets"	"2"
+                }
+            }
 		}
 	}
 	//=================================================================================
@@ -9739,6 +9901,15 @@
 					"Support"			"0.0"
 				}
 			}
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"				"tiny_avalanche"
+                    "MinimumTargets"	"2"
+                }
+            }
 		}
 	}
 	//=================================================================================
@@ -9841,6 +10012,15 @@
 			"BountyGain"				"2"
 			"XPGain"					"13"
 			"DisableClumpingBehavior"	"1"
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"				"roshan_slam"
+                    "MinimumTargets"	"2"
+                }
+            }
 		}
 	}
 	//=================================================================================
@@ -9944,6 +10124,15 @@
 			"DefaultState"				"Invade"
 			
 			"DisableClumpingBehavior"	"1"
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"				"brewmaster_earth_pulverize"
+                    "MinimumTargets"	"2"
+                }
+            }
 		}
 	}
 	//=================================================================================
@@ -10051,6 +10240,12 @@
 					"Name"       		 "mud_golem_hurl_boulder"
 					"MinimumTargets"	"1"
 				}
+
+				"Ability2"
+                {
+                    "Name"       		 "brewmaster_earth_pulverize"
+                    "MinimumTargets"	"2"
+                }
 			}
 	
 			"DefaultState"				"Invade"
@@ -10156,6 +10351,15 @@
 					"RoamDistance"		"150.0"
 				}
 			}
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"       		 "brewmaster_earth_pulverize"
+                    "MinimumTargets"	"2"
+                }
+            }
 	
 			"DefaultState"				"Invade"
 			

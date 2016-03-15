@@ -9447,7 +9447,7 @@
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
-                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"				"%bonus_health"
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"				"%bonus_resist"
                 }
             }
 
@@ -9471,7 +9471,7 @@
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor_tower"
-                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"				"%bonus_health_tower"
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"				"%bonus_resist_tower"
                 }
             }
 
@@ -9495,7 +9495,7 @@
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor_creep"
-                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"				"%bonus_health_creep"
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"				"%bonus_resist_creep"
                 }
             }
         }

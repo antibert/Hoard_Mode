@@ -3,7 +3,7 @@
 
 -- Set this to true if you want to see a complete debug output of all events/processes done by barebones
 -- You can also change the cvar 'barebones_spew' at any time to 1 or 0 for output/no output
-BAREBONES_DEBUG_SPEW = true
+BAREBONES_DEBUG_SPEW = false
 
 if GameMode == nil then
     DebugPrint( '[BAREBONES] creating barebones game mode' )
@@ -163,7 +163,7 @@ end
 
 -- This is an example console command
 function GameMode:ExampleConsoleCommand()
-  print( '******* Example Console Command ***************' )
+	DebugPrint( '******* Example Console Command ***************' )
   local cmdPlayer = Convars:GetCommandClient()
   if cmdPlayer then
     local playerID = cmdPlayer:GetPlayerID()
@@ -173,7 +173,7 @@ function GameMode:ExampleConsoleCommand()
     end
   end
 
-  print( '*********************************************' )
+	DebugPrint( '*********************************************' )
 end
 
 function GetVersion()

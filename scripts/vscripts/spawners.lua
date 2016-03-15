@@ -40,7 +40,7 @@ function Spawners:SpawnBazzMid()
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 								OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 								Position = waypoint, Queue = true} )
-		print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
 	end
 end
 
@@ -54,7 +54,7 @@ function Spawners:SpawnBazzBot()
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 								OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 								Position = waypoint, Queue = true} )
-		print("Move ",unit:GetEntityIndex()," to ", waypoint)
+		DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
 	end
 end
 
@@ -70,7 +70,7 @@ function Spawners:SpawnZombiesTop()
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+			DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
 		end)
 	end
 end
@@ -85,7 +85,7 @@ function Spawners:SpawnZombies()
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+			DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
 		end)
 	end
 end
@@ -100,7 +100,7 @@ function Spawners:SpawnZombies2Top()
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+			DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
 		end)
 	end
 end
@@ -115,7 +115,7 @@ function Spawners:SpawnZombies2()
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+			DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
 		end)
 	end
 end
@@ -130,7 +130,7 @@ function Spawners:SpawnCorpse()
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+			DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
 		end)
 	end
 end
@@ -145,7 +145,7 @@ function Spawners:SpawnCorpseTop()
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+			DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
 		end)
 	end
 end
@@ -160,7 +160,7 @@ function Spawners:SpawnHulk()
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+			DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
 		end)
 	end
 end
@@ -175,7 +175,7 @@ function Spawners:SpawnHulkMedium()
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+			DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
 		end)
 	end
 end
@@ -190,7 +190,7 @@ function Spawners:SpawnHulkMediumTop()
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+			DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
 		end)
 	end
 end
@@ -205,7 +205,7 @@ function Spawners:SpawnHulkTop()
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+			DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
 		end)
 	end
 end
@@ -220,7 +220,7 @@ function Spawners:SpawnHulkBigTop()
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+			DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
 		end)
 	end
 end
@@ -235,7 +235,7 @@ function Spawners:SpawnHulkBig()
 			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
+			DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
 		end)
 	end
 end
@@ -2413,17 +2413,20 @@ function Spawners:SpawnMoney()
 end
 
 function Spawners:SpawnMapBoss()
-	local point = Entities:FindByName(nil, "spawner10"):GetAbsOrigin()
-	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
-	local units_to_spawn = 1
-	for i=1,units_to_spawn do
-		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_creature_map_boss", point, true, nil, nil, DOTA_TEAM_BADGUYS)
-			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
-									OrderType = DOTA_UNIT_ORDER_STOP,
-									Position = waypoint, Queue = true} )
-			print("Move ",unit:GetEntityIndex()," to ", waypoint)
-		end)
+	local spawner = Entities:FindByName(nil, "spawner10")
+	if spawner ~= nil then
+		local point = spawner:GetAbsOrigin()
+		local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+		local units_to_spawn = 1
+		for i=1,units_to_spawn do
+			Timers:CreateTimer(function()
+				local unit = CreateUnitByName("npc_dota_creature_map_boss", point, true, nil, nil, DOTA_TEAM_BADGUYS)
+				ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+										OrderType = DOTA_UNIT_ORDER_STOP,
+										Position = waypoint, Queue = true} )
+				print("Move ",unit:GetEntityIndex()," to ", waypoint)
+			end)
+		end
 	end
 end
 

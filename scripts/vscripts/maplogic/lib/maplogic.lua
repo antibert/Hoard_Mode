@@ -181,7 +181,7 @@ function mapLogic:SetEnemyBuildings()
 			-- Add passive buff
 			building:AddAbility("global_difficulty_buff")
 			local global_difficulty_buff = building:FindAbilityByName("global_difficulty_buff")
-			global_difficulty_buff:SetLevel(self.DIFFICULTY)
+			global_difficulty_buff:SetLevel(self.DIFFICULTY + 1)
 
 		elseif string.find(building_name, "fountain") then
 			-- Do nothing (fountain was already modified previously)

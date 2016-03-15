@@ -9652,6 +9652,11 @@
                 "var_type"			"FIELD_INTEGER"
                 "damage_decrease_pct"	"0 -10 -20"
             }
+            "03"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "aura_radius"		"100000"
+            }
         }
 
         "Modifiers"
@@ -9663,7 +9668,7 @@
                 "IsHidden"			"1"
                 "IsDebuff"			"0"
 
-                "Aura"					"modifier_global_offense_buff_friendly_datadriven"
+                "Aura"					"modifier_global_difficulty_buff_friendly_datadriven"
                 "Aura_Radius"			"%aura_radius"
                 "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
                 "Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
@@ -9674,6 +9679,7 @@
             "modifier_global_difficulty_buff_friendly_datadriven"
             {
                 "IsBuff"	"1"
+                "IsHidden"			"1"
 
                 "Properties"
                 {

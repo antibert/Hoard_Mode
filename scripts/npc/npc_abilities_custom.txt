@@ -12232,6 +12232,12 @@
                 "Target"		"CASTER"
             }
 
+            "FireSound"
+            {
+                "EffectName"	"Hero_Silencer.GlobalSilence.Effect"
+                "Target"		"CASTER"
+            }
+
             "ActOnTargets"
             {
 
@@ -12250,12 +12256,6 @@
                     {
                         "ModifierName"	"modifier_global_silence_datadriven"
                         "Target"	"TARGET"
-                    }
-
-                    "FireSound"
-                    {
-                        "EffectName"	"Hero_Silencer.GlobalSilence.Effect"
-                        "Target"		"TARGET"
                     }
                 }
             }
@@ -13348,6 +13348,42 @@
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%enfeeble_attack_reduction"
+                }
+            }
+        }
+    }
+
+    "mega_tower_buff"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "FightRecapLevel"				"1"
+        "AbilityTextureName"			"clinkz_strafe"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "attack_speed_bonus_pct"	"100"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_strafe"
+            {
+                "IsPurgable"    "0"
+                "IsBuff"        "1"
+                "Passive"       "1"
+                "IsHidden"      "1"
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed_bonus_pct"
                 }
             }
         }

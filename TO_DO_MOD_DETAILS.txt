@@ -54,6 +54,8 @@ Heroes:
 // Bounty Hunter
 -- Shuriken Toss bounce cap reduced to 9
 -- Shuriken Toss no longer bounces to buildings
+// Silencer
+-- Global Silence should no longer make players deaf
 
 ////// Important Changes:
 -- TOOLTIP FOR LARGE GOLEM SP;IT

@@ -9051,7 +9051,7 @@
 		//----------------------------------------------------------------
 		
 		"Ability1"					"neutral_spell_immunity"			// Ability 1.
-		"Ability2"					""			// Ability 2.
+		"Ability2"					"mega_tower_buff"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -9070,7 +9070,7 @@
 		"AttackDamageMin"			"148"		// Damage range min.
 		"AttackDamageMax"			"152"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.2"			// Speed of attack.
+		"AttackRate"				"0.4"			// Speed of attack.
 		"AttackAnimationPoint"		"0.1"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"1200"		// Range within a target can be acquired.
 		"AttackRange"				"1000"		// Range within a target can be attacked.

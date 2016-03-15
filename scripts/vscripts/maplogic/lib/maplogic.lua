@@ -7,9 +7,9 @@
 --
 local mapInfo = LoadKeyValues('scripts/vscripts/maplogic/settings.kv')
 local MAP_LOGIC_DIFFICULTY_EASY = 0
-local MAP_LOGIC_DIFFICULTY_MEDIUM = 1
-local MAP_LOGIC_DIFFICULTY_HARD = 2
-local MAP_LOGIC_DIFFICULTY_ULTRA = 3
+local MAP_LOGIC_DIFFICULTY_MEDIUM = 0
+local MAP_LOGIC_DIFFICULTY_HARD = 1
+local MAP_LOGIC_DIFFICULTY_ULTRA = 2
 
 -- Constants used for pretty formatting, as well as strings
 local printPrefix = 'Map Logic: '
@@ -164,19 +164,24 @@ function mapLogic:SetEnemyBuildings()
 			DebugPrint("Adding abilities to enemy ranged rax")
 			-- Add passive buff
 			building:AddAbility("reward_global_armor_buff")
-			local ancient_ability = building:FindAbilityByName("reward_global_armor_buff")
-			ancient_ability:SetLevel(1)
+			local reward_global_armor_buff = building:FindAbilityByName("reward_global_armor_buff")
+			reward_global_armor_buff:SetLevel(1)
 
 		elseif string.find(building_name, "fort") then
 			-- Add passive buff
 			building:AddAbility("global_armor_buff")
-			local ancient_ability = building:FindAbilityByName("global_armor_buff")
-			ancient_ability:SetLevel(self.DIFFICULTY)
+			local global_armor_buff = building:FindAbilityByName("global_armor_buff")
+			global_armor_buff:SetLevel(self.DIFFICULTY)
 
 			-- Add passive buff
 			building:AddAbility("global_offense_buff")
-			local ancient_ability = building:FindAbilityByName("global_offense_buff")
-			ancient_ability:SetLevel(self.DIFFICULTY)
+			local global_offense_buff = building:FindAbilityByName("global_offense_buff")
+			global_offense_buff:SetLevel(self.DIFFICULTY)
+
+			-- Add passive buff
+			building:AddAbility("global_difficulty_buff")
+			local global_difficulty_buff = building:FindAbilityByName("global_difficulty_buff")
+			global_difficulty_buff:SetLevel(self.DIFFICULTY)
 
 		elseif string.find(building_name, "fountain") then
 			-- Do nothing (fountain was already modified previously)

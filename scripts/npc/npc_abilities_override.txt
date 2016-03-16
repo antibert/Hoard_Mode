@@ -19,7 +19,7 @@
 	//"item_mithril_hammer"			"REMOVE"
 	//"item_platemail"				"REMOVE"
 	//"item_quarterstaff"				"REMOVE"
-	//"item_quelling_blade"			"REMOVE"
+	"item_quelling_blade"			"REMOVE"
 	//"item_ring_of_protection"		"REMOVE"
 	//"item_stout_shield"				"REMOVE"
 	//"item_gauntlets"				"REMOVE"
@@ -206,7 +206,7 @@
 	//"item_soul_ring"				"REMOVE"
 	//"item_recipe_arcane_boots"		"REMOVE"
 	//"item_arcane_boots"				"REMOVE"
-	//"item_orb_of_venom"				"REMOVE"
+	"item_orb_of_venom"				"REMOVE"
 	//"item_recipe_ancient_janggo"	"REMOVE"
 	//"item_ancient_janggo"			"REMOVE"
 	//"item_recipe_medallion_of_courage"	"REMOVE"
@@ -646,7 +646,38 @@
 	//=================================================================================================================
 	"harpy_storm_chain_lightning"
 	{
-		"AbilityCooldown"       "10"
+		"AbilityCooldown"       "20"
+
+		// Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "initial_damage"		"80"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "jump_range"			"500"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "jump_delay"			"0.25"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "damage_percent_loss"	"25.0"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "max_targets"			"4"
+            }
+        }
 	}
 	//=================================================================================================================
 	// Ability: Axe Counter Helix
@@ -7465,6 +7496,17 @@
                 "var_type"						"FIELD_INTEGER"
                 "fiend_grip_damage_scepter"		"155 215 270"
             }
+        }
+    }
+
+    //=================================================================================================================
+    // Recipe: Battlefury
+    //=================================================================================================================
+    "item_recipe_bfury"
+    {
+        "ItemRequirements"
+        {
+            "01"						"item_broadsword;item_claymore;item_pers;item_quelling_blade_datadriven"
         }
     }
 }

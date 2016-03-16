@@ -1184,7 +1184,21 @@ Timers:CreateTimer("big", {
 	})
 	Timers:CreateTimer(6000, function()
 		Spawners:StopSpawner("bigsatyrsfinal")
-	end) 
+	end)
+
+	Timers:CreateTimer("miniroshan", {
+		useGameTime = true,
+		endTime = 2800,
+		callback = function()
+			Spawners:SpawnMiniRoshTop()
+			Spawners:SpawnMiniRoshMid()
+			Spawners:SpawnMiniRoshBot()
+			return 43.0
+		end
+	})
+	Timers:CreateTimer(6000, function()
+		Spawners:StopSpawner("miniroshan")
+	end)
 
 ---------------------------------------------------------------------------------------------	
 ---------------- END OF FINAL PHASE SPAWNERS --------------------------------
@@ -1287,11 +1301,11 @@ Timers:CreateTimer("big", {
     end)		
 	Timers:CreateTimer(0, function()
 		Spawners:SpawnFriend2()
-		return 60.0
+		return 30.0
     end)
 	Timers:CreateTimer(0, function()
 		Spawners:SpawnFriend3()
-		return 60.0
+		return 30.0
     end)
 
 	Timers:CreateTimer(0, function()

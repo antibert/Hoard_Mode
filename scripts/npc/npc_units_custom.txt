@@ -244,7 +244,9 @@
                 "Ability2"
                 {
                     "Name"        "centaur_khan_war_stomp"
-                    "MinimumTargets"	"1"
+                    "AOE"                "1"
+                    "Radius"             "275"
+                    "MinimumTargets"     "2"
                 }
             }
 		}
@@ -342,7 +344,9 @@
 				"Ability1"                
 				{
 					"Name"        "centaur_khan_war_stomp"
-					"MinimumTargets"	"1"
+					"AOE"                "1"
+                    "Radius"             "275"
+                    "MinimumTargets"     "2"
 				}
 			}
 			//Level Up
@@ -449,14 +453,14 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"jakiro_liquid_fire"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"lone_druid_spirit_bear_demolish"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"15"			// Physical protection.
-		"MagicalResistance"			"50"		// Magical protection.
+		"MagicalResistance"			"25"		// Magical protection.
 	
 		// Attack
 		//----------------------------------------------------------------
@@ -3156,14 +3160,15 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"necronomicon_warrior_mana_burn"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability1"					"hulk_arcane_armor"			// Ability 1
+		"Ability2"					"lone_druid_spirit_bear_demolish"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"6"			// Physical protection.
+		"ArmorPhysical"				"4"			// Physical protection.
+		"MagicalResistance"			"25"		// Magical protection (percentage).
 	
 		// Attack
 		//----------------------------------------------------------------
@@ -3196,8 +3201,8 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"375"		// Base health.
-		"StatusHealthRegen"			"1"			// Health regeneration rate.
-		"StatusMana"				"675"			// Base mana.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
 		
 		// Vision
@@ -3262,13 +3267,14 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"generic_gold_bag_fountain_5000"			// Ability 1
-		"Ability2"					"necronomicon_warrior_mana_burn"			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability2"					"hulk_arcane_armor"			// Ability 2
+		"Ability3"					"lone_druid_spirit_bear_demolish"			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"10"			// Physical protection.
+		"ArmorPhysical"				"6"			// Physical protection.
+		"MagicalResistance"			"25"		// Magical protection (percentage).
 	
 		// Attack
 		//----------------------------------------------------------------
@@ -3301,8 +3307,8 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"1200"		// Base health.
-		"StatusHealthRegen"			"4"			// Health regeneration rate.
-		"StatusMana"				"675"			// Base mana.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
 		
 		// Vision
@@ -3364,14 +3370,15 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"necronomicon_warrior_mana_burn"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability1"					"hulk_arcane_armor"			// Ability 1
+		"Ability2"					"lone_druid_spirit_bear_demolish"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"7"			// Physical protection.
+		"ArmorPhysical"				"5"			// Physical protection.
+		"MagicalResistance"			"25"		// Magical protection (percentage).
 	
 		// Attack
 		//----------------------------------------------------------------
@@ -3404,8 +3411,8 @@
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"650"		// Base health.
-		"StatusHealthRegen"			"1"			// Health regeneration rate.
-		"StatusMana"				"350"			// Base mana.
+		"StatusHealthRegen"			"0"			// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
 		
 		// Vision
@@ -3468,14 +3475,14 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"jakiro_liquid_fire"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"lone_druid_spirit_bear_demolish"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
 		//----------------------------------------------------------------
 		"ArmorPhysical"				"25"			// Physical protection.
-		"MagicalResistance"			"75"		// Magical protection.
+		"MagicalResistance"			"50"		// Magical protection.
 	
 		// Attack
 		//----------------------------------------------------------------
@@ -4215,7 +4222,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"lesser_nightcrawler_pounce"			// Ability 1.
-		"Ability2"					"slardar_bash"
+		"Ability2"					"sniper_headshot"
 	
 		// Armor
 		//----------------------------------------------------------------
@@ -4567,6 +4574,8 @@
                 {
                     "Name"        "satyr_soulstealer_mana_burn"
                     "MinimumTargets"	"1"
+                    "Damage"            "1"
+                    "Debuff"            "1"
                 }
             }
 		}
@@ -6292,6 +6301,8 @@
                 {
                     "Name"        "satyr_trickster_purge"
                     "MinimumTargets"	"1"
+                    "Damage"            "1"
+                    "Debuff"            "1"
                 }
             }
 		}
@@ -10114,8 +10125,8 @@
 				"Invade"
 				{
 					"Name"				"Invade"
-					"Aggression"		"50.0"
-					"Avoidance"			"0.0"
+					"Aggression"		"70.0"
+					"Avoidance"			"50.0"
 					"Support"			"0.0"
 					"RoamDistance"		"0.0"
 				}
@@ -10130,7 +10141,9 @@
                 "Ability1"
                 {
                     "Name"				"brewmaster_earth_pulverize"
-                    "MinimumTargets"	"2"
+                    "AOE"                "1"
+                    "Radius"             "275"
+                    "MinimumTargets"     "2"
                 }
             }
 		}

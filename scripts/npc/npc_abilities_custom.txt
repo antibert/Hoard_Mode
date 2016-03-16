@@ -13427,4 +13427,48 @@
             }
         }
     }
+
+    //=================================================================================================================
+    // Hulk: Arcane Armor
+    //=================================================================================================================
+    "hulk_arcane_armor"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"							"95526"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"				"ability_datadriven"
+        "AbilityTextureName"			"shredder_reactive_armor"
+
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"							"FIELD_INTEGER"
+                "bonus_armor"						"5"
+            }
+            "02"
+            {
+                "var_type"							"FIELD_INTEGER"
+                "magic_resistance_pct"							"50"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_arcane_armor"
+            {
+                "Passive"   "1"
+                "IsHidden"  "1"
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resistance_pct"
+                }
+            }
+        }
+    }
 }

@@ -82,6 +82,74 @@
 		"ItemInitialCharges"			"1"
 		"ItemKillable"					"0"
 	}
+	"item_quelling_blade_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"							"90011"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "BaseClass"                     "item_bfury"
+        "AbilityTextureName"			"item_quelling_blade"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"200"
+        "ItemAliases"					"quelling blade"
+        "ItemQuality"                   "component"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_damage"			"0"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_health_regen"	"0"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_mana_regen"		"0"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cleave_damage_percent"	"10"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "quelling_bonus"		"110"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "quelling_bonus_ranged"	"110"
+            }
+            "07"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cleave_radius"			"250"
+            }
+            "08"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cast_range_tooltip"			"350"
+            }
+            "09"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cast_range_ward"			"450"
+            }
+        }
+    }
 	"item_bfury_datadriven"
 	{
 		// General
@@ -3857,7 +3925,7 @@
         "ItemResult"					"item_skadi_datadriven"
         "ItemRequirements"
         {
-            "01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster;item_orb_of_venom"
+            "01"						"item_ultimate_orb;item_ultimate_orb;item_point_booster;item_orb_of_venom_datadriven"
         }
     }
 	"item_skadi_datadriven"
@@ -4009,6 +4077,7 @@
             {
                 "Passive"				"0"
                 "IsHidden"				"0"
+                "IsDebuff"              "1"
 
                 "StatusEffectName"     "particles/status_fx/status_effect_frost.vpcf"
                 "StatusEffectPriority" "10"
@@ -5029,6 +5098,111 @@
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%aura_negative_armor"
+                }
+            }
+        }
+    }
+
+    //=================================================================================================================
+	// Orb of Venom
+	//=================================================================================================================
+    "item_orb_of_venom_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"90181"  //Valve's version of this item uses the ID "181".
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "Model"							"models/props_gameplay/red_box.vmdl"
+        "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+        "AbilityTextureName"			"item_orb_of_venom"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"275"
+        "ItemShopTags"					"hard_to_tag"
+        "ItemQuality"					"component"
+        "ItemAliases"					"orb of venom"
+        "SideShop"						"1"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "poison_damage"			"10.0"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "poison_movement_speed"		"-12"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "poison_duration"		"4.0"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "poison_radius"	        "225"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_item_orb_of_venom_splash"
+            {
+                "Passive" "1"
+                "IsHidden" "1"
+                "AllowIllusionDuplicate"    "0"
+                "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "OnAttackLanded"
+                {
+                    "ActOnTargets"
+                    {
+                        "Target"
+                        {
+                            "Center"	"TARGET"
+                            "Radius"	"%poison_radius"
+                            "Teams"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                            "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                            "Flags" "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+                        }
+                        "Action"
+                        {
+                            "Damage"
+                            {
+                                "Target"	"TARGET"
+                                "Type"		"DAMAGE_TYPE_MAGICAL"
+                                "Damage"	"%poison_damage"
+                            }
+
+                            "ApplyModifier"
+                            {
+                                "Target"                "TARGET"
+                                "ModifierName"				"modifier_item_orb_of_venom_datadriven_poison_attack"
+                                "Duration"					"%poison_duration"
+                            }
+                        }
+                    }
+                }
+            }
+            "modifier_item_orb_of_venom_datadriven_slow"
+            {
+                "Passive"				"0"
+                "IsHidden"				"0"
+                "IsDebuff"              "1"
+
+                "EffectName"			"particles/items2_fx/orb_of_venom.vpcf"
+                "EffectAttachType"		"follow_origin"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%poison_movement_speed"
                 }
             }
         }

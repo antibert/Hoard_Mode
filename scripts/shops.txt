@@ -37,10 +37,10 @@
 	"weapons_armor"
 	{
 		"item"		"item_ring_of_protection"
-		"item"		"item_quelling_blade"
+		"item"		"item_quelling_blade_datadriven"
 		"item"		"item_stout_shield"
 		"item"		"item_blades_of_attack"
-		"item"		"item_orb_of_venom"
+		"item"		"item_orb_of_venom_datadriven"
 		"item"		"item_chainmail"
 		"item"		"item_helm_of_iron_will"
 		"item"		"item_broadsword"
@@ -180,7 +180,7 @@
 	}
 	"secretshop"
 	{
-		"item"		"item_orb_of_venom"
+		"item"		"item_orb_of_venom_datadriven"
 		"item"		"item_ring_of_health"
 		"item"		"item_void_stone"
 		"item"		"item_energy_booster"
@@ -195,7 +195,7 @@
 	}
 	"sideshop"
 	{
-		"item"		"item_orb_of_venom"
+		"item"		"item_orb_of_venom_datadriven"
 		"item"		"item_ring_of_health"
 		"item"		"item_void_stone"
 		"item"		"item_energy_booster"

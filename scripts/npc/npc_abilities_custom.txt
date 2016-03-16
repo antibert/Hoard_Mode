@@ -12788,6 +12788,8 @@
                 "Passive"		"1"
                 "IsHidden"		"1"
 
+                "AllowIllusionDuplicate"    "0"
+
                 "Aura" 			"modifier_bounty_hunter_track_datadriven_debuff"
                 "Aura_Radius" 	"%track_range"
                 "Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"

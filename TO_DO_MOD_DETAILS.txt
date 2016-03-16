@@ -23,9 +23,16 @@ General:
 
 Items:
 Quelling Blade
--- Now grants a small amount of cleave damage!
+-- Now grants 10% cleave damage!
+-- Stackable
+Quelling Axe
+-- Made from combining a quelling blade and broadsword
+-- Grants 20% cleave damage
+Battlefury
+-- Now made from a claymore, a quelling blade 2, and a perseverence
 Orb of Venom
 -- Now deals its poison damage and slow in an area around the target!
+-- Not stackable
 
 1.14b
 -- Reduced strength of mech units' mana burn

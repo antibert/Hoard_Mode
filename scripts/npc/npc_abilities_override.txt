@@ -7506,7 +7506,7 @@
     {
         "ItemRequirements"
         {
-            "01"						"item_broadsword;item_claymore;item_pers;item_quelling_blade_datadriven"
+            "01"						"item_claymore;item_pers;item_quelling_blade_2_datadriven"
         }
     }
 }

@@ -150,6 +150,74 @@
             }
         }
     }
+    "item_quelling_blade_2_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"							"91011"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "BaseClass"                     "item_bfury"
+        "AbilityTextureName"			"item_quelling_blade_2"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"1400"
+        "ItemAliases"					"quelling axe"
+        "ItemQuality"                   "component"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_damage"			"18"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_health_regen"	"0"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_mana_regen"		"0"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cleave_damage_percent"	"20"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "quelling_bonus"		"110"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "quelling_bonus_ranged"	"110"
+            }
+            "07"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cleave_radius"			"250"
+            }
+            "08"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cast_range_tooltip"			"350"
+            }
+            "09"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cast_range_ward"			"450"
+            }
+        }
+    }
 	"item_bfury_datadriven"
 	{
 		// General
@@ -3334,6 +3402,29 @@
 			"01"						"item_aether_lens;item_aether_lens"
 		}
 	}
+	"item_recipe_quelling_blade_2_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"1144"  //Valve's version of this item uses the ID "144".
+        "Model"							"models/props_gameplay/recipe.mdl"
+        "AbilityTextureName"			"item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_quelling_blade_2_datadriven"
+        "ItemRequirements"
+        {
+            "01"						"item_broadsword;item_quelling_blade_datadriven"
+        }
+    }
 	"item_recipe_bfury_datadriven"
 	{
 		// General
@@ -3345,7 +3436,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"2000"	
+		"ItemCost"						"1200"
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -3354,7 +3445,7 @@
 		"ItemResult"					"item_bfury_datadriven"
 		"ItemRequirements"
 		{
-			"01"						"item_bfury"
+			"01"						"item_bfury;item_quelling_blade_datadriven"
 		}
 	}
 	"item_recipe_bloodstone_datadriven"

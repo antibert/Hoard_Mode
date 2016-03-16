@@ -12,6 +12,11 @@ Heroes:
 
 1.14b
 -- Reduced strength of mech units' mana burn
+-- Small harpies hit points reduced from 500 to 400, XP bounty increased
+-- Did a pass over XP values of enemies, increasing several XP bounties
+-- Fixed some unit AIs that resulted in standing around instead of using abilities
+-- Black dragons no longer have aura armor, have Dragon's Blood instead
+-- Reduced mana pool of small satyr from 1000 to 300
 
 1.14a
 -- Reduced melee damage and max mana of medium Satyrs

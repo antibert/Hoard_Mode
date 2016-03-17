@@ -1281,7 +1281,7 @@
         "ItemResult"					"item_dragon_javelin"
         "ItemRequirements"
         {
-            "01"						"item_quelling_blade;item_dragon_lance;item_pers"
+            "01"						"item_quelling_blade_datadriven;item_dragon_lance;item_pers"
         }
     }
     "item_recipe_dragon_javelin_2"
@@ -3436,7 +3436,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1200"
+		"ItemCost"						"2000"
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -3445,7 +3445,7 @@
 		"ItemResult"					"item_bfury_datadriven"
 		"ItemRequirements"
 		{
-			"01"						"item_bfury;item_quelling_blade_datadriven"
+			"01"						"item_bfury"
 		}
 	}
 	"item_recipe_bloodstone_datadriven"

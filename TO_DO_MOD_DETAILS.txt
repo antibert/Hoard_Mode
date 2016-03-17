@@ -10,6 +10,9 @@ Heroes:
 -- Mana Burn gets range increase with levels, no longer increased by burrow
 -- Spiked Carapace changed to work on any source of damage and not just heroes
 
+1.14d
+-- Fixed dragon javelin
+
 1.14c
 General:
 -- Small harpy chain lightning damage reduced further, cooldown increased
@@ -24,7 +27,6 @@ General:
 Items:
 Quelling Blade
 -- Now grants 10% cleave damage!
--- Stackable
 Quelling Axe
 -- Made from combining a quelling blade and broadsword
 -- Grants 20% cleave damage
@@ -32,7 +34,6 @@ Battlefury
 -- Now made from a claymore, a quelling blade 2, and a perseverence
 Orb of Venom
 -- Now deals its poison damage and slow in an area around the target!
--- Not stackable
 
 1.14b
 -- Reduced strength of mech units' mana burn

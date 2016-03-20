@@ -10,6 +10,12 @@ Heroes:
 -- Mana Burn gets range increase with levels, no longer increased by burrow
 -- Spiked Carapace changed to work on any source of damage and not just heroes
 
+1.14e
+-- Satyr mana burn reduced from 100 to 20
+-- Purge Satyrs no longer have enough mana to cast their spell twice, but will regenerate mana
+-- Purge Satyrs now drop small gold bags upon death
+-- Increased damage and reduced stun duration of centaur stomp
+
 1.14d
 -- Fixed dragon javelin
 

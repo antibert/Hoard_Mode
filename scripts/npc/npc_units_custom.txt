@@ -32,7 +32,7 @@
 		
 		"Ability1"					"broodmother_spawn_spiderlings2"			// Ability 1.
 		"Ability2"					"broodmother_incapacitating_bite"		    // Ability 2.
-		"Ability3"					""			// Ability 3.
+		"Ability3"					"generic_gold_bag_fountain_50"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -201,7 +201,7 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"3500"		// Base health.
 		"StatusHealthRegen"			"2"		// Health regeneration rate.
-		"StatusMana"				"1000"			// Base mana.
+		"StatusMana"				"600"			// Base mana.
 		"StatusManaRegen"			"10.0"		// Mana regeneration rate.		 
 		
 		// Vision
@@ -247,6 +247,8 @@
                     "AOE"                "1"
                     "Radius"             "275"
                     "MinimumTargets"     "2"
+                    "Debuff"             "1"
+                    "Stun"                  "1"
                 }
             }
 		}
@@ -347,6 +349,8 @@
 					"AOE"                "1"
                     "Radius"             "275"
                     "MinimumTargets"     "2"
+                    "Debuff"             "1"
+                    "Stun"                  "1"
 				}
 			}
 			//Level Up
@@ -383,6 +387,7 @@
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"Ability1"					"holdout_ancient_apparition_ice_blast"
+		"Ability2"                  "generic_gold_bag_fountain_50"
 	
 		// Armor
 		//-------------------------------------------------------------------------------------------------------------
@@ -454,7 +459,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"jakiro_liquid_fire"			// Ability 1
 		"Ability2"					"lone_druid_spirit_bear_demolish"			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability3"					"generic_gold_bag_fountain_50"			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
@@ -1104,7 +1109,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"brewmaster_storm_cyclone"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"generic_gold_bag_fountain_50"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -1448,7 +1453,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"satyr_hellcaller_shockwave"			// Ability 1
 		"Ability2"					"satyr_hellcaller_unholy_aura"			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability3"					"generic_gold_bag_fountain_50"			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
@@ -2144,7 +2149,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"harpy_storm_chain_lightning"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"generic_gold_bag_fountain_50"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -4495,7 +4500,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"satyr_soulstealer_mana_burn"			// Ability 1
+		"Ability1"					"satyr_soulstealer_mana_burn_weaker"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -4572,7 +4577,7 @@
             {
                 "Ability1"
                 {
-                    "Name"        "satyr_soulstealer_mana_burn"
+                    "Name"        "satyr_soulstealer_mana_burn_weaker"
                     "MinimumTargets"	"1"
                     "Damage"            "1"
                     "Debuff"            "1"
@@ -6060,7 +6065,7 @@
 	
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"10"		// Experience earn.
+		"BountyXP"					"20"		// Experience earn.
 		"BountyGoldMin"				"14"		// Gold earned min.
 		"BountyGoldMax"				"17"		// Gold earned max.
 	
@@ -6223,7 +6228,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"satyr_trickster_purge"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"generic_gold_bag_fountain_50"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -6250,7 +6255,7 @@
 	
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"20"		// Experience earn.
+		"BountyXP"					"30"		// Experience earn.
 		"BountyGoldMin"				"16"		// Gold earned min.
 		"BountyGoldMax"				"23"		// Gold earned max.
 	
@@ -6263,8 +6268,8 @@
 		//----------------------------------------------------------------
 		"StatusHealth"				"280"		// Base health.
 		"StatusHealthRegen"			"3"		// Health regeneration rate.
-		"StatusMana"				"300"			// Base mana.
-		"StatusManaRegen"			"0"		// Mana regeneration rate.
+		"StatusMana"				"180"			// Base mana.
+		"StatusManaRegen"			"2"		// Mana regeneration rate.
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -6301,7 +6306,6 @@
                 {
                     "Name"        "satyr_trickster_purge"
                     "MinimumTargets"	"1"
-                    "Damage"            "1"
                     "Debuff"            "1"
                 }
             }

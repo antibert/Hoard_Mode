@@ -458,7 +458,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"jakiro_liquid_fire"			// Ability 1
-		"Ability2"					"lone_druid_spirit_bear_demolish"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					"generic_gold_bag_fountain_50"			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -3166,7 +3166,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"hulk_arcane_armor"			// Ability 1
-		"Ability2"					"lone_druid_spirit_bear_demolish"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -3178,8 +3178,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"44"		// Damage range min.
-		"AttackDamageMax"			"62"		// Damage range max.
+		"AttackDamageMin"			"27"		// Damage range min.
+		"AttackDamageMax"			"38"		// Damage range max.
 		"AttackRate"				"1.15"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -3273,7 +3273,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"generic_gold_bag_fountain_5000"			// Ability 1
 		"Ability2"					"hulk_arcane_armor"			// Ability 2
-		"Ability3"					"lone_druid_spirit_bear_demolish"			// Ability 3
+		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
@@ -3284,9 +3284,9 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"75"		// Damage range min.
-		"AttackDamageMax"			"82"		// Damage range max.
-		"AttackRate"				"1.0"		// Speed of attack.
+		"AttackDamageMin"			"47"		// Damage range min.
+		"AttackDamageMax"			"53"		// Damage range max.
+		"AttackRate"				"1.15"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"115"		// Range within a target can be attacked.
@@ -3311,7 +3311,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1200"		// Base health.
+		"StatusHealth"				"900"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
@@ -3376,7 +3376,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"hulk_arcane_armor"			// Ability 1
-		"Ability2"					"lone_druid_spirit_bear_demolish"			// Ability 2
+		"Ability2"					"generic_gold_bag_fountain_50"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -3388,9 +3388,9 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"55"		// Damage range min.
-		"AttackDamageMax"			"60"		// Damage range max.
-		"AttackRate"				"0.75"		// Speed of attack.
+		"AttackDamageMin"			"35"		// Damage range min.
+		"AttackDamageMax"			"45"		// Damage range max.
+		"AttackRate"				"1.15"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
 		"AttackRange"				"100"		// Range within a target can be attacked.
@@ -3480,8 +3480,8 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"jakiro_liquid_fire"			// Ability 1
-		"Ability2"					"lone_druid_spirit_bear_demolish"			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability2"					""			// Ability 2
+		"Ability3"					"generic_gold_bag_fountain_5000"			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
@@ -3492,8 +3492,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"100"		// Damage range min.
-		"AttackDamageMax"			"110"		// Damage range max.
+		"AttackDamageMin"			"80"		// Damage range min.
+		"AttackDamageMax"			"90"		// Damage range max.
 		"AttackRate"				"2.5"		// Speed of attack.
 		"AttackAnimationPoint"		"1"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"850"		// Range within a target can be acquired.
@@ -3519,7 +3519,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1500"		// Base health.
+		"StatusHealth"				"900"		// Base health.
 		"StatusHealthRegen"			"0"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -4227,7 +4227,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"lesser_nightcrawler_pounce"			// Ability 1.
-		"Ability2"					"sniper_headshot"
+		"Ability2"					"creep_dizzy"
 	
 		// Armor
 		//----------------------------------------------------------------

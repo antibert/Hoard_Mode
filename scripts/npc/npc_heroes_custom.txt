@@ -192,6 +192,7 @@
 	{
 		"override_hero"			"npc_dota_hero_mirana"
 		"Ability2"				"holdout_mirana_arrow"
+		"Ability4"				"holdout_mirana_shadow"
 	}
 	//=================================================================================================================
 	// HERO: Omniknight

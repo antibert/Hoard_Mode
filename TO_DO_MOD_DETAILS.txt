@@ -1,7 +1,6 @@
 Next Update Patch Notes:
 
-1.14
-
+1.15
 
 Heroes:
 // Nyx
@@ -10,99 +9,32 @@ Heroes:
 -- Mana Burn gets range increase with levels, no longer increased by burrow
 -- Spiked Carapace changed to work on any source of damage and not just heroes
 
-1.14e
--- Satyr mana burn reduced from 100 to 20
--- Purge Satyrs no longer have enough mana to cast their spell twice, but will regenerate mana
--- Purge Satyrs now drop small gold bags upon death
--- Increased damage and reduced stun duration of centaur stomp
-
-1.14d
--- Fixed dragon javelin
-
-1.14c
+1.14f
 General:
--- Small harpy chain lightning damage reduced further, cooldown increased
--- Mech units no longer have mana break
--- Mech units have Pulverize (passive spell resistance and bonus damage vs buildings)
--- Mech units have Arcane Armor (new passive that increases armor and spell resistance - yes, this stacks with Pulverize)
--- Giant catapults gain Pulverize
--- Satyr units should no longer stack their purges
--- Centaur units should not use their stomp until 2 targets are within melee range
--- Mini-slarks now have Sniper Headshot instead of Slardar Bash
-
-Items:
-Quelling Blade
--- Now grants 10% cleave damage!
-Quelling Axe
--- Made from combining a quelling blade and broadsword
--- Grants 20% cleave damage
-Battlefury
--- Now made from a claymore, a quelling blade 2, and a perseverence
-Orb of Venom
--- Now deals its poison damage and slow in an area around the target!
-
-1.14b
--- Reduced strength of mech units' mana burn
--- Small harpies hit points reduced from 500 to 400, XP bounty increased
--- Did a pass over XP values of enemies, increasing several XP bounties
--- Fixed some unit AIs that resulted in standing around instead of using abilities
--- Black dragons no longer have aura armor, have Dragon's Blood instead
--- Reduced mana pool of small satyr from 1000 to 300
-
-1.14a
--- Reduced melee damage and max mana of medium Satyrs
--- Small harpies now use normal chain lightning instead of mega hawk version
+-- Mech units no longer have demolish
+-- Removed the attack speed debuff from the mech catapult liquid fire
+-- Reduced damage of all mech units
+-- Normalized attack speed of all mech units
+-- Reduced hit points of hulk units (since they now have armor and spell resistance)
+-- Mech units now actually drop gold bags
+-- Reduced damage of mini-slark headshot
 
 Heroes:
-// Beastmaster
--- Mega Hawk uses weakened chain lightning at level 1 and 2, returns to normal at level 3
+// Clockwerk
+-- Battery Assault cooldown reduced to 12 seconds, damage increased to 40/60/80/100
+-- Rocket Flare cooldown reduced to 10 seconds, mana cost increased
+-- Hookshot cooldown reduced to 40/30/20
+-- Scepter Hookshot cooldown reduced to 12/9/6
 
-1.14
-General:
--- Complete rework of spawn and difficulties!
--- Hard difficulty now grants bonus damage dealt and damage reduction to all creeps
--- Many enemy creeps missing abilities were granted them (most passive, some active)
--- Losing towers and barracks now grants the enemy team buffs
--- Global defense buff now grants spell resistance instead of max hp (it still grants armor)
+// Mirana
+-- Starfall damage increased to 100/200/300/400
+-- Moonlight Shadow now grants 100% evasion instead of invisibility
+-- Moonlight Shadow cooldown reduced to 90/75/60
+-- Moonlight Shadow duration reduced to 3/4/5
 
-Creeps:
--- Big spider gains Incapacitating Bite
--- Centaurs gain stomp
--- Centaur boss gains Slardar bash
--- Baby Kappapault gains Liquid Fire
--- Zombies all have poisonous attacks
--- Berserkers gain Fervor
--- Bear boss gains thunder clap
--- Satyrs gain regen aura
--- Wildkin carry toughness aura
--- Corpse Lord gains Decay
--- Harpies gain chain lightning
--- Treants gain dragon blood
--- Gnolls gain gnoll poison
--- Wolves (including the boss!) gain critical strike and invisibility
--- Mechs gain mana break
--- Treant boss gains dragon blood and sprout
--- Kobolds gain the taskmaster aura
--- Kobold Archer boss gains true sight, mana burn
--- Medium Satyr gains mana burn
--- Ogres gain frost armor
--- Ogre boss gains Fireblast
--- Roshan boss has spell block, slam, and bash
--- Small satyr gains purge
--- Shrooms gain Entangle
--- Demons gain flaming fists and immolation aura
--- Black dragon gains dragonhide aura and fireball
--- All ghosts get frost attack and blur
--- Lizards gain slam, frenzy, and wardrums aura
--- Small nyx gain impale
--- Rock golems gain avalanche
+// Phantom Assassin
+-- Reduced stifling dagger cooldown to 8 seconds
 
-Heroes:
-// Bounty Hunter
--- Shuriken Toss bounce cap reduced to 9
--- Shuriken Toss no longer bounces to buildings
-// Silencer
--- Global Silence should no longer make players deaf
 
 ////// Important Changes:
 -- TOOLTIP FOR LARGE GOLEM SP;IT

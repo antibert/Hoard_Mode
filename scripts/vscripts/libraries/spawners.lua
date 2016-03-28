@@ -52,7 +52,7 @@ function Spawner:Spawn(keys)
     ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
       OrderType = order,
       Position = waypoint, Queue = true} )
-    print("Move ",unit:GetEntityIndex()," to ", waypoint)
+    DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
   end
 end
 
@@ -151,8 +151,8 @@ function Spawner:SpawnFriend(keys)
         ExecuteOrderFromTable({	UnitIndex = unitArray[j]:GetEntityIndex(),
           OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
           Position = waypoint, Queue = true} )
-        print("Move ",unitArray[j]:GetEntityIndex()," to ", waypoint)
-        print("Friendly bot creep spawned at index: " .. tostring(j))
+        DebugPrint("Move ",unitArray[j]:GetEntityIndex()," to ", waypoint)
+        DebugPrint("Friendly bot creep spawned at index: " .. tostring(j))
       end)
       spawned_units = spawned_units + 1
     end

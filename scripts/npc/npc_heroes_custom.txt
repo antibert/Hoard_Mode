@@ -221,6 +221,15 @@
         "Ability4"              "necrolyte_reapers_scythe_datadriven"
     }
     //=================================================================================================================
+    // HERO: Night Stalker
+    //=================================================================================================================
+    "npc_dota_hero_night_stalker_holdout"
+    {
+        "override_hero"			"npc_dota_hero_night_stalker"
+        "Ability1"              "night_stalker_void_datadriven"
+        "Ability2"              "night_stalker_crippling_fear_datadriven"
+    }
+    //=================================================================================================================
     // HERO: Nyx Assassin
     //=================================================================================================================
     "npc_dota_hero_nyx_assassin_holdout"
@@ -268,6 +277,7 @@
     "npc_dota_hero_riki_holdout"
     {
         "override_hero"			"npc_dota_hero_riki"
+        "Ability2"              "riki_blink_strike_datadriven"
         "Ability4"				"tricks_of_the_trade_datadriven"
     }
 	//=================================================================================================================

@@ -9,32 +9,36 @@ Heroes:
 -- Mana Burn gets range increase with levels, no longer increased by burrow
 -- Spiked Carapace changed to work on any source of damage and not just heroes
 
-1.14f
-General:
--- Mech units no longer have demolish
--- Removed the attack speed debuff from the mech catapult liquid fire
--- Reduced damage of all mech units
--- Normalized attack speed of all mech units
--- Reduced hit points of hulk units (since they now have armor and spell resistance)
--- Mech units now actually drop gold bags
--- Reduced damage of mini-slark headshot
-
+1.14g
 Heroes:
 // Clockwerk
--- Battery Assault cooldown reduced to 12 seconds, damage increased to 40/60/80/100
--- Rocket Flare cooldown reduced to 10 seconds, mana cost increased
--- Hookshot cooldown reduced to 40/30/20
--- Scepter Hookshot cooldown reduced to 12/9/6
-
-// Mirana
--- Starfall damage increased to 100/200/300/400
--- Moonlight Shadow now grants 100% evasion instead of invisibility
--- Moonlight Shadow cooldown reduced to 90/75/60
--- Moonlight Shadow duration reduced to 3/4/5
-
+-- Increased mana cost of Rocket Flare to 60/75/90/105
+// Dark Seer
+-- Vacuum cooldown reduced to 14, damage increased to 100/180/260/340
+// Disruptor
+-- Increased thunder strike radius to 400, and strikes twice as fast
+// Night Stalker
+-- Enabled!
+-- Void deals damage in an aoe around the target
+-- Crippling Fear applies its effects in an aoe around the target
+-- Crippling Fear cooldown increased to 20 seconds
 // Phantom Assassin
--- Reduced stifling dagger cooldown to 8 seconds
-
+-- Stifling Dagger damage increased to 100/160/220/280
+// Puck
+-- Illusory Orb damage increased to 100/180/260/320
+-- Illusory Orb cooldown reduced to 12/11/10/9 seconds
+-- Waning Rift cooldown reduced to 12 seconds
+// Riki
+-- Blink Strike damage increased to 120/180/240/300
+-- Blink Strike deals damage in an area around the target (including backstab!)
+-- Tricks of the Trade cooldown reduced to 40/30/20 seconds
+-- Tricks of the Trade duration reduced to 3 seconds
+-- Tricks of the Trade strike interval reduced from 1 second to 0.75/0.5/0.35
+-- Tricks of the Trade max attacks per unit increased from 5/6/7 to 5/7/9
+// Skywrath Mage
+-- Arcane Bolt base damage increased to 60/120/180/240
+-- Concussive Shot damage increased to 100/180/260/320
+-- Concussive Shot area of effect increased to 300/350/400/450
 
 ////// Important Changes:
 -- TOOLTIP FOR LARGE GOLEM SP;IT

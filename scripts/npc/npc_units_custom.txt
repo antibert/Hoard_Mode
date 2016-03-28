@@ -1614,7 +1614,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"30000"		// Base health.
+		"StatusHealth"				"25000"		// Base health.
 		"StatusHealthRegen"			"15.0"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"22"			// Mana regeneration rate.
@@ -1652,15 +1652,6 @@
 			"DefaultState"				"Invade"
 			
 			"DisableClumpingBehavior"	"1"
-
-			"OffensiveAbilities"
-            {
-                "Ability1"
-                {
-                    "Name"        "brewmaster_earth_pulverize"
-                    "MinimumTargets"	"1"
-                }
-            }
 		}
 	}
 	//=================================================================================	
@@ -4580,7 +4571,6 @@
                     "Name"        "satyr_soulstealer_mana_burn_weaker"
                     "MinimumTargets"	"1"
                     "Damage"            "1"
-                    "Debuff"            "1"
                 }
             }
 		}

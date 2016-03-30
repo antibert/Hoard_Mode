@@ -22,7 +22,7 @@ end
 
 require('libraries/timers')
 
-function Spawners:StartSpawners()	
+function Spawners:StartSpawners(difficulty)
 	
 -- BOSSES
 	
@@ -45,9 +45,7 @@ function Spawners:StartSpawners()
 		useGameTime = true,
 		endTime = 0,
 		callback = function()
-			Spawners:SpawnGnollsTop()
-			Spawners:SpawnGnollsMid()
-			Spawners:SpawnGnollsBot()
+			Spawners:SpawnGnolls()
 			return 30.0
 		end
 	})
@@ -59,9 +57,7 @@ function Spawners:StartSpawners()
 		useGameTime = true,
 		endTime = 60,
 		callback = function()
-			Spawners:SpawnBazzTop()
-			Spawners:SpawnBazzMid()
-			Spawners:SpawnBazzBot()
+			Spawners:SpawnBazz()
 			return 23.0
 		end
 	})
@@ -111,6 +107,7 @@ function Spawners:StartSpawners()
 		useGameTime = true,
 		endTime = 1980,
 		callback = function()
+			Spawners:SpawnSpookiTop()
 			Spawners:SpawnSpookiMid()
 			return 13.0
 		end
@@ -344,6 +341,7 @@ Timers:CreateTimer("big", {
 		useGameTime = true,
 		endTime = 840,
 		callback = function()
+			Spawners:SpawnNyxTop()
 			Spawners:SpawnNyx()
 			return 60.0
 		end
@@ -1316,7 +1314,11 @@ Timers:CreateTimer("big", {
     end)
 
 	Timers:CreateTimer(0, function()
-		Spawners:SpawnMapBoss()
+		if difficulty < 2 then
+			Spawners:SpawnMapBoss()
+		else
+			Spawners:SpawnMapBoss2()
+		end
 		return 3000.0
     end)
 	

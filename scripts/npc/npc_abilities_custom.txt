@@ -9761,12 +9761,12 @@
             "01"
             {
                 "var_type"			"FIELD_INTEGER"
-                "damage_increase_pct"	"0 20 40"
+                "damage_increase_pct"	"0 0 20 40"
             }
             "02"
             {
                 "var_type"			"FIELD_INTEGER"
-                "damage_decrease_pct"	"0 -10 -20"
+                "damage_decrease_pct"	"0 0 -10 -20"
             }
             "03"
             {
@@ -13672,25 +13672,6 @@
                     "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
                     "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resistance_pct"
                 }
-            }
-        }
-    }
-
-    //=================================================================================================================
-    // Satyr: Weaker Mana Burn
-    //=================================================================================================================
-    "satyr_soulstealer_mana_burn_weaker"
-    {
-        "BaseClass"				"satyr_soulstealer_mana_burn"
-
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "burn_amount"			"20"
             }
         }
     }

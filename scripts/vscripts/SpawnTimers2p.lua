@@ -5,7 +5,7 @@ end
 require('libraries/timers')
 require('libraries/spawners')
 
-function Spawners2p:StartSpawners()
+function Spawners2p:StartSpawners(difficulty)
     -- First Gnoll spawn example
 	-- Start spawning gnolls every 30 seconds.
 	Spawner:SpawnTimer({

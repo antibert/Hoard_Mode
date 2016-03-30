@@ -7,9 +7,9 @@
 --
 local mapInfo = LoadKeyValues('scripts/vscripts/maplogic/settings.kv')
 local MAP_LOGIC_DIFFICULTY_EASY = 0
-local MAP_LOGIC_DIFFICULTY_MEDIUM = 0
-local MAP_LOGIC_DIFFICULTY_HARD = 1
-local MAP_LOGIC_DIFFICULTY_ULTRA = 2
+local MAP_LOGIC_DIFFICULTY_MEDIUM = 1
+local MAP_LOGIC_DIFFICULTY_HARD = 2
+local MAP_LOGIC_DIFFICULTY_ULTRA = 3
 
 -- Constants used for pretty formatting, as well as strings
 local printPrefix = 'Map Logic: '
@@ -171,17 +171,17 @@ function mapLogic:SetEnemyBuildings()
 			-- Add passive buff
 			building:AddAbility("global_armor_buff")
 			local global_armor_buff = building:FindAbilityByName("global_armor_buff")
-			global_armor_buff:SetLevel(self.DIFFICULTY)
+			global_armor_buff:SetLevel(math.max(0, self.DIFFICULTY - 1))
 
 			-- Add passive buff
 			building:AddAbility("global_offense_buff")
 			local global_offense_buff = building:FindAbilityByName("global_offense_buff")
-			global_offense_buff:SetLevel(self.DIFFICULTY)
+			global_offense_buff:SetLevel(math.max(0, self.DIFFICULTY - 1))
 
 			-- Add passive buff
 			building:AddAbility("global_difficulty_buff")
 			local global_difficulty_buff = building:FindAbilityByName("global_difficulty_buff")
-			global_difficulty_buff:SetLevel(self.DIFFICULTY + 1)
+			global_difficulty_buff:SetLevel(self.DIFFICULTY)
 
 		elseif string.find(building_name, "fountain") then
 			-- Do nothing (fountain was already modified previously)
@@ -199,10 +199,10 @@ require('Spawners2p')
 function mapLogic:SetSpawns()
 	ShowMessage('Map name when called upon in the test client:' .. GetMapName())
 	if GetMapName() == 'Horde_2p_easy' then
-		Spawners2p:StartSpawners()
+		Spawners2p:StartSpawners(self.DIFFICULTY)
 		print(" Loading Two Player Map Spawners")
 	else
-		Spawners:StartSpawners()
+		Spawners:StartSpawners(self.DIFFICULTY)
 		print(" Loading default map spawners")
 	end
 end

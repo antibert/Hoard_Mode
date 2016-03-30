@@ -2462,22 +2462,3 @@ function Spawners:SpawnMapBoss()
 		end
 	end
 end
-
-function Spawners:SpawnMapBoss2()
-	local spawner = Entities:FindByName(nil, "spawner10")
-	if spawner ~= nil then
-		local point = spawner:GetAbsOrigin()
-		local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
-		local units_to_spawn = 1
-		for i=1,units_to_spawn do
-			Timers:CreateTimer(function()
-				local unit = CreateUnitByName("npc_dota_creature_map_boss_2", point, true, nil, nil, DOTA_TEAM_BADGUYS)
-				ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
-					OrderType = DOTA_UNIT_ORDER_STOP,
-					Position = waypoint, Queue = true} )
-				print("Move ",unit:GetEntityIndex()," to ", waypoint)
-			end)
-		end
-	end
-end
-

@@ -12644,7 +12644,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"flesh_heap_strength_buff_amount"		"0.1 0.15 0.2 0.25"
+				"flesh_heap_strength_buff_amount"		"0.25"
 			}
 			"04"
 			{

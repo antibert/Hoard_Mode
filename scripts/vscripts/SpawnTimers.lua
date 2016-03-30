@@ -1313,14 +1313,12 @@ Timers:CreateTimer("big", {
 		return 30.0
     end)
 
-	Timers:CreateTimer(0, function()
-		if difficulty < 2 then
+	if difficulty < 2 then
+		Timers:CreateTimer(0, function()
 			Spawners:SpawnMapBoss()
-		else
-			Spawners:SpawnMapBoss2()
-		end
-		return 3000.0
-    end)
+			return 3000.0
+	    end)
+	end
 	
 	Timers:CreateTimer("money", {
 		useGameTime = true,

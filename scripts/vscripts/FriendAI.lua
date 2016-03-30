@@ -39,7 +39,11 @@ end
 
 function BehaviorAttackAncient:Begin()
 	self.endTime = GameRules:GetGameTime() + 5
-	local hAncient = Entities:FindByName( nil, "lane_bot_pathcorner_goodguys_2" )
+	local waypointEntity = "lane_bot_pathcorner_goodguys_2"
+	if thisEntity.targetWaypoint ~= null then
+		waypointEntity = thisEntity.targetWaypoint
+	end
+	local hAncient = Entities:FindByName( nil, waypointEntity )
 	self.order =
 	{
 		OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,

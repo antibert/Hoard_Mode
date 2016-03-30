@@ -148,11 +148,13 @@ function Spawner:SpawnFriend(keys)
           unitArray[j]:CreatureLevelUp(unit_level)
         end
 
+        unitArray[j].targetWaypoint = waypointEntity
+
         ExecuteOrderFromTable({	UnitIndex = unitArray[j]:GetEntityIndex(),
           OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
           Position = waypoint, Queue = true} )
         DebugPrint("Move ",unitArray[j]:GetEntityIndex()," to ", waypoint)
-        DebugPrint("Friendly bot creep spawned at index: " .. tostring(j))
+        DebugPrint("Friendly ".. lane .. " creep spawned at index: " .. tostring(j))
       end)
       spawned_units = spawned_units + 1
     end

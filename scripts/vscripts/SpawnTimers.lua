@@ -1289,22 +1289,29 @@ Timers:CreateTimer("big", {
 
     Timers:CreateTimer(17, function()
 		Spawners:SpawnFriend()
+		Spawners:SpawnFriend2()
+		Spawners:SpawnFriend3()
 		return 30.0
     end)
     Timers:CreateTimer(18, function()
 		Spawners:SpawnFriend()
+		Spawners:SpawnFriend2()
+		Spawners:SpawnFriend3()
 		return 30.0
     end)	
     Timers:CreateTimer(19, function()
 		Spawners:SpawnFriend()
-		return 30.0
-    end)		
-	Timers:CreateTimer(0, function()
 		Spawners:SpawnFriend2()
+		Spawners:SpawnFriend3()
+		return 30.0
+    end)
+
+	Timers:CreateTimer(0, function()
+		Spawners:SpawnDefender1()
 		return 30.0
     end)
 	Timers:CreateTimer(0, function()
-		Spawners:SpawnFriend3()
+		Spawners:SpawnDefender2()
 		return 30.0
     end)
 

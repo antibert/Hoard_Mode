@@ -2379,19 +2379,39 @@ end
 
 function Spawners:SpawnFriend2()
 	Spawner:SpawnFriend({
-		point = "spawner8",
-		waypoint = "lane_top_pathcorner_badguys_3",
+		point = "spawner12",
+		waypoint = "lane_top_pathcorner_goodguys_1",
 		lane = "top",
-		unit = "npc_dota_creature_friend_base",
-		max_spawn = 1
+		unit = "npc_dota_creature_friend",
+		max_spawn = 8
 	})
 end
 
 function Spawners:SpawnFriend3()
 	Spawner:SpawnFriend({
+		point = "spawner11",
+		waypoint = "lane_mid_pathcorner_goodguys_1",
+		lane = "mid",
+		unit = "npc_dota_creature_friend",
+		max_spawn = 8
+	})
+end
+
+function Spawners:SpawnDefender1()
+	Spawner:SpawnFriend({
+		point = "spawner8",
+		waypoint = "lane_top_pathcorner_badguys_3",
+		lane = "base1",
+		unit = "npc_dota_creature_friend_base",
+		max_spawn = 1
+	})
+end
+
+function Spawners:SpawnDefender2()
+	Spawner:SpawnFriend({
 		point = "spawner9",
 		waypoint = "lane_top_pathcorner_badguys_2b",
-		lane = "mid",
+		lane = "base2",
 		unit = "npc_dota_creature_friend_base",
 		max_spawn = 1
 	})

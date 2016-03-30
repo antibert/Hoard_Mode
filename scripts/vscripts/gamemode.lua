@@ -3,7 +3,7 @@
 
 -- Set this to true if you want to see a complete debug output of all events/processes done by barebones
 -- You can also change the cvar 'barebones_spew' at any time to 1 or 0 for output/no output
-BAREBONES_DEBUG_SPEW = false
+BAREBONES_DEBUG_SPEW = true
 
 if GameMode == nil then
     DebugPrint( '[BAREBONES] creating barebones game mode' )
@@ -105,14 +105,6 @@ function GameMode:OnHeroInGame(hero)
 end
 
 --[[
-require('Spawners')
-require('SpawnersMedium')
-require('SpawnersHard')
-require('SpawnersUltra')
-require('Spawners2p')
-]]
-
---[[
   This function is called once and only once when the game completely begins (about 0:00 on the clock).  At this point,
   gold will begin to go up in ticks if configured, creeps will spawn, towers will become damageable etc.  This function
   is useful for starting any game logic timers/thinkers, beginning the first round, etc.
@@ -122,22 +114,6 @@ function GameMode:OnGameInProgress()
 
   --[[
   ShowMessage('Map name when called upon in the test client:' .. GetMapName())
-  if GetMapName() == 'Horde_5p_easy' then
-    Spawners:StartSpawners()
-    print(" Loading Easy Map Spawners")
-  elseif GetMapName() == 'Horde_4p_medium' then
-    SpawnersMedium:StartSpawners()
-    print(" Loading Medium Map Spawners")
-  elseif GetMapName() == 'Horde_4p_hard' then
-    SpawnersHard:StartSpawners()
-    print(" Loading Hard Map Spawners")
-  elseif GetMapName() == 'Horde_4p_ultra' then
-    SpawnersUltra:StartSpawners()
-    print(" Loading Ultra Map Spawners")
-  elseif GetMapName() == 'Horde_2p_easy' then
-    Spawners2p:StartSpawners()
-    print(" Loading Two Player Map Spawners")
-  end
   ]]
 
 end

@@ -5,7 +5,6 @@ require( "ai_core" )
 
 behaviorSystem = {} -- create the global so we can assign to it
 
-
 function Spawn( entityKeyValues )
 	thisEntity:SetContextThink( "AIThink", AIThink, 0.25 )
 	behaviorSystem = AICore:CreateBehaviorSystem( { BehaviorAttackAncient } )--, BehaviorRun }-- } )

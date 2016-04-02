@@ -9,20 +9,94 @@ Heroes:
 -- Mana Burn gets range increase with levels, no longer increased by burrow
 -- Spiked Carapace changed to work on any source of damage and not just heroes
 
-1.15a
-General:
--- Satyrs will no longer stand around like doofuses
--- Fix to top lane creep pathing
--- Rapier Ogre no longer spawns on difficulties above medium
+1.15b
+Maps:
+-- Added two neutral camps to the top lane
+-- Fixed pathing of enemy creeps in the top lane
+-- Widened the stairs on the bottom lane
+-- Added visible path to the store on the bottom lane
+
+Items:
+// Dragon Javelin
+-- Should no longer split for illusions
 
 Heroes:
-// Pudge
--- Flesh heap now always gives 0.25 strength per stack (leveling only increases the magic resist)
--- Fixed flesh heap buff tooltip
+// Alchemist
+-- Acid Spray damage reduced from 15/20/25/30 to 10/15/20/25
+-- Acid Spray armor reduction rescaled from 4/5/6/7 to 1/3/5/7
+// Bounty Hunter
+-- Track radius rescaled from 600/750/900 to 2000
+-- Track gold value rescaled from 50/75/100 to 100
+-- Track chance rescaled from 10% to 10/15/20%
+// Chaos Knight
+-- Increased minimum damage of Chaos Bolt to 100/150/200/250
+-- Increased maximum damage of Chaos Bolt to 200/275/350/425
+-- Reduced manacost of Chaos Bolt from 140 to 120
+// Death Prophet
+-- Spirit Siphon base damage increased to 20/40/60/80
+-- Spirit Siphon percent damage decreased to 0.5/1/1.5/2
+// Earthshaker
+-- Fissure cooldown reduced to 12 seconds
+-- Fissure mana cost reduced to 100/115/130/145
+-- Fissure damage increased to 120/200/280/360
+-- Echo Slam cooldown reduced to 85/70/55
+// Faceless Void
+-- Time Lock will apply bash damage and stun to all targets in a radius around the enemy
+// Lich
+-- Frost Nova AoE damage changed to 100/180/260/340
+-- Sacrifice cooldown reduced to 35/30/25/20
+-- Chain Frost cooldown reduced to 60/50/40
+// Lifestealer
+-- Open Wounds DoT increased to 20/24/28/32
+// Luna
+-- Moon Glaive bounces changed from 1/2/3/6 to 2/3/4/6
+-- Moon Glaive bounce damage reduction changed from 35% to 25%
+// Lycan
+-- Shapeshift duration increased to 20 seconds
+// Medusa
+-- Mystic Snake jumps 8 times at all levels
+// Obelisk Demolisher
+-- Astral Imprisonment now always lasts only 1 second
+-- Astral Imprisonment cast range rescaled from 450/500/550/600 to 600
+// Ogre Magi
+-- Ignite cooldown rescaled from 15/13/11/9 to 10
+// Omniknight
+-- Hammer Time replaced with Repel
+-- Degen Aura now grants a 15% chance to crit for 150/200/250/300% damage
+// Razor
+-- Plasma Field cooldown reduced from 14 to 12
+// Rubick
+-- Fade Bolt no longer reduces in damage per jump
+-- Null Field now actually reduces enemy spell resistance instead of buffing it
+-- Null Field radius increased to 900
+// Spirit Breaker
+-- Empowering Haste now grants 12/20/28/36 bonus damage in addition to movespeed
+-- Empowering Haste no longer grants different movespeed bonus to Spirit Breaker himself
+// Tinker
+-- Heat-seeking Missile target count increased from 2 to 2/3/4/5
+-- Aghs Heat-seeking Missile target count increased from 4 to 4/6/8/10
+// Ursa
+-- Fury Swipes damage increased to 15/25/34/45 per stack
+// Vengeful Spirit
+-- Magic Missile damage increased to 100/180/260/340
+-- Magic Missile radius increased to 250
+-- Wave of Terror damage increased to 60/100/140/180
+-- Wave of Spirit width increased to 500
+// Venomancer
+-- Venomous Gale reworked:
+--- Deals damage every second
+--- Strikes for 100 damage
+--- Ticks for 10/20/30/40
+--- Total damage raised from 75/250/425/600 to 250/400/550/700
+// Visage
+-- Soul Assumption mana cost reduced to 90/100/110/120
+// Wraith King
+-- Mortal Strike damage increased from 150/200/250/300 to 200/250/300/350
+// Zeus
+-- Lightning Bolt cooldown changed from 6 to 6/5/4/3
 
 ////// Important Changes:
 -- TOOLTIP FOR LARGE GOLEM SP;IT
--- Rebalance gold for medium map a bit
 -- make more raxes and make pushing harder, rewards for only taking different raxes
 -- friendly creeps get hp buffs and stuff (maybe 2x is possible)
 -- Arc Warden needs some reworks on some of his abilities
@@ -35,7 +109,6 @@ Heroes:
 -- meepo clones not sharing stats at all without scepter
 
 To Do:
--- rename 2p_easy to 2p_medium
 -- update russian lang
 -- Lifestealer hotkeys gettting messed up
 -- make horde mode video

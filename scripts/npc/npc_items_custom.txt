@@ -1479,6 +1479,7 @@
                 "Passive"				"1"
                 "IsHidden"				"1"
                 "IsDebuff"			"0"
+                "AllowIllusionDuplicate"    "0"
 
                 "Properties"
                 {
@@ -1650,6 +1651,7 @@
                 "Passive"				"1"
                 "IsHidden"				"1"
                 "IsDebuff"			"0"
+                "AllowIllusionDuplicate"    "0"
 
                 "Properties"
                 {
@@ -1805,6 +1807,7 @@
                 "Passive"				"1"
                 "IsHidden"				"1"
                 "IsDebuff"			"0"
+                "AllowIllusionDuplicate"    "0"
 
                 "Properties"
                 {
@@ -1960,6 +1963,7 @@
                 "Passive"				"1"
                 "IsHidden"				"1"
                 "IsDebuff"			"0"
+                "AllowIllusionDuplicate"    "0"
 
                 "Properties"
                 {
@@ -2115,6 +2119,7 @@
                 "Passive"				"1"
                 "IsHidden"				"1"
                 "IsDebuff"			"0"
+                "AllowIllusionDuplicate"    "0"
 
                 "Properties"
                 {

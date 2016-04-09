@@ -100,17 +100,17 @@ function mapLogic:SetFriendlyBuildings()
 			building:AddAbility("reward_global_armor_penalty")
 			local ancient_ability = building:FindAbilityByName("reward_global_armor_penalty")
 			ancient_ability:SetLevel(1)
-			--      building:AddAbility("building_stats")
-			--      local building_stats = building:FindAbilityByName("building_stats")
-			--      building_stats:SetLevel(0)
-			--
+			building:AddAbility("building_stats")
+			local building_stats = building:FindAbilityByName("building_stats")
+			building_stats:SetLevel(0)
+
 		elseif string.find(building_name, "rax_range") then
 			building:AddAbility("reward_global_armor_penalty")
 			local ancient_ability = building:FindAbilityByName("reward_global_armor_penalty")
 			ancient_ability:SetLevel(1)
-			--      building:AddAbility("building_stats")
-			--      local building_stats = building:FindAbilityByName("building_stats")
-			--      building_stats:SetLevel(0)
+			building:AddAbility("building_stats")
+			local building_stats = building:FindAbilityByName("building_stats")
+			building_stats:SetLevel(0)
 
 		elseif string.find(building_name, "fort") then
 			DebugPrint("Adding abilities to ancient")

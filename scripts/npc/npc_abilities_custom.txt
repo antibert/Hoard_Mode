@@ -2979,6 +2979,7 @@
             {
                 "Passive"	"1"
                 "IsHidden"	"1"
+                "AllowIllusionDuplicate"    "0"
 
                 "OnAttackLanded"
                 {
@@ -7910,25 +7911,36 @@
 	"phantom_assassin_swiftness"
 	{
 		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"beastmaster_inner_beast"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"phantom_assassin_swiftness"
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"			"phantom_assassin_swiftness"
 
-		// Casting
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"5"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"20 30 40 50"
-			}
-		}
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "bonus_attack_speed"	"20 30 40 50"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_phantom_assassin_swiftness"
+            {
+                "Passive"						"1"
+                "IsHidden"						"1"
+                "IsPurgable"					"0"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+                }
+            }
+        }
 	}
 
 	"tinker_heat_seeking_missile_datadriven"
@@ -7936,11 +7948,12 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"tinker_heat_seeking_missile"
+		"AOERadius"                     "%radius"
 
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -14304,6 +14317,708 @@
                 "States"
                 {
                     "MODIFIER_STATE_SILENCED"	"MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+        }
+    }
+
+    // Rewrite of the Antimage Mana Break ability
+    // Author: Pizzalol
+    // Date: October 13, 2015
+    // Version: 6.85
+    // Type: Datadriven
+    //
+    // ----- FILE REQUIREMENTS -----
+    // Script files:
+    // scripts/vscripts/heroes/hero_antimage/mana_break.lua
+    "antimage_mana_break_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "AbilityTextureName"			"antimage_mana_break"
+
+        // Unit Targeting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "particle"	"particles/generic_gameplay/generic_manaburn.vpcf"
+            "soundfile"	"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+        }
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "damage_per_burn"		"0.6"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "mana_per_hit"			"28 40 52 64"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "radius"			"225"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_mana_break_orb_datadriven"
+            {
+                "Passive"	"1"
+                "IsHidden"	"1"
+
+                "Orb"
+                {
+                    "Priority"	"DOTA_ORB_PRIORITY_ABILITY"
+                }
+
+                "OnOrbImpact"
+                {
+                    "FireSound"
+                    {
+                        "EffectName"	"Hero_Antimage.ManaBreak"
+                        "Target"
+                        {
+                            "Center"	"TARGET"
+                            "Flags"		"DOTA_UNIT_TARGET_FLAG_MANA_ONLY"
+                        }
+                    }
+
+                    "FireEffect"
+                    {
+                        "EffectName"	"particles/generic_gameplay/generic_manaburn.vpcf"
+                        "EffectAttachType"	"attach_hitloc"
+                        "Target"
+                        {
+                            "Center"	"TARGET"
+                            "Flags"		"DOTA_UNIT_TARGET_FLAG_MANA_ONLY"
+                        }
+                    }
+
+                    "RunScript"
+                    {
+                        "ScriptFile"	"scripts/vscripts/heroes/hero_antimage/mana_break.lua"
+                        "Function"		"ManaBreak"
+                        "Target"
+                        {
+                            "Center"	"TARGET"
+                            "Flags"		"DOTA_UNIT_TARGET_FLAG_MANA_ONLY"
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Arc Warden: Flux
+    //=================================================================================================================
+    "arc_warden_flux_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "ability_datadriven"
+        "ID"							"95677"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "FightRecapLevel"				"1"
+        "AbilityTextureName"			"arc_warden_flux"
+        "AOERadius"                     "%radius"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"600 700 800 900"
+        "AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"20.0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"75"
+
+        "precache"
+        {
+            "particle"	"particles/units/heroes/hero_arc_warden/arc_warden_flux_cast.vpcf"
+            "soundfile" "soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
+        }
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "duration"						"6.0"
+            }
+            "02"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "damage_per_second"				"20 35 50 65"
+            }
+            "03"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "search_radius"					"0"
+            }
+            "04"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "think_interval"				"0.5"
+            }
+            "05"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "move_speed_slow_pct"				"50"
+            }
+            "06"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "cast_range_tooltip"		"600 700 800 900"
+            }
+            "07"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "radius"		"325"
+            }
+        }
+
+        "OnSpellStart"
+        {
+            "FireSound"
+            {
+                "EffectName"	"Hero_ArcWarden.Flux.Cast"
+                "Target"		"CASTER"
+            }
+
+            "TrackingProjectile"
+            {
+                "Target" "TARGET"
+                "EffectName" "particles/units/heroes/hero_arc_warden/arc_warden_flux_cast.vpcf"
+                "Dodgeable" "0"
+                "ProvidesVision" "0"
+                "MoveSpeed" "1000"
+                "SourceAttachment" "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+            }
+        }
+
+        "OnProjectileHitUnit"
+        {
+            "ActOnTargets"
+            {
+                "Target"
+                {
+                    "Center"  	"TARGET"
+                    "Radius" 	"%radius"
+                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+
+                "Action"
+                {
+                    "ApplyModifier"
+                    {
+                        "ModifierName"	"modifier_arc_warden_flux"
+                        "Target"		"TARGET"
+                        "Duration"      "%duration"
+                    }
+                }
+            }
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_ArcWarden.Flux.Target"
+                "Target"		"TARGET"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Arc Warden: Spark Wraith
+    //=================================================================================================================
+    "arc_warden_spark_wraith_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"							"95679"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "FightRecapLevel"				"1"
+        "AbilityTextureName"			"arc_warden_spark_wraith"
+        "AOERadius"                     "%radius"
+        "BaseClass"                     "ability_datadriven"
+
+        "AbilityCastRange"				"2000"
+        "AbilityCastPoint"				"0.3"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"4.0 4.0 4.0 4.0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"100 110 120 130"
+
+        "precache"
+        {
+            "particle"	"particles/units/heroes/hero_arc_warden/arc_warden_wraith.vpcf"
+            "soundfile" "soundevents/game_sounds_heroes/game_sounds_arc_warden.vsndevts"
+        }
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "radius"						"375"
+            }
+            "02"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "activation_delay"				"3.0"
+            }
+            "03"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "duration"						"50.0"
+            }
+            "04"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "wraith_speed"					"400"
+            }
+            "05"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "spark_damage"					"150 200 250 300"
+            }
+            "06"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "think_interval"				"0.2"
+            }
+            "07"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "wraith_vision_radius"					"300"
+            }
+            "08"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "wraith_vision_duration"				"3.34"
+            }
+        }
+
+        "OnSpellStart"
+        {
+            "FireSound"
+            {
+                "EffectName"	"Hero_ArcWarden.SparkWraith.Cast"
+                "Target"		"CASTER"
+            }
+
+            "RunScript"
+            {
+                "ScriptFile"	"heroes/hero_arc_warden/arc_warden_spark_wraith_lua.lua"
+                "Function"		"CreateWraith"
+            }
+        }
+
+        "OnProjectileHitUnit"
+        {
+            "ActOnTargets"
+            {
+                "Target"
+                {
+                    "Center"  	"TARGET"
+                    "Radius" 	"%radius"
+                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+
+                "Action"
+                {
+                    "ApplyModifier"
+                    {
+                        "ModifierName"	"modifier_arc_warden_flux"
+                        "Target"		"TARGET"
+                        "Duration"      "%duration"
+                    }
+                }
+            }
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_ArcWarden.SparkWraith.Damage"
+                "Target"		"TARGET"
+            }
+        }
+    }
+
+    // Rewrite of the Huskar Burning Spear ability
+    // Author: Bude
+    // Date: February 14, 2016
+    // Version: 6.86
+    // Type: Datadriven
+    //
+    // ----- FILE REQUIREMENTS -----
+    // Script files:
+    // scripts/vscripts/heroes/hero_huskar/burning_spear.lua
+    "huskar_burning_spear_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_AOE"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "AbilityTextureName"			"huskar_burning_spear"
+        "AOERadius"                     "%radius"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"450"
+        "AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"0.0 0.0 0.0 0.0"
+        "AbilityDuration"				"8"
+
+        // Damage.
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityDamage"					"5 10 15 20"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"0 0 0 0"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "health_cost"			"15"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "radius"			"225"
+            }
+        }
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile" "soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+            "particle"  "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
+            "particle"  "particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+        }
+
+        // Datadriven
+        //-------------------------------------------------------------------------------------------------------------
+
+        "Modifiers"
+        {
+            // Modifier to handle OrbEffect-Behaviour
+            "modifier_burning_spear_datadriven"
+            {
+                // Will always stay on the caster once the ability is upgraded
+                // Hidden
+                "Passive"			"1"
+                "IsHidden"			"1"
+                "IsBuff"			"0"
+                "IsDebuff"			"0"
+                "IsPurgable"		"0"
+
+                // OrbEffect-Behaviour
+                "Orb"
+                {
+                    "Priority"          "DOTA_ORB_PRIORITY_ABILITY"
+                    "ProjectileName"    "particles/units/heroes/hero_huskar/huskar_burning_spear.vpcf"
+                    "CastAttack"        "1"
+                }
+
+                // HealthCost is handled here
+                "OnOrbFire"
+                {
+                    "FireSound"
+                    {
+                        "EffectName"	"Hero_Huskar.Burning_Spear.Cast"
+                        "Target"		"CASTER"
+                    }
+
+                    "RunScript"
+                    {
+                        "ScriptFile"	"heroes/hero_huskar/burning_spear.lua"
+                        "Function"		"DoHealthCost"
+                    }
+                }
+
+                // Apply the hidden dot modifier to the target here
+                // Call IncreaseStackCount to keep stack count on modifier_burning_spear_datadriven_debuff_counter updated
+                "OnOrbImpact"
+                {
+                    "FireSound"
+                    {
+                        "EffectName"	"Hero_Huskar.Burning_Spear"
+                        "Target"		"TARGET"
+                    }
+
+                    "ActOnTargets"
+                    {
+                        "Target"
+                        {
+                            "Center"  	"TARGET"
+                            "Radius" 	"%radius"
+                            "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                            "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                        }
+
+                        "Action"
+                        {
+                            "ApplyModifier"
+                            {
+                                "ModifierName"	"modifier_burning_spear_datadriven_debuff"
+                                "Target" 		"TARGET"
+                            }
+
+                            "RunScript"
+                            {
+                                "ScriptFile"	"heroes/hero_huskar/burning_spear.lua"
+                                "Function"		"IncreaseStackCount"
+
+                                "modifier_counter_name"		"modifier_burning_spear_datadriven_debuff_counter"
+                            }
+                        }
+                    }
+                }
+            }
+
+			// Modifier to show stack count
+			// Only visual
+			"modifier_burning_spear_datadriven_debuff_counter"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+			}
+
+			// Modifier to handle the dot
+			"modifier_burning_spear_datadriven_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"1"
+				"IsBuff"			"0"
+				"IsDebuff"			"1"
+				"IsPurgable"		"0"
+				"Duration"			"%AbilityDuration"
+
+				// Allow multiple instances of this modifier on the target
+				// Modifiers stack additivly (dmg) with independent durations
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"EffectName"		"particles/units/heroes/hero_huskar/huskar_burning_spear_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					// Damage of %AbilityDamage every %ThinkInterval seconds
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%AbilityDamage"
+					}
+				}
+
+				// Updating visual modifier's stack count
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_huskar/burning_spear.lua"
+						"Function"		"DecreaseStackCount"
+
+						"modifier_counter_name"		"modifier_burning_spear_datadriven_debuff_counter"
+					}
+				}
+			}
+        }
+    }
+
+    // Rewrite of the Drow Ranger Frost Arrows
+    // Author: kritth
+    // Date: January 27, 2016
+    // Version: 6.86
+    // Type: Datadriven
+    "drow_ranger_frost_arrows_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_AOE"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "AbilityTextureName"			"drow_ranger_frost_arrows"
+        "AOERadius"                     "%radius"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"625"
+        "AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"0.0 0.0 0.0 0.0"
+        "AbilityDuration"				"1.5 1.5 1.5 1.5"
+
+        // Damage.
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityDamage"					"10 20 30 40"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"12 12 12 12"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "frost_arrows_movement_speed"	"-15 -30 -45 -60"
+            }
+            "02"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "frost_arrows_hero_duration_tooltip"	"1.5"
+            }
+            "03"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "frost_arrows_creep_duration"	"7.0"
+            }
+            "04"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "radius"	"175"
+            }
+        }
+
+        // Data driven
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"				"soundevents/game_sounds_heroes/game_sounds_drowranger.vsndevts"
+            "particle"				"particles/units/heroes/hero_drow/drow_frost_arrow.vpcf"
+            "particle"				"particles/generic_gameplay/generic_slowed_cold.vpcf"
+        }
+
+        "Modifiers"
+        {
+            "modifier_frost_arrows_caster_datadriven"
+            {
+                "Passive"               		"1"
+                "IsHidden"						"1"
+                "IsPurgable"					"0"
+
+                "Orb"
+                {
+                    "Priority"					"DOTA_ORB_PRIORITY_ABILITY"
+                    "ProjectileName"			"particles/units/heroes/hero_drow/drow_frost_arrow.vpcf"
+                    "CastAttack"				"1"
+                }
+
+                "OnOrbFire"
+                {
+                    "SpendMana"
+                    {
+                        "Mana"					"%AbilityManaCost"
+                    }
+                    "FireSound"
+                    {
+                        "EffectName"			"Hero_DrowRanger.FrostArrows"
+                        "Target"				"CASTER"
+                    }
+                }
+
+                "OnOrbImpact"
+                {
+                    "ActOnTargets"
+                    {
+                        "Target"
+                        {
+                            "Center"  	"TARGET"
+                            "Radius" 	"%radius"
+                            "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                            "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                        }
+
+                        "Action"
+                        {
+                            "Damage"
+                            {
+                                "Target"		"TARGET"
+                                "Type"			"DAMAGE_TYPE_MAGICAL"
+                                "Damage"		"%AbilityDamage"
+                            }
+                            "ApplyModifier"
+                            {
+                                "Target"
+                                {
+                                    "Center"			"TARGET"
+                                    "Type"				"DOTA_UNIT_TARGET_BASIC"
+                                }
+                                "ModifierName"			"modifier_drow_ranger_frost_arrows_slow"
+                                "Duration"				"%frost_arrows_creep_duration"
+                            }
+
+                            "ApplyModifier"
+                            {
+                                "Target"
+                                {
+                                    "Center"			"TARGET"
+                                    "Type"				"DOTA_UNIT_TARGET_HERO"
+                                }
+                                "ModifierName"			"modifier_drow_ranger_frost_arrows_slow"
+                                "Duration"				"%frost_arrows_hero_duration"
+                            }
+                        }
+                    }
                 }
             }
         }

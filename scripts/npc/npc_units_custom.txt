@@ -738,9 +738,22 @@
 		//----------------------------------------------------------------
 		"Creature"
 		{
-		//	"Aggression"				"50.0"
-		//	"Avoidance"					"0.0"
-		//	"Support"					"50.0"
+		    "CanRespawn"				"0"
+
+            //Basic AI State
+            //-----------------------------------------------------------------
+            "DefaultState"				"Invade"
+
+            "States"
+            {
+                "Invade"
+                {
+                    "Name"				"Invade"
+                    "Aggression"		"100.0"
+                    "Avoidance"			"0.0"
+                    "Support"			"0.0"
+                }
+            }
 			//Level Up
 			"HPGain"					"10"
 			"DamageGain"				"20"

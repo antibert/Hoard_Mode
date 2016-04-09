@@ -1,13 +1,29 @@
 "DOTAHeroes"
 {
     //=================================================================================================================
-	// HERO: Axe
+	// HERO: Abaddon
 	//=================================================================================================================
 	"npc_dota_hero_abaddon_holdout"
 	{
 		"override_hero"			"npc_dota_hero_abaddon"
 		"Ability1"              "death_coil_datadriven"
 	}
+	//=================================================================================================================
+    // HERO: Antimage
+    //=================================================================================================================
+    "npc_dota_hero_antimage_holdout"
+    {
+        "override_hero"			"npc_dota_hero_antimage"
+        "Ability1"              "antimage_mana_break_datadriven"
+    }
+    //=================================================================================================================
+    // HERO: Arc Warden
+    //=================================================================================================================
+    "npc_dota_hero_arc_warden_holdout"
+    {
+        "override_hero"			"npc_dota_hero_arc_warden"
+        "Ability1"              "arc_warden_flux_datadriven"
+    }
 	//=================================================================================================================
 	// HERO: Axe
 	//=================================================================================================================
@@ -91,7 +107,7 @@
 	"npc_dota_hero_drow_ranger_holdout"
 	{
 		"override_hero"			"npc_dota_hero_drow_ranger"
-		"Ability1"				"medusa_split_shot_datadriven"
+		"Ability1"				"drow_ranger_frost_arrows_datadriven"
 	}
 	//=================================================================================================================
 	// HERO: Ench
@@ -118,8 +134,8 @@
     "npc_dota_hero_huskar_holdout"
     {
         "override_hero"			"npc_dota_hero_huskar"
+        "Ability2"				"huskar_burning_spear_datadriven"
         "Ability4"				"huskar_life_break_datadriven"
-
     }
 	//=================================================================================================================
 	// HERO: Keeper of the Light

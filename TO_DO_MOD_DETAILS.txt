@@ -9,42 +9,20 @@ Heroes:
 -- Mana Burn gets range increase with levels, no longer increased by burrow
 -- Spiked Carapace changed to work on any source of damage and not just heroes
 
-1.15c
-Maps:
--- Added two neutral camps to the top lane
--- Fixed pathing of enemy creeps in the top lane
--- Widened the stairs on the bottom lane
--- Added visible path to the store on the bottom lane
+1.15d
+General:
+BARRACKS UPGRADES!
+-- Building upgrade item will now work on barracks, increasing the number and strength of friendly creeps
 
 Items:
-// Boots of Intellect
--- Debuff tooltip fixed
+// Building Upgrade
+-- Reduced cost from 1000 to 800 gold
 
-Heroes:
-// Antimage
--- Mana Break burn reduced to 28/40/52/64
--- Mana Break now deals damage to all enemies around the burned target
-// Arc Warden
--- Flux now affects all targets in an aoe
--- Flux is no longer muted when a target is not alone
--- Flux DoT increased to 20/35/50/65
-// Disruptor
--- Increased Thunder Strike damage to 50/75/100/125 per bolt
-// Drow Ranger
--- Split Shot reverted to Frost Arrows
--- Frost Arrows now apply the slow in an aoe
--- Frost Arrows now deals a small amount of splash damage
-// Faceless Void
--- Illusions should no longer proc Time Lock
-// Huskar
--- Burning Spear now applies the burn in an aoe around the target
-// Phantom Assassin
--- Fixed tooltip of Swiftness
-// Winter Wyvern
--- Reduced Winter's Curse cooldown to 100/80/60
+Maps:
+-- Fixed spawning of top lane camps
+-- Widened stairs leading from Dire jungle to middle lane
 
 ////// Important Changes:
--- TOOLTIP FOR LARGE GOLEM SP;IT
 -- make more raxes and make pushing harder, rewards for only taking different raxes
 -- friendly creeps get hp buffs and stuff (maybe 2x is possible)
 -- Buff warlock golem hps - do like lycan passive on one of his abilities possibly to get around this

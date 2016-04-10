@@ -9,43 +9,34 @@ Heroes:
 -- Mana Burn gets range increase with levels, no longer increased by burrow
 -- Spiked Carapace changed to work on any source of damage and not just heroes
 
-1.15d
-General:
-BARRACKS UPGRADES!
--- Building upgrade item will now work on barracks, increasing the number and strength of friendly creeps
-
+1.15f
 Items:
-// Building Upgrade
--- Reduced cost from 1000 to 800 gold
-// Halberd of Glory
--- New item!
--- Made from Heaven's Halberd and Reaver
--- Same stats as Heaven's Halberd, except with more strength
--- Active ability: AoE -10000 attack speed for 4.5 seconds, 20 second cooldown
-
-Maps:
--- Fixed spawning of top lane camps
--- Widened stairs leading from Dire jungle to middle lane
--- Fixed bottom lane shop (I hope)
+// Mjolnir
+-- Doubled the number of targets that can be hit by the chain lightning effect
 
 Heroes:
-// Antimage
--- Reduced blink to 1200/1600/2000/2400
--- Reverted Spell Shield back to vanilla
+// Abaddon
+-- Curse of Avernus attack speed increased to 15/30/45/60
+-- Curse of Avernus debuff duration increased to 4 seconds
+-- Curse of Avernus buff duration increased to 6 seconds
+// Beastmaster
+-- Wild Axes cooldown reduced to 11 seconds
+-- Wild Axes damage increased to 70/120/170/220 each direction
+-- Scepter reduces cooldown of Primal Roar to 10 seconds
 // Broodmother
--- Spawn Spiderlings reverted back to vanilla except:
---- Always spawns 4 spiderlings per level
---- Spawned Spiderlings now get a scaling damage, armor, and hit point buff
-// Morphling
--- Waveform damage increased to 120/220/320/420
--- Morph attribute gain increased to 3/6/9/12
-// Troll Warlord
--- Rescaled cooldown of Whirling Axes (Ranged) from 20/18/16/14 to 12
--- Reduced Whirling Axes (Melee) damage to 100/150/200/250
--- Reverted duration of Whirling Axes (Melee) to vanilla
-// Windranger
--- Powershot mana cost reverted to vanilla
--- Windrun reverted to vanilla
+-- Drastically reduced spiderling hit points
+-- Reduced spiderling damage gain
+-- Insatiable Hunger no longer works on buildings
+-- Insatiable Hunger damage increased back to vanilla values
+// Drow Ranger
+-- Frost Arrow now costs 3/6/9/12 mana
+-- Frost Arrow splash damage increased to 15/25/35/45
+// Earth Spirit
+-- Magnetize damage doubled to 100/150/200 per second
+// Necrolyte
+-- Heartstopper max damage now capped at 50/70/90/110
+// Vengeful Spirit
+-- Ultimate attack speed increased to 20/40/60
 
 ////// Important Changes:
 -- make more raxes and make pushing harder, rewards for only taking different raxes

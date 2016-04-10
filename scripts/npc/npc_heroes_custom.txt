@@ -66,7 +66,6 @@
     {
         "override_hero"			"npc_dota_hero_broodmother"
         "Ability1"				"broodmother_spawn_spiderlings_datadriven"
-        "Ability4"				"broodmother_insatiable_hunger_datadriven"
     }
 	//=================================================================================================================
     // HERO: Chaos Knight
@@ -185,7 +184,7 @@
 		"override_hero"			"npc_dota_hero_beastmaster"
 		"Ability2"				"beastmaster_call_of_the_wild_boar_datadriven"
 		"Ability3"              "beastmaster_call_of_the_wild_datadriven"
-	    }
+    }
 	//=================================================================================================================
 	// HERO: Magnus
 	//=================================================================================================================

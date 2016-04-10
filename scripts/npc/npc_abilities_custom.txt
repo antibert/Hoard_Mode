@@ -1076,8 +1076,8 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
-		"AbilityCooldown"				"15.0 20.0 25.0 30.0"
-		"AbilityManaCost"				"120 130 140 150"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"120"
 	
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -1100,12 +1100,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"buff_duration"			"5.0 5.0 5.0 5.0"
+				"buff_duration"			"5"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"spiderling_duration"	"40.0 40.0 40.0 40.0"
+				"spiderling_duration"	"60"
 			}
 			"03"
 			{
@@ -1115,13 +1115,28 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"count"					"1 2 3 4"
+				"count"					"4"
 			}	 
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"projectile_speed"	"1200"
 			}
+			"06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_damage"				"20 40 60 80"
+            }
+            "07"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_armor"					"1 2 3 4"
+            }
+            "08"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_health"	"450 900 1350"
+            }
 		}
 	
 		"OnSpellStart"
@@ -1200,7 +1215,7 @@
 	
 					"SpawnUnit"
 					{
-						"UnitName"	"npc_dota_medium_spiders"
+						"UnitName"	"npc_dota_broodmother_spiderling"
 						"UnitCount"	"%count"
 						"SpawnRadius"	"50"
 						"Duration"	"%spiderling_duration"
@@ -1218,12 +1233,32 @@
 								"Target"		"TARGET"
 								"Duration"		"0.03"
 							}
+
+							"ApplyModifier"
+                            {
+                                "ModifierName"	"modifier_broodmother_spawn_spiderlings_datadriven_buff"
+                                "Target"		"TARGET"
+                                "Duration"		"%spiderling_duration"
+                            }
 						}
 	
 						"GrantsGold"	"1"
 						"GrantsXP"		"1"
 					}
 				}
+			}
+
+			"modifier_broodmother_spawn_spiderlings_datadriven_buff"
+			{
+			    "Passive"			"1"
+                "IsHidden"			"1"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"			"%bonus_damage"
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%bonus_armor"
+                    "MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
+                }
 			}
 		}
 	}

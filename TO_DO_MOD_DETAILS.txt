@@ -17,10 +17,35 @@ BARRACKS UPGRADES!
 Items:
 // Building Upgrade
 -- Reduced cost from 1000 to 800 gold
+// Halberd of Glory
+-- New item!
+-- Made from Heaven's Halberd and Reaver
+-- Same stats as Heaven's Halberd, except with more strength
+-- Active ability: AoE -10000 attack speed for 4.5 seconds, 20 second cooldown
 
 Maps:
 -- Fixed spawning of top lane camps
 -- Widened stairs leading from Dire jungle to middle lane
+-- Fixed bottom lane shop (I hope)
+
+Heroes:
+// Antimage
+-- Reduced blink to 1200/1600/2000/2400
+-- Reverted Spell Shield back to vanilla
+// Broodmother
+-- Spawn Spiderlings reverted back to vanilla except:
+--- Always spawns 4 spiderlings per level
+--- Spawned Spiderlings now get a scaling damage, armor, and hit point buff
+// Morphling
+-- Waveform damage increased to 120/220/320/420
+-- Morph attribute gain increased to 3/6/9/12
+// Troll Warlord
+-- Rescaled cooldown of Whirling Axes (Ranged) from 20/18/16/14 to 12
+-- Reduced Whirling Axes (Melee) damage to 100/150/200/250
+-- Reverted duration of Whirling Axes (Melee) to vanilla
+// Windranger
+-- Powershot mana cost reverted to vanilla
+-- Windrun reverted to vanilla
 
 ////// Important Changes:
 -- make more raxes and make pushing harder, rewards for only taking different raxes

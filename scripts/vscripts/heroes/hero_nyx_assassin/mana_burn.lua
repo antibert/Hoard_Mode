@@ -8,10 +8,14 @@ function mana_burn_function( keys )
 	local caster = keys.caster
 	local target = keys.target
 	local current_mana = target:GetMana()
-	local multiplier = keys.ability:GetLevelSpecialValueFor( "float_multiplier", keys.ability:GetLevel() - 1 )
+	local ability = keys.ability
+	local manaBurn = ability:GetLevelSpecialValueFor("mana_per_hit", (ability:GetLevel() - 1))
+	local manaDamage = ability:GetLevelSpecialValueFor("damage_per_burn", (ability:GetLevel() - 1))
 	local number_particle_name = "particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn_msg.vpcf"
 	local burn_particle_name = "particles/units/heroes/hero_nyx_assassin/nyx_assassin_mana_burn.vpcf"
-	local damageType = keys.ability:GetAbilityDamageType()
+	local damageType = ability:GetAbilityDamageType()
+	local targetLocation = target:GetAbsOrigin()
+	local radius = ability:GetSpecialValueFor("radius")
 
 	-- do percent of total mana if target does not have int
 	local current_int = 0
@@ -24,24 +28,36 @@ function mana_burn_function( keys )
 	end
 
 	-- Calculation
-	local mana_to_burn = math.min( current_mana, current_int * multiplier )
+	local mana_to_burn = math.min( current_mana, manaBurn )
 	local life_time = 2.0
-	local digits = string.len( math.floor( mana_to_burn ) ) + 1
-	
+
 	-- Fail check
 	if target:IsMagicImmune() then
 		mana_to_burn = 0
 	end
-	
-	-- Apply effect of ability
-	target:ReduceMana( mana_to_burn )
-	local damageTable = {
-		victim = target,
-		attacker = caster,
-		damage = mana_to_burn,
-		damage_type = damageType
-	}
-	ApplyDamage( damageTable )
+
+	local digits = string.len( math.floor( mana_to_burn ) ) + 1
+
+	local damageTable = {}
+	damageTable.attacker = caster
+	damageTable.victim = target
+	damageTable.damage_type = ability:GetAbilityDamageType()
+	damageTable.ability = ability
+	damageTable.damage = manaBurn * manaDamage
+
+	-- If the target is not magic immune then reduce the mana and deal damage
+	if mana_to_burn > 0 then
+		-- Apply effect of ability
+		target:ReduceMana(manaBurn)
+
+		-- Finds all the enemies in a radius around the target and then deals damage to each of them
+		local unitsToDamage = FindUnitsInRadius(caster:GetTeam(), targetLocation, nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), DOTA_UNIT_TARGET_FLAG_NONE, 0, false)
+
+		for _,v in ipairs(unitsToDamage) do
+			damageTable.victim = v
+			ApplyDamage(damageTable)
+		end
+	end
 	
 	-- Show VFX
 	local numberIndex = ParticleManager:CreateParticle( number_particle_name, PATTACH_OVERHEAD_FOLLOW, target )

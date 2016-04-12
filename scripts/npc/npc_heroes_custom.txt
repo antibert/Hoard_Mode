@@ -211,23 +211,6 @@
 		"Ability4"				"holdout_mirana_shadow"
 	}
 	//=================================================================================================================
-	// HERO: Omniknight
-	//=================================================================================================================
-	"npc_dota_hero_omniknight_holdout"
-	{
-		"override_hero"			"npc_dota_hero_omniknight"
-		"Ability3"				"omniknight_degen_aura_datadriven"
-	}
-	//=================================================================================================================
-    // HERO: Obsidian Destroyer
-    //=================================================================================================================
-    "npc_dota_hero_obsidian_destroyer_holdout"
-    {
-        "override_hero"			"npc_dota_hero_obsidian_destroyer"
-        "Ability1"				"obsidian_destroyer_arcane_orb_datadriven"
-        "Ability4"              "obsidian_destroyer_sanity_eclipse_datadriven"
-    }
-	//=================================================================================================================
     // HERO: Necrolyte
     //=================================================================================================================
     "npc_dota_hero_necrolyte_holdout"
@@ -253,6 +236,23 @@
         "override_hero"			"npc_dota_hero_nyx_assassin"
         "Ability2"              "nyx_assassin_mana_burn_datadriven"
         "Ability3"              "nyx_assassin_spiked_carapace_datadriven"
+    }
+    //=================================================================================================================
+    // HERO: Obsidian Destroyer
+    //=================================================================================================================
+    "npc_dota_hero_obsidian_destroyer_holdout"
+    {
+        "override_hero"			"npc_dota_hero_obsidian_destroyer"
+        "Ability1"				"obsidian_destroyer_arcane_orb_datadriven"
+        "Ability4"              "obsidian_destroyer_sanity_eclipse_datadriven"
+    }
+    //=================================================================================================================
+    // HERO: Omniknight
+    //=================================================================================================================
+    "npc_dota_hero_omniknight_holdout"
+    {
+        "override_hero"			"npc_dota_hero_omniknight"
+        "Ability3"				"omniknight_degen_aura_datadriven"
     }
 	//=================================================================================================================
 	// HERO: Sand King

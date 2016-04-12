@@ -677,7 +677,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"troll_warlord_fervor"			// Ability 1
+		"Ability1"					"creep_dizzy"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -737,8 +737,8 @@
 		// Creature Data
 		//----------------------------------------------------------------
 		"Creature"
-		{
-		    "CanRespawn"				"0"
+        {
+            "CanRespawn"				"0"
 
             //Basic AI State
             //-----------------------------------------------------------------
@@ -754,15 +754,20 @@
                     "Support"			"0.0"
                 }
             }
-			//Level Up
-			"HPGain"					"10"
-			"DamageGain"				"20"
-			"ArmorGain"					"0.25"
-			"MagicResistGain"			"0"
-			"MoveSpeedGain"				"1"
-			"BountyGain"				"3"
-			"XPGain"					"15"
-		}
+
+            //Level Up Parameters
+            //-----------------------------------------------------------------
+            "HPGain"					"50"
+            "DamageGain"				"10"
+            "ArmorGain"					"1"
+            "MagicResistGain"			"0"
+            "MoveSpeedGain"				"20"
+            "BountyGain"				"5"
+            "XPGain"					"20"
+
+            //Ability Usage Parameters
+            //-----------------------------------------------------------------
+        }
 	}
 	//=================================================================================	
 	// Creature: Beast

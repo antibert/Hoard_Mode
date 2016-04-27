@@ -39,7 +39,7 @@
 	//"item_ring_of_regen"			"REMOVE"
 	//"item_sobi_mask"				"REMOVE"
 	//"item_boots"					"REMOVE"
-	"item_gem"						"REMOVE"
+	//"item_gem"						"REMOVE"
 	//"item_cloak"					"REMOVE"
 	//"item_talisman_of_evasion"		"REMOVE"
 	//"item_cheese"					"REMOVE"
@@ -106,12 +106,12 @@
 	//"item_headdress"				"REMOVE"
 	//"item_recipe_sheepstick"		"REMOVE"
 	//"item_sheepstick"				"REMOVE"
-	"item_recipe_orchid"			"REMOVE"
-	"item_orchid"					"REMOVE"
+	//"item_recipe_orchid"			"REMOVE"
+	//"item_orchid"					"REMOVE"
 	//"item_recipe_cyclone"			"REMOVE"
 	//"item_cyclone"					"REMOVE"
-	"item_recipe_force_staff"		"REMOVE"
-	"item_force_staff"				"REMOVE"
+	//"item_recipe_force_staff"		"REMOVE"
+	//"item_force_staff"				"REMOVE"
 	"item_recipe_dagon"				"REMOVE"
 	"item_recipe_dagon_2"			"REMOVE"
 	"item_recipe_dagon_3"			"REMOVE"
@@ -144,8 +144,8 @@
 	//"item_shivas_guard"				"REMOVE"
 	"item_recipe_bloodstone"		"REMOVE"
 	"item_bloodstone"				"REMOVE"
-	"item_recipe_sphere"			"REMOVE"
-	"item_sphere"					"REMOVE"
+	//"item_recipe_sphere"			"REMOVE"
+	//"item_sphere"					"REMOVE"
 	//"item_vanguard"					"REMOVE"
 	"item_recipe_blade_mail"		"REMOVE"
 	"item_blade_mail"				"REMOVE"
@@ -174,8 +174,8 @@
 	//"item_lesser_crit"				"REMOVE"
 	//"item_recipe_armlet"			"REMOVE"
 	//"item_armlet"					"REMOVE"
-	"item_recipe_invis_sword"		"REMOVE"
-	"item_invis_sword"				"REMOVE"
+	//"item_recipe_invis_sword"		"REMOVE"
+	//"item_invis_sword"				"REMOVE"
 	//"item_recipe_sange_and_yasha"	"REMOVE"
 	//"item_sange_and_yasha"			"REMOVE"
 	//"item_recipe_satanic"			"REMOVE"
@@ -224,7 +224,7 @@
 	//"item_ring_of_aquila"			"REMOVE"
 	//"item_recipe_tranquil_boots"	"REMOVE"
 	//"item_tranquil_boots"			"REMOVE"
-	"item_shadow_amulet"			"REMOVE"
+	//"item_shadow_amulet"			"REMOVE"
   	//"item_halloween_candy_corn"		"REMOVE"
 	//"item_mystery_hook"				"REMOVE"
 	//"item_mystery_arrow"			"REMOVE"
@@ -251,12 +251,12 @@
     //"item_enchanted_mango"			"REMOVE"
     //"item_recipe_travel_boots_2"	"REMOVE"
     //"item_travel_boots_2"			"REMOVE"
-    "item_recipe_lotus_orb"			"REMOVE"
-    "item_lotus_orb"				"REMOVE"
+    //"item_recipe_lotus_orb"			"REMOVE"
+    //"item_lotus_orb"				"REMOVE"
     //"item_recipe_crimson_guard"		"REMOVE"
     //"item_crimson_guard"			"REMOVE"
-    "item_recipe_silver_edge"		"REMOVE"
-    "item_silver_edge"				"REMOVE"
+    //"item_recipe_silver_edge"		"REMOVE"
+    //"item_silver_edge"				"REMOVE"
     //"item_recipe_octarine_core"		"REMOVE"
     //"item_octarine_core"			"REMOVE"
     //"item_recipe_solar_crest"		"REMOVE"
@@ -265,7 +265,6 @@
     //"item_guardian_greaves"			"REMOVE"
     //"item_recipe_glimmer_cape"		"REMOVE"
     //"item_glimmer_cape"				"REMOVE"
-    "item_horde_demon_sabre"				"REMOVE"
 
 	//=================================================================================================================
 	// Witch Doctor: Maledict
@@ -486,7 +485,7 @@
 	//=================================================================================================================
 	"winter_wyvern_winters_curse"
 	{
-	    "AbilityCooldown"   "100 80 60"
+	    "AbilityCooldown"   "90 75 60"
 
 		"AbilitySpecial"
 		{
@@ -736,27 +735,6 @@
 			}
 		}
 	}
-	//=================================================================================================================
-    // Ability: Skeleton King Mortal Strike
-    //=================================================================================================================
-	"skeleton_king_mortal_strike"
-    {
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "crit_mult"					"200 250 300 350"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "crit_chance"				"15"
-            }
-        }
-    }
 	//=================================================================================================================
 	// Ability: Skeleton King Reincarnation
 	//=================================================================================================================
@@ -1088,12 +1066,12 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"illusion_damage_out_pct"		"60 70 80"
+				"illusion_damage_out_pct"		"-20"
 			}
 			"03"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"tooltip_illusion_damage_out_pct"		"60 70 80"
+				"tooltip_illusion_damage_out_pct"		"80"
 			}
 			"04"
 			{
@@ -2044,7 +2022,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"AbilityDuration"		"20.0 40.0 60.0 80.0"
+				"AbilityDuration"		"50"
 			}
 		}
 	}
@@ -2102,7 +2080,7 @@
 	//=================================================================================================================
 	"troll_warlord_whirling_axes_ranged"
 	{
-	    "AbilityCooldown"               "12"
+	    "AbilityCooldown"               "13 12 11 10"
 		"AbilitySpecial"
 		{
 			"04"
@@ -2274,7 +2252,7 @@
 	"drow_ranger_wave_of_silence"
 	{
 		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0.4"
+		"AbilityCastPoint"				"0.25"
 		"AbilitySpecial"
 		{
 			"03"
@@ -2386,7 +2364,6 @@
 	//=================================================================================================================
 	"storm_spirit_electric_vortex"
 	{
-		"AbilityCooldown"				"21.0 20.0 19.0 17.0"
 		"AbilityDuration"				"3.0 4.0 5.0 6.0"
 
 		// Special
@@ -2408,10 +2385,20 @@
 				"var_type"			"FIELD_INTEGER"
 				"electric_vortex_self_slow"	"-10"
 			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"electric_vortex_self_slow_duration"	"3.0"
+			}
 			"05"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"duration"	"3.0 4.0 5.0 6.0"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"scepter_radius"	"475"
 			}
 		}
 	}
@@ -2610,14 +2597,6 @@
             }
         }
     }
-	//=================================================================================================================
-	// Dragon Knight: Breathe Fire
-	//=================================================================================================================
-	"dragon_knight_breathe_fire"
-	{
-		"AbilityManaCost"				"40 40 40 40"
-	    "AbilityCooldown"				"12 10 8 6"
-	}
 	//=================================================================================================================
 	// Dragon Knight: Dragon Tail
 	//=================================================================================================================
@@ -2970,7 +2949,12 @@
 			"04"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"necromastery_souls_hero_bonus"	"36"
+				"necromastery_souls_hero_bonus"	"11"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"necromastery_max_souls_scepter" "46"
 			}
 		}
 	}
@@ -3041,20 +3025,6 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"stomp_damage"					"100 200 300 400"
-			}
-		}
-	}
-	//=================================================================================================================
-	// Centaur Warchief: Double Edge
-	//=================================================================================================================
-	"centaur_double_edge"
-	{
-		"AbilitySpecial"
-		{			
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"edge_damage"					"200 300 400 500"
 			}
 		}
 	}
@@ -4469,44 +4439,33 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"full_splash_radius"	"50 75 85"
+				"splash_radius"	"175"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"mid_splash_radius"		"75 100 110"
+				"damage_min"			"40 55 70"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"min_splash_radius"		"150 200 220"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_min"			"40 55 70"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"damage_max"			"65 80 100"
 			}
-			"07"
+			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"60.0 60.0 60.0"
 			}
-			"08"
+			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_min_scepter"	"85 105 125"
 			}
-			"09"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_max_scepter"	"130 150 170"
 			}
-
 		}
 	}
 	//=================================================================================================================
@@ -4848,15 +4807,6 @@
 				"duration"				"14"
 			}		
 		}
-	}
-	
-
-	//=================================================================================================================
-	// Recipe: Ancient Janggo of Endurance
-	//=================================================================================================================
-	"item_recipe_ancient_janggo"
-	{
-		"ItemCost"						"100"	
 	}
 	//=================================================================================================================
 	// Refresher
@@ -5316,52 +5266,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"105 120 140 165"		
 	}
-
-	//=================================================================================================================
-	// Death Prophet: Spirit Siphon
-	//=================================================================================================================
-	"death_prophet_spirit_siphon"
-	{
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"70 65 60 55"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-		    "01"
-            {
-                "var_type"						"FIELD_FLOAT"
-                "damage"					"20 40 60 80"
-            }
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"damage_pct"					"0.5 1 1.5 2"
-			}
-			"03"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"haunt_duration"				"5 6 7 8"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movement_slow"					"5 10 15 20"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"max_charges"			"1 2 3 4"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"charge_restore_time"	"25"
-			}
-		}
-	}
 	//=================================================================================================================
 	// Death Prophet: Exorcism
 	//=================================================================================================================
@@ -5792,7 +5696,7 @@
             "01"
             {
                 "var_type"					"FIELD_INTEGER"
-                "radius"					"325"
+                "radius"					"340"
             }
             "02"
             {
@@ -6144,7 +6048,7 @@
             "05"
             {
                 "var_type"				"FIELD_INTEGER"
-                "speed"					"1200"
+                "speed"					"900"
             }
             "06"
             {
@@ -6631,7 +6535,7 @@
 			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"push_length"		"252"
+				"push_length"		"250"
 			}
 			"05"
 			{
@@ -7091,48 +6995,6 @@
     }
 
     //=================================================================================================================
-    // Brewmaster Earth: Pulverize
-    //=================================================================================================================
-    "brewmaster_earth_pulverize"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "ID"							"5406"							// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "damage_inner"				"80 80 80 80"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "radius_inner"				"150 150 150 150"
-            }
-            "03"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "damage_outer"				"40 40 40 40"
-            }
-            "04"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "radius_outer"				"400 400 400 400"
-            }
-            "05"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "chance"					"40 40 40 40"
-            }
-        }
-    }
-
-    //=================================================================================================================
     // Brewmaster Fire: Permanent Immolation
     //=================================================================================================================
     "brewmaster_fire_permanent_immolation"
@@ -7352,6 +7214,11 @@
                 "var_type"			"FIELD_INTEGER"
                 "penalty_duration"			"2"
             }
+            "05"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "movespeed"			"-9 -12 -15 -18"
+            }
         }
     }
 
@@ -7377,7 +7244,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"125 250 375 500"
+				"damage"			"150 250 375 500"
 			}
 			"02"
 			{
@@ -7385,11 +7252,6 @@
 				"debuff_duration"	"0"
 			}
 			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"movespeed"			"-14 -16 -18 -20"
-			}
-			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"duration"	"3 4 5 6"
@@ -7617,7 +7479,7 @@
             "02"
             {
                 "var_type"							"FIELD_FLOAT"
-                "stun_delay"						"1.0"
+                "stun_delay"						"0.85"
             }
             "03"
             {
@@ -7674,7 +7536,7 @@
             "04"
             {
                 "var_type"							"FIELD_FLOAT"
-                "recovery_time"						"4"
+                "recovery_time"						"3"
             }
         }
     }
@@ -7949,6 +7811,48 @@
                 "vision_duration"	"3.0 3.0 3.0 3.0"
             }
 
+        }
+    }
+
+    //=================================================================================================================
+    // Ability: Phantom Assassin's Stifling Dagger
+    //=================================================================================================================
+    "phantom_assassin_stifling_dagger"
+    {
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "move_slow"					"-50"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "dagger_speed"			"1200"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "duration"				"1 2 3 4"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "base_damage"			"100 140 180 220"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "attack_factor"			"-75 -60 -45 -30"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "attack_factor_tooltip"	"25 40 55 70"
+            }
         }
     }
 }

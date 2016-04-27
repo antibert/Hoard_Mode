@@ -2533,7 +2533,7 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
+		"AbilityCastRange"				"600 650 700 750"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 
 		// Time
@@ -2822,7 +2822,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"1000000"
+				"radius"			"900"
 			}
 		}
 	}
@@ -2999,7 +2999,7 @@
             "04"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"40 50 60 70"
+                "bonus_damage"			"50 75 100 125"
             }
             "05"
             {
@@ -3096,220 +3096,6 @@
             }
         }
     }
-	"faceless_void_chronosphere_hoard"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"FightRecapLevel"				"2"
-		"AbilityTextureName"			"faceless_void_chronosphere"
-		"AOERadius"						"%radius"
-
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_faceless_void.vsndevts"
-			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
-			"particle"			"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
-		}
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.35 0.35 0.35"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60.0 55.0 50.0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 250 300"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportBonus"		"50"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"700"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"8.0 10.0 12.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration_scepter"		"11.0 13.0 15.0"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"cooldown_scepter"		"30.0 30.0 30.0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"vision_radius"			"700"
-			}
-			// Extra
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"aura_interval"			"0.1"
-			}
-			// If you want the Chronosphere to ignore Faceless Void then keep it at 1 otherwise set it to 0
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"ignore_void"			"1"
-			}
-
-		}
-
-		"OnSpellStart"
-		{
-			"FireSound"
-			{
-				"EffectName"		"Hero_FacelessVoid.Chronosphere"
-				"Target"			"CASTER"
-			}
-
-			"RunScript"
-			{
-				"ScriptFile"		"scripts/vscripts/heroes/hero_faceless_void/chronosphere.lua"
-				"Function"			"Chronosphere"
-				"Target"			"POINT"
-				"dummy_aura"		"modifier_chronosphere_aura_datadriven"
-			}
-		}
-
-		"Modifiers"
-		{
-			// Cosmetic
-			"modifier_chronosphere_tooltip_datadriven"
-			{
-				"IsDebuff"		"1"
-				"IsPurgable"	"0"
-			}
-
-			"modifier_chronosphere_aura_datadriven"
-			{
-				"Duration"	"%duration"
-
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"	"particles/units/heroes/hero_faceless_void/faceless_void_chronosphere.vpcf"
-						"EffectAttachType"	"attach_origin"
-						"Target"		"TARGET"
-
-						"ControlPoints"
-						{
-							"01"	"%radius %radius 0"
-						}
-					}
-				}
-
-				"ThinkInterval"		"%aura_interval"
-
-				"OnIntervalThink"
-				{
-					"ActOnTargets"
-					{
-						"Target"
-						{
-							"Center"	"TARGET"
-							"Types"		"DOTA_UNIT_TARGET_ALL"
-							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Radius"	"%radius"
-						}
-
-						"Action"
-						{
-							"RunScript"
-							{
-								"ScriptFile"		"scripts/vscripts/heroes/hero_faceless_void/chronosphere.lua"
-								"Function"			"ChronosphereAura"
-								"Target"			"TARGET"
-								"aura_modifier"		"modifier_chronosphere_datadriven"
-								"caster_modifier"	"modifier_chronosphere_caster_datadriven"
-							}
-						}
-					}
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_INVULNERABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_HEALTH_BAR" 	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_UNSELECTABLE" 	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-
-			"modifier_chronosphere_datadriven"
-			{
-				"IsHidden"	"1"
-				"Duration"	"%aura_interval"
-
-				"OnCreated"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_chronosphere_tooltip_datadriven"
-						"Target"		"TARGET"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_chronosphere_tooltip_datadriven"
-						"Target"		"TARGET"
-					}
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_FROZEN"			"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-
-			"modifier_chronosphere_caster_datadriven"
-			{
-				"IsHidden"	"1"
-				"Duration"	"%aura_interval * 2"
-
-				"EffectName"	"particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
-				"EffectAttachType"	"follow_origin"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_ABSOLUTE"	"1000"
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_FLYING"	"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
 	"furion_force_of_nature_hoard"
 	{
 		// General
@@ -3641,7 +3427,7 @@
         "BaseClass"				"ability_datadriven"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
         "AbilityTextureName"			"omniknight_degen_aura"
 
         // Casting
@@ -8227,7 +8013,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"magic_missile_stun"	"1.45 1.55 1.65 1.75"
+				"magic_missile_stun"	"1.2 1.4 1.6 1.8"
 			}
 			"03"
 			{
@@ -10938,7 +10724,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"damage_per_health"			"0.4 0.6 0.9"
+				"damage_per_health"			"0.6 0.75 0.9"
 			}
 			"02"
 			{
@@ -10968,7 +10754,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"respawn_constant"		"30"
+				"respawn_constant"		"10 20 30"
 			}
 		}
 
@@ -11392,11 +11178,11 @@
 
         // Time
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"40.0 30.0 20.0"
+        "AbilityCooldown"				"40 35 30"
 
         // Casting
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastPoint"				"0.4 0.4 0.4"
+        "AbilityCastPoint"				"0.3"
         "AbilityChannelTime"			"3.0"
 
         // Cost
@@ -11818,7 +11604,7 @@
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"				"100 100 100 100"
+        "AbilityManaCost"				"100 120 140 160"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -11837,7 +11623,7 @@
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "int_gain"				"2 3 4 5"
+                "int_gain"				"1 2 3 4"
             }
             "04"
             {
@@ -12401,7 +12187,7 @@
 
         // Time
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"60 30 0"
+        "AbilityCooldown"				"30 15 5"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
@@ -12424,17 +12210,17 @@
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "damage"				"450 600 750"
+                "damage"				"600 1000 1400"
             }
             "04"
             {
-                "var_type"				"FIELD_INTEGER"
-                "damage_scepter"				"600 1000 1400"
+                "var_type"				"FIELD_FLOAT"
+                "damage_interval"		"0.1"
             }
             "05"
             {
-                "var_type"				"FIELD_FLOAT"
-                "damage_interval"		"0.1"
+                "var_type"			"FIELD_FLOAT"
+                "scepter_duration"	"12"
             }
         }
 
@@ -12512,6 +12298,65 @@
                         "ControlPoints"
                         {
                             "01"				"0 %duration 0"
+                        }
+                    }
+                }
+
+                "States"
+                {
+                    "MODIFIER_STATE_INVULNERABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NO_HEALTH_BAR"					"MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_UNSELECTABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+
+            "modifier_mystic_flare_dummy_vfx_datadriven_scepter"
+            {
+                "OnCreated"
+                {
+                    "FireSound"
+                    {
+                        "Target"				"CASTER"
+                        "EffectName"			"Hero_SkywrathMage.MysticFlare"
+                    }
+
+                    // For some reasons, these three particles do not show up for me so I have to manually put them in
+                    "AttachEffect"
+                    {
+                        "Target"				"TARGET"
+                        "EffectName"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient_c.vpcf"
+                        "EffectAttachType"		"follow_origin"
+                        "EffectRadius"			"%radius"
+                    }
+
+                    "AttachEffect"
+                    {
+                        "Target"				"TARGET"
+                        "EffectName"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient_f.vpcf"
+                        "EffectAttachType"		"follow_origin"
+                        "EffectRadius"			"%radius"
+                    }
+
+                    "AttachEffect"
+                    {
+                        "Target"				"TARGET"
+                        "EffectName"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient_j.vpcf"
+                        "EffectAttachType"		"follow_origin"
+                        "EffectRadius"			"%radius"
+                    }
+
+                    // Main Effect
+                    "AttachEffect"
+                    {
+                        "Target"				"TARGET"
+                        "EffectName"			"particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare_ambient.vpcf"
+                        "EffectAttachType"		"follow_origin"
+                        "EffectRadius"			"%radius"
+                        "ControlPoints"
+                        {
+                            "01"				"0 %scepter_duration 0"
                         }
                     }
                 }
@@ -13828,7 +13673,7 @@
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"				"95 105 115 125"
+        "AbilityManaCost"				"95"
 
         "AOERadius"                     "%radius"
 
@@ -14535,7 +14380,7 @@
             "05"
             {
                 "var_type"						"FIELD_INTEGER"
-                "move_speed_slow_pct"				"50"
+                "move_speed_slow_pct"				"35 40 45 50"
             }
             "06"
             {

@@ -1,19 +1,76 @@
 Next Update Patch Notes:
 
-1.15g
+1.16
+PARITY WITH 6.87!
+
 Items:
--- Updated new boot tooltips to indicate they don't work on Meepo clones
+Except for as noted below (usually because Horde Mode version is stronger/cheaper), every item has had their 6.87 changes applied.
+
+ENABLED: Linken's Sphere, Shadow Blade, Silver Edge, Orchid Malevolence, Force Staff
+
+// Aether Lens 2:
+Spell Amp reduced to 15%
+
+// Dragon Javelin:
+Stats changed to match Dragon Lance changes
+
+// Aghanim Scepter 2:
+Max health and mana updated to reflect Point Booster change
+
+// Orb of Venom:
+Fixed bug that prevented the splash from applying the slow
+
+// Sange and Yasha and Atos
+-- No longer has true strike chance on active
+-- Maim chance still 33% for 32% slow
+
 
 Heroes:
-// Meepo
--- Enabled!
--- Divided We Stand tooltip changed to indicate that it doesn't work with new boots
-// Nyx
--- Enabled!
--- Mana Burn changed to work on all targets, burns a set amount of mana
--- Mana Burn deals damage in an aoe around the target
--- Mana Burn gets range increase with levels, no longer increased by burrow
--- Spiked Carapace changed to work on any source of damage and not just heroes
+Except for as noted below (usually because Horde Mode version is stronger), every hero has had their 6.87 changes applied.
+
+// Abaddon
+-- Curse of Avernis unchanged
+// Axe
+-- Counter Helix damage still lower in Horde Mode, but is Pure now
+// Beastmaster
+-- Vision change applied, not this is actually a buff, because hawk in Horde Mode didn't get more vision with levels
+// Centaur Warrunner
+-- Damage reduced to vanilla now that the cooldown is better
+// Clockwerk
+-- Battery Assault unchanged
+// Crystal Maiden
+-- Arcane Aura unchanged
+// Dazzle
+-- Toughness Aura reduced from global to 900
+// Death Prophet
+-- Spirit Siphon completely vanilla now
+// Dragon Knight
+-- Breathe Fire completely vanilla now
+// Elder Titan
+-- Echo Stomp damage unchanged
+// Faceless Void
+-- Chronosphere reverted to vanilla because of Time Lock damage buff
+// Obtuse Diamond
+-- Kept Arcane Imprisonment cast range to 600
+// Phantom Assassin
+-- Stifling Dagger reverted to vanilla, since it can carry splash and cleave from items
+-- Stifling Dagger base damage increased to 100/140/180/220
+// Riki
+-- Blink Strike unchanged
+// Rubick
+-- Fade Bolt unchanged
+// Silencer
+-- Arcane Curse still lasts only 4 seconds but does more damage
+// Skywrath Mage
+-- Mystic Flare cooldown is now 30/15/5, otherwise behaves as expected with scepter
+// Sniper
+-- Shrapnel unchanged
+// Spectre
+-- Haunt unchanged
+// Troll Warlord
+-- Ranged Whirling Axes cooldown changed to 13/12/11/10
+// Wraith King
+-- Mortal Strike reverted to vanilla
 
 ////// Important Changes:
 -- make more raxes and make pushing harder, rewards for only taking different raxes

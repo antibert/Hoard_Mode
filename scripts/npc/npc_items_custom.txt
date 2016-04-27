@@ -47,7 +47,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"20"
+				"spell_amp"				"15"
 			}
 		}
 	}
@@ -538,18 +538,18 @@
 		"BaseClass"						"item_datadriven"
 		"ID"							"1121"  //Valve's version of this item uses the ID "121".
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"Model"							"models/props_gameplay/red_box.vmdl" 
+		"Model"							"models/props_gameplay/red_box.vmdl"
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 		"AbilityTextureName"			"item_bloodstone_datadriven"
 		"FightRecapLevel"				"2"
-		
-		// Stats		
+
+		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"150"
 		"AbilityCastPoint"				"0.0"
 		"AbilityCooldown"				"140.0"
 		"AbilityManaCost"				"0"
-		
+
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"4900"
@@ -559,18 +559,18 @@
 		"ItemInitialCharges"			"12"
 		"ItemDisplayCharges"			"1"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		
+
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_health"						"500"
+				"bonus_health"						"475"
 			}
 			"02"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_mana"						"400"
+				"bonus_mana"						"425"
 			}
 			"03"
 			{
@@ -633,7 +633,7 @@
 				"experience_on_death_range"			"1200"  //This value is hardcoded into modifier_item_bloodstone_datadriven_aura_emitter_on_death().
 			}
 		}
-		
+
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -642,7 +642,7 @@
 				"Function"						"item_bloodstone_datadriven_on_spell_start"
 			}
 		}
-		
+
 		"Modifiers"
 		{
 			"modifier_item_bloodstone_datadriven"
@@ -650,7 +650,7 @@
 				"Passive"			"1"
 				"IsHidden"			"1"
 				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
@@ -664,7 +664,7 @@
 			{
 				"Passive"			"0"
 				"IsHidden"			"1"
-				
+
 				"OnDeath"
 				{
 					"RunScript"
@@ -1414,17 +1414,17 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"20"
+                "bonus_damage"			"10"
             }
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_speed"			"10"
+                "bonus_speed"			"15"
             }
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_strength"		"10"
+                "bonus_strength"		"15"
             }
             "04"
             {
@@ -1586,17 +1586,17 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"20"
+                "bonus_damage"			"10"
             }
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_speed"			"10"
+                "bonus_speed"			"15"
             }
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_strength"		"10"
+                "bonus_strength"		"15"
             }
             "04"
             {
@@ -1742,17 +1742,17 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"20"
+                "bonus_damage"			"10"
             }
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_speed"			"10"
+                "bonus_speed"			"15"
             }
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_strength"		"10"
+                "bonus_strength"		"15"
             }
             "04"
             {
@@ -1898,17 +1898,17 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"20"
+                "bonus_damage"			"10"
             }
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_speed"			"10"
+                "bonus_speed"			"15"
             }
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_strength"		"10"
+                "bonus_strength"		"15"
             }
             "04"
             {
@@ -2054,17 +2054,17 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"20"
+                "bonus_damage"			"10"
             }
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_speed"			"10"
+                "bonus_speed"			"15"
             }
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_strength"		"10"
+                "bonus_strength"		"15"
             }
             "04"
             {
@@ -4054,7 +4054,7 @@
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_health"			"250"
+                "bonus_health"			"225"
             }
             "03"
             {
@@ -4461,11 +4461,6 @@
                 "var_type"				"FIELD_FLOAT"
                 "cripple_duration"				"4.0"
             }
-            "12"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "truestrike_chance"		"40"
-            }
         }
 
         "OnSpellStart"
@@ -4499,7 +4494,6 @@
 
                 "Properties"
                 {
-                    "MODIFIER_PROPERTY_NEGATIVE_EVASION_CONSTANT"       "%truestrike_chance"
                     "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%cripple_movespeed_slow_pct"
                 }
             }
@@ -4626,12 +4620,12 @@
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_health"			"400"
+                "bonus_health"			"350"
             }
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_mana"			"300"
+                "bonus_mana"			"350"
             }
         }
     }
@@ -5506,7 +5500,7 @@
                             "ApplyModifier"
                             {
                                 "Target"                "TARGET"
-                                "ModifierName"				"modifier_item_orb_of_venom_datadriven_poison_attack"
+                                "ModifierName"				"modifier_item_orb_of_venom_datadriven_slow"
                                 "Duration"					"%poison_duration"
                             }
                         }

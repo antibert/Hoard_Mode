@@ -14,6 +14,7 @@ function mystic_flare_start( keys )
 	local caster = keys.caster
 	local current_instance = 0
 	local dummyModifierName = "modifier_mystic_flare_dummy_vfx_datadriven"
+	local dummyModifierName_scepter = "modifier_mystic_flare_dummy_vfx_datadriven_scepter"
 	local duration = ability:GetLevelSpecialValueFor( "duration", ability:GetLevel() - 1 )
 	local interval = ability:GetLevelSpecialValueFor( "damage_interval", ability:GetLevel() - 1 )
 	local max_instances = math.floor( duration / interval )
@@ -26,9 +27,12 @@ function mystic_flare_start( keys )
 	local damageType = ability:GetAbilityDamageType() -- DAMAGE_TYPE_MAGICAL
 	local soundTarget = "Hero_SkywrathMage.MysticFlare.Target"
 	local has_scepter = caster:HasScepter()
+	local scepter_duration = ability:GetLevelSpecialValueFor( "scepter_duration", ability:GetLevel() - 1 )
 
 	if has_scepter then
-		total_damage = ability:GetLevelSpecialValueFor( "damage_scepter", ability:GetLevel() - 1 )
+		total_damage = total_damage * scepter_duration / duration
+		duration = scepter_duration
+		dummyModifierName = dummyModifierName_scepter
 	end
 	
 	-- Create for VFX particles on ground

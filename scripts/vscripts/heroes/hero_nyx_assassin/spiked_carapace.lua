@@ -30,7 +30,8 @@ function spiked_carapace_reflect( keys )
 	
 	-- Check if it's not already been hit
 	if not caster.carapaced_units[ attacker:entindex() ] and not attacker:IsMagicImmune() then
-		attacker:SetHealth( attacker:GetHealth() - damageTaken )
+		local targetHealth = math.max(0, attacker:GetHealth() -damageTaken)
+		attacker:SetHealth( targetHealth )
 		keys.ability:ApplyDataDrivenModifier( caster, attacker, "modifier_spiked_carapaced_stun_datadriven", { } )
 		caster:SetHealth( caster:GetHealth() + damageTaken )
 		caster.carapaced_units[ attacker:entindex() ] = attacker

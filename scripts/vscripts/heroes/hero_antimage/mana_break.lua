@@ -18,14 +18,8 @@ function ManaBreak( keys )
 
 	-- If the target is not magic immune then reduce the mana and deal damage
 	if not target:IsMagicImmune() then
-		-- Checking the mana of the target and calculating the damage
-		if(target:GetMana() >= manaBurn) then
-			damageTable.damage = manaBurn * manaDamage
-			target:ReduceMana(manaBurn)
-		else
-			damageTable.damage = target:GetMana() * manaDamage
-			target:ReduceMana(manaBurn)
-		end
+		damageTable.damage = manaBurn * manaDamage
+		target:ReduceMana(manaBurn)
 
 		-- Finds all the enemies in a radius around the target and then deals damage to each of them
 		local unitsToDamage = FindUnitsInRadius(caster:GetTeam(), targetLocation, nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), DOTA_UNIT_TARGET_FLAG_NONE, 0, false)

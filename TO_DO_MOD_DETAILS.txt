@@ -1,80 +1,57 @@
 Next Update Patch Notes:
 
-1.16
-PARITY WITH 6.87!
-
+1.16a
 Items:
-Except for as noted below (usually because Horde Mode version is stronger/cheaper), every item has had their 6.87 changes applied.
+// Horde Dagon
+-- Recipe reverted to vanilla cost of 1250
+-- Radius increased to 250/300/340/370/400
+-- Mana cost reduced to vanilla cost of 180 at all levels
 
-ENABLED: Linken's Sphere, Shadow Blade, Silver Edge, Orchid Malevolence, Force Staff
+// Deathstone
+-- Reduced number of charges to 12 (same as bloodstone)
+-- Reduced hp to 475, increased mana to 425 (same as bloodstone)
+-- Mana cost of active ability reduced to 180 (same as dagon)
+-- Now properly lifesteals with Octarine Core
+-- No longer requires a recipe to create
 
-// Aether Lens 2:
-Spell Amp reduced to 15%
+// Dragon Javelins
+-- Increased HP regeneration from 5 to 6 (to reflect the Perseverence change)
 
-// Dragon Javelin:
-Stats changed to match Dragon Lance changes
-
-// Aghanim Scepter 2:
-Max health and mana updated to reflect Point Booster change
-
-// Orb of Venom:
-Fixed bug that prevented the splash from applying the slow
+// Moon Shard
+-- Stackable when consumed!
 
 // Sange and Yasha and Atos
--- No longer has true strike chance on active
--- Maim chance still 33% for 32% slow
+-- Removed accuracy mention from tooltip (the ability was already removed from the active last patch).
 
+// Shiva's Armaments
+-- The slow aura no longer affects towers (same as Shiva's Guard)
+-- Provides 6 less int (to reflect the Veil change)
+
+// Vladmir's Cuirass
+-- Reduced armor aura from 10 to 9 (to reflect Vladmir's Offering change)
 
 Heroes:
-Except for as noted below (usually because Horde Mode version is stronger), every hero has had their 6.87 changes applied.
+// Antimage
+-- Mana Break is no longer a unique attack modifier
+-- Mana Break now deals damage regardless of whether or not the target had mana to burn
+-- Mana Void now deals base damage of 200/400/600, in addition to damage for missing mana
+-- Mana Void cooldown reduced to 70/55/40
 
-// Abaddon
--- Curse of Avernis unchanged
-// Axe
--- Counter Helix damage still lower in Horde Mode, but is Pure now
-// Beastmaster
--- Vision change applied, not this is actually a buff, because hawk in Horde Mode didn't get more vision with levels
-// Centaur Warrunner
--- Damage reduced to vanilla now that the cooldown is better
-// Clockwerk
--- Battery Assault unchanged
-// Crystal Maiden
--- Arcane Aura unchanged
-// Dazzle
--- Toughness Aura reduced from global to 900
-// Death Prophet
--- Spirit Siphon completely vanilla now
-// Dragon Knight
--- Breathe Fire completely vanilla now
-// Elder Titan
--- Echo Stomp damage unchanged
-// Faceless Void
--- Chronosphere reverted to vanilla because of Time Lock damage buff
-// Obtuse Diamond
--- Kept Arcane Imprisonment cast range to 600
-// Phantom Assassin
--- Stifling Dagger reverted to vanilla, since it can carry splash and cleave from items
--- Stifling Dagger base damage increased to 100/140/180/220
-// Riki
--- Blink Strike unchanged
-// Rubick
--- Fade Bolt unchanged
-// Silencer
--- Arcane Curse still lasts only 4 seconds but does more damage
+// Omnipotent Defenstrator
+-- Fixed tooltip bug that didn't show the reduction of the int steal
+
+// Phantom Lancer
+-- Fixed tooltips for his illusions to accurately reflect their real numbers
+
 // Skywrath Mage
--- Mystic Flare cooldown is now 30/15/5, otherwise behaves as expected with scepter
-// Sniper
--- Shrapnel unchanged
-// Spectre
--- Haunt unchanged
-// Troll Warlord
--- Ranged Whirling Axes cooldown changed to 13/12/11/10
-// Wraith King
--- Mortal Strike reverted to vanilla
+-- Arcane Bolt now has an aoe indicator
+-- Fixed aghs ult
+
+// Terrorblade
+-- Zeal's damage rescaled to 20/28/36/44
 
 ////// Important Changes:
 -- make more raxes and make pushing harder, rewards for only taking different raxes
--- friendly creeps get hp buffs and stuff (maybe 2x is possible)
 -- Buff warlock golem hps - do like lycan passive on one of his abilities possibly to get around this
 
 /////// Secondary importance:

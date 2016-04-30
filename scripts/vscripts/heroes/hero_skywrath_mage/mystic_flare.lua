@@ -17,7 +17,6 @@ function mystic_flare_start( keys )
 	local dummyModifierName_scepter = "modifier_mystic_flare_dummy_vfx_datadriven_scepter"
 	local duration = ability:GetLevelSpecialValueFor( "duration", ability:GetLevel() - 1 )
 	local interval = ability:GetLevelSpecialValueFor( "damage_interval", ability:GetLevel() - 1 )
-	local max_instances = math.floor( duration / interval )
 	local radius = ability:GetLevelSpecialValueFor( "radius", ability:GetLevel() - 1 )
 	local target = keys.target_points[1]
 	local total_damage = ability:GetLevelSpecialValueFor( "damage", ability:GetLevel() - 1 )
@@ -34,6 +33,8 @@ function mystic_flare_start( keys )
 		duration = scepter_duration
 		dummyModifierName = dummyModifierName_scepter
 	end
+
+	local max_instances = math.floor( duration / interval )
 	
 	-- Create for VFX particles on ground
 	local dummy = CreateUnitByName( "npc_dummy_blank", target, false, caster, caster, caster:GetTeamNumber() )

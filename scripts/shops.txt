@@ -90,7 +90,7 @@
 		"item"		"item_hand_of_midas"
 		"item"		"item_travel_boots"
 		"item"		"item_travel_boots_3"
-		"item"      "item_moon_shard"
+		"item"      "item_moon_shard_datadriven"
 	}
 
 	// Level 2 - Blue Recipes
@@ -147,7 +147,7 @@
 		"item"		"item_hurricane_pike"
 		"item"		"item_assault"
 		"item"		"item_heart"
-		"item"		"item_bloodstone_datadriven"
+		"item"		"item_bloodstone"
 	}
 	
 	"weapons"

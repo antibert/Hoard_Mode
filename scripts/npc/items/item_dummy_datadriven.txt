@@ -1,8 +1,0 @@
-"item_dummy_datadriven"  //A dummy item that is used to take up item slots in the swap_to_item() Lua function.
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"ID"                            "2002"
-	"BaseClass"                     "item_datadriven"
-	"ItemBaseLevel"                 "1"
-}

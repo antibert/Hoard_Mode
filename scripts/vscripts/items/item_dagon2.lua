@@ -16,7 +16,13 @@ function DagonSpellStart( keys )
 		local particle_effect_intensity = 300 + (100 * dagon_level)  --Control Point 2 in Dagon's particle effect takes a number between 400 and 800, depending on its level.
 		ParticleManager:SetParticleControl(dagon_particle, 2, Vector(particle_effect_intensity))
 
-		ApplyDamage({victim = unit, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_MAGICAL,})
+		ApplyDamage({
+			victim = unit,
+			attacker = caster,
+			damage = damage,
+			damage_type = DAMAGE_TYPE_MAGICAL,
+			ability = ability
+		})
 	end
 	
 	keys.caster:EmitSound("DOTA_Item.Dagon.Activate")

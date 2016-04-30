@@ -6768,7 +6768,7 @@
 					"Name"				"treant_overgrowth"
 					"AOE"				"1"	
 					"Radius"			"700"
-					"MinimumTargets"	"3"
+					"MinimumTargets"	"2"
 				}					
 			}
 			"DefensiveAbilities"
@@ -6776,10 +6776,9 @@
 				"Ability1"
 				{
 					"Name"				"necrolyte_death_pulse"
-					"Heal"				"1"
 					"AOE"				"1"
 					"Radius"			"650"
-					"MinimumTargets"	"0"
+					"MinimumTargets"	"1"
 				}
 			}
 			

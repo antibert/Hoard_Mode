@@ -15,6 +15,7 @@
     {
         "override_hero"			"npc_dota_hero_antimage"
         "Ability1"              "antimage_mana_break_datadriven"
+        "Ability4"              "antimage_mana_void_datadriven"
     }
     //=================================================================================================================
     // HERO: Arc Warden

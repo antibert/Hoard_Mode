@@ -142,8 +142,8 @@
 	//"item_aegis"					"REMOVE"
 	//"item_recipe_shivas_guard"		"REMOVE"
 	//"item_shivas_guard"				"REMOVE"
-	"item_recipe_bloodstone"		"REMOVE"
-	"item_bloodstone"				"REMOVE"
+	//"item_recipe_bloodstone"		"REMOVE"
+	//"item_bloodstone"				"REMOVE"
 	//"item_recipe_sphere"			"REMOVE"
 	//"item_sphere"					"REMOVE"
 	//"item_vanguard"					"REMOVE"
@@ -246,8 +246,8 @@
 	//"item_winter_greevil_treat"		"REMOVE"
 	//"item_winter_greevil_garbage"	"REMOVE"
 	//"item_winter_greevil_chewy"		"REMOVE"
-	//"item_recipe_moon_shard"		"REMOVE"
-    //"item_moon_shard"				"REMOVE"
+	"item_recipe_moon_shard"		"REMOVE"
+    "item_moon_shard"				"REMOVE"
     //"item_enchanted_mango"			"REMOVE"
     //"item_recipe_travel_boots_2"	"REMOVE"
     //"item_travel_boots_2"			"REMOVE"
@@ -1678,12 +1678,12 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_in_pct"	"100 100 100 100"
+				"illusion_damage_in_pct"	"100"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_illusion_total_damage_in_pct"	"100 100 100 100"
+				"tooltip_illusion_total_damage_in_pct"	"200"
 			}			
 		}	
 	}
@@ -1741,7 +1741,7 @@
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_total_illusion_damage_in_pct"	"100"
+				"tooltip_total_illusion_damage_in_pct"	"200"
 			}
 			"09"
 			{
@@ -3285,7 +3285,6 @@
 	//=================================================================================================================
 	"lone_druid_true_form"
 	{
-		"RequiredLevel"			    "10"
 		"AbilitySpecial"
 		{
 			"01"
@@ -3315,20 +3314,7 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	// Ability: Antimage Mana Void
-	//=================================================================================================================
-	"antimage_mana_void"
-	{
-		"AbilitySpecial"
-		{
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"mana_void_aoe_radius"			"800"
-			}
-		}
-	}
+
 	//=================================================================================================================
 	// Ability: Antimage Blink
 	//=================================================================================================================
@@ -4686,6 +4672,23 @@
 			}
       	}
 	}
+
+	//=================================================================================================================
+    // Bloodstone
+    //=================================================================================================================
+    "item_bloodstone"
+    {
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "11"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "on_death_removal"		"1" //33% gone
+            }
+        }
+    }
 	
 	//=================================================================================================================
 	// Midas

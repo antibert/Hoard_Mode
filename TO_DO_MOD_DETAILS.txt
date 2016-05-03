@@ -1,6 +1,9 @@
 Next Update Patch Notes:
 
 1.16b
+Spawns:
+-- Fixed bug preventing medium splitters from spawning in mid and top lane
+
 Items:
 // Focused Aether Lens
 -- Reworked entirely

@@ -1140,7 +1140,8 @@ Timers:CreateTimer("big", {
 		useGameTime = true,
 		endTime = 2280,
 		callback = function()
-			Spawners:SpawnMediumSplitterTop()
+			Spawners:SpawnSplitterTop()
+			Spawners:SpawnSplitterMid()
 			Spawners:SpawnSplitterBot()
 			return 120.0
 		end

@@ -62,6 +62,7 @@ function AddStacks(keys)
 	local target = keys.target
 	local int_steal_modifier = "modifier_arcane_orb_status"
 	local int_steal_modifier_target = "modifier_arcane_orb_status_target"
+	local int_steal = ability:GetLevelSpecialValueFor("int_gain", (ability:GetLevel() -1))
 	local duration = ability:GetLevelSpecialValueFor("steal_duration", (ability:GetLevel() -1))
 	
 	if(caster:HasModifier(int_steal_modifier)) then
@@ -69,15 +70,15 @@ function AddStacks(keys)
 		
 		-- Adds stacks to the aesthetic modifiers
 		ability:ApplyDataDrivenModifier(caster, caster, int_steal_modifier, {Duration = duration})
-		caster:SetModifierStackCount( int_steal_modifier, ability, stacks + 1 )
+		caster:SetModifierStackCount( int_steal_modifier, ability, stacks + int_steal )
 		ability:ApplyDataDrivenModifier(caster, target, int_steal_modifier_target, {Duration = duration})
-		target:SetModifierStackCount( int_steal_modifier_target, ability, stacks + 1 )
+		target:SetModifierStackCount( int_steal_modifier_target, ability, stacks + int_steal )
 	else
 		-- Applies aesthetic stack modifiers to the caster and target
 		ability:ApplyDataDrivenModifier(caster, caster, int_steal_modifier, {Duration = duration})
-		caster:SetModifierStackCount( int_steal_modifier, ability, 1 )
+		caster:SetModifierStackCount( int_steal_modifier, ability, int_steal )
 		ability:ApplyDataDrivenModifier(caster, target, int_steal_modifier_target, {Duration = duration})
-		target:SetModifierStackCount( int_steal_modifier_target, ability, 1 )
+		target:SetModifierStackCount( int_steal_modifier_target, ability, int_steal )
 	end
 end
 
@@ -86,11 +87,13 @@ end
 	Removes stacks from the aesthetic modifiers]]
 function RemoveStacksTarget(keys)
 	local int_steal_modifier_target = "modifier_arcane_orb_status_target"
+	local ability = keys.ability
+	local int_steal = ability:GetLevelSpecialValueFor("int_gain", (ability:GetLevel() -1))
 
 	if keys.target:HasModifier(int_steal_modifier_target) then
 		local previous_stack_count = keys.target:GetModifierStackCount(int_steal_modifier_target, keys.caster)
-		if previous_stack_count > 1 then
-			keys.target:SetModifierStackCount(int_steal_modifier_target, keys.caster, previous_stack_count - 1)
+		if previous_stack_count > int_steal then
+			keys.target:SetModifierStackCount(int_steal_modifier_target, keys.caster, previous_stack_count - int_steal)
 		else
 			keys.target:RemoveModifierByNameAndCaster(int_steal_modifier_target, keys.caster)
 		end
@@ -102,11 +105,13 @@ end
 	Removes stacks from the aesthetic modifiers]]
 function RemoveStacksSelf(keys)
 	local int_steal_modifier_target = "modifier_arcane_orb_status"
+	local ability = keys.ability
+	local int_steal = ability:GetLevelSpecialValueFor("int_gain", (ability:GetLevel() -1))
 
 	if keys.caster:HasModifier(int_steal_modifier_target) then
 		local previous_stack_count = keys.caster:GetModifierStackCount(int_steal_modifier_target, keys.caster)
-		if previous_stack_count > 1 then
-			keys.caster:SetModifierStackCount(int_steal_modifier_target, keys.caster, previous_stack_count - 1)
+		if previous_stack_count > int_steal then
+			keys.caster:SetModifierStackCount(int_steal_modifier_target, keys.caster, previous_stack_count - int_steal)
 		else
 			keys.caster:RemoveModifierByNameAndCaster(int_steal_modifier_target, keys.caster)
 		end

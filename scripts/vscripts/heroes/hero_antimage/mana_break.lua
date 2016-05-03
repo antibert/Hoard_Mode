@@ -7,6 +7,7 @@ function ManaBreak( keys )
 	local ability = keys.ability
 	local manaBurn = ability:GetLevelSpecialValueFor("mana_per_hit", (ability:GetLevel() - 1))
 	local manaDamage = ability:GetLevelSpecialValueFor("damage_per_burn", (ability:GetLevel() - 1))
+	local baseDamage = ability:GetLevelSpecialValueFor("damage_no_mana", (ability:GetLevel() - 1))
 	local targetLocation = target:GetAbsOrigin()
 	local radius = ability:GetSpecialValueFor("radius")
 
@@ -18,7 +19,11 @@ function ManaBreak( keys )
 
 	-- If the target is not magic immune then reduce the mana and deal damage
 	if not target:IsMagicImmune() then
-		damageTable.damage = manaBurn * manaDamage
+		if(target:GetMana() > 0) then
+			damageTable.damage = manaBurn * manaDamage
+		else
+			damageTable.damage = manaBurn * manaDamage * baseDamage
+		end
 		target:ReduceMana(manaBurn)
 
 		-- Finds all the enemies in a radius around the target and then deals damage to each of them

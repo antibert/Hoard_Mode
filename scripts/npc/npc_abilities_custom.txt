@@ -70,12 +70,12 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"duration"					"20.0"
+				"duration"					"20 30 40 50"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"heal_multiplier"			"10.0 13.0 17.0 20.0"
+				"heal_multiplier"			"5 7 9 11"
 			}
 		}
 	}
@@ -12815,12 +12815,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"flesh_heap_magic_resist"		"25 40 55 70"
+				"flesh_heap_magic_resist"		"12 20 28 36"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"flesh_heap_strength_buff_amount"		"0.25"
+				"flesh_heap_strength_buff_amount"		"0.2"
 			}
 			"04"
 			{
@@ -14265,6 +14265,11 @@
                 "var_type"				"FIELD_INTEGER"
                 "radius"			"225"
             }
+            "04"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "damage_no_mana"		"0.5"
+            }
         }
 
         "Modifiers"
@@ -15045,6 +15050,309 @@
                                 "Duration"				"%frost_arrows_hero_duration"
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    // Rewrite of the Enigma Malefice ability
+    // Author: YOLOSPAGHETTI
+    // Date: February 17, 2016
+    // Version: 6.86
+    // Type: Datadriven
+    "enigma_malefice_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "FightRecapLevel"				"1"
+        "AbilityTextureName"			"enigma_malefice"
+        "AOERadius"                     "275"
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "particle"		"particles/generic_gameplay/generic_stunned.vpcf"
+            "particle"		"particles/units/heroes/hero_enigma/enigma_malefice.vpcf"
+            "soundfile"		"sounds/weapons/hero/enigma/malefice.vsnd"
+        }
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"600"
+        "AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"15.0 15.0 15.0 15.0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"110 130 150 160"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityModifierSupportValue"	"0.33"	// Applies multiple modifiers
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "tick_rate"				"2.0 2.0 2.0 2.0"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "stun_duration"			"0.25 0.5 0.75 1.0"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "damage"				"30 50 70 90"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "duration"				"4.0 4.0 4.0 4.0"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "tooltip_stuns"				"3 3 3 3"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "radius"				"275"
+            }
+        }
+
+        "OnSpellStart"
+        {
+            "ActOnTargets"
+            {
+                "Target"
+                {
+                    "Center"  	"TARGET"
+                    "Radius" 	"%radius"
+                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+
+                "Action"
+                {
+                    "ApplyModifier"
+                    {
+                        "ModifierName"	"modifier_malefice_datadriven"
+                        "Target"	"TARGET"
+                    }
+                }
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_malefice_datadriven"
+            {
+                "Duration"	"%duration"
+                "IsDebuff"	"1"
+
+                "EffectName"		"particles/units/heroes/hero_enigma/enigma_malefice.vpcf"
+                "EffectAttachType"	"follow_origin"
+
+                "OnCreated"
+                {
+                    "ApplyModifier"
+                    {
+                        "ModifierName"	"modifier_malefice_stun"
+                        "Target"	"TARGET"
+                    }
+                }
+
+                "ThinkInterval"	"%tick_rate"
+                "OnIntervalThink"
+                {
+                    "ApplyModifier"
+                    {
+                        "ModifierName"	"modifier_malefice_stun"
+                        "Target"	"TARGET"
+                    }
+                }
+            }
+
+            "modifier_malefice_stun"
+            {
+                "Duration"	"%stun_duration"
+                "IsDebuff"	"1"
+
+                "EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
+                "EffectAttachType"	"follow_overhead"
+
+                "OnCreated"
+                {
+                    "FireSound"
+                    {
+                        "EffectName"	"Hero_Enigma.Malefice"
+                        "Target"		"TARGET"
+                    }
+
+                    "Damage"
+                    {
+                        "Target"	"TARGET"
+                        "Type"		"DAMAGE_TYPE_MAGICAL"
+                        "Damage"	"%damage"
+                    }
+                }
+
+                "States"
+                {
+                    "MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+        }
+    }
+
+    // Rewrite of the Enigma Midnight Pulse ability
+    // Author: YOLOSPAGHETTI
+    // Date: February 17, 2016
+    // Version: 6.86
+    // Type: Datadriven
+    //
+    // ----- FILE REQUIREMENTS -----
+    // Script files:
+    // scripts/vscripts/heroes/hero_enigma/midnight_pulse.lua
+    "enigma_midnight_pulse_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "AoERadius" 					"550"
+        "FightRecapLevel"				"1"
+        "AbilityTextureName"			"enigma_midnight_pulse"
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "particle"		"particles/units/heroes/hero_enigma/enigma_midnight_pulse.vpcf"
+            "soundfile"		"sounds/weapons/hero/enigma/midnight_pulse.vsnd"
+        }
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"700"
+        "AbilityCastPoint"				"0.1 0.1 0.1 0.1"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"35"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"95 110 125 140"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "radius"					"550"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "damage_percent"			"3 3.75 4.5 5.25"
+            }
+            "03"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "duration"					"11"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "tick_rate"				"1.0 1.0 1.0 1.0"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "max_damage"				"300 400 500 600"
+            }
+        }
+
+        "OnSpellStart"
+        {
+            "CreateThinker"
+            {
+                "ModifierName"	"modifier_midnight_pulse_datadriven"
+                "Target" 		"POINT"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_midnight_pulse_datadriven"
+            {
+                "Aura"					"modifier_midnight_pulse_debuff"
+                "Aura_Radius"			"%radius"
+                "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+                "Duration"				"%duration"
+
+                "OnCreated"
+                {
+                    "FireSound"
+                    {
+                        "EffectName"	"Hero_Enigma.Midnight_Pulse"
+                        "Target"		"TARGET"
+                    }
+
+                    "AttachEffect"
+                    {
+                        "EffectName"		"particles/units/heroes/hero_enigma/enigma_midnight_pulse.vpcf"
+                        "EffectAttachType"	"follow_origin"
+                        "Target"			"TARGET"
+                        "ControlPoints"
+                        {
+                            "00" "0 0 0"
+                            "01" "%radius %radius %radius"
+                        }
+                    }
+
+                    "DestroyTrees"
+                    {
+                        "Target"	"TARGET"
+                        "Radius"	"%radius"
+                    }
+                }
+            }
+
+            "modifier_midnight_pulse_debuff"
+            {
+                "IsDebuff"		"1"
+
+                "ThinkInterval"	"%tick_rate"
+                "OnIntervalThink"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"heroes/hero_enigma/midnight_pulse.lua"
+                        "Function"	"ApplyDPS"
                     }
                 }
             }

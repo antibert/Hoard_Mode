@@ -13,6 +13,14 @@ Items:
 -- Reduced Cleave amount from 50% to 45%
 
 Heroes:
+// Anti-Mage
+-- Mana Break now deals only half damage to targets without mana
+
+// Axe
+-- Battle Hunger heal reduced to 5/7/9/11%
+-- Battle Hunger duration increased to 20/30/40/50
+-- Counter-helix trigger chance increased from 17% to 20%
+
 // Bounty Hunter
 -- Reduced damage of shuriken to 100/180/260/340
 -- Rescaled cooldown of shuriken from 10 to 12/11/10/9
@@ -21,12 +29,45 @@ Heroes:
 // Bristleback
 -- Quill Spray reverted to vanilla
 
+// Dragon Knight
+-- Reduced splash damage of Dragon Form by half
+
+// Enigma
+-- Malefice damage reverted to vanilla
+-- Malefice now affects enemies in an aoe around the target
+-- Midnight Pulse damage increased to vanilla
+-- Midnight Pulse now has maximum damage per tick of 300/400/500/600
+
 // Juggernaut
 -- Blade Fury damage returned to vanilla
 -- Blade Fury mana cost rescaled to 60/70/80/90
 
+// Magnus
+-- Reduced Cleave to 10/15/20/25% (bonus damage unchanged)
+
+// Pudge
+-- Flesh Heap strength gain reduced from 0.25 to 0.2
+-- Flesh Heap magic resistance reduced from 25/40/55/70 to 12/20/28/36
+
 // Shadow Shaman
 -- Fixed Serpent Wards
+
+// Spirit Breaker
+-- Charge of Darkness cooldown rescaled to 14/12/10/8
+-- Greater Bash cooldown rescaled to 0.5/0.4/0.3/0.2
+-- Nether Strike cooldown reduced to 70/60/50
+-- Nether Strike aghs cooldown reduced to 20/15/10
+
+// Tiny
+-- Reduced Aghanim Scepter cleave to 25%
+
+// Tusk
+-- Reduced cooldown of Walrus Punch from 36/24/12 to 20/16/12
+-- Reduced cooldown of Aghanim Scepter Walrus Punch from 20/16/12 to 12/10/8
+-- Walrus Kick damage increased to 350/650/950
+
+// Wraith King
+-- Reduced crit damage on creeps to 200/250/300/350
 
 ////// Important Changes:
 -- make more raxes and make pushing harder, rewards for only taking different raxes

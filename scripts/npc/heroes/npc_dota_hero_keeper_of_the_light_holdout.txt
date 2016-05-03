@@ -1,8 +1,0 @@
-//=================================================================================================================
-// HERO: Keeper of the Light
-//=================================================================================================================
-"npc_dota_hero_keeper_of_the_light_holdout"
-{
-	"override_hero"			"npc_dota_hero_keeper_of_the_light"
-	"Ability2"				"keeper_of_the_light_mana_overload"
-    }

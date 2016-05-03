@@ -1,54 +1,29 @@
 Next Update Patch Notes:
 
-1.16a
+1.16b
 Items:
-// Horde Dagon
--- Recipe reverted to vanilla cost of 1250
--- Radius increased to 250/300/340/370/400
--- Mana cost reduced to vanilla cost of 180 at all levels
+// Focused Aether Lens
+-- Reworked entirely
+-- Now has multiple upgrades, each increasing spell amp and cast range bonus
 
-// Deathstone
--- Reduced number of charges to 12 (same as bloodstone)
--- Reduced hp to 475, increased mana to 425 (same as bloodstone)
--- Mana cost of active ability reduced to 180 (same as dagon)
--- Now properly lifesteals with Octarine Core
--- No longer requires a recipe to create
-
-// Dragon Javelins
--- Increased HP regeneration from 5 to 6 (to reflect the Perseverence change)
-
-// Moon Shard
--- Stackable when consumed!
-
-// Sange and Yasha and Atos
--- Removed accuracy mention from tooltip (the ability was already removed from the active last patch).
-
-// Shiva's Armaments
--- The slow aura no longer affects towers (same as Shiva's Guard)
--- Provides 6 less int (to reflect the Veil change)
-
-// Vladmir's Cuirass
--- Reduced armor aura from 10 to 9 (to reflect Vladmir's Offering change)
+// War Fury
+-- Reduced Cleave amount from 50% to 45%
 
 Heroes:
-// Antimage
--- Mana Break is no longer a unique attack modifier
--- Mana Break now deals damage regardless of whether or not the target had mana to burn
--- Mana Void now deals base damage of 200/400/600, in addition to damage for missing mana
--- Mana Void cooldown reduced to 70/55/40
+// Bounty Hunter
+-- Reduced damage of shuriken to 100/180/260/340
+-- Rescaled cooldown of shuriken from 10 to 12/11/10/9
+-- Reduced bounce AoE to 300
 
-// Omnipotent Defenstrator
--- Fixed tooltip bug that didn't show the reduction of the int steal
+// Bristleback
+-- Quill Spray reverted to vanilla
 
-// Phantom Lancer
--- Fixed tooltips for his illusions to accurately reflect their real numbers
+// Juggernaut
+-- Blade Fury damage returned to vanilla
+-- Blade Fury mana cost rescaled to 60/70/80/90
 
-// Skywrath Mage
--- Arcane Bolt now has an aoe indicator
--- Fixed aghs ult
-
-// Terrorblade
--- Zeal's damage rescaled to 20/28/36/44
+// Shadow Shaman
+-- Fixed Serpent Wards
 
 ////// Important Changes:
 -- make more raxes and make pushing harder, rewards for only taking different raxes

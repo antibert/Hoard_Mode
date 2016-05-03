@@ -12955,7 +12955,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCastRange"				"650"
         "AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-        "AbilityCooldown"				"10"
+        "AbilityCooldown"				"12 11 10 9"
         "AbilityManaCost"				"90 115 135 155"
 
         // Stats
@@ -12969,7 +12969,7 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"100 200 300 400"
+                "bonus_damage"			"100 180 260 340"
             }
             "02"
             {
@@ -12979,7 +12979,7 @@
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bounce_aoe"			"350"
+                "bounce_aoe"			"300"
             }
             "04"
             {

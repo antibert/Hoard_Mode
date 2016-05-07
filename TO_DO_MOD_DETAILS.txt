@@ -1,73 +1,50 @@
 Next Update Patch Notes:
 
-1.16b
-Spawns:
--- Fixed bug preventing medium splitters from spawning in mid and top lane
+1.16c
+General:
+-- Disabled dummy item (used for script purposes)
 
 Items:
-// Focused Aether Lens
--- Reworked entirely
--- Now has multiple upgrades, each increasing spell amp and cast range bonus
-
-// War Fury
--- Reduced Cleave amount from 50% to 45%
+// Necronomicon
+-- Recipe reverted to normal price
+-- Cooldown reduced from 95 to 90/75/60
+-- Duration increased from 40 to 40/50/60
 
 Heroes:
-// Anti-Mage
--- Mana Break now deals only half damage to targets without mana
+// Ancient Apparition
+-- Changed Cold Feet to be an AoE around a unit
+-- Reverted Cold Feet duration and damage back to the original
 
-// Axe
--- Battle Hunger heal reduced to 5/7/9/11%
--- Battle Hunger duration increased to 20/30/40/50
--- Counter-helix trigger chance increased from 17% to 20%
-
-// Bounty Hunter
--- Reduced damage of shuriken to 100/180/260/340
--- Rescaled cooldown of shuriken from 10 to 12/11/10/9
--- Reduced bounce AoE to 300
-
-// Bristleback
--- Quill Spray reverted to vanilla
-
-// Dragon Knight
--- Reduced splash damage of Dragon Form by half
+// Broodmother
+-- Reduced duration of Spawn Spiderlings debuff from 5 to 3 seconds
+-- Reduced spiderling bonus damage from 10/25/40/55 to 5/20/35/50
+-- Reduced spiderling bonus armor from 1/2/3/4 to 0/1/2/3
+-- Reduced spiderling bonus health from 200/300/400/500 to 0/100/200/300
 
 // Enigma
--- Malefice damage reverted to vanilla
--- Malefice now affects enemies in an aoe around the target
--- Midnight Pulse damage increased to vanilla
--- Midnight Pulse now has maximum damage per tick of 300/400/500/600
+-- Malefice radius increased from 275 to 350
+-- Eidolons split after 4/3/2/1 attacks
+-- Black Hole cast range increased from 275 to 450
+-- Black Hole damage reduced to 260/340/420 (per second)
 
-// Juggernaut
--- Blade Fury damage returned to vanilla
--- Blade Fury mana cost rescaled to 60/70/80/90
+// Lycan
+-- Increased wolf cripple chance to 33%
+-- Increased wolf cripple damage from 8 to 24
+-- Increased wolf hp from 200/240/280/320 to 400/480/560/640
+-- Increased wolf armor from 1 to 3/5/7/9
+-- Increased wolf damage from 18/29/37/46 to 18/39/57/76
+-- Increased Feral Impulse attack speed from 15/20/25/30 to 15/25/35/45
 
-// Magnus
--- Reduced Cleave to 10/15/20/25% (bonus damage unchanged)
-
-// Pudge
--- Flesh Heap strength gain reduced from 0.25 to 0.2
--- Flesh Heap magic resistance reduced from 25/40/55/70 to 12/20/28/36
-
-// Shadow Shaman
--- Fixed Serpent Wards
-
-// Spirit Breaker
--- Charge of Darkness cooldown rescaled to 14/12/10/8
--- Greater Bash cooldown rescaled to 0.5/0.4/0.3/0.2
--- Nether Strike cooldown reduced to 70/60/50
--- Nether Strike aghs cooldown reduced to 20/15/10
-
-// Tiny
--- Reduced Aghanim Scepter cleave to 25%
-
-// Tusk
--- Reduced cooldown of Walrus Punch from 36/24/12 to 20/16/12
--- Reduced cooldown of Aghanim Scepter Walrus Punch from 20/16/12 to 12/10/8
--- Walrus Kick damage increased to 350/650/950
-
-// Wraith King
--- Reduced crit damage on creeps to 200/250/300/350
+// Warlock
+-- Fatal Bonds count increased to 7/9/11/13
+-- Fatal Bonds cooldown reduced to 18
+-- Fatal Bonds search radius increased to 1200
+-- Shadow Word deals damage or heals twice as fast for half as long (same amount total)
+-- Shadow Word cooldown reduced to 16/14/12/10
+-- Upheaval cooldown reduced to 24/20/16/14
+-- Upheaval radius increased from 650 to 650/750/850/950
+-- Increased radius of Rain of Chaos stun to 600/700/800
+-- Scepter golems no longer have reduced hit points and damage
 
 ////// Important Changes:
 -- make more raxes and make pushing harder, rewards for only taking different raxes

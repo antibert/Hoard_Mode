@@ -4844,7 +4844,7 @@
         // Stats
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCooldown"				"0"
-        "AbilityCastRange"				"600"
+        "AbilityCastRange"				"800"
         "AbilityCastPoint"				"0.0"
         "AbilityManaCost"				"0"
 
@@ -4856,7 +4856,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"800"
+        "ItemCost"						"750"
         "ItemShopTags"					"unique"
         "ItemQuality"					"epic"
         "ItemAliases"					"upgrade"

@@ -1,64 +1,24 @@
 Next Update Patch Notes:
 
-1.16c
+1.17
+This is the first step of several changes to be made to towers. Expect more to come!
+
 General:
--- Disabled dummy item (used for script purposes)
+-- Allied tower upgrades altered:
+--- Tower Strafe replaced with Tower Debuff Aura (reduced armor and spell resistance of nearby enemies)
+--- Tower Liquid Fire replaced with Tower Split Shot
 
-Items:
-// Necronomicon
--- Recipe reverted to normal price
--- Cooldown reduced from 95 to 90/75/60
--- Duration increased from 40 to 40/50/60
-
-Heroes:
-// Ancient Apparition
--- Changed Cold Feet to be an AoE around a unit
--- Reverted Cold Feet duration and damage back to the original
-
-// Broodmother
--- Reduced duration of Spawn Spiderlings debuff from 5 to 3 seconds
--- Reduced spiderling bonus damage from 10/25/40/55 to 5/20/35/50
--- Reduced spiderling bonus armor from 1/2/3/4 to 0/1/2/3
--- Reduced spiderling bonus health from 200/300/400/500 to 0/100/200/300
-
-// Enigma
--- Malefice radius increased from 275 to 350
--- Eidolons split after 4/3/2/1 attacks
--- Black Hole cast range increased from 275 to 450
--- Black Hole damage reduced to 260/340/420 (per second)
-
-// Lycan
--- Increased wolf cripple chance to 33%
--- Increased wolf cripple damage from 8 to 24
--- Increased wolf hp from 200/240/280/320 to 400/480/560/640
--- Increased wolf armor from 1 to 3/5/7/9
--- Increased wolf damage from 18/29/37/46 to 18/39/57/76
--- Increased Feral Impulse attack speed from 15/20/25/30 to 15/25/35/45
-
-// Warlock
--- Fatal Bonds count increased to 7/9/11/13
--- Fatal Bonds cooldown reduced to 18
--- Fatal Bonds search radius increased to 1200
--- Shadow Word deals damage or heals twice as fast for half as long (same amount total)
--- Shadow Word cooldown reduced to 16/14/12/10
--- Upheaval cooldown reduced to 24/20/16/14
--- Upheaval radius increased from 650 to 650/750/850/950
--- Increased radius of Rain of Chaos stun to 600/700/800
--- Scepter golems no longer have reduced hit points and damage
-
-////// Important Changes:
--- make more raxes and make pushing harder, rewards for only taking different raxes
--- Buff warlock golem hps - do like lycan passive on one of his abilities possibly to get around this
+-- Dire mega towers now have 50 physical damage block
+-- Dire mega towers hit points reduced from 6600 to 4800
+-- Dire towers now have the Tower Debuff Aura and Tower Split Shot abilities (rank 1 for tier 1, etc.)
 
 /////// Secondary importance:
--- Brood spawns now dorp their own spawns
 -- Fix Giant Mech particles not working
--- REWORK ULTRA MAP COMPLTETLY
 -- meepo clones not sharing stats at all without scepter
 
 To Do:
 -- update russian lang
--- Lifestealer hotkeys gettting messed up
+-- Lifestealer hotkeys getting messed up
 -- make horde mode video
 -- More map bosses than drop super items you can't buy in shop
 -- Old stumpy is not affected by lithe boots, but is affected by deolator minus armour
@@ -67,7 +27,7 @@ To Do:
 BIG JOBS TO DO:
 
 1. Players can purchase waves of creeps to spawn and attack towards the dire ancient. (Hero Line Wars uses a creep spawning thing similar)
-	
+
 
 //ITEM IDEAS:
 

@@ -16,7 +16,7 @@ function item_upgrade_tower( keys )
 				tower_stats:SetLevel(level)
 				heal_target = false
 
-				local ability = target:FindAbilityByName("tower_overpower")
+				local ability = target:FindAbilityByName("tower_aura")
 				if ability ~= nil then
 					ability:SetLevel(math.min(4, math.floor(level / 2)))
 				end

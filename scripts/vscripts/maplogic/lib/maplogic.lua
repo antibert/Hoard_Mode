@@ -80,8 +80,8 @@ function mapLogic:SetFriendlyBuildings()
 
 		-- Identify the building type
 		if string.find(building_name, "tower") then
-			building:AddAbility("tower_overpower")
-			local tower_overpower = building:FindAbilityByName("tower_overpower")
+			building:AddAbility("tower_aura")
+			local tower_overpower = building:FindAbilityByName("tower_aura")
 			tower_overpower:SetLevel(0)
 
 			building:AddAbility("tower_stats")
@@ -148,10 +148,34 @@ function mapLogic:SetEnemyBuildings()
 		-- Identify the building type
 		if string.find(building_name, "tower") then
 			DebugPrint("Adding abilities to enemy tower")
-			-- Add passive buff
+
+			-- Add abilities
 			building:AddAbility("reward_global_offense_buff")
 			local ancient_ability = building:FindAbilityByName("reward_global_offense_buff")
-			ancient_ability:SetLevel(1)
+
+			building:AddAbility("tower_aura")
+			local tower_aura = building:FindAbilityByName("tower_aura")
+
+			building:AddAbility("tower_splash")
+			local tower_splash = building:FindAbilityByName("tower_splash")
+
+			if string.find(building_name, "tower1") then
+				ancient_ability:SetLevel(1)
+				tower_aura:SetLevel(1)
+				tower_splash:SetLevel(1)
+			elseif string.find(building_name, "tower2") then
+				ancient_ability:SetLevel(1)
+				tower_aura:SetLevel(2)
+				tower_splash:SetLevel(2)
+			elseif string.find(building_name, "tower3") then
+				ancient_ability:SetLevel(1)
+				tower_aura:SetLevel(3)
+				tower_splash:SetLevel(3)
+			elseif string.find(building_name, "tower4") then
+				ancient_ability:SetLevel(1)
+				tower_aura:SetLevel(4)
+				tower_splash:SetLevel(4)
+			end
 
 		elseif string.find(building_name, "rax_melee") then
 			DebugPrint("Adding abilities to enemy melee rax")

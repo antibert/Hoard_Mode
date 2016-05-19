@@ -5054,19 +5054,19 @@
 	//=================================================================================================================
 	"item_heart"
 	{
-		"AbilityCooldown"				"0"
+		"AbilityCooldown"				"2"
 		"AbilitySpecial"
 		{
 			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_melee"		"0"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cooldown_ranged_tooltip"		"2"
-			}
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cooldown_melee"		"0"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cooldown_ranged_tooltip"		"2"
+            }
 		}
 	}
 	//=================================================================================================================

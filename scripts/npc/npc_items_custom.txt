@@ -1304,7 +1304,6 @@
                 "Passive"				"1"
                 "IsHidden"				"1"
                 "IsDebuff"			"0"
-                "AllowIllusionDuplicate"    "0"
 
                 "Properties"
                 {
@@ -5368,7 +5367,6 @@
             {
                 "Passive" "1"
                 "IsHidden" "1"
-                "AllowIllusionDuplicate"    "0"
                 "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 
                 "OnAttackLanded"

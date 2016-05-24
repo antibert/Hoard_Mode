@@ -1,16 +1,13 @@
 Next Update Patch Notes:
 
-1.17
-This is the first step of several changes to be made to towers. Expect more to come!
-
-General:
--- Allied tower upgrades altered:
---- Tower Strafe replaced with Tower Debuff Aura (reduced armor and spell resistance of nearby enemies)
---- Tower Liquid Fire replaced with Tower Split Shot
-
--- Dire mega towers now have 50 physical damage block
--- Dire mega towers hit points reduced from 6600 to 4800
--- Dire towers now have the Tower Debuff Aura and Tower Split Shot abilities (rank 1 for tier 1, etc.)
+1.17a
+Heroes:
+// Naga Siren
+-- Mirror Image now provides 3 images at all levels instead of 1/2/3/4
+-- Mirror Image incoming damage changed from 200% to 350/300/250/200
+-- Mirror Image outgoing damage change from 50% to 25/35/45/55
+-- Riptide damage reduced from 150/220/310/400 to 120/180/240/300
+== Ensnare is now an AoE and deals 100/160/220/280 magical damage to affected targets
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

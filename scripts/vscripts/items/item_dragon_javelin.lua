@@ -6,7 +6,7 @@ function SplitShotLaunch( keys )
     local caster_location = caster:GetAbsOrigin()
     local ability = keys.ability
 
-    if caster:IsRangedAttacker() then
+    if caster:IsRangedAttacker() and caster:IsRealHero() then
         -- Targeting variables
         local target_type = ability:GetAbilityTargetType()
         local target_team = ability:GetAbilityTargetTeam()

@@ -218,13 +218,21 @@
 		"Ability5"					"attribute_bonus"				
 	}
 	//=================================================================================================================
-	// HERO: Mirana
+    // HERO: Mirana
+    //=================================================================================================================
+    "npc_dota_hero_mirana_holdout"
+    {
+        "override_hero"			"npc_dota_hero_mirana"
+        "Ability2"				"holdout_mirana_arrow"
+        "Ability4"				"holdout_mirana_shadow"
+    }
 	//=================================================================================================================
-	"npc_dota_hero_mirana_holdout"
+	// HERO: Naga Siren
+	//=================================================================================================================
+	"npc_dota_hero_naga_siren_holdout"
 	{
-		"override_hero"			"npc_dota_hero_mirana"
-		"Ability2"				"holdout_mirana_arrow"
-		"Ability4"				"holdout_mirana_shadow"
+		"override_hero"			"npc_dota_hero_naga_siren"
+		"Ability2"				"naga_siren_ensnare_datadriven"
 	}
 	//=================================================================================================================
     // HERO: Necrolyte

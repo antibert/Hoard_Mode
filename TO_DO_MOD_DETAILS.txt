@@ -9,6 +9,14 @@ Heroes:
 -- Riptide damage reduced from 150/220/310/400 to 120/180/240/300
 == Ensnare is now an AoE and deals 100/160/220/280 magical damage to affected targets
 
+// Undying
+-- Fixed crash bug
+-- Zombies created from Summon Zombie now last only 40 seconds
+-- Summon Zombie cooldown reduced from 110/100/90/80 to 40
+-- Summon Zombie manacost reduced from 250/300/350/400 to 150
+-- Tombstone reverted to vanilla
+-- Soul Rip max units doubled
+
 /////// Secondary importance:
 -- Fix Giant Mech particles not working
 -- meepo clones not sharing stats at all without scepter

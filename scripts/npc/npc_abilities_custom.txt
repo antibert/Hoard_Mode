@@ -2092,38 +2092,6 @@
 				}
 			}
 		}
-		
-		// Modifiers
-		//-------------------------------------------------------------------------------------------------------------	
-		"Modifiers"
-		{
-			"Effect"
-			{
-				"AttachEffect"
-				{
-					"EffectName"		"particles/generic_aoe_persistent_circle_1/generic_aoe_persist_summon_1.vpcf"
-					"EffectAttachType"	"follow_origin"
-					"Target"			"CASTER"
-				}
-			}
-
-			"summoned_units"
-			{
-				"AttachEffect"
-				{
-					"EffectName"		"particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
-					"EffectAttachType"	"follow_origin"
-					"Target"			"TARGET"
-
-					"ControlPoints"
-					{
-						"00"		"0 0 0"
-						"01"		"200 0 0"
-						"02"		"0 0 0"
-					}
-				}
-			}
-		}
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -2212,38 +2180,6 @@
 			}
 		}
 
-		// Modifiers
-		//-------------------------------------------------------------------------------------------------------------
-		"Modifiers"
-		{
-			"ApplyModifier"
-			{
-				"Effect"
-				{
-					"EffectName"		"particles/generic_aoe_persistent_circle_1/generic_aoe_persist_summon_1.vpcf"
-					"EffectAttachType"	"follow_origin"
-					"Target"			"CASTER"
-				}
-			}
-
-			"summoned_units"
-			{
-				"AttachEffect"
-				{
-					"EffectName"		"particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
-					"EffectAttachType"	"follow_origin"
-					"Target"			"TARGET"
-
-					"ControlPoints"
-					{
-						"00"		"0 0 0"
-						"01"		"200 0 0"
-						"02"		"0 0 0"
-					}
-				}
-			}
-		}
-
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -2270,25 +2206,60 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
 		"AbilityCastPoint"				"0"
-		"AbilityChannelTime"			"1.5 1.7 1.9 2.1"
+		"AbilityChannelTime"			"2"
 		"AbilityCastAnimation"			"ACT_DOTA_VICTORY"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"110.0 100.0 90.0 80.0"
+		"AbilityCooldown"				"40"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"250 300 350 400"
+		"AbilityManaCost"				"150"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"10000 10000 10000 10000"
+			}
+			"02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "number_of_zombies"		"2 3 4 5"
+            }
+			"03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "duration"			    "40"
+            }
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"10 20 30 40"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"think_interval"		"3"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"0 3 6 9"
+			}
+		}
+
+		"precache"
+        {
+            "particle" 	"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+        }
 
 		"OnSpellStart"
 		{
-			"ApplyModifier"
-			{
-				"Target"				"CASTER"
-				"ModifierName"			"channel_started"
-			}
-
 			"FireSound"
 			{
 				"EffectName"			"Ability.SummonUndead"
@@ -2304,6 +2275,7 @@
 				"UnitCount"			"%number_of_zombies"
 				"UnitLimit"			"5"
 				"SpawnRadius"		"300"
+				"Duration"	"%duration"
 				"Target"			"CASTER"
 				"GrantsGold"		"1"
 				"OnSpawn"
@@ -2340,49 +2312,11 @@
 			}
 		}
 
-		"OnChannelFinish"
-		{
-			"RemoveModifier"
-			{
-				"Target"				"CASTER"
-				"ModifierName"			"channel_started"
-			}
-		}
-
 		// Modifiers
 		//-------------------------------------------------------------------------------------------------------------
 		"Modifiers"
 		{
-			"channel_started"
-			{
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"		"particles/generic_aoe_persistent_circle_1/generic_aoe_persist_summon_1.vpcf"
-						"EffectAttachType"	"follow_origin"
-						"Target"			"CASTER"
-					}
-				}
-			}
-
-			"summoned_units"
-			{
-				"AttachEffect"
-				{
-					"EffectName"		"particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
-					"EffectAttachType"	"follow_origin"
-					"Target"			"TARGET"
-
-					"ControlPoints"
-					{
-						"00"		"0 0 0"
-						"01"		"200 0 0"
-						"02"		"0 0 0"
-					}
-				}
-			}
-			"modifier_feral_impulse_datadriven"
+			"modifier_creature_summon_undead3_aura"
 			{
 				"Passive" 	"1"
 
@@ -2429,14 +2363,14 @@
 							{
 								"ScriptFile"	"heroes/hero_lycan/feral_impulse.lua"
 								"Function"		"FeralImpulse"
-								"modifier"		"modifier_feral_impulse_unit_datadriven"
+								"modifier"		"modifier_creature_summon_undead3_aura_buff"
 							}
 						}
 					}
 				}
 			}
 
-			"modifier_feral_impulse_unit_datadriven"
+			"modifier_creature_summon_undead3_aura_buff"
 			{
 				"IsBuff"		"1"
 				"IsPurgable"	"0"
@@ -2447,39 +2381,6 @@
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
 				}
 			}
-		}
-
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"10000 10000 10000 10000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"10 20 30 40"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"think_interval"		"3"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"number_of_zombies"		"2 3 4 5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"0 3 6 9"
-			}
-
 		}
 	}
 	//=================================================================================================================

@@ -2280,24 +2280,31 @@
 			}
 		}
 	}
-	"undying_tombstone"
+	"undying_soul_rip"
 	{
+        // Special
+		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"tooltip_tombstone_health"				"1000 2000 3000 4000"
+				"var_type"					"FIELD_INTEGER"
+				"damage_per_unit"			"18 22 26 30"
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"17.0 17.0 17.0 17.0"
+				"var_type"					"FIELD_INTEGER"
+				"max_units"					"20 24 28 32"
 			}
-			"06"
+			"03"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"zombie_interval"		"1.0"
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"1300"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tombstone_heal"			"2 4 6 8"
 			}
 		}
 	}

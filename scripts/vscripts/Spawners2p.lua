@@ -252,7 +252,6 @@ function Spawners2p:SpawnBigSatyrs()
     return {
         source =  "spawner1",
         waypoint = "lane_top_pathcorner_badguys_4",
-        max = 4,
         unit = "npc_dota_creature_big_satyr"
     }
 end
@@ -264,15 +263,6 @@ function Spawners2p:SpawnOgre()
         max = 8,
         min = 7,
         unit = "npc_dota_creature_ogre_melee"
-    }
-end
-
-function Spawners2p:SpawnHellBear()
-    return {
-        source =  "spawner5",
-        waypoint = "lane_top_pathcorner_badguys_4",
-        max = 1,
-        unit = "npc_dota_hellbear"
     }
 end
 
@@ -406,7 +396,7 @@ function Spawners2p:SpawnSplitterMid()
         waypoint = "lane_mid_pathcorner_badguys_7",
         max = 5,
         min = 4,
-        unit = "npc_dota_splitter_c"
+        unit = "npc_dota_splitter_medium"
     }
 end
 

@@ -1,21 +1,39 @@
 Next Update Patch Notes:
 
-1.17a
-Heroes:
-// Naga Siren
--- Mirror Image now provides 3 images at all levels instead of 1/2/3/4
--- Mirror Image incoming damage changed from 200% to 350/300/250/200
--- Mirror Image outgoing damage change from 50% to 25/35/45/55
--- Riptide damage reduced from 150/220/310/400 to 120/180/240/300
-== Ensnare is now an AoE and deals 100/160/220/280 magical damage to affected targets
+1.18
+PATCH PARITY 6.88!
+Tons of wave changes for 4/5 player maps!
 
-// Undying
--- Fixed crash bug
--- Zombies created from Summon Zombie now last only 40 seconds
--- Summon Zombie cooldown reduced from 110/100/90/80 to 40
--- Summon Zombie manacost reduced from 250/300/350/400 to 150
--- Tombstone reverted to vanilla
--- Soul Rip max units doubled
+// 1st Wave
+-- Roshan boss now spawns at 6:40 instead of 8:20 (same as 2 player map)
+-- Bottom lane now shares the same lane configuration as other lanes
+-- Now consists of Gnolls, Berserkers, and Wild Beasts (other units moved to later waves)
+
+// 2nd Wave (Mechs, Spiders, or Zombies)
+-- Small Skeletons now spawn only during the zombie wave
+-- Spider wave no longer spawns extra spiderlings
+-- Ogre Boss spawns at 13:20 instead of 14:20 (same as 2 player map)
+
+// 3rd Wave (Bears, Harpies, or Ogres)
+-- Now has a third option: Ogres and Satyrs
+
+// 4th Wave (Treants or Wolves)
+-- Starts spawning at 15:00 instead of 17:00, reducing three minute gap after wave three to one minute, same as other wave gaps
+-- Still ends at 20:00 (increasing duration of wave to five minutes)
+
+// 5th Wave (Ghosts or Golems)
+-- Ghost boss spawns 10 seconds earlier (matches golem spawn)
+
+// 6th Wave (Kobolds or Centaurs)
+-- Added Rippers to Kobold wave
+
+// 7th Wave (Dragons or Demons)
+-- Demons dogs now spawn during this wave, instead of as soon as it ends
+-- Small birds added to dragon wave, buffed to match
+
+// 8th Wave (Roshans)
+-- Ancient Apparition spawns 30 seconds earlier to coincide with wave spawn, will spawn a second one two minutes later (so be careful and hunt him!)
+
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

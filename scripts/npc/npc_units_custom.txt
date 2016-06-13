@@ -1110,6 +1110,97 @@
             }
 		}
 	}
+
+	//=================================================================================
+	// Creature: Bird
+	//=================================================================================
+	"npc_dota_creature_bird"
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models\creeps\neutral_creeps\n_creep_vulture_b\n_creep_vulture_b.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_melee"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"1"
+		"ModelScale" 				"0.75"
+
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"enraged_wildkin_toughness_aura"			// Ability 1
+		"Ability2"					""			// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"6"			// Physical protection.
+	        "MagicalResistance"			"0"
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"120"		// Damage range min.
+		"AttackDamageMax"			"125"		// Damage range max.
+		"AttackRate"				"0.7"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"100"		// Range within a target can be attacked.
+		"ProjectileModel"			""          // Particle system model for projectile.
+		"ProjectileSpeed"			"0"		    // Speed of projectile.
+
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"45"
+		"HealthBarOffset"			"160"
+
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"25"		// Experience earn.
+		"BountyGoldMin"				"23"		// Gold earned min.
+		"BountyGoldMax"				"25"		// Gold earned max.
+
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"300"		// Speed.
+
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"1500"		// Base health.
+		"StatusHealthRegen"			"1"		// Health regeneration rate.
+		"StatusMana"				"750"			// Base mana.
+		"StatusManaRegen"			"1.0"		// Mana regeneration rate.
+
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"700"		// Range of vision during day light.
+		"VisionNighttimeRange"		"650"		// Range of vision at night time.
+
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_BADGUYS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"vscripts"					"UnitAI.lua"
+
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+		//	"Aggression"				"50.0"
+		//	"Avoidance"					"0.0"
+		//	"Support"					"50.0"
+			//Level Up
+			"HPGain"					"10"
+			"DamageGain"				"20"
+			"ArmorGain"					"0.25"
+			"MagicResistGain"			"0"
+			"MoveSpeedGain"				"1"
+			"BountyGain"				"3"
+			"XPGain"					"15"
+		}
+	}
 	//=================================================================================	
 	// Creature: Big Bird
 	//=================================================================================
@@ -1463,44 +1554,46 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"1"
+		"Level"						"24"
 		"ModelScale" 				"1.3"
 		"CanBeDominated"			"0"
+	    "ConsideredHero"             "1"
 	
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"satyr_hellcaller_shockwave"			// Ability 1
 		"Ability2"					"satyr_hellcaller_unholy_aura"			// Ability 2
-		"Ability3"					"generic_gold_bag_fountain_50"			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability3"					"generic_gold_bag_fountain_500"			// Ability 3
+		"Ability4"					"nyx_assassin_mana_burn"			// Ability 4
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"9"			// Physical protection.
+		"ArmorPhysical"				"15"			// Physical protection.
 	        "MagicalResistance"			"25"		// Magical protection.
 		
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"175"		// Damage range min.
-		"AttackDamageMax"			"186"		// Damage range max.
-		"AttackRate"				"1.6"		// Speed of attack.
+		"AttackDamageMin"			"275"		// Damage range min.
+		"AttackDamageMax"			"286"		// Damage range max.
+		"AttackRate"				"0.8"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
-		"AttackRange"				"100"		// Range within a target can be attacked.
+		"AttackRange"				"150"		// Range within a target can be attacked.
 		"ProjectileModel"			""          // Particle system model for projectile.
 		"ProjectileSpeed"			"0"		    // Speed of projectile.		     
 	
 		// Bounds
 		//----------------------------------------------------------------
-		"RingRadius"				"50"
-		"HealthBarOffset"			"180"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HUGE"
+        "RingRadius"				"180"
+        "HealthBarOffset"			"240"
 	
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"55"		// Experience earn.
-		"BountyGoldMin"				"55"		// Gold earned min.
-		"BountyGoldMax"				"64"		// Gold earned max.
+		"BountyXP"					"160"		// Experience earn.
+		"BountyGoldMin"				"150"		// Gold earned min.
+		"BountyGoldMax"				"150"		// Gold earned max.
 	
 		// Movement
 		//----------------------------------------------------------------
@@ -1509,15 +1602,15 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1450"		// Base health.
-		"StatusHealthRegen"			"10"		    // Health regeneration rate.
+		"StatusHealth"				"7500"		// Base health.
+		"StatusHealthRegen"			"12"		    // Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"10.0"		// Mana regeneration rate.		 
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
+		"VisionDaytimeRange"		"2500"		// Range of vision during day light.
+        "VisionNighttimeRange"		"2000"		// Range of vision at night time.
 	
 		// Team
 		//----------------------------------------------------------------
@@ -1526,22 +1619,21 @@
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"vscripts"					"UnitAI.lua"
+
+		//Precache
+        //---------------------------------------------------------------------
+        "GameSoundsFile"			"soundevents\game_sounds_heroes\game_sounds_nyx_assassin.vsndevts"
+        "precache"
+        {
+            "particle_folder"		"particles/units/heroes/hero_nyx_assassin"
+        }
 	
 		// Creature Data
 		//----------------------------------------------------------------
 		"Creature"
 		{
-		//	"Aggression"				"50.0"
-		//	"Avoidance"					"50.0"
-		//	"Support"					"0.0"
-			//Level Up
-			"HPGain"					"10"
-			"DamageGain"				"20"
-			"ArmorGain"					"0.25"
-			"MagicResistGain"			"0"
-			"MoveSpeedGain"				"1"
-			"BountyGain"				"3"
-			"XPGain"					"15"
+			"CanRespawn"				"0"
+            "DisableResistance"			"35.0"
 	
 			"States"
 			{
@@ -1558,8 +1650,13 @@
 				"Ability1"                
 				{
 					"Name"        "satyr_hellcaller_shockwave"
-					"MinimumTargets"	"1"
+					"Damage"            "1"
 				}
+				"Ability2"
+                {
+                    "Name"        "nyx_assassin_mana_burn"
+                    "Damage"	"1"
+                }
 			}
 	
 			"DefaultState"				"Invade"
@@ -1670,96 +1767,6 @@
 			"DefaultState"				"Invade"
 			
 			"DisableClumpingBehavior"	"1"
-		}
-	}
-	//=================================================================================	
-	// Creature: Bird
-	//=================================================================================
-	"npc_dota_creature_bird"	
-	{
-		// General
-		//----------------------------------------------------------------
-		"Model"						"models\creeps\neutral_creeps\n_creep_vulture_b\n_creep_vulture_b.vmdl"	// Model.
-		"BaseClass"					"npc_dota_creature"
-		"SoundSet"					"n_creep_melee"
-		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"1"
-		"ModelScale" 				"0.75"
-	
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					"enraged_wildkin_toughness_aura"			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
-	
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"2"			// Physical protection.
-	        "MagicalResistance"			"0"	
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"20"		// Damage range min.
-		"AttackDamageMax"			"25"		// Damage range max.
-		"AttackRate"				"1.35"		// Speed of attack.
-		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
-		"AttackRange"				"100"		// Range within a target can be attacked.
-		"ProjectileModel"			""          // Particle system model for projectile.
-		"ProjectileSpeed"			"0"		    // Speed of projectile.		     
-	
-		// Bounds
-		//----------------------------------------------------------------
-		"RingRadius"				"45"
-		"HealthBarOffset"			"160"
-	
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"25"		// Experience earn.
-		"BountyGoldMin"				"23"		// Gold earned min.
-		"BountyGoldMax"				"25"		// Gold earned max.
-	
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"300"		// Speed.			
-	
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"650"		// Base health.
-		"StatusHealthRegen"			"1"		// Health regeneration rate.
-		"StatusMana"				"150"			// Base mana.
-		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"700"		// Range of vision during day light.
-		"VisionNighttimeRange"		"650"		// Range of vision at night time.
-	
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_BADGUYS"						// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		"vscripts"					"UnitAI.lua"
-	
-		// Creature Data
-		//----------------------------------------------------------------
-		"Creature"
-		{
-		//	"Aggression"				"50.0"
-		//	"Avoidance"					"0.0"
-		//	"Support"					"50.0"
-			//Level Up
-			"HPGain"					"10"
-			"DamageGain"				"20"
-			"ArmorGain"					"0.25"
-			"MagicResistGain"			"0"
-			"MoveSpeedGain"				"1"
-			"BountyGain"				"3"
-			"XPGain"					"15"
 		}
 	}
 	//=================================================================================	
@@ -4057,7 +4064,7 @@
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				".7"
+		"ModelScale" 				"1.3"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -4068,17 +4075,17 @@
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"2"			// Physical protection.
+		"ArmorPhysical"				"25"			// Physical protection.
 	
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"9"		// Damage range min.
-		"AttackDamageMax"			"13"		// Damage range max.	
+		"AttackDamageMin"			"75"		// Damage range min.
+		"AttackDamageMax"			"120"		// Damage range max.
 		"AttackRate"				"0.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"400"		// Range within a target can be acquired.
-		"AttackRange"				"100"		// Range within a target can be attacked.
+		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackRange"				"190"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			"0"			// Speed of projectile.		   
 	
@@ -4089,9 +4096,9 @@
 	
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"11"		// Experience earn.
-		"BountyGoldMin"				"10"		// Gold earned min.
-		"BountyGoldMax"				"13"		// Gold earned max.
+		"BountyXP"					"55"		// Experience earn.
+		"BountyGoldMin"				"51"		// Gold earned min.
+		"BountyGoldMax"				"60"		// Gold earned max.
 	
 		// Movement
 		//----------------------------------------------------------------
@@ -4102,10 +4109,10 @@
 	        
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"350"		// Base health.
-		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
-		"StatusMana"				"100"			// Base mana.
-		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
+		"StatusHealth"				"1500"		// Base health.
+		"StatusHealthRegen"			"15"		// Health regeneration rate.
+		"StatusMana"				"1500"			// Base mana.
+		"StatusManaRegen"			"5"		// Mana regeneration rate.
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -5883,11 +5890,11 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"190"		// Speed.
+		"MovementSpeed"				"260"		// Speed.
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1000"		// Base health.
+		"StatusHealth"				"1500"		// Base health.
 		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"675"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
@@ -6232,13 +6239,13 @@
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"1"			// Physical protection.
+		"ArmorPhysical"				"3"			// Physical protection.
 	
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"27"		// Damage range min.
-		"AttackDamageMax"			"33"		// Damage range max.
+		"AttackDamageMin"			"48"		// Damage range min.
+		"AttackDamageMax"			"64"		// Damage range max.
 		"AttackRate"				"1"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"800"		// Range within a target can be acquired.
@@ -6253,9 +6260,9 @@
 	
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"30"		// Experience earn.
-		"BountyGoldMin"				"16"		// Gold earned min.
-		"BountyGoldMax"				"23"		// Gold earned max.
+		"BountyXP"					"40"		// Experience earn.
+		"BountyGoldMin"				"25"		// Gold earned min.
+		"BountyGoldMax"				"35"		// Gold earned max.
 	
 		// Movement
 		//----------------------------------------------------------------
@@ -6264,7 +6271,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"280"		// Base health.
+		"StatusHealth"				"500"		// Base health.
 		"StatusHealthRegen"			"3"		// Health regeneration rate.
 		"StatusMana"				"180"			// Base mana.
 		"StatusManaRegen"			"2"		// Mana regeneration rate.
@@ -6463,116 +6470,6 @@
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"vscripts"				"UnitAI.lua"
-	}
-	//=================================================================
-	// Baby Spiderling
-	//=================================================================
-	"npc_dota_creature_spiderling"
-	{
-		// General
-		//
-		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models\items\broodmother\spiderling\thistle_crawler\thistle_crawler.vmdl"	// Model.
-		"SoundSet"					"0"					// Name of sound set.
-		"ModelScale"				"0.3"								// old 1.0
-		"Level"						"1"
-		"IsSummoned"				"1"
-		
-		// Abilities
-		//----------------------------------------------------------------
-		
-		"Ability1"					"broodmother_poison_sting"			// Ability 1.
-		"Ability2"					""		// Ability 2.
-		"Ability3"					""			// Ability 3.
-		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
-		"Ability7"					""			// Ability 7 - Extra.
-		"Ability8"					""			// Ability 8 - Extra.
-	
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"0"			// Physical protection.
-		"MagicalResistance"			"0"		// Magical protection.
-	
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"12"		// Damage range min.
-		"AttackDamageMax"			"14"		// Damage range max.
-		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"1.4"		// Speed of attack.
-		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
-		"AttackRange"				"100"		// Range within a target can be attacked.
-		"ProjectileModel"			""			// Particle system model for projectile.
-		"ProjectileSpeed"			""			// Speed of projectile.
-	
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"16"		// Experience earn.
-		"BountyGoldMin"				"14"		// Gold earned min.
-		"BountyGoldMax"				"16"		// Gold earned max.
-	
-		// Bounds
-		//----------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
-		"HealthBarOffset"			"140"
-		"RingRadius"				"45"
-	
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-		"MovementSpeed"				"425"		// Speed
-		"MovementTurnRate"			"0.5"		// Turning rate.
-	
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"65"		// Base health.
-		"StatusHealthRegen"			"0.5"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0"			// Mana regeneration rate.
-	
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"800"		// Range of vision during day light.
-		"VisionNighttimeRange"		"800"		// Range of vision at night time.
-	
-		// Creature Data
-		//----------------------------------------------------------------------------------------------------------------------
-		"Creature"
-		{
-		"CanRespawn"				"0"
-		"States"
-			{
-				"Invade"
-				{
-					"Name"				"Invade"
-					"Aggression"		"100.0"
-					"Avoidance"			"0.0"
-					"Support"			"0.0"
-				}
-			}
-			"DefaultState"				"Invade"	
-			
-			//"CanRespawn"				"0"
-			
-			//Level Up
-			"HPGain"					"45"
-			"DamageGain"				"4"
-			"ArmorGain"					"0.25"
-			"MagicResistGain"			"0"
-			"MoveSpeedGain"				"5"
-			"BountyGain"				"2"
-		    "XPGain"					"13"
-		}
 	}
 	//=================================================================================	
 	// Creature: spooki scary skelelleetal man
@@ -7644,7 +7541,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"666"		// Base health.
+		"StatusHealth"				"1666"		// Base health.
 		"StatusHealthRegen"			"8"		// Health regeneration rate.
 		"StatusMana"				"666"			// Base mana.
 		"StatusManaRegen"			"6"			// Mana regeneration rate.

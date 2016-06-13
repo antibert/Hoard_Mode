@@ -173,12 +173,7 @@ function Spawners2p:StartSpawners(difficulty)
 		spawn = Spawners2p:SpawnMiniSatyrs()
 	})
 
-	Spawner:SpawnTimer({
-		start = 480,
-		finish = 930,
-		interval = 17,
-		spawn = Spawners2p:SpawnRippers()
-	})
+
 
 	Spawner:SpawnTimer({
 		start = 500,
@@ -192,11 +187,6 @@ function Spawners2p:StartSpawners(difficulty)
 		finish = 930,
 		interval = 41,
 		spawn = Spawners2p:SpawnBigSatyrs()
-	})
-
-	Spawner:SpawnTimer({
-		start = 780,
-		spawn = Spawners2p:SpawnHellBear()
 	})
 
 	Spawner:SpawnTimer({
@@ -329,19 +319,6 @@ function Spawners2p:StartSpawners(difficulty)
 	})
 
 	Spawner:SpawnTimer({
-		start = 1300,
-		finish = 1380,
-		interval = 70,
-		spawn = Spawners2p:SpawnHellBear()
-	})
-
-	Spawner:SpawnTimer({
-		start = 2280,
-		interval = 70,
-		spawn = Spawners2p:SpawnHellBear()
-	})
-
-	Spawner:SpawnTimer({
 		start = 1270,
 		finish = 1380,
 		interval = 27,
@@ -361,6 +338,13 @@ function Spawners2p:StartSpawners(difficulty)
 		interval = 23,
 		spawn = Spawners2p:SpawnGuardMid()
 	})
+
+    Spawner:SpawnTimer({
+	    start = 1440,
+	    finish = 1680,
+	    interval = 23,
+	    spawn = Spawners2p:SpawnRippers()
+    })
 
 	Spawner:SpawnTimer({
 		start = 1560,

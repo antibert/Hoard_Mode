@@ -10643,19 +10643,19 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1200"
+		"AbilityCastRange"				"900"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"aura_radius"		"1200"		// If you change this, also change the AbilityCastRange above
+				"aura_radius"		"900"		// If you change this, also change the AbilityCastRange above
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"aura_damage"		"-0.6 -0.9 -1.2 -1.5"
+				"aura_damage"		"-0.6 -1 -1.4 -1.8"
 			}
 			"03"
 			{
@@ -11686,7 +11686,7 @@
             "05"
             {
                 "var_type"				"FIELD_INTEGER"
-                "steal_duration"		"15"
+                "steal_duration"		"20"
             }
 
         }
@@ -12768,7 +12768,7 @@
             "02"
             {
                 "var_type"			"FIELD_INTEGER"
-                "bonus_mana"	    "75 150 225 300"
+                "bonus_mana"	    "125 200 275 350"
             }
             "03"
             {
@@ -13611,7 +13611,7 @@
 
         // Time
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"14.0 14.0 14.0 14.0"
+        "AbilityCooldown"				"14.0 13.0 12.0 11.0"
 
         // Damage.
         //-------------------------------------------------------------------------------------------------------------
@@ -14541,7 +14541,7 @@
 
         // Time
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"20.0"
+        "AbilityCooldown"				"18.0"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
@@ -15011,7 +15011,7 @@
             "01"
             {
                 "var_type"						"FIELD_INTEGER"
-                "frost_arrows_movement_speed"	"-15 -30 -45 -60"
+                "frost_arrows_movement_speed"	"-16 -32 -48 -64"
             }
             "02"
             {

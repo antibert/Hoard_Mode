@@ -1244,7 +1244,7 @@
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_speed"			"15"
+                "bonus_agility"			"15"
             }
             "03"
             {
@@ -1333,8 +1333,8 @@
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+                    "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_agility"
                     "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
-                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_speed"
                     "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
                     "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
                 }
@@ -1417,7 +1417,7 @@
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_speed"			"15"
+                "bonus_agility"			"15"
             }
             "03"
             {
@@ -1477,7 +1477,6 @@
                 "Passive"				"1"
                 "IsHidden"				"1"
                 "IsDebuff"			"0"
-                "AllowIllusionDuplicate"    "0"
 
                 "Properties"
                 {
@@ -1507,8 +1506,8 @@
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+                    "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_agility"
                     "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
-                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_speed"
                     "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
                     "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
                 }
@@ -1561,115 +1560,114 @@
 		"UpgradesItems"					"item_dragon_javelin_3;item_dragon_javelin_4;item_dragon_javelin_5"
 		"UpgradeRecipe"					"item_recipe_dragon_javelin"
 
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"10"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_speed"			"15"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_strength"		"15"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "base_attack_range"		"150"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "range"					"625 650 675 700 725"
-            }
-            "06"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "projectile_speed"		"1000"
-            }
-            "07"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "arrow_count"            "2 3 4 5 6"
-            }
-            "08"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "arrow_damage"            "80"  //as percentage of attack damage
-            }
-            "09"
-            {
-                "var_type"							"FIELD_INTEGER"
-                "bonus_health_regen"				"6"
-            }
-            "10"
-            {
-                "var_type"							"FIELD_INTEGER"
-                "bonus_mana_regen_percentage"		"125"
-            }
-        }
+ // Special
+         //-------------------------------------------------------------------------------------------------------------
+         "AbilitySpecial"
+         {
+             "01"
+             {
+                 "var_type"				"FIELD_INTEGER"
+                 "bonus_damage"			"10"
+             }
+             "02"
+             {
+                 "var_type"				"FIELD_INTEGER"
+                 "bonus_agility"			"15"
+             }
+             "03"
+             {
+                 "var_type"				"FIELD_INTEGER"
+                 "bonus_strength"		"15"
+             }
+             "04"
+             {
+                 "var_type"				"FIELD_INTEGER"
+                 "base_attack_range"		"150"
+             }
+ 			"05"
+ 			{
+ 				"var_type"				"FIELD_INTEGER"
+ 				"range"					"625 650 675 700 725"
+ 			}
+ 			"06"
+ 			{
+ 				"var_type"				"FIELD_INTEGER"
+ 				"projectile_speed"		"1000"
+ 			}
+             "07"
+             {
+                 "var_type"              "FIELD_INTEGER"
+                 "arrow_count"            "2 3 4 5 6"
+             }
+             "08"
+             {
+                 "var_type"              "FIELD_INTEGER"
+                 "arrow_damage"            "80"  //as percentage of attack damage
+             }
+             "09"
+             {
+                 "var_type"							"FIELD_INTEGER"
+                 "bonus_health_regen"				"6"
+             }
+             "10"
+             {
+                 "var_type"							"FIELD_INTEGER"
+                 "bonus_mana_regen_percentage"		"125"
+             }
+         }
 
-        // Precache
-        //-------------------------------------------------------------------------------------------------------------
-        "precache"
-        {
-            "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
-            "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
-            "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
-        }
+         // Precache
+         //-------------------------------------------------------------------------------------------------------------
+         "precache"
+         {
+             "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+             "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
+             "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+         }
 
-        "Modifiers"
-        {
-            "modifier_item_dragon_javelin_range"
-            {
-                "Passive"				"1"
-                "IsHidden"				"1"
-                "IsDebuff"			"0"
-                "AllowIllusionDuplicate"    "0"
+         "Modifiers"
+         {
+             "modifier_item_dragon_javelin_range"
+             {
+                 "Passive"				"1"
+                 "IsHidden"				"1"
+                 "IsDebuff"			"0"
 
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"		"%base_attack_range"
-                }
+                 "Properties"
+                 {
+                     "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"		"%base_attack_range"
+                 }
 
-                "OnAttack"
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"	"items/item_dragon_javelin.lua"
-                        "Function"		"SplitShotLaunch"
-                        "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
-                        "range"         "%range"
-                        "projectile_speed" "%projectile_speed"
-                        "arrow_count" "%arrow_count"
-                    }
-                }
-            }
-            "modifier_item_dragon_javelin"
-            {
-                "Passive"				"1"
-                "IsHidden"				"1"
-                "IsDebuff"			"0"
-                "Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+                 "OnAttack"
+                 {
+                     "RunScript"
+                     {
+                         "ScriptFile"	"items/item_dragon_javelin.lua"
+                         "Function"		"SplitShotLaunch"
+                         "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+                         "range"         "%range"
+                         "projectile_speed" "%projectile_speed"
+                         "arrow_count" "%arrow_count"
+                     }
+                 }
+             }
+             "modifier_item_dragon_javelin"
+             {
+                 "Passive"				"1"
+                 "IsHidden"				"1"
+ 				"IsDebuff"			"0"
+                 "Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
 
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
-                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
-                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_speed"
-                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-                    "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
-                }
-            }
-        }
+                 "Properties"
+                 {
+                     "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+                     "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_agility"
+                     "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
+                     "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+                     "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
+                 }
+             }
+         }
 
         "OnProjectileHitUnit"
         {
@@ -1717,115 +1715,114 @@
 		"UpgradesItems"					"item_dragon_javelin_4;item_dragon_javelin_5"
 		"UpgradeRecipe"					"item_recipe_dragon_javelin"
 
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"10"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_speed"			"15"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_strength"		"15"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "base_attack_range"		"150"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "range"					"625 650 675 700 725"
-            }
-            "06"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "projectile_speed"		"1000"
-            }
-            "07"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "arrow_count"            "2 3 4 5 6"
-            }
-            "08"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "arrow_damage"            "80"  //as percentage of attack damage
-            }
-            "09"
-            {
-                "var_type"							"FIELD_INTEGER"
-                "bonus_health_regen"				"6"
-            }
-            "10"
-            {
-                "var_type"							"FIELD_INTEGER"
-                "bonus_mana_regen_percentage"		"125"
-            }
-        }
+ // Special
+         //-------------------------------------------------------------------------------------------------------------
+         "AbilitySpecial"
+         {
+             "01"
+             {
+                 "var_type"				"FIELD_INTEGER"
+                 "bonus_damage"			"10"
+             }
+             "02"
+             {
+                 "var_type"				"FIELD_INTEGER"
+                 "bonus_agility"			"15"
+             }
+             "03"
+             {
+                 "var_type"				"FIELD_INTEGER"
+                 "bonus_strength"		"15"
+             }
+             "04"
+             {
+                 "var_type"				"FIELD_INTEGER"
+                 "base_attack_range"		"150"
+             }
+ 			"05"
+ 			{
+ 				"var_type"				"FIELD_INTEGER"
+ 				"range"					"625 650 675 700 725"
+ 			}
+ 			"06"
+ 			{
+ 				"var_type"				"FIELD_INTEGER"
+ 				"projectile_speed"		"1000"
+ 			}
+             "07"
+             {
+                 "var_type"              "FIELD_INTEGER"
+                 "arrow_count"            "2 3 4 5 6"
+             }
+             "08"
+             {
+                 "var_type"              "FIELD_INTEGER"
+                 "arrow_damage"            "80"  //as percentage of attack damage
+             }
+             "09"
+             {
+                 "var_type"							"FIELD_INTEGER"
+                 "bonus_health_regen"				"6"
+             }
+             "10"
+             {
+                 "var_type"							"FIELD_INTEGER"
+                 "bonus_mana_regen_percentage"		"125"
+             }
+         }
 
-        // Precache
-        //-------------------------------------------------------------------------------------------------------------
-        "precache"
-        {
-            "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
-            "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
-            "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
-        }
+         // Precache
+         //-------------------------------------------------------------------------------------------------------------
+         "precache"
+         {
+             "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+             "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
+             "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+         }
 
-        "Modifiers"
-        {
-            "modifier_item_dragon_javelin_range"
-            {
-                "Passive"				"1"
-                "IsHidden"				"1"
-                "IsDebuff"			"0"
-                "AllowIllusionDuplicate"    "0"
+         "Modifiers"
+         {
+             "modifier_item_dragon_javelin_range"
+             {
+                 "Passive"				"1"
+                 "IsHidden"				"1"
+                 "IsDebuff"			"0"
 
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"		"%base_attack_range"
-                }
+                 "Properties"
+                 {
+                     "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"		"%base_attack_range"
+                 }
 
-                "OnAttack"
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"	"items/item_dragon_javelin.lua"
-                        "Function"		"SplitShotLaunch"
-                        "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
-                        "range"         "%range"
-                        "projectile_speed" "%projectile_speed"
-                        "arrow_count" "%arrow_count"
-                    }
-                }
-            }
-            "modifier_item_dragon_javelin"
-            {
-                "Passive"				"1"
-                "IsHidden"				"1"
-                "IsDebuff"			"0"
-                "Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+                 "OnAttack"
+                 {
+                     "RunScript"
+                     {
+                         "ScriptFile"	"items/item_dragon_javelin.lua"
+                         "Function"		"SplitShotLaunch"
+                         "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+                         "range"         "%range"
+                         "projectile_speed" "%projectile_speed"
+                         "arrow_count" "%arrow_count"
+                     }
+                 }
+             }
+             "modifier_item_dragon_javelin"
+             {
+                 "Passive"				"1"
+                 "IsHidden"				"1"
+ 				"IsDebuff"			"0"
+                 "Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
 
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
-                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
-                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_speed"
-                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-                    "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
-                }
-            }
-        }
+                 "Properties"
+                 {
+                     "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+                     "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_agility"
+                     "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
+                     "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+                     "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
+                 }
+             }
+         }
 
         "OnProjectileHitUnit"
         {
@@ -1873,115 +1870,114 @@
 		"UpgradesItems"					"item_dragon_javelin_5"
 		"UpgradeRecipe"					"item_recipe_dragon_javelin"
 
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"10"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_speed"			"15"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_strength"		"15"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "base_attack_range"		"150"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "range"					"625 650 675 700 725"
-            }
-            "06"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "projectile_speed"		"1000"
-            }
-            "07"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "arrow_count"            "2 3 4 5 6"
-            }
-            "08"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "arrow_damage"            "80"  //as percentage of attack damage
-            }
-            "09"
-            {
-                "var_type"							"FIELD_INTEGER"
-                "bonus_health_regen"				"6"
-            }
-            "10"
-            {
-                "var_type"							"FIELD_INTEGER"
-                "bonus_mana_regen_percentage"		"125"
-            }
-        }
+  // Special
+          //-------------------------------------------------------------------------------------------------------------
+          "AbilitySpecial"
+          {
+              "01"
+              {
+                  "var_type"				"FIELD_INTEGER"
+                  "bonus_damage"			"10"
+              }
+              "02"
+              {
+                  "var_type"				"FIELD_INTEGER"
+                  "bonus_agility"			"15"
+              }
+              "03"
+              {
+                  "var_type"				"FIELD_INTEGER"
+                  "bonus_strength"		"15"
+              }
+              "04"
+              {
+                  "var_type"				"FIELD_INTEGER"
+                  "base_attack_range"		"150"
+              }
+  			"05"
+  			{
+  				"var_type"				"FIELD_INTEGER"
+  				"range"					"625 650 675 700 725"
+  			}
+  			"06"
+  			{
+  				"var_type"				"FIELD_INTEGER"
+  				"projectile_speed"		"1000"
+  			}
+              "07"
+              {
+                  "var_type"              "FIELD_INTEGER"
+                  "arrow_count"            "2 3 4 5 6"
+              }
+              "08"
+              {
+                  "var_type"              "FIELD_INTEGER"
+                  "arrow_damage"            "80"  //as percentage of attack damage
+              }
+              "09"
+              {
+                  "var_type"							"FIELD_INTEGER"
+                  "bonus_health_regen"				"6"
+              }
+              "10"
+              {
+                  "var_type"							"FIELD_INTEGER"
+                  "bonus_mana_regen_percentage"		"125"
+              }
+          }
 
-        // Precache
-        //-------------------------------------------------------------------------------------------------------------
-        "precache"
-        {
-            "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
-            "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
-            "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
-        }
+          // Precache
+          //-------------------------------------------------------------------------------------------------------------
+          "precache"
+          {
+              "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+              "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
+              "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+          }
 
-        "Modifiers"
-        {
-            "modifier_item_dragon_javelin_range"
-            {
-                "Passive"				"1"
-                "IsHidden"				"1"
-                "IsDebuff"			"0"
-                "AllowIllusionDuplicate"    "0"
+          "Modifiers"
+          {
+              "modifier_item_dragon_javelin_range"
+              {
+                  "Passive"				"1"
+                  "IsHidden"				"1"
+                  "IsDebuff"			"0"
 
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"		"%base_attack_range"
-                }
+                  "Properties"
+                  {
+                      "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS"		"%base_attack_range"
+                  }
 
-                "OnAttack"
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"	"items/item_dragon_javelin.lua"
-                        "Function"		"SplitShotLaunch"
-                        "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
-                        "range"         "%range"
-                        "projectile_speed" "%projectile_speed"
-                        "arrow_count" "%arrow_count"
-                    }
-                }
-            }
-            "modifier_item_dragon_javelin"
-            {
-                "Passive"				"1"
-                "IsHidden"				"1"
-                "IsDebuff"			"0"
-                "Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
+                  "OnAttack"
+                  {
+                      "RunScript"
+                      {
+                          "ScriptFile"	"items/item_dragon_javelin.lua"
+                          "Function"		"SplitShotLaunch"
+                          "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+                          "range"         "%range"
+                          "projectile_speed" "%projectile_speed"
+                          "arrow_count" "%arrow_count"
+                      }
+                  }
+              }
+              "modifier_item_dragon_javelin"
+              {
+                  "Passive"				"1"
+                  "IsHidden"				"1"
+  				"IsDebuff"			"0"
+                  "Attributes" 			"MODIFIER_ATTRIBUTE_MULTIPLE"
 
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
-                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
-                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"					"%bonus_speed"
-                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
-                    "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
-                }
-            }
-        }
+                  "Properties"
+                  {
+                      "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"%bonus_strength"
+                      "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"%bonus_agility"
+                      "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
+                      "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+                      "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE"		"%bonus_mana_regen_percentage"
+                  }
+              }
+          }
 
         "OnProjectileHitUnit"
         {

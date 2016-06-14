@@ -49,21 +49,63 @@ function Spawners:StartSpawners(difficulty)
 		start = 17,
 		finish = 180,
 		interval = 30,
-		spawn = Spawners:SpawnGnolls()
+		spawn = Spawners:SpawnGnollsTop()
+	})
+
+	Spawner:SpawnTimer({
+		start = 17,
+		finish = 180,
+		interval = 30,
+		spawn = Spawners:SpawnGnollsMid()
+	})
+
+	Spawner:SpawnTimer({
+		start = 17,
+		finish = 180,
+		interval = 30,
+		spawn = Spawners:SpawnGnollsBot()
 	})
 
 	Spawner:SpawnTimer({
 		start = 60,
 		finish = 180,
 		interval = 23,
-		spawn = Spawners:SpawnBazz()
+		spawn = Spawners:SpawnBazzTop()
+	})
+
+	Spawner:SpawnTimer({
+		start = 60,
+		finish = 180,
+		interval = 23,
+		spawn = Spawners:SpawnBazzMid()
+	})
+
+	Spawner:SpawnTimer({
+		start = 60,
+		finish = 180,
+		interval = 23,
+		spawn = Spawners:SpawnBazzBot()
 	})
 
 	Spawner:SpawnTimer({
 		start = 140,
 		finish = 180,
 		interval = 60,
-		spawn = Spawners:SpawnBeast()
+		spawn = Spawners:SpawnBeastTop()
+	})
+
+	Spawner:SpawnTimer({
+		start = 140,
+		finish = 180,
+		interval = 60,
+		spawn = Spawners:SpawnBeastMid()
+	})
+
+	Spawner:SpawnTimer({
+		start = 140,
+		finish = 180,
+		interval = 60,
+		spawn = Spawners:SpawnBeastBot()
 	})
 
 -----------------------------------------------------------------------------------------------	

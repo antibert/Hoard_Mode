@@ -1,39 +1,18 @@
 Next Update Patch Notes:
 
-1.18
-PATCH PARITY 6.88!
-Tons of wave changes for 4/5 player maps!
+1.18a
+// General
+-- Friendly creeps now spawn at 0 seconds, instead of at 17 seconds.
 
 // 1st Wave
--- Roshan boss now spawns at 6:40 instead of 8:20 (same as 2 player map)
--- Bottom lane now shares the same lane configuration as other lanes
--- Now consists of Gnolls, Berserkers, and Wild Beasts (other units moved to later waves)
+-- Starts spawning at 0 seconds, instead of at 17 seconds.
+-- Reduced berserker base attack speed from 1.0 to 1.4
+-- Berserkers start spawning at 30 seconds, instead of 60 seconds.
+-- Reduced minimum number of gnolls and berserkers
 
-// 2nd Wave (Mechs, Spiders, or Zombies)
--- Small Skeletons now spawn only during the zombie wave
--- Spider wave no longer spawns extra spiderlings
--- Ogre Boss spawns at 13:20 instead of 14:20 (same as 2 player map)
-
-// 3rd Wave (Bears, Harpies, or Ogres)
--- Now has a third option: Ogres and Satyrs
-
-// 4th Wave (Treants or Wolves)
--- Starts spawning at 15:00 instead of 17:00, reducing three minute gap after wave three to one minute, same as other wave gaps
--- Still ends at 20:00 (increasing duration of wave to five minutes)
-
-// 5th Wave (Ghosts or Golems)
--- Ghost boss spawns 10 seconds earlier (matches golem spawn)
-
-// 6th Wave (Kobolds or Centaurs)
--- Added Rippers to Kobold wave
-
-// 7th Wave (Dragons or Demons)
--- Demons dogs now spawn during this wave, instead of as soon as it ends
--- Small birds added to dragon wave, buffed to match
-
-// 8th Wave (Roshans)
--- Ancient Apparition spawns 30 seconds earlier to coincide with wave spawn, will spawn a second one two minutes later (so be careful and hunt him!)
-
+// Phantom Assassin
+-- Stifling Dagger now applies in an AoE once again, while still performing the attack with all modifiers
+-- Reverted swiftness passive back to Phantom Strike
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

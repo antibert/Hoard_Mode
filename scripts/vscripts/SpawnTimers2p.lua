@@ -167,7 +167,7 @@ function Spawners2p:StartSpawners(difficulty)
 	})
 
 	Spawner:SpawnTimer({
-		start = 200,
+		start = 500,
 		finish = 930,
 		interval = 29,
 		spawn = Spawners2p:SpawnMiniSatyrs()
@@ -434,13 +434,13 @@ function Spawners2p:StartSpawners(difficulty)
 
 -- Neutral Camps/Map Spawns
 	Spawner:SpawnTimer({
-		start = 17,
+		start = 0,
 		interval = 30,
 		spawn = Spawners2p.SpawnFriend
 	})
 
 	Spawner:SpawnTimer({
-		start = 18,
+		start = 1,
 		interval = 30,
 		spawn = Spawners2p.SpawnFriend
 	})

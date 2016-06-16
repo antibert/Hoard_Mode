@@ -12,7 +12,7 @@ function Spawners:SpawnGnollsTop()
 		source =  "spawner3",
 		waypoint = "lane_top_pathcorner_badguys_4",
 		unit = "npc_dota_creature_gnoll_assassin",
-		min = 6,
+		min = 5,
 		max = 7
 	}
 end
@@ -22,7 +22,7 @@ function Spawners:SpawnGnollsMid()
 		source =  "spawner1",
 		waypoint = "lane_mid_pathcorner_badguys_7",
 		unit = "npc_dota_creature_gnoll_assassin",
-		min = 6,
+		min = 5,
 		max = 7
 	}
 end
@@ -32,7 +32,7 @@ function Spawners:SpawnGnollsBot()
 		source =  "spawner2",
 		waypoint = "lane_bot_pathcorner_badguys_4",
 		unit = "npc_dota_creature_gnoll_assassin",
-		min = 6,
+		min = 5,
 		max = 7
 	}
 end
@@ -44,7 +44,7 @@ function Spawners:SpawnBazzTop()
 		source =  "spawner3",
 		waypoint = "lane_top_pathcorner_badguys_4",
 		unit = "npc_dota_creature_bazz",
-		min = 3,
+		min = 1,
 		max = 3
 	}
 end
@@ -54,7 +54,7 @@ function Spawners:SpawnBazzMid()
 		source =  "spawner1",
 		waypoint = "lane_mid_pathcorner_badguys_7",
 		unit = "npc_dota_creature_bazz",
-		min = 3,
+		min = 1,
 		max = 3
 	}
 end
@@ -65,7 +65,7 @@ function Spawners:SpawnBazzBot()
 		source =  "spawner2",
 		waypoint = "lane_bot_pathcorner_badguys_4",
 		unit = "npc_dota_creature_bazz",
-		min = 3,
+		min = 1,
 		max = 3
 	}
 end

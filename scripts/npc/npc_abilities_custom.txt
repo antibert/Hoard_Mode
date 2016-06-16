@@ -6595,7 +6595,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"phantom_assassin_stifling_dagger"
 
@@ -6616,15 +6616,15 @@
 
 	// Time
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"8"
+	"AbilityCooldown"				"6"
 	"AbilityDuration"				"1.0 2.0 3.0 4.0"
 
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"30 30 30 30"
+	"AbilityManaCost"				"30 25 20 15"
 
 	//Damage
-	"AbilityDamage"					"100 160 220 280"
+	"AbilityDamage"					"70"
 
 	// Special
 	//-------------------------------------------------------------------------------------------------------------
@@ -6643,14 +6643,9 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"duration"				"1 1.5 2 2.5"
+			"duration"				"1 2 3 4"
 		}
 		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"hero_dmg_pct"			"50"
-		}
-		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"radius"				"150 200 250 300"
@@ -6659,12 +6654,11 @@
 
 	"OnSpellStart"
 	{
-
-	"FireSound"
-	{
-		"EffectName"		"Hero_PhantomAssassin.Dagger.Cast"
-		"Target"			"CASTER"
-	}
+		"FireSound"
+		{
+			"EffectName"		"Hero_PhantomAssassin.Dagger.Cast"
+			"Target"			"CASTER"
+		}
 		"ActOnTargets"
 		{
 			"Target"
@@ -6687,35 +6681,24 @@
 				    "MoveSpeed"        "%dagger_speed"
 				    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
 				}
-
 			}
 		}
-
 	}
 
 	"OnProjectileHitUnit"
 	{
 		"Damage"
 		{
-			"Target"
-			{
-				"Center"	"TARGET"
-				"Types"		"DOTA_UNIT_TARGET_HERO"
-			}
-			"Type"			"DAMAGE_TYPE_PURE"
-			"Damage"		"%AbilityDamage * %hero_dmg_pct / 100"
-		}
-
-		"Damage"
-		{
-			"Target"
-			{
-				"Center"	"TARGET"
-				"Types"		"DOTA_UNIT_TARGET_BASIC"
-			}
-			"Type"			"DAMAGE_TYPE_PURE"
+			"Target"        "TARGET"
+			"Type"			"DAMAGE_TYPE_PHYSICAL"
 			"Damage"		"%AbilityDamage"
 		}
+
+		"RunScript"
+        {
+            "ScriptFile"	"heroes/hero_riki/tricks_of_the_trade.lua"
+            "Function"		"PerformAttacks"
+        }
 
 		"ApplyModifier"
 		{

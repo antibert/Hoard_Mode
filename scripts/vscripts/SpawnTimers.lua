@@ -46,63 +46,63 @@ function Spawners:StartSpawners(difficulty)
  
 -- First Wave
 	Spawner:SpawnTimer({
-		start = 17,
+		start = 0,
 		finish = 180,
 		interval = 30,
 		spawn = Spawners:SpawnGnollsTop()
 	})
 
 	Spawner:SpawnTimer({
-		start = 17,
+		start = 0,
 		finish = 180,
 		interval = 30,
 		spawn = Spawners:SpawnGnollsMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 17,
+		start = 0,
 		finish = 180,
 		interval = 30,
 		spawn = Spawners:SpawnGnollsBot()
 	})
 
 	Spawner:SpawnTimer({
-		start = 60,
+		start = 30,
 		finish = 180,
-		interval = 23,
+		interval = 30,
 		spawn = Spawners:SpawnBazzTop()
 	})
 
 	Spawner:SpawnTimer({
-		start = 60,
+		start = 30,
 		finish = 180,
-		interval = 23,
+		interval = 30,
 		spawn = Spawners:SpawnBazzMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 60,
+		start = 30,
 		finish = 180,
-		interval = 23,
+		interval = 30,
 		spawn = Spawners:SpawnBazzBot()
 	})
 
 	Spawner:SpawnTimer({
-		start = 140,
+		start = 100,
 		finish = 180,
 		interval = 60,
 		spawn = Spawners:SpawnBeastTop()
 	})
 
 	Spawner:SpawnTimer({
-		start = 140,
+		start = 100,
 		finish = 180,
 		interval = 60,
 		spawn = Spawners:SpawnBeastMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 140,
+		start = 100,
 		finish = 180,
 		interval = 60,
 		spawn = Spawners:SpawnBeastBot()
@@ -1222,19 +1222,19 @@ Timers:CreateTimer("mini", {
 ---------------- Neutral Camps/Map Spawns --------------------------------
 --------------------------------------------------------------------------
 
-    Timers:CreateTimer(17, function()
+    Timers:CreateTimer(0, function()
 		Spawners:SpawnFriend()
 		Spawners:SpawnFriend2()
 		Spawners:SpawnFriend3()
 		return 30.0
     end)
-    Timers:CreateTimer(18, function()
+    Timers:CreateTimer(1, function()
 		Spawners:SpawnFriend()
 		Spawners:SpawnFriend2()
 		Spawners:SpawnFriend3()
 		return 30.0
     end)	
-    Timers:CreateTimer(19, function()
+    Timers:CreateTimer(2, function()
 		Spawners:SpawnFriend()
 		Spawners:SpawnFriend2()
 		Spawners:SpawnFriend3()

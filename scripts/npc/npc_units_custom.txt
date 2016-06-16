@@ -782,18 +782,21 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
 		"ModelScale" 				"1.4"
+		"CanBeDominated"			"0"
+		"ConsideredHero"            "1"
 	
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"spirit_breaker_greater_bash"			// Ability 1
-		"Ability2"					"generic_gold_bag_fountain_50"			// Ability 2
+		"Ability2"					"generic_gold_bag_fountain_5000"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"3"			// Physical protection.
-	        "MagicalResistance"			"0"	
+		"ArmorPhysical"				"10"			// Physical protection.
+        "MagicalResistance"			"25"
+
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -821,11 +824,11 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"175"		// Speed.			
+		"MovementSpeed"				"275"		// Speed.
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"750"		// Base health.
+		"StatusHealth"				"2000"		// Base health.
 		"StatusHealthRegen"			"1"		// Health regeneration rate.
 		"StatusMana"				"350"			// Base mana.
 		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
@@ -847,9 +850,25 @@
 		//----------------------------------------------------------------
 		"Creature"
 		{
-		//	"Aggression"				"50.0"
-		//	"Avoidance"					"0.0"
-		//	"Support"					"50.0"
+			"DisableResistance"			"35.0"
+			"CanRespawn"				"0"
+
+			//Basic AI State
+            //-----------------------------------------------------------------
+            "DefaultState"				"Invade"
+            "States"
+            {
+                "Invade"
+                {
+                    "Name"				"Invade"
+                    "Aggression"		"100.0"
+                    "Avoidance"			"0.0"
+                    "Support"			"0.0"
+                }
+            }
+
+            "PermanentDesire"			"1"
+
 			//Level Up
 			"HPGain"					"10"
 			"DamageGain"				"20"

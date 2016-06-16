@@ -67,9 +67,8 @@ function Spawners2p:StartSpawners(difficulty)
 	})
 
 	Spawner:SpawnTimer({
-		start = 100,
-		finish = 230,
-		interval = 70,
+		start = 130,
+		interval = 3000,
 		spawn = Spawners2p:SpawnBeast()
 	})
 

@@ -1,18 +1,14 @@
 Next Update Patch Notes:
 
-1.18a
-// General
--- Friendly creeps now spawn at 0 seconds, instead of at 17 seconds.
-
+1.18b
 // 1st Wave
--- Starts spawning at 0 seconds, instead of at 17 seconds.
--- Reduced berserker base attack speed from 1.0 to 1.4
--- Berserkers start spawning at 30 seconds, instead of 60 seconds.
--- Reduced minimum number of gnolls and berserkers
+-- Upgraded Wild Beast to mini-boss status
+-- Wild Beast will now spawn only once, in a random lane
 
 // Phantom Assassin
--- Stifling Dagger now applies in an AoE once again, while still performing the attack with all modifiers
--- Reverted swiftness passive back to Phantom Strike
+-- Fixed True Strike on Stifling Dagger
+-- Stifling Dagger radius is now 200 at all levels
+-- Stifling Dagger deals same damage as vanilla
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

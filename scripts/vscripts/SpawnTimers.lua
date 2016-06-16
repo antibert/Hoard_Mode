@@ -87,26 +87,29 @@ function Spawners:StartSpawners(difficulty)
 		spawn = Spawners:SpawnBazzBot()
 	})
 
-	Spawner:SpawnTimer({
-		start = 100,
-		finish = 180,
-		interval = 60,
-		spawn = Spawners:SpawnBeastTop()
-	})
+	local rand = RandomInt(1, 3)
+	if rand == 1 then
+		Spawner:SpawnTimer({
+			start = 130,
+			interval = 3000,
+			spawn = Spawners:SpawnBeastTop()
+		})
 
-	Spawner:SpawnTimer({
-		start = 100,
-		finish = 180,
-		interval = 60,
-		spawn = Spawners:SpawnBeastMid()
-	})
+	elseif rand == 2 then
+		Spawner:SpawnTimer({
+			start = 130,
+			interval = 3000,
+			spawn = Spawners:SpawnBeastMid()
+		})
 
-	Spawner:SpawnTimer({
-		start = 100,
-		finish = 180,
-		interval = 60,
-		spawn = Spawners:SpawnBeastBot()
-	})
+	else
+		Spawner:SpawnTimer({
+			start = 130,
+			interval = 3000,
+			spawn = Spawners:SpawnBeastBot()
+		})
+
+	end
 
 -----------------------------------------------------------------------------------------------	
 ---------------- START OF ZOMBIE, SPIDER AND MECH PHASE SPAWNERS --------------------------------

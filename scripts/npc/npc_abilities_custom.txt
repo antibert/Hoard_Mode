@@ -6631,24 +6631,39 @@
 	"AbilitySpecial"
 	{
 		"01"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "move_slow"					"-50"
+        }
+        "02"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "dagger_speed"			"1200"
+        }
+        "03"
+        {
+            "var_type"				"FIELD_FLOAT"
+            "duration"				"1 2 3 4"
+        }
+        "04"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "base_damage"			"75"
+        }
+        "05"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "attack_factor"			"-75 -60 -45 -30"
+        }
+        "06"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "attack_factor_tooltip"	"25 40 55 70"
+        }
+		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"move_slow"					"-50"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"dagger_speed"			"1200"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"1 2 3 4"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"150 200 250 300"
+			"radius"				"200"
 		}
 	}
 
@@ -6687,6 +6702,12 @@
 
 	"OnProjectileHitUnit"
 	{
+		"ApplyModifier"
+        {
+            "ModifierName"		"modifier_stifling_dagger_attack_datadriven"
+            "Target"			"CASTER"
+        }
+
 		"Damage"
 		{
 			"Target"        "TARGET"
@@ -6721,6 +6742,23 @@
 			{
 				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%move_slow"
 			}
+		}
+
+		"modifier_stifling_dagger_attack_datadriven"
+		{
+			"IsHidden"  "1"
+			"Duration"	"0.03"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%base_damage"
+				"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%attack_factor"
+			}
+
+			"States"
+            {
+                "MODIFIER_STATE_CANNOT_MISS"			"MODIFIER_STATE_VALUE_ENABLED"  //When attacking uphill, cannot miss units but can still miss buildings.
+            }
 		}
 	}
 }

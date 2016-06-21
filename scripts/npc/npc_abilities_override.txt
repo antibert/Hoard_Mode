@@ -4969,6 +4969,80 @@
 		}
 	}
 	//=================================================================================================================
+    // Recipe: Phase Boots
+    //=================================================================================================================
+    "item_recipe_phase_boots"
+    {
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_phase_boots"
+        "ItemRequirements"
+        {
+            "01"						"item_boots;item_blades_of_attack;item_chainmail;item_stout_shield;item_gloves"
+        }
+    }
+	//=================================================================================================================
+    // Phase Boots
+    //=================================================================================================================
+    "item_phase_boots"
+    {
+        "AbilityCooldown"				"12"
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_movement_speed"	"45"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_damage"			"24"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "damage_block_melee"	"16"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "damage_block_ranged"	"8"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "block_chance"			"50"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "phase_movement_speed"  "24"
+            }
+            "07"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "phase_movement_speed_range"  "20"
+            }
+            "08"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "phase_duration"		"6"
+            }
+            "09"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_attack_speed"	"20"
+            }
+            "10"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_armor"			"5"
+            }
+        }
+    }
+	//=================================================================================================================
 	// Octarine Core
 	//=================================================================================================================
 	"item_octarine_core"

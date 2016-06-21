@@ -1,9 +1,48 @@
 Next Update Patch Notes:
 
-1.18b
+1.18c
+// General
+-- Standardized melee attack range of creeps to 150
+
+Heroes:
+// Slark
+-- Essence Shift reworked to always give 3 agility for 5/10/15/20 seconds
+
+// Venomancer
+-- Venomous Gale reverted to vanilla except for impact damage, which remains 100 at all levels
+-- Poison Sting reverted to vanilla
+-- Poisonous Gale damage reverted to normal
+-- Poisonous Gale cooldown reduced to 140/115/90
+-- Poisonous Gale scepter cooldown reduced to 110/80/50
+
+// Items
+-- Lithe boots removed for pressing ceremonial reasons
+-- Added Desolator 2 from Year Beast Event (upgrade from desolator)
+-- Phase Boots reworked
+--- Recipe now requires brown boots, blades of attack, chain mail, stout shield, gloves of attack
+--- Phase Boots now grants 20 attack speed, 5 armor, and 16/8 damage block
+
 // 1st Wave
--- Upgraded Wild Beast to mini-boss status
--- Wild Beast will now spawn only once, in a random lane
+-- Reduced zombie hitpoints from 680 to 480
+-- Reduced hitpoints of all mech units
+-- Increased bounty for skeletons
+-- Reduced corpselord melee damage
+-- Reduced attack speed for smaller spiders
+-- Greatly increased damage for larger spiders
+
+// 4th Wave
+-- Greatly increased movement speed of wolves
+
+// 5th Wave
+-- Increased movement speed of all units
+-- Ghost boss now uses flying movement
+
+// 6th Wave
+-- Reduced armor of troll healers
+-- Standardized movement speeds of all units
+
+// 7th Wave
+-- Biggest Spookiest Meme now has flying movement
 
 // Phantom Assassin
 -- Fixed True Strike on Stifling Dagger

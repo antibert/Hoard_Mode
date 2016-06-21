@@ -3042,170 +3042,61 @@
 			}
 		}
 	}
-	"item_lithe_boots"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"1050"  //Valve's version of this item uses the ID "50".
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"Model"							"models/props_gameplay/red_box.vmdl" 
-		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-		"AbilityTextureName"			"item_lithe_boots"
-		
-		// Stats		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"              "0"
-		"AbilityCooldown"				"6"
-		"AbilityManaCost"				"0"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"5150"
-		"ItemShopTags"					"damage;move_speed;hard_to_tag"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"lithe boots"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"phase_duration"			"4.0"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"phase_movement_speed"  	"25"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_movement_speed"		"75"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"80"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"corruption_armor"		"-10"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"corruption_duration"	"15.0"
-			}
-		}
-		
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"Target"			"CASTER"
-				"ModifierName"		"modifier_item_phase_boots_active"
-			}
-			
-			"FireSound"
-			{
-				"EffectName"		"DOTA_Item.PhaseBoots.Activate"
-				"Target"			"CASTER"
-			}
-		}
-		
-		"Modifiers"
-		{
-			"modifier_item_phase_boots"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"		"%bonus_movement_speed"
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
-				}
-			}
-			"modifier_item_phase_boots_active"
-			{
-				"Duration"              	"%phase_duration"
-				"Passive"					"0"
-				"IsHidden"					"0"
-				"IsBuff"					"1"
-				"IsDebuff"					"0"
-				"IsPurgable"				"1"
-				"EffectName"				"particles/items2_fx/phase_boots.vpcf"
-				"EffectAttachType"			"follow_origin"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%phase_movement_speed"
-				}
-				
-				"States"
-				{
-					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-				
-				"OnAbilityExecuted"
-				{
-					"RemoveModifier"
-					{
-						"Target"			"CASTER"
-						"ModifierName"		"modifier_item_phase_boots_active"
-					}
-				}
-			}
-	            "modifier_item_desolator"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-				"Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
-				}
-				
-				"Orb"
-				{
-					"Priority"				"DOTA_ORB_PRIORITY_ITEM"
-					"ProjectileName"		"particles/items_fx/desolator_projectile.vpcf"
-					"CastAttack"			"0"
-				}
-	
-				"OnOrbImpact"
-				{
-					"ApplyModifier"
-					{
-						"Target"			"TARGET"
-						"ModifierName"		"modifier_item_desolator_corruption"
-					}
-					
-					"FireSound"
-					{
-						"EffectName"		"Item_Desolator.Target"
-						"Target"			"TARGET"
-					}
-				}
-			}
-			"modifier_item_desolator_corruption"
-			{
-				"Duration"				"%corruption_duration"
-				"Passive"				"0"
-				"IsHidden"				"0"
-				
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%corruption_armor"
-				}
-			}
-		}
-	}
+	//=================================================================================================================
+    // Desolator
+    //=================================================================================================================
+    "item_desolator"
+    {
+        "MaxUpgradeLevel"				"2"
+        "ItemBaseLevel"					"1"
+
+        "UpgradesItems"					"item_desolator"
+        "UpgradeRecipe"					"item_recipe_desolator_2_datadriven"
+    }
+	//=================================================================================================================
+    // Desolator 2
+    //=================================================================================================================
+    "item_desolator_2_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"							"1168"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "item_desolator"
+        "AbilityTextureName"			"item_desolator_2"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"8375"
+        "ItemShopTags"					"damage;unique"
+        "ItemQuality"					"artifact"
+        "ItemAliases"					"desolator"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        "MaxUpgradeLevel"				"2"
+        "ItemBaseLevel"					"2"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bonus_damage"			"100"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "corruption_armor"		"-13"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "corruption_duration"	"15.0"
+            }
+        }
+    }
 	"item_recipe_quelling_blade_2_datadriven"
     {
         // General
@@ -3699,29 +3590,33 @@
 			"01"						"item_rapier;item_monkey_king_bar"
 		}
 	}
-	"item_recipe_lithe_boots"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"item_datadriven"
-		"ID"							"1049"  //Valve's version of this item uses the ID "49".
-		"Model"							"models/props_gameplay/recipe.mdl"
-		"AbilityTextureName"			"item_recipe"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"350"	
-		"ItemShopTags"					""
-		
-		// Recipe
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemRecipe"					"1"
-		"ItemResult"					"item_lithe_boots"
-		"ItemRequirements"
-		{
-			"01"						"item_phase_boots;item_desolator"
-		}
-	}
+	// Rewrite of Recipe: Desolator
+    // Author: Rook
+    // Date: February 4, 2015
+
+    "item_recipe_desolator_2_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"1167"  //Valve's version of this item uses the ID "167".
+        "Model"							"models/props_gameplay/recipe.mdl"
+        "AbilityTextureName"			"item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"900"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_desolator_2_datadriven"
+        "ItemRequirements"
+        {
+            "01"						"item_desolator;item_claymore;item_recipe_medallion_of_courage"
+        }
+    }
 	//=================================================================================================================
 	// Recipe: Travel Boots
 	//=================================================================================================================

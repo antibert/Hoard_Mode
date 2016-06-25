@@ -267,6 +267,34 @@
     //"item_glimmer_cape"				"REMOVE"
 
 	//=================================================================================================================
+	// Ability: Attribute Bonus
+	//=================================================================================================================
+	"attribute_bonus"
+	{
+		"MaxLevel"						"20"
+		"LevelsBetweenUpgrades"					"1"
+	}
+	//=================================================================================================================
+    // Ability: Attribute Bonus
+    //=================================================================================================================
+    "invoker_attribute_bonus"
+    {
+        "MaxLevel"						"11"
+        "LevelsBetweenUpgrades"					"1"
+        "RequiredLevel"						"25"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "attribute_bonus_per_level"		"2"
+            }
+        }
+    }
+	//=================================================================================================================
 	// Witch Doctor: Maledict
 	//=================================================================================================================
 	"witch_doctor_maledict"
@@ -278,13 +306,8 @@
 	//=================================================================================================================
 	"witch_doctor_death_ward"
 	{
-		"AbilityCooldown"				"30.0"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"AbilityChannelTime"			"9 9 9"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 200 200"
+		"AbilityCooldown"				"70 50 30.0"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -4979,7 +5002,7 @@
         "ItemResult"					"item_phase_boots"
         "ItemRequirements"
         {
-            "01"						"item_boots;item_blades_of_attack;item_chainmail;item_stout_shield;item_gloves"
+            "01"						"item_boots;item_blades_of_attack;item_blades_of_attack;item_chainmail;item_stout_shield;item_gloves"
         }
     }
 	//=================================================================================================================
@@ -5013,7 +5036,7 @@
             "05"
             {
                 "var_type"				"FIELD_INTEGER"
-                "block_chance"			"50"
+                "block_chance"			"100"
             }
             "06"
             {

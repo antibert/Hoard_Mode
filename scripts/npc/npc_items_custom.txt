@@ -3614,7 +3614,7 @@
         "ItemResult"					"item_desolator_2_datadriven"
         "ItemRequirements"
         {
-            "01"						"item_desolator;item_claymore;item_recipe_medallion_of_courage"
+            "01"						"item_desolator;item_demon_edge;item_blight_stone"
         }
     }
 	//=================================================================================================================
@@ -5155,24 +5155,10 @@
 
                 "OnAttackLanded"
                 {
-                    "RunScript"
-                    {
-                        "ScriptFile"			"items/item_vladmir_2.lua"
-                        "Function"				"modifier_item_vladmir_2_lifesteal_aura_on_attack_landed"
-                    }
-                }
-            }
-            "modifier_item_vladmir_2_lifesteal_aura_lifesteal"
-            {
-                "Passive"			"0"
-                "IsHidden"			"1"
-
-                "OnDealDamage"
-                {
                     "Lifesteal"
                     {
-                        "Target"			"ATTACKER"
-                        "LifestealPercent"	"%vampiric_aura"
+                        "Target"				"ATTACKER"
+                        "LifestealPercent"		"%lifesteal"
                     }
                 }
             }

@@ -42,15 +42,63 @@ DISABLE_GOLD_SOUNDS = false             -- Should we disable the gold sound when
 END_GAME_ON_KILLS = false                -- Should the game end after a certain number of kills?
 KILLS_TO_END_GAME_FOR_TEAM = 50         -- How many kills for a team should signify an end of game?
 
-USE_CUSTOM_HERO_LEVELS = false           -- Should we allow heroes to have custom levels?
-MAX_LEVEL = 25                          -- What level should we let heroes get to?
-USE_CUSTOM_XP_VALUES = false             -- Should we use custom XP values to level up heroes, or the default Dota numbers?
+USE_CUSTOM_HERO_LEVELS = true           -- Should we allow heroes to have custom levels?
+MAX_LEVEL = 35                          -- What level should we let heroes get to?
+USE_CUSTOM_XP_VALUES = true             -- Should we use custom XP values to level up heroes, or the default Dota numbers?
 
 -- Fill this table up with the required XP per level if you want to change it
-XP_PER_LEVEL_TABLE = {}
-for i=1,MAX_LEVEL do
-  XP_PER_LEVEL_TABLE[i] = (i-1) * 100
-end
+XP_PER_LEVEL_TABLE = {
+    0,-- 1
+    200,-- 2
+    500,-- 3
+    900,-- 4
+    1400,-- 5
+    2000,-- 6
+    2600,-- 7
+    3400,-- 8
+    4400,-- 9
+    5400,-- 10
+    6000,-- 11
+    8200,-- 12
+    9000,-- 13
+    10400,-- 14
+    11900,-- 15
+    13500,-- 16
+    15200,-- 17
+    17000,-- 18
+    18900,-- 19
+    20900,-- 20
+    23000,-- 21
+    25200,-- 22
+    27500,-- 23
+    29900,-- 24
+    32400,-- 25
+    35000,-- 26
+    37700,-- 27
+    40500,-- 28
+    43400,-- 29
+    46400,-- 30
+    49500,-- 31
+    52700,-- 32
+    56000,-- 33
+    59400,-- 34
+    62900,-- 35
+    66500,-- 36
+    70200,-- 37
+    74000,-- 38
+    77900,-- 39
+    81900,-- 40
+    86000,-- 41
+    90200,-- 42
+    94500,-- 43
+    98900,-- 44
+    103400,-- 45
+    108000,-- 46
+    112700,-- 47
+    117500,-- 48
+    122400,-- 49
+    127400 -- 50
+}
 
 ENABLE_FIRST_BLOOD = true               -- Should we enable first blood for the first kill in this game?
 HIDE_KILL_BANNERS = false               -- Should we hide the kill banners that show when a player is killed?

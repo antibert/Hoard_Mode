@@ -1513,7 +1513,7 @@
 				"Aura"					"create_acid_spray_armor_reduction_aura"
 				"Aura_Radius"			"%radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 				"Duration"				"%duration"
 	
@@ -1633,7 +1633,7 @@
 					"Center"			"CASTER"
 					"Radius"			"%health_radius"
 					"Teams"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_OTHER"
+					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_OTHER"
 				}
 			}
 		}
@@ -1672,7 +1672,7 @@
 				"Aura"					"health_regen"
 				"Aura_Radius"			"%health_radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 				"Aura_ApplyToCaster"	"0"
 			}
 			
@@ -3546,7 +3546,7 @@
                 "Aura" 				"modifier_degen_aura_effect"
                 "Aura_Radius" 		"%radius"
                 "Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+                "Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
             }
 
             "modifier_degen_aura_effect"
@@ -4055,7 +4055,7 @@
 		"AbilityTextureName"			"holdout_glacier_arrows"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -6012,7 +6012,7 @@
 				"Aura"					"amp_null"
 				"Aura_Radius"			"%null_radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"			"DOTA_UNIT_TARGET_ROSHAN | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+				"Aura_Types"			"DOTA_UNIT_TARGET_ROSHAN | DOTA_UNIT_TARGET_CREEP"
 				"Aura_ApplyToCaster"	"0"
 			}
 			"amp_null"
@@ -7650,7 +7650,7 @@
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"FightRecapLevel"				"1"
@@ -7752,7 +7752,7 @@
 					"Center"  	"CASTER"
 					"Radius" 	"%small_radius"
 					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 					"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 				}
 
@@ -7778,7 +7778,7 @@
 					"Center"  	"CASTER"
 					"Radius" 	"%big_radius"
 					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 					"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 				}
 
@@ -7861,7 +7861,7 @@
 		"AbilityTextureName"			"tinker_heat_seeking_missile"
 		"AOERadius"                     "%radius"
 
-		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
 
@@ -12087,7 +12087,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
         "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
         "FightRecapLevel"				"1"
         "AbilityTextureName"			"skywrath_mage_concussive_shot"
@@ -12248,7 +12248,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
         "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
         "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
         "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
         "FightRecapLevel"				"2"
@@ -12465,7 +12465,7 @@
         "BaseClass"				"ability_datadriven"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
         "SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
         "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
         "FightRecapLevel"				"1"
@@ -13030,7 +13030,7 @@
         "AbilityCastRange"				"650"
         "AbilityCastPoint"				"0.3 0.3 0.3 0.3"
         "AbilityCooldown"				"12 11 10 9"
-        "AbilityManaCost"				"90 115 135 155"
+        "AbilityManaCost"				"90 105 120 135"
 
         // Stats
         //-------------------------------------------------------------------------------------------------------------

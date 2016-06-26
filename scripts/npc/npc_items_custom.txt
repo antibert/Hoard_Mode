@@ -715,7 +715,7 @@
 					"Center"			"CASTER"
 					"Radius"			"%null_radius"
 					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				}
 			}			
 		}	
@@ -751,7 +751,7 @@
 				"Aura"					"magic_null"
 				"Aura_Radius"			"%null_radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"			"DOTA_UNIT_TARGET_ROSHAN | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+				"Aura_Types"			"DOTA_UNIT_TARGET_ROSHAN | DOTA_UNIT_TARGET_BASIC"
 				"Aura_ApplyToCaster"	"0"
 			}			
 			"magic_null"
@@ -3653,7 +3653,7 @@
 		"BaseClass"                     "item_datadriven"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
 		"AbilityTextureName"			"item_travel_boots_3"
 		"precache"
@@ -5158,7 +5158,7 @@
                     "Lifesteal"
                     {
                         "Target"				"ATTACKER"
-                        "LifestealPercent"		"%lifesteal"
+                        "LifestealPercent"		"%vampiric_aura"
                     }
                 }
             }

@@ -1,9 +1,9 @@
 Next Update Patch Notes:
 
-1.18d
+1.18e
 // Items
--- Desolator 2 recipe fixed
 -- Fixes to Vladmir's Cuirass
+-- Fixes to a few abilities (such as Bounty Hunter's shuriken toss) that were broken when Valve removed mechanical unit distinction
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

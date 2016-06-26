@@ -65,7 +65,7 @@ function FireEffect_IcePath( event )
 			bReplaceExisting	= false,
 			iUnitTargetTeam		= DOTA_UNIT_TARGET_TEAM_ENEMY,
 			iUnitTargetFlags	= DOTA_UNIT_TARGET_FLAG_NONE,
-			iUnitTargetType		= DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_MECHANICAL,
+			iUnitTargetType		= DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
 			fExpireTime			= ability.ice_path_stunEnd,
 			bDeleteOnHit		= false,
 			vVelocity			= Vector( 0, 0, 0 ),	-- Don't move!

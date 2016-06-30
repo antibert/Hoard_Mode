@@ -5155,13 +5155,27 @@
 
                 "OnAttackLanded"
                 {
-                    "Lifesteal"
+                    "RunScript"
                     {
-                        "Target"				"ATTACKER"
-                        "LifestealPercent"		"%vampiric_aura"
+                        "ScriptFile"            "items/item_vladmir_2.lua"
+                        "Function"                "modifier_item_vladmir_2_lifesteal_aura_on_attack_landed"
                     }
                 }
             }
+            "modifier_item_vladmir_2_lifesteal_aura_lifesteal"
+            {
+                "Passive"            "0"
+                "IsHidden"            "1"
+                "OnDealDamage"
+                {
+                    "Lifesteal"
+                    {
+                        "Target"            "ATTACKER"
+                        "LifestealPercent"    "%vampiric_aura"
+                    }
+                }
+            }
+
             "modifier_item_vladmir_2_enemy_aura_emitter"
             {
                 "Passive"				"1"

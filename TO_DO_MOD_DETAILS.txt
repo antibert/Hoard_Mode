@@ -1,9 +1,21 @@
 Next Update Patch Notes:
 
-1.18e
-// Items
--- Fixes to Vladmir's Cuirass
--- Fixes to a few abilities (such as Bounty Hunter's shuriken toss) that were broken when Valve removed mechanical unit distinction
+1.18f
+Heroes:
+// Beastmaster
+-- Call of the Wild now properly skills both together
+-- Call of the Wild summons the proper boar and hawk at each level
+-- Hawk now has properly working lightning at all levels
+
+// Pugna
+-- Fixed tooltip in ward attack rate
+
+// Venomancer
+-- Fixed Plague Ward tooltip
+
+Items:
+// Vladmir's Cuirass 2
+-- Lifesteal no longer works on buildings
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

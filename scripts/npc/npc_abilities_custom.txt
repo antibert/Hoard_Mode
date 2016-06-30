@@ -336,41 +336,12 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	// Slowing Poison attack
-	//=================================================================================================================
-	"beastmaster_boar_poison"
-	{
-	
-		"BaseClass"						"beastmaster_boar_poison"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"attack_speed"			"-10"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"movement_speed"		"-35"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"3.0"
-			}
-		}
-	}
+
 	"beastmaster_call_of_the_wild_boar_datadriven"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"MaxLevel"						"1"
 	 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	    "AbilityTextureName"			"beastmaster_call_of_the_wild_boar"
 		
@@ -398,22 +369,22 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"boar_hp_tooltip"			"900"
+				"boar_hp_tooltip"			"300 500 700 900"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"boar_damage_tooltip"		"105"
+				"boar_damage_tooltip"		"35 60 85 110"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"boar_moveslow_tooltip"		"40"
+				"boar_moveslow_tooltip"		"35"
 			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"boar_attackslow_tooltip"	"40"
+				"boar_attackslow_tooltip"	"10"
 			}
 			"06"
 			{
@@ -483,7 +454,7 @@
 	
 			"SpawnUnit"
 			{
-				"UnitName"			"npc_dota_creature_mega_boar_4"
+				"UnitName"			"npc_dota_creature_mega_boar_1"
 				"Target"
 				{
 					"Center"				"CASTER"
@@ -573,7 +544,7 @@
 	
 			"SpawnUnit"
 			{
-				"UnitName"			"npc_dota_creature_mega_boar_4"
+				"UnitName"			"npc_dota_creature_mega_boar_3"
 				"Target"
 				{
 					"Center"				"CASTER"
@@ -6832,7 +6803,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"0.3 0.9 1.5 2.1"
+				"attack_speed"			"2.1 1.5 0.9 0.3"
 			}
 			"09"
 			{
@@ -8208,7 +8179,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ward_damage_tooltip"	"10 19 29 38"
+				"ward_damage_tooltip"	"50 80 110 140"
 			}
 			"04"
 			{
@@ -12562,7 +12533,7 @@
                     "Radius"			"%radius"
                     "Teams"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
                     "Flags"				"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-                    "Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+                    "Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
                 }
 
                 "Action"
@@ -12583,7 +12554,7 @@
                     "Radius"			"%radius"
                     "Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
                     "Flags"				"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-                    "Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+                    "Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
                 }
 
                 "Action"
@@ -13855,39 +13826,6 @@
         }
     }
 
-    "harpy_storm_chain_lightning_upgraded"
-    {
-        "BaseClass"         "harpy_storm_chain_lightning"
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "initial_damage"		"230"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "jump_range"			"500"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "jump_delay"			"0.25"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "damage_percent_loss"	"10.0"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "max_targets"			"6"
-            }
-        }
-    }
-
     //=================================================================================================================
     // Hulk: Arcane Armor
     //=================================================================================================================
@@ -15002,7 +14940,7 @@
         "BaseClass"						"ability_datadriven"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_AOE"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
         "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
         "AbilityTextureName"			"drow_ranger_frost_arrows"
         "AOERadius"                     "%radius"
@@ -15391,7 +15329,7 @@
                 "Aura"					"modifier_midnight_pulse_debuff"
                 "Aura_Radius"			"%radius"
                 "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
+                "Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
                 "Duration"				"%duration"
 
                 "OnCreated"

@@ -3883,67 +3883,6 @@
 		}
 	}
 	//=================================================================================================================
-	// Holdout: Death Ward
-	//=================================================================================================================
-	"holdout_death_ward"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"witch_doctor_death_ward"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetFlags"		""
-
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.35 0.35 0.35"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-	        "AbilityCooldown"				"60.0"
-		"AbilityChannelTime"			"9 9 9"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"200 200 200"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-		    "01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"100 130 160"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bounces"					"1 2 3"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"160 200 240"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"scepter_bounces"			"6 8 10"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bounce_radius"				"650 650 650"
-			}
-		}
-	}
-	//=================================================================================================================
 	// Holdout: Friendly Skewer
 	//=================================================================================================================
 	"holdout_friendly_skewer"
@@ -15548,6 +15487,189 @@
                 "IsHidden"			"1"
             //	"OverrideAnimation"	"ACT_DOTA_CAST_ABILITY_2"
                 "OverrideAnimation"	"ACT_DOTA_CAST_ABILITY_1"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Witch Doctor: Death Ward
+    //=================================================================================================================
+    // Rewrite of Witch Doctor's Death Ward
+    // Author: YOLOSPAGHETTI
+    // Date: March 15, 2016
+    // Version: 6.86
+    // Type: Datadriven
+    //
+    // Notes: Some of the particles on the death ward do not appear
+    //
+    // ----- FILE REQUIREMENTS -----
+    // Script files:
+    // scripts/vscripts/heroes/hero_witch_doctor/death_ward.lua
+    // scripts/npc/units/witch_doctor_death_ward_datadriven.txt
+    "witch_doctor_death_ward_datadriven"
+    {
+    	// General
+    	//-------------------------------------------------------------------------------------------------------------
+    	"BaseClass"				"ability_datadriven"
+    	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+    	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+    	"FightRecapLevel"				"2"
+    	"AbilityTextureName"			"witch_doctor_death_ward"
+
+		"HasScepterUpgrade"			"1"
+
+    	// Precache
+    	//-------------------------------------------------------------------------------------------------------------
+    	"precache"
+    	{
+    		"particle"		"particles/units/heroes/hero_witchdoctor/witchdoctor_ward_attack.vpcf"
+    		"particle"		"particles/units/heroes/hero_witchdoctor/witchdoctor_deathward_glow_c.vpcf"
+    		"particle"		"particles/units/heroes/hero_witchdoctor/witchdoctor_ward_skull.vpcf"
+    		"particle"		"particles/units/heroes/hero_witchdoctor/witchdoctor_ward_cast_staff_fire.vpcf"
+    		"soundfile"		"sounds/weapons/hero/witch_doctor/deathward_build.vsnd"
+    		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts"
+    	}
+
+    	// Casting
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityCastRange"				"600"
+    	"AbilityCastPoint"				"0.35 0.35 0.35"
+
+    	// Time
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityCooldown"				"70 50 30"
+    	"AbilityChannelTime"			"8.0 8.0 8.0"
+
+    	// Cost
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityManaCost"				"200 200 200"
+
+    	// Special
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilitySpecial"
+    	{
+    		"01"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "damage"					"100 130 160"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bounces"					"2 2 2"
+            }
+            "03"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bounces_scepter"			"6 8 10"
+            }
+            "04"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bounce_radius"				"650 650 650"
+            }
+    	}
+
+    	"OnSpellStart"
+    	{
+    		"RunScript"
+    		{
+    			"ScriptFile"	"heroes/hero_witch_doctor/death_ward.lua"
+    			"Function"		"CreateWard"
+    		}
+
+    		"FireSound"
+    		{
+    			"EffectName"	"Hero_WitchDoctor.Death_WardBuild"
+    			"Target"		"CASTER"
+    		}
+    	}
+
+    	"OnChannelFinish"
+    	{
+    		"RunScript"
+    		{
+    			"ScriptFile"	"heroes/hero_witch_doctor/death_ward.lua"
+    			"Function"		"DestroyWard"
+    			"sound"			"Hero_WitchDoctor.Death_WardBuild"
+    		}
+    	}
+
+    	"Modifiers"
+    	{
+    		"modifier_death_ward_datadriven"
+    		{
+    			"IsHidden"	"1"
+
+    			// Does Nothing
+    			"EffectName"	"particles/units/heroes/hero_witchdoctor/witchdoctor_ward_skull.vpcf"
+    			"EffectAttachType"	"attach_origin"
+
+    			"Properties"
+    			{
+    				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%damage"
+    			}
+
+    			"States"
+    			{
+    				"MODIFIER_STATE_NO_HEALTH_BAR"		"MODIFIER_STATE_VALUE_ENABLED"
+    				"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+    			}
+
+    			"OnAttackLanded"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"heroes/hero_witch_doctor/death_ward.lua"
+                        "Function"		"death_ward_start_create_dummy"
+                    }
+                }
+    		}
+    	}
+    }
+    "witch_doctor_death_ward_dummy_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+
+        "OnProjectileHitUnit"
+        {
+            "DeleteOnHit"	"1"
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_WitchDoctor_Ward.ProjectileImpact"
+                "Target" 		"TARGET"
+            }
+
+            "RunScript"
+            {
+                "ScriptFile"	"heroes/hero_witch_doctor/death_ward.lua"
+                "Function"		"death_ward_bounce"
+            }
+
+        }
+
+        "Modifiers"
+        {
+            "modifier_death_ward_dummy_unit"
+            {
+                "States"
+                {
+                    "MODIFIER_STATE_INVULNERABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NO_HEALTH_BAR"					"MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_NOT_ON_MINIMAP"					"MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_UNSELECTABLE"					"MODIFIER_STATE_VALUE_ENABLED"
+                    "MODIFIER_STATE_FLYING"							"MODIFIER_STATE_VALUE_ENABLED"
+                }
             }
         }
     }

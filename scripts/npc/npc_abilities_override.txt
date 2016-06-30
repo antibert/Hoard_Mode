@@ -302,45 +302,6 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 	}
 	//=================================================================================================================
-	// Witch Doctor: Death Ward
-	//=================================================================================================================
-	"witch_doctor_death_ward"
-	{
-		"AbilityCooldown"				"70 50 30.0"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-		    "01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"100 130 160" 
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bounces"					"1 1 2"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage_scepter"			"160 200 240"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"scepter_bounces"			"6 8 10"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bounce_radius"				"650 650 650"
-			}
-		}
-	}
-	//=================================================================================================================
 	// Witch Doctor: Paralyzing Cask
 	//=================================================================================================================
 	"witch_doctor_paralyzing_cask"

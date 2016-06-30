@@ -147,7 +147,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_pugna_ward_hoard2", context)
 	PrecacheUnitByNameSync("npc_dota_pugna_ward_hoard3", context)
 	PrecacheUnitByNameSync("npc_dota_pugna_ward_hoard4", context)
-	PrecacheItemByNameSync("spectre_haunt_datadriven", context)
+	PrecacheUnitByNameSync("witch_doctor_death_ward_datadriven", context)
 end
 
 -- Create the game mode when we activate

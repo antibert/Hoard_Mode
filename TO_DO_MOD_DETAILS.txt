@@ -1,17 +1,9 @@
 Next Update Patch Notes:
 
-1.18f
+1.18g
 Heroes:
-// Beastmaster
--- Call of the Wild now properly skills both together
--- Call of the Wild summons the proper boar and hawk at each level
--- Hawk now has properly working lightning at all levels
-
-// Pugna
--- Fixed tooltip in ward attack rate
-
-// Venomancer
--- Fixed Plague Ward tooltip
+// Witch Doctor
+-- Death Ward bounces against all enemy units
 
 Items:
 // Vladmir's Cuirass 2

@@ -1,13 +1,9 @@
 Next Update Patch Notes:
 
-1.18g
-Heroes:
-// Witch Doctor
--- Death Ward bounces against all enemy units
-
+1.18h
 Items:
 // Vladmir's Cuirass 2
--- Lifesteal no longer works on buildings
+-- Yet another attempted fix. Things are weird, because Valve changed some functions.
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

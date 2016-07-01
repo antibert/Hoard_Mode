@@ -1,9 +1,23 @@
 Next Update Patch Notes:
 
-1.18h
+1.18j
 Items:
-// Vladmir's Cuirass 2
--- Yet another attempted fix. Things are weird, because Valve changed some functions.
+// Maelstrom
+-- Recipe reverted to vanilla cost of 700
+
+Heroes:
+// Tidehunter
+-- Gush reverted to vanilla so that it works with Aghanim's Scepter
+-- Gush damage increased to 110/220/330/440
+-- Gush manacost reduced from 120 to 90/100/110/120
+-- Gush scepter aoe increased from 240 to 240/280/320/360
+-- Reduced Ravage cooldown from 150 to 150/125/100
+-- Anchor Smash damage increased from 75/125/175/225 to 100/150/200/250
+
+// Venomancer
+-- Venomous Gale cooldown reduced from 21/20/19/18 to 15
+-- Poison Sting duration reduced from 6/9/12/15 to 3/4/5/6
+-- Poison Sting damage per second increased from 6/12/18/24 to 10/20/30/40
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

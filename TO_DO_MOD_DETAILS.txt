@@ -1,9 +1,11 @@
 Next Update Patch Notes:
 
-1.18j
-Items:
-// Maelstrom
--- Recipe reverted to vanilla cost of 700
+1.18k
+All Maps:
+-- Added two rune spots to the river to encourage movement (yes, that means 4 runes)
+-- Removed some trees from top lane to help keep creeps from getting stuck
+-- Widened some ramps
+-- Upgraded tier 4 towers to not suck
 
 Heroes:
 // Tidehunter

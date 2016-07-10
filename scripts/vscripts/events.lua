@@ -341,3 +341,18 @@ function GameMode:OnPlayerChat(keys)
 
   local text = keys.text
 end
+
+-- This function is called whenever a setting vote is made
+function GameMode:OnSettingVote(keys)
+  --print("Custom Game Settings Vote.")
+  --PrintTable(keys)
+
+  local pid 	= keys.PlayerID
+  local mode 	= GameMode
+
+  -- VoteTable is initialised in InitGameMode()
+  if not mode.VoteTable[keys.category] then mode.VoteTable[keys.category] = {} end
+  mode.VoteTable[keys.category][pid] = keys.vote
+
+  --PrintTable(mode.VoteTable)
+end

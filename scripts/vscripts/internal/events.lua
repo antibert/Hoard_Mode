@@ -6,6 +6,7 @@ function GameMode:_OnGameRulesStateChange(keys)
   elseif newState == DOTA_GAMERULES_STATE_INIT then
     --Timers:RemoveTimer("alljointimer")
   elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
+    GameMode:ProcessVotes()
     GameMode:PostLoadPrecache()
     GameMode:OnAllPlayersLoaded()
 
@@ -20,6 +21,72 @@ function GameMode:_OnGameRulesStateChange(keys)
   elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
     GameMode:OnGameInProgress()
   end
+end
+
+function GameMode:ProcessVotes()
+	local mode 	= GameMode
+	local votes = mode.VoteTable
+
+	--[[
+	-- Random tables for test purposes
+	local testTable = {game_length = {}, combat_system = {}}
+	local votes_a = {15, 20, 25, 30}
+	local votes_b = {1, 2}
+	for i = 0,9 do
+		testTable.game_length[i] 	= votes_a[math.random(table.getn(votes_a))]
+		testTable.combat_system[i] 	= votes_b[math.random(table.getn(votes_b))]
+	end
+	votes = testTable
+	]]
+
+	mode.game_length = 0
+	mode.combat_system = ""
+
+	for category, pidVoteTable in pairs(votes) do
+
+		-- Tally the votes into a new table
+		local voteCounts = {}
+		for pid, vote in pairs(pidVoteTable) do
+			if not voteCounts[vote] then voteCounts[vote] = 0 end
+			voteCounts[vote] = voteCounts[vote] + 1
+		end
+
+		--print(" ----- " .. category .. " ----- ")
+		--PrintTable(voteCounts)
+
+		-- Find the key that has the highest value (key=vote value, value=number of votes)
+		local highest_vote = 0
+		local highest_key = ""
+		for k, v in pairs(voteCounts) do
+			if v > highest_vote then
+				highest_key = k
+				highest_vote = v
+			end
+		end
+
+		-- Check for a tie by counting how many values have the highest number of votes
+		local tieTable = {}
+		for k, v in pairs(voteCounts) do
+			if v == highest_vote then
+				table.insert(tieTable, k)
+			end
+		end
+
+		-- Resolve a tie by selecting a random value from those with the highest votes
+		if table.getn(tieTable) > 1 then
+			--print("TIE!")
+			highest_key = tieTable[math.random(table.getn(tieTable))]
+		end
+
+		-- Act on the winning vote
+		if category == "difficulty" then
+			mode.DIFFICULTY = highest_key
+			--GameRules:SetPreGameTime( 60 * highest_key )
+			--mode.game_length = highest_key
+		end
+
+		print(category .. ": " .. highest_key)
+	end
 end
 
 -- An NPC has spawned somewhere in game.  This includes heroes

@@ -7,7 +7,9 @@ function MoonShardActive( keys )
 	local ability = keys.ability
 	local modifier = keys.modifier
 
-	AddStacks(ability, caster, target, modifier, 1, true)
-	target:EmitSound("Item.MoonShard.Consume")
+	if caster:IsRealHero() then
+		AddStacks(ability, caster, target, modifier, 1, true)
+		target:EmitSound("Item.MoonShard.Consume")
+	end
 	caster:RemoveItem(ability)
 end

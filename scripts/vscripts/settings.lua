@@ -31,9 +31,9 @@ USE_UNSEEN_FOG_OF_WAR = false           -- Should we make unseen and fogged area
 USE_STANDARD_DOTA_BOT_THINKING = false  -- Should we have bots act like they would in Dota? (This requires 3 lanes, normal items, etc)
 USE_STANDARD_HERO_GOLD_BOUNTY = true    -- Should we give gold for hero kills the same as in Dota, or allow those values to be changed?
 
-USE_CUSTOM_TOP_BAR_VALUES = true        -- Should we do customized top bar values or use the default kill count per team?
-TOP_BAR_VISIBLE = true                  -- Should we display the top bar score/count at all?
-SHOW_KILLS_ON_TOPBAR = true             -- Should we display kills only on the top bar? (No denies, suicides, kills by neutrals)  Requires USE_CUSTOM_TOP_BAR_VALUES
+USE_CUSTOM_TOP_BAR_VALUES = false        -- Should we do customized top bar values or use the default kill count per team?
+TOP_BAR_VISIBLE = false                  -- Should we display the top bar score/count at all?
+SHOW_KILLS_ON_TOPBAR = false             -- Should we display kills only on the top bar? (No denies, suicides, kills by neutrals)  Requires USE_CUSTOM_TOP_BAR_VALUES
 
 ENABLE_TOWER_BACKDOOR_PROTECTION = false-- Should we enable backdoor protection for our towers?
 REMOVE_ILLUSIONS_ON_DEATH = false       -- Should we remove all illusions if the main hero dies?
@@ -43,7 +43,6 @@ END_GAME_ON_KILLS = false                -- Should the game end after a certain 
 KILLS_TO_END_GAME_FOR_TEAM = 50         -- How many kills for a team should signify an end of game?
 
 USE_CUSTOM_HERO_LEVELS = true           -- Should we allow heroes to have custom levels?
-MAX_LEVEL = 35                          -- What level should we let heroes get to?
 USE_CUSTOM_XP_VALUES = true             -- Should we use custom XP values to level up heroes, or the default Dota numbers?
 
 -- Fill this table up with the required XP per level if you want to change it
@@ -82,27 +81,28 @@ XP_PER_LEVEL_TABLE = {
     52700,-- 32
     56000,-- 33
     59400,-- 34
-    62900,-- 35
-    66500,-- 36
-    70200,-- 37
-    74000,-- 38
-    77900,-- 39
-    81900,-- 40
-    86000,-- 41
-    90200,-- 42
-    94500,-- 43
-    98900,-- 44
-    103400,-- 45
-    108000,-- 46
-    112700,-- 47
-    117500,-- 48
-    122400,-- 49
-    127400 -- 50
+    62900-- 35
+--    62900,-- 35
+--    66500,-- 36
+--    70200,-- 37
+--    74000,-- 38
+--    77900,-- 39
+--    81900,-- 40
+--    86000,-- 41
+--    90200,-- 42
+--    94500,-- 43
+--    98900,-- 44
+--    103400,-- 45
+--    108000,-- 46
+--    112700,-- 47
+--    117500,-- 48
+--    122400,-- 49
+--    127400 -- 50
 }
 
-ENABLE_FIRST_BLOOD = true               -- Should we enable first blood for the first kill in this game?
+ENABLE_FIRST_BLOOD = false               -- Should we enable first blood for the first kill in this game?
 HIDE_KILL_BANNERS = false               -- Should we hide the kill banners that show when a player is killed?
-LOSE_GOLD_ON_DEATH = false               -- Should we have players lose the normal amount of dota gold on death?
+LOSE_GOLD_ON_DEATH = true               -- Should we have players lose the normal amount of dota gold on death?
 SHOW_ONLY_PLAYER_INVENTORY = false      -- Should we only allow players to see their own inventory even when selecting other units?
 DISABLE_STASH_PURCHASING = false        -- Should we prevent players from being able to buy items into their stash when not at a shop?
 DISABLE_ANNOUNCER = false               -- Should we disable the announcer from working in the game?

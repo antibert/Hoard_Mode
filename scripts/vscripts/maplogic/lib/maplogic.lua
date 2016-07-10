@@ -18,12 +18,12 @@ local errorInitCalledTwice = 'Please ensure you only make a single call to mapLo
 local messageStarting = 'Map Logic module is trying to init...'
 
 -- Create the map logic class
-if not mapLogic then
-	mapLogic = class({})
+if mapLogic == nil then
+	_G.mapLogic = class({})
 end
 
 -- Function that will setup stat collection
-function mapLogic:Init()
+function mapLogic:Init(keys)
 	-- Only allow init to be run once
 	if self.DONE_INIT then
 		print(printPrefix .. errorInitCalledTwice)
@@ -40,7 +40,7 @@ function mapLogic:Init()
 	print(printPrefix .. messageStarting)
 
 	self.MAP = GetMapName()
-	self:SetDifficultyValues()
+	self:SetDifficultyValues(keys)
 	self:SetFriendlyBuildings()
 	self:SetEnemyBuildings()
 
@@ -48,21 +48,21 @@ function mapLogic:Init()
 end
 
 -- Function that will set various settings based on difficulty
-function mapLogic:SetDifficultyValues()
-	if self.MAP == 'Horde_5p_easy' then
+function mapLogic:SetDifficultyValues(keys)
+	if self.MAP == 'Horde_5p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_EASY
-	elseif self.MAP == 'Horde_4p_medium' then
+	elseif self.MAP == 'Horde_4p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_MEDIUM
-	elseif self.MAP == 'Horde_4p_hard' then
-		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_HARD
-	elseif self.MAP == 'Horde_4p_ultra' then
-		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_ULTRA
-	elseif self.MAP == 'Horde_2p_easy' then
+	elseif self.MAP == 'Horde_2p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_MEDIUM
 		self.HAS_BOT = false
 		self.HAS_TOP = false
 	else
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_EASY
+	end
+
+	if keys.DIFFICULTY ~= nil then
+		self.DIFFICULTY = keys.DIFFICULTY
 	end
 end
 

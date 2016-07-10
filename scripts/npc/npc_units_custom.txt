@@ -459,7 +459,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"jakiro_liquid_fire"			// Ability 1
 		"Ability2"					""			// Ability 2
-		"Ability3"					"generic_gold_bag_fountain_50"			// Ability 3
+		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
 		// Armor
@@ -2184,7 +2184,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"harpy_storm_chain_lightning"			// Ability 1
-		"Ability2"					"generic_gold_bag_fountain_50"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -2642,7 +2642,7 @@
 	
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"16"		// Experience earn.
+		"BountyXP"					"45"		// Experience earn.
 		"BountyGoldMin"				"15"			// Gold earned min.
 		"BountyGoldMax"				"19"			// Gold earned max.
 	
@@ -2745,7 +2745,7 @@
 	
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"16"		// Experience earn.
+		"BountyXP"					"45"		// Experience earn.
 		"BountyGoldMin"				"15"			// Gold earned min.
 		"BountyGoldMax"				"19"			// Gold earned max.
 	
@@ -3302,7 +3302,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"generic_gold_bag_fountain_5000"			// Ability 1
+		"Ability1"					"generic_gold_bag_fountain_50"			// Ability 1
 		"Ability2"					"hulk_arcane_armor"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -3407,7 +3407,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"hulk_arcane_armor"			// Ability 1
-		"Ability2"					"generic_gold_bag_fountain_50"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -5300,7 +5300,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creature_fire_breath"	// Ability 1.
-		"Ability2"					"generic_gold_bag_fountain_5000"			// Ability 2.
+		"Ability2"					"generic_gold_bag_fountain_50"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -6248,7 +6248,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"satyr_trickster_purge"			// Ability 1
-		"Ability2"					"generic_gold_bag_fountain_50"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -6348,7 +6348,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					"generic_gold_bag_fountain_5000"			// Ability 1.
+		"Ability1"					""			// Ability 1.
 		"Ability2"					"lone_druid_spirit_bear_entangle"			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -6884,7 +6884,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"creature_aura_health_regen"	// Ability 1
-		"Ability2"					"generic_gold_bag_fountain_5000"			// Ability 2
+		"Ability2"					"generic_gold_bag_fountain_50"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -8343,7 +8343,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"polar_furbolg_ursa_warrior_thunder_clap"			// Ability 1.
-		"Ability2"					"generic_gold_bag_fountain_5000"			// Ability 2.
+		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
@@ -9746,7 +9746,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"tiny_craggy_exterior"			// Ability 1.
-		"Ability2"					"generic_gold_bag_fountain_50"			// Ability 2.
+		"Ability2"					""			// Ability 2.
 		"Ability3"					"tiny_avalanche"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.

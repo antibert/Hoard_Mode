@@ -2,7 +2,8 @@
 -- It can be used to pre-initialize any values/tables that will be needed later
 function GameMode:_InitGameMode()
   GameRules:EnableCustomGameSetupAutoLaunch( true )
-  GameRules:SetCustomGameSetupAutoLaunchDelay( 0 )
+  GameRules:SetCustomGameSetupAutoLaunchDelay( 15 )
+
   -- Setup rules
   GameRules:SetHeroRespawnEnabled( ENABLE_HERO_RESPAWN )
   GameRules:SetUseUniversalShopMode( UNIVERSAL_SHOP_MODE )
@@ -92,6 +93,8 @@ function GameMode:_InitGameMode()
   ListenToGameEvent("dota_npc_goal_reached", Dynamic_Wrap(GameMode, 'OnNPCGoalReached'), self)
 
   ListenToGameEvent("player_chat", Dynamic_Wrap(GameMode, 'OnPlayerChat'), self)
+
+  CustomGameEventManager:RegisterListener( "setting_vote", 	Dynamic_Wrap(GameMode, "OnSettingVote"))
   
   --ListenToGameEvent("dota_tutorial_shop_toggled", Dynamic_Wrap(GameMode, 'OnShopToggled'), self)
 
@@ -122,6 +125,7 @@ function GameMode:_InitGameMode()
   -- Initialized tables for tracking state
   self.bSeenWaitForPlayers = false
   self.vUserIds = {}
+  self.VoteTable 			= {}
 
   DebugPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')
 end
@@ -141,7 +145,6 @@ function GameMode:_CaptureGameMode()
     mode:SetTopBarTeamValuesOverride ( USE_CUSTOM_TOP_BAR_VALUES )
     mode:SetTopBarTeamValuesVisible( TOP_BAR_VISIBLE )
     mode:SetUseCustomHeroLevels ( USE_CUSTOM_HERO_LEVELS )
-    mode:SetCustomHeroMaxLevel ( MAX_LEVEL )
     mode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
 
     mode:SetBotThinkingEnabled( USE_STANDARD_DOTA_BOT_THINKING )

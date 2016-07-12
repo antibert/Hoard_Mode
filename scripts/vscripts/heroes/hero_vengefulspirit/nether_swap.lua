@@ -24,4 +24,14 @@ function NetherSwap( keys )
 
 	-- Stops the current action of the target
 	target:Interrupt()
+
+	if not target:IsConsideredHero() then
+		target:Kill(ability, caster)
+	end
+
+	if caster:HasScepter() then
+		local cooldown = ability:GetLevelSpecialValueFor("nether_swap_cooldown_scepter", ability:GetLevel() - 1)
+		print('nether_swap_cooldown_scepter'..cooldown)
+		ability:StartCooldown(cooldown)
+	end
 end

@@ -171,10 +171,10 @@ function Spawners:StartSpawners(difficulty)
 -------------------- Spider Wave
 Timers:CreateTimer("cool", {
 		useGameTime = true,
-		endTime = 210,
+		endTime = 180,
 		callback = function()
 			Spawners:SpawnCoolSpiders()
-			return 38.0
+			return 23.0
 		end
 	})
 	Timers:CreateTimer(450, function()
@@ -182,10 +182,10 @@ Timers:CreateTimer("cool", {
 	end)
 Timers:CreateTimer("spiders", {
 		useGameTime = true,
-		endTime = 270,
+		endTime = 250,
 		callback = function()
 			Spawners:SpawnSpiders()
-			return 23.0
+			return 30.0
 		end
 	})
 	Timers:CreateTimer(450, function()
@@ -196,7 +196,7 @@ Timers:CreateTimer("mini", {
 		endTime = 210,
 		callback = function()
 			Spawners:SpawnMiniSpiders()
-			return 23.0
+			return 17.0
 		end
 	})
 	Timers:CreateTimer(450, function()
@@ -205,10 +205,10 @@ Timers:CreateTimer("mini", {
 
 	Timers:CreateTimer("big", {
 		useGameTime = true,
-		endTime = 330,
+		endTime = 360,
 		callback = function()
 			Spawners:SpawnBigSpiders()
-			return 55.0
+			return 40.0
 		end
 	})
 	Timers:CreateTimer(450, function()
@@ -232,7 +232,7 @@ Timers:CreateTimer("mini", {
 	end)
 	Timers:CreateTimer("hulkmedium", {
 		useGameTime = true,
-		endTime = 200,
+		endTime = 240,
 		callback = function()
 			Spawners:SpawnHulkMedium()
 			return 30.0
@@ -244,7 +244,7 @@ Timers:CreateTimer("mini", {
 	
 	Timers:CreateTimer("hulkbig", {
 		useGameTime = true,
-		endTime = 275,
+		endTime = 360,
 		callback = function()
 			Spawners:SpawnHulkBig()
 			return 50.0
@@ -256,7 +256,7 @@ Timers:CreateTimer("mini", {
 	
 	Timers:CreateTimer("kappa", {
 		useGameTime = true,
-		endTime = 310,
+		endTime = 360,
 		callback = function()
 			Spawners:SpawnKappa()
 			return 200.0
@@ -268,7 +268,7 @@ Timers:CreateTimer("mini", {
 	
 	Timers:CreateTimer("babykappa", {
 		useGameTime = true,
-		endTime = 200,
+		endTime = 210,
 		callback = function()
 			Spawners:SpawnBabyKappa()
 			return 40.0
@@ -468,7 +468,7 @@ Timers:CreateTimer("mini", {
 			Spawners:SpawnTreesTop()
 			Spawners:SpawnTreesMid()
 			Spawners:SpawnTreesBot()
-			return 12.0
+			return 20.0
 		end
 	})
 	Timers:CreateTimer(1200, function()
@@ -746,7 +746,7 @@ Timers:CreateTimer("mini", {
 			Spawners:SpawnGuardTop()
 			Spawners:SpawnGuardMid()
 			Spawners:SpawnGuardBot()
-			return 23.0
+			return 27.0
 		end
 	})
 	Timers:CreateTimer(1680, function()
@@ -760,7 +760,7 @@ Timers:CreateTimer("mini", {
 		Spawners:SpawnTrollTop()
 		Spawners:SpawnTrollMid()
 		Spawners:SpawnTrollBot()
-			return 23.0
+			return 27.0
 		end
 	})
 	Timers:CreateTimer(1680, function()
@@ -777,7 +777,7 @@ Timers:CreateTimer("mini", {
 		endTime = 1440,
 		callback = function()
 			Spawners:SpawnRippers()
-			return 23.0
+			return 27.0
 		end
 	})
 	Timers:CreateTimer(1680, function()
@@ -795,7 +795,7 @@ Timers:CreateTimer("mini", {
 			Spawners:SpawnCentaurTop()
 			Spawners:SpawnCentaurMid()
 			Spawners:SpawnCentaurBot()
-			return 30.0
+			return 33.0
 		end
 	})
 	Timers:CreateTimer(1680, function()
@@ -912,7 +912,7 @@ Timers:CreateTimer("mini", {
 			Spawners:SpawnStalkerTop()
 			Spawners:SpawnStalkerMid()
 			Spawners:SpawnStalkerBot()
-			return 20.0
+			return 27.0
 		end
 	})
 	Timers:CreateTimer(2000, function()

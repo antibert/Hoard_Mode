@@ -9,6 +9,7 @@ All Maps:
 -- Removed gold loot bag drops from several enemies
 -- Increased XP value of friendly creeps from 19 to 45 xp (matters if Lich sacrifices them)
 -- Higher level friendly creeps grant +20 xp
+-- Rebalanced gold, xp, and timings of several wave options to make them worth roughly the same (for example, zombies used to give more than twice the gold of spiders)
 
 Heroes:
 // Arc Warden

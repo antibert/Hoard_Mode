@@ -5018,7 +5018,7 @@
 			"04"
             {
                 "var_type"				"FIELD_INTEGER"
-                "cooldown_melee"		"0"
+                "cooldown_melee"		"0.6"
             }
             "05"
             {

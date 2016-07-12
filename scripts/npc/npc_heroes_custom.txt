@@ -477,7 +477,7 @@
 	{
 		"override_hero"			"npc_dota_hero_vengefulspirit"
 		"Ability1"				"vengefulspirit_magic_missile_datadriven"
-		"Ability4"				"vengefulspirit_command_aura_datadriven"
+		"Ability4"				"vengefulspirit_nether_swap_datadriven"
 	}
 	//=================================================================================================================
 	// HERO: Venomancer

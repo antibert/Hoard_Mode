@@ -11,28 +11,10 @@ Heroes:
 // Invoker
 -- Now uses the standard attribute bonus that everybody else uses
 
-// Queen of Pain
--- Added radius to the target indicator on Shadow Strike
-
-// Slark
--- Removed illusion ability to proc essence shift
-
-// Warlock
--- Removed erroneous damage tooltip on Upheaval
 
 Items:
-// Black King Bar
--- Cooldown reduced from 40/45/50/55/60/65 to 55 seconds
-// Boots of Travel 2
--- Channel time reduced from 3 to 2 seconds
-// Hand of Midas
--- Cooldown increased from 60 to 100 (vanilla)
-// Moon Shard
--- Fixed tooltip mentioning stacking
-// Relic
--- Cost reduced from 4500 to 3800 (vanilla)
-// Shivas Guard
--- Cooldown reduced from 65 to 30 (vanilla)
+// Heart of Tarrasque
+-- Melee heroes now have a 0.6 second cooldown when taking damage
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

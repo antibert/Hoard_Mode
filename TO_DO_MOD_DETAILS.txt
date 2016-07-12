@@ -5,8 +5,9 @@ Next Update Patch Notes:
 -- Fixed the allied creep spawn
 
 Heroes:
-// Arc Warden
--- Moon Shards and Upgrade Tools no longer do anything if used by the duplicate
+// Vengeful Spirit
+-- Replaced ultimate with Nether Swap
+-- Nether Swap now instantly kills non-boss units that are swapped
 
 // Invoker
 -- Now uses the standard attribute bonus that everybody else uses

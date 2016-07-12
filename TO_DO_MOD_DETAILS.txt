@@ -21,6 +21,9 @@ Heroes:
 // Queen of Pain
 -- Added radius to the target indicator on Shadow Strike
 
+// Slark
+-- Removed illusion ability to proc essence shift
+
 // Warlock
 -- Removed erroneous damage tooltip on Upheaval
 

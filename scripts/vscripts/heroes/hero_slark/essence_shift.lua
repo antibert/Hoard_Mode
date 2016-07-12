@@ -6,7 +6,7 @@
 	Additional parameters: keys.StatLoss
 ================================================================================================================= ]]
 function modifier_slark_essence_shift_datadriven_on_attack_landed(keys)
-	if not keys.target:IsTower() and not keys.target:IsBuilding() and not (keys.target:GetTeam() == keys.caster:GetTeam()) then
+	if keys.caster:IsRealHero() and not keys.target:IsTower() and not keys.target:IsBuilding() and not (keys.target:GetTeam() == keys.caster:GetTeam()) then
 		--For the affected enemy, increment their visible counter modifier's stack count.
 		local previous_stack_count = 0
 		if keys.target:HasModifier("modifier_slark_essence_shift_datadriven_debuff_counter") then

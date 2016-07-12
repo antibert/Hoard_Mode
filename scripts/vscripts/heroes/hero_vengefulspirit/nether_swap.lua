@@ -32,6 +32,7 @@ function NetherSwap( keys )
 	if caster:HasScepter() then
 		local cooldown = ability:GetLevelSpecialValueFor("nether_swap_cooldown_scepter", ability:GetLevel() - 1)
 		print('nether_swap_cooldown_scepter'..cooldown)
+		ability:EndCooldown()
 		ability:StartCooldown(cooldown)
 	end
 end

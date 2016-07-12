@@ -222,7 +222,7 @@ require('Spawners2p')
 -- function that sets the timers for all the wave spawns
 function mapLogic:SetSpawns()
 	ShowMessage('Map name when called upon in the test client:' .. GetMapName())
-	if GetMapName() == 'Horde_2p_easy' then
+	if GetMapName() == 'Horde_2p' then
 		Spawners2p:StartSpawners(self.DIFFICULTY)
 		print(" Loading Two Player Map Spawners")
 	else

@@ -13,9 +13,6 @@ Heroes:
 -- Nether Turret can now be self-destructed
 -- Added Aghanim Scepter upgrade to Nether Turrets, causing them to generate a Nether Blast of Pugna's level when they perish (whether via self-destruct, resummon, or due to damage)
 
-// Rubick
--- Stolen Summon Wolves and Nether Turrets no longer share unit limits with the original heroes
-
 Items:
 // Shiva's Armaments
 -- Fixed tooltip of aura debuff to have red border

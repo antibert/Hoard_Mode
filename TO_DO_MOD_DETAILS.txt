@@ -1,21 +1,24 @@
 Next Update Patch Notes:
 
-1.19a
-2P Map:
--- Fixed the allied creep spawn
+1.19b
+Creeps:
+-- Skeleton Boss has Wraithfire Blast instead of max HP aura
 
 Heroes:
-// Vengeful Spirit
--- Replaced ultimate with Nether Swap
--- Nether Swap now instantly kills non-boss units that are swapped
+// Pugna
+-- Nether Turret unit cap changed to 2/2/3/3
+-- Nether Turret attack speed rescaled to 2.4/1.2/0.6/0.3
+-- Nether Turret hit points reduced to 300/500/700/900
+-- Nether Turret duration reduced to 60 seconds
+-- Nether Turret can now be self-destructed
+-- Added Aghanim Scepter upgrade to Nether Turrets, causing them to generate a Nether Blast of Pugna's level when they perish (whether via self-destruct, resummon, or due to damage)
 
-// Invoker
--- Now uses the standard attribute bonus that everybody else uses
-
+// Rubick
+-- Stolen Summon Wolves and Nether Turrets no longer share unit limits with the original heroes
 
 Items:
-// Heart of Tarrasque
--- Melee heroes now have a 0.6 second cooldown when taking damage
+// Shiva's Armaments
+-- Fixed tooltip of aura debuff to have red border
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

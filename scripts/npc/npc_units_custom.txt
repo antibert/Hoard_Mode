@@ -2822,7 +2822,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"spooki_hp_aura"	        // Ability 1.
+		"Ability1"					"skeleton_king_hellfire_blast_datadriven"	        // Ability 1.
 		"Ability2"					"necrolyte_heartstopper_aura"	 		// Ability 2.
 		"Ability3"					"generic_gold_bag_fountain_500"			// Ability 3.
 		"Ability4"					"doom_bringer_doom"			// Ability 4.
@@ -2910,6 +2910,10 @@
 				{
 					"Name"      		  "doom_bringer_doom"
 				}
+				"Ability2"
+                {
+                    "Name"      		  "skeleton_king_hellfire_blast_datadriven"
+                }
 			}
 			"DefaultState"				"Invade"
 	
@@ -9277,7 +9281,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"pugna_nether_ward_datadriven_suicide"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -9288,7 +9292,7 @@
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"5"		// Physical protection.
+		"ArmorPhysical"				"0"		// Physical protection.
 		"MagicalResistance"			"80"			// Magical protection.
 	
 		// Attack
@@ -9297,7 +9301,7 @@
 		"AttackDamageMin"			"150"		// Damage range min.
 		"AttackDamageMax"			"170"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"2.1"			// Speed of attack.
+		"AttackRate"				"2.4"			// Speed of attack.
 		"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 		"AttackRange"				"700"		// Range within a target can be attacked.
@@ -9335,7 +9339,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1500"		// Base health.
+		"StatusHealth"				"300"		// Base health.
 		"StatusHealthRegen"			"3"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusStartingMana"		"0"			// Base mana.
@@ -9368,7 +9372,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"pugna_nether_ward_datadriven_suicide"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -9379,7 +9383,7 @@
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"8"		// Physical protection.
+		"ArmorPhysical"				"2"		// Physical protection.
 		"MagicalResistance"			"80"			// Magical protection.
 	
 		// Attack
@@ -9388,7 +9392,7 @@
 		"AttackDamageMin"			"150"		// Damage range min.
 		"AttackDamageMax"			"170"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"1.5"			// Speed of attack.
+		"AttackRate"				"1.2"			// Speed of attack.
 		"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 		"AttackRange"				"800"		// Range within a target can be attacked.
@@ -9426,7 +9430,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1500"		// Base health.
+		"StatusHealth"				"500"		// Base health.
 		"StatusHealthRegen"			"3"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusStartingMana"		"0"			// Base mana.
@@ -9459,7 +9463,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"pugna_nether_ward_datadriven_suicide"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -9470,7 +9474,7 @@
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"11"		// Physical protection.
+		"ArmorPhysical"				"4"		// Physical protection.
 		"MagicalResistance"			"80"			// Magical protection.
 	
 		// Attack
@@ -9479,7 +9483,7 @@
 		"AttackDamageMin"			"150"		// Damage range min.
 		"AttackDamageMax"			"170"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"0.9"			// Speed of attack.
+		"AttackRate"				"0.6"			// Speed of attack.
 		"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 		"AttackRange"				"900"		// Range within a target can be attacked.
@@ -9517,7 +9521,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1500"		// Base health.
+		"StatusHealth"				"700"		// Base health.
 		"StatusHealthRegen"			"3"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusStartingMana"		"0"			// Base mana.
@@ -9550,7 +9554,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		
-		"Ability1"					""			// Ability 1.
+		"Ability1"					"pugna_nether_ward_datadriven_suicide"			// Ability 1.
 		"Ability2"					""			// Ability 2.
 		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
@@ -9561,7 +9565,7 @@
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"14"		// Physical protection.
+		"ArmorPhysical"				"6"		// Physical protection.
 		"MagicalResistance"			"80"			// Magical protection.
 	
 		// Attack
@@ -9608,7 +9612,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1500"		// Base health.
+		"StatusHealth"				"900"		// Base health.
 		"StatusHealthRegen"			"3"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusStartingMana"		"0"			// Base mana.

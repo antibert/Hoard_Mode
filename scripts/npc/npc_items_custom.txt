@@ -756,6 +756,8 @@
 			}			
 			"magic_null"
 			{
+				"IsDebuff"              "1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%null_amount"

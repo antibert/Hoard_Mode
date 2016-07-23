@@ -6078,7 +6078,6 @@
 
 				"Duration"	"%wolf_duration"
 				"UnitCount"	"%wolf_1_count / 2"
-				"UnitLimit"	"2"
 				"GrantsGold"	"1"
 				"GrantsXP"		"1"
 				"SpawnRadius"	"10"
@@ -6117,7 +6116,6 @@
 
 				"Duration"	"%wolf_duration"
 				"UnitCount"	"%wolf_2_count / 2"
-				"UnitLimit"	"2"
 				"GrantsGold"	"1"
 				"GrantsXP"		"1"
 				"SpawnRadius"	"10"
@@ -6156,7 +6154,6 @@
 
 				"Duration"	"%wolf_duration"
 				"UnitCount"	"%wolf_3_count / 2"
-				"UnitLimit"	"2"
 				"GrantsGold"	"1"
 				"GrantsXP"		"1"
 				"SpawnRadius"	"10"
@@ -6195,7 +6192,6 @@
 
 				"Duration"	"%wolf_duration"
 				"UnitCount"	"%wolf_4_count / 2"
-				"UnitLimit"	"2"
 				"GrantsGold"	"1"
 				"GrantsXP"		"1"
 				"SpawnRadius"	"10"
@@ -6401,179 +6397,179 @@
 	}
 	"phantom_assassin_stifling_dagger_datadriven"
 	{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"				"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"phantom_assassin_stifling_dagger"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"phantom_assassin_stifling_dagger"
 
-	// Precache
-	//-------------------------------------------------------------------------------------------------------------
-	"precache"
-	{
-		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
-		"particle"			"particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger.vpcf"
-		"particle"			"particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger_debuff.vpcf"
-	}
-
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1200"
-	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-	"AOERadius"						"%radius"
-
-	// Time
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"6"
-	"AbilityDuration"				"1.0 2.0 3.0 4.0"
-
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"30 25 20 15"
-
-	//Damage
-	"AbilityDamage"					"70"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "move_slow"					"-50"
-        }
-        "02"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "dagger_speed"			"1200"
-        }
-        "03"
-        {
-            "var_type"				"FIELD_FLOAT"
-            "duration"				"1 2 3 4"
-        }
-        "04"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "base_damage"			"75"
-        }
-        "05"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "attack_factor"			"-75 -60 -45 -30"
-        }
-        "06"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "attack_factor_tooltip"	"25 40 55 70"
-        }
-		"07"
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"200"
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+			"particle"			"particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger.vpcf"
+			"particle"			"particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger_debuff.vpcf"
 		}
-	}
 
-	"OnSpellStart"
-	{
-		"FireSound"
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AOERadius"						"%radius"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"6"
+		"AbilityDuration"				"1.0 2.0 3.0 4.0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"30 25 20 15"
+
+		//Damage
+		"AbilityDamage"					"70"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
 		{
-			"EffectName"		"Hero_PhantomAssassin.Dagger.Cast"
-			"Target"			"CASTER"
-		}
-		"ActOnTargets"
-		{
-			"Target"
+			"01"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "move_slow"					"-50"
+	        }
+	        "02"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "dagger_speed"			"1200"
+	        }
+	        "03"
+	        {
+	            "var_type"				"FIELD_FLOAT"
+	            "duration"				"1 2 3 4"
+	        }
+	        "04"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "base_damage"			"75"
+	        }
+	        "05"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "attack_factor"			"-75 -60 -45 -30"
+	        }
+	        "06"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "attack_factor_tooltip"	"25 40 55 70"
+	        }
+			"07"
 			{
-				"Center"  	"TARGET"
-				"Radius" 	"%radius"
-				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"200"
 			}
+		}
 
-			"Action"
+		"OnSpellStart"
+		{
+			"FireSound"
 			{
-				"TrackingProjectile"
+				"EffectName"		"Hero_PhantomAssassin.Dagger.Cast"
+				"Target"			"CASTER"
+			}
+			"ActOnTargets"
+			{
+				"Target"
 				{
-					"Target"           "TARGET"
-				    "EffectName"       "particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger.vpcf"
-				    "Dodgeable"        "1"
-				    "ProvidesVision"   "1"
-				    "VisionRadius"     "300"
-				    "MoveSpeed"        "%dagger_speed"
-				    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+					"Center"  	"TARGET"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+
+				"Action"
+				{
+					"TrackingProjectile"
+					{
+						"Target"           "TARGET"
+					    "EffectName"       "particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger.vpcf"
+					    "Dodgeable"        "1"
+					    "ProvidesVision"   "1"
+					    "VisionRadius"     "300"
+					    "MoveSpeed"        "%dagger_speed"
+					    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+					}
 				}
 			}
 		}
-	}
 
-	"OnProjectileHitUnit"
-	{
-		"ApplyModifier"
-        {
-            "ModifierName"		"modifier_stifling_dagger_attack_datadriven"
-            "Target"			"CASTER"
-        }
-
-		"Damage"
+		"OnProjectileHitUnit"
 		{
-			"Target"        "TARGET"
-			"Type"			"DAMAGE_TYPE_PHYSICAL"
-			"Damage"		"%AbilityDamage"
-		}
+			"ApplyModifier"
+	        {
+	            "ModifierName"		"modifier_stifling_dagger_attack_datadriven"
+	            "Target"			"CASTER"
+	        }
 
-		"RunScript"
-        {
-            "ScriptFile"	"heroes/hero_riki/tricks_of_the_trade.lua"
-            "Function"		"PerformAttacks"
-        }
-
-		"ApplyModifier"
-		{
-			"ModifierName"		"modifier_stifling_dagger_slow_datadriven"
-			"Target"			"TARGET"
-		}
-	}
-
-	"Modifiers"
-	{
-		"modifier_stifling_dagger_slow_datadriven"
-		{
-			"IsDebuff"	"1"
-			"Duration"	"%duration"
-
-			"EffectName"	"particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger_debuff.vpcf"
-			"EffectAttachType"	"follow_origin"
-
-			"Properties"
+			"Damage"
 			{
-				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%move_slow"
+				"Target"        "TARGET"
+				"Type"			"DAMAGE_TYPE_PHYSICAL"
+				"Damage"		"%AbilityDamage"
+			}
+
+			"RunScript"
+	        {
+	            "ScriptFile"	"heroes/hero_riki/tricks_of_the_trade.lua"
+	            "Function"		"PerformAttacks"
+	        }
+
+			"ApplyModifier"
+			{
+				"ModifierName"		"modifier_stifling_dagger_slow_datadriven"
+				"Target"			"TARGET"
 			}
 		}
 
-		"modifier_stifling_dagger_attack_datadriven"
+		"Modifiers"
 		{
-			"IsHidden"  "1"
-			"Duration"	"0.03"
-
-			"Properties"
+			"modifier_stifling_dagger_slow_datadriven"
 			{
-				"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%base_damage"
-				"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%attack_factor"
+				"IsDebuff"	"1"
+				"Duration"	"%duration"
+
+				"EffectName"	"particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger_debuff.vpcf"
+				"EffectAttachType"	"follow_origin"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%move_slow"
+				}
 			}
 
-			"States"
-            {
-                "MODIFIER_STATE_CANNOT_MISS"			"MODIFIER_STATE_VALUE_ENABLED"  //When attacking uphill, cannot miss units but can still miss buildings.
-            }
+			"modifier_stifling_dagger_attack_datadriven"
+			{
+				"IsHidden"  "1"
+				"Duration"	"0.03"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%base_damage"
+					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%attack_factor"
+				}
+
+				"States"
+	            {
+	                "MODIFIER_STATE_CANNOT_MISS"			"MODIFIER_STATE_VALUE_ENABLED"  //When attacking uphill, cannot miss units but can still miss buildings.
+	            }
+			}
 		}
 	}
-}
 	"pugna_nether_ward_datadriven"
 	{
 		// General
@@ -6585,6 +6581,8 @@
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"pugna_nether_ward"
 
+		"HasScepterUpgrade"			"1"
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastPoint"				"0.2 0.2 0.2 0.2"
@@ -6592,9 +6590,7 @@
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"3.0 3.0 3.0 3.0"
-		"AbilityDuration"				"100.0"
-		"AbilityDamage"					"260"
-
+		"AbilityDuration"				"60.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -6644,12 +6640,12 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"attack_speed"			"2.1 1.5 0.9 0.3"
+				"attack_speed"			"2.1 1.2 0.6 0.3"
 			}
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"unit_limit"			"1 1 2 3"
+				"unit_limit"			"2 2 3 3"
 			}
 		}
 
@@ -6676,12 +6672,12 @@
 			{
 				"ScriptFile"	"scripts/vscripts/heroes/hero_pugna/nether_ward.lua"
 				"Function"		"KillWard"
+				"UnitLimit"     "%unit_limit"
 			}
 
 			"SpawnUnit"
 			{
 				"UnitName"		"npc_dota_pugna_ward_hoard1"
-				"UnitLimit"		"1"
 				"Target"
 				{
 					"Center"		    "CASTER"
@@ -6701,6 +6697,11 @@
 				"SpawnRadius"	"10"
 				"OnSpawn"
 				{
+					"RunScript"
+                    {
+                        "ScriptFile"	"scripts/vscripts/heroes/hero_pugna/nether_ward.lua"
+                        "Function"		"SetUnitsMoveForward"
+                    }
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_phased"
@@ -6719,7 +6720,6 @@
 			"SpawnUnit"
 			{
 				"UnitName"		"npc_dota_pugna_ward_hoard2"
-				"UnitLimit"		"1"
 				"Target"
 				{
 					"Center"		    "CASTER"
@@ -6739,6 +6739,11 @@
 				"SpawnRadius"	"10"
 				"OnSpawn"
 				{
+					"RunScript"
+                    {
+                        "ScriptFile"	"scripts/vscripts/heroes/hero_pugna/nether_ward.lua"
+                        "Function"		"SetUnitsMoveForward"
+                    }
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_phased"
@@ -6757,7 +6762,6 @@
 			"SpawnUnit"
 			{
 				"UnitName"		"npc_dota_pugna_ward_hoard3"
-				"UnitLimit"		"2"
 				"Target"
 				{
 					"Center"		    "CASTER"
@@ -6777,6 +6781,11 @@
 				"SpawnRadius"	"10"
 				"OnSpawn"
 				{
+					"RunScript"
+                    {
+                        "ScriptFile"	"scripts/vscripts/heroes/hero_pugna/nether_ward.lua"
+                        "Function"		"SetUnitsMoveForward"
+                    }
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_phased"
@@ -6795,7 +6804,6 @@
 			"SpawnUnit"
 			{
 				"UnitName"		"npc_dota_pugna_ward_hoard4"
-				"UnitLimit"		"3"
 				"Target"
 				{
 					"Center"		    "CASTER"
@@ -6815,6 +6823,11 @@
 				"SpawnRadius"	"10"
 				"OnSpawn"
 				{
+					"RunScript"
+                    {
+                        "ScriptFile"	"scripts/vscripts/heroes/hero_pugna/nether_ward.lua"
+                        "Function"		"SetUnitsMoveForward"
+                    }
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_phased"
@@ -6898,6 +6911,118 @@
 			}
 		}
 	}
+	"pugna_nether_ward_datadriven_suicide"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+        "FightRecapLevel"				"1"
+        "AbilityTextureName"			"pugna_nether_blast"
+        "AOERadius"                     "500"
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "particle"  "particles/units/heroes/hero_pugna/pugna_netherblast.vpcf"
+            "particle"  "particles/units/heroes/hero_pugna/pugna_netherblast_pre.vpcf"
+            "soundfile" "soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
+        }
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"0"
+        "AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"180.0 170.0 160.0 150.0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"0"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "small_radius"				"200"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "big_radius"				"500"
+            }
+            "03"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "damage"					"500"
+            }
+            "04"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "partial_damage"			"260"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "respawn_time_percentage"		"0.5"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "respawn_time_percentage_tooltip"		"50"
+            }
+            // Extra
+            "07"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "vision_radius"				"400"
+            }
+            "08"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "vision_duration"			"2.0"
+            }
+        }
+
+		"Modifiers"
+		{
+	        "modifier_nether_ward_suicide"
+	        {
+	            "Passive"					"1"
+	            "IsHidden"					"1"
+	            "IsBuff"					"1"
+	            "IsPurgable"				"0"
+
+	            "OnDeath"
+	            {
+	                "RunScript"
+                    {
+                        "ScriptFile"	"heroes/hero_pugna/nether_ward.lua"
+                        "Function"		"WardExplode"
+                        "sound_explode"		"Hero_Pugna.NetherBlast"
+                        "particle_explode"	"particles/units/heroes/hero_pugna/pugna_netherblast.vpcf"
+                    }
+	            }
+	        }
+        }
+
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"heroes/hero_pugna/nether_ward.lua"
+                "Function"		"SelfDetonate"
+            }
+        }
+    }
 	"queenofpain_shadow_strike_datadriven"
 	{
 		// General

@@ -182,13 +182,6 @@ function Spawners2p:StartSpawners(difficulty)
 	})
 
 	Spawner:SpawnTimer({
-		start = 780,
-		finish = 930,
-		interval = 41,
-		spawn = Spawners2p:SpawnBigSatyrs()
-	})
-
-	Spawner:SpawnTimer({
 		start = 1270,
 		finish = 1380,
 		interval = 27,

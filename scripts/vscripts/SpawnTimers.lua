@@ -23,23 +23,51 @@ end
 require('libraries/timers')
 require('libraries/spawners')
 
+	local waveZeroDuration = 180
+	local waveDuration = 250
+	local wavePause = 50
+
+	function waveStart(waveNumber)
+		local time = 0
+		if waveNumber > 0 then
+			time = waveZeroDuration + wavePause + (waveDuration + wavePause) * (waveNumber - 1)
+		end
+		DebugPrint('waveStart '..waveNumber..' '..time)
+		return time
+	end
+
+	function waveEnd(waveNumber)
+		local time = waveZeroDuration
+		if waveNumber > 0 then
+			time = waveStart(waveNumber) + waveDuration
+		end
+		DebugPrint('waveEnd '..waveNumber..' '..time)
+		return time
+	end
+
+	function waveBoss(waveNumber)
+		local time = waveEnd(waveNumber) - 60
+		DebugPrint('waveBoss '..waveNumber..' '..time)
+		return time
+	end
+
 function Spawners:StartSpawners(difficulty)
 	
 -- BOSSES
 	Spawner:SpawnTimer({
-		start = 400,
+		start = waveBoss(1),
 		interval = 3000,
 		spawn = Spawners:SpawnRoshan()
 	})
 
 	Spawner:SpawnTimer({
-		start = 800,
+		start = waveBoss(2),
 		interval = 3000,
 		spawn = Spawners:SpawnOgreBoss()
 	})
 
 	Spawner:SpawnTimer({
-		start = 2000,
+		start = waveStart(7),
 		interval = 550,
 		spawn = Spawners:SpawnFuckYou()
 	})
@@ -47,42 +75,42 @@ function Spawners:StartSpawners(difficulty)
 -- First Wave
 	Spawner:SpawnTimer({
 		start = 0,
-		finish = 180,
+		finish = waveZeroDuration,
 		interval = 30,
 		spawn = Spawners:SpawnGnollsTop()
 	})
 
 	Spawner:SpawnTimer({
 		start = 0,
-		finish = 180,
+		finish = waveZeroDuration,
 		interval = 30,
 		spawn = Spawners:SpawnGnollsMid()
 	})
 
 	Spawner:SpawnTimer({
 		start = 0,
-		finish = 180,
+		finish = waveZeroDuration,
 		interval = 30,
 		spawn = Spawners:SpawnGnollsBot()
 	})
 
 	Spawner:SpawnTimer({
 		start = 30,
-		finish = 180,
+		finish = waveZeroDuration,
 		interval = 30,
 		spawn = Spawners:SpawnBazzTop()
 	})
 
 	Spawner:SpawnTimer({
 		start = 30,
-		finish = 180,
+		finish = waveZeroDuration,
 		interval = 30,
 		spawn = Spawners:SpawnBazzMid()
 	})
 
 	Spawner:SpawnTimer({
 		start = 30,
-		finish = 180,
+		finish = waveZeroDuration,
 		interval = 30,
 		spawn = Spawners:SpawnBazzBot()
 	})
@@ -90,21 +118,21 @@ function Spawners:StartSpawners(difficulty)
 	local rand = RandomInt(1, 3)
 	if rand == 1 then
 		Spawner:SpawnTimer({
-			start = 130,
+			start = waveBoss(0),
 			interval = 3000,
 			spawn = Spawners:SpawnBeastTop()
 		})
 
 	elseif rand == 2 then
 		Spawner:SpawnTimer({
-			start = 130,
+			start = waveBoss(0),
 			interval = 3000,
 			spawn = Spawners:SpawnBeastMid()
 		})
 
 	else
 		Spawner:SpawnTimer({
-			start = 130,
+			start = waveBoss(0),
 			interval = 3000,
 			spawn = Spawners:SpawnBeastBot()
 		})
@@ -123,46 +151,46 @@ function Spawners:StartSpawners(difficulty)
 	
 	Timers:CreateTimer("zombie", {
 		useGameTime = true,
-		endTime = 180,
+		endTime = waveStart(1),
 		callback = function()
 			Spawners:SpawnZombies()
 			return 23.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(waveEnd(1), function()
 		Spawners:StopSpawner("zombie")
 	end)
 	Timers:CreateTimer("zombie2", {
 		useGameTime = true,
-		endTime = 250,
+		endTime = waveStart(1)+40,
 		callback = function()
 			Spawners:SpawnZombies2()
 			return 30.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(waveEnd(1), function()
 		Spawners:StopSpawner("zombie2")
 	end)
 	Timers:CreateTimer("corpse", {
 		useGameTime = true,
-		endTime = 360,
+		endTime = waveStart(1)+150,
 		callback = function()
 			Spawners:SpawnCorpse()
 			return 40.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(waveEnd(1), function()
 		Spawners:StopSpawner("corpse")
 	end)
 	Timers:CreateTimer("spooki1", {
 		useGameTime = true,
-		endTime = 210,
+		endTime = waveStart(1),
 		callback = function()
 			Spawners:SpawnSpooki()
 			return 17.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(waveEnd(1), function()
 		Spawners:StopSpawner("spooki1")
 	end)
 
@@ -171,47 +199,47 @@ function Spawners:StartSpawners(difficulty)
 -------------------- Spider Wave
 Timers:CreateTimer("cool", {
 		useGameTime = true,
-		endTime = 180,
+		endTime = waveStart(1),
 		callback = function()
 			Spawners:SpawnCoolSpiders()
 			return 23.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(waveEnd(1), function()
 		Spawners:StopSpawner("cool")
 	end)
 Timers:CreateTimer("spiders", {
 		useGameTime = true,
-		endTime = 250,
+		endTime = waveStart(1)+40,
 		callback = function()
 			Spawners:SpawnSpiders()
 			return 30.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(waveEnd(1), function()
 		Spawners:StopSpawner("spiders")
 	end)
 Timers:CreateTimer("mini", {
 		useGameTime = true,
-		endTime = 210,
+		endTime = waveStart(1),
 		callback = function()
 			Spawners:SpawnMiniSpiders()
 			return 17.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(waveEnd(1), function()
 		Spawners:StopSpawner("mini")
 	end)
 
 	Timers:CreateTimer("big", {
 		useGameTime = true,
-		endTime = 360,
+		endTime = waveStart(1)+150,
 		callback = function()
 			Spawners:SpawnBigSpiders()
 			return 40.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(waveEnd(1), function()
 		Spawners:StopSpawner("big")
 	end)
 	
@@ -221,60 +249,60 @@ Timers:CreateTimer("mini", {
 
 	Timers:CreateTimer("hulk", {
 		useGameTime = true,
-		endTime = 180,
+		endTime = waveStart(1),
 		callback = function()
 			Spawners:SpawnHulk()
 			return 30.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(waveEnd(1), function()
 		Spawners:StopSpawner("hulk")
 	end)
 	Timers:CreateTimer("hulkmedium", {
 		useGameTime = true,
-		endTime = 240,
+		endTime = waveStart(1)+30,
 		callback = function()
 			Spawners:SpawnHulkMedium()
 			return 30.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(waveEnd(1), function()
 		Spawners:StopSpawner("hulkmedium")
 	end)
 	
 	Timers:CreateTimer("hulkbig", {
 		useGameTime = true,
-		endTime = 360,
+		endTime = waveStart(1)+150,
 		callback = function()
 			Spawners:SpawnHulkBig()
 			return 50.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(waveEnd(1), function()
 		Spawners:StopSpawner("hulkbig")
 	end)
 	
 	Timers:CreateTimer("kappa", {
 		useGameTime = true,
-		endTime = 360,
+		endTime = waveStart(1)+150,
 		callback = function()
 			Spawners:SpawnKappa()
 			return 200.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(waveEnd(1), function()
 		Spawners:StopSpawner("kappa")
 	end)
 	
 	Timers:CreateTimer("babykappa", {
 		useGameTime = true,
-		endTime = 210,
+		endTime = waveStart(1),
 		callback = function()
 			Spawners:SpawnBabyKappa()
 			return 40.0
 		end
 	})
-	Timers:CreateTimer(450, function()
+	Timers:CreateTimer(waveEnd(1), function()
 		Spawners:StopSpawner("babykappa")
 	end)
 	
@@ -297,38 +325,38 @@ Timers:CreateTimer("mini", {
 	
 	Timers:CreateTimer("drake", {
 		useGameTime = true,
-		endTime = 540,
+		endTime = waveStart(2)+40,
 		callback = function()
 			Spawners:SpawnDrake()
 			return 23.0
 		end
 	})
-	Timers:CreateTimer(840, function()
+	Timers:CreateTimer(waveEnd(2), function()
 		Spawners:StopSpawner("drake")
 	end)
 	Timers:CreateTimer("nyx", {
 		useGameTime = true,
-		endTime = 500,
+		endTime = waveStart(2),
 		callback = function()
 			Spawners:SpawnNyx()
 			return 30.0
 		end
 	})
-	Timers:CreateTimer(840, function()
+	Timers:CreateTimer(waveEnd(2), function()
 		Spawners:StopSpawner("nyx")
 	end)
 	Timers:CreateTimer("chicken", {
 		useGameTime = true,
-		endTime = 450,
+		endTime = waveStart(2),
 		callback = function()
 			Spawners:SpawnChicken()
 			return 100.0
 		end
 	})
-	Timers:CreateTimer(840, function()
+	Timers:CreateTimer(waveEnd(2), function()
 		Spawners:StopSpawner("chicken")
 	end)
-    Timers:CreateTimer(700, function()
+    Timers:CreateTimer(waveBoss(2)-100, function()
 		Spawners:SpawnBigNyx()
 		return 3000.0
     end)	
@@ -339,53 +367,53 @@ Timers:CreateTimer("mini", {
 
 	Timers:CreateTimer("frostogres", {
 		useGameTime = true,
-		endTime = 500,
+		endTime = waveStart(2),
 		callback = function()
 			Spawners:SpawnFrostOgres()
 			return 53.0
 		end
 	})
-	Timers:CreateTimer(840, function()
+	Timers:CreateTimer(waveEnd(2), function()
 		Spawners:StopSpawner("frostogres")
 	end)
 
 	Timers:CreateTimer("ogres", {
 		useGameTime = true,
-		endTime = 530,
+		endTime = waveStart(2)+30,
 		callback = function()
 			Spawners:SpawnOgres()
 			return 45.0
 		end
 	})
-	Timers:CreateTimer(840, function()
+	Timers:CreateTimer(waveEnd(2), function()
 		Spawners:StopSpawner("ogres")
 	end)
 	Timers:CreateTimer("minisatyrs", {
 		useGameTime = true,
-		endTime = 500,
+		endTime = waveStart(2),
 		callback = function()
 			Spawners:SpawnMiniSatyrs()
 			return 40.0
 		end
 	})
-	Timers:CreateTimer(840, function()
+	Timers:CreateTimer(waveEnd(2), function()
 		Spawners:StopSpawner("minisatyrs")
 	end)
 
 	Timers:CreateTimer("satyrs", {
 		useGameTime = true,
-		endTime = 500,
+		endTime = waveStart(2),
 		callback = function()
 			Spawners:SpawnSatyrs()
 			return 33.0
 		end
 	})
-	Timers:CreateTimer(840, function()
+	Timers:CreateTimer(waveEnd(2), function()
 		Spawners:StopSpawner("satyrs")
 	end)
 	Timers:CreateTimer("bigsatyrs", {
 		useGameTime = true,
-		endTime = 700,
+		endTime = waveBoss(2)-100,
 		callback = function()
 			Spawners:SpawnBigSatyrs()
 			return 3000
@@ -398,38 +426,38 @@ Timers:CreateTimer("mini", {
 	
 	Timers:CreateTimer("bears", {
 		useGameTime = true,
-		endTime = 540,
+		endTime = waveStart(2)+40,
 		callback = function()
 			Spawners:SpawnBears()
 			return 27.0
 		end
 	})
-	Timers:CreateTimer(840, function()
+	Timers:CreateTimer(waveEnd(2), function()
 		Spawners:StopSpawner("bears")
 	end)
 	Timers:CreateTimer("slarks", {
 		useGameTime = true,
-		endTime = 500,
+		endTime = waveStart(2),
 		callback = function()
 			Spawners:SpawnSlarks()
 			return 30.0
 		end
 	})
-	Timers:CreateTimer(840, function()
+	Timers:CreateTimer(waveEnd(2), function()
 		Spawners:StopSpawner("slarks")
 	end)
 	Timers:CreateTimer("largebears", {
 		useGameTime = true,
-		endTime = 660,
+		endTime = waveStart(2)+160,
 		callback = function()
 			Spawners:SpawnLargeBears()
 			return 27.0
 		end
 	})
-	Timers:CreateTimer(840, function()
+	Timers:CreateTimer(waveEnd(2), function()
 		Spawners:StopSpawner("largebears")
 	end)  	
-    Timers:CreateTimer(700, function()
+    Timers:CreateTimer(waveBoss(2) - 100, function()
 		Spawners:SpawnBigBear()
 		return 3000.0
     end)
@@ -452,18 +480,18 @@ Timers:CreateTimer("mini", {
 
 	Timers:CreateTimer("prophet", {
 		useGameTime = true,
-		endTime = 930,
+		endTime = waveStart(3)+20,
 		callback = function()
 			Spawners:SpawnProphet()
 			return 60.0
 		end 
 	})
-	Timers:CreateTimer(1200, function()
+	Timers:CreateTimer(waveEnd(3), function()
 		Spawners:StopSpawner("prophet")
 	end)
 	Timers:CreateTimer("tree", {
 		useGameTime = true,
-		endTime = 910,
+		endTime = waveStart(3),
 		callback = function()
 			Spawners:SpawnTreesTop()
 			Spawners:SpawnTreesMid()
@@ -471,12 +499,12 @@ Timers:CreateTimer("mini", {
 			return 20.0
 		end
 	})
-	Timers:CreateTimer(1200, function()
+	Timers:CreateTimer(waveEnd(3), function()
 		Spawners:StopSpawner("tree")
 	end)
 	Timers:CreateTimer("shroom", {
 		useGameTime = true,
-		endTime = 945,
+		endTime = waveStart(3)+35,
 		callback = function()
 			Spawners:SpawnShroomTop()
 			Spawners:SpawnShroomMid()
@@ -484,12 +512,12 @@ Timers:CreateTimer("mini", {
 			return 45.0
 		end
 	})
-	Timers:CreateTimer(1200, function()
+	Timers:CreateTimer(waveEnd(3), function()
 		Spawners:StopSpawner("shroom")
 	end)
 	Timers:CreateTimer("fang", {
 		useGameTime = true,
-		endTime = 980,
+		endTime = waveStart(3)+70,
 		callback = function()
 			Spawners:SpawnFangTop()
 			Spawners:SpawnFangMid()
@@ -497,32 +525,32 @@ Timers:CreateTimer("mini", {
 			return 25.0
 		end
 	})
-	Timers:CreateTimer(1200, function()
+	Timers:CreateTimer(waveEnd(3), function()
 		Spawners:StopSpawner("fang")
 	end)    
 	Timers:CreateTimer("thing", {
 		useGameTime = true,
-		endTime = 915,
+		endTime = waveStart(3),
 		callback = function()
 			Spawners:SpawnThing()
 			return 35.0
 		end
 	})
-	Timers:CreateTimer(1200, function()
+	Timers:CreateTimer(waveEnd(3), function()
 		Spawners:StopSpawner("thing")
 	end)
 	Timers:CreateTimer("stump", {
 		useGameTime = true,
-		endTime = 1020,
+		endTime = waveStart(3)+100,
 		callback = function()
 			Spawners:SpawnStump()
 			return 3000.0
 		end
 	})
-	Timers:CreateTimer(1200, function()
+	Timers:CreateTimer(waveEnd(3), function()
 		Spawners:StopSpawner("stump")
 	end)
-    Timers:CreateTimer(1130, function()
+    Timers:CreateTimer(waveBoss(3), function()
 		Spawners:SpawnKingTree()
 		return 3000.0
     end)
@@ -533,7 +561,7 @@ Timers:CreateTimer("mini", {
 
 	Timers:CreateTimer("rhino", {
 		useGameTime = true,
-		endTime = 980,
+		endTime = waveStart(3)+60,
 		callback = function()
 			Spawners:SpawnRhinoTop()
 			Spawners:SpawnRhinoMid()
@@ -541,12 +569,12 @@ Timers:CreateTimer("mini", {
 			return 90.0
 		end
 	})
-	Timers:CreateTimer(1200, function()
+	Timers:CreateTimer(waveEnd(3), function()
 		Spawners:StopSpawner("rhino")
 	end)
 	Timers:CreateTimer("wolffang", {
 		useGameTime = true,
-		endTime = 910,
+		endTime = waveStart(3),
 		callback = function()
 			Spawners:SpawnWolfFangTop()
 			Spawners:SpawnWolfFangMid()
@@ -554,23 +582,23 @@ Timers:CreateTimer("mini", {
 			return 37.0
 		end
 	})
-	Timers:CreateTimer(1200, function()
+	Timers:CreateTimer(waveEnd(3), function()
 		Spawners:StopSpawner("wolffang")
 	end)
 	Timers:CreateTimer("greathound", {
 		useGameTime = true,
-		endTime = 940,
+		endTime = waveStart(3)+30,
 		callback = function()
 			Spawners:SpawnGreatHound()
 			return 60.0
 		end 
 	})
-	Timers:CreateTimer(1200, function()
+	Timers:CreateTimer(waveEnd(3), function()
 		Spawners:StopSpawner("greathound")
 	end)
 	Timers:CreateTimer("packleader", {
 		useGameTime = true,
-		endTime = 980,
+		endTime = waveStart(3)+60,
 		callback = function()
 			Spawners:SpawnPackLeaderMid()
 			Spawners:SpawnPackLeaderBot()
@@ -578,12 +606,12 @@ Timers:CreateTimer("mini", {
 			return 60.0
 		end
 	})
-	Timers:CreateTimer(1200, function()
+	Timers:CreateTimer(waveEnd(3), function()
 		Spawners:StopSpawner("packleader")
 	end)
 	Timers:CreateTimer("hound", {
 		useGameTime = true,
-		endTime = 970,
+		endTime = waveStart(3)+45,
 		callback = function()
 			Spawners:SpawnHoundTop()
 			Spawners:SpawnHoundMid()
@@ -591,21 +619,21 @@ Timers:CreateTimer("mini", {
 			return 25.0
 		end
 	})
-	Timers:CreateTimer(1200, function()
+	Timers:CreateTimer(waveEnd(3), function()
 		Spawners:StopSpawner("hound")
 	end)    
 	Timers:CreateTimer("rabid", {
 		useGameTime = true,
-		endTime = 915,
+		endTime = waveStart(3),
 		callback = function()
 			Spawners:SpawnRabid()
 			return 30.0
 		end
 	})
-	Timers:CreateTimer(1200, function()
+	Timers:CreateTimer(waveEnd(3), function()
 		Spawners:StopSpawner("rabid")
 	end)
-    Timers:CreateTimer(1130, function()
+    Timers:CreateTimer(waveBoss(3), function()
 		Spawners:SpawnKingWolf()
 		return 3000.0
     end)
@@ -622,13 +650,13 @@ Timers:CreateTimer("mini", {
 	if rand == 1 then
 
 	---------------- Golem Wave
-    Timers:CreateTimer(1310, function()
+    Timers:CreateTimer(waveBoss(4), function()
 		Spawners:SpawnBigSplitter()
 		return 3000.0
     end)	
 	Timers:CreateTimer("splitter", {
 		useGameTime = true,
-		endTime = 1260,
+		endTime = waveStart(4),
 		callback = function()
 			Spawners:SpawnSplitterTop()
 			Spawners:SpawnSplitterMid()
@@ -636,13 +664,13 @@ Timers:CreateTimer("mini", {
 			return 34.0
 		end
 	})
-	Timers:CreateTimer(1380, function()
+	Timers:CreateTimer(waveEnd(4), function()
 		Spawners:StopSpawner("splitter")
 	end)
 
 	Timers:CreateTimer("rock", {
 		useGameTime = true,
-		endTime = 1240,
+		endTime = waveStart(4),
 		callback = function()
 			Spawners:SpawnRockTop()
 			Spawners:SpawnRockMid()
@@ -650,7 +678,7 @@ Timers:CreateTimer("mini", {
 			return 120.0
 		end
 	})
-	Timers:CreateTimer(1380, function()
+	Timers:CreateTimer(waveEnd(4), function()
 		Spawners:StopSpawner("rock")
 	end)
 
@@ -658,13 +686,13 @@ Timers:CreateTimer("mini", {
 	
 	else
 	
-    Timers:CreateTimer(1310, function()
+    Timers:CreateTimer(waveBoss(4), function()
 		Spawners:SpawnBigGhost()
 		return 3000.0
     end)
 	Timers:CreateTimer("ghostmeele", {
 		useGameTime = true,
-		endTime = 1270,
+		endTime = waveStart(4),
 		callback = function()
 			Spawners:SpawnGhostMeeleTop()
 		    Spawners:SpawnGhostMeeleMid()
@@ -672,12 +700,12 @@ Timers:CreateTimer("mini", {
 			return 23.0
 		end
 	})
-	Timers:CreateTimer(1380, function()
+	Timers:CreateTimer(waveEnd(4), function()
 		Spawners:StopSpawner("ghostmeele")
 	end)
 	Timers:CreateTimer("ghostmeelesmall", {
 		useGameTime = true,
-		endTime = 1270,
+		endTime = waveStart(4),
 		callback = function()
 			Spawners:SpawnGhostMeeleSmallTop()
 		    Spawners:SpawnGhostMeeleSmallMid()
@@ -685,12 +713,12 @@ Timers:CreateTimer("mini", {
 			return 17.0
 		end
 	})
-	Timers:CreateTimer(1380, function()
+	Timers:CreateTimer(waveEnd(4), function()
 		Spawners:StopSpawner("ghostmeelesmall")
 	end)
 	Timers:CreateTimer("ghost", {
 		useGameTime = true,
-		endTime = 1270,
+		endTime = waveStart(4),
 		callback = function()
 			Spawners:SpawnGhostTop()
 			Spawners:SpawnGhostMid()
@@ -698,29 +726,29 @@ Timers:CreateTimer("mini", {
 			return 14.0
 		end
 	})
-	Timers:CreateTimer(1380, function()
+	Timers:CreateTimer(waveEnd(4), function()
 		Spawners:StopSpawner("ghost")
 	end)
 	Timers:CreateTimer("ghost2", {
 		useGameTime = true,
-		endTime = 1315,
+		endTime = waveStart(4)+45,
 		callback = function()
 			Spawners:SpawnGhostMeele2()
 			return 40.0
 		end
 	})
-	Timers:CreateTimer(1380, function()
+	Timers:CreateTimer(waveEnd(4), function()
 		Spawners:StopSpawner("ghost2")
 	end)
 	Timers:CreateTimer("bane", {
 		useGameTime = true,
-		endTime = 1270,
+		endTime = waveStart(4)+45,
 		callback = function()
 			Spawners:SpawnGhostBane()
 			return 60.0
 		end
 	})
-	Timers:CreateTimer(1380, function()
+	Timers:CreateTimer(waveEnd(4), function()
 		Spawners:StopSpawner("bane")
 	end)
 		
@@ -741,7 +769,7 @@ Timers:CreateTimer("mini", {
 
 	Timers:CreateTimer("guard", {
 		useGameTime = true,
-		endTime = 1440,
+		endTime = waveStart(5),
 		callback = function()
 			Spawners:SpawnGuardTop()
 			Spawners:SpawnGuardMid()
@@ -749,13 +777,13 @@ Timers:CreateTimer("mini", {
 			return 27.0
 		end
 	})
-	Timers:CreateTimer(1680, function()
+	Timers:CreateTimer(waveEnd(5), function()
 		Spawners:StopSpawner("guard")
 	end)
 	
 	Timers:CreateTimer("troll", {
 		useGameTime = true,
-		endTime = 1445,
+		endTime = waveStart(5)+5,
 		callback = function()
 		Spawners:SpawnTrollTop()
 		Spawners:SpawnTrollMid()
@@ -763,24 +791,24 @@ Timers:CreateTimer("mini", {
 			return 27.0
 		end
 	})
-	Timers:CreateTimer(1680, function()
+	Timers:CreateTimer(waveEnd(5), function()
 		Spawners:StopSpawner("troll")
 	end)
   
-   Timers:CreateTimer(1600, function()
+   Timers:CreateTimer(waveBoss(5), function()
 		Spawners:SpawnGuardBoss()
 		return 3000.0
     end)
 
 	Timers:CreateTimer("rippers", {
 		useGameTime = true,
-		endTime = 1440,
+		endTime = waveStart(5),
 		callback = function()
 			Spawners:SpawnRippers()
 			return 27.0
 		end
 	})
-	Timers:CreateTimer(1680, function()
+	Timers:CreateTimer(waveEnd(5), function()
 		Spawners:StopSpawner("rippers")
 	end)
 	
@@ -790,7 +818,7 @@ Timers:CreateTimer("mini", {
 	
 	Timers:CreateTimer("centaur", {
 		useGameTime = true,
-		endTime = 1440,
+		endTime = waveStart(5),
 		callback = function()
 			Spawners:SpawnCentaurTop()
 			Spawners:SpawnCentaurMid()
@@ -798,12 +826,12 @@ Timers:CreateTimer("mini", {
 			return 33.0
 		end
 	})
-	Timers:CreateTimer(1680, function()
+	Timers:CreateTimer(waveEnd(5), function()
 		Spawners:StopSpawner("centaur")
 	end)
 	Timers:CreateTimer("minion", {
 		useGameTime = true,
-		endTime = 1440,
+		endTime = waveStart(5),
 		callback = function()
 			Spawners:SpawnMinionTop()
 			Spawners:SpawnMinionMid()
@@ -811,23 +839,23 @@ Timers:CreateTimer("mini", {
 			return 36.0
 		end
 	})
-	Timers:CreateTimer(1680, function()
+	Timers:CreateTimer(waveEnd(5), function()
 		Spawners:StopSpawner("minion")
 	end)
 	Timers:CreateTimer("bigdrake", {
 		useGameTime = true,
-		endTime = 1440,
+		endTime = waveStart(5)+20,
 		callback = function()
 			Spawners:SpawnBigDrake()
 			return 46.0
 		end
 	})
-	Timers:CreateTimer(1680, function()
+	Timers:CreateTimer(waveEnd(5), function()
 		Spawners:StopSpawner("bigdrake")
 	end)
 
 	
-    Timers:CreateTimer(1600, function()
+    Timers:CreateTimer(waveBoss(5), function()
 		Spawners:SpawnCentaurBoss()
 		return 3000.0
     end)
@@ -850,7 +878,7 @@ Timers:CreateTimer("mini", {
 
 	Timers:CreateTimer("demon", {
 		useGameTime = true,
-		endTime = 1730,
+		endTime = waveStart(6),
 		callback = function()
 			Spawners:SpawnDemonTop()
 			Spawners:SpawnDemonMid()
@@ -858,12 +886,12 @@ Timers:CreateTimer("mini", {
 			return 38.0
 		end
 	})
-	Timers:CreateTimer(2000, function()
+	Timers:CreateTimer(waveEnd(6), function()
 		Spawners:StopSpawner("demon")
 	end)
 	Timers:CreateTimer("demondog", {
 		useGameTime = true,
-		endTime = 1730,
+		endTime = waveStart(6),
 		callback = function()
 			Spawners:SpawnDemonDogTop()
 			Spawners:SpawnDemonDogMid()
@@ -871,12 +899,12 @@ Timers:CreateTimer("mini", {
 			return 30.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
+	Timers:CreateTimer(waveEnd(6), function()
 		Spawners:StopSpawner("demondog")
 	end)
 	Timers:CreateTimer("minidemon", {
 		useGameTime = true,
-		endTime = 1730,
+		endTime = waveStart(6),
 		callback = function()
 			Spawners:SpawnMiniDemonTop()
 			Spawners:SpawnMiniDemonMid()
@@ -884,7 +912,7 @@ Timers:CreateTimer("mini", {
 			return 25.0
 		end
 	})
-	Timers:CreateTimer(2000, function()
+	Timers:CreateTimer(waveEnd(6), function()
 		Spawners:StopSpawner("minidemon")
 	end)
 	
@@ -894,7 +922,7 @@ Timers:CreateTimer("mini", {
 
 	Timers:CreateTimer("dragon", {
 		useGameTime = true,
-		endTime = 1730,
+		endTime = waveStart(6),
 		callback = function()
 			Spawners:SpawnDragonTop()
 			Spawners:SpawnDragonMid()
@@ -902,12 +930,12 @@ Timers:CreateTimer("mini", {
 			return 33.0
 		end
 	})
-	Timers:CreateTimer(2000, function()
+	Timers:CreateTimer(waveEnd(6), function()
 		Spawners:StopSpawner("dragon")
 	end)
 	Timers:CreateTimer("stalker", {
 		useGameTime = true,
-		endTime = 1740,
+		endTime = waveStart(6),
 		callback = function()
 			Spawners:SpawnStalkerTop()
 			Spawners:SpawnStalkerMid()
@@ -915,23 +943,23 @@ Timers:CreateTimer("mini", {
 			return 27.0
 		end
 	})
-	Timers:CreateTimer(2000, function()
+	Timers:CreateTimer(waveEnd(6), function()
 		Spawners:StopSpawner("stalker")
 	end)
 	Timers:CreateTimer("bird", {
 		useGameTime = true,
-		endTime = 1740,
+		endTime = waveStart(6),
 		callback = function()
 			Spawners:SpawnBird()
 			return 32.0
 		end
 	})
-	Timers:CreateTimer(2000, function()
+	Timers:CreateTimer(waveEnd(6), function()
 		Spawners:StopSpawner("bird")
 	end)
 	Timers:CreateTimer("bigbird", {
 		useGameTime = true,
-		endTime = 1740,
+		endTime = waveStart(6),
 		callback = function()
 			Spawners:SpawnBigBirdTop()
 			Spawners:SpawnBigBirdMid()
@@ -939,12 +967,12 @@ Timers:CreateTimer("mini", {
 			return 100.0
 		end
 	})
-	Timers:CreateTimer(2000, function()
+	Timers:CreateTimer(waveEnd(6), function()
 		Spawners:StopSpawner("bigbird")
 	end)	
 	Timers:CreateTimer("gargoyle", {
 		useGameTime = true,
-		endTime = 1730,
+		endTime = waveStart(6),
 		callback = function()
 			Spawners:SpawnGargoyleTop()
 			Spawners:SpawnGargoyleMid()
@@ -952,7 +980,7 @@ Timers:CreateTimer("mini", {
 			return 30.0
 		end
 	})
-	Timers:CreateTimer(2000, function()
+	Timers:CreateTimer(waveEnd(6), function()
 		Spawners:StopSpawner("gargoyle")
 	end)
 	
@@ -963,19 +991,19 @@ Timers:CreateTimer("mini", {
 
 	Timers:CreateTimer("AA", {
 		useGameTime = true,
-		endTime = 2100,
+		endTime = waveStart(7),
 		callback = function()
 			Spawners:SpawnAA()
 			return 140.0
 		end
 	})
-	Timers:CreateTimer(2250, function()
+	Timers:CreateTimer(waveEnd(7), function()
 		Spawners:StopSpawner("AA")
 	end)
 
 	Timers:CreateTimer("roshan2", {
 		useGameTime = true,
-		endTime = 2100,
+		endTime = waveStart(7),
 		callback = function()
 			Spawners:SpawnRoshTop()
 			Spawners:SpawnRoshMid()
@@ -983,12 +1011,12 @@ Timers:CreateTimer("mini", {
 			return 50.0
 		end
 	})
-	Timers:CreateTimer(2250, function()
+	Timers:CreateTimer(waveEnd(7), function()
 		Spawners:StopSpawner("roshan2")
 	end)
 	Timers:CreateTimer("lizard", {
 		useGameTime = true,
-		endTime = 2130,
+		endTime = waveStart(7),
 		callback = function()
 			Spawners:SpawnLizardTop()
 			Spawners:SpawnLizardMid()
@@ -996,18 +1024,18 @@ Timers:CreateTimer("mini", {
 			return 45.0
 		end
 	})
-	Timers:CreateTimer(2250, function()
+	Timers:CreateTimer(waveEnd(7), function()
 		Spawners:StopSpawner("lizard")
 	end)
 	Timers:CreateTimer("miniroshan", {
 		useGameTime = true,
-		endTime = 2115,
+		endTime = waveStart(7)+15,
 		callback = function()
 			Spawners:SpawnMiniRosh()
 			return 43.0
 		end
 	})
-	Timers:CreateTimer(2250, function()
+	Timers:CreateTimer(waveEnd(7), function()
 		Spawners:StopSpawner("miniroshan")
 	end)
 
@@ -1017,147 +1045,111 @@ Timers:CreateTimer("mini", {
 
 	Timers:CreateTimer("ogrebossfinal", {
 		useGameTime = true,
-		endTime = 2280,
+		endTime = waveStart(8),
 		callback = function()
 			Spawners:SpawnOgreBossBot()
 			Spawners:SpawnOgreBossTop()
 			return 150.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("ogrebossfinal")
-	end)
 	Timers:CreateTimer("bearbossfinal", {
 		useGameTime = true,
-		endTime = 2300,
+		endTime = waveStart(8)+20,
 		callback = function()
 			Spawners:SpawnBigBear()
 			return 100.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("bearbossfinal")
-	end)
 	Timers:CreateTimer("kingwolffinal", {
 		useGameTime = true,
-		endTime = 2330,
+		endTime = waveStart(8)+40,
 		callback = function()
 			Spawners:SpawnKingWolf()
 			return 70.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("kingwolffinal")
-	end)
 	Timers:CreateTimer("bigsplitter", {
 		useGameTime = true,
-		endTime = 2340,
+		endTime = waveStart(8)+60,
 		callback = function()
 			Spawners:SpawnBigSplitter()
 			return 130.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("bigsplitter")
-	end)
 	Timers:CreateTimer("ghostfinal", {
 		useGameTime = true,
-		endTime = 2410,
+		endTime = waveStart(8)+80,
 		callback = function()
 			Spawners:SpawnBigGhost()
 			return 80.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("ghostfinal")
-	end)	
 	Timers:CreateTimer("ghost3", {
 		useGameTime = true,
-		endTime = 2400,
+		endTime = waveStart(8)+100,
 		callback = function()
 			Spawners:SpawnGhostTop()
 			Spawners:SpawnGhostBot()
 			return 27.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("ghost3")
-	end)
 	Timers:CreateTimer("dragon2", {
 		useGameTime = true,
-		endTime = 2280,
+		endTime = waveStart(8)+120,
 		callback = function()
 			Spawners:SpawnDragonTop()
 			Spawners:SpawnDragonBot()
 			return 80.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("dragon2")
-	end)
 
 	Timers:CreateTimer("demon2", {
 		useGameTime = true,
-		endTime = 2280,
+		endTime = waveStart(8),
 		callback = function()
 			Spawners:SpawnDemonTop()
 			return 75.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("demon2")
-	end)
 	Timers:CreateTimer("wolffang2", {
 		useGameTime = true,
-		endTime = 2320,
+		endTime = waveStart(8)+40,
 		callback = function()
 			Spawners:SpawnWolfFangTop()
 			Spawners:SpawnWolfFangBot()
 			return 100.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("wolffang2")
-	end)
 	
 	Timers:CreateTimer("shroom2", {
 		useGameTime = true,
-		endTime = 2280,
+		endTime = waveStart(8),
 		callback = function()
 			Spawners:SpawnShroomTop()
 			Spawners:SpawnShroomBot()
 			return 43.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("shroom2")
-	end)
 	Timers:CreateTimer("zombie3", {
 		useGameTime = true,
-		endTime = 2270,
+		endTime = waveStart(8),
 		callback = function()
 			Spawners:SpawnCorpseTop()
 			return 30.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("zombie3")
-	end)			
 	Timers:CreateTimer("troll2", {
 		useGameTime = true,
-		endTime = 2260,
+		endTime = waveStart(8),
 		callback = function()
 		Spawners:SpawnTrollTop()
 		Spawners:SpawnTrollBot()
 			return 55.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("troll2")
-	end)
 	Timers:CreateTimer("splitter2", {
 		useGameTime = true,
-		endTime = 2280,
+		endTime = waveStart(8),
 		callback = function()
 			Spawners:SpawnSplitterTop()
 			Spawners:SpawnSplitterMid()
@@ -1165,56 +1157,41 @@ Timers:CreateTimer("mini", {
 			return 120.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("splitter2")
-	end)
 	Timers:CreateTimer("chickenfinal", {
 		useGameTime = true,
-		endTime = 2690,
+		endTime = waveStart(8)+190,
 		callback = function()
 			Spawners:SpawnChickenTop()
 			Spawners:SpawnChickenMid()
 			return 90.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("chickenfinal")
-	end)
 	Timers:CreateTimer("kappafinal", {
 		useGameTime = true,
-		endTime = 2690,
+		endTime = waveStart(8)+190,
 		callback = function()
 			Spawners:SpawnKappaTop()
 			Spawners:SpawnKappa()
 			return 100.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("kappafinal")
-	end)
 	Timers:CreateTimer("bigsatyrsfinal", {
 		useGameTime = true,
-		endTime = 2710,
+		endTime = waveStart(8)+240,
 		callback = function()
 			Spawners:SpawnBigSatyrs()
 			return 35.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("bigsatyrsfinal")
-	end)
 
 	Timers:CreateTimer("miniroshan", {
 		useGameTime = true,
-		endTime = 2800,
+		endTime = waveStart(8)+300,
 		callback = function()
 			Spawners:SpawnMiniRosh()
 			return 43.0
 		end
 	})
-	Timers:CreateTimer(6000, function()
-		Spawners:StopSpawner("miniroshan")
-	end)
 
 ---------------------------------------------------------------------------------------------	
 ---------------- END OF FINAL PHASE SPAWNERS --------------------------------
@@ -1268,7 +1245,7 @@ Timers:CreateTimer("mini", {
 			return 150.0
 		end
 	})
-	Timers:CreateTimer(1200, function()
+	Timers:CreateTimer(waveEnd(3), function()
 		Spawners:StopSpawner("money")
 	end) 
 	

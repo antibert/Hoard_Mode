@@ -44,11 +44,6 @@ function GameMode:OnGameRulesStateChange(keys)
       Timers:CreateTimer(line_duration, function()
         Notifications:BottomToAll( {text = "#horde_introduction_line_03", duration = line_duration, style = {color = "White"} }	)
         Notifications:BottomToAll( {text = difficulty_name, duration = line_duration, style = {color = "DodgerBlue"}, continue = true}	)
-
-        -- Third line
-        Timers:CreateTimer(line_duration, function()
-          Notifications:BottomToAll( {text = "#horde_introduction_line_04", duration = line_duration, style = {["font-size"] = "30px", color = "White"} }	)
-        end)
       end)
     end)
   end

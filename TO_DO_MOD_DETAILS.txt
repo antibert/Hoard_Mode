@@ -8,7 +8,11 @@ Dazzle
 Terrorblade
 -- Removed self cast from Sunder (it did nothing, but still put it on cooldown)
 
-
+Viper
+-- Removed split shot from Poison Attack
+-- Poison Attack now applies the poison in an aoe splash
+-- Poison Attack also applies damage from Nethertoxin to affected targets
+-- Nethertoxin now deals full damage to all units
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

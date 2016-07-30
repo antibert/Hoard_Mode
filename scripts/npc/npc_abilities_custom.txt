@@ -8249,12 +8249,13 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"poison_attack2"
+        "AOERadius"                     "%radius"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -8279,8 +8280,8 @@
 		"AbilityDamage"					"0 0 0 0"
 
 		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"0 0 0 0"
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"12"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -8289,12 +8290,12 @@
 			"01"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"duration"						"2.0 3.0 4.0 5.0"
+				"duration"						"2 2 2 2"
 			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage"						"10 25 40 55"
+				"damage"						"10 16 22 28"
 			}
 			"03"
 			{
@@ -8309,105 +8310,16 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_modifier"		"0"
+				"radius"					"225"
 			}
 			"06"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_modifier_tooltip"		"80"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"arrow_count"				"1 1 2 3"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"total_arrow_count"				"1 2 3 4"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"700"
-			}
-			"10"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"projectile_speed"		"1200"
 			}
-
-		}
-		"OnToggleOn"
-		{
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_split_shot_datadriven"
-				"Target" 		"CASTER"
-			}
-
-		}
-
-		"OnToggleOff"
-		{
-
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_split_shot_datadriven"
-				"Target"
-				{
-					"Center"	"CASTER"
-					"Flags" 	"DOTA_UNIT_TARGET_FLAG_DEAD"
-				}
-			}
-		}
-
-		"OnProjectileHitUnit"
-		{
-			"DeleteOnHit"	"1"
-
-			"FireSound"
-			{
-				"EffectName"	"Hero_Medusa.AttackSplit"
-				"Target" 		"TARGET"
-			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"			"modifier_viper_poison_attack_debuff_datadriven"
-				"Target"				"TARGET"
-			}
-
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_medusa/split_shot.lua"
-				"Function"		"SplitShotDamage"
-			}
 		}
 		"Modifiers"
 		{
-			"modifier_split_shot_datadriven"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-
-				"OnAttack"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_medusa/split_shot.lua"
-						"Function"		"SplitShotLaunch"
-						"split_shot_projectile"	"particles/units/heroes/hero_viper/viper_poison_attack.vpcf"
-					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%damage_modifier"
-				}
-			}
 			"modifier_viper_poison_attack_orb_datadriven"
 			{
 				"Passive"	"1"
@@ -8436,18 +8348,41 @@
 
 				"OnOrbImpact"
 				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_viper_poison_attack_debuff_datadriven"
-						"Target"		"TARGET"
-					}
-
 					"FireSound"
 					{
 						"EffectName"	"Hero_Viper.PoisonAttack.Target"
 						"Target"		"TARGET"
 					}
-				}
+
+                    "ActOnTargets"
+                    {
+                        "Target"
+                        {
+                            "Center"  	"TARGET"
+                            "Radius" 	"%radius"
+                            "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                            "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                        }
+
+                        "Action"
+                        {
+                            "ApplyModifier"
+                            {
+                                "Target"                "TARGET"
+                                "ModifierName"			"modifier_viper_poison_attack_debuff_datadriven"
+                                "Duration"				"%duration"
+                            }
+
+                            // Script to determine which modifier gets applied
+                            "RunScript"
+                            {
+                                "ScriptFile"	"scripts/vscripts/heroes/hero_viper/nethertoxin.lua"
+                                "Function"		"Nethertoxin"
+                                "Target"		"TARGET"
+                            }
+                        }
+                    }
+                }
 			}
 
 			"modifier_viper_poison_attack_debuff_datadriven"

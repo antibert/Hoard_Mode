@@ -13570,6 +13570,8 @@
         "FightRecapLevel"				"2"
         "AbilityTextureName"			"terrorblade_sunder"
 
+        "CastFilterRejectCaster" "1"
+
         // Time
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCooldown"				"60 45 30"

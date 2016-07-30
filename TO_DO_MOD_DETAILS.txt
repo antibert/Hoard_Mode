@@ -1,12 +1,11 @@
 Next Update Patch Notes:
 
 1.19c
-2p Map:
--- Removed miniboss satyrs
+HEROES:
+Terrorblade
+-- Removed self cast from Sunder (it did nothing, but still put it on cooldown)
 
-4/5p Maps:
--- Wave timings standardized further: first wave lasts 180 seconds, each later wave lasts 250 seconds, with a 50 second break between waves
--- Ogre boss removed, due to the shortening of waves three and four
+
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

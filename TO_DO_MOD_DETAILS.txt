@@ -2,6 +2,9 @@ Next Update Patch Notes:
 
 1.19c
 HEROES:
+Dazzle
+-- Fixed tooltip on Contagious Flamboyance (it stopped being global several patches ago)
+
 Terrorblade
 -- Removed self cast from Sunder (it did nothing, but still put it on cooldown)
 

@@ -1,6 +1,8 @@
 Next Update Patch Notes:
 
-1.19c
+1.19d
+Difficulty is now declared upon match start.
+
 HEROES:
 Dazzle
 -- Fixed tooltip on Contagious Flamboyance (it stopped being global several patches ago)

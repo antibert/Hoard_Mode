@@ -21,6 +21,37 @@ function GameMode:OnGameRulesStateChange(keys)
   GameMode:_OnGameRulesStateChange(keys)
 
   local newState = GameRules:State_Get()
+
+  if newState == DOTA_GAMERULES_STATE_PRE_GAME then
+    local initial_time = 2
+    local line_duration = 5
+
+    local difficulty_name = "Easy"
+    if _G.GameMode.DIFFICULTY == 3 then
+      difficulty_name = "Ultra"
+    elseif _G.GameMode.DIFFICULTY == 2 then
+      difficulty_name = "Hard"
+    elseif _G.GameMode.DIFFICULTY == 1 then
+        difficulty_name = "Normal"
+    end
+
+    Timers:CreateTimer(initial_time, function()
+      -- First line
+      Notifications:BottomToAll( {text = "#horde_introduction_line_01", duration = line_duration, style = {color = "White"} } )
+      Notifications:BottomToAll( {text = "#horde_introduction_line_02", duration = line_duration, style = {color = "DodgerBlue"}, continue = true}	)
+
+      -- Second line
+      Timers:CreateTimer(line_duration, function()
+        Notifications:BottomToAll( {text = "#horde_introduction_line_03", duration = line_duration, style = {color = "White"} }	)
+        Notifications:BottomToAll( {text = difficulty_name, duration = line_duration, style = {color = "DodgerBlue"}, continue = true}	)
+
+        -- Third line
+        Timers:CreateTimer(line_duration, function()
+          Notifications:BottomToAll( {text = "#horde_introduction_line_04", duration = line_duration, style = {["font-size"] = "30px", color = "White"} }	)
+        end)
+      end)
+    end)
+  end
 end
 
 -- An NPC has spawned somewhere in game.  This includes heroes

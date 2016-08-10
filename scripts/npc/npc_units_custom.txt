@@ -2825,7 +2825,7 @@
 		"Ability1"					"skeleton_king_hellfire_blast_datadriven"	        // Ability 1.
 		"Ability2"					"necrolyte_heartstopper_aura"	 		// Ability 2.
 		"Ability3"					"generic_gold_bag_fountain_500"			// Ability 3.
-		"Ability4"					"doom_bringer_doom"			// Ability 4.
+		"Ability4"					"meme_doom_datadriven"			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -2908,7 +2908,7 @@
 			{
 				"Ability1"                
 				{
-					"Name"      		  "doom_bringer_doom"
+					"Name"      		  "meme_doom_datadriven"
 				}
 				"Ability2"
                 {

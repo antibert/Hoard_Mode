@@ -1,14 +1,14 @@
 Next Update Patch Notes:
 
-1.19d
-Difficulty is now declared upon match start.
+1.19e
+Replaced Skeleton Boss's Doom with a custom version that should prevent crashes
 
 HEROES:
-Dazzle
--- Fixed tooltip on Contagious Flamboyance (it stopped being global several patches ago)
-
-Terrorblade
--- Removed self cast from Sunder (it did nothing, but still put it on cooldown)
+Storm Spirit
+-- Returned Overload to vanilla
+-- Change damage scaling of Static Remnant and increased mana cost
+-- Fixed upgraded Electric Vortex
+-- Reverted Ball Lightning damage to vanilla
 
 Viper
 -- Removed split shot from Poison Attack

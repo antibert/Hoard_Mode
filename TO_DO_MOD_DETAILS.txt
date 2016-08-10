@@ -1,20 +1,16 @@
 Next Update Patch Notes:
 
 1.19e
+BUG FIXES
 Replaced Skeleton Boss's Doom with a custom version that should prevent crashes
+Fixed cast range and cooldown of War Fury and Quelling Axe actives
+Fixed Storm Spirit's upgraded Electric Vortex
 
 HEROES:
 Storm Spirit
 -- Returned Overload to vanilla
 -- Change damage scaling of Static Remnant and increased mana cost
--- Fixed upgraded Electric Vortex
 -- Reverted Ball Lightning damage to vanilla
-
-Viper
--- Removed split shot from Poison Attack
--- Poison Attack now applies the poison in an aoe splash
--- Poison Attack also applies damage from Nethertoxin to affected targets
--- Nethertoxin now deals full damage to all units
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

@@ -41,7 +41,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15.0 13.0 11.0 9.0"
+		"AbilityCooldown"				"13.0 11.0 9.0 7.0"
 		"AbilityDuration"				"4.0"
 
 		// Cost
@@ -13576,6 +13576,7 @@
         "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
         "FightRecapLevel"				"1"
         "AbilityTextureName"			"bane_brain_sap"
+        "AOERadius"                     "%radius"
 
         // Precache
         //-------------------------------------------------------------------------------------------------------------
@@ -13601,8 +13602,6 @@
         // Cost
         //-------------------------------------------------------------------------------------------------------------
         "AbilityManaCost"				"70 100 130 160"
-
-        "AOERadius"                     "%radius"
 
 
         "AbilitySpecial"
@@ -13686,6 +13685,7 @@
         "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS"
         "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
         "AbilityTextureName"			"bane_enfeeble"
+        "AOERadius"                     "%radius"
 
         // Precache
         //-------------------------------------------------------------------------------------------------------------
@@ -13704,13 +13704,11 @@
         // Time
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCooldown"				"8.0"
-        "AbilityDuration"				"6 8 10 12"
+        "AbilityDuration"				"8 12 16 20"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
         "AbilityManaCost"				"95"
-
-        "AOERadius"                     "%radius"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -14380,7 +14378,7 @@
             "03"
             {
                 "var_type"						"FIELD_FLOAT"
-                "mana_void_ministun"			"0.15"
+                "mana_void_ministun"			"0.3"
             }
 
             "04"
@@ -15863,6 +15861,65 @@
                     "MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
                     "MODIFIER_STATE_MUTED"		"MODIFIER_STATE_VALUE_ENABLED"
                     "MODIFIER_STATE_PASSIVES_DISABLED"		"MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+        }
+    }
+
+    "nevermore_dark_lord_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "OnCastbar"					"0"
+        "AbilityTextureName"			"nevermore_dark_lord"
+        "AOERadius"                     "%presence_radius"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"900"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "presence_armor_reduction"		"-3 -4 -5 -6"
+            }
+            "02"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "presence_radius"				"900"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_dark_lord"
+            {
+                "Passive"			"1"
+                "IsHidden"			"1"
+
+                "Aura"          	"modifier_dark_lord_presence"
+                "Aura_Radius"   	"%presence_radius"
+                "Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                "Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+            }
+
+            "modifier_dark_lord_presence"
+            {
+                "IsHidden"			"0" //hidden?
+                "IsDebuff"			"1"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%presence_armor_reduction"
                 }
             }
         }

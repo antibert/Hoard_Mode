@@ -2575,14 +2575,15 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
 		"ID"							"1034"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AURA"
 		"Model"							"models/props_gameplay/magic_wand.mdl"
-	//		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 		"AbilityTextureName"			"item_hoard_magic_stick"
+
+		"AOERadius"				"%radius"
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"17.0"
+		"AbilityCooldown"				"13.0"
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
 		"AbilitySharedCooldown"			"magicwand"
@@ -2611,7 +2612,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"restore_per_charge"	"8"
+				"restore_per_charge"	"6"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+                "radius"	"2000"
 			}
 		}
 		
@@ -2627,19 +2633,34 @@
 		"Modifiers"
 		{
 			"modifier_item_magic_stick_charges"
-			{
-				"Passive"			"1"
-				"IsHidden"			"0"
-	
-				"OnKill"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"items/item_magic_stick.lua"
-						"Function"				"MagicStickCharge"
-					}
-				}
-			}
+            {
+                "Passive"		"1"
+                "IsHidden"		"1"
+
+                "AllowIllusionDuplicate"    "0"
+
+                "Aura" 			"modifier_item_magic_stick_charges_aura"
+                "Aura_Radius" 	"%radius"
+                "Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                "Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+            }
+
+            "modifier_item_magic_stick_charges_aura"
+            {
+                "IsDebuff"	"1"
+                "IsHidden"	"1"
+                "IsPurgable"    "0"
+
+                "OnDeath"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"			"items/item_magic_stick.lua"
+                        "Function"				"MagicStickCharge"
+                    }
+                }
+            }
 		}
 	}
 	//=================================================================================================================
@@ -2658,7 +2679,7 @@
 		
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"17.0"
+		"AbilityCooldown"				"13.0"
 		"AbilityCastPoint"				"0.0"
 		"AbilityManaCost"				"0"
 		"AbilitySharedCooldown"			"magicwand"
@@ -2687,12 +2708,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"restore_per_charge"	"10"
+				"restore_per_charge"	"8"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_all_stats"		"7"
+                "radius"	"2000"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"4"
 			}
 		}
 		
@@ -2707,20 +2733,35 @@
 		
 		"Modifiers"
 		{
-			"modifier_item_magic_stick_charges"
-			{
-				"Passive"			"1"
-				"IsHidden"			"1"
-	
-				"OnKill"
-				{
-					"RunScript"
-					{
-						"ScriptFile"			"items/item_magic_stick.lua"
-						"Function"				"MagicStickCharge"
-					}
-				}
-			}
+			"modifier_item_magic_wand_charges"
+            {
+                "Passive"		"1"
+                "IsHidden"		"1"
+
+                "AllowIllusionDuplicate"    "0"
+
+                "Aura" 			"modifier_item_magic_wand_charges_aura"
+                "Aura_Radius" 	"%radius"
+                "Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                "Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+            }
+
+            "modifier_item_magic_wand_charges_aura"
+            {
+                "IsDebuff"	"1"
+                "IsHidden"	"1"
+                "IsPurgable"    "0"
+
+                "OnDeath"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"			"items/item_magic_stick.lua"
+                        "Function"				"MagicStickCharge"
+                    }
+                }
+            }
 	
 			"modifier_item_magic_wand_stats"
 			{

@@ -1,5 +1,5 @@
 -- In this file you can set up all the properties and settings for your game mode.
-GAME_VERSION = "1.15"
+GAME_VERSION = "1.19"
 
 ENABLE_HERO_RESPAWN = true              -- Should the heroes automatically respawn on a timer or stay dead until manually respawned
 UNIVERSAL_SHOP_MODE = true             -- Should the main shop contain Secret Shop items as well as regular items
@@ -108,7 +108,7 @@ DISABLE_STASH_PURCHASING = false        -- Should we prevent players from being 
 DISABLE_ANNOUNCER = false               -- Should we disable the announcer from working in the game?
 FORCE_PICKED_HERO = nil                 -- What hero should we force all players to spawn as? (e.g. "npc_dota_hero_axe").  Use nil to allow players to pick their own hero.
 
-FIXED_RESPAWN_TIME = -1                 -- What time should we use for a fixed respawn timer?  Use -1 to keep the default dota behavior.
+FIXED_RESPAWN_TIME = 30                 -- What time should we use for a fixed respawn timer?  Use -1 to keep the default dota behavior.
 FOUNTAIN_CONSTANT_MANA_REGEN = -1       -- What should we use for the constant fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_MANA_REGEN = -1     -- What should we use for the percentage fountain mana regen?  Use -1 to keep the default dota behavior.
 FOUNTAIN_PERCENTAGE_HEALTH_REGEN = -1   -- What should we use for the percentage fountain health regen?  Use -1 to keep the default dota behavior.
@@ -122,7 +122,7 @@ ENABLED_RUNES[DOTA_RUNE_DOUBLEDAMAGE] = true
 ENABLED_RUNES[DOTA_RUNE_HASTE] = false
 ENABLED_RUNES[DOTA_RUNE_ILLUSION] = true
 ENABLED_RUNES[DOTA_RUNE_INVISIBILITY] = false
-ENABLED_RUNES[DOTA_RUNE_REGENERATION] = true -- Regen runes are currently not spawning as of the writing of this comment
+ENABLED_RUNES[DOTA_RUNE_REGENERATION] = true
 ENABLED_RUNES[DOTA_RUNE_BOUNTY] = true
 ENABLED_RUNES[DOTA_RUNE_ARCANE] = true
 

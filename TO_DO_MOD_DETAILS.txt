@@ -8,6 +8,9 @@ Nyx
 Sniper
 -- Take Aim reverted to vanilla
 
+Tusk
+-- Removed erroneous tooltip from Walrus Kick (it couldn't be leveled up)
+
 Witch Doctor
 -- Death Ward bounce changed from magical damage to physical damage
 -- Death Ward bounce now targets spell immune enemies

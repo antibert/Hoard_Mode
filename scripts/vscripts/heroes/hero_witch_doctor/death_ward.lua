@@ -58,7 +58,7 @@ function death_ward_start_create_dummy( keys )
 	-- Find the closest target that fits the search criteria
 	local iTeam = DOTA_UNIT_TARGET_TEAM_ENEMY
 	local iType = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
-	local iFlag = DOTA_UNIT_TARGET_FLAG_NONE
+	local iFlag = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
 	local bounce_targets = FindUnitsInRadius(caster:GetTeamNumber(), dummy:GetAbsOrigin(), nil, dummy_ability.bounceRange, iTeam, iType, iFlag, FIND_CLOSEST, false)
 
 	dummy_ability.bounceTable[target] = ((dummy_ability.bounceTable[target] or 0) + 1)
@@ -106,7 +106,7 @@ function death_ward_bounce( keys )
 	damage_table.attacker = caster:GetOwner()
 	damage_table.victim = target
 	damage_table.ability = ability.original_ability
-	damage_table.damage_type = DAMAGE_TYPE_MAGICAL
+	damage_table.damage_type = DAMAGE_TYPE_PHYSICAL
 	damage_table.damage = ability.damage * (1 - ability.dmgMultiplier)
 
 	ApplyDamage(damage_table)
@@ -125,7 +125,7 @@ function death_ward_bounce( keys )
 
 	local iTeam = DOTA_UNIT_TARGET_TEAM_ENEMY
 	local iType = DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO
-	local iFlag = DOTA_UNIT_TARGET_FLAG_NONE
+	local iFlag = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES
 	local bounce_targets = FindUnitsInRadius(caster:GetTeamNumber(), target:GetAbsOrigin(), nil, ability.bounceRange, iTeam, iType, iFlag, FIND_CLOSEST, false)
 
 	-- Find a new target that is not the current one

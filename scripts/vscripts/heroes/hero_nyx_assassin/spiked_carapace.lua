@@ -30,8 +30,15 @@ function spiked_carapace_reflect( keys )
 	
 	-- Check if it's not already been hit
 	if not caster.carapaced_units[ attacker:entindex() ] and not attacker:IsMagicImmune() then
-		local targetHealth = math.max(0, attacker:GetHealth() -damageTaken)
-		attacker:SetHealth( targetHealth )
+		local damage_table = {}
+		damage_table.attacker = caster
+		damage_table.victim = attacker
+		damage_table.ability = keys.ability
+		damage_table.damage_type = DAMAGE_TYPE_PURE
+		damage_table.damage = damageTaken
+		damage_table.damage_flags = DOTA_DAMAGE_FLAG_REFLECTION
+
+		ApplyDamage(damage_table)
 		keys.ability:ApplyDataDrivenModifier( caster, attacker, "modifier_spiked_carapaced_stun_datadriven", { } )
 		caster:SetHealth( caster:GetHealth() + damageTaken )
 		caster.carapaced_units[ attacker:entindex() ] = attacker

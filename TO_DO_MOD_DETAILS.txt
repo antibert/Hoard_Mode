@@ -1,49 +1,16 @@
 Next Update Patch Notes:
 
-1.19f
-ITEMS
-Horde Stick
--- Grants charges when any enemy dies within 1000 units
--- Reduced heal per charge from 8 to 6
--- Reduced cooldown from 17 to 13
-
-Horde Wand
--- Grants charges when any enemy dies within 1000 units
--- Reduced heal per charge from 10 to 8
--- Reduced attributes bonus from 7 to 4
--- Reduced cooldown from 17 to 13
-
-CREEPS
--- Reduced boss magic resistance from 50% to 25%
-
+1.19g
 HEROES:
-Ancient Apparition
--- Cold Feet cooldown reverted to 13/11/9/7 (vanilla)
+Nyx
+-- Reflection damage will now actually kill units
 
-Anti-Mage
--- Mana Void ministun reverted to 0.3 (vanilla)
+Sniper
+-- Take Aim reverted to vanilla
 
-Bane
--- Enfeeble duration increased to 8/12/16/20
--- Fixed issues with radius targeting
-
-Chen
--- Holy Persuasion mana cost and minimum health reverted to vanilla
--- Holy Persuasion recharge rescaled to 40/35/30/25
-
-Crystal Maiden
--- Frozen Field damage reverted to vanilla
--- Frozen Field radius reverted to vanilla
--- Frozen Field cooldown reduced to 90/75/60
-
-Enchantress
--- Enchant recharge increased to 40/35/30/25
--- Enchant duration increased to 120
-
-Shadow Fiend
--- Fixed Presence of the Dark Lord
--- Requiem cooldown reduced to 120/100/80
--- Requiem aghanim's scepter now deals full damage each direction (double damage total) and does not heal
+Witch Doctor
+-- Death Ward bounce changed from magical damage to physical damage
+-- Death Ward bounce now targets spell immune enemies
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

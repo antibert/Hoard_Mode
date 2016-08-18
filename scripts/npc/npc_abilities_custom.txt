@@ -7787,7 +7787,169 @@
             }
         }
 	}
+	"tinker_laser_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"tinker_laser"
 
+		"HasScepterUpgrade"			"1"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"650"
+		"AbilityCastPoint"				"0.4"
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"14"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"80 160 240 320"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"95 120 145 170"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.3"	// Primarily about the damage
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"			"3 3.5 4 4.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"miss_rate"				"100 100 100 100"
+			}
+			"03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bounces"	"5"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "bounces_scepter"	"10"
+            }
+		}
+
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_tinker.vsndevts"
+			"particle"					"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
+		}
+
+		"OnAbilityPhaseStart"
+		{
+			"FireSound"
+			{
+				"Target"				"CASTER"
+				"EffectName"			"Hero_Tinker.LaserAnim"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"Target"				"CASTER"
+				"EffectName"			"Hero_Tinker.Laser"
+			}
+
+			"TrackingProjectile"
+			{
+				"Target"				"TARGET"
+				"EffectName"			"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
+				"MoveSpeed"				"1100"
+				"Dodgeable"				"1"
+				"ProvidesVision"		"0"
+				"SourceAttachment"		"DOTA_PROJECTILE_ATTACHMENT_ATTACK_2"
+			}
+
+			"RunScript"
+            {
+                "ScriptFile"		"heroes/hero_tinker/laser"
+                "Function"			"laser_bounce_start"
+            }
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"FireSound"
+			{
+				"Target"				"CASTER"
+				"EffectName"			"Hero_Tinker.LaserImpact"
+			}
+
+			"Damage"
+			{
+				"Target"		"TARGET"
+				"Damage"		"%AbilityDamage"
+				"Type"			"DAMAGE_TYPE_PURE"
+			}
+
+			"ApplyModifier"
+			{
+				"Target"        "TARGET"
+				"ModifierName"	"modifier_tinker_laser_datadriven_blind"
+				"Duration"		"%duration"
+			}
+
+			"ApplyModifier"
+            {
+                "Target"        "TARGET"
+                "ModifierName"	"modifier_tinker_laser_datadriven_tracking"
+                "Duration"		"0.6"
+            }
+
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_tinker/laser"
+                "Function"			"laser_bounce"
+                "bounces"           "%bounces"
+                "bounces_scepter"           "%bounces_scepter"
+                "particle"          "particles/units/heroes/hero_tinker/tinker_laser.vpcf"
+                "modifier"          "modifier_tinker_laser_datadriven_tracking"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_tinker_laser_datadriven_blind"
+			{
+				"IsDebuff"		"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MISS_PERCENTAGE"	"%miss_rate"
+				}
+			}
+
+			"modifier_tinker_laser_datadriven_tracking"
+			{
+				"Hidden"    "1"
+				"Purgable"  "0"
+			}
+		}
+	}
 	"tinker_heat_seeking_missile_datadriven"
 	{
 		// General
@@ -7800,25 +7962,27 @@
 		"AbilityTextureName"			"tinker_heat_seeking_missile"
 		"AOERadius"                     "%radius"
 
+		"HasScepterUpgrade"			"1"
+
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetFlags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0 0 0 0"
+		"AbilityCastPoint"				"0"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"15"
+		"AbilityCooldown"				"25"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"150 300 450 600"
+		"AbilityDamage"					"125 200 275 350"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"120 135 150 165"
+		"AbilityManaCost"				"120 140 160 180"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -7832,17 +7996,17 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"targets"			"2 3 4 5"
+				"targets"			"5"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"speed"				"800 800 800 800"
+				"speed"				"900"
 			}
 			"04"
             {
                 "var_type"			"FIELD_INTEGER"
-                "targets_scepter"			"4 6 8 10"
+                "targets_scepter"			"10"
             }
 		}
 

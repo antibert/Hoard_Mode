@@ -2,18 +2,42 @@ Next Update Patch Notes:
 
 1.19g
 HEROES:
+Lion
+-- Mana Drain reverted to vanilla
+
 Nyx
 -- Reflection damage will now actually kill units
 
 Sniper
 -- Take Aim reverted to vanilla
 
+Tinker
+-- Laser damage reverted to vanilla
+-- Laser now refracts to 5 targets (10 with scepter)
+-- Heat-seeking Missiles now only targets visible units
+-- Heat-seeking Missiles damage reverted to vanilla
+-- Heat-seeking Missiles now targets 5 units (10 with scepter)
+-- March reverted to vanilla
+
 Tusk
 -- Removed erroneous tooltip from Walrus Kick (it couldn't be leveled up)
+
+Venomancer
+-- Poison Nova reverted to Vanilla
+
+Wind Ranger
+-- Focus Fire reverted to vanilla
 
 Witch Doctor
 -- Death Ward bounce changed from magical damage to physical damage
 -- Death Ward bounce now targets spell immune enemies
+
+Wraith King
+-- Resurrect cooldown increased to 60/45/30
+-- Resurrect delay reverted to vanilla
+
+Zeus
+-- Rescaled lightning bolt damage to 200/275/375/450
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

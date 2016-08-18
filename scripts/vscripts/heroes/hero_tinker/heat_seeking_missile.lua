@@ -20,13 +20,16 @@ function heat_seeking_missile_seek_targets( keys )
 
 	-- pick up x nearest target heroes and create tracking projectile targeting the number of targets
 	local units = FindUnitsInRadius(
-		caster:GetTeamNumber(), caster:GetAbsOrigin(), caster, radius, targetTeam, targetType, targetFlag, FIND_CLOSEST, false
+		caster:GetTeamNumber(), caster:GetAbsOrigin(), nil, radius, targetTeam, targetType, targetFlag, FIND_CLOSEST, false
 	)
 	
 	-- Seek out target
 	local count = 0
 	for k, v in pairs( units ) do
-		if count < max_targets then
+		if count >= max_targets then
+			break
+		end
+		if caster:CanEntityBeSeenByMyTeam(v) then
 			local projTable = {
 				Target = v,
 				Source = caster,
@@ -39,8 +42,6 @@ function heat_seeking_missile_seek_targets( keys )
 			}
 			ProjectileManager:CreateTrackingProjectile( projTable )
 			count = count + 1
-		else
-			break
 		end
 	end
 	

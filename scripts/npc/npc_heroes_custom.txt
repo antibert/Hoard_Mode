@@ -460,6 +460,7 @@
 	"npc_dota_hero_tinker"
 	{
 		"override_hero"			"npc_dota_hero_tinker"
+		"Ability1"				"tinker_laser_datadriven"
 		"Ability2"				"tinker_heat_seeking_missile_datadriven"
 	}
 	//=================================================================================================================

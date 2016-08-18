@@ -2030,76 +2030,12 @@
 			}
 		}
 	}
-    //=================================================================================================================
-	// Techies: Land Mines
-	//=================================================================================================================
-	"techies_land_mines"
-	{
-		"AbilityCooldown"				"8 7 6 5"
-		"AbilityManaCost"				"100 125 150 175"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"300 375 450 525"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"small_radius"				"600"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"big_radius"				"900"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"max_mines"					"30"
-			}
-		}
-	}
 	//=================================================================================================================
 	// Techies: Suicide Squad, Attack!
 	//=================================================================================================================
 	"techies_suicide"
 	{
 		"AbilityCooldown"				"90 60 30 10"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"small_radius"				"400"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"big_radius"				"900"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"500 650 850 1150"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"partial_damage"			"200 350 500 650"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"respawn_time_percentage"		"0.5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"respawn_time_percentage_tooltip"		"50"
-			}
-		}
 	}
 	//=================================================================================================================
 	// Techies: Remote Mines
@@ -2108,24 +2044,6 @@
 	{
 		"AbilityCooldown"				"10.0 7.0 5.0"
 		"AbilityManaCost"				"100 130 160"
-		"AbilitySpecial"
-		{
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"500"
-			}		
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"1200.0"
-			}
-			"08"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius_scepter"			"500"
-			}
-		}
 	}
 	"undying_soul_rip"
 	{

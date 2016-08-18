@@ -8,8 +8,16 @@ Lion
 Nyx
 -- Reflection damage will now actually kill units
 
+Skywrath Mage
+-- Added aghanim's scepter description
+
 Sniper
 -- Take Aim reverted to vanilla
+
+Techies
+-- Land Mines reverted to vanilla
+-- Suicide Squad! area of effect reverted to vanilla
+-- Remote Mines area of effect and duration reverted to vanilla
 
 Tinker
 -- Laser damage reverted to vanilla
@@ -22,8 +30,16 @@ Tinker
 Tusk
 -- Removed erroneous tooltip from Walrus Kick (it couldn't be leveled up)
 
+Vengeful Spirit
+-- Magic Missile damage reverted to vanilla
+
 Venomancer
 -- Poison Nova reverted to Vanilla
+
+Viper
+-- Viper Strike damage, range, and cooldown reverted to vanilla
+-- Viper Strike is now an AoE
+-- Viper Strike still supports Aghanim's Scepter (increased range and reduced cooldown and mana cost)
 
 Wind Ranger
 -- Focus Fire reverted to vanilla

@@ -1,16 +1,7 @@
 Next Update Patch Notes:
 
-1.19h
-HEROES:
-Vengeful Spirit
--- Nether Swap aghanim's scepter upgrade fixed
-
-Viper
--- Fixed Viper Strike to actually do something
-
-/////// Secondary importance:
--- Fix Giant Mech particles not working
--- meepo clones not sharing stats at all without scepter
+1.19i
+Updated the 2 Player map to use the same spawn timings as the other maps
 
 To Do:
 -- update russian lang

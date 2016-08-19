@@ -23,33 +23,33 @@ end
 require('libraries/timers')
 require('libraries/spawners')
 
-	local waveZeroDuration = 180
-	local waveDuration = 250
-	local wavePause = 50
+local waveZeroDuration = 180
+local waveDuration = 250
+local wavePause = 50
 
-	function waveStart(waveNumber)
-		local time = 0
-		if waveNumber > 0 then
-			time = waveZeroDuration + wavePause + (waveDuration + wavePause) * (waveNumber - 1)
-		end
-		DebugPrint('waveStart '..waveNumber..' '..time)
-		return time
+function waveStart(waveNumber)
+	local time = 0
+	if waveNumber > 0 then
+		time = waveZeroDuration + wavePause + (waveDuration + wavePause) * (waveNumber - 1)
 	end
+	DebugPrint('waveStart '..waveNumber..' '..time)
+	return time
+end
 
-	function waveEnd(waveNumber)
-		local time = waveZeroDuration
-		if waveNumber > 0 then
-			time = waveStart(waveNumber) + waveDuration
-		end
-		DebugPrint('waveEnd '..waveNumber..' '..time)
-		return time
+function waveEnd(waveNumber)
+	local time = waveZeroDuration
+	if waveNumber > 0 then
+		time = waveStart(waveNumber) + waveDuration
 	end
+	DebugPrint('waveEnd '..waveNumber..' '..time)
+	return time
+end
 
-	function waveBoss(waveNumber)
-		local time = waveEnd(waveNumber) - 60
-		DebugPrint('waveBoss '..waveNumber..' '..time)
-		return time
-	end
+function waveBoss(waveNumber)
+	local time = waveEnd(waveNumber) - 60
+	DebugPrint('waveBoss '..waveNumber..' '..time)
+	return time
+end
 
 function Spawners:StartSpawners(difficulty)
 	

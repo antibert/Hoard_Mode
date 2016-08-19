@@ -133,16 +133,6 @@ function Spawners2p:SpawnSpookiMid()
     }
 end
 
-function Spawners2p:SpawnSpookiBot()
-    return {
-        source =  "spawner2",
-        waypoint = "lane_bot_pathcorner_badguys_4",
-        max = 4,
-        min = 1,
-        unit = "npc_dota_creature_spooki"
-    }
-end
-
 function Spawners2p:SpawnNyx()
     return {
         source =  "spawner1",

@@ -1,59 +1,12 @@
 Next Update Patch Notes:
 
-1.19g
+1.19h
 HEROES:
-Lion
--- Mana Drain reverted to vanilla
-
-Nyx
--- Reflection damage will now actually kill units
-
-Skywrath Mage
--- Added aghanim's scepter description
-
-Sniper
--- Take Aim reverted to vanilla
-
-Techies
--- Land Mines reverted to vanilla
--- Suicide Squad! area of effect reverted to vanilla
--- Remote Mines area of effect and duration reverted to vanilla
-
-Tinker
--- Laser damage reverted to vanilla
--- Laser now refracts to 5 targets (10 with scepter)
--- Heat-seeking Missiles now only targets visible units
--- Heat-seeking Missiles damage reverted to vanilla
--- Heat-seeking Missiles now targets 5 units (10 with scepter)
--- March reverted to vanilla
-
-Tusk
--- Removed erroneous tooltip from Walrus Kick (it couldn't be leveled up)
-
 Vengeful Spirit
--- Magic Missile damage reverted to vanilla
-
-Venomancer
--- Poison Nova reverted to Vanilla
+-- Nether Swap aghanim's scepter upgrade fixed
 
 Viper
--- Viper Strike damage, range, and cooldown reverted to vanilla
--- Viper Strike is now an AoE
--- Viper Strike still supports Aghanim's Scepter (increased range and reduced cooldown and mana cost)
-
-Wind Ranger
--- Focus Fire reverted to vanilla
-
-Witch Doctor
--- Death Ward bounce changed from magical damage to physical damage
--- Death Ward bounce now targets spell immune enemies
-
-Wraith King
--- Resurrect cooldown increased to 60/45/30
--- Resurrect delay reverted to vanilla
-
-Zeus
--- Rescaled lightning bolt damage to 200/275/375/450
+-- Fixed Viper Strike to actually do something
 
 /////// Secondary importance:
 -- Fix Giant Mech particles not working

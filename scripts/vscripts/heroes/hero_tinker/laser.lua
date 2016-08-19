@@ -29,19 +29,15 @@ function laser_bounce( keys )
 		caster:GetTeamNumber(), target:GetAbsOrigin(), nil, radius, targetTeam, targetType, targetFlag, FIND_CLOSEST, false
 	)
 
-	print('total_bounce'..caster.total_bounce)
-	print('max_targets'..max_targets)
-	
 	-- Seek out target
 	for k, v in pairs( units ) do
-		print('unit check')
 		if caster.total_bounce >= max_targets then
 			break
 		end
 		if caster:CanEntityBeSeenByMyTeam(v) and v:HasModifier(keys.modifier) == false then
 			local projTable = {
 				Target = v,
-				Source = target,
+				Source = caster,
 				Ability = ability,
 				EffectName = particleName,
 				bDodgeable = projectileDodgable,
@@ -51,8 +47,6 @@ function laser_bounce( keys )
 			}
 			ProjectileManager:CreateTrackingProjectile( projTable )
 			caster.total_bounce = caster.total_bounce + 1
-			print('total_bounce step '..caster.total_bounce)
 		end
 	end
-	print('total_bounce final '..caster.total_bounce)
 end

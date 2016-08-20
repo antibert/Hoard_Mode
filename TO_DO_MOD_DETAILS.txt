@@ -1,7 +1,25 @@
 Next Update Patch Notes:
 
-1.19i
-Updated the 2 Player map to use the same spawn timings as the other maps
+1.19j
+6.88c Update
+Bloodseeker, Drow Ranger, Leshrac, Lina, Mirana, Oracle, Timbersaw and Visage have vanilla changes
+
+Elder Titan
+-- Echo Stomp damage unchanged
+
+Faceless Void
+-- Chronosphere cooldown reduced to 120/100/80
+
+Shadow Demon
+-- Disruption incoming damage increased from 100% to 150%
+
+Treant Protector
+-- Living Armor regeneration reverted to vanilla
+
+Items:
+Magic Wands and Sticks now gain charges no matter how many heroes are nearby
+Gold bags (including those made by Bounty Hunter's Track) now grant 50 gold to each member of the team, no matter how many players are in game
+Desolator 2 icon is fixed
 
 To Do:
 -- update russian lang

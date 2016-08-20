@@ -3215,56 +3215,9 @@
 		}
 	}
 	//=================================================================================================================
-	// Generic: Gold Bag Fountain 30g
-	//=================================================================================================================
-	"generic_gold_bag_fountain_medium"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"item_hand_of_midas"
-
-		"OnOwnerDied"
-		{
-			"CreateItem"
-			{
-				"Target"
-				{
-					"Center" 	"CASTER"
-					"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-				}
-				"ItemName"			"item_bag_of_gold"
-				"ItemCount"			"%bag_count"
-				"SpawnRadius"		"10"
-				"ItemChargeCount"	"%gold_value"
-				"AutoUse"			"1"
-				"LaunchHeight"		"300"
-				"LaunchDistance"	"?50 350"
-				"LaunchDuration"	"0.75"
-			}
-		}
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"gold_value"			"30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bag_count"				"1"
-			}
-		}
-	}
-	//=================================================================================================================
 	// Generic: Gold Bag Fountain 50g
 	//=================================================================================================================
-	"generic_gold_bag_fountain_50"
+	"generic_gold_bag_fountain_small"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -3281,7 +3234,7 @@
 					"Center" 	"CASTER"
 					"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
 				}
-				"ItemName"			"item_bag_of_gold"
+				"ItemName"			"item_bag_of_gold_datadriven"
 				"ItemCount"			"%bag_count"
 				"SpawnRadius"		"10"
 				"ItemChargeCount"	"%gold_value"
@@ -3311,7 +3264,7 @@
 	//=================================================================================================================
 	// Generic: Gold Bag Fountain 400g
 	//=================================================================================================================
-	"generic_gold_bag_fountain_500"
+	"generic_gold_bag_fountain_large"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -3328,7 +3281,7 @@
 					"Center" 	"CASTER"
 					"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
 				}
-				"ItemName"			"item_bag_of_gold"
+				"ItemName"			"item_bag_of_gold_datadriven"
 				"ItemCount"			"%bag_count"
 				"SpawnRadius"		"25"
 				"ItemChargeCount"	"%gold_value"
@@ -3346,19 +3299,19 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold_value"			"400"
+				"gold_value"			"50"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bag_count"				"5"
+				"bag_count"				"10"
 			}
 		}
 	}
 	//=================================================================================================================
 	// Generic: Gold Bag Fountain 80g
 	//=================================================================================================================
-	"generic_gold_bag_fountain_5000"
+	"generic_gold_bag_fountain_medium"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -3375,7 +3328,7 @@
 					"Center" 	"CASTER"
 					"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
 				}
-				"ItemName"			"item_bag_of_gold"
+				"ItemName"			"item_bag_of_gold_datadriven"
 				"ItemCount"			"%bag_count"
 				"SpawnRadius"		"25"
 				"ItemChargeCount"	"%gold_value"
@@ -3393,12 +3346,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold_value"			"100"
+				"gold_value"			"50"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bag_count"				"3"
+				"bag_count"				"4"
 			}
 		}
 	}
@@ -13208,7 +13161,7 @@
             "03"
             {
                 "var_type"			"FIELD_FLOAT"
-                "gold_value"		"100"
+                "gold_value"		"50"
             }
             "04"
             {
@@ -13259,7 +13212,7 @@
                                     "Center" 	"UNIT"
                                     "Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
                                 }
-                                "ItemName"			"item_bag_of_gold"
+                                "ItemName"			"item_bag_of_gold_datadriven"
                                 "ItemCount"			"%bag_count"
                                 "SpawnRadius"		"10"
                                 "ItemChargeCount"	"%gold_value"

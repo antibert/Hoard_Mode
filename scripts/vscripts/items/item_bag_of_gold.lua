@@ -1,40 +1,26 @@
 --[[ Author: Hewdraw ]]
 
-function MagicStickActivate(keys)
-	keys.caster:EmitSound("DOTA_Item.MagicStick.Activate")
-	
-	local amount_to_restore = keys.ability:GetCurrentCharges() * keys.ability:GetLevelSpecialValueFor("restore_per_charge", keys.ability:GetLevel() - 1)
-	keys.caster:Heal(amount_to_restore, keys.caster)
-	keys.caster:GiveMana(amount_to_restore)
-	
-	keys.ability:SetCurrentCharges(0)
-end
-
-function MagicStickCharge(keys)
-	local ability = keys.ability
+function ConsumeBag(keys)
+	local amount_to_give = keys.ability:GetCurrentCharges()
 	local caster = keys.caster
-	local oldest_unfilled_stick = nil
+	local player = PlayerResource:GetPlayer( caster:GetPlayerID() )
 
-	if caster:IsRealHero() and ability ~= nil then
-		local max_charges = keys.ability:GetLevelSpecialValueFor("max_charges", keys.ability:GetLevel() - 1)
+	local symbol = 0 -- "+" presymbol
+	local color = Vector(255, 200, 33) -- Gold
+	local lifetime = 2
+	local digits = string.len(amount_to_give) + 1
+	local particleName = "particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf"
+	local particle = ParticleManager:CreateParticleForPlayer( particleName, PATTACH_ABSORIGIN, caster, player )
+	ParticleManager:SetParticleControl(particle, 1, Vector(symbol, amount_to_give, symbol))
+	ParticleManager:SetParticleControl(particle, 2, Vector(lifetime, digits, 0))
+	ParticleManager:SetParticleControl(particle, 3, color)
 
-		for i=0, 5, 1 do
-			local current_item = keys.caster:GetItemInSlot(i)
-			if current_item ~= nil and current_item:GetName() == "item_hoard_magic_wand" and current_item:GetCurrentCharges() < max_charges then
-				if oldest_unfilled_stick == nil or current_item:GetEntityIndex() < oldest_unfilled_stick:GetEntityIndex() then
-					oldest_unfilled_stick = current_item
-				end
-			end
-			if current_item ~= nil and current_item:GetName() == "item_hoard_magic_stick" and current_item:GetCurrentCharges() < max_charges then
-				if oldest_unfilled_stick == nil or current_item:GetEntityIndex() < oldest_unfilled_stick:GetEntityIndex() then
-					oldest_unfilled_stick = current_item
-				end
-			end
-		end
-
-		--Increment the Magic Wand's current charges by 1.
-		if oldest_unfilled_stick ~= nil then
-			oldest_unfilled_stick:SetCurrentCharges(oldest_unfilled_stick:GetCurrentCharges() + 1)
+	for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+		if PlayerResource:IsValidPlayerID(playerID) then
+			PlayerResource:ModifyGold(playerID, amount_to_give, true, DOTA_ModifyGold_SharedGold)
+			EmitSoundOnClient( "General.Coins", PlayerResource:GetPlayer(playerID))
 		end
 	end
+
+	keys.ability:SetCurrentCharges(0)
 end

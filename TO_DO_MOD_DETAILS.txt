@@ -1,6 +1,11 @@
 Next Update Patch Notes:
 
 1.20
+Gold and XP changes!
+XP is now granted fully to all allies within a 1300 radius, instead of divided amongst them.
+Assist gold is now granted for slain creeps, granting 50% of last hit gold to all heroes within a 1300 radius.
+These changes should make the 5 Player Map less difficult than the 4 Player Map. This also means that players are less penalized for grouping up or defending at the tower.
+
 Splitter Wave:
 Giant Golem boss no longer splits, now has full array of Tiny powers
 Giant Golem boss carries an Aghanim's Scepter and Vladmir's Cuirass

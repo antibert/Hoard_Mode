@@ -268,10 +268,41 @@ function GameMode:OnEntityKilled( keys )
 
   local damagebits = keys.damagebits -- This might always be 0 and therefore useless
 
-  -- Put code here to handle when an entity gets killed
+  -- Gold Bonus for killing
+  -- Search area is 1300
+  local unitsinradius = FindUnitsInRadius( killedUnit:GetTeamNumber(), killedUnit:GetAbsOrigin(), killedUnit, 1300,
+    DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO, 0, 0, false )
+  local count = 0
+  for _, unit in pairs( unitsinradius ) do
+    if unit:IsRealHero() then
+      count = count + 1
+    end
+  end
+
+  if count > 0 then
+	  local experienceToAdd = (count -1)/count * killedUnit:GetDeathXP()
+	  local goldToAdd = math.floor(killedUnit:GetGoldBounty()*0.5)
+
+	  -- Fake Hero gold popup
+	  EmitSoundOnLocationForAllies(killedUnit:GetAbsOrigin(), "General.Coins", killerEntity)
+	  local digits = #tostring(goldToAdd) + 1
+	  print('digits'..digits)
+	  local particleName = "particles/msg_fx/msg_goldbounty.vpcf" --"particles/msg_fx/msg_gold.vpcf"
+	  for _, unit in pairs (unitsinradius) do
+	    if experienceToAdd > 0 then
+	      unit:AddExperience(experienceToAdd, DOTA_ModifyXP_CreepKill, false, true)
+	    end
+	    if goldToAdd > 0 and unit ~= killerEntity then
+		    local particle = ParticleManager:CreateParticleForPlayer( particleName, PATTACH_OVERHEAD_FOLLOW, killedUnit, unit:GetPlayerOwner() )
+		    ParticleManager:SetParticleControl(particle, 0, killedUnit:GetAbsOrigin())
+		    ParticleManager:SetParticleControl(particle, 1, Vector(0, goldToAdd, 0))
+		    ParticleManager:SetParticleControl(particle, 2, Vector(2.0, digits, 0))
+		    ParticleManager:SetParticleControl(particle, 3, Vector(255, 200, 33))
+	      unit:ModifyGold(goldToAdd,true,DOTA_ModifyGold_CreepKill)
+	    end
+	  end
+  end
 end
-
-
 
 -- This function is called 1 to 2 times as the player connects initially but before they 
 -- have completely connected

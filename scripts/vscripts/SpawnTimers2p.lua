@@ -69,7 +69,7 @@ function Spawners2p:StartSpawners(difficulty)
 	})
 
 	Spawner:SpawnTimer({
-		start = 1310,
+		start = 1350,
 		interval = 3000,
 		spawn = Spawners2p:SpawnBigSplitter()
 	})
@@ -274,6 +274,13 @@ function Spawners2p:StartSpawners(difficulty)
 		interval = 34,
 		spawn = Spawners2p:SpawnSplitterMid()
 	})
+
+    Spawner:SpawnTimer({
+	    start = 1260,
+	    finish = 1560,
+	    interval = 60,
+	    spawn = Spawners2p:SpawnRockMid()
+    })
 
 	Spawner:SpawnTimer({
 		start = 980,

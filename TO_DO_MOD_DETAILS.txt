@@ -1,25 +1,20 @@
 Next Update Patch Notes:
 
-1.19j
-6.88c Update
-Bloodseeker, Drow Ranger, Leshrac, Lina, Mirana, Oracle, Timbersaw and Visage have vanilla changes
+1.20
+Splitter Wave:
+Giant Golem boss no longer splits, now has full array of Tiny powers
+Giant Golem boss carries an Aghanim's Scepter and Vladmir's Cuirass
+Reduced Giant Golem boss hit points from 30000 to 20000
+Replaced ancient golems with Earthshakers
+Reduced split spawn size from 3 to 2
+Reduced large splitter hp from 7000 to 1000
+Added Craggy Exterior to Large Splitters
+Reduced medium splitter hp from 4000 to 750
+Reduced small splitter hp from 750 to 500
 
-Elder Titan
--- Echo Stomp damage unchanged
-
-Faceless Void
--- Chronosphere cooldown reduced to 120/100/80
-
-Shadow Demon
--- Disruption incoming damage increased from 100% to 150%
-
-Treant Protector
--- Living Armor regeneration reverted to vanilla
-
-Items:
-Magic Wands and Sticks now gain charges no matter how many heroes are nearby
-Gold bags (including those made by Bounty Hunter's Track) now grant 50 gold to each member of the team, no matter how many players are in game
-Desolator 2 icon is fixed
+Ghost Wave:
+Reduced attack range of ghosts from 930 to 700
+Reduced Ghost Boss hp from 30000 to 20000
 
 To Do:
 -- update russian lang

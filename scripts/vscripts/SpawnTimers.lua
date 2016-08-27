@@ -675,7 +675,7 @@ Timers:CreateTimer("mini", {
 			Spawners:SpawnRockTop()
 			Spawners:SpawnRockMid()
 			Spawners:SpawnRockBot()
-			return 120.0
+			return 60.0
 		end
 	})
 	Timers:CreateTimer(waveEnd(4), function()

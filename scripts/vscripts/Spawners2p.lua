@@ -51,7 +51,7 @@ function Spawners2p:SpawnBigSplitter()
     return {
         source =  "spawner4",
         waypoint = "lane_mid_pathcorner_badguys_7",
-        unit = "npc_dota_creature_big_splitter"
+        unit = "npc_dota_creature_tiny_boss"
     }
 end
 
@@ -380,13 +380,22 @@ function Spawners2p:SpawnTrollMid()
     }
 end
 
+function Spawners2p:SpawnRockMid()
+    return {
+        source =  "spawner1",
+        waypoint = "lane_mid_pathcorner_badguys_7",
+        max = 1,
+        unit = "npc_dota_rock_golem"
+    }
+end
+
 function Spawners2p:SpawnSplitterMid()
     return {
         source =  "spawner1",
         waypoint = "lane_mid_pathcorner_badguys_7",
-        max = 5,
+        max = 4,
         min = 4,
-        unit = "npc_dota_splitter_medium"
+        unit = "npc_dota_splitter_large"
     }
 end
 

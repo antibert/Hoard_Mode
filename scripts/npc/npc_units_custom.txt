@@ -268,6 +268,7 @@
 		"ModelScale" 				"2.2"
 		"CanBeDominated"			"0"
 		"ConsideredHero"			"1"
+		"MinimapIcon"				"minimap_roshancamp"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -784,6 +785,7 @@
 		"ModelScale" 				"1.4"
 		"CanBeDominated"			"0"
 		"ConsideredHero"            "1"
+		"MinimapIcon"				"minimap_roshancamp"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -1010,6 +1012,7 @@
 		"Level"						"4"
 		"ModelScale" 				"1.3"
 	    "ConsideredHero"             "1"
+	    "MinimapIcon"				"minimap_roshancamp"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -1331,7 +1334,7 @@
 		"Level"						"1"
 		"ConsideredHero"			"1"
 		"CanBeDominated"			"0"
-		
+		"MinimapIcon"				"minimap_roshancamp"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -1384,7 +1387,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"30000"		// Base health.
+		"StatusHealth"				"20000"		// Base health.
 		"StatusHealthRegen"			"23.0"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"22"			// Mana regeneration rate.
@@ -1438,6 +1441,7 @@
 		"Level"						"24"
 		"ModelScale" 				"1.9"
 	    "ConsideredHero"             "1"
+	    "MinimapIcon"				"minimap_roshancamp"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -1577,6 +1581,7 @@
 		"ModelScale" 				"1.3"
 		"CanBeDominated"			"0"
 	    "ConsideredHero"             "1"
+	    "MinimapIcon"				"minimap_roshancamp"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -1683,41 +1688,44 @@
 		}
 	}
 	//=================================================================================
-	// Splitter Boss
+	// Tiny Boss
 	//=================================================================================
-	"npc_dota_creature_big_splitter"
+	"npc_dota_creature_tiny_boss"
 	{
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/creeps/neutral_creeps/n_creep_golem_b/n_creep_golem_b.vmdl"	// Model.
+		"Model"						"models/creeps/neutral_creeps/n_creep_golem_a/n_creep_golem_a.vmdl"	// Model.
 		"ModelScale"				"3"
-		"Level"						"3"
+		"Level"						"16"
 		"CanBeDominated"			"0"
 		"ConsideredHero"			"1"
+		"MinimapIcon"				"minimap_roshancamp"
+		"Portrait"		"vgui/hud/heroportraits/portrait_tiny"
+        "SoundSet"		"Hero_Tiny"
 		
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"golem_armour_aura"			// Ability 1.
-		"Ability2"					"generic_gold_bag_fountain_large"			// Ability 2.
-		"Ability3"					"creature_split_c"			// Ability 3.
-		"Ability4"					"brewmaster_earth_pulverize"			// Ability 4.
-		"Ability5"					""			// Ability 5.
+		"Ability1"					"tiny_avalanche"			// Ability 1.
+		"Ability2"					"tiny_toss"			// Ability 2.
+		"Ability3"					"tiny_craggy_exterior"			// Ability 3.
+		"Ability4"					"tiny_grow"			// Ability 4.
+		"Ability5"					"generic_gold_bag_fountain_large"			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"36"			// Physical protection.
+		"ArmorPhysical"				"30"			// Physical protection.
 		"MagicalResistance"			"25"		// Magical protection.
 	
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"1250"		// Damage range min.
-		"AttackDamageMax"			"1370"		// Damage range max.
+		"AttackDamageMin"			"1050"		// Damage range min.
+		"AttackDamageMax"			"1270"		// Damage range max.
 		"AttackRate"				"0.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -1742,13 +1750,110 @@
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
 		"MovementSpeed"				"300"		// Speed
 		"MovementTurnRate"			"1.0"		// Turning rate.
-	
-		"VoiceFile"				"soundevents/voscripts/game_sounds_vo_life_stealer.vsndevts"
-		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+
+		"precache"
+        {
+            "model"		"models/heroes/tiny_02/tiny_02.vmdl"
+            "model"		"models/heroes/tiny_03/tiny_03.vmdl"
+            "model"		"models/heroes/tiny_04/tiny_04.vmdl"
+            "model"		"models/heroes/tiny_01/tiny_01_tree.vmdl"
+        }
+        "particle_folder"		"particles/units/heroes/hero_tiny"
+        "GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_tiny.vsndevts"
+        "VoiceFile"		"soundevents/voscripts/game_sounds_vo_tiny.vsndevts"
+
+        "RenderablePortrait"
+        {
+            "Particles"
+            {
+                "particles/units/heroes/hero_tiny/tiny_loadout.vpcf"
+                {
+                    "0"
+                    {
+                        "type"		"follow_origin"
+                        "location"		"attach_hitloc"
+                    }
+                }
+            }
+        }
+
+        "ItemSlots"
+        {
+            "0"
+            {
+                "SlotIndex"		"0"
+                "SlotName"		"weapon"
+                "SlotText"		"#LoadoutSlot_Weapon"
+                "TextureWidth"		"256"
+                "TextureHeight"		"256"
+                "MaxPolygonsLOD0"		"1200"
+                "MaxPolygonsLOD1"		"800"
+            }
+            "1"
+            {
+                "SlotIndex"		"1"
+                "SlotName"		"misc"
+                "SlotText"		"#LoadoutSlot_Misc"
+                "DisplayInLoadout" "0"
+            }
+            "2"
+            {
+                "SlotIndex"		"2"
+                "SlotName"		"head"
+                "SlotText"		"#LoadoutSlot_Head"
+                "TextureWidth"		"256"
+                "TextureHeight"		"256"
+                "MaxPolygonsLOD0"		"1350"
+                "MaxPolygonsLOD1"		"900"
+            }
+            "3"
+            {
+                "SlotIndex"		"3"
+                "SlotName"		"arms"
+                "SlotText"		"#LoadoutSlot_LeftArm"
+                "TextureWidth"		"256"
+                "TextureHeight"		"256"
+                "MaxPolygonsLOD0"		"1100"
+                "MaxPolygonsLOD1"		"750"
+            }
+            "4"
+            {
+                "SlotIndex"		"4"
+                "SlotName"		"offhand_weapon"
+                "SlotText"		"#LoadoutSlot_RightArm"
+                "TextureWidth"		"256"
+                "TextureHeight"		"256"
+                "MaxPolygonsLOD0"		"1100"
+                "MaxPolygonsLOD1"		"750"
+            }
+            "5"
+            {
+                "SlotIndex"		"5"
+                "SlotName"		"armor"
+                "SlotText"		"#LoadoutSlot_Body"
+                "TextureWidth"		"512"
+                "TextureHeight"		"512"
+                "MaxPolygonsLOD0"		"2500"
+                "MaxPolygonsLOD1"		"1650"
+            }
+            "6"
+            {
+                "SlotIndex"		"6"
+                "SlotName"		"taunt"
+                "SlotText"		"#LoadoutSlot_Taunt"
+            }
+            "7"
+            {
+                "SlotIndex"		"7"
+                "SlotName"		"ambient_effects"
+                "SlotText"		"#LoadoutSlot_Ambient_Effects"
+                "DisplayInLoadout"		"0"
+            }
+        }
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"25000"		// Base health.
+		"StatusHealth"				"20000"		// Base health.
 		"StatusHealthRegen"			"15.0"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -1765,7 +1870,9 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
 		"VisionNighttimeRange"		"1400"		// Range of vision at night time.
-	
+
+		"HasInventory" "1"
+
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
@@ -1786,6 +1893,29 @@
 			"DefaultState"				"Invade"
 			
 			"DisableClumpingBehavior"	"1"
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"        "tiny_avalanche"
+                    "Damage"            "1"
+                    "AOE"         "1"
+                    "Radius"      "200"
+                    "Stun"              "1"
+                }
+                "Ability2"
+                {
+                    "Name"        "tiny_toss"
+                    "Damage"	"1"
+                }
+            }
+
+            "EquippedItems"
+            {
+                "Aghanims"    {    "Item"    "item_ultimate_scepter"    }
+                "Cuirass"   {   "Item"        "item_vladmir_2"  }
+            }
 		}
 	}
 	//=================================================================================	
@@ -2817,7 +2947,7 @@
 		"ModelScale"				"3"
 		"Level"						"24"
 		"ConsideredHero"			"1"
-		"MinimapIcon"				"minimap_enemyicon"
+		"MinimapIcon"				"minimap_roshancamp"
 		"MinimapIconSize"			"313"
 	
 		// Abilities
@@ -2906,13 +3036,14 @@
 			}
 			"OffensiveAbilities"
 			{
-				"Ability1"                
-				{
-					"Name"      		  "meme_doom_datadriven"
-				}
-				"Ability2"
+				"Ability1"
                 {
                     "Name"      		  "skeleton_king_hellfire_blast_datadriven"
+                }
+                "Ability2"
+                {
+                    "Name"      		  "meme_doom_datadriven"
+                    "UseAtHealthPercent"  "50"
                 }
 			}
 			"DefaultState"				"Invade"
@@ -3024,6 +3155,7 @@
 		"ModelScale"				"1.7"
 		"ConsideredHero"			"1"
 		"Level"						"4"
+		"MinimapIcon"				"minimap_roshancamp"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -3616,7 +3748,7 @@
 		"ModelScale"				"2.3"
 		"Level"						"8"
 		"ConsideredHero"			"1"
-		"MinimapIcon"				"minimap_enemyicon"
+		"MinimapIcon"				"minimap_roshancamp"
 		"MinimapIconSize"			"275"
 		"CanBeDominated"			"0"
 		"precache"
@@ -3716,6 +3848,8 @@
 				{
 					"Name"				"treant_living_armor"
 					"Buff"				"1"
+					"UseSelfishly"        "1"
+					"UseAtHealthPercent"  "50"
 				}
 			}
 			"OffensiveAbilities"
@@ -3750,7 +3884,7 @@
 		"ModelScale"				"2.1"
 		"Level"						"1"
 		"ConsideredHero"			"1"
-		"MinimapIcon"				"minimap_enemyicon"
+		"MinimapIcon"				"minimap_roshancamp"
 		"MinimapIconSize"			"275"
 		"CanBeDominated"			"0"
 		"precache"
@@ -3966,6 +4100,7 @@
 		"Level"						"1.0"
 		"ModelScale" 				"2.3"
 		"ConsideredHero"			"1"
+		"MinimapIcon"				"minimap_roshancamp"
 		"CanBeDominated"			"0"
 	
 	
@@ -4410,6 +4545,7 @@
 		"MinimapIconSize"			"275"
 		"CanBeDominated"			"0"
 		"ConsideredHero"			"1"
+		"MinimapIcon"				"minimap_roshancamp"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -5300,6 +5436,7 @@
 		"ModelScale"				".65"
 		"Level"						"1"
 		"ConsideredHero"			"1"
+		"MinimapIcon"				"minimap_roshancamp"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -5739,10 +5876,10 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"8"
 		"ModelScale" 				"2.6"
-		"MinimapIcon"				"minimap_enemyicon"
 		"MinimapIconSize"			"275"
 		"CanBeDominated"			"0"
 		"ConsideredHero"			"1"
+		"MinimapIcon"				"minimap_roshancamp"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -5977,6 +6114,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
 		"ModelScale"				"1.5"
 		"ConsideredHero"			"1"
+		"MinimapIcon"				"minimap_roshancamp"
 		"Level"						"1"
 		
 		// Abilities
@@ -6141,6 +6279,7 @@
 		"Level"						"1"
 		"CanBeDominated"			"0"
 		"ConsideredHero"            "1"
+		"MinimapIcon"				"minimap_roshancamp"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -6599,6 +6738,7 @@
 		"CanBeDominated"			"0"
 		"IsAncient"                    "1"
 		"ConsideredHero"            "1"
+		"MinimapIcon"				"minimap_roshancamp"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -7842,7 +7982,7 @@
 		"AttackRate"				"1.9"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
-		"AttackRange"				"930"		// Range within a target can be attacked.
+		"AttackRange"				"700"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles\neutral_fx\ghost_frost_attack.vpcf"          // Particle system model for projectile.
 		"ProjectileSpeed"			"1100"		    // Speed of projectile.		     fra
 		"ProjectileSpeed"			"1100"		    // Speed of projectile.		     
@@ -7922,6 +8062,7 @@
 		"Model"						"models\heroes\bane\bane.vmdl"	// Model.
 		"ModelScale"				"0.85"
 		"Level"						"12"
+		"CanBeDominated"               "0"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -9745,35 +9886,36 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models\creeps\neutral_creeps\n_creep_golem_a\neutral_creep_golem_a.vmdl"	// Model.
-		"ModelScale"				"1.85"
+		"Model"						"models/heroes/earthshaker/earthshaker.vmdl"	// Model.
+		"ModelScale"				"0.85"
 		"Level"						"1"
-		"IsAncient"                 "1"
+		"IsAncient"                 "0"
+		"CanBeDominated"               "0"
 		
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"tiny_craggy_exterior"			// Ability 1.
-		"Ability2"					""			// Ability 2.
-		"Ability3"					"tiny_avalanche"			// Ability 3.
-		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
+		"Ability1"					"earthshaker_fissure"			// Ability 1.
+		"Ability2"					"earthshaker_enchant_totem"			// Ability 2.
+		"Ability3"					"earthshaker_aftershock"			// Ability 3.
+		"Ability4"					"earthshaker_echo_slam"			// Ability 4.
+		"Ability5"					"generic_gold_bag_fountain_medium"			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
 		"Ability8"					""			// Ability 8 - Extra.
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"40"			// Physical protection.
+		"ArmorPhysical"				"20"			// Physical protection.
 		"MagicalResistance"			"25"		// Magical protection.
 	
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"184"		// Damage range min.
-		"AttackDamageMax"			"188"		// Damage range max.
-		"AttackRate"				"1.9"		// Speed of attack.
-		"AttackAnimationPoint"		"1.3"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackDamageMin"			"84"		// Damage range min.
+		"AttackDamageMax"			"124"		// Damage range max.
+		"AttackRate"				"0.9"		// Speed of attack.
+		"AttackAnimationPoint"		"0.467000"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			""			// Speed of projectile.
@@ -9801,10 +9943,10 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"8888"		// Base health.
+		"StatusHealth"				"2000"		// Base health.
 		"StatusHealthRegen"			"0.0"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0"			// Mana regeneration rate.
+		"StatusMana"				"1000"			// Base mana.
+		"StatusManaRegen"			"20"			// Mana regeneration rate.
 	
 		// Team
 		//----------------------------------------------------------------
@@ -9843,8 +9985,27 @@
             {
                 "Ability1"
                 {
-                    "Name"				"tiny_avalanche"
+                    "Name"				"earthshaker_fissure"
                     "MinimumTargets"	"2"
+                }
+                "Ability2"
+                {
+                    "Name"				"earthshaker_echo_slam"
+                    "AOE"                "1"
+                    "Radius"             "275"
+                    "MinimumTargets"     "2"
+                    "UseAtHealthPercent"  "50"
+                }
+            }
+
+            "DefensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"				"earthshaker_enchant_totem"
+                    "Buff"				"1"
+                    "UseSelfishly"        "1"
+                    "UseAtHealthPercent"  "90"
                 }
             }
 		}
@@ -10023,7 +10184,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"750"		// Base health.
+		"StatusHealth"				"500"		// Base health.
 		"StatusHealthRegen"			"1.0"		// Health regeneration rate.
 		"StatusMana"				"100"			// Base mana.
 		"StatusManaRegen"			"1"			// Mana regeneration rate.
@@ -10051,8 +10212,8 @@
 				"Invade"
 				{
 					"Name"				"Invade"
-					"Aggression"		"70.0"
-					"Avoidance"			"50.0"
+					"Aggression"		"100.0"
+					"Avoidance"			"0.0"
 					"Support"			"0.0"
 					"RoamDistance"		"0.0"
 				}
@@ -10077,7 +10238,7 @@
 	//=================================================================================
 	// Splitter C
 	//=================================================================================
-	"npc_dota_splitter_c"
+	"npc_dota_splitter_medium"
 	{
 		// General
 		//
@@ -10138,7 +10299,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"4000"		// Base health.
+		"StatusHealth"				"750"		// Base health.
 		"StatusHealthRegen"			"3.0"		// Health regeneration rate.
 		"StatusMana"				"600"			// Base mana.
 		"StatusManaRegen"			"1"			// Mana regeneration rate.
@@ -10189,7 +10350,7 @@
 	//=================================================================================
 	// Splitter C
 	//=================================================================================
-	"npc_dota_splitter_medium"
+	"npc_dota_splitter_large"
 	{
 		// General
 		//
@@ -10203,7 +10364,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"creature_split_a"			// Ability 1.
 		"Ability2"					"brewmaster_earth_pulverize"			// Ability 2.
-		"Ability3"					""			// Ability 3.
+		"Ability3"					"tiny_craggy_exterior"			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
@@ -10250,7 +10411,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"7000"		// Base health.
+		"StatusHealth"				"1000"		// Base health.
 		"StatusHealthRegen"			"3.0"		// Health regeneration rate.
 		"StatusMana"				"600"			// Base mana.
 		"StatusManaRegen"			"1"			// Mana regeneration rate.

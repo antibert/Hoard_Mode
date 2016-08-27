@@ -15711,17 +15711,8 @@
             {
                 "ScriptFile"	"heroes/hero_doom_bringer/doom.lua"
                 "Function"		"DoomPurge"
-            }
-
-            "ApplyModifier"
-            {
-                "ModifierName"	"modifier_doom_datadriven"
-                "Target"
-                {
-                    "Center"	"TARGET"
-                    "Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-                }
-                "Duration"		"%duration"
+                "modifier"      "modifier_doom_datadriven"
+                "duration"      "%duration"
             }
         }
 

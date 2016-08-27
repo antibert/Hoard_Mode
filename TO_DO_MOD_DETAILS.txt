@@ -21,6 +21,9 @@ Ghost Wave:
 Reduced attack range of ghosts from 930 to 700
 Reduced Ghost Boss hp from 30000 to 20000
 
+Final Wave:
+Skeleton King's Doom should now be properly blocked by Linken's Sphere
+
 To Do:
 -- update russian lang
 -- Lifestealer hotkeys getting messed up

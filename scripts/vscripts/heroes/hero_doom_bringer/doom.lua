@@ -4,6 +4,8 @@
 function DoomPurge( keys )
 	local target = keys.target
 
+	if target:TriggerSpellAbsorb( keys.ability ) then return end
+
 	-- Purge
 	local RemovePositiveBuffs = true
 	local RemoveDebuffs = false
@@ -11,6 +13,11 @@ function DoomPurge( keys )
 	local RemoveStuns = false
 	local RemoveExceptions = false
 	target:Purge( RemovePositiveBuffs, RemoveDebuffs, BuffsCreatedThisFrameOnly, RemoveStuns, RemoveExceptions)
+
+	local modifier = keys.modifier
+	local caster = keys.caster
+	local duration = keys.duration
+	ability:ApplyDataDrivenModifier(caster, target, modifier, {duration = duration})
 end
 
 --[[Author: Pizzalol

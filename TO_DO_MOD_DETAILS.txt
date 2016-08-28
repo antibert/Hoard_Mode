@@ -1,28 +1,10 @@
 Next Update Patch Notes:
 
-1.20
-Gold and XP changes!
-XP is now granted fully to all allies within a 1300 radius, instead of divided amongst them.
-Assist gold is now granted for slain creeps, granting 50% of last hit gold to all heroes within a 1300 radius.
-These changes should make the 5 Player Map less difficult than the 4 Player Map. This also means that players are less penalized for grouping up or defending at the tower.
-
-Splitter Wave:
-Giant Golem boss no longer splits, now has full array of Tiny powers
-Giant Golem boss carries an Aghanim's Scepter and Vladmir's Cuirass
-Reduced Giant Golem boss hit points from 30000 to 20000
-Replaced ancient golems with Earthshakers
-Reduced split spawn size from 3 to 2
-Reduced large splitter hp from 7000 to 1000
-Added Craggy Exterior to Large Splitters
-Reduced medium splitter hp from 4000 to 750
-Reduced small splitter hp from 750 to 500
-
-Ghost Wave:
-Reduced attack range of ghosts from 930 to 700
-Reduced Ghost Boss hp from 30000 to 20000
-
-Final Wave:
-Skeleton King's Doom should now be properly blocked by Linken's Sphere
+1.20a
+Fix to golem boss model
+Increased difficulty modifiers:
+Outgoing hero damage changed from 100/100/90/80% to 100/90/80/70%
+Incoming hero damage changed from 100/100/120/140% to 100/120/140/160%
 
 To Do:
 -- update russian lang

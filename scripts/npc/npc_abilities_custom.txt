@@ -9815,12 +9815,12 @@
             "01"
             {
                 "var_type"			"FIELD_INTEGER"
-                "damage_increase_pct"	"0 0 20 40"
+                "damage_increase_pct"	"0 20 40 60"
             }
             "02"
             {
                 "var_type"			"FIELD_INTEGER"
-                "damage_decrease_pct"	"0 0 -10 -20"
+                "damage_decrease_pct"	"0 -10 -20 -30"
             }
             "03"
             {

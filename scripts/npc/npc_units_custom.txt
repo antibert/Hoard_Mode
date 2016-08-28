@@ -1695,7 +1695,7 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models/creeps/neutral_creeps/n_creep_golem_a/n_creep_golem_a.vmdl"	// Model.
+		"Model"                        "models\creeps\neutral_creeps\n_creep_golem_a\neutral_creep_golem_a.vmdl"    // Model.
 		"ModelScale"				"3"
 		"Level"						"16"
 		"CanBeDominated"			"0"

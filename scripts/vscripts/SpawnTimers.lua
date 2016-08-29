@@ -729,17 +729,6 @@ Timers:CreateTimer("mini", {
 	Timers:CreateTimer(waveEnd(4), function()
 		Spawners:StopSpawner("ghost")
 	end)
-	Timers:CreateTimer("ghost2", {
-		useGameTime = true,
-		endTime = waveStart(4)+45,
-		callback = function()
-			Spawners:SpawnGhostMeele2()
-			return 40.0
-		end
-	})
-	Timers:CreateTimer(waveEnd(4), function()
-		Spawners:StopSpawner("ghost2")
-	end)
 	Timers:CreateTimer("bane", {
 		useGameTime = true,
 		endTime = waveStart(4)+45,

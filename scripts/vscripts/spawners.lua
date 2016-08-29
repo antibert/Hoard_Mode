@@ -1487,20 +1487,6 @@ function Spawners:SpawnBigGhost()
 		end)
 	end
 end
-function Spawners:SpawnGhostMeele2()
-	local point = Entities:FindByName(nil, "spawner1"):GetAbsOrigin()
-	local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
-	local units_to_spawn = 4
-	for i=1,units_to_spawn do
-		Timers:CreateTimer(function()
-			local unit = CreateUnitByName("npc_dota_ghost_meele2", point, true, nil, nil, DOTA_TEAM_BADGUYS)
-			ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
-									OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-									Position = waypoint, Queue = true} )
-			DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
-		end)
-	end
-end
 
 function Spawners:SpawnGhostBane()
 	local point = Entities:FindByName(nil, "spawner4"):GetAbsOrigin()

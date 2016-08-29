@@ -286,7 +286,6 @@ function GameMode:OnEntityKilled( keys )
 	  -- Fake Hero gold popup
 	  EmitSoundOnLocationForAllies(killedUnit:GetAbsOrigin(), "General.Coins", killerEntity)
 	  local digits = #tostring(goldToAdd) + 1
-	  print('digits'..digits)
 	  local particleName = "particles/msg_fx/msg_goldbounty.vpcf" --"particles/msg_fx/msg_gold.vpcf"
 	  for _, unit in pairs (unitsinradius) do
 	    if experienceToAdd > 0 then

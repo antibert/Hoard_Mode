@@ -2,11 +2,14 @@ Next Update Patch Notes:
 
 1.20b
 Standard lane creeps now give Super Creep levels of XP and gold:
-Ranged creep bounty XP reduced from 90 to 25
-Ranged creep bounty gold reduced from 42-48 to 18-26
-Melee creep bounty XP reduced from 45 to 25
-Melee creep bounty gold reduced from 36-40 to 16-24
-Siege creeps are unchanged
+Rebalanced XP and gold from ghost and splitter waves
+
+Heroes:
+// Invoker
+-- Forged Spirit melting strike now works
+
+// Warlock
+-- Aghanim's Scepter golems now properly have full hp and damage
 
 To Do:
 -- update russian lang

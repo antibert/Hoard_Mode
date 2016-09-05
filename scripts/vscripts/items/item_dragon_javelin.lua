@@ -5,8 +5,11 @@ function SplitShotLaunch( keys )
     local caster = keys.caster
     local caster_location = caster:GetAbsOrigin()
     local ability = keys.ability
+    local cooldown = ability:GetCooldown(ability:GetLevel())
 
-    if caster:IsRangedAttacker() and caster:IsRealHero() then
+    if caster:IsRangedAttacker() and caster:IsRealHero() and ability:IsCooldownReady() then
+        ability:StartCooldown(cooldown)
+
         -- Targeting variables
         local target_type = ability:GetAbilityTargetType()
         local target_team = ability:GetAbilityTargetTeam()

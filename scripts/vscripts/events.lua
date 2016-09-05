@@ -287,18 +287,22 @@ function GameMode:OnEntityKilled( keys )
 	  EmitSoundOnLocationForAllies(killedUnit:GetAbsOrigin(), "General.Coins", killerEntity)
 	  local digits = #tostring(goldToAdd) + 1
 	  local particleName = "particles/msg_fx/msg_goldbounty.vpcf" --"particles/msg_fx/msg_gold.vpcf"
+      local playerReceived = {}
 	  for _, unit in pairs (unitsinradius) do
-	    if experienceToAdd > 0 then
-	      unit:AddExperience(experienceToAdd, DOTA_ModifyXP_CreepKill, false, true)
-	    end
-	    if goldToAdd > 0 and unit ~= killerEntity then
-		    local particle = ParticleManager:CreateParticleForPlayer( particleName, PATTACH_OVERHEAD_FOLLOW, killedUnit, unit:GetPlayerOwner() )
-		    ParticleManager:SetParticleControl(particle, 0, killedUnit:GetAbsOrigin())
-		    ParticleManager:SetParticleControl(particle, 1, Vector(0, goldToAdd, 0))
-		    ParticleManager:SetParticleControl(particle, 2, Vector(2.0, digits, 0))
-		    ParticleManager:SetParticleControl(particle, 3, Vector(255, 200, 33))
-	      unit:ModifyGold(goldToAdd,true,DOTA_ModifyGold_CreepKill)
-	    end
+        if unit:IsRealHero() and playerReceived[unit:GetPlayerOwnerID()] == nil then
+          playerReceived[unit:GetPlayerOwnerID()] = 1
+          if experienceToAdd > 0 then
+            unit:AddExperience(experienceToAdd, DOTA_ModifyXP_CreepKill, false, true)
+          end
+          if goldToAdd > 0 and unit ~= killerEntity and unit:GetPlayerOwnerID() ~= killerEntity:GetPlayerOwnerID() then
+              local particle = ParticleManager:CreateParticleForPlayer( particleName, PATTACH_OVERHEAD_FOLLOW, killedUnit, unit:GetPlayerOwner() )
+              ParticleManager:SetParticleControl(particle, 0, killedUnit:GetAbsOrigin())
+              ParticleManager:SetParticleControl(particle, 1, Vector(0, goldToAdd, 0))
+              ParticleManager:SetParticleControl(particle, 2, Vector(2.0, digits, 0))
+              ParticleManager:SetParticleControl(particle, 3, Vector(255, 200, 33))
+            unit:ModifyGold(goldToAdd,true,DOTA_ModifyGold_CreepKill)
+          end
+        end
 	  end
   end
 end

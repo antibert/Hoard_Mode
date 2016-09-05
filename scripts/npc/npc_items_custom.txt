@@ -1233,6 +1233,7 @@
 		"Model"							"models/props_gameplay/red_box.vmdl"
 		"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
 		"AbilityTextureName"			"item_dragon_javelin"
+		"AbilityCooldown"				"0.2"
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
@@ -1406,6 +1407,7 @@
         "Model"							"models/props_gameplay/red_box.vmdl"
         "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
         "AbilityTextureName"			"item_dragon_javelin_2"
+        "AbilityCooldown"				"0.2"
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
@@ -1561,6 +1563,7 @@
         "Model"							"models/props_gameplay/red_box.vmdl"
         "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
         "AbilityTextureName"			"item_dragon_javelin_3"
+        "AbilityCooldown"				"0.2"
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
@@ -1716,6 +1719,7 @@
         "Model"							"models/props_gameplay/red_box.vmdl"
         "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
         "AbilityTextureName"			"item_dragon_javelin_4"
+        "AbilityCooldown"				"0.2"
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
@@ -1871,6 +1875,7 @@
         "Model"							"models/props_gameplay/red_box.vmdl"
         "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
         "AbilityTextureName"			"item_dragon_javelin_5"
+        "AbilityCooldown"				"0.2"
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------

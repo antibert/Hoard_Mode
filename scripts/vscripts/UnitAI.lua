@@ -40,12 +40,14 @@ end
 function BehaviorAttackAncient:Begin()
 	self.endTime = GameRules:GetGameTime() + 5
 	local hAncient = Entities:FindByName( nil, "dota_goodguys_fort" )
-	self.order =
-	{
-		OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-		UnitIndex = thisEntity:entindex(),
-		Position = hAncient:GetOrigin()
-	}
+	if hAncient ~= nil then
+		self.order =
+		{
+			OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
+			UnitIndex = thisEntity:entindex(),
+			Position = hAncient:GetOrigin()
+		}
+	end
 end
 
 BehaviorAttackAncient.Continue = BehaviorAttackAncient.Begin

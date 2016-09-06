@@ -1,22 +1,13 @@
 Next Update Patch Notes:
 
-1.20b
-Fixed issue with illusions and clones getting extra XP and gold
-
-Items:
-// Dragon Javelin
--- Now has a 0.2 second cooldown
-
+1.20e
 Heroes:
-// Lone Druid
--- Synergy removed
--- Lone Druid now has a copy of Ursa's Earthshock as his third ability
--- Spirit Bear base armor increased from 3/4/5/6 to 4/7/10/13
--- Spirit Bear move speed increased from 320/330/340/350 to 330/350/370/390
--- Spirit Bear base damage increased from 35/45/55/65 to 45/75/105/135
+// Lion
+-- Hex is now an AoE
 
-// Phoenix
--- Fixed Fire Spirits not dealing damage
+// Shadow Shaman
+-- Hex is now an AoE
+-- Shackles now has the same damage and cooldown as live, and is now aoe targeted instead of PBAOE
 
 To Do:
 -- update russian lang

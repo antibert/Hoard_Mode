@@ -4532,27 +4532,28 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"shackles_icon"
+		"AOERadius"                     "%radius"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"%cast_range"
+		"AbilityCastRange"				"%radius"
 		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityChannelTime"			"2.75 3.5 4.25 5.0"
-		"AbilityCooldown"				"16.0 16.0 16.0 16.0"
+		"AbilityCooldown"				"10"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"40 40 40 40"
+		"AbilityDamage"					"120 200 280 360"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -4575,18 +4576,18 @@
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"total_damage"		"120 160 160 200"
+				"total_damage"		"120 200 280 360"
 			}
 			// Extra, calculated as total_damage / channel_time * tick_interval
 			"04"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_tick"	"4.3 4.6 3.8 4"
+				"damage_per_tick"	"4.3 5.7 6.6 7.2"
 			}
 			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"cast_range"		"400"
+				"radius"		"250"
 			}
 
 		}
@@ -4617,8 +4618,8 @@
 			{
 				"Target"
 				{
-					"Center"  	"CASTER"
-					"Radius" 	"%cast_range"
+					"Center"  	"TARGET"
+					"Radius" 	"%radius"
 					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				}
@@ -4641,8 +4642,8 @@
 			{
 				"Target"
 				{
-					"Center"  	"CASTER"
-					"Radius" 	"%cast_range"
+					"Center"  	"TARGET"
+					"Radius" 	"%radius"
 					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				}
@@ -4726,6 +4727,99 @@
 			}
 		}
 	}
+	"shadow_shaman_voodoo_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "FightRecapLevel"				"1"
+        "AbilityTextureName"			"shadow_shaman_voodoo"
+        "AOERadius"                     "%radius"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"500"
+        "AbilityCastPoint"				"0 0 0 0"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"13.0 13.0 13.0 13.0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"110 140 170 200"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "movespeed"					"100"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "duration"					"1.25 2.0 2.75 3.5"
+            }
+            "03"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "radius"					"250"
+            }
+        }
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"			"soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+            "particle"			"particles/units/heroes/hero_shadowshaman/shadowshaman_voodoo.vpcf"
+            "model"				"models/props_gameplay/chicken.vmdl"
+        }
+
+        "OnSpellStart"
+        {
+            "FireSound"
+            {
+                "EffectName"	"Hero_ShadowShaman.Hex.Target"
+                "Target"		"TARGET"
+            }
+
+            "ActOnTargets"
+            {
+                "Target"
+                {
+                    "Center"  	"TARGET"
+                    "Radius" 	"%radius"
+                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+
+                "Action"
+                {
+                    "ApplyModifier"
+                    {
+                        "ModifierName"	"modifier_shadow_shaman_voodoo"
+                        "Target" 		"TARGET"
+                        "Duration"		"%duration"
+                    }
+
+                    "FireEffect"
+                    {
+                        "EffectName"	"particles/units/heroes/hero_shadowshaman/shadowshaman_voodoo.vpcf"
+                        "EffectAttachType"	"follow_origin"
+                        "Target"		"TARGET"
+                    }
+                }
+            }
+        }
+    }
 	//=================================================================================================================
 	// Slardar: Sprint
 	//=================================================================================================================
@@ -15904,6 +15998,106 @@
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_removed"
+                }
+            }
+        }
+    }
+
+    "lion_voodoo_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "FightRecapLevel"				"1"
+        "AbilityTextureName"			"lion_voodoo"
+        "AOERadius"                     "%radius"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"500"
+        "AbilityCastPoint"				"0 0 0 0"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"30 24 18 12"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"125 150 175 200"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "duration"					"2.5 3 3.5 4"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "movespeed"					"140"
+            }
+            "03"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "radius"					"250"
+            }
+        }
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"			"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
+            "particle"			"particles/units/heroes/hero_lion/lion_spell_voodoo.vpcf"
+            "model"				"models/props_gameplay/frog.vmdl"
+        }
+
+        "OnSpellStart"
+        {
+            "FireSound"
+            {
+                "EffectName"	"Hero_Lion.Voodoo"
+                "Target"		"TARGET"
+            }
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_Lion.Hex.Target"
+                "Target"		"TARGET"
+            }
+
+            "ActOnTargets"
+            {
+                "Target"
+                {
+                    "Center"  	"TARGET"
+                    "Radius" 	"%radius"
+                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+
+                "Action"
+                {
+                    "ApplyModifier"
+                    {
+                        "ModifierName"	"modifier_lion_voodoo"
+                        "Target" 		"TARGET"
+                        "Duration"		"%duration"
+                    }
+
+                    "FireEffect"
+                    {
+                        "EffectName"	"particles/units/heroes/hero_lion/lion_spell_voodoo.vpcf"
+                        "EffectAttachType"	"follow_origin"
+                        "Target"		"TARGET"
+                    }
                 }
             }
         }

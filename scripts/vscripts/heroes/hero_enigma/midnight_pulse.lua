@@ -7,7 +7,7 @@ function ApplyDPS(keys)
 	local ability = keys.ability
 	
 	local health_percent = ability:GetLevelSpecialValueFor("damage_percent", ability:GetLevel() -1)/100
-	local max_damage = ability:GetLevelSpecialValueFor("damage_percent", ability:GetLevel() -1)
+	local max_damage = ability:GetLevelSpecialValueFor("max_damage", ability:GetLevel() -1)
 	local health = target:GetMaxHealth()
 
 	local damage = health * health_percent

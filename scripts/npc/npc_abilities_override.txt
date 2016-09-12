@@ -2626,7 +2626,7 @@
 			"05"
             {
                 "var_type"			"FIELD_FLOAT"
-                "duration"			"4.0"
+                "duration"			"9.0"
             }
 			"07"
 			{
@@ -3404,12 +3404,12 @@
             "05"
             {
                 "var_type"				"FIELD_FLOAT"
-                "frostbite_duration"	"0"
+                "frostbite_duration"	"8 9 10"
             }
             "06"
             {
                 "var_type"				"FIELD_FLOAT"
-                "dot_damage"			"0"
+                "dot_damage"			"12.5 20 32"
             }
             "07"
             {
@@ -3429,7 +3429,7 @@
             "10"
             {
                 "var_type"				"FIELD_FLOAT"
-                "frostbite_duration_scepter"	"0"
+                "frostbite_duration_scepter"	"17"
             }
         }
     }

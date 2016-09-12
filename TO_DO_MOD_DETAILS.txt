@@ -1,17 +1,14 @@
 Next Update Patch Notes:
 
-1.20f
-Removed sound for gaining assist gold
+1.20h
 
 Heroes:
-// Enigma
--- Fixed bug that prevented Midnight Pulse from doing % damage
+// Ancient Apparition
+-- Ice Blast deals normal DoT damage now, including extended duration for aghs upgrade
+-- Known Issue: Ice Blast DoT damage only works on bosses and mini-bosses
 
 // Phoenix
--- Fixed bug prevent fire spirits from having the proper 9 second duration
-
-// Puck
--- Waning Rift now also reduces base damage of enemies by 20/30/40/50%
+-- Actually fixed the duration of Fire Spirits
 
 To Do:
 -- update russian lang

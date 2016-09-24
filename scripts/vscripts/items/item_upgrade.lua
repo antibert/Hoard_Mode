@@ -7,7 +7,7 @@ function item_upgrade_tower( keys )
 	local heal_target = true
 	local heal = keys.heal_amount
 
-	if caster:IsRealHero() then
+	if caster:IsRealHero() and not caster:HasModifier("modifier_arc_warden_tempest_double") then
 		if target:IsTower() then
 			local tower_stats = target:FindAbilityByName("tower_stats")
 			if tower_stats ~= nil then

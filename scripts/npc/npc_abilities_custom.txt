@@ -10483,11 +10483,6 @@
                 "var_type"				"FIELD_INTEGER"
                 "armor"				"-3 -5 -7 -9"
             }
-            "04"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "accuracy"				"-25 -50 -75 -100"
-            }
         }
         "Modifiers"
         {
@@ -10510,7 +10505,6 @@
                 {
                     "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resistance"
                     "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor"
-                    "MODIFIER_PROPERTY_EVASION_CONSTANT"	"%accuracy"
                 }
             }
         }

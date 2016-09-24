@@ -3944,11 +3944,40 @@
             "particle"			"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_frost_explosion.vpcf"
         }
 
+        "OnOwnerSpawned"
+        {
+            "RunScript"
+            {
+                "ScriptFile"		"misc/illusions.lua"
+                "Function"			"GrantModifierToRealHero"
+                "modifier"          "modifier_item_skadi_splash"
+            }
+        }
+
+        "OnEquip"
+        {
+            "RunScript"
+            {
+                "ScriptFile"		"misc/illusions.lua"
+                "Function"			"GrantModifierToRealHero"
+                "modifier"          "modifier_item_skadi_splash"
+            }
+        }
+
+        "OnUnequip"
+        {
+            "RemoveModifier"
+            {
+                "ModifierName"	"modifier_item_skadi_splash"
+                "Target" 		"CASTER"
+            }
+        }
+
         "Modifiers"
         {
             "modifier_item_skadi_splash"
             {
-                "Passive" "1"
+                "Passive" "0"
             	"IsHidden" "1"
             	"AllowIllusionDuplicate"    "0"
             	"Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
@@ -5314,11 +5343,41 @@
             }
         }
 
+        "OnOwnerSpawned"
+        {
+            "RunScript"
+            {
+                "ScriptFile"		"misc/illusions.lua"
+                "Function"			"GrantModifierToRealHero"
+                "modifier"          "modifier_item_orb_of_venom_splash"
+            }
+        }
+
+        "OnEquip"
+        {
+            "RunScript"
+            {
+                "ScriptFile"		"misc/illusions.lua"
+                "Function"			"GrantModifierToRealHero"
+                "modifier"          "modifier_item_orb_of_venom_splash"
+            }
+        }
+
+        "OnUnequip"
+        {
+            "RemoveModifier"
+            {
+                "ModifierName"	"modifier_item_orb_of_venom_splash"
+                "Target" 		"CASTER"
+            }
+        }
+
         "Modifiers"
         {
             "modifier_item_orb_of_venom_splash"
             {
-                "Passive" "1"
+                "Passive" "0"
+                "AllowIllusionDuplicate"    "0"
                 "IsHidden" "1"
                 "Attributes" "MODIFIER_ATTRIBUTE_MULTIPLE"
 

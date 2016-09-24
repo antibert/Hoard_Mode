@@ -7552,6 +7552,7 @@
 			{
 				"Duration"		"%bolt_stun_duration"
 				"IsDebuff"		"1"
+				"IsPurgable"	"1"
 				"OverrideAnimation"	"ACT_DOTA_DISABLED"
 
 				"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
@@ -9046,6 +9047,7 @@
             "modifier_hellfire_blast_stun"
             {
                 "IsDebuff"			"1"
+                "IsPurgable"	"1"
                 "Duration"			"%blast_stun_duration"
                 "States"
                 {
@@ -9061,6 +9063,7 @@
             {
                 "IsDebuff"			"1"
                 "Duration"			"%blast_dot_duration"
+                "IsPurgable"	"1"
 
                 "Properties"
                 {
@@ -9075,6 +9078,7 @@
             {
                 "IsHidden"	"1"
                 "Duration"	"%tooltip_slow_duration"
+                "IsPurgable"	"1"
 
                 "ThinkInterval"		"1"
                 "OnIntervalThink"

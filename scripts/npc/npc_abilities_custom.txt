@@ -2976,13 +2976,34 @@
             }
         }
 
+        "OnOwnerSpawned"
+        {
+			"RunScript"
+            {
+                "ScriptFile"		"misc/illusions.lua"
+                "Function"			"GrantModifierToRealHero"
+                "modifier"          "modifier_time_lock_datadriven"
+            }
+        }
+
+        "OnUpgrade"
+        {
+            "RunScript"
+            {
+                "ScriptFile"		"misc/illusions.lua"
+                "Function"			"GrantModifierToRealHero"
+                "modifier"          "modifier_time_lock_datadriven"
+            }
+        }
+
         "Modifiers"
         {
             "modifier_time_lock_datadriven"
             {
-                "Passive"	"1"
+                "Passive"	"0"
                 "IsHidden"	"1"
                 "AllowIllusionDuplicate"    "0"
+                "Attributes"    "MODIFIER_ATTRIBUTE_PERMANENT"
 
                 "OnAttackLanded"
                 {

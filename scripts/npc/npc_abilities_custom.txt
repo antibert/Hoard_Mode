@@ -6434,9 +6434,6 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityManaCost"				"30 25 20 15"
 
-		//Damage
-		"AbilityDamage"					"70"
-
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -6485,30 +6482,17 @@
 				"EffectName"		"Hero_PhantomAssassin.Dagger.Cast"
 				"Target"			"CASTER"
 			}
-			"ActOnTargets"
-			{
-				"Target"
-				{
-					"Center"  	"TARGET"
-					"Radius" 	"%radius"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				}
 
-				"Action"
-				{
-					"TrackingProjectile"
-					{
-						"Target"           "TARGET"
-					    "EffectName"       "particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger.vpcf"
-					    "Dodgeable"        "1"
-					    "ProvidesVision"   "1"
-					    "VisionRadius"     "300"
-					    "MoveSpeed"        "%dagger_speed"
-					    "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
-					}
-				}
-			}
+			"TrackingProjectile"
+            {
+                "Target"           "TARGET"
+                "EffectName"       "particles/units/heroes/hero_phantom_assassin/phantom_assassin_stifling_dagger.vpcf"
+                "Dodgeable"        "1"
+                "ProvidesVision"   "1"
+                "VisionRadius"     "300"
+                "MoveSpeed"        "%dagger_speed"
+                "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+            }
 		}
 
 		"OnProjectileHitUnit"
@@ -6519,24 +6503,38 @@
 	            "Target"			"CASTER"
 	        }
 
-			"Damage"
-			{
-				"Target"        "TARGET"
-				"Type"			"DAMAGE_TYPE_PHYSICAL"
-				"Damage"		"%AbilityDamage"
-			}
+	        "ActOnTargets"
+            {
+                "Target"
+                {
+                    "Center"  	"TARGET"
+                    "Radius" 	"%radius"
+                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+
+                "Action"
+                {
+                    "Damage"
+                    {
+                        "Target"        "TARGET"
+                        "Type"			"DAMAGE_TYPE_PHYSICAL"
+                        "Damage"		"%base_damage"
+                    }
+
+                    "ApplyModifier"
+                    {
+                        "ModifierName"		"modifier_stifling_dagger_slow_datadriven"
+                        "Target"			"TARGET"
+                    }
+                }
+            }
 
 			"RunScript"
 	        {
 	            "ScriptFile"	"heroes/hero_riki/tricks_of_the_trade.lua"
 	            "Function"		"PerformAttacks"
 	        }
-
-			"ApplyModifier"
-			{
-				"ModifierName"		"modifier_stifling_dagger_slow_datadriven"
-				"Target"			"TARGET"
-			}
 		}
 
 		"Modifiers"
@@ -10485,6 +10483,11 @@
                 "var_type"				"FIELD_INTEGER"
                 "armor"				"-3 -5 -7 -9"
             }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "accuracy"				"-25 -50 -75 -100"
+            }
         }
         "Modifiers"
         {
@@ -10507,6 +10510,7 @@
                 {
                     "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%magic_resistance"
                     "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor"
+                    "MODIFIER_PROPERTY_EVASION_CONSTANT"	"%accuracy"
                 }
             }
         }

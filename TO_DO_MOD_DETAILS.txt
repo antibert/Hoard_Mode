@@ -1,14 +1,42 @@
 Next Update Patch Notes:
 
-1.20h
+1.20i
+General:
+-- Tower (both Player and Horde) debuff auras now reduce evasion chance
+-- Storm Bolt stun from archer boss should be purgable
+-- Hellfire stun from Skeleton boss should be purgable
 
 Heroes:
-// Ancient Apparition
--- Ice Blast deals normal DoT damage now, including extended duration for aghs upgrade
--- Known Issue: Ice Blast DoT damage only works on bosses and mini-bosses
+// Abaddon
+-- Only the damage part of Death Coil is an AoE
 
-// Phoenix
--- Actually fixed the duration of Fire Spirits
+// Arc Warden
+-- Building Upgrades and Moon Shards used by the Tempest Double no longer do anything
+
+// Faceless Void
+-- Illusions no longer bash
+
+// Phantom Assassin
+-- Stifling Dagger only performs a full attack with orb effects on the primary target, dealing only splash damage on others
+-- Reverted Phantom Strike to vanilla
+
+// Troll Warlord
+-- Reverted Whirling Axe to vanilla
+-- Reverted Battle Trance to vanilla
+
+Items:
+
+// Eye of Skadi
+-- No longer grants splash damage to illusions
+
+// Orb of Venom
+-- No longer grants splash damage to illusions
+
+// Shiva's Armaments
+-- Increased attack speed slow to 45 (same as Shiva's Guard)
+
+// Vladmir's Cuirass
+-- Now buffs buildings attack speed and armor
 
 To Do:
 -- update russian lang

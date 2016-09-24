@@ -159,7 +159,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"generic_gold_bag_fountain_small"			// Ability 1
+		"Ability1"					""			// Ability 1
 		"Ability2"					"centaur_khan_war_stomp"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4

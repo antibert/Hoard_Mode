@@ -4975,7 +4975,7 @@
             "09"
             {
                 "var_type"						"FIELD_INTEGER"
-                "aura_attack_speed"				"-40"
+                "aura_attack_speed"				"-45"
             }
             "10"
             {
@@ -5187,7 +5187,7 @@
             "09"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_armor"			"10"
+                "aura_positive_armor"			"10"
             }
             "10"
             {
@@ -5218,6 +5218,38 @@
                     "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor"
                 }
             }
+            "modifier_item_vladmir_2_building_aura_emitter"  //We use two aura emitters because the lifesteal part only affects melee units.
+            {
+                "Passive"				"1"
+                "IsHidden"				"1"
+
+                "Aura" 					"modifier_item_vladmir_2_building_aura"
+                "Aura_Radius" 			"%aura_radius"
+                "Aura_Teams" 			"DOTA_UNIT_TARGET_BUILDING"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+                "Aura_ApplyToCaster" 	"1"
+            }
+            "modifier_item_vladmir_2_building_aura"
+            {
+                "Passive"			"0"
+                "IsHidden"			"0"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"				"%aura_positive_armor"
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%aura_attack_speed"
+                }
+
+                "OnAttackLanded"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"            "items/item_vladmir_2.lua"
+                        "Function"                "modifier_item_vladmir_2_lifesteal_aura_on_attack_landed"
+                    }
+                }
+            }
             "modifier_item_vladmir_2_general_aura_emitter"  //We use two aura emitters because the lifesteal part only affects melee units.
             {
                 "Passive"				"1"
@@ -5238,7 +5270,7 @@
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%damage_aura"
-                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS_UNIQUE"				"%armor_aura"
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"				"%aura_positive_armor"
                     "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%hp_regen"
                     "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"						"0.8"  //This is hardcoded due to an obscure engine bug.
                     "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%aura_attack_speed"

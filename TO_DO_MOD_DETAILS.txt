@@ -1,10 +1,17 @@
 Next Update Patch Notes:
 
 1.20k
+6.88e parity!
+Axe, Bounty Hunter, Faceless Void, Shadow Demon unchanged
+All other changes propagated
+
 General:
 -- Fixed boss skeleton's Doom
 -- Fixed some tooltips
 -- Fixed interactions with magic stick and invulnerable enemies (like those killed by Invoker's tornado)
+
+// Windranger
+-- Power Shot no longer deals less damage per target hit
 
 To Do:
 -- update russian lang

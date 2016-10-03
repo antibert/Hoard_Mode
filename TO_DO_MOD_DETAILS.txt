@@ -4,6 +4,7 @@ Next Update Patch Notes:
 General:
 -- Fixed boss skeleton's Doom
 -- Fixed some tooltips
+-- Fixed interactions with magic stick and invulnerable enemies (like those killed by Invoker's tornado)
 
 To Do:
 -- update russian lang

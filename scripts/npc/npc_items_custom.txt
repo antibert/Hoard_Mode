@@ -2617,7 +2617,7 @@
                 "Aura_Radius" 	"%radius"
                 "Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
                 "Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                "Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+                "Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
             }
 
             "modifier_item_magic_stick_charges_aura"
@@ -2719,7 +2719,7 @@
                 "Aura_Radius" 	"%radius"
                 "Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
                 "Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                "Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+                "Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
             }
 
             "modifier_item_magic_wand_charges_aura"

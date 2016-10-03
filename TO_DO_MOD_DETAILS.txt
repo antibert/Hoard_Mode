@@ -9,6 +9,7 @@ General:
 -- Fixed boss skeleton's Doom
 -- Fixed some tooltips
 -- Fixed interactions with magic stick and invulnerable enemies (like those killed by Invoker's tornado)
+-- Tower aura now grants a chance for true strike
 
 // Windranger
 -- Power Shot no longer deals less damage per target hit

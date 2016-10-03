@@ -141,6 +141,7 @@
 			"modifier_cold_feet_thinker_datadriven"
 			{
 				"Duration"			"%duration"
+				"IsHidden"          "1"
 
 				"EffectName"		"particles/units/heroes/hero_ancient_apparition/ancient_apparition_cold_feet_marker.vpcf"
 				"EffectAttachType"	"follow_origin"

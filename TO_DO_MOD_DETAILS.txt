@@ -11,6 +11,9 @@ General:
 -- Fixed interactions with magic stick and invulnerable enemies (like those killed by Invoker's tornado)
 -- Tower aura now grants a chance for true strike
 
+// Blink Dagger
+-- Reverted cooldown to vanilla (cost is still only 900)
+
 // Windranger
 -- Power Shot no longer deals less damage per target hit
 

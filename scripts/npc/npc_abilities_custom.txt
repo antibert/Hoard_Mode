@@ -5124,6 +5124,15 @@
 			}
 		}
 
+		"OnChannelInterrupted"
+        {
+            "RemoveModifier"
+            {
+                "ModifierName"		"keeper_of_the_light_mana_overload_target"
+                "Target"			"TARGET"
+            }
+        }
+
 		"OnChannelFinish"
 		{
 			"RemoveModifier"

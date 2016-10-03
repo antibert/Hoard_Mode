@@ -1,8 +1,8 @@
 Next Update Patch Notes:
 
-1.20j
+1.20k
 General:
--- Temporarily reverted tower accuracy change
+-- Fixed boss skeleton Doom
 
 To Do:
 -- update russian lang

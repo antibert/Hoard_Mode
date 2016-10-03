@@ -3,8 +3,9 @@
 	Purges positive buffs from the target]]
 function DoomPurge( keys )
 	local target = keys.target
+	local ability = keys.ability
 
-	if target:TriggerSpellAbsorb( keys.ability ) then return end
+	if target:TriggerSpellAbsorb( ability ) then return end
 
 	-- Purge
 	local RemovePositiveBuffs = true

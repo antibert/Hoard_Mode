@@ -7011,6 +7011,11 @@
                 "var_type"				"FIELD_INTEGER"
                 "damage"		"100 180 260 340"
             }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cast_range_tooltip"	"600"
+            }
         }
     }
 

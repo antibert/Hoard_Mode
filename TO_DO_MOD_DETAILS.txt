@@ -2,7 +2,8 @@ Next Update Patch Notes:
 
 1.20k
 General:
--- Fixed boss skeleton Doom
+-- Fixed boss skeleton's Doom
+-- Fixed some tooltips
 
 To Do:
 -- update russian lang

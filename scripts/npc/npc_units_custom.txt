@@ -267,7 +267,7 @@
         "particle_folder"		"particles/units/heroes/hero_centaur"
         "VoiceFile"		"soundevents/voscripts/game_sounds_vo_centaur.vsndevts"
 		"Level"						"25"
-		"ModelScale" 				"2.2"
+		"ModelScale" 				"2"
 		"CanBeDominated"			"0"
 		"ConsideredHero"			"1"
 		"MinimapIcon"				"minimap_roshancamp"
@@ -1264,23 +1264,22 @@
 		// General
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
-		"Model"						"models\creeps\neutral_creeps\n_creep_ghost_b\n_creep_ghost_b.vmdl"	// Model.
-		"ModelScale"				"3"
-		"Level"						"1"
+		"Model"		"models/heroes/lich/lich.vmdl"
+        "Portrait"		"vgui/hud/heroportraits/portrait_lich"
+        "SoundSet"		"Hero_Lich"
+		"ModelScale"				"2"
+		"Level"						"16"
 		"ConsideredHero"			"1"
 		"CanBeDominated"			"0"
 		"MinimapIcon"				"minimap_roshancamp"
-		
+
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"ghost_frost_attack"			// Ability 1.
-		"Ability2"					"generic_gold_bag_fountain_large"			// Ability 2.
-		"Ability3"					"phantom_assassin_blur"			// Ability 3.
-		"Ability4"					""			// Ability 4.
-		"Ability5"					""			// Ability 5.
-		"Ability6"					""			// Ability 6 - Extra.
-		"Ability7"					""			// Ability 7 - Extra.
-		"Ability8"					""			// Ability 8 - Extra.
+		"Ability1"		"lich_frost_nova"
+        "Ability2"		"lich_frost_armor"
+        "Ability3"		"phantom_assassin_blur"
+        "Ability4"		"lich_chain_frost"
+		"Ability5"					"generic_gold_bag_fountain_large"
 	
 		// Armor
 		//----------------------------------------------------------------
@@ -1289,15 +1288,15 @@
 	
 		// Attack
 		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"1200"		// Damage range min.
-		"AttackDamageMax"			"1500"		// Damage range max.
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"700"		// Damage range min.
+		"AttackDamageMax"			"900"		// Damage range max.
 		"AttackRate"				"0.8"		// Speed of attack.
-		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
+		"AttackAnimationPoint"		"0.46"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
-		"AttackRange"				"150"		// Range within a target can be attacked.
-		"ProjectileModel"			""			// Particle system model for projectile.
-		"ProjectileSpeed"			""			// Speed of projectile.
+		"AttackRange"				"550"		// Range within a target can be attacked.
+		"ProjectileModel"		"particles/units/heroes/hero_lich/lich_base_attack.vpcf"
+        "ProjectileSpeed"		"900"
 	
 		// Bounty
 		//----------------------------------------------------------------
@@ -1339,6 +1338,8 @@
 		//----------------------------------------------------------------
 		"VisionDaytimeRange"		"1400"		// Range of vision during day light.
 		"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+
+		"HasInventory"              "1"
 	
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
@@ -1360,6 +1361,57 @@
 			"DefaultState"				"Invade"
 			
 			"DisableClumpingBehavior"	"1"
+
+			"OffensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"				"lich_frost_nova"
+                    "Damage"			"1"
+                }
+                "Ability2"
+                {
+                    "Name"				"lich_chain_frost"
+                    "Damage"				"1"
+                }
+            }
+
+            "DefensiveAbilities"
+            {
+                "Ability1"
+                {
+                    "Name"				"lich_frost_armor"
+                    "Buff"				"1"
+                    "UseSelfishly"        "1"
+                    "UseAtHealthPercent"  "90"
+                }
+            }
+
+            "EquippedItems"
+            {
+                "Aghanims"    {    "Item"    "item_ultimate_scepter"    }
+                "Shiva"   {   "Item"        "item_shivas_guard_2"  }
+            }
+
+            "AttachWearables"
+            {
+                "Wearable1"
+                {
+                    "ItemDef"			"331"
+                }
+                "Wearable2"
+                {
+                    "ItemDef"			"332"
+                }
+                "Wearable3"
+                {
+                    "ItemDef"			"333"
+                }
+                "Wearable4"
+                {
+                    "ItemDef"			"334"
+                }
+            }
 		}
 	}
 	//=================================================================================
@@ -1631,7 +1683,7 @@
 		//
 		"BaseClass"					"npc_dota_creature"	// Class of entity of link to.
 		"Model"                        "models\creeps\neutral_creeps\n_creep_golem_a\neutral_creep_golem_a.vmdl"    // Model.
-		"ModelScale"				"3"
+		"ModelScale"				"2"
 		"Level"						"16"
 		"CanBeDominated"			"0"
 		"ConsideredHero"			"1"

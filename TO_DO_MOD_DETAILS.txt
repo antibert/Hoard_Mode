@@ -18,7 +18,8 @@ Reworked mech wave:
 
 Reworked some bosses:
 -- Reduced Ursa boss hit points
--- Centaur boss upgraded significantly
+-- Ghost boss upgraded
+-- Centaur boss upgraded
 
 Items:
 // Blink Dagger

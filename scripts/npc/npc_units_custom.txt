@@ -260,22 +260,26 @@
 	{
 		// General
 		//----------------------------------------------------------------
-		"Model"						"models\creeps\neutral_creeps\n_creep_centaur_lrg\n_creep_centaur_lrg.vmdl"	// Model.
+		"Model"						"models/heroes/centaur/centaur.vmdl"	// Model.
 		"BaseClass"					"npc_dota_creature"
-		"SoundSet"					"n_creep_melee"
-		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"1"
+		"SoundSet"					"Hero_Centaur"
+		"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
+        "particle_folder"		"particles/units/heroes/hero_centaur"
+        "VoiceFile"		"soundevents/voscripts/game_sounds_vo_centaur.vsndevts"
+		"Level"						"25"
 		"ModelScale" 				"2.2"
 		"CanBeDominated"			"0"
 		"ConsideredHero"			"1"
 		"MinimapIcon"				"minimap_roshancamp"
+		"Portrait"		"vgui/hud/heroportraits/portrait_centaur"
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"generic_gold_bag_fountain_large"			// Ability 1
-		"Ability2"					"centaur_khan_war_stomp"			// Ability 2
-		"Ability3"					"slardar_bash"			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability1"		"centaur_hoof_stomp"
+        "Ability2"		"centaur_double_edge"
+        "Ability3"		"razor_unstable_current"
+        "Ability4"		"spirit_breaker_greater_bash"
+		"Ability5"		"generic_gold_bag_fountain_large"
 	
 		// Armor
 		//----------------------------------------------------------------
@@ -288,11 +292,19 @@
 		"AttackDamageMin"			"1000"		// Damage range min.
 		"AttackDamageMax"			"1000"		// Damage range max.
 		"AttackRate"				"1.25"		// Speed of attack.
-		"AttackAnimationPoint"		"1"		// Normalized time in animation cycle to attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
-		"AttackRange"				"150"		// Range within a target can be attacked.
+		"AttackRange"				"250"		// Range within a target can be attacked.
 		"ProjectileModel"			""          // Particle system model for projectile.
-		"ProjectileSpeed"			""		    // Speed of projectile.		     
+		"ProjectileSpeed"			""		    // Speed of projectile.
+
+	     "AttributePrimary"		"DOTA_ATTRIBUTE_STRENGTH"
+        "AttributeBaseStrength"		"23"
+        "AttributeStrengthGain"		"4.000000"
+        "AttributeBaseIntelligence"		"15"
+        "AttributeIntelligenceGain"		"1.600000"
+        "AttributeBaseAgility"		"15"
+        "AttributeAgilityGain"		"2.000000"
 	
 		// Bounds
 		//----------------------------------------------------------------
@@ -308,7 +320,7 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"300"		// Speed.			
+		"MovementSpeed"				"320"		// Speed.
 	
 		// Status
 		//----------------------------------------------------------------
@@ -329,31 +341,51 @@
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"vscripts"				"UnitAI.lua"
+
+		"HasInventory"              "1"
 	
 		// Creature Data
 		//----------------------------------------------------------------
 		"Creature"
 		{
-						"Invade"
-				{
-					"Name"				"Invade"
-					"Aggression"		"80.0"
-					"Avoidance"			"20.0"
-					"Support"			"0.0"
-					"RoamDistance"		"2000.0"
-				}
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0"
+				"Avoidance"			"0.0"
+				"Support"			"0.0"
+				"RoamDistance"		"2000.0"
+			}
 			"OffensiveAbilities"
 			{
 				"Ability1"                
 				{
-					"Name"        "centaur_khan_war_stomp"
+					"Name"        "centaur_hoof_stomp"
 					"AOE"                "1"
                     "Radius"             "275"
                     "MinimumTargets"     "2"
                     "Debuff"             "1"
                     "Stun"                  "1"
 				}
+				"Ability2"
+				{
+					"Name"      "centaur_double_edge"
+					"AOE"           "1"
+					"Radius"        "225"
+				}
 			}
+
+			"AttachWearables"
+            {
+                "Wearable1" { "ItemDef" "358" }
+                "Wearable2" { "ItemDef" "359" }
+                "Wearable3" { "ItemDef" "360" }
+                "Wearable4" { "ItemDef" "361" }
+                "Wearable5" { "ItemDef" "362" }
+                "Wearable6" { "ItemDef" "363" }
+                "Wearable7" { "ItemDef" "364" }
+            }
+
 			//Level Up
 			"HPGain"					"10"
 			"DamageGain"				"20"
@@ -362,6 +394,14 @@
 			"MoveSpeedGain"				"1"
 			"BountyGain"				"3"
 			"XPGain"					"15"
+
+			"EquippedItems"
+            {
+                "Maelstrom"    {    "Item"    "item_maelstrom"    }
+                "Cuirass"   {   "Item"        "item_vladmir_2"  }
+                "Treads"   {   "Item"        "item_power_treads"  }
+                "SnYnA"     {   "Item"      "item_sange_and_yasha_and_atos_datadriven"  }
+            }
 		}
 	}
 	//=================================================================================================================

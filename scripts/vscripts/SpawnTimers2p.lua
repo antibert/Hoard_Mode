@@ -81,7 +81,7 @@ function Spawners2p:StartSpawners(difficulty)
 	})
 
 	Spawner:SpawnTimer({
-		start = waveBoss(7),
+		start = waveStart(7),
 		interval = 3000,
 		spawn = Spawners2p:SpawnFuckYou()
 	})

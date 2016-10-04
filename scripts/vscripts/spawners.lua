@@ -360,7 +360,7 @@ end
 function Spawners:SpawnHulkAt(pointName, waypointName)
 	local point = Entities:FindByName(nil, pointName):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, waypointName):GetAbsOrigin()
-	local units_to_spawn = RandomInt(2,3)
+	local units_to_spawn = RandomInt(4,5)
 	for i=1,units_to_spawn do
 		local unit = CreateUnitByName("npc_dota_creature_hulk", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
@@ -378,7 +378,7 @@ end
 function Spawners:SpawnHulkMediumAt(pointName, waypointName)
 	local point = Entities:FindByName(nil, pointName):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, waypointName):GetAbsOrigin()
-	local units_to_spawn = 2
+	local units_to_spawn = RandomInt(3,4)
 	for i=1,units_to_spawn do
 		local unit = CreateUnitByName("npc_dota_creature_hulk_medium", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
@@ -396,7 +396,7 @@ end
 function Spawners:SpawnHulkBigAt(pointName, waypointName)
 	local point = Entities:FindByName(nil, pointName):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, waypointName):GetAbsOrigin()
-	local units_to_spawn = 1
+	local units_to_spawn = RandomInt(2,3)
 	for i=1,units_to_spawn do
 		local unit = CreateUnitByName("npc_dota_creature_hulk_big", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
@@ -416,23 +416,6 @@ function Spawners:SpawnKappaAt(pointName, waypointName)
 	local units_to_spawn = 1
 	for i=1,units_to_spawn do
 		local unit = CreateUnitByName("npc_dota_creature_kappapult", point, true, nil, nil, DOTA_TEAM_BADGUYS)
-		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
-			OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-			Position = waypoint, Queue = true} )
-	end
-end
-
-function Spawners:SpawnBabyKappa()
-	Spawners:SpawnBabyKappaAt("spawner3", "lane_top_pathcorner_badguys_4")
-	Spawners:SpawnBabyKappaAt("spawner4", "lane_mid_pathcorner_badguys_7")
-	Spawners:SpawnBabyKappaAt("spawner2", "lane_bot_pathcorner_badguys_4")
-end
-function Spawners:SpawnBabyKappaAt(pointName, waypointName)
-	local point = Entities:FindByName(nil, pointName):GetAbsOrigin()
-	local waypoint = Entities:FindByName(nil, waypointName):GetAbsOrigin()
-	local units_to_spawn = RandomInt(2,3)
-	for i=1,units_to_spawn do
-		local unit = CreateUnitByName("npc_dota_creature_baby_kappapult", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
 			OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
 			Position = waypoint, Queue = true} )
@@ -483,7 +466,7 @@ end
 function Spawners:SpawnLargeBearsAt(pointName, waypointName)
 	local point = Entities:FindByName(nil, pointName):GetAbsOrigin()
 	local waypoint = Entities:FindByName(nil, waypointName):GetAbsOrigin()
-	local units_to_spawn = 1
+	local units_to_spawn = RandomInt(1,2)
 	for i=1,units_to_spawn do
 		local unit = CreateUnitByName("npc_dota_creature_large_spirit_bear", point, true, nil, nil, DOTA_TEAM_BADGUYS)
 		ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),

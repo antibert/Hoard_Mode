@@ -45,43 +45,43 @@ function Spawners2p:StartSpawners(difficulty)
 	
 -- BOSSES
 	Spawner:SpawnTimer({
-		start = 400,
+		start = waveBoss(1),
 		interval = 3000,
 		spawn = Spawners2p:SpawnRoshan()
 	})
 
 	Spawner:SpawnTimer({
-		start = 700,
+		start = waveBoss(2)-90,
 		interval = 3000,
 		spawn = Spawners2p:SpawnBigBear()
 	})
 
 	Spawner:SpawnTimer({
-		start = 800,
+		start = waveBoss(2),
 		interval = 3000,
 		spawn = Spawners2p:SpawnOgreBoss()
 	})
 
 	Spawner:SpawnTimer({
-		start = 1130,
+		start = waveBoss(3),
 		interval = 3000,
 		spawn = Spawners2p:SpawnKingTree()
 	})
 
 	Spawner:SpawnTimer({
-		start = 1350,
+		start = waveBoss(4),
 		interval = 3000,
 		spawn = Spawners2p:SpawnBigSplitter()
 	})
 
 	Spawner:SpawnTimer({
-		start = 1600,
+		start = waveBoss(5),
 		interval = 3000,
 		spawn = Spawners2p:SpawnCentaurBoss()
 	})
 
 	Spawner:SpawnTimer({
-		start = 2000,
+		start = waveBoss(7),
 		interval = 3000,
 		spawn = Spawners2p:SpawnFuckYou()
 	})
@@ -95,280 +95,271 @@ function Spawners2p:StartSpawners(difficulty)
 	})
 
 	Spawner:SpawnTimer({
-		start = 140,
+		start = 120,
 		finish = 180,
-		interval = 60,
 		spawn = Spawners2p:SpawnBeast()
 	})
 
     Spawner:SpawnTimer({
-	    start = 540,
-	    finish = 860,
+	    start = waveStart(2),
+	    finish = waveEnd(2),
 	    interval = 53,
 	    spawn = Spawners2p:SpawnFrostOgres()
     })
 
 	Spawner:SpawnTimer({
-		start = 180,
-		finish = 510,
+		start = waveStart(1),
+		finish = waveEnd(1),
 		interval = 23,
 		spawn = Spawners2p:SpawnZombies()
 	})
 
 	Spawner:SpawnTimer({
-		start = 2280,
-		interval = 13,
-		spawn = Spawners2p:SpawnZombies()
-	})
-
-	Spawner:SpawnTimer({
-		start = 360,
-		finish = 510,
+		start = waveStart(1)+150,
+		finish = waveEnd(1),
 		interval = 40,
 		spawn = Spawners2p:SpawnCorpse()
 	})
 
 	Spawner:SpawnTimer({
-		start = 250,
-		finish = 510,
+		start = waveStart(1)+40,
+		finish = waveEnd(1),
 		interval = 30,
 		spawn = Spawners2p:SpawnSpiders()
 	})
 
 	Spawner:SpawnTimer({
-		start = 360,
+		start = waveStart(1)+150,
 		interval = 40,
-		finish = 510,
+		finish = waveEnd(1),
 		spawn = Spawners2p:SpawnBigSpiders()
 	})
 
 	Spawner:SpawnTimer({
-		start = 180,
-		finish = 510,
+		start = waveStart(1),
+		finish = waveEnd(1),
 		interval = 23,
 		spawn = Spawners2p:SpawnCoolSpiders()
 	})
 
 	Spawner:SpawnTimer({
-		start = 210,
-		finish = 510,
+		start = waveStart(1),
+		finish = waveEnd(1),
 		interval = 17,
 		spawn = Spawners2p:SpawnMiniSpiders()
 	})
 
 	Spawner:SpawnTimer({
-		start = 210,
+		start = waveStart(1),
 		interval = 17,
-		finish = 510,
+		finish = waveEnd(1),
 		spawn = Spawners2p:SpawnSpookiMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 530,
-		finish = 860,
+		start = waveStart(2),
+		finish = waveEnd(2),
 		interval = 30,
 		spawn = Spawners2p:SpawnNyx()
 	})
 
 	Spawner:SpawnTimer({
-		start = 530,
-		finish = 860,
+		start = waveStart(2)+30,
+		finish = waveEnd(2),
 		interval = 45,
 		spawn = Spawners2p:SpawnOgre()
 	})
 
 	Spawner:SpawnTimer({
-		start = 500,
-		finish = 860,
+		start = waveStart(2),
+		finish = waveEnd(2),
 		interval = 40,
 		spawn = Spawners2p:SpawnMiniSatyrs()
 	})
 
-
-
 	Spawner:SpawnTimer({
-		start = 500,
-		finish = 860,
+		start = waveStart(2),
+		finish = waveEnd(2),
 		interval = 33,
 		spawn = Spawners2p:SpawnSatyrs()
 	})
 
 	Spawner:SpawnTimer({
-		start = 1270,
-		finish = 1560,
+		start = waveStart(4),
+		finish = waveEnd(4),
 		interval = 23,
 		spawn = Spawners2p:SpawnGhostMeele()
 	})
 
 	Spawner:SpawnTimer({
-		start = 1270,
-		finish = 1560,
+		start = waveStart(4),
+		finish = waveEnd(4),
 		interval = 14,
 		spawn = Spawners2p:SpawnGhost()
 	})
 
 	Spawner:SpawnTimer({
-		start = 540,
-		finish = 860,
+		start = waveStart(2),
+		finish = waveEnd(2),
 		interval = 27,
 		spawn = Spawners2p:SpawnBears()
 	})
 
 	Spawner:SpawnTimer({
-		start = 660,
-		finish = 860,
+		start = waveStart(2),
+		finish = waveEnd(2),
 		interval = 27,
 		spawn = Spawners2p:SpawnLargeBears()
 	})
 
 	Spawner:SpawnTimer({
-		start = 540,
-		finish = 860,
-		interval = 23,
+		start = waveStart(2)+40,
+		finish = waveEnd(2),
+		interval = 27,
 		spawn = Spawners2p:SpawnDrake()
 	})
 
 	Spawner:SpawnTimer({
-		start = 930,
-		finish = 1210,
+		start = waveStart(3)+20,
+		finish = waveEnd(3),
 		interval = 60,
 		spawn = Spawners2p:SpawnProphet()
 	})
 
 	Spawner:SpawnTimer({
-		start = 910,
-		finish = 1210,
+		start = waveStart(3),
+		finish = waveEnd(3),
 		interval = 20,
 		spawn = Spawners2p:SpawnTreesMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 945,
-		finish = 1210,
+		start = waveStart(3)+35,
+		finish = waveEnd(3),
 		interval = 45,
 		spawn = Spawners2p:SpawnShroomMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 980,
-		finish = 1210,
-		interval = 25,
+		start = waveStart(3),
+		finish = waveEnd(3),
+		interval = 37,
 		spawn = Spawners2p:SpawnFangMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 915,
-		finish = 1210,
+		start = waveStart(3),
+		finish = waveEnd(3),
 		interval = 35,
 		spawn = Spawners2p:SpawnThing()
 	})
 
 	Spawner:SpawnTimer({
-		start = 1020,
+		start = waveStart(3)+100,
 		spawn = Spawners2p:SpawnStump()
 	})
 
 	Spawner:SpawnTimer({
-		start = 1260,
-		finish = 1560,
+		start = waveStart(4),
+		finish = waveEnd(4),
 		interval = 34,
 		spawn = Spawners2p:SpawnSplitterMid()
 	})
 
     Spawner:SpawnTimer({
-	    start = 1260,
-	    finish = 1560,
+	    start = waveStart(4)+45,
+	    finish = waveEnd(4),
 	    interval = 60,
 	    spawn = Spawners2p:SpawnRockMid()
     })
 
 	Spawner:SpawnTimer({
-		start = 980,
-		finish = 1210,
+		start = waveStart(3)+60,
+		finish = waveEnd(3),
 		interval = 90,
 		spawn = Spawners2p:SpawnRhinoMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 1440,
-		finish = 1910,
+		start = waveStart(5),
+		finish = waveEnd(5),
 		interval = 27,
 		spawn = Spawners2p:SpawnGuardMid()
 	})
 
     Spawner:SpawnTimer({
-	    start = 1440,
-	    finish = 1910,
+	    start = waveStart(5),
+	    finish = waveEnd(5),
 	    interval = 27,
 	    spawn = Spawners2p:SpawnRippers()
     })
 
 	Spawner:SpawnTimer({
-		start = 1440,
-		finish = 1910,
+		start = waveStart(5),
+		finish = waveEnd(5),
 		interval = 33,
 		spawn = Spawners2p:SpawnCentaurMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 1445,
-		finish = 1910,
+		start = waveStart(5)+5,
+		finish = waveEnd(5),
 		interval = 27,
 		spawn = Spawners2p:SpawnTrollMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 1730,
-		finish = 2260,
+		start = waveStart(6),
+		finish = waveEnd(6),
 		interval = 38,
 		spawn = Spawners2p:SpawnDemonMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 1730,
-		finish = 2260,
+		start = waveStart(6),
+		finish = waveEnd(6),
 		interval = 30,
 		spawn = Spawners2p:SpawnDemonDogMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 1730,
-		finish = 2260,
+		start = waveStart(6),
+		finish = waveEnd(6),
 		interval = 25,
 		spawn = Spawners2p:SpawnMiniDemonMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 1730,
-		finish = 2260,
+		start = waveStart(6),
+		finish = waveEnd(6),
 		interval = 33,
 		spawn = Spawners2p:SpawnDragonMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 1740,
-		finish = 2260,
+		start = waveStart(6),
+		finish = waveEnd(6),
 		interval = 27,
 		spawn = Spawners2p:SpawnStalkerMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 2100,
-		finish = 2610,
+		start = waveStart(7),
+		finish = waveEnd(7),
 		interval = 50,
 		spawn = Spawners2p:SpawnRoshMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 2130,
-		finish = 2610,
+		start = waveStart(7),
+		finish = waveEnd(7),
 		interval = 45,
 		spawn = Spawners2p:SpawnLizardMid()
 	})
 
 	Spawner:SpawnTimer({
-		start = 2100,
-		finish = 2610,
+		start = waveStart(7),
+		finish = waveEnd(7),
 		interval = 140,
 		spawn = Spawners2p:SpawnAA()
 	})

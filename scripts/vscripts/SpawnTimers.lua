@@ -252,7 +252,7 @@ Timers:CreateTimer("mini", {
 		endTime = waveStart(1),
 		callback = function()
 			Spawners:SpawnHulk()
-			return 30.0
+			return 17.0
 		end
 	})
 	Timers:CreateTimer(waveEnd(1), function()
@@ -260,10 +260,10 @@ Timers:CreateTimer("mini", {
 	end)
 	Timers:CreateTimer("hulkmedium", {
 		useGameTime = true,
-		endTime = waveStart(1)+30,
+		endTime = waveStart(1),
 		callback = function()
 			Spawners:SpawnHulkMedium()
-			return 30.0
+			return 23.0
 		end
 	})
 	Timers:CreateTimer(waveEnd(1), function()
@@ -272,10 +272,10 @@ Timers:CreateTimer("mini", {
 	
 	Timers:CreateTimer("hulkbig", {
 		useGameTime = true,
-		endTime = waveStart(1)+150,
+		endTime = waveStart(1)+40,
 		callback = function()
 			Spawners:SpawnHulkBig()
-			return 50.0
+			return 30.0
 		end
 	})
 	Timers:CreateTimer(waveEnd(1), function()
@@ -287,27 +287,15 @@ Timers:CreateTimer("mini", {
 		endTime = waveStart(1)+150,
 		callback = function()
 			Spawners:SpawnKappa()
-			return 200.0
+			return 40.0
 		end
 	})
 	Timers:CreateTimer(waveEnd(1), function()
 		Spawners:StopSpawner("kappa")
 	end)
-	
-	Timers:CreateTimer("babykappa", {
-		useGameTime = true,
-		endTime = waveStart(1),
-		callback = function()
-			Spawners:SpawnBabyKappa()
-			return 40.0
-		end
-	})
-	Timers:CreateTimer(waveEnd(1), function()
-		Spawners:StopSpawner("babykappa")
-	end)
-	
+
 	end
-	
+
 -----------------------------------------------------------------------------------------------	
 ---------------- END OF ZOMBIE, SPIDER AND MECH PHASE SPAWNERS --------------------------------
 -----------------------------------------------------------------------------------------------	
@@ -356,7 +344,7 @@ Timers:CreateTimer("mini", {
 	Timers:CreateTimer(waveEnd(2), function()
 		Spawners:StopSpawner("chicken")
 	end)
-    Timers:CreateTimer(waveBoss(2)-100, function()
+    Timers:CreateTimer(waveStart(2)+100, function()
 		Spawners:SpawnBigNyx()
 		return 3000.0
     end)	
@@ -413,7 +401,7 @@ Timers:CreateTimer("mini", {
 	end)
 	Timers:CreateTimer("bigsatyrs", {
 		useGameTime = true,
-		endTime = waveBoss(2)-100,
+		endTime = waveBoss(2)-90,
 		callback = function()
 			Spawners:SpawnBigSatyrs()
 			return 3000
@@ -426,7 +414,7 @@ Timers:CreateTimer("mini", {
 	
 	Timers:CreateTimer("bears", {
 		useGameTime = true,
-		endTime = waveStart(2)+40,
+		endTime = waveStart(2),
 		callback = function()
 			Spawners:SpawnBears()
 			return 27.0
@@ -448,7 +436,7 @@ Timers:CreateTimer("mini", {
 	end)
 	Timers:CreateTimer("largebears", {
 		useGameTime = true,
-		endTime = waveStart(2)+160,
+		endTime = waveStart(2)+40,
 		callback = function()
 			Spawners:SpawnLargeBears()
 			return 27.0
@@ -457,7 +445,7 @@ Timers:CreateTimer("mini", {
 	Timers:CreateTimer(waveEnd(2), function()
 		Spawners:StopSpawner("largebears")
 	end)  	
-    Timers:CreateTimer(waveBoss(2) - 100, function()
+    Timers:CreateTimer(waveBoss(2) - 90, function()
 		Spawners:SpawnBigBear()
 		return 3000.0
     end)
@@ -670,7 +658,7 @@ Timers:CreateTimer("mini", {
 
 	Timers:CreateTimer("rock", {
 		useGameTime = true,
-		endTime = waveStart(4),
+		endTime = waveStart(4)+45,
 		callback = function()
 			Spawners:SpawnRockTop()
 			Spawners:SpawnRockMid()

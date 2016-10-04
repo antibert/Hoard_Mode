@@ -289,7 +289,7 @@
 		"AttackDamageMax"			"1000"		// Damage range max.
 		"AttackRate"				"1.25"		// Speed of attack.
 		"AttackAnimationPoint"		"1"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
 		"ProjectileModel"			""          // Particle system model for projectile.
 		"ProjectileSpeed"			""		    // Speed of projectile.		     
@@ -441,111 +441,6 @@
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_ancient_apparition.vsndevts"
 	
 		"vscripts"					"holdout_ai_ancient_apparition.lua"
-	}
-	//=================================================================================	
-	// Creature: Kappapult
-	//=================================================================================
-	"npc_dota_creature_baby_kappapult"	
-	{
-		// General
-		//----------------------------------------------------------------
-		"Model"						"models\creeps\lane_creeps\creep_bad_siege\creep_bad_siege.vmdl"	// Model.
-		"BaseClass"					"npc_dota_creature"
-		"SoundSet"					"n_creep_ranged"
-		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"1"
-		"ModelScale" 				"0.55"
-	
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					"jakiro_liquid_fire"			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
-	
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"15"			// Physical protection.
-		"MagicalResistance"			"25"		// Magical protection.
-	
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"35"		// Damage range min.
-		"AttackDamageMax"			"45"		// Damage range max.
-		"AttackRate"				"1.5"		// Speed of attack.
-		"AttackAnimationPoint"		"1"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"650"		// Range within a target can be acquired.
-		"AttackRange"				"450"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles\base_attacks\ranged_siege_bad.vpcf"          // Particle system model for projectile.
-		"ProjectileSpeed"			"800"		    // Speed of projectile.		     
-	
-		// Bounds
-		//----------------------------------------------------------------
-		"RingRadius"				"70"
-		"HealthBarOffset"			"170"
-	
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"38"		// Experience earn.
-		"BountyGoldMin"				"35"		// Gold earned min.
-		"BountyGoldMax"				"36"		// Gold earned max.
-	
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"135"		// Speed.			
-	
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"450"		// Base health.
-		"StatusHealthRegen"			"0"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1000"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
-	
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_BADGUYS"						// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_SIEGE"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		"vscripts"					"UnitAI.lua"
-	
-		// Creature Data
-		//----------------------------------------------------------------
-		"Creature"
-		{
-						"Invade"
-				{
-					"Name"				"Invade"
-					"Aggression"		"100.0"
-					"Avoidance"			"0.0"
-					"Support"			"0.0"
-					"RoamDistance"		"2000.0"
-				}
-			//Level Up
-			"HPGain"					"10"
-			"DamageGain"				"20"
-			"ArmorGain"					"0.25"
-			"MagicResistGain"			"0"
-			"MoveSpeedGain"				"1"
-			"BountyGain"				"3"
-			"XPGain"					"15"
-
-			"OffensiveAbilities"
-            {
-                "Ability1"
-                {
-                    "Name"        "jakiro_liquid_fire"
-                    "MinimumTargets"	"1"
-                }
-            }
-		}
 	}
 	//=================================================================================
 	// Creature: Basic Zombie
@@ -796,7 +691,7 @@
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"10"			// Physical protection.
+		"ArmorPhysical"				"12"			// Physical protection.
         "MagicalResistance"			"25"
 
 		// Attack
@@ -806,7 +701,7 @@
 		"AttackDamageMax"			"53"		// Damage range max.
 		"AttackRate"				"1.2"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
 		"ProjectileModel"			""          // Particle system model for projectile.
 		"ProjectileSpeed"			"0"		    // Speed of projectile.		     
@@ -830,8 +725,8 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2000"		// Base health.
-		"StatusHealthRegen"			"1"		// Health regeneration rate.
+		"StatusHealth"				"2300"		// Base health.
+		"StatusHealthRegen"			"3"		// Health regeneration rate.
 		"StatusMana"				"350"			// Base mana.
 		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
 		
@@ -1023,7 +918,7 @@
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"17"		// Physical protection.
+		"ArmorPhysical"				"23"		// Physical protection.
 	
 		// Attack
 		//----------------------------------------------------------------
@@ -1032,7 +927,7 @@
 		"AttackDamageMax"			"300"		// Damage range max.	
 		"AttackRate"				"0.8"		// Speed of attack.
 		"AttackAnimationPoint"		"0.43"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			"0"			// Speed of projectile.		   
@@ -1057,10 +952,10 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"12000"		// Base health.
-		"StatusHealthRegen"			"8"			// Health regeneration rate.
+		"StatusHealth"				"6500"		// Base health.
+		"StatusHealthRegen"			"12"			// Health regeneration rate.
 		"StatusMana"				"3000"		// Base mana.
-		"StatusManaRegen"			"5.0"		// Mana regeneration rate.		 
+		"StatusManaRegen"			"10"		// Mana regeneration rate.
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -1359,7 +1254,7 @@
 		"AttackDamageMax"			"1500"		// Damage range max.
 		"AttackRate"				"0.8"		// Speed of attack.
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			""			// Speed of projectile.
@@ -1461,7 +1356,7 @@
 		"AttackDamageMax"			"269"		// Damage range max.	
 		"AttackRate"				"0.8"		// Speed of attack.
 		"AttackAnimationPoint"		"0.43"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
 		"AttackRange"				"200"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			"0"			// Speed of projectile.		   
@@ -1602,7 +1497,7 @@
 		"AttackDamageMax"			"286"		// Damage range max.
 		"AttackRate"				"0.8"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
 		"ProjectileModel"			""          // Particle system model for projectile.
 		"ProjectileSpeed"			"0"		    // Speed of projectile.		     
@@ -1728,7 +1623,7 @@
 		"AttackDamageMax"			"1270"		// Damage range max.
 		"AttackRate"				"0.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.7"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			""			// Speed of projectile.
@@ -3339,14 +3234,14 @@
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"4"			// Physical protection.
-		"MagicalResistance"			"25"		// Magical protection (percentage).
+		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"			"0"		// Magical protection (percentage).
 	
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"27"		// Damage range min.
-		"AttackDamageMax"			"38"		// Damage range max.
+		"AttackDamageMin"			"25"		// Damage range min.
+		"AttackDamageMax"			"30"		// Damage range max.
 		"AttackRate"				"1.15"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -3361,9 +3256,9 @@
 	
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"35"		// Experience earn.
-		"BountyGoldMin"				"35"			// Gold earned min.
-		"BountyGoldMax"				"35"			// Gold earned max.
+		"BountyXP"					"15"		// Experience earn.
+		"BountyGoldMin"				"13"			// Gold earned min.
+		"BountyGoldMax"				"18"			// Gold earned max.
 	
 		// Movement
 		//----------------------------------------------------------------
@@ -3372,7 +3267,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"375"		// Base health.
+		"StatusHealth"				"225"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
@@ -3445,14 +3340,14 @@
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"6"			// Physical protection.
-		"MagicalResistance"			"25"		// Magical protection (percentage).
+		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"			"0"		// Magical protection (percentage).
 	
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"47"		// Damage range min.
-		"AttackDamageMax"			"53"		// Damage range max.
+		"AttackDamageMin"			"42"		// Damage range min.
+		"AttackDamageMax"			"50"		// Damage range max.
 		"AttackRate"				"1.15"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -3467,9 +3362,9 @@
 	
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"90"		// Experience earn.
-		"BountyGoldMin"				"84"			// Gold earned min.
-		"BountyGoldMax"				"98"			// Gold earned max.
+		"BountyXP"					"25"		// Experience earn.
+		"BountyGoldMin"				"23"			// Gold earned min.
+		"BountyGoldMax"				"28"			// Gold earned max.
 	
 		// Movement
 		//----------------------------------------------------------------
@@ -3478,7 +3373,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"600"		// Base health.
+		"StatusHealth"				"480"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
@@ -3538,7 +3433,7 @@
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"SoundSet"					"n_creep_Melee"
 		"Level"						"1"
-		"ModelScale" 				"1.0"
+		"ModelScale" 				"0.8"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -3549,14 +3444,14 @@
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"5"			// Physical protection.
-		"MagicalResistance"			"25"		// Magical protection (percentage).
+		"ArmorPhysical"				"0"			// Physical protection.
+		"MagicalResistance"			"0"		// Magical protection (percentage).
 	
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"			"35"		// Damage range min.
-		"AttackDamageMax"			"45"		// Damage range max.
+		"AttackDamageMax"			"42"		// Damage range max.
 		"AttackRate"				"1.15"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -3571,9 +3466,9 @@
 	
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"50"		// Experience earn.
-		"BountyGoldMin"				"45"			// Gold earned min.
-		"BountyGoldMax"				"60"			// Gold earned max.
+		"BountyXP"					"20"		// Experience earn.
+		"BountyGoldMin"				"18"			// Gold earned min.
+		"BountyGoldMax"				"23"			// Gold earned max.
 	
 		// Movement
 		//----------------------------------------------------------------
@@ -3582,7 +3477,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"450"		// Base health.
+		"StatusHealth"				"300"		// Base health.
 		"StatusHealthRegen"			"0"			// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
@@ -3661,10 +3556,10 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"80"		// Damage range min.
 		"AttackDamageMax"			"90"		// Damage range max.
-		"AttackRate"				"1.7"		// Speed of attack.
+		"AttackRate"				"1.4"		// Speed of attack.
 		"AttackAnimationPoint"		"1"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"850"		// Range within a target can be acquired.
-		"AttackRange"				"900"		// Range within a target can be attacked.
+		"AttackRange"				"400"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles\units\heroes\hero_techies\techies_base_attack.vpcf"          // Particle system model for projectile.
 		"ProjectileSpeed"			"1000"		    // Speed of projectile.		     
 	
@@ -3675,9 +3570,9 @@
 	
 		// Bounty
 		//----------------------------------------------------------------
-		"BountyXP"					"200"		// Experience earn.
-		"BountyGoldMin"				"165"		// Gold earned min.
-		"BountyGoldMax"				"183"		// Gold earned max.
+		"BountyXP"					"50"		// Experience earn.
+		"BountyGoldMin"				"60"		// Gold earned min.
+		"BountyGoldMax"				"70"		// Gold earned max.
 	
 		// Movement
 		//----------------------------------------------------------------
@@ -4359,7 +4254,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"3000"		// Base health.
+		"StatusHealth"				"1200"		// Base health.
 		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"1500"		// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 
@@ -5900,7 +5795,7 @@
 		"AttackDamageMax"			"650"		// Damage range max.
 		"AttackRate"				"1"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"200"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
 		"ProjectileModel"			""			// Particle system model for projectile.
 		"ProjectileSpeed"			"0"			// Speed of projectile.		   
@@ -6305,7 +6200,7 @@
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1"			// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+		"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/base_attacks/ranged_goodguy.vpcf" // Particle system model for projectile.
 		"ProjectileSpeed"			"1000"		// Speed of projectile.
@@ -6614,7 +6509,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1500"		// Base health.
+		"StatusHealth"				"800"		// Base health.
 		"StatusHealthRegen"			"2"			// Health regeneration rate.
 		"StatusMana"				"2000"		// Base mana.
 		"StatusManaRegen"			"0.0"		// Mana regeneration rate.		 

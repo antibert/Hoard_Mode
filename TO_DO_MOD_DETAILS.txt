@@ -10,7 +10,13 @@ General:
 -- Fixed some tooltips
 -- Fixed interactions with magic stick and invulnerable enemies (like those killed by Invoker's tornado)
 -- Tower aura now grants a chance for true strike
+-- Bosses now greatly prioritize heroes over buildings
 
+Reworked mech wave:
+-- Removed small catapults
+-- Mech units are more numerous, but weaker (still fewer and tankier than the zombie or spider waves)
+
+Items:
 // Blink Dagger
 -- Reverted cooldown to vanilla (cost is still only 900)
 

@@ -2448,6 +2448,7 @@
 				"var_type"				"FIELD_FLOAT"
 				"burn_dps"				"12 20 25 32 41 50 62"
 				"levelkey"				"exortlevel"
+				"CalculateSpellDamageTooltip"	"1"
 			}
 		}
 	}
@@ -2715,6 +2716,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"strength_pct"				"20 23 27 30"
+				"CalculateSpellDamageTooltip"		"1"
 			}
 		}
 	}
@@ -2741,36 +2743,12 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"strength_damage"	"3 6 9"
-			}
-			"04"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"slow_duration"		"1.5"
-			}
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"105"
-			}
-			"06"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"slow_movement_speed"			"100"
+				"CalculateSpellDamageTooltip"	"1"
 			}
 			"07"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"cooldown_scepter"			"50 40 30"
-			}
-			"08"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_reduction"	"80"
-			}
-			"09"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_reduction_tooltip_scepter"	"80"
 			}
 		}
 	}
@@ -4229,6 +4207,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"jump_damage_reduction_pct"	"0"
+				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
 	}	
@@ -5097,77 +5076,6 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"ghost_spawn_rate"	"0.3"
-			}
-		}
-	}
-	//=================================================================================================================
-	// Pugna: Life Drain
-	//=================================================================================================================
-	"pugna_life_drain"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"					"5189"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
-		"FightRecapLevel"				"1"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"1000 1200 1400"
-		"AbilityCastPoint"				"0.2 0.2 0.2"
-		"AbilityChannelTime"			"15.0"
-		
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"22.0 22.0 22.0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125 175 225"
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.0"	// All about the damage
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"health_drain"				"180 220 260"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"cast_range_tooltip"		"1000 1200 1400"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"duration_tooltip"			"15"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"health_drain_scepter"		"220 260 300"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"scepter_cooldown"			"0.0 0.0 0.0"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"tick_rate"					"0.25 0.25 0.25"
 			}
 		}
 	}
@@ -6105,11 +6013,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage"				"20 30 40 50"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"375 375 375 375"
+				"CalculateSpellDamageTooltip"		"1"
 			}
 			"03"
 			{
@@ -6120,11 +6024,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"movement_speed_pct"	"-6 -10 -14 -18"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"turn_rate_pct"			"-70 -70 -70 -70"
 			}
 			"06"
 			{
@@ -6148,50 +6047,10 @@
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_second"		"25 35 45 55"
 			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_duration"		"6"
-			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_total_tooltip"		"150 210 270 330"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"explosion_radius"		"375 375 375 375"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"collision_radius"		"100 100 100 100"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"0.5 0.5 0.5 0.5"
-			}
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"speed"					"900 900 900 900"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"knockback_max_distance"	"400"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"knockback_height"		"100 100 100 100"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"knockback_duration"	"0.25 0.25 0.25 0.25"
+				"damage_total_tooltip"		"75 140 220 330"
 			}
 		}
     }
@@ -7676,6 +7535,7 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"burn_damage"					"0.3 0.6 0.9 1.2"
+				"CalculateSpellDamageTooltip"			"0"
 			}
 			"07"
 			{

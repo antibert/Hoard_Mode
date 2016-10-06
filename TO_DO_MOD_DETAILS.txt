@@ -1,35 +1,8 @@
 Next Update Patch Notes:
 
-1.20k
-6.88e parity!
-Axe, Bounty Hunter, Faceless Void, Shadow Demon unchanged
-All other changes propagated
-
-General:
--- Fixed boss skeleton's Doom
--- Fixed some tooltips
--- Fixed interactions with magic stick and invulnerable enemies (like those killed by Invoker's tornado)
--- Tower aura now grants a chance for true strike
--- Bosses now greatly prioritize heroes over buildings
-
-Reworked mech wave:
--- Removed small catapults
--- Mech units are more numerous, but weaker (still fewer and tankier than the zombie or spider waves)
-
-Reworked some bosses:
--- Reduced Ursa boss hit points
--- Ghost boss upgraded
--- Centaur boss upgraded
-
-Items:
-// Blink Dagger
--- Reverted cooldown to vanilla (cost is still only 900)
-
-// Treant Protector
--- Living Armor damage block amount reverted to vanilla
-
-// Windranger
--- Power Shot no longer deals less damage per target hit
+1.20l
+-- Pugna Life Drain fixed
+-- Dragon Javelin fixed
 
 To Do:
 -- update russian lang

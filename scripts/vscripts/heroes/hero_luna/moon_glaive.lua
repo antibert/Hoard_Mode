@@ -47,7 +47,7 @@ function moon_glaive_start_create_dummy( keys )
 	dummy_ability:ApplyDataDrivenModifier( caster, dummy, "modifier_moon_glaive_dummy_unit", {} )
 
 	-- Ability variables
-	dummy_ability.damage = caster:GetAverageTrueAttackDamage()
+	dummy_ability.damage = caster:GetAverageTrueAttackDamage(target)
 	dummy_ability.bounceTable = {}
 	dummy_ability.bounceCount = 0
 	dummy_ability.maxBounces = ability:GetLevelSpecialValueFor("bounces", ability_level)

@@ -10417,6 +10417,16 @@
                 "var_type"          "FIELD_INTEGER"
                 "bonus_health_regen_lvl"      "1"
             }
+            "07"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "damage_block"      "5 10 15 20 25 30 35 40 45 50"
+            }
+            "07"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "damage_block_lvl"      "10"
+            }
         }
 
         "Modifiers"
@@ -10433,6 +10443,7 @@
                     "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
                     "MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
                     "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_health_regen"
+                    "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK" "%damage_block"
                 }
             }
         }

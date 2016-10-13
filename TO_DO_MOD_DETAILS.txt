@@ -1,8 +1,9 @@
 Next Update Patch Notes:
 
-1.20m
--- Vladmir's Cuirass properly gives armor to the user, applies aura to buildings
--- Blink Dagger now has two upgrades that reduce the cooldown by 4 seconds apiece
+1.20n
+-- Blink Dagger now really has two upgrades that reduce the cooldown by 4 seconds apiece
+-- Fixed tooltips on tower auras
+-- Building upgrades now provide damage block
 
 To Do:
 -- update russian lang

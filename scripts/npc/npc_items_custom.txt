@@ -335,6 +335,7 @@
         "AbilityTextureName"			"item_blink"
 
         "AbilityCooldown"				"9"
+        "AbilitySharedCooldown"			"blink"
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
@@ -343,6 +344,27 @@
         "ItemQuality"					"component"
         "ItemAliases"					"blink 2"
         "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "blink_range"			"1200"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "blink_damage_cooldown"	"3.0"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "blink_range_clamp"	"960"
+            }
+        }
     }
     //=================================================================================================================
     // Blink Dagger 3
@@ -357,6 +379,7 @@
         "AbilityTextureName"			"item_blink"
 
         "AbilityCooldown"				"6"
+        "AbilitySharedCooldown"			"blink"
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
@@ -365,6 +388,27 @@
         "ItemQuality"					"component"
         "ItemAliases"					"blink 3"
         "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "blink_range"			"1200"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "blink_damage_cooldown"	"3.0"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "blink_range_clamp"	"960"
+            }
+        }
     }
 	"item_quelling_blade_datadriven"
     {

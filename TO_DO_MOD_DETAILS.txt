@@ -1,8 +1,8 @@
 Next Update Patch Notes:
 
-1.20l
--- Pugna Life Drain fixed
--- Dragon Javelin fixed
+1.20m
+-- Vladmir's Cuirass properly gives armor to the user, applies aura to buildings
+-- Blink Dagger now has two upgrades that reduce the cooldown by 4 seconds apiece
 
 To Do:
 -- update russian lang

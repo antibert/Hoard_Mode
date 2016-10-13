@@ -276,6 +276,96 @@
             }
         }
     }
+    "item_recipe_blink_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"99001"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"			"item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"1500"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_blink_2"
+        "ItemRequirements"
+        {
+            "01"						"item_blink"
+        }
+    }
+    "item_recipe_blink_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"item_datadriven"
+        "ID"							"99002"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "Model"							"models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"			"item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"0"
+        "ItemShopTags"					""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"					"1"
+        "ItemResult"					"item_blink_3"
+        "ItemRequirements"
+        {
+            "01"						"item_blink_2;item_recipe_blink_2"
+        }
+    }
+    //=================================================================================================================
+    // Blink Dagger 2
+    //=================================================================================================================
+    "item_blink_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"							"99012"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "BaseClass"                     "item_blink"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+        "AbilityTextureName"			"item_blink"
+
+        "AbilityCooldown"				"9"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"2100"
+        "ItemShopTags"					"teleport"
+        "ItemQuality"					"component"
+        "ItemAliases"					"blink 2"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+    }
+    //=================================================================================================================
+    // Blink Dagger 3
+    //=================================================================================================================
+    "item_blink_3"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"							"99012"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "BaseClass"                     "item_blink"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
+        "AbilityTextureName"			"item_blink"
+
+        "AbilityCooldown"				"6"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"						"3600"
+        "ItemShopTags"					"teleport"
+        "ItemQuality"					"component"
+        "ItemAliases"					"blink 3"
+        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+    }
 	"item_quelling_blade_datadriven"
     {
         // General
@@ -5131,7 +5221,7 @@
             "04"
             {
                 "var_type"				"FIELD_INTEGER"
-                "armor_aura"			"9"
+                "bonus_armor"			"10"
             }
             "05"
             {
@@ -5156,7 +5246,7 @@
             "09"
             {
                 "var_type"				"FIELD_INTEGER"
-                "aura_positive_armor"			"10"
+                "aura_positive_armor"			"9"
             }
             "10"
             {
@@ -5194,8 +5284,8 @@
 
                 "Aura" 					"modifier_item_vladmir_2_building_aura"
                 "Aura_Radius" 			"%aura_radius"
-                "Aura_Teams" 			"DOTA_UNIT_TARGET_BUILDING"
-                "Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                "Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_BUILDING"
                 "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
                 "Aura_ApplyToCaster" 	"1"
             }

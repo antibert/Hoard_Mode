@@ -6,6 +6,7 @@ Next Update Patch Notes:
 -- Fix Vengeful Spirit nether swap not awarding kill gold
 -- Quelling blade and its upgrades now share a single cooldown
 -- Added ward attack damage to Pugna Nether Turret tooltip
+-- Pudge now gets flesh heap stacks for targets he kills, regardless of distance
 
 To Do:
 -- update russian lang

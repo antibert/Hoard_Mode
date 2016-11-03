@@ -13147,6 +13147,16 @@
 				{
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%flesh_heap_magic_resist"
 				}
+
+				"OnKill" {
+					"RunScript"
+                    {
+                        "ScriptFile"	"heroes/hero_pudge/flesh_heap.lua"
+                        "Function"		"modifier_flesh_heap_increment_check"
+                        "modifier"		"modifier_pudge_flesh_heap_datadriven_buff"
+                        "target_modifier" "modifier_pudge_flesh_heap_debuff_datadriven"
+                    }
+				}
 			}
 		}
 	}

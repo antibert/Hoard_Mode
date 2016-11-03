@@ -8,6 +8,7 @@ Next Update Patch Notes:
 -- Added ward attack damage to Pugna Nether Turret tooltip
 -- Pudge now gets flesh heap stacks for targets he kills, regardless of distance
 -- Added slow speed to Lifestealer Open Wounds tooltip
+-- Fix to Boots of Intellect debuff tooltip
 
 To Do:
 -- update russian lang

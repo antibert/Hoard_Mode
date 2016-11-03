@@ -855,15 +855,9 @@
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"				"%bonus_damage"
 				}
 			}
-			"modifier_sick_of_making_new_things_for_horde_mode"
+			"modifier_magic_null_aura"
 			{
-				"EffectName"            	"particles\customgames\capturepoints\cp_earth.vpcf"
-				"EffectName"                "particles\econ\items\lion\lion_demon_drain\lion_spell_mana_drain_demon_sparkle.vpcf"
-				"EffectAttachType"      	"PATTACH_ABSORIGIN"	
-			}
-			"aura_magic_null"
-			{
-				"IsHidden"				"0"
+				"IsHidden"				"1"
 				"Passive"				"1"
 				
 				"Aura"					"magic_null"
@@ -872,9 +866,10 @@
 				"Aura_Types"			"DOTA_UNIT_TARGET_ROSHAN | DOTA_UNIT_TARGET_BASIC"
 				"Aura_ApplyToCaster"	"0"
 			}			
-			"magic_null"
+			"modifier_magic_null"
 			{
 				"IsDebuff"              "1"
+				"IsHidden"              "0"
 
 				"Properties"
 				{

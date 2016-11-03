@@ -7,6 +7,7 @@ Next Update Patch Notes:
 -- Quelling blade and its upgrades now share a single cooldown
 -- Added ward attack damage to Pugna Nether Turret tooltip
 -- Pudge now gets flesh heap stacks for targets he kills, regardless of distance
+-- Added slow speed to Lifestealer Open Wounds tooltip
 
 To Do:
 -- update russian lang

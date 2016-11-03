@@ -7,7 +7,6 @@
 ================================================================================================================= ]]
 function modifier_flesh_heap_increment(event)
 	local caster = event.caster
-	local target = event.target -- unit? The killed thing
 	local modifier = event.modifier
 	local ability = event.ability
 
@@ -31,8 +30,8 @@ function modifier_flesh_heap_increment(event)
 end
 
 function modifier_flesh_heap_increment_check(event)
-	local target = event.target
-	local target_modifier = event.target
+	local target = event.unit
+	local target_modifier = event.target_modifier
 
 	if not target:HasModifier(target_modifier) then
 		modifier_flesh_heap_increment(event)

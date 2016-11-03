@@ -8091,6 +8091,7 @@
         "FightRecapLevel"				"2"
         "AbilityTextureName"			"vengefulspirit_nether_swap"
         "CastFilterRejectCaster" 		"1"
+        "HasScepterUpgrade"             "1"
 
         // Precache
         //-------------------------------------------------------------------------------------------------------------

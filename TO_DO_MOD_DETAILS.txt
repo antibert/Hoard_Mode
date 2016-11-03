@@ -1,9 +1,10 @@
 Next Update Patch Notes:
 
-1.20n
--- Blink Dagger now really has two upgrades that reduce the cooldown by 4 seconds apiece
--- Fixed tooltips on tower auras
--- Building upgrades now provide damage block
+1.20o
+-- Starting implementation of statistics tracking (via getdotastats.com)
+-- Fix bloodseeker thirst's movespeed cap removal going away upon death
+-- Fix Vengeful Spirit nether swap not awarding kill gold
+-- Quelling blade and its upgrades now share a single cooldown
 
 To Do:
 -- update russian lang

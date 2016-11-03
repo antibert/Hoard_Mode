@@ -44,6 +44,6 @@ function vengefulspirit_nether_swap_datadriven:OnSpellStart()
 	hCaster:StartGesture( ACT_DOTA_CHANNEL_END_ABILITY_4 )
 
 	if not hTarget:IsConsideredHero() and hTarget:GetTeamNumber() ~= hCaster:GetTeamNumber() then
-		hTarget:Kill(hCaster, caster)
+		hTarget:Kill(self, hCaster)
 	end
 end

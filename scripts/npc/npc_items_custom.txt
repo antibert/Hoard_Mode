@@ -424,6 +424,7 @@
         "AbilityCastRange"				"350"
         "AbilityCastPoint"				"0.0"
         "AbilityCooldown"				"4.0"
+        "AbilitySharedCooldown" "qblade"
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
@@ -496,6 +497,7 @@
         "AbilityCastRange"				"350"
         "AbilityCastPoint"				"0.0"
         "AbilityCooldown"				"4.0"
+        "AbilitySharedCooldown" "qblade"
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
@@ -568,6 +570,7 @@
 			"AbilityCastRange"				"350"
             "AbilityCastPoint"				"0.0"
             "AbilityCooldown"				"4.0"
+            "AbilitySharedCooldown" "qblade"
 	
 			// Item Info
 			//-------------------------------------------------------------------------------------------------------------

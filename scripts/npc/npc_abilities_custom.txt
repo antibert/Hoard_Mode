@@ -10744,6 +10744,15 @@
                     "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
                     "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%bonus_movespeed"
                 }
+
+                "OnRespawn"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"    "heroes/hero_bloodseeker/thirst.lua"
+                        "Function"      "RemoveMovespeed"
+                    }
+                }
 			}
 
 			"modifier_thirst_visual"

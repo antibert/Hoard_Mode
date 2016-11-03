@@ -5,6 +5,7 @@ Next Update Patch Notes:
 -- Fix bloodseeker thirst's movespeed cap removal going away upon death
 -- Fix Vengeful Spirit nether swap not awarding kill gold
 -- Quelling blade and its upgrades now share a single cooldown
+-- Added ward attack damage to Pugna Nether Turret tooltip
 
 To Do:
 -- update russian lang

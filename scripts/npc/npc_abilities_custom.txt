@@ -6630,6 +6630,11 @@
 				"var_type"				"FIELD_FLOAT"
 				"unit_limit"			"2 2 3 3"
 			}
+			"10"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "damage"			"160"
+            }
 		}
 
 		"precache"

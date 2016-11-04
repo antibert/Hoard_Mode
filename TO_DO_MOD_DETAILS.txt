@@ -9,6 +9,7 @@ Next Update Patch Notes:
 -- Pudge now gets flesh heap stacks for targets he kills, regardless of distance
 -- Added slow speed to Lifestealer Open Wounds tooltip
 -- Fix to Boots of Intellect debuff tooltip
+-- Fixed Haunt stolen by Rubick
 
 To Do:
 -- update russian lang

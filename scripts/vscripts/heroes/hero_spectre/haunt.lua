@@ -38,7 +38,9 @@ function CreateIllusion(caster, ability, target)
             local abilityLevel = ability:GetLevel()
             local abilityName = ability:GetAbilityName()
             local illusionAbility = illusion:FindAbilityByName(abilityName)
-            illusionAbility:SetLevel(abilityLevel)
+            if illusionAbility ~= nil then
+                illusionAbility:SetLevel(abilityLevel)
+            end
         end
     end
 

@@ -1,20 +1,7 @@
 Next Update Patch Notes:
 
-1.20o
--- Starting implementation of statistics tracking (via getdotastats.com)
--- Fix bloodseeker thirst's movespeed cap removal going away upon death
--- Fix Vengeful Spirit nether swap not awarding kill gold
--- Quelling blade and its upgrades now share a single cooldown
--- Added ward attack damage to Pugna Nether Turret tooltip
--- Pudge now gets flesh heap stacks for targets he kills, regardless of distance
--- Added slow speed to Lifestealer Open Wounds tooltip
--- Fix to Boots of Intellect debuff tooltip
--- Fixed Haunt stolen by Rubick
--- Fixed tooltip on manta style 2
-
-// Silencer
--- Now gains 0.2 int every time an enemy unit dies within 925 units or is killed by Silencer.
--- Global Silence no longer gives bonus intelligence.
+1.20p
+-- Updated stats code
 
 To Do:
 -- update russian lang

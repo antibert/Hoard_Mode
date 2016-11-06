@@ -5,7 +5,10 @@ function customSchema:init()
     -- Check the schema_examples folder for different implementations
 
     -- Flag Example
-    statCollection:setFlags({version = GetVersion()})
+    statCollection:setFlags({
+	    version = GetVersion(),
+	    difficulty = _G.GameMode.DIFFICULTY
+    })
 
     -- Listen for changes in the current state
     ListenToGameEvent('game_rules_state_change', function(keys)
@@ -31,6 +34,12 @@ function customSchema:init()
             end
         end
     end, nil)
+
+	-- Write 'test_schema' on the console to test your current functions instead of having to end the game
+    if Convars:GetBool('developer') then
+        Convars:RegisterCommand("test_schema", function() PrintSchema(BuildGameArray(), BuildPlayersArray()) end, "Test the custom schema arrays", 0)
+        Convars:RegisterCommand("test_end_game", function() GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS) end, "Test the end game", 0)
+	end
 end
 
 -------------------------------------
@@ -88,26 +97,18 @@ function PrintSchema(gameArray, playerArray)
     print("-------------------------------------")
 end
 
--- Write 'test_schema' on the console to test your current functions instead of having to end the game
-if Convars:GetBool('developer') then
-    Convars:RegisterCommand("test_schema", function() PrintSchema(BuildGameArray(), BuildPlayersArray()) end, "Test the custom schema arrays", 0)
-end
-
 -------------------------------------
 
 -- If your gamemode is round-based, you can use statCollection:submitRound(bLastRound) at any point of your main game logic code to send a round
 -- If you intend to send rounds, make sure your settings.kv has the 'HAS_ROUNDS' set to true. Each round will send the game and player arrays defined earlier
 -- The round number is incremented internally, lastRound can be marked to notify that the game ended properly
-function customSchema:submitRound(isLastRound)
+function customSchema:submitRound()
 
     local winners = BuildRoundWinnerArray()
     local game = BuildGameArray()
     local players = BuildPlayersArray()
 
     statCollection:sendCustom({ game = game, players = players })
-
-    isLastRound = isLastRound or false --If the function is passed with no parameter, default to false.
-    return { winners = winners, lastRound = isLastRound }
 end
 
 -- A list of players marking who won this round

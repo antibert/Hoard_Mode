@@ -12794,9 +12794,107 @@
     }
 
     //=================================================================================================================
-    // Silencer: Last Word
+    // Ability: Silencer's Int Steal
     //=================================================================================================================
-    // Rewrite of the Silencer Last Word
+    "silencer_int_steal_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "AbilityTextureName"					"silencer_glaives_of_wisdom"
+        "MaxLevel"                      "1"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"900"
+
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"			"FIELD_INTEGER"
+                "int_steal_range"		"925"		// If you change this, also change the AbilityCastRange above
+            }
+            "03"
+            {
+                "var_type"			"FIELD_FLOAT"
+                "int_steal_buff_amount"		"0.2"
+            }
+            "04"
+            {
+                "var_type"			"FIELD_FLOAT"
+                "max_stacks"		"1000"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_silencer_int_steal_datadriven"
+            {
+                "Passive"		"1"
+                "IsHidden"		"1"
+
+                "Aura" 			"modifier_silencer_int_steal_debuff_datadriven"
+                "Aura_Radius" 	"%int_steal_range"
+                "Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                "Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+            }
+
+            "modifier_silencer_int_steal_debuff_datadriven"
+            {
+                "IsDebuff"	"1"
+                "IsHidden"	"1"
+
+                "OnDeath"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"heroes/hero_pudge/flesh_heap.lua"
+                        "Function"		"modifier_flesh_heap_increment"
+                        "modifier"		"modifier_silencer_int_steal_datadriven_buff"
+                    }
+                }
+            }
+
+            "modifier_silencer_int_steal_datadriven_buff"
+            {
+                "Passive"   "0"
+                "IsPurgable"    "0"
+                "IsHidden"	"0"
+                "Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"%int_steal_buff_amount"
+                }
+            }
+
+            "modifier_silencer_int_steal_passive_datadriven"
+            {
+                "Passive"   "1"
+                "IsHidden"  "1"
+
+                "OnKill" {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"heroes/hero_pudge/flesh_heap.lua"
+                        "Function"		"modifier_flesh_heap_increment_check"
+                        "modifier"		"modifier_silencer_int_steal_datadriven_buff"
+                        "target_modifier" "modifier_silencer_int_steal_debuff_datadriven"
+                    }
+                }
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Silencer: Global Silence
+    //=================================================================================================================
+    // Rewrite of the Silencer Global Silence
     // Author: chrislotix
     // Date: 11.01.2015.
     "silencer_global_silence_datadriven"
@@ -12860,11 +12958,6 @@
             {
                 "var_type"				"FIELD_FLOAT"
                 "bonus_damage_taken_scepter"		"100"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "bonus_int"		"30 60 90"
             }
         }
 
@@ -12931,18 +13024,6 @@
                 "States"
                 {
                     "MODIFIER_STATE_SILENCED"	"MODIFIER_STATE_VALUE_ENABLED"
-                }
-            }
-
-            "modifier_global_silence_datadriven_int"
-            {
-                "IsBuff"    "1"
-                "Passive"   "1"
-                "IsHidden"	"1"
-
-               "Properties"
-                {
-                    "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS" "%bonus_int"
                 }
             }
         }
@@ -13093,7 +13174,7 @@
 			"04"
 			{
 			    "var_type"			"FIELD_FLOAT"
-                "flesh_heap_max_stacks"		"1000"
+                "max_stacks"		"1000"
 			}
 		}
 

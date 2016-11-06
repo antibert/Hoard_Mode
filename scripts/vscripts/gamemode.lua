@@ -89,6 +89,11 @@ function GameMode:OnHeroInGame(hero)
     multicast:SetLevel(1)
   end
 
+  if hero:GetUnitName() == "npc_dota_hero_silencer" then
+    local int_steal = hero:FindAbilityByName("silencer_int_steal_datadriven")
+    int_steal:SetLevel(1)
+  end
+
   -- This line for example will set the starting gold of every hero to 50000 unreliable gold
   -- hero:SetGold(50000, false)
   -- hero:AddExperience(50000, DOTA_ModifyXP_Unspecified, false, true)

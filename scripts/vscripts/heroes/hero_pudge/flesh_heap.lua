@@ -10,7 +10,7 @@ function modifier_flesh_heap_increment(event)
 	local modifier = event.modifier
 	local ability = event.ability
 
-	local max_stacks = ability:GetLevelSpecialValueFor( "flesh_heap_max_stacks", ability:GetLevel() - 1 )
+	local max_stacks = ability:GetLevelSpecialValueFor( "max_stacks", ability:GetLevel() - 1 )
 
 	-- Check if the hero already has the modifier
 	local current_stack = 0
@@ -21,7 +21,7 @@ function modifier_flesh_heap_increment(event)
 		ability:ApplyDataDrivenModifier(caster, caster, modifier, {})
 	end
 
-	-- Set the stack up to max_souls
+	-- Set the stack up to max_stacks
 	if (current_stack + 1) <= max_stacks then
 		caster:SetModifierStackCount( modifier, ability, current_stack + 1 )
 	else

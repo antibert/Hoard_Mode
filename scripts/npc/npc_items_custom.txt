@@ -4255,7 +4255,7 @@
             "07"
             {
                 "var_type"				"FIELD_INTEGER"
-                "tooltip_illusion_duration"			"30"
+                "tooltip_illusion_duration"			"20"
             }
             "08"
             {

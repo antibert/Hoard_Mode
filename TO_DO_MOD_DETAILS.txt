@@ -10,6 +10,7 @@ Next Update Patch Notes:
 -- Added slow speed to Lifestealer Open Wounds tooltip
 -- Fix to Boots of Intellect debuff tooltip
 -- Fixed Haunt stolen by Rubick
+-- Fixed tooltip on manta style 2
 
 // Silencer
 -- Now gains 0.2 int every time an enemy unit dies within 925 units or is killed by Silencer.

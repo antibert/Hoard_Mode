@@ -2,6 +2,7 @@ Next Update Patch Notes:
 
 1.20p
 -- Updated stats code
+-- Fixed Silencer Global Silence tooltip to no longer mention Int
 
 To Do:
 -- update russian lang

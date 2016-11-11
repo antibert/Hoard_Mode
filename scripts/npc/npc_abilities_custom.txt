@@ -5830,7 +5830,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				"ability_datadriven"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
@@ -5838,6 +5838,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"FightRecapLevel"				"2"
 		"AbilityTextureName"			"laguna_storm"
+		"AOERadius"                     "300"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -5878,7 +5879,7 @@
 				"var_type"					"FIELD_INTEGER"
 				"cast_range_scepter"		"900 900 900"
 			}
-			"3"
+			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"radius"				"300 300 300"

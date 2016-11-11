@@ -52,7 +52,7 @@ function BuildGameArray()
     local game = {}
 
     -- Add game values here as game.someValue = GetSomeGameValue()
-    game.gl = GAME_TIME_ELAPSED -- Game length, from the horn sound, in seconds
+    game.gl = GameRules:GetGameTime() -- Game length, from the horn sound, in seconds
 
     return game
 end
@@ -79,7 +79,12 @@ function BuildPlayersArray()
 	                pk = hero:GetKills(), -- Number of kills of this players hero
 	                pa = hero:GetAssists(), -- Number of deaths of this players hero
 	                pd = hero:GetDeaths(), -- Number of deaths of this players hero
-	                il = GetItemList(hero)
+	                i1 = GetItemSlot(hero, 0),
+	                i2 = GetItemSlot(hero, 1),
+	                i3 = GetItemSlot(hero, 2),
+	                i4 = GetItemSlot(hero, 3),
+	                i5 = GetItemSlot(hero, 4),
+	                i6 = GetItemSlot(hero, 5)
                 })
             end
         end
@@ -123,47 +128,4 @@ function BuildRoundWinnerArray()
         end
     end
     return winners
-end
-
--------------------------------------
--- MY CUSTOM FUNCTIONS (Borrowed from Imba)
--------------------------------------
-function GetHeroName(hero)
-	local heroName = hero:GetUnitName()
-	heroName = string.gsub(heroName, "npc_dota_hero_", "") --Cuts the npc_dota_hero_ prefix
-	return heroName
-end
-
-function GetNetworth(hero)
-	local gold = hero:GetGold()
-
-	-- Iterate over item slots adding up its gold cost
-	for i = 0, 15 do
-		local item = hero:GetItemInSlot(i)
-		if item then
-			gold = gold + item:GetCost()
-		end
-	end
-end
-
-function GetItemList(hero)
-	local itemTable = {}
-
-	for i = 0, 5 do
-		local item = hero:GetItemInSlot(i)
-		if item then
-			if string.find(item:GetAbilityName(), "imba") then
-				local itemName = string.gsub(item:GetAbilityName(), "item_imba_", "")
-				table.insert(itemTable, itemName)
-			else
-				local itemName = string.gsub(item:GetAbilityName(), "item_", "")
-				table.insert(itemTable, itemName)
-			end
-		end
-	end
-
-	table.sort(itemTable)
-	local itemList = table.concat(itemTable, ",")
-
-	return itemList
 end

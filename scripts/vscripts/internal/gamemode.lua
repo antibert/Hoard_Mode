@@ -95,6 +95,7 @@ function GameMode:_InitGameMode()
   ListenToGameEvent("player_chat", Dynamic_Wrap(GameMode, 'OnPlayerChat'), self)
 
   CustomGameEventManager:RegisterListener( "setting_vote", 	Dynamic_Wrap(GameMode, "OnSettingVote"))
+  GameRules:GetGameModeEntity():SetDamageFilter( Dynamic_Wrap( GameMode, "FilterDamage" ), self )
   
   --ListenToGameEvent("dota_tutorial_shop_toggled", Dynamic_Wrap(GameMode, 'OnShopToggled'), self)
 
@@ -176,4 +177,34 @@ function GameMode:_CaptureGameMode()
 
     self:OnFirstPlayerLoaded()
   end 
+end
+
+function GameMode:FilterDamage( filterTable )
+  local victim_index = filterTable["entindex_victim_const"]
+  local attacker_index = filterTable["entindex_attacker_const"]
+  if not victim_index or not attacker_index then
+    return true
+  end
+
+  local victim = EntIndexToHScript( victim_index )
+  local attacker = EntIndexToHScript( attacker_index )
+  local damagetype = filterTable["damagetype_const"]
+
+
+  local damage = filterTable["damage"] --Post reduction
+  local attackerID = attacker:GetPlayerOwnerID()
+  if attackerID and PlayerResource:HasSelectedHero( attackerID ) then
+    local hero = PlayerResource:GetSelectedHeroEntity(attackerID)
+    local inflictor = filterTable["entindex_inflictor_const"]
+    if inflictor then
+      -- base spell damage per int is 1/16, change it to 1/8
+      local modifier = 1 + hero:GetIntellect()/800
+      local unmodified_damage = damage / (1+((hero:GetIntellect()/16)*0.01))
+      DebugPrint (damage, ' ', modifier, ' ', unmodified_damage, ' ', unmodified_damage * modifier)
+      filterTable["damage"] = unmodified_damage * modifier
+    end
+  end
+
+
+  return true
 end

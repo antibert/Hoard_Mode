@@ -1,10 +1,8 @@
 Next Update Patch Notes:
 
-1.20p
--- Updated stats code
--- Fixed Silencer Global Silence tooltip to no longer mention Int
--- Added targeting radius to Laguna Blade
--- Increased damage bonus from Intelligence to 1% per 8 points. Tooltips do not reflect this.
+1.20q
+-- Made Bloodseeker movement speed buff unpurgable
+-- Fixed Dagon level 2 actually being level 1
 
 To Do:
 -- update russian lang

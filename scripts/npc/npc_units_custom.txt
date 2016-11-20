@@ -394,6 +394,7 @@
 			"MoveSpeedGain"				"1"
 			"BountyGain"				"3"
 			"XPGain"					"15"
+			"DisableResistance"			"80.0"
 
 			"EquippedItems"
             {
@@ -787,7 +788,7 @@
 		//----------------------------------------------------------------
 		"Creature"
 		{
-			"DisableResistance"			"35.0"
+			"DisableResistance"			"80.0"
 			"CanRespawn"				"0"
 
 			//Basic AI State
@@ -805,7 +806,6 @@
             }
 
             "PermanentDesire"			"1"
-
 			//Level Up
 			"HPGain"					"10"
 			"DamageGain"				"20"
@@ -1022,7 +1022,7 @@
 		"Creature"
 		{
 			"CanRespawn"				"0"
-			"DisableResistance"			"35.0"
+			"DisableResistance"			"80.0"
 			
 			"States"
 			{
@@ -1359,7 +1359,7 @@
 			}
 	
 			"DefaultState"				"Invade"
-			
+			"DisableResistance"			"80.0"
 			"DisableClumpingBehavior"	"1"
 
 			"OffensiveAbilities"
@@ -1504,7 +1504,7 @@
 		"Creature"
 		{
 			"CanRespawn"				"0"
-			"DisableResistance"			"35.0"
+			"DisableResistance"			"80.0"
 			
 			"States"
 			{
@@ -1644,7 +1644,7 @@
 		"Creature"
 		{
 			"CanRespawn"				"0"
-            "DisableResistance"			"35.0"
+            "DisableResistance"			"80.0"
 	
 			"States"
 			{
@@ -1878,7 +1878,7 @@
 			}
 	
 			"DefaultState"				"Invade"
-			
+			"DisableResistance"			"80.0"
 			"DisableClumpingBehavior"	"1"
 
 			"OffensiveAbilities"
@@ -2207,7 +2207,7 @@
 		"Creature"
 		{
 			"CanRespawn"				"0"
-			
+			"DisableResistance"			"80.0"
 			//Basic AI State
 			//-----------------------------------------------------------------
 			"DefaultState"				"Invade"
@@ -2405,7 +2405,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"harpy_storm_chain_lightning"			// Ability 1
-		"Ability2"					"generic_gold_bag_fountain_large"			// Ability 2
+		"Ability2"					""			// Ability 2
 		"Ability3"					"zuus_lightning_bolt"			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -3011,6 +3011,7 @@
 		"Creature"
 		{
 			"CanRespawn"				"0"
+			"DisableResistance"			"80.0"
 			"States"
 			{
 				"Invade"
@@ -3212,6 +3213,7 @@
 		"VisionNighttimeRange"		"800"		// Range of vision at night time.
 		"Creature"
 		{
+			"DisableResistance"			"80.0"
 			"OffensiveAbilities"
 			{
 				"Ability1"
@@ -3828,7 +3830,7 @@
 			}
 	
 			"DefaultState"				"Invade"
-	
+			"DisableResistance"			"80.0"
 			"DefensiveAbilities"
 			{
 				"Ability1"				
@@ -3952,6 +3954,7 @@
 		"Creature"
 		{
 			"CanRespawn"				"0"
+			"DisableResistance"			"80.0"
 			"States"
 			{
 				"Invade"
@@ -4163,7 +4166,7 @@
 		//	"Avoidance"					"20.0"
 		//	"Support"					"30.0"
 			//"CanRespawn"				"0"
-			
+			"DisableResistance"			"80.0"
 			//Level Up
 			"HPGain"					"45"
 			"DamageGain"				"2"
@@ -4302,12 +4305,11 @@
 		"Level"						"2"
 		"ModelScale" 				"1.4"
 		"CanBeDominated"			"0"
-		"IsAncient"                 "1"
 	
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"generic_gold_bag_fountain_medium"			// Ability 1
-		"Ability2"					"shredder_reactive_armor"			// Ability 2
+		"Ability2"					"polar_furbolg_ursa_warrior_thunder_clap"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -4368,6 +4370,47 @@
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"vscripts"				"UnitAI.lua"
+
+		// Creature Data
+        		//----------------------------------------------------------------------------------------------------------------------
+        		"Creature"
+        		{
+        			//Basic AI State
+        			//-----------------------------------------------------------------
+        			"DefaultState"				"Invade"
+        			"States"
+        			{
+        				"Invade"
+        				{
+        					"Name"				"Invade"
+        					"Aggression"		"100.0"
+        					"Avoidance"			"00.0"
+        					"Support"			"0.0"
+        					"RoamDistance"		"500.0"
+        				}
+        			}
+
+        			//Level Up
+        			"HPGain"					"35"
+        			"DamageGain"				"5"
+        			"ArmorGain"					"0.25"
+        			"HPRegenGain"				"1"
+        			"MagicResistGain"			"0.1"
+        			"MoveSpeedGain"				"3"
+        			"BountyGain"				"5"
+        			"XPGain"					"25"
+        			"DisableClumpingBehavior"   "1"
+
+        			"OffensiveAbilities"
+        			{
+        				"Ability1"
+        				{
+        					"Name"				"polar_furbolg_ursa_warrior_thunder_clap"
+        					"Damage"			"1"
+        					"Debuff"			"1"
+        				}
+        			}
+        		}
 	}
 	//=================================================================================
 	// Creature: Lesser Nightcrawler
@@ -4605,7 +4648,7 @@
 			//------------------------------------------------------------
 			"DefaultState"				"Invade"
 		
-		"AttachWearables"
+			"AttachWearables"
 			{
 				"Wearable1"
 				{
@@ -4622,10 +4665,10 @@
 					"Support"			"0.0"
 				}
 			}
-		"EquippedItems"
-		{
-			"Rapier"    {    "Item"    "item_rapier"    }
-		}
+			"EquippedItems"
+			{
+				"Rapier"    {    "Item"    "item_rapier"    }
+			}
 	
 			//Level Up Parameters
 			//------------------------------------------------------------
@@ -5510,7 +5553,7 @@
 	
 			"DefaultState"				"Invade"
 			"DisableClumpingBehavior"   "1"
-	
+			"DisableResistance"			"80.0"
 			"OffensiveAbilities"
 			{
 				"Ability1"				
@@ -6354,6 +6397,8 @@
 			"XPGain"					"13"
 			"DisableClumpingBehavior"	"1"
 
+			"DisableResistance"			"80.0"
+
 			"OffensiveAbilities"
             {
                 "Ability1"
@@ -6830,7 +6875,7 @@
 			
 	
 			"DefaultState"				"Invade"
-			
+			"DisableResistance"			"100.0"
 			"DisableClumpingBehavior"	"1"
 		}
 	}
@@ -7013,7 +7058,6 @@
 		"Level"						"1"
 		"ModelScale" 				"1.2"
 		"CanBeDominated"			"0"
-		"IsAncient"                    "1"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -8370,7 +8414,6 @@
 		"Model"						"models\creeps\neutral_creeps\n_creep_furbolg\n_creep_furbolg_disrupter.vmdl"	// Model.
 		"ModelScale"				"1.3"
 		"Level"						"1"
-		"IsAncient"                 "1"
 		
 		// Abilities
 		//----------------------------------------------------------------
@@ -10130,7 +10173,6 @@
 		"Model"						"models/creeps/neutral_creeps/n_creep_golem_b/n_creep_golem_b.vmdl"	// Model.
 		"ModelScale"				"1.2"
 		"Level"						"1"
-		"IsAncient"                    "1"
 		
 		// Abilities
 		//----------------------------------------------------------------

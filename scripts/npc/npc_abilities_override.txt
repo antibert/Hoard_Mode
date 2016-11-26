@@ -4189,6 +4189,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName" 			"rubick_spell_steal2"
+		"CastFilterRejectCaster" 		"1"
 	}
 	//=================================================================================================================
 	// Rubick: Fade Bolt

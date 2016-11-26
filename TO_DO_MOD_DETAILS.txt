@@ -1,25 +1,9 @@
 Next Update Patch Notes:
 
-1.20r
--- Remove gold bags from harpies
--- Large bears now have furbolg clap instead of reactive armor
--- Many enemies that previously counted as ancients no longer do so
-
-// Bane
--- Brain Sap radius increased to 325/375/425/475
--- Brain Sap cooldown reduced to 14/12/10/8
--- Nightmare cooldown and duration reverted to vanilla
-
-// Batrider
--- Reduced flamebreak cooldown from 15 to 12 seconds
--- Reduced Firefly cooldown from 40 to 30 seconds
-
-// Puck
--- Waning Rift cooldown reduced to 12/11/10/9
--- Waning Rift damage increased to 100/180/260/340
--- Dream Coil damage increased to 150/200/250
--- Dream Coil break damage increased to 150/200/250
--- Dream Coil cooldown reduced to 75/60/45
+1.20s
+-- Finished merging all spawn code
+-- Fixed tooltip of Puck's Waning Rift
+-- Removed Rubick's ability to target himself with Spell Steal
 
 To Do:
 -- update russian lang

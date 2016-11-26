@@ -4478,7 +4478,7 @@
 	"item_blink"
 	{
 		"ItemCost"                      "900"
-		"AbilitySharedCooldown"			"dagon"
+		"AbilitySharedCooldown"			"blink"
 	}
 	//=================================================================================================================
 	// Poor Man's Shield

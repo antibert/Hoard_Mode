@@ -4,6 +4,7 @@ Next Update Patch Notes:
 -- Finished merging all spawn code
 -- Fixed tooltip of Puck's Waning Rift
 -- Removed Rubick's ability to target himself with Spell Steal
+-- Fixed blink dagger 1 sharing cooldown with dagon
 
 To Do:
 -- update russian lang

@@ -27,6 +27,9 @@ local waveZeroDuration = 180
 local waveDuration = 250
 local wavePause = 50
 
+-- Settings
+local spawns = LoadKeyValues('scripts/vscripts/spawns.kv')
+
 function waveStart(waveNumber)
 	local time = 0
 	if waveNumber > 0 then
@@ -51,6 +54,232 @@ function waveBoss(waveNumber)
 	return time
 end
 
+function fetchRandomItem(table)
+	local keyset={}
+	local n=0
+
+	for k,v in pairs(table) do
+		n=n+1
+		keyset[n]=k
+	end
+
+	return table[keyset[math.random(#keyset)]]
+end
+
+function Spawners:StartSpawners(difficulty, mapInfo)
+	local waves = spawns.Waves
+	for _,wave in pairs(waves) do
+		Spawners:LoadWave(wave, tonumber(_), difficulty, mapInfo)
+	end
+
+	Spawners:LoadMisc(difficulty, mapInfo)
+end
+
+function Spawners:LoadWave(wave, waveNumber, difficulty, mapInfo)
+	print('LoadWave'..waveNumber)
+	PrintTable(wave)
+	local options = wave.Options
+	local chosenWave =  fetchRandomItem(options)
+	if chosenWave.boss_unit ~= nil then
+		Spawners:SpawnBoss(chosenWave.boss_unit, waveNumber, difficulty, mapInfo.bossSpawner, mapInfo.bossDestination)
+	end
+
+	for _,unit in pairs(chosenWave.Creatures) do
+		if (mapInfo.topLaneSpawner ~= nil and (unit.mid_only == nil or unit.mid_only == "0")) then
+			Spawners:SpawnUnits(unit, waveNumber, difficulty, mapInfo.topLaneSpawner, mapInfo.topLaneDestination)
+		end
+		if (mapInfo.botLaneSpawner ~= nil and (unit.mid_only == nil or unit.mid_only == "0")) then
+			Spawners:SpawnUnits(unit, waveNumber, difficulty, mapInfo.botLaneSpawner, mapInfo.botLaneDestination)
+		end
+		Spawners:SpawnUnits(unit, waveNumber, difficulty, mapInfo.midLaneSpawner, mapInfo.midLaneDestination)
+	end
+end
+
+function Spawners:SpawnBoss(unit, waveNumber, difficulty, source, waypoint)
+	if type(source) == 'table' then
+		source = fetchRandomItem(source)
+	end
+	Spawner:SpawnTimer({
+		start = waveBoss(waveNumber),
+		interval = 3000,
+		spawn = {
+			source =  source,
+			waypoint = waypoint,
+			unit = unit
+		}
+	})
+end
+
+function Spawners:SpawnUnits(unit, waveNumber, difficulty, source, waypoint)
+	if type(source) == 'table' then
+		source = fetchRandomItem(source)
+	end
+	Spawner:SpawnTimer({
+		start = waveStart(waveNumber)+unit.delay,
+		finish = waveEnd(waveNumber),
+		interval = unit.interval,
+		spawn = {
+			source =  source,
+			waypoint = waypoint,
+			max = unit.max_size,
+			min = unit.min_size,
+			unit = unit.unit_name
+		}
+	})
+end
+
+function Spawners:LoadMisc(difficulty, mapInfo)
+	--------------------------------------------------------------------------
+	---------------- Neutral Camps/Map Spawns --------------------------------
+	--------------------------------------------------------------------------
+
+	-- Neutral Camps/Map Spawns
+	Spawner:SpawnTimer({
+		start = 0,
+		interval = 30,
+		spawn = function()
+			if (mapInfo.botLaneSpawner ~= nil) then
+				Spawner:SpawnFriend({
+					point = "spawner7",
+					waypoint = "lane_bot_pathcorner_goodguys_2",
+					lane = "bot",
+					unit = "npc_dota_creature_friend",
+					max_spawn = 8
+				})
+			end
+			if (mapInfo.topLaneSpawner ~= nil) then
+				Spawner:SpawnFriend({
+					point = "spawner7",
+					waypoint = "lane_top_pathcorner_goodguys_1",
+					lane = "top",
+					unit = "npc_dota_creature_friend",
+					max_spawn = 8
+				})
+			end
+			if (mapInfo.midLaneSpawner ~= nil) then
+				Spawner:SpawnFriend({
+					point = "spawner7",
+					waypoint = "lane_mid_pathcorner_goodguys_1",
+					lane = "mid",
+					unit = "npc_dota_creature_friend",
+					max_spawn = 8
+				})
+			end
+		end
+	})
+
+	Spawner:SpawnTimer({
+		start = 1,
+		interval = 30,
+		spawn = function()
+			if (mapInfo.botLaneSpawner ~= nil) then
+				Spawner:SpawnFriend({
+					point = "spawner7",
+					waypoint = "lane_bot_pathcorner_goodguys_2",
+					lane = "bot",
+					unit = "npc_dota_creature_friend",
+					max_spawn = 8
+				})
+			end
+			if (mapInfo.topLaneSpawner ~= nil) then
+				Spawner:SpawnFriend({
+					point = "spawner7",
+					waypoint = "lane_top_pathcorner_goodguys_1",
+					lane = "top",
+					unit = "npc_dota_creature_friend",
+					max_spawn = 8
+				})
+			end
+			if (mapInfo.midLaneSpawner ~= nil) then
+				Spawner:SpawnFriend({
+					point = "spawner7",
+					waypoint = "lane_mid_pathcorner_goodguys_1",
+					lane = "mid",
+					unit = "npc_dota_creature_friend",
+					max_spawn = 8
+				})
+			end
+		end
+	})
+
+	Spawner:SpawnTimer({
+		start = 2,
+		interval = 30,
+		spawn = function()
+			if (mapInfo.botLaneSpawner ~= nil) then
+				Spawner:SpawnFriend({
+					point = "spawner7",
+					waypoint = "lane_bot_pathcorner_goodguys_2",
+					lane = "bot",
+					unit = "npc_dota_creature_friend",
+					max_spawn = 8
+				})
+			end
+			if (mapInfo.topLaneSpawner ~= nil) then
+				Spawner:SpawnFriend({
+					point = "spawner7",
+					waypoint = "lane_top_pathcorner_goodguys_1",
+					lane = "top",
+					unit = "npc_dota_creature_friend",
+					max_spawn = 8
+				})
+			end
+			if (mapInfo.midLaneSpawner ~= nil) then
+				Spawner:SpawnFriend({
+					point = "spawner7",
+					waypoint = "lane_mid_pathcorner_goodguys_1",
+					lane = "mid",
+					unit = "npc_dota_creature_friend",
+					max_spawn = 8
+				})
+			end
+		end
+	})
+
+	Spawner:SpawnTimer({
+		start = 0,
+		interval = 30,
+		spawn = function()
+			Spawner:SpawnFriend({
+				point = "spawner8",
+				waypoint = "lane_top_pathcorner_badguys_3",
+				lane = "base1",
+				unit = "npc_dota_creature_friend_base",
+				max_spawn = 1
+			})
+
+			Spawner:SpawnFriend({
+				point = "spawner8",
+				waypoint = "lane_top_pathcorner_badguys_2b",
+				lane = "base2",
+				unit = "npc_dota_creature_friend_base",
+				max_spawn = 1
+			})
+		end
+	})
+
+	if difficulty < 2 then
+		Timers:CreateTimer(0, function()
+			Spawners:SpawnMapBoss()
+			return 3000.0
+		end)
+	end
+
+	Spawner:SpawnTimer({
+		start = 0,
+		interval = 150,
+		finish = waveEnd(3),
+		spawn = {
+			source =  "spawner6",
+			waypoint = "lane_mid_pathcorner_badguys_7",
+			max = 3,
+			order = DOTA_UNIT_ORDER_STOP,
+			unit = "npc_dota_creature_money"
+		}
+	})
+end
+
+	--[[
 function Spawners:StartSpawners(difficulty)
 	
 -- BOSSES
@@ -1228,10 +1457,8 @@ Timers:CreateTimer("mini", {
 	
 	
 	
-	end
-
-
-
+end
+]]
 -- Function to stop spawners
 
 function Spawners:StopSpawner(spawner)

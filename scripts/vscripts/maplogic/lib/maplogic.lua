@@ -26,18 +26,15 @@ end
 function mapLogic:Init(keys)
 	-- Only allow init to be run once
 	if self.DONE_INIT then
-		print(printPrefix .. errorInitCalledTwice)
+		DebugPrint(printPrefix .. errorInitCalledTwice)
 		return
 	end
 
 	self.DONE_INIT = true
 	self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_MEDIUM
-	self.HAS_TOP = true
-	self.HAS_MID = true
-	self.HAS_BOT = true
 
 	-- Print the intro message
-	print(printPrefix .. messageStarting)
+	DebugPrint(printPrefix .. messageStarting)
 
 	self.MAP = GetMapName()
 	self:SetDifficultyValues(keys)
@@ -55,8 +52,6 @@ function mapLogic:SetDifficultyValues(keys)
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_MEDIUM
 	elseif self.MAP == 'Horde_2p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_MEDIUM
-		self.HAS_BOT = false
-		self.HAS_TOP = false
 	else
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_EASY
 	end
@@ -217,16 +212,13 @@ function mapLogic:SetEnemyBuildings()
 end
 
 require('Spawners')
-require('Spawners2p')
 
 -- function that sets the timers for all the wave spawns
 function mapLogic:SetSpawns()
 	ShowMessage('Map name when called upon in the test client:' .. GetMapName())
-	if GetMapName() == 'Horde_2p' then
-		Spawners2p:StartSpawners(self.DIFFICULTY)
-		print(" Loading Two Player Map Spawners")
-	else
-		Spawners:StartSpawners(self.DIFFICULTY)
-		print(" Loading default map spawners")
+	local mapData = mapInfo[GetMapName()]
+	if mapData == nil then
+		mapData = mapInfo.Default
 	end
+	Spawners:StartSpawners(self.DIFFICULTY, mapData)
 end

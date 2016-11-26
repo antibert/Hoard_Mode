@@ -5,6 +5,7 @@ Next Update Patch Notes:
 -- Fixed tooltip of Puck's Waning Rift
 -- Removed Rubick's ability to target himself with Spell Steal
 -- Fixed blink dagger 1 sharing cooldown with dagon
+-- Fixed Heart not actually breaking on damage
 
 To Do:
 -- update russian lang

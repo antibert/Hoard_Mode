@@ -76,8 +76,7 @@ function Spawners:StartSpawners(difficulty, mapInfo)
 end
 
 function Spawners:LoadWave(wave, waveNumber, difficulty, mapInfo)
-	print('LoadWave'..waveNumber)
-	PrintTable(wave)
+	DebugPrint('LoadWave'..waveNumber)
 	local options = wave.Options
 	local chosenWave =  fetchRandomItem(options)
 	if chosenWave.boss_unit ~= nil then
@@ -128,113 +127,51 @@ function Spawners:SpawnUnits(unit, waveNumber, difficulty, source, waypoint)
 	})
 end
 
+function Spawners:SpawnFriends(mapInfo, offset)
+	-- Neutral Camps/Map Spawns
+	Spawner:SpawnTimer({
+		start = offset,
+		interval = 30,
+		spawn = function()
+			if (mapInfo.botLaneFriendlyDestination ~= nil) then
+				Spawner:SpawnFriend({
+					point = "spawner7",
+					waypoint = mapInfo.botLaneFriendlyDestination,
+					lane = "bot",
+					unit = "npc_dota_creature_friend",
+					max_spawn = 8
+				})
+			end
+			if (mapInfo.topLaneFriendlyDestination ~= nil) then
+				Spawner:SpawnFriend({
+					point = "spawner7",
+					waypoint = mapInfo.topLaneFriendlyDestination,
+					lane = "top",
+					unit = "npc_dota_creature_friend",
+					max_spawn = 8
+				})
+			end
+			if (mapInfo.midLaneSpawner ~= nil) then
+				Spawner:SpawnFriend({
+					point = "spawner7",
+					waypoint = mapInfo.midLaneFriendlyDestination,
+					lane = "mid",
+					unit = "npc_dota_creature_friend",
+					max_spawn = 8
+				})
+			end
+		end
+	})
+end
+
 function Spawners:LoadMisc(difficulty, mapInfo)
 	--------------------------------------------------------------------------
 	---------------- Neutral Camps/Map Spawns --------------------------------
 	--------------------------------------------------------------------------
 
-	-- Neutral Camps/Map Spawns
-	Spawner:SpawnTimer({
-		start = 0,
-		interval = 30,
-		spawn = function()
-			if (mapInfo.botLaneSpawner ~= nil) then
-				Spawner:SpawnFriend({
-					point = "spawner7",
-					waypoint = "lane_bot_pathcorner_goodguys_2",
-					lane = "bot",
-					unit = "npc_dota_creature_friend",
-					max_spawn = 8
-				})
-			end
-			if (mapInfo.topLaneSpawner ~= nil) then
-				Spawner:SpawnFriend({
-					point = "spawner7",
-					waypoint = "lane_top_pathcorner_goodguys_1",
-					lane = "top",
-					unit = "npc_dota_creature_friend",
-					max_spawn = 8
-				})
-			end
-			if (mapInfo.midLaneSpawner ~= nil) then
-				Spawner:SpawnFriend({
-					point = "spawner7",
-					waypoint = "lane_mid_pathcorner_goodguys_1",
-					lane = "mid",
-					unit = "npc_dota_creature_friend",
-					max_spawn = 8
-				})
-			end
-		end
-	})
-
-	Spawner:SpawnTimer({
-		start = 1,
-		interval = 30,
-		spawn = function()
-			if (mapInfo.botLaneSpawner ~= nil) then
-				Spawner:SpawnFriend({
-					point = "spawner7",
-					waypoint = "lane_bot_pathcorner_goodguys_2",
-					lane = "bot",
-					unit = "npc_dota_creature_friend",
-					max_spawn = 8
-				})
-			end
-			if (mapInfo.topLaneSpawner ~= nil) then
-				Spawner:SpawnFriend({
-					point = "spawner7",
-					waypoint = "lane_top_pathcorner_goodguys_1",
-					lane = "top",
-					unit = "npc_dota_creature_friend",
-					max_spawn = 8
-				})
-			end
-			if (mapInfo.midLaneSpawner ~= nil) then
-				Spawner:SpawnFriend({
-					point = "spawner7",
-					waypoint = "lane_mid_pathcorner_goodguys_1",
-					lane = "mid",
-					unit = "npc_dota_creature_friend",
-					max_spawn = 8
-				})
-			end
-		end
-	})
-
-	Spawner:SpawnTimer({
-		start = 2,
-		interval = 30,
-		spawn = function()
-			if (mapInfo.botLaneSpawner ~= nil) then
-				Spawner:SpawnFriend({
-					point = "spawner7",
-					waypoint = "lane_bot_pathcorner_goodguys_2",
-					lane = "bot",
-					unit = "npc_dota_creature_friend",
-					max_spawn = 8
-				})
-			end
-			if (mapInfo.topLaneSpawner ~= nil) then
-				Spawner:SpawnFriend({
-					point = "spawner7",
-					waypoint = "lane_top_pathcorner_goodguys_1",
-					lane = "top",
-					unit = "npc_dota_creature_friend",
-					max_spawn = 8
-				})
-			end
-			if (mapInfo.midLaneSpawner ~= nil) then
-				Spawner:SpawnFriend({
-					point = "spawner7",
-					waypoint = "lane_mid_pathcorner_goodguys_1",
-					lane = "mid",
-					unit = "npc_dota_creature_friend",
-					max_spawn = 8
-				})
-			end
-		end
-	})
+	Spawners:SpawnFriends(mapInfo, 0)
+	Spawners:SpawnFriends(mapInfo, 1)
+	Spawners:SpawnFriends(mapInfo, 2)
 
 	Spawner:SpawnTimer({
 		start = 0,

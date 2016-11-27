@@ -146,7 +146,7 @@
 		"item"		"item_sphere"
 		"item"		"item_hurricane_pike"
 		"item"		"item_assault"
-		"item"		"item_heart"
+		"item"		"item_heart_datadriven"
 		"item"		"item_bloodstone"
 	}
 	

@@ -5845,7 +5845,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"1200"
+        "ItemCost"						"1400"
         "ItemShopTags"					""
 
         // Recipe
@@ -5870,7 +5870,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "Model"							"models/props_gameplay/red_box.vmdl"
         "Effect"						"particles/generic_gameplay/dropped_item.vpcf"
-        "AbilityTextureName"			"item_heart"
+        "AbilityTextureName"			"item_heart_datadriven"
 
         // Stats
         //-------------------------------------------------------------------------------------------------------------
@@ -5901,7 +5901,7 @@
             "03"
             {
                 "var_type"							"FIELD_INTEGER"
-                "health_regen_percent_per_second"	"4.75"
+                "health_regen_rate"	"4.75"
             }
             "04"
             {
@@ -5910,8 +5910,13 @@
             }
             "05"
             {
+                "var_type"							"FIELD_INTEGER"
+                "melee_reduction"	"-2"
+            }
+            "06"
+            {
                 "var_type"							"FIELD_FLOAT"
-                "heal_interval"						".03"
+                "ranged_reduction"					"-3.5"
             }
         }
 
@@ -5934,16 +5939,9 @@
                 "Passive"			"1"
                 "IsHidden"			"1"
 
-                "ThinkInterval" 		"%heal_interval"
-                "OnIntervalThink"  //Heal the unit if the item is not on cooldown.
+                "Properties"
                 {
-                    "RunScript"
-                    {
-                        "ScriptFile"					"items/item_heart.lua"
-                        "Function"						"modifier_item_heart_datadriven_regen_on_interval_think"
-                        "HealthRegenPercentPerSecond"	"%health_regen_percent_per_second"
-                        "HealInterval"					"%heal_interval"
-                    }
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"     "%health_regen_rate"
                 }
 
                 "OnTakeDamage"  //Put the item on cooldown if the damage came from Roshan or a hero.
@@ -5953,7 +5951,34 @@
                         "ScriptFile"		"items/item_heart.lua"
                         "Function"			"modifier_item_heart_datadriven_regen_on_take_damage"
                         "CooldownMelee"		"%cooldown_melee"
+                        "MeleeDisableModifier"   "modifier_item_heart_datadriven_regen_melee_reduction"
+                        "RangedDisableModifier"   "modifier_item_heart_datadriven_regen_ranged_reduction"
                     }
+                }
+            }
+            "modifier_item_heart_datadriven_regen_melee_reduction"
+            {
+                "Passive"			"0"
+                "IsHidden"			"0"
+                "IsDebuff"          "1"
+                "IsPurgable"        "0"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"     "%melee_reduction"
+                }
+            }
+
+            "modifier_item_heart_datadriven_regen_ranged_reduction"
+            {
+                "Passive"			"0"
+                "IsHidden"			"0"
+                "IsDebuff"          "1"
+                "IsPurgable"        "0"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"     "%ranged_reduction"
                 }
             }
         }

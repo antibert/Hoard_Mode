@@ -136,7 +136,7 @@
 	//"item_recipe_assault"			"REMOVE"
 	//"item_assault"					"REMOVE"
 	//"item_recipe_heart"				"REMOVE"
-	//"item_heart"					"REMOVE"
+	"item_heart"					"REMOVE"
 	//"item_recipe_black_king_bar"	"REMOVE"
 	//"item_black_king_bar"			"REMOVE"
 	//"item_aegis"					"REMOVE"
@@ -4604,26 +4604,6 @@
 				"var_type"				"FIELD_FLOAT"
 				"sheep_duration"		"6"
 			}
-		}
-	}
-	//=================================================================================================================
-	// Heart
-	//=================================================================================================================
-	"item_heart"
-	{
-		"AbilityCooldown"				"2"
-		"AbilitySpecial"
-		{
-			"04"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "cooldown_melee"		"0.6"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "cooldown_ranged_tooltip"		"2"
-            }
 		}
 	}
 	//=================================================================================================================

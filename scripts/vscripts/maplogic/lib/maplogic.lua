@@ -190,12 +190,12 @@ function mapLogic:SetEnemyBuildings()
 			-- Add passive buff
 			building:AddAbility("global_armor_buff")
 			local global_armor_buff = building:FindAbilityByName("global_armor_buff")
-			global_armor_buff:SetLevel(math.max(0, self.DIFFICULTY - 1))
+			global_armor_buff:SetLevel(self.DIFFICULTY)
 
 			-- Add passive buff
 			building:AddAbility("global_offense_buff")
 			local global_offense_buff = building:FindAbilityByName("global_offense_buff")
-			global_offense_buff:SetLevel(math.max(0, self.DIFFICULTY - 1))
+			global_offense_buff:SetLevel(self.DIFFICULTY)
 
 			-- Add passive buff
 			building:AddAbility("global_difficulty_buff")

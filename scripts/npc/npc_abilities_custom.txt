@@ -9301,6 +9301,15 @@
             "particle"					"particles/units/heroes/hero_spectre/spectre_haunt.vpcf"
         }
 
+        "OnUpgrade"
+	{
+            "RunScript"
+	    {
+                "ScriptFile"    "heroes/hero_spectre/haunt.lua"
+                "Function"      "LevelReality"
+            }
+	}
+
         "OnSpellStart"
         {
             "FireSound"
@@ -9323,6 +9332,31 @@
                     "Center" "CASTER"
                     "Radius" "GLOBAL"
                 }
+            }
+        }
+    }
+    //=================================================================================================================
+    // Spectre: Reality
+    //=================================================================================================================
+    "spectre_reality"
+    {
+        "BaseClass"                         "ability_datadriven"
+        "AbilityTextureName"                "spectre_reality"
+        "AbilityBehavior"                   "DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_POINT"
+        "MaxLevel"                          "1"
+
+        "precache"
+        {
+            "soundfile"    "soundevents/game_sounds_heroes/game_sounds_spectre.vsndevts"
+        }
+
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"      "heroes/hero_spectre/haunt.lua"
+                "Function"        "RealitySwap"
+                "Target"          "POINT"
             }
         }
     }

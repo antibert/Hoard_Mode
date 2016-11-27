@@ -109,4 +109,56 @@ function HauntAll(event)
             end
         end
     end
+    caster.hauntActive = true
+
+    local duration = ability:GetSpecialValueFor("duration") -- 10.0 seconds
+    Timers:CreateTimer({
+        endTime = duration,
+        callback = function()
+             caster.hauntActive = false
+        end
+    })
+end
+
+function LevelReality( keys )
+    local caster = keys.caster
+    local reality = caster:FindAbilityByName("spectre_reality")
+
+    if reality and reality:GetLevel() < 1 then
+        reality:SetLevel(1)
+        caster.hauntActive = false
+    end
+end
+
+function RealitySwap( event )
+    local caster = event.caster
+    local targetPoint = event.target_points[1]
+
+    if not caster.hauntActive then return end
+
+    --[[NOTE: i tried using Entities:FindByNameNearest(), but it was buggy af.
+              main problem was that it let you swap with dead illusions]]
+
+    -- find all potential units
+    local units = FindUnitsInRadius(caster:GetTeam(), targetPoint, nil, 20000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
+    for _,spectre in pairs(units) do
+        -- determine which of the units are spectre illusions
+        if spectre:GetUnitName() == caster:GetUnitName() and spectre:IsIllusion() then
+            -- swap positions with the illusion closest to target point
+            local casterPos = caster:GetAbsOrigin()
+            local illusionPos = spectre:GetAbsOrigin()
+            caster:SetForwardVector(spectre:GetForwardVector())
+            spectre:SetForwardVector(caster:GetForwardVector())
+
+            caster:SetAbsOrigin(illusionPos)
+            spectre:SetAbsOrigin(casterPos)
+
+            FindClearSpaceForUnit(caster, illusionPos, true)
+            FindClearSpaceForUnit(spectre, casterPos, true)
+
+            EmitSoundOn("Hero_Spectre.Reality", caster)
+            -- return to stop searching for a unit to swap with
+            return
+        end
+    end
 end

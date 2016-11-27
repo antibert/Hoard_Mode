@@ -438,11 +438,11 @@
     //=================================================================================================================
     "npc_dota_hero_spectre_holdout"
     {
-        "AbilityLayout"         "4"
+        "AbilityLayout"         "5"
         "override_hero"			"npc_dota_hero_spectre"
-        "Ability4"				"spectre_haunt_datadriven"
-        "Ability5"              "attribute_bonus"
-        "Ability6"              ""
+        "Ability4"				"spectre_reality"
+        "Ability5"              "spectre_haunt_datadriven"
+        "Ability6"              "attribute_bonus"
     }
     //=================================================================================================================
     // HERO: Spirit Breaker

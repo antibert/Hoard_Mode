@@ -6,6 +6,9 @@ Next Update Patch Notes:
 -- Removed Rubick's ability to target himself with Spell Steal
 -- Fixed blink dagger 1 sharing cooldown with dagon
 -- Fixed Heart not actually breaking on damage
+-- Fixed mouseover of Dazzle aura
+-- Increased mana and hp regen of Aether Lens upgrades
+-- Returned Reality to Spectre
 
 To Do:
 -- update russian lang

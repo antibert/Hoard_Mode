@@ -62,6 +62,8 @@ function CreateIllusion(caster, ability, target)
     illusion:MakeIllusion()
     -- Set the illusion hp to be the same as the caster
     illusion:SetHealth(caster:GetHealth())
+
+    ability:ApplyDataDrivenModifier(caster, illusion, "modifier_haunt_illusion_marker", {})
 end
 
 function HauntAll(event)
@@ -111,11 +113,20 @@ function HauntAll(event)
     end
     caster.hauntActive = true
 
+    ability:ApplyDataDrivenModifier(caster, caster, "modifier_haunt_caster_tracker", {})
+    caster:SetModifierStackCount("modifier_haunt_caster_tracker", caster, 10)
+
     local duration = ability:GetSpecialValueFor("duration") -- 10.0 seconds
     Timers:CreateTimer({
         endTime = duration,
         callback = function()
-           caster.hauntActive = false
+            -- refesher has not been used
+            if not caster:HasModifier("modifier_haunt_caster_tracker") then
+                caster.hauntActive = false
+            else
+            -- refresher has been used
+                return caster:GetModifierStackCount("modifier_haunt_caster_tracker", caster)
+            end
         end
     })
 end
@@ -143,7 +154,7 @@ function RealitySwap( event )
     local units = FindUnitsInRadius(caster:GetTeam(), targetPoint, nil, 20000, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_CLOSEST, false)
     for _,spectre in pairs(units) do
         -- determine which of the units are spectre illusions
-        if spectre:GetUnitName() == caster:GetUnitName() and spectre:IsIllusion() then
+        if spectre:HasModifier("modifier_haunt_illusion_marker") then
             -- swap positions with the illusion closest to target point
             local casterPos = caster:GetAbsOrigin()
             local illusionPos = spectre:GetAbsOrigin()
@@ -160,5 +171,19 @@ function RealitySwap( event )
             -- return to stop searching for a unit to swap with
             return
         end
+    end
+end
+
+-- this is used in the refresher check in haunt/reality
+function DecrementStackCount( keys )
+    local caster = keys.caster
+    local modifier = keys.modifier
+    local stackCount = caster:GetModifierStackCount(modifier, caster)
+    local newStackCount = stackCount - 1
+
+    if newStackCount <= 0 then 
+        caster:RemoveModifierByNameAndCaster(modifier, caster)
+    else
+        caster:SetModifierStackCount(modifier, caster, newStackCount)
     end
 end

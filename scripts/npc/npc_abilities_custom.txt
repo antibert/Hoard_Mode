@@ -9334,7 +9334,33 @@
                 }
             }
         }
+
+        "Modifiers"
+        {
+            //now reality can only swap to haunt illusions, rather than all illusions
+            "modifier_haunt_illusion_marker"
+            {
+                "IsHidden"           "1"
+            }
+
+            //used to keep track of how long haunt has been active.
+            "modifier_haunt_caster_tracker"
+            {
+                "IsHidden"            "1"
+        
+                "ThinkInterval"  "1.0"
+                "OnIntervalThink"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"      "heroes/hero_spectre/haunt.lua"
+                        "Function"        "DecrementStackCount"
+                        "modifier"        "modifier_haunt_caster_tracker"
+                }
+            }
+        }
     }
+
     //=================================================================================================================
     // Spectre: Reality
     //=================================================================================================================

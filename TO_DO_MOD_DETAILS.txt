@@ -1,14 +1,8 @@
 Next Update Patch Notes:
 
-1.20s
--- Finished merging all spawn code
--- Fixed tooltip of Puck's Waning Rift
--- Removed Rubick's ability to target himself with Spell Steal
--- Fixed blink dagger 1 sharing cooldown with dagon
--- Reworked Heart: it now always breaks for 2 seconds on damage, but only breaks partially (different between Ranged and Melee)
--- Fixed mouseover of Dazzle aura
--- Increased mana and hp regen of Aether Lens upgrades
--- Returned Reality to Spectre
+1.20t
+-- Fixed spawn point of friendly creeps
+-- Fixed wave 7 and the final wave
 
 To Do:
 -- update russian lang

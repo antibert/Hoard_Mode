@@ -85,12 +85,12 @@ function Spawners:LoadWave(wave, waveNumber, difficulty, mapInfo)
 
 	for _,unit in pairs(chosenWave.Creatures) do
 		if (mapInfo.topLaneSpawner ~= nil and (unit.mid_only == nil or unit.mid_only == "0")) then
-			Spawners:SpawnUnits(unit, waveNumber, difficulty, mapInfo.topLaneSpawner, mapInfo.topLaneDestination)
+			Spawners:SpawnUnits(unit, waveNumber, difficulty, mapInfo.topLaneSpawner, mapInfo.topLaneDestination, wave.NeverEnd)
 		end
 		if (mapInfo.botLaneSpawner ~= nil and (unit.mid_only == nil or unit.mid_only == "0")) then
-			Spawners:SpawnUnits(unit, waveNumber, difficulty, mapInfo.botLaneSpawner, mapInfo.botLaneDestination)
+			Spawners:SpawnUnits(unit, waveNumber, difficulty, mapInfo.botLaneSpawner, mapInfo.botLaneDestination, wave.NeverEnd)
 		end
-		Spawners:SpawnUnits(unit, waveNumber, difficulty, mapInfo.midLaneSpawner, mapInfo.midLaneDestination)
+		Spawners:SpawnUnits(unit, waveNumber, difficulty, mapInfo.midLaneSpawner, mapInfo.midLaneDestination, wave.NeverEnd)
 	end
 end
 
@@ -109,13 +109,17 @@ function Spawners:SpawnBoss(unit, waveNumber, difficulty, source, waypoint)
 	})
 end
 
-function Spawners:SpawnUnits(unit, waveNumber, difficulty, source, waypoint)
+function Spawners:SpawnUnits(unit, waveNumber, difficulty, source, waypoint, forever)
 	if type(source) == 'table' then
 		source = fetchRandomItem(source)
 	end
+	local finish = waveEnd(waveNumber)
+	if forever ~= nil and forever == 1 then
+		finish = nil
+	end
 	Spawner:SpawnTimer({
 		start = waveStart(waveNumber)+unit.delay,
-		finish = waveEnd(waveNumber),
+		finish = finish,
 		interval = unit.interval,
 		spawn = {
 			source =  source,
@@ -135,7 +139,7 @@ function Spawners:SpawnFriends(mapInfo, offset)
 		spawn = function()
 			if (mapInfo.botLaneFriendlyDestination ~= nil) then
 				Spawner:SpawnFriend({
-					point = "spawner7",
+					point = mapInfo.botLaneFriendlySpawner,
 					waypoint = mapInfo.botLaneFriendlyDestination,
 					lane = "bot",
 					unit = "npc_dota_creature_friend",
@@ -144,7 +148,7 @@ function Spawners:SpawnFriends(mapInfo, offset)
 			end
 			if (mapInfo.topLaneFriendlyDestination ~= nil) then
 				Spawner:SpawnFriend({
-					point = "spawner7",
+					point = mapInfo.topLaneFriendlySpawner,
 					waypoint = mapInfo.topLaneFriendlyDestination,
 					lane = "top",
 					unit = "npc_dota_creature_friend",
@@ -153,7 +157,7 @@ function Spawners:SpawnFriends(mapInfo, offset)
 			end
 			if (mapInfo.midLaneSpawner ~= nil) then
 				Spawner:SpawnFriend({
-					point = "spawner7",
+					point = mapInfo.midLaneFriendlySpawner,
 					waypoint = mapInfo.midLaneFriendlyDestination,
 					lane = "mid",
 					unit = "npc_dota_creature_friend",

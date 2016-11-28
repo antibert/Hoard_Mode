@@ -110,20 +110,12 @@ function HauntAll(event)
         end
     end
     caster.hauntActive = true
-    ability.timeCast = GameRules:GetGameTime()
-    ability.cooldown = ability:GetCooldownTimeRemaining()
 
     local duration = ability:GetSpecialValueFor("duration") -- 10.0 seconds
     Timers:CreateTimer({
         endTime = duration,
         callback = function()
-             -- if refresher has not been used, or enough time has passed for it to not matter
-             if GameRules:GetGameTime() >= ability.timeCast + ability.cooldown then
-                 caster.hauntActive = false
-             else
-                 caster.hauntActive = true
-                 return duration
-             end
+           caster.hauntActive = false
         end
     })
 end

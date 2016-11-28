@@ -50,7 +50,6 @@ end
 
 -- Apply the auto attack damage to the hit unit
 function SplitShotDamage( keys )
-    print ('split shot damage')
     local caster = keys.caster
     local target = keys.target
     local ability = keys.ability

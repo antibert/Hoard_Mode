@@ -960,14 +960,14 @@
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"23"		// Physical protection.
+		"ArmorPhysical"				"13"		// Physical protection.
 	
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"290"		// Damage range min.
-		"AttackDamageMax"			"300"		// Damage range max.	
-		"AttackRate"				"0.8"		// Speed of attack.
+		"AttackDamageMin"			"180"		// Damage range min.
+		"AttackDamageMax"			"200"		// Damage range max.
+		"AttackRate"				"1.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.43"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
@@ -1019,6 +1019,9 @@
 		{
 			"particle_folder"		"particles/units/heroes/hero_ursa"
 		}
+
+		"HasInventory"  "1"
+
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
 		"Creature"
@@ -1066,6 +1069,13 @@
                     "Name"        "polar_furbolg_ursa_warrior_thunder_clap"
                     "MinimumTargets"	"1"
                 }
+            }
+
+            "EquippedItems"
+            {
+                "MoonShard"    {    "Item"    "item_moon_shard"    }
+                "Plate"   {   "Item"        "item_platemail"  }
+                "Relic" {   "Item"  "item_relic"}
             }
 		}
 	}
@@ -1291,9 +1301,9 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"700"		// Damage range min.
-		"AttackDamageMax"			"900"		// Damage range max.
-		"AttackRate"				"0.8"		// Speed of attack.
+		"AttackDamageMin"			"600"		// Damage range min.
+		"AttackDamageMax"			"800"		// Damage range max.
+		"AttackRate"				"1.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.46"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
 		"AttackRange"				"550"		// Range within a target can be attacked.
@@ -1400,6 +1410,8 @@
             {
                 "Aghanims"    {    "Item"    "item_ultimate_scepter"    }
                 "Shiva"   {   "Item"        "item_shivas_guard_2"  }
+                "Relic" {   "Item"  "item_relic"    }
+                "MoonShard"    {    "Item"    "item_moon_shard"    }
             }
 
             "AttachWearables"
@@ -1453,9 +1465,9 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"245"		// Damage range min.
-		"AttackDamageMax"			"269"		// Damage range max.	
-		"AttackRate"				"0.8"		// Speed of attack.
+		"AttackDamageMin"			"165"		// Damage range min.
+		"AttackDamageMax"			"189"		// Damage range max.
+		"AttackRate"				"1.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.43"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
 		"AttackRange"				"200"		// Range within a target can be attacked.
@@ -1499,6 +1511,8 @@
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"vscripts"					"UnitAI.lua"
+
+		"HasInventory"              "1"
 	
 		//Precache
 		//---------------------------------------------------------------------
@@ -1560,6 +1574,12 @@
 					"ItemDef"			"9284"
 				}
 			}
+
+			"EquippedItems"
+            {
+                "Relic" {   "Item"  "item_relic"    }
+                "MoonShard"    {    "Item"    "item_moon_shard"    }
+            }
 		}
 	}
 	//=================================================================================	
@@ -1594,9 +1614,9 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"275"		// Damage range min.
-		"AttackDamageMax"			"286"		// Damage range max.
-		"AttackRate"				"0.8"		// Speed of attack.
+		"AttackDamageMin"			"165"		// Damage range min.
+		"AttackDamageMax"			"246"		// Damage range max.
+		"AttackRate"				"1.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
@@ -1647,6 +1667,8 @@
         {
             "particle_folder"		"particles/units/heroes/hero_nyx_assassin"
         }
+
+        "HasInventory"              "1"
 	
 		// Creature Data
 		//----------------------------------------------------------------
@@ -1680,7 +1702,12 @@
 			}
 	
 			"DefaultState"				"Invade"
-			
+
+			"EquippedItems"
+	        {
+	            "Relic" {   "Item"  "item_relic"    }
+	            "MoonShard"    {    "Item"    "item_moon_shard"    }
+	        }
 		}
 	}
 	//=================================================================================
@@ -2138,7 +2165,7 @@
 		"ModelScale"				"1.12"
 		"Level"						"12"
 		"CanBeDominated"			"0"
-	        "ConsideredHero"                    "1"
+        "ConsideredHero"                    "1"
 		
 		"precache"
 		{
@@ -3778,16 +3805,16 @@
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"33"			// Physical protection.
-		"MagicalResistance"			"0"		// Magical protection (percentage).
+		"ArmorPhysical"				"18"			// Physical protection.
+		"MagicalResistance"			"25"		// Magical protection (percentage).
 	
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"1100"		// Damage range min.
-		"AttackDamageMax"			"1200"		// Damage range max.
+		"AttackDamageMin"			"1000"		// Damage range min.
+		"AttackDamageMax"			"1100"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackRate"				"1.3"			// Speed of attack.
+		"AttackRate"				"1.9"			// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
@@ -3833,6 +3860,8 @@
 		"vscripts"					"UnitAI.lua"
 		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
 		"VoiceFile"					"soundevents/voscripts/game_sounds_vo_treant.vsndevts"
+
+		"HasInventory"                  "1"
 	
 		// Creature Data
 		//----------------------------------------------------------------------------------------------------------------------
@@ -3878,6 +3907,13 @@
 				"Wearable4"	{ "ItemDef" "230" }
 				"Wearable5" { "ItemDef" "231" }
 			}
+
+			"EquippedItems"
+            {
+                "Relic" {   "Item"  "item_relic"    }
+                "MoonShard"    {    "Item"    "item_moon_shard"    }
+                "Assault"       {   "Item"  "item_assault"}
+            }
 		}
 	}	
 	////////////////////////////////////////// WOLF WAVE GROUP //////////////////////////////////////////////
@@ -5947,9 +5983,9 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"550"		// Damage range min.
-		"AttackDamageMax"			"650"		// Damage range max.
-		"AttackRate"				"1"		// Speed of attack.
+		"AttackDamageMin"			"450"		// Damage range min.
+		"AttackDamageMax"			"550"		// Damage range max.
+		"AttackRate"				"1.7"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"5000"		// Range within a target can be acquired.
 		"AttackRange"				"150"		// Range within a target can be attacked.
@@ -5996,6 +6032,8 @@
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"vscripts"					"UnitAI.lua"
+
+		"HasInventory"              "1"
 		
 		// Creature Data
 		//----------------------------------------------------------------
@@ -6027,7 +6065,7 @@
 			
 			"DefaultState"				"Invade"
 			
-			"DisableResistance"			"100.0"
+			"DisableResistance"			"80.0"
 
 			"DefensiveAbilities"
             {
@@ -6045,6 +6083,14 @@
                     "Name"        "ogre_magi_fireblast"
                     "MinimumTargets"	"1"
                 }
+            }
+
+            "EquippedItems"
+            {
+                "Relic" {   "Item"  "item_relic"    }
+                "MoonShard"    {    "Item"    "item_moon_shard"    }
+                "Shiva"     {   "Item"  "item_shivas_guard"}
+                "Mekansm"   {   "Item"  "item_mekansm"}
             }
 		}
 	}

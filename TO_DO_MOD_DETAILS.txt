@@ -4,6 +4,7 @@ Next Update Patch Notes:
 -- Mega Towers now have a 25% chance to perform a special bash that ignores evasion: it deals 1% of the target's hp per hit as magic damage in an area (also affecting the target)
 -- Fixed Lich boss particle effects
 -- Spooki Meme boss now has an inventory! His base stats have been reduced to compensate, but he is more difficult. Good luck!
+-- Added simple inventories (mostly base damage and attack speed and movement speed items) to other bosses
 
 To Do:
 -- update russian lang

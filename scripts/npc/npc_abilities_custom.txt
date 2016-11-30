@@ -9356,6 +9356,7 @@
                         "ScriptFile"      "heroes/hero_spectre/haunt.lua"
                         "Function"        "DecrementStackCount"
                         "modifier"        "modifier_haunt_caster_tracker"
+                    }
                 }
             }
         }
@@ -14183,6 +14184,21 @@
                 "var_type"					"FIELD_INTEGER"
                 "damage_block"	"50"
             }
+            "03"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "hp_percent"                "1"
+            }
+            "04"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "hp_percent_radius"         "250"
+            }
+            "05"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "truestrike"                "25"
+            }
         }
 
         "Modifiers"
@@ -14197,6 +14213,89 @@
                 {
                     "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%attack_speed_bonus_pct"
                     "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK" "%damage_block"
+                }
+
+                "OnAttackStart"
+                {
+                    "RemoveModifier"
+                    {
+                        "ModifierName"	"modifier_mega_tower_effect_strike"
+                        "Target"		"CASTER"
+                    }
+
+                    "Random"
+                    {
+                        "Chance"		"%truestrike"
+                        "PseudoRandom"	"DOTA_PSEUDO_RANDOM_TOWER_TRUESTRIKE"
+
+                        "OnSuccess"
+                        {
+                            "ApplyModifier"
+                            {
+                                "ModifierName"	"modifier_mega_tower_effect_strike"
+                                "Target"		"CASTER"
+                            }
+                        }
+                    }
+                }
+            }
+
+            "modifier_mega_tower_effect_strike"
+            {
+                "IsHidden"	"1"
+
+                "States"
+                {
+                    "MODIFIER_STATE_CANNOT_MISS"			"MODIFIER_STATE_VALUE_ENABLED"  //When attacking uphill, cannot miss units but can still miss buildings.
+                }
+
+                "OnAttackLanded"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"scripts/vscripts/units/mega_tower.lua"
+                        "Function"		"PercentDamage"
+                        "Target"        "TARGET"
+                        "hp_percent"    "%hp_percent"
+                        "radius"        "%hp_percent_radius"
+                    }
+
+                    "RemoveModifier"
+                    {
+                        "ModifierName"	"modifier_mega_tower_effect_strike"
+                        "Target"		"CASTER"
+                    }
+
+                    "ApplyModifier"
+                    {
+                        "Target"			"TARGET"
+                        "ModifierName"		"modifier_mega_tower_effect_strike_bash"
+                    }
+
+                    "FireSound"
+                    {
+                        "EffectName"		"DOTA_Item.MKB.Minibash"
+                        "Target"			"TARGET"
+                    }
+                }
+            }
+
+            "modifier_mega_tower_effect_strike_bash"
+            {
+                "Duration"              "0.1"
+                "Passive"				"0"
+                "IsHidden"				"1"
+                "IsBuff"				"0"
+                "IsDebuff"				"1"
+                "IsPurgable"			"1"
+
+                "EffectName"            "particles/generic_gameplay/generic_stunned.vpcf"
+                "EffectAttachType"      "follow_overhead"
+                "OverrideAnimation"     "ACT_DOTA_DISABLED"
+
+                "States"
+                {
+                    "MODIFIER_STATE_STUNNED" 		"MODIFIER_STATE_VALUE_ENABLED"
                 }
             }
         }

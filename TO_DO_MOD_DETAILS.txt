@@ -1,8 +1,9 @@
 Next Update Patch Notes:
 
-1.20t
--- Fixed spawn point of friendly creeps
--- Fixed wave 7 and the final wave
+1.20u
+-- Mega Towers now have a 25% chance to perform a special bash that ignores evasion: it deals 1% of the target's hp per hit as magic damage in an area (also affecting the target)
+-- Fixed Lich boss particle effects
+-- Spooki Meme boss now has an inventory! His base stats have been reduced to compensate, but he is more difficult. Good luck!
 
 To Do:
 -- update russian lang

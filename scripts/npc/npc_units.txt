@@ -11938,7 +11938,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"mudgolem_cloak_aura"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -11969,8 +11969,10 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"40"		// Base health.
-		"StatusHealthRegen"			"1.5"		// Health regeneration rate.
+		"StatusHealth"				"600"		// Base health.
+        "StatusHealthRegen"			"5"		// Health regeneration rate.
+        "StatusMana"				"400"			// Base mana.
+        "StatusManaRegen"			"2.0"		// Mana regeneration rate.
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -12001,9 +12003,9 @@
 
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					""			// Ability 1
+		"Ability1"					"big_thunder_lizard_wardrums_aura"			// Ability 1
 		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
+		"Ability3"					"mudgolem_cloak_aura"			// Ability 3
 		"Ability4"					""			// Ability 4
 
 		// Armor
@@ -12032,8 +12034,10 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"60"		// Base health.
-		"StatusHealthRegen"			"1.5"		// Health regeneration rate.
+		"StatusHealth"				"600"		// Base health.
+        "StatusHealthRegen"			"5"		// Health regeneration rate.
+        "StatusMana"				"400"			// Base mana.
+        "StatusManaRegen"			"2.0"		// Mana regeneration rate.
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -12065,9 +12069,9 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"beastmaster_hawk_invisibility"			// Ability 1
-		"Ability2"					""			// Ability 2
+		"Ability2"					"big_thunder_lizard_wardrums_aura"			// Ability 2
 		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability4"					"mudgolem_cloak_aura"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -12095,8 +12099,10 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"80"		// Base health.
-		"StatusHealthRegen"			"1.5"		// Health regeneration rate.
+		"StatusHealth"				"600"		// Base health.
+        "StatusHealthRegen"			"5"		// Health regeneration rate.
+        "StatusMana"				"400"			// Base mana.
+        "StatusManaRegen"			"2.0"		// Mana regeneration rate.
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -12128,9 +12134,9 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"beastmaster_hawk_invisibility"			// Ability 1
-		"Ability2"					""			// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
+		"Ability2"					"big_thunder_lizard_wardrums_aura"			// Ability 2
+		"Ability3"					"black_dragon_dragonhide_aura"			// Ability 3
+		"Ability4"					"mudgolem_cloak_aura"			// Ability 4
 
 		// Armor
 		//----------------------------------------------------------------
@@ -12158,8 +12164,10 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"100"		// Base health.
-		"StatusHealthRegen"			"1.5"		// Health regeneration rate.
+		"StatusHealth"				"600"		// Base health.
+        "StatusHealthRegen"			"5"		// Health regeneration rate.
+        "StatusMana"				"400"			// Base mana.
+        "StatusManaRegen"			"2.0"		// Mana regeneration rate.
 		
 		// Vision
 		//----------------------------------------------------------------
@@ -12204,7 +12212,7 @@
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"23"		// Damage range min.
-		"AttackDamageMax"			"29"		// Damage range max.	
+		"AttackDamageMax"			"29"		// Damage range max.
 		"AttackRate"				"1.5"		// Speed of attack.
 		"AttackAnimationPoint"		"0.633"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
@@ -12342,8 +12350,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"10"		// Damage range min.
-		"AttackDamageMax"			"10"		// Damage range max.	
+		"AttackDamageMin"			"30"		// Damage range min.
+		"AttackDamageMax"			"30"		// Damage range max.
 		"AttackRate"				"1.25"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
@@ -12369,7 +12377,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"200"		// Base health.
+		"StatusHealth"				"300"		// Base health.
 		"StatusHealthRegen"			"1.5"		// Health regeneration rate.
 		
 		// Vision
@@ -12411,8 +12419,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"25"		// Damage range min.
-		"AttackDamageMax"			"25"		// Damage range max.	
+		"AttackDamageMin"			"50"		// Damage range min.
+		"AttackDamageMax"			"50"		// Damage range max.
 		"AttackRate"				"1.25"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
@@ -12438,7 +12446,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"300"		// Base health.
+		"StatusHealth"				"500"		// Base health.
 		"StatusHealthRegen"			"1.5"		// Health regeneration rate.
 		
 		// Vision
@@ -12480,8 +12488,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"40"		// Damage range min.
-		"AttackDamageMax"			"40"		// Damage range max.	
+		"AttackDamageMin"			"70"		// Damage range min.
+		"AttackDamageMax"			"70"		// Damage range max.
 		"AttackRate"				"1.25"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
@@ -12507,7 +12515,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"400"		// Base health.
+		"StatusHealth"				"700"		// Base health.
 		"StatusHealthRegen"			"1.5"		// Health regeneration rate.
 		
 		// Vision
@@ -12549,8 +12557,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"55"		// Damage range min.
-		"AttackDamageMax"			"55"		// Damage range max.	
+		"AttackDamageMin"			"90"		// Damage range min.
+		"AttackDamageMax"			"90"		// Damage range max.
 		"AttackRate"				"1.25"		// Speed of attack.
 		"AttackAnimationPoint"		"0.5"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
@@ -12576,7 +12584,7 @@
 
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"500"		// Base health.
+		"StatusHealth"				"900"		// Base health.
 		"StatusHealthRegen"			"1.5"		// Health regeneration rate.
 		
 		// Vision

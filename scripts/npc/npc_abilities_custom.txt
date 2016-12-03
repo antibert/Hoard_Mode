@@ -337,674 +337,6 @@
 			}
 		}
 	}
-
-	"beastmaster_call_of_the_wild_boar_datadriven"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-	 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	    "AbilityTextureName"			"beastmaster_call_of_the_wild_boar"
-		
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3"
-	
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40.0 40.0 40.0 40.0"
-	
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"15"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hawk_duration"				"60 60 60 60"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"boar_hp_tooltip"			"300 500 700 900"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"boar_damage_tooltip"		"35 60 85 110"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"boar_moveslow_tooltip"		"35"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"boar_attackslow_tooltip"	"10"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"poison_duration_tooltip"	"3"
-			}
-			"07"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"boar_duration"				"60 60 60 60"
-			}
-	
-			// Extra		
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"boar_1_count"			"1 0 0 0"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"boar_2_count"			"0 1 0 0"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"boar_3_count"			"0 0 1 0"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"boar_4_count"			"0 0 0 1"
-			}
-			"12"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance"				"150" // The distance in front of the target at which units will be created
-			}
-		}
-	
-		"precache"
-		{
-			"particle"	"particles/units/heroes/hero_beastmaster/beastmaster_call_boar.vpcf"
-			"particle"	"particles/units/heroes/hero_lone_druid/lone_druid_spirit_bear_death.vpcf"
-			"particle"	"particles/units/heroes/hero_beastmaster/beastmaster_boar_attack.vpcf"
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_beastmaster.vsndevts"
-			"model"		"models/heroes/beastmaster/beastmaster_beast.vmdl"
-		}
-	
-		"OnUpgrade"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
-				"Function"		"LevelUpAbility"
-				"ability_name"	"beastmaster_call_of_the_wild_datadriven"
-			}
-		}
-	
-		"OnSpellStart"
-		{
-			"FireSound"
-		    {
-		    	"EffectName"	"Hero_Beastmaster.Call.Boar"
-		    	"Target"		"CASTER"
-		    }
-	
-			"SpawnUnit"
-			{
-				"UnitName"			"npc_dota_creature_mega_boar_1"
-				"Target"
-				{
-					"Center"				"CASTER"
-					"ScriptSelectPoints"
-					{
-						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
-	        			"Function"      "GetFrontPoint"
-						"Target"		"CASTER"
-						"Distance"		"%distance"
-					}
-				}
-	
-				"UnitCount"			"%boar_1_count"
-				"Duration"			"%boar_duration"
-	
-				"GrantsGold"		"1"
-				"GrantsXP"			"1"
-	
-				// This makes sure units never get stuck
-				"OnSpawn"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_phased"
-						"Target"		"TARGET"
-						"Duration"		"0.03"
-					}
-	
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_beastmaster_boar"
-						"Target"		"TARGET"
-					}
-	
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
-						"Function"		"SetUnitsMoveForward"
-					}
-				}
-			}
-	
-			"SpawnUnit"
-			{
-				"UnitName"			"npc_dota_creature_mega_boar_2"
-				"Target"
-				{
-					"Center"				"CASTER"
-					"ScriptSelectPoints"
-					{
-						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
-	        			"Function"      "GetFrontPoint"
-						"Target"		"CASTER"
-						"Distance"		"%distance"
-					}
-				}
-	
-				"UnitCount"			"%boar_2_count"
-				"Duration"			"%boar_duration"
-	
-				"GrantsGold"		"1"
-				"GrantsXP"			"1"
-	
-				// This makes sure units never get stuck
-				"OnSpawn"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_phased"
-						"Target"		"TARGET"
-						"Duration"		"0.03"
-					}
-	
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_beastmaster_boar"
-						"Target"		"TARGET"
-					}
-	
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
-						"Function"		"SetUnitsMoveForward"
-					}
-				}
-			}
-	
-			"SpawnUnit"
-			{
-				"UnitName"			"npc_dota_creature_mega_boar_3"
-				"Target"
-				{
-					"Center"				"CASTER"
-					"ScriptSelectPoints"
-					{
-						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
-	        			"Function"      "GetFrontPoint"
-						"Target"		"CASTER"
-						"Distance"		"%distance"
-					}
-				}
-	
-				"UnitCount"			"%boar_3_count"
-				"Duration"			"%boar_duration"
-	
-				"GrantsGold"		"1"
-				"GrantsXP"			"1"
-	
-				// This makes sure units never get stuck
-				"OnSpawn"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_phased"
-						"Target"		"TARGET"
-						"Duration"		"0.03"
-					}
-	
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_beastmaster_boar"
-						"Target"		"TARGET"
-					}
-	
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
-						"Function"		"SetUnitsMoveForward"
-					}
-				}
-			}
-	
-			"SpawnUnit"
-			{
-				"UnitName"			"npc_dota_creature_mega_boar_4"
-				"Target"
-				{
-					"Center"				"CASTER"
-					"ScriptSelectPoints"
-					{
-						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
-	        			"Function"      "GetFrontPoint"
-						"Target"		"CASTER"
-						"Distance"		"%distance"
-					}
-				}
-	
-				"UnitCount"			"%boar_4_count"
-				"Duration"			"%boar_duration"
-	
-				"GrantsGold"		"1"
-				"GrantsXP"			"1"
-	
-				// This makes sure units never get stuck
-				"OnSpawn"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_phased"
-						"Target"		"TARGET"
-						"Duration"		"0.03"
-					}
-	
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_beastmaster_boar"
-						"Target"		"TARGET"
-					}
-					
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
-						"Function"		"SetUnitsMoveForward"
-					}
-				}
-			}
-		}
-	
-		"Modifiers"
-		{
-			"modifier_beastmaster_boar"
-			{
-				"IsHidden"		"1"
-	
-				"OnCreated"
-				{
-					"FireEffect"
-					{
-						"Target"			"TARGET"
-						"EffectName"		"particles/units/heroes/hero_beastmaster/beastmaster_call_boar.vpcf"
-						"EffectAttachType"	"follow_origin"
-					}
-				}
-	
-				"OnDeath"
-				{
-					"FireEffect"
-					{
-						"Target"			
-						{
-							"Center"	"UNIT"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-						}
-						"EffectName"		"particles/units/heroes/hero_lone_druid/lone_druid_spirit_bear_death.vpcf"
-						"EffectAttachType"	"follow_origin"
-					}
-					
-					"FireSound"
-					{
-						"Target"			
-						{
-							"Center"	"UNIT"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-						}
-						"EffectName"	"Hero_Beastmaster_Boar.Death"
-					}
-				}
-			}
-		}
-	}
-	//End of file beastmaster_call_of_the_wild_boar_datadriven.txt
-	
-	
-	//Start of file beastmaster_call_of_the_wild_datadriven.txt
-	// Rewrite of Beastmaster Call of the Wild
-	// Author: Noya
-	// Date: April 5, 2015
-	// This ability is used with beastmaster_call_of_the_wild_boar_datadriven, skilling one will attempt to upgrade the other
-	//TODO: Check if its necessary to kill the hawk or there's no limit
-	"beastmaster_call_of_the_wild_datadriven"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	    "AbilityTextureName"			"beastmaster_call_of_the_wild"
-			
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.3"
-	
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"60"
-	
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"15"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"boar_duration"				"60 60 60 60"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hawk_hp_tooltip"			"600 600 600 600"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hawk_speed_tooltip"		"250 270 290 310"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hawk_daysight_tooltip"		"700 1000 1300 1600"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hawk_nightsight_tooltip"	"700 800 900 1000"
-			}
-			"06"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"hawk_duration"				"60 60 60 60"
-			}
-	
-			// Extra		
-			"07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hawk_1_count"			"1 0 0 0"
-			}
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hawk_2_count"			"0 1 0 0"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hawk_3_count"			"0 0 1 0"
-			}
-			"10"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"hawk_4_count"			"0 0 0 1"
-			}
-			"11"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"distance"				"150" // The distance in front of the target at which units will be created
-			}
-		}
-	
-		"OnUpgrade"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
-				"Function"		"LevelUpAbility"
-				"ability_name"	"beastmaster_call_of_the_wild_boar_datadriven"
-			}
-		}
-	
-		"OnSpellStart"
-		{
-			"FireSound"
-		    {
-		    	"EffectName"	"Hero_Beastmaster.Call.Hawk"
-		    	"Target"		"CASTER"
-		    }
-	
-			"SpawnUnit"
-			{
-				"UnitName"			"npc_dota_creature_mega_hawk_1"
-				"Target"
-				{
-					"Center"				"CASTER"
-					"ScriptSelectPoints"
-					{
-						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
-	        			"Function"      "GetFrontPoint"
-						"Target"		"CASTER"
-						"Distance"		"%distance"
-					}
-				}
-	
-				"UnitCount"			"%hawk_1_count"
-				"Duration"			"%hawk_duration"
-	
-				"GrantsGold"		"1"
-				"GrantsXP"			"1"
-	
-				"OnSpawn"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_phased"
-						"Target"		"TARGET"
-						"Duration"		"0.03"
-					}
-	
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
-						"Function"		"SetUnitsMoveForward"
-					}
-	
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_beastmaster_hawk"
-						"Target"		"TARGET"
-					}
-				}
-			}
-	
-			"SpawnUnit"
-			{
-				"UnitName"			"npc_dota_creature_mega_hawk_2"
-				"Target"
-				{
-					"Center"				"CASTER"
-					"ScriptSelectPoints"
-					{
-						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
-	        			"Function"      "GetFrontPoint"
-						"Target"		"CASTER"
-						"Distance"		"%distance"
-					}
-				}
-	
-				"UnitCount"			"%hawk_2_count"
-				"Duration"			"%hawk_duration"
-	
-				"GrantsGold"		"1"
-				"GrantsXP"			"1"
-	
-				"OnSpawn"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_phased"
-						"Target"		"TARGET"
-						"Duration"		"0.03"
-					}
-	
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_beastmaster_hawk"
-						"Target"		"TARGET"
-					}
-	
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
-						"Function"		"SetUnitsMoveForward"
-					}
-				}
-			}
-	
-			"SpawnUnit"
-			{
-				"UnitName"			"npc_dota_creature_mega_hawk_3"
-				"Target"
-				{
-					"Center"				"CASTER"
-					"ScriptSelectPoints"
-					{
-						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
-	        			"Function"      "GetFrontPoint"
-						"Target"		"CASTER"
-						"Distance"		"%distance"
-					}
-				}
-	
-				"UnitCount"			"%hawk_3_count"
-				"Duration"			"%hawk_duration"
-	
-				"GrantsGold"		"1"
-				"GrantsXP"			"1"
-	
-				"OnSpawn"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_phased"
-						"Target"		"TARGET"
-						"Duration"		"0.03"
-					}
-	
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_beastmaster_hawk"
-						"Target"		"TARGET"
-					}
-	
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
-						"Function"		"SetUnitsMoveForward"
-					}
-				}
-			}
-	
-			"SpawnUnit"
-			{
-				"UnitName"			"npc_dota_creature_mega_hawk_4"
-				"Target"
-				{
-					"Center"				"CASTER"
-					"ScriptSelectPoints"
-					{
-						"ScriptFile"    "heroes/hero_beastmaster/call_of_the_wild.lua"
-	        			"Function"      "GetFrontPoint"
-						"Target"		"CASTER"
-						"Distance"		"%distance"
-					}
-				}
-	
-				"UnitCount"			"%hawk_4_count"
-				"Duration"			"%hawk_duration"
-	
-				"GrantsGold"		"1"
-				"GrantsXP"			"1"
-	
-				"OnSpawn"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_phased"
-						"Target"		"TARGET"
-						"Duration"		"0.03"
-					}
-	
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_beastmaster_hawk"
-						"Target"		"TARGET"
-					}
-	
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_beastmaster/call_of_the_wild.lua"
-						"Function"		"SetUnitsMoveForward"
-					}
-				}
-			}
-		}
-	
-		"Modifiers"
-		{
-			"modifier_beastmaster_hawk"
-			{
-				"IsHidden"		"1"
-	
-				"OnCreated"
-				{
-					"FireEffect"
-					{
-						"Target"			"TARGET"
-						"EffectName"		"particles/units/heroes/hero_beastmaster/beastmaster_call_bird.vpcf"
-						"EffectAttachType"	"follow_origin"
-					}
-				}
-	
-				"OnDeath"
-				{
-					"FireEffect"
-					{
-						"Target"			
-						{
-							"Center"	"UNIT"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-						}
-						"EffectName"		"particles/units/heroes/hero_lone_druid/lone_druid_spirit_bear_death.vpcf"
-						"EffectAttachType"	"follow_origin"
-					}
-	
-					"FireSound"
-					{
-						"Target"			
-						{
-							"Center"	"UNIT"
-							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
-						}
-						"EffectName"	"Hero_Beastmaster_Bird.Death"
-					}
-				}
-			}
-		}
-	}
 	//=================================================================================================================
 	// Brewmaster: Drunken Brawler
 	//=================================================================================================================
@@ -2482,13 +1814,14 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"dazzle_poison_touch"
+		"AOERadius"                     "%radius"
 
 		// Precache
 		//-------------------------------------------------------------------------------------------------------------
@@ -2515,7 +1848,7 @@
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"40 60 80 100"
+		"AbilityDamage"					"14 28 42 56"
 		"AbilityDuration"				"10"
 
 		// Stats
@@ -2598,44 +1931,44 @@
 				"radius"				"150 200 250 300"
 			}
 		}
-	"OnSpellStart"
-	{
 
-		"FireSound"
+		"OnSpellStart"
 		{
-			"EffectName"	"Hero_Dazzle.Poison_Cast"
-			"Target" 		"CASTER"
-		}
-		"FireSound"
-		{
-			"EffectName"	"Hero_Dazzle.Poison_Touch"
-			"Target" 		"TARGET"
-		}
-		"ActOnTargets"
-		{
-			"Target"
+
+			"FireSound"
 			{
-				"Center"  	"TARGET"
-				"Radius" 	"%radius"
-				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"EffectName"	"Hero_Dazzle.Poison_Cast"
+				"Target" 		"CASTER"
 			}
-
-			"Action"
+			"FireSound"
 			{
-				"TrackingProjectile"
+				"EffectName"	"Hero_Dazzle.Poison_Touch"
+				"Target" 		"TARGET"
+			}
+			"ActOnTargets"
+			{
+				"Target"
 				{
-					"Target"           	"TARGET"
-					"EffectName"		"particles/units/heroes/hero_dazzle/dazzle_poison_touch.vpcf"
-					"Dodgeable"			"1"
-					"ProvidesVision"	"0"
-					"MoveSpeed"        	"%projectile_speed"
-					"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+					"Center"  	"TARGET"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+
+				"Action"
+				{
+					"TrackingProjectile"
+					{
+						"Target"           	"TARGET"
+						"EffectName"		"particles/units/heroes/hero_dazzle/dazzle_poison_touch.vpcf"
+						"Dodgeable"			"1"
+						"ProvidesVision"	"0"
+						"MoveSpeed"        	"%projectile_speed"
+						"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+					}
 				}
 			}
 		}
-
-	}
 
 		"OnProjectileHitUnit"
 		{
@@ -4458,64 +3791,6 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"10.0 12.0 14.0 16.0"
-			}
-		}
-	}
-	//=================================================================================================================
-	// Kunkka: Horde Rum
-	//=================================================================================================================
-	"horde_rum"
-	{
-		"BaseClass"						"brewmaster_drunken_haze"
-		"AbilityTextureName"			"horde_rum"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"AbilityCastRange"				"700 800 900 1000"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-
-	     	"precache"
-		{
-			"particle_folder"				"particles\units\heroes\hero_brewmaster"
-		}
-		"AbilityCastPoint"				"0.5 0.5 0.5 0.5"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"35"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"60"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"radius"					"600"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration"					"8.0 8.0 8.0 8.0"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"duration_creeps"			"12.0 12.0 12.0 12.0"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"miss_chance"				"30 40 50 60"
-			}
-			"05"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"movement_slow"				"0 0 0 0"
 			}
 		}
 	}
@@ -14160,6 +13435,329 @@
             }
         }
     }
+    "bane_fiends_grip_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "FightRecapLevel"				"2"
+        "AbilityTextureName"			"bane_fiends_grip"
+        "AOERadius"                     "%radius"
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"		"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts"
+            "particle"		"particles/units/heroes/hero_bane/bane_fiends_grip.vpcf"
+        }
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"625"
+        "AbilityCastPoint"				"0.5 0.5 0.5"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityChannelTime"			"5.0 5.0 5.0"
+        "AbilityCooldown"				"60 50 40"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"200 300 400"
+
+        "HasScepterUpgrade"			"1"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "fiend_grip_tick_interval"		"1.0"
+            }
+            "02"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "fiend_grip_damage"				"100 155 215"
+            }
+            "03"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "fiend_grip_duration"			"5.0 5.0 5.0"
+            }
+            "04"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "fiend_grip_mana_drain"			"5"
+            }
+            "05"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "fiend_grip_mana_drain_scepter"	"10"
+            }
+            "06"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "fiend_grip_damage_scepter"		"155 215 270"
+            }
+            "07"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "fiend_grip_duration_scepter"	"7"
+            }
+            "08"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "radius"		"350"
+            }
+        }
+
+        "OnSpellStart"
+        {
+            "ActOnTargets"
+            {
+                "Target"
+                {
+                    "Center"  	"POINT"
+                    "Radius" 	"%radius"
+                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+
+                "Action"
+                {
+                    "Damage"
+                    {
+                        "Target"	"TARGET"
+                        "Type"		"DAMAGE_TYPE_MAGICAL"
+                        "Damage"	"%fiend_grip_damage"
+                    }
+
+		            "ApplyModifier"
+		            {
+		                "ModifierName"	"modifier_bane_fiends_grip_datadriven"
+		                "Target"
+		                {
+		                    "Center"	"TARGET"
+		                    "Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		                }
+		            }
+                }
+            }
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_Bane.FiendsGrip.Cast"
+                "Target"
+                {
+                    "Center"	"TARGET"
+                    "Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+                }
+            }
+
+            "ApplyModifier"
+            {
+                "ModifierName"	"modifier_fiends_grip_caster_datadriven"
+                "Target" 		"CASTER"
+            }
+        }
+
+        "OnChannelInterrupted"
+        {
+            "ActOnTargets"
+            {
+                "Target"
+                {
+                    "Center"  	"POINT"
+                    "Radius" 	"%radius"
+                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+
+                "Action"
+                {
+                    "RemoveModifier"
+                    {
+                        "ModifierName"	"modifier_bane_fiends_grip_datadriven"
+                        "Target"
+                        {
+                            "Center"	"TARGET"
+                            "Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+                        }
+                    }
+
+                    "RemoveModifier"
+                    {
+                        "ModifierName"	"modifier_fiends_grip_invis_datadriven"
+                        "Target"
+                        {
+                            "Center"	"TARGET"
+                            "Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+                        }
+                    }
+                }
+            }
+
+
+            "RemoveModifier"
+            {
+                "ModifierName"	"modifier_fiends_grip_caster_datadriven"
+                "Target" 		"CASTER"
+            }
+
+            "RunScript"
+            {
+                "ScriptFile"	"heroes/hero_bane/fiends_grip.lua"
+                "Function"		"FiendsGripStopSound"
+                "sound"			"Hero_Bane.FiendsGrip"
+            }
+
+            "RunScript"
+            {
+                "ScriptFile"	"heroes/hero_bane/fiends_grip.lua"
+                "Function"		"FiendsGripStopSound"
+                "sound"			"Hero_Bane.FiendsGrip.Cast"
+            }
+        }
+
+        "OnChannelFinish"
+        {
+            "ActOnTargets"
+            {
+                "Target"
+                {
+                    "Center"  	"POINT"
+                    "Radius" 	"%radius"
+                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+
+                "Action"
+                {
+                    "RemoveModifier"
+                    {
+                        "ModifierName"	"modifier_bane_fiends_grip_datadriven"
+                        "Target"
+                        {
+                            "Center"	"TARGET"
+                            "Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+                        }
+                    }
+
+                    "RemoveModifier"
+                    {
+                        "ModifierName"	"modifier_fiends_grip_invis_datadriven"
+                        "Target"
+                        {
+                            "Center"	"TARGET"
+                            "Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+                        }
+                    }
+                }
+            }
+
+            "RemoveModifier"
+            {
+                "ModifierName"	"modifier_fiends_grip_caster_datadriven"
+                "Target" 		"CASTER"
+            }
+
+            "RunScript"
+            {
+                "ScriptFile"	"heroes/hero_bane/fiends_grip.lua"
+                "Function"		"FiendsGripStopSound"
+                "sound"			"Hero_Bane.FiendsGrip"
+            }
+
+            "RunScript"
+            {
+                "ScriptFile"	"heroes/hero_bane/fiends_grip.lua"
+                "Function"		"FiendsGripStopSound"
+                "sound"			"Hero_Bane.FiendsGrip.Cast"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_bane_fiends_grip_datadriven"
+            {
+                "IsDebuff"	"1"
+
+                "EffectName"	"particles/units/heroes/hero_bane/bane_fiends_grip.vpcf"
+                "EffectAttachType"	"attach_origin"
+
+                "OverrideAnimation" "ACT_DOTA_FLAIL"
+
+                "OnCreated"
+                {
+                    "FireSound"
+                    {
+                        "EffectName"	"Hero_Bane.FiendsGrip"
+                        "Target"		"TARGET"
+                    }
+
+                    "RunScript"
+                    {
+                        "ScriptFile"	"heroes/hero_bane/fiends_grip.lua"
+                        "Function"		"FiendsGripInvisCheck"
+                        "modifier_reveal"	"modifier_fiend_grip_invis_datadriven"
+                    }
+                }
+
+                "ThinkInterval"	"%fiend_grip_tick_interval"
+                "OnIntervalThink"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"	"scripts/vscripts/heroes/hero_bane/fiends_grip.lua"
+                        "Function"		"ManaDrain"
+                        "Target"		"TARGET"
+                    }
+
+                    "Damage"
+                    {
+                        "Target"	"TARGET"
+                        "Type"		"DAMAGE_TYPE_MAGICAL"
+                        "Damage"	"%fiend_grip_damage"
+                    }
+                }
+
+                "States"
+                {
+                    "MODIFIER_STATE_STUNNED" 	"MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+
+            "modifier_fiends_grip_caster_datadriven"
+            {
+                "IsHidden"	"1"
+
+                "States"
+                {
+                    "MODIFIER_STATE_LOW_ATTACK_PRIORITY"	"MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+
+            "modifier_fiend_grip_invis_datadriven"
+            {
+                "IsHidden"	"1"
+
+                "States"
+                {
+                    "MODIFIER_STATE_INVISIBILITY"	"MODIFIER_STATE_VALUE_DISABLED"
+                }
+            }
+        }
+    }
 
     "mega_tower_buff"
     {
@@ -14177,7 +13775,7 @@
             "01"
             {
                 "var_type"					"FIELD_INTEGER"
-                "attack_speed_bonus_pct"	"100"
+                "attack_speed_bonus_pct"	"200"
             }
             "02"
             {

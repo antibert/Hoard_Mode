@@ -1,10 +1,53 @@
 Next Update Patch Notes:
 
-1.20u
--- Mega Towers now have a 25% chance to perform a special bash that ignores evasion: it deals 1% of the target's hp per hit as magic damage in an area (also affecting the target)
--- Fixed Lich boss particle effects
--- Spooki Meme boss now has an inventory! His base stats have been reduced to compensate, but he is more difficult. Good luck!
--- Added simple inventories (mostly base damage and attack speed and movement speed items) to other bosses
+1.20v
+Units:
+-- Mega Tower attack rate reduced
+-- Spooki attack rate reduced
+-- Spooki heartstopper aura reduced in strength
+
+Items:
+-- Fixed Boots of Intellect debuff aura
+
+Heroes:
+// Bane
+-- Fiend's Grip is now an AoE
+
+// Beastmaster
+-- Reworked summons to use the vanilla powers (with vanilla mana cost and cooldown)
+-- Hawk no longer can attack, but instead gains various auras as it levels: Centaur Cloak Aura, Thunder Lizard War Drums, Invisibility, Black Dragon Dragonhide
+-- Boar and Hawk still have more hit points than vanilla (and Boar damage is still higher)
+
+// Centaur
+-- Hoof Stomp damage rescaled to 120/200/280/360
+-- Stampede damage multiplier reduced from 3/6/9 to 2/4/6
+
+// Dazzle
+-- Shallow Grave duration reverted to vanilla
+-- Poison Touch damage per second reduced to 14/28/42/56
+
+// Kunkka
+-- Torrent damage increased to 100/180/260/340
+-- Has X Marks the Spot once again, removed Horde Rum
+
+// Lion
+-- Mana cost of Impale reverted to vanilla
+-- Impale cast range reduced to 700/800/900/1000
+
+// Nyx
+-- Impale cast range increased to 700/800/900/1000
+-- Cooldown of Impale reduced to 13/11/9/7
+-- Impale damage increased to 100/200/300/400
+-- Reduced cooldown of Vendetta to 60/40/20
+-- Vendetta damage increased to 300/600/900
+
+// Oracle
+-- Fortune's End radius increased from 300 to 300/350/400/450
+
+// Io
+-- Increased pass damage of orbs to 16/28/40/52
+-- Increased explosion damage of orbs to 50/100/150/200
+
 
 To Do:
 -- update russian lang

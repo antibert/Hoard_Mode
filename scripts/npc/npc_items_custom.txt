@@ -821,22 +821,7 @@
 				"bonus_damage"			"9"	
 			}
 		}
-	
-		"OnSpellStart"
-		{
-	
-			"ApplyModifier"
-			{
-				"ModifierName"			"aura_magic_null"
-				"Target"
-				{
-					"Center"			"CASTER"
-					"Radius"			"%null_radius"
-					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				}
-			}			
-		}	
+
 		"Modifiers"
 		{
 			"modifier_item_boots_of_intellect"
@@ -860,7 +845,7 @@
 				"IsHidden"				"1"
 				"Passive"				"1"
 				
-				"Aura"					"magic_null"
+				"Aura"					"modifier_magic_null"
 				"Aura_Radius"			"%null_radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types"			"DOTA_UNIT_TARGET_ROSHAN | DOTA_UNIT_TARGET_BASIC"

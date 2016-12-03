@@ -19,6 +19,10 @@ function ManaDrain( keys )
 	local ability = keys.ability
 	local mana_drain = ability:GetLevelSpecialValueFor("fiend_grip_mana_drain", (ability:GetLevel() -1)) / 100
 
+	if caster:HasScepter() then
+		mana_drain = ability:GetLevelSpecialValueFor("fiend_grip_mana_drain_scepter", (ability:GetLevel() -1)) / 100
+	end
+
 	local max_mana_drain = target:GetMaxMana() * mana_drain
 	local current_mana = target:GetMana()
 

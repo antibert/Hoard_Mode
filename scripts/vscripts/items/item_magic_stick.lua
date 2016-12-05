@@ -52,7 +52,7 @@ function UpdateStickInfo( keys )
 
 	for i=0, 5, 1 do
 		local item = caster:GetItemInSlot(i)
-		if item and item:GetName() == "item_hoard_magic_stick" and item:GetCurrentCharges() > 0 then
+		if item ~= nil and item:GetName() == "item_hoard_magic_stick" and item:GetCurrentCharges() > 0 then
 			-- find oldest stick
 			if oldestStick == nil or item:GetEntityIndex() < oldestStick:GetEntityIndex() then
 				oldestStick = item

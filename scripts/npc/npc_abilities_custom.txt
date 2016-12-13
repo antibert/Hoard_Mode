@@ -5717,7 +5717,7 @@
 	        "04"
 	        {
 	            "var_type"				"FIELD_INTEGER"
-	            "base_damage"			"75"
+	            "base_damage"			"70"
 	        }
 	        "05"
 	        {

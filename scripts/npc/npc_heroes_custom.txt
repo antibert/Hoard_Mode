@@ -145,14 +145,6 @@
         "Ability2"				"huskar_burning_spear_datadriven"
         "Ability4"				"huskar_life_break_datadriven"
     }
-    //=================================================================================================================
-    // HERO: Invoker
-    //=================================================================================================================
-    "npc_dota_hero_invoker_holdout"
-    {
-        "override_hero"			"npc_dota_hero_invoker"
-        "Ability17"				"attribute_bonus"
-    }
 	//=================================================================================================================
 	// HERO: Keeper of the Light
 	//=================================================================================================================
@@ -215,8 +207,7 @@
 		"Ability1"					"magnataur_shockwave"
 		"Ability2"					"magnataur_empower"	
 		"Ability3"					"holdout_friendly_skewer"					
-		"Ability4"					"magnataur_reverse_polarity"	
-		"Ability5"					"attribute_bonus"				
+		"Ability4"					"magnataur_reverse_polarity"
 	}
 	//=================================================================================================================
     // HERO: Mirana
@@ -380,7 +371,6 @@
         //"Ability3"              "silencer_last_word_datadriven"
         "Ability4"				"silencer_int_steal_datadriven"
         "Ability5"				"silencer_global_silence_datadriven"
-        "Ability6"              "attribute_bonus"
     }
 	//=================================================================================================================
 	// HERO: Wraith King
@@ -426,7 +416,6 @@
         "override_hero"			"npc_dota_hero_spectre"
         "Ability4"				"spectre_reality"
         "Ability5"              "spectre_haunt_datadriven"
-        "Ability6"              "attribute_bonus"
     }
     //=================================================================================================================
     // HERO: Spirit Breaker
@@ -498,7 +487,6 @@
 	
 		"Ability4"					"holdout_scourge_ward"					// Ability 3
 		"Ability5"					"venomancer_poison_nova"					// Ability 4
-		"Ability6"					"attribute_bonus"						// Ability 6 - Bonuses.
 	}
 	//=================================================================================================================
 	// HERO: Viper

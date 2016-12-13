@@ -8,7 +8,7 @@ Units:
 -- Spooki heartstopper aura reduced in strength
 
 Items:
--- Fixed Boots of Intellect debuff aura
+-- Quelling Blade still uses % damage bonus
 
 Heroes:
 // Brewmaster
@@ -19,6 +19,9 @@ Heroes:
 
 // Jakiro
 -- Ice Path reverted to vanilla
+
+// Monkey King
+-- ENABLED!
 
 // Morphling
 -- Replicate reverted to vanilla

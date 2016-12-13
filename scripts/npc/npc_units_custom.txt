@@ -8016,7 +8016,6 @@
 		"AbilityLayout"				"5"
 		"Ability4"					"holdout_scourge_ward"					// Ability 3
 		"Ability5"					"holdout_poison_nova"					// Ability 4
-		"Ability6"					"attribute_bonus"						// Ability 6 - Bonuses.
 	}
 	//=================================================================================
 	// Tower: Hoard Tower

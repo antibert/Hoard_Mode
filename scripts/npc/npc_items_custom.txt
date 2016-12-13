@@ -3171,19 +3171,14 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"15"
+				"bash_chance"			"35"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_chance"			"35"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
 				"bash_damage"			"160"
 			}
-			"05"
+			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"bash_stun"				"0.1"
@@ -4650,14 +4645,19 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"aura_damage"			"100"
+				"aura_damage"			"120"
 			}
 			"03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "aura_damage_illusions"	"80"
+            }
+			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"blind_pct"				"35"
 			}
-			"04"
+			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"aura_radius"			"700"
@@ -4749,7 +4749,7 @@
             "04"
             {
                 "var_type"				"FIELD_INTEGER"
-                "maim_chance"			"15"
+                "maim_chance"			"24"
             }
             "05"
             {
@@ -4764,7 +4764,7 @@
             "07"
             {
                 "var_type"				"FIELD_FLOAT"
-                "maim_duration"			"4.0"
+                "maim_duration"			"5.0"
             }
             "08"
             {
@@ -5268,7 +5268,7 @@
             "08"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_attack_speed"	"35"
+                "bonus_attack_speed"	"30"
             }
             "09"
             {
@@ -5278,7 +5278,7 @@
             "10"
             {
                 "var_type"				"FIELD_INTEGER"
-                "aura_attack_speed"		"20"
+                "aura_attack_speed"		"25"
             }
             "11"
             {
@@ -5886,7 +5886,7 @@
             "03"
             {
                 "var_type"							"FIELD_INTEGER"
-                "health_regen_rate"	"4.75"
+                "health_regen_rate"	"7"
             }
             "04"
             {
@@ -5896,12 +5896,12 @@
             "05"
             {
                 "var_type"							"FIELD_INTEGER"
-                "melee_reduction"	"-2"
+                "melee_reduction"	"-3"
             }
             "06"
             {
                 "var_type"							"FIELD_FLOAT"
-                "ranged_reduction"					"-3.5"
+                "ranged_reduction"					"-5"
             }
         }
 

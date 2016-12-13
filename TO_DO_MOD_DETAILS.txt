@@ -1,53 +1,40 @@
 Next Update Patch Notes:
 
-1.20v
+1.21
+Patch 7.00 Parity! Part one?
+All heroes have their default talents (some don't work though!)
+
 Units:
--- Mega Tower attack rate reduced
--- Spooki attack rate reduced
 -- Spooki heartstopper aura reduced in strength
 
 Items:
 -- Fixed Boots of Intellect debuff aura
 
 Heroes:
-// Bane
--- Fiend's Grip is now an AoE
+// Brewmaster
+-- Drunken Haze reverted to vanilla
 
-// Beastmaster
--- Reworked summons to use the vanilla powers (with vanilla mana cost and cooldown)
--- Hawk no longer can attack, but instead gains various auras as it levels: Centaur Cloak Aura, Thunder Lizard War Drums, Invisibility, Black Dragon Dragonhide
--- Boar and Hawk still have more hit points than vanilla (and Boar damage is still higher)
+// Drow Ranger
+-- Reverted size of Wave of Silence to vanilla (talent upgrades it)
 
-// Centaur
--- Hoof Stomp damage rescaled to 120/200/280/360
--- Stampede damage multiplier reduced from 3/6/9 to 2/4/6
+// Jakiro
+-- Ice Path reverted to vanilla
 
-// Dazzle
--- Shallow Grave duration reverted to vanilla
--- Poison Touch damage per second reduced to 14/28/42/56
+// Morphling
+-- Replicate reverted to vanilla
 
-// Kunkka
--- Torrent damage increased to 100/180/260/340
--- Has X Marks the Spot once again, removed Horde Rum
+// Necrophos
+-- Sadist changed to new version
 
-// Lion
--- Mana cost of Impale reverted to vanilla
--- Impale cast range reduced to 700/800/900/1000
+// Shadow Shaman
+-- Serpent Wards reverted to vanilla
 
-// Nyx
--- Impale cast range increased to 700/800/900/1000
--- Cooldown of Impale reduced to 13/11/9/7
--- Impale damage increased to 100/200/300/400
--- Reduced cooldown of Vendetta to 60/40/20
--- Vendetta damage increased to 300/600/900
+// Spirit Breaker
+-- Charge of Darkness reverted to vanilla
 
-// Oracle
--- Fortune's End radius increased from 300 to 300/350/400/450
-
-// Io
--- Increased pass damage of orbs to 16/28/40/52
--- Increased explosion damage of orbs to 50/100/150/200
-
+// Visage
+-- Gravekeeper's Cloak reverted to vanilla
+-- Familiars reverted to vanilla (still with reduced cooldown)
 
 To Do:
 -- update russian lang

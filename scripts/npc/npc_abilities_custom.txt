@@ -3842,6 +3842,7 @@
 			{
 				"var_type"			"FIELD_FLOAT"
 				"channel_time"		"2.75 3.5 4.25 5.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_shadow_shaman_2"
 			}
 			"03"
 			{

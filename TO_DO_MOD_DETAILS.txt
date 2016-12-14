@@ -2,10 +2,12 @@ Next Update Patch Notes:
 
 1.21
 Patch 7.00 Parity! Part one?
-All heroes have their default talents (some don't work though!)
+All heroes still have their default talents (some don't work though!)
+The map still has some issues (runes don't spawn, etc)
+Monkey King is not enabled, because two of his abilities don't work against creeps (the passive and the ult)
 
 Units:
--- Spooki heartstopper aura reduced in strength
+-- Spooki Doom cooldown increased to 30, manacost increased to 300
 
 Items:
 -- Quelling Blade still uses % damage bonus
@@ -19,9 +21,6 @@ Heroes:
 
 // Jakiro
 -- Ice Path reverted to vanilla
-
-// Monkey King
--- ENABLED!
 
 // Morphling
 -- Replicate reverted to vanilla

@@ -467,20 +467,30 @@
                 "quelling_bonus_ranged"	"110"
             }
             "07"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "cleave_radius"			"250"
-            }
-            "08"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "cast_range_tooltip"			"350"
-            }
-            "09"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "cast_range_ward"			"450"
-            }
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "cleave_starting_width"			"150"
+	        }
+	        "08"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "cleave_ending_width"			"280"
+	        }
+	        "09"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "cleave_distance"			"520"
+	        }
+	        "10"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "cast_range_tooltip"			"350"
+	        }
+	        "11"
+	        {
+	            "var_type"				"FIELD_INTEGER"
+	            "cast_range_ward"			"450"
+	        }
         }
     }
     "item_quelling_blade_2_datadriven"
@@ -542,14 +552,24 @@
             "07"
             {
                 "var_type"				"FIELD_INTEGER"
-                "cleave_radius"			"250"
+                "cleave_starting_width"			"150"
             }
             "08"
             {
                 "var_type"				"FIELD_INTEGER"
-                "cast_range_tooltip"			"350"
+                "cleave_ending_width"			"280"
             }
             "09"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cleave_distance"			"520"
+            }
+            "10"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cast_range_tooltip"			"350"
+            }
+            "11"
             {
                 "var_type"				"FIELD_INTEGER"
                 "cast_range_ward"			"450"
@@ -559,75 +579,85 @@
 	"item_bfury_datadriven"
 	{
 		// General
-			//-------------------------------------------------------------------------------------------------------------
-			"ID"							"1145"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-			"BaseClass"                     "item_bfury"
-			"AbilityTextureName"			"item_bfury_datadriven"			
-			"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-			"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
-			"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		//-------------------------------------------------------------------------------------------------------------
+		"ID"							"1145"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"BaseClass"                     "item_bfury"
+		"AbilityTextureName"			"item_bfury_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
 
-			"AbilityCastRange"				"350"
-            "AbilityCastPoint"				"0.0"
-            "AbilityCooldown"				"4.0"
-            "AbilitySharedCooldown" "qblade"
-	
-			// Item Info
-			//-------------------------------------------------------------------------------------------------------------
-			"ItemCost"						"6525"
-			"ItemAliases"					"wf;war fury"
-			"ItemQuality"                   "artifact"
-			
-			// Special	
-			//-------------------------------------------------------------------------------------------------------------
-			"AbilitySpecial"
+		"AbilityCastRange"				"350"
+        "AbilityCastPoint"				"0.0"
+        "AbilityCooldown"				"4.0"
+        "AbilitySharedCooldown" "qblade"
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"6525"
+		"ItemAliases"					"wf;war fury"
+		"ItemQuality"                   "artifact"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
 			{
-				"01"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"bonus_damage"			"70"
-				}
-				"02"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"bonus_health_regen"	"9"
-				}
-				"03"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"bonus_mana_regen"		"200"
-				}
-				"04"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"cleave_damage_percent"	"45"
-				}
-				"05"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"quelling_bonus"			"160"
-				}
-				"06"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"quelling_bonus_ranged"	"125"
-				}			
-				"07"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"cleave_radius"			"350"
-				}
-				"08"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"cast_range_tooltip"			"350"
-				}
-				"09"
-				{
-					"var_type"				"FIELD_INTEGER"
-					"cast_range_ward"			"450"
-				}			
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"70"
 			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_health_regen"	"9"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_mana_regen"		"200"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cleave_damage_percent"	"45"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quelling_bonus"			"160"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"quelling_bonus_ranged"	"125"
+			}
+			"07"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cleave_starting_width"			"150"
+            }
+            "08"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cleave_ending_width"			"280"
+            }
+            "09"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cleave_distance"			"520"
+            }
+            "10"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cast_range_tooltip"			"350"
+            }
+            "11"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "cast_range_ward"			"450"
+            }
+		}
 	}
 	"item_boots_of_agility"
 	{

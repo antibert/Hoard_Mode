@@ -15,6 +15,7 @@
     {
         "override_hero"			"npc_dota_hero_ancient_apparition"
         "Ability1"              "ancient_apparition_cold_feet_datadriven"
+        // TODO: "Ability17"		"special_bonus_unique_ancient_apparition_2"
     }
 	//=================================================================================================================
     // HERO: Antimage
@@ -41,6 +42,7 @@
 		"override_hero"			"npc_dota_hero_axe"	
 		"Ability2"              "axe_battle_rage"
 		"Ability4"				"holdout_culling_blade"
+		// TODO: "Ability17"		"special_bonus_unique_axe"
 	}
 	//=================================================================================================================
     // HERO: Bane
@@ -51,6 +53,8 @@
         "Ability1"              "bane_enfeeble_datadriven"
         "Ability2"              "bane_brain_sap_datadriven"
         "Ability4"              "bane_fiends_grip_datadriven"
+        // TODO: "Ability16"		"special_bonus_unique_bane_1"
+        // TODO: "Ability17"		"special_bonus_unique_bane_2"
     }
 	//=================================================================================================================
     // HERO: Bloodseeker
@@ -65,6 +69,7 @@
 	//=================================================================================================================
 	"npc_dota_hero_bounty_hunter_holdout"
 	{
+		// TODO: Add Aghs
 		"override_hero"			"npc_dota_hero_bounty_hunter"
 		"Ability1"				"bounty_hunter_shuriken_toss_datadriven"
 		"Ability4"              "bounty_hunter_track_datadriven"
@@ -76,6 +81,7 @@
     {
         "override_hero"			"npc_dota_hero_broodmother"
         "Ability1"				"broodmother_spawn_spiderlings_datadriven"
+        // TODO: "Ability17"		"special_bonus_unique_broodmother_2"
     }
 	//=================================================================================================================
     // HERO: Chaos Knight
@@ -101,6 +107,7 @@
 		"override_hero"			"npc_dota_hero_dazzle"
 		"Ability1"				"dazzle_poison_touch_datadriven"
 		"Ability2"				"dazzle_toughness_aura"
+		// TODO: "Ability16"		"special_bonus_unique_dazzle_1"
 	}
 	//=================================================================================================================
 	// HERO: Death Prophet
@@ -135,6 +142,7 @@
 		"override_hero"			"npc_dota_hero_faceless_void"
 		"Ability2"				"faceless_void_backtrack"
 		"Ability3"              "faceless_void_time_lock_datadriven"
+		// TODO: "Ability17"		"special_bonus_unique_faceless_void"
 	}
 	//=================================================================================================================
     // HERO: Huskar
@@ -144,6 +152,7 @@
         "override_hero"			"npc_dota_hero_huskar"
         "Ability2"				"huskar_burning_spear_datadriven"
         "Ability4"				"huskar_life_break_datadriven"
+        // TODO: "Ability17"		"special_bonus_unique_huskar"
     }
 	//=================================================================================================================
 	// HERO: Keeper of the Light
@@ -159,7 +168,8 @@
 	"npc_dota_hero_legion_commander_holdout"
 	{
 		"override_hero"			"npc_dota_hero_legion_commander"
-		"Ability4"					"holdout_gladiators_unite"									
+		"Ability4"					"holdout_gladiators_unite"
+		// TODO: "Ability16"		"special_bonus_unique_legion_commander"
 	}
 	//=================================================================================================================
 	// HERO: Lifestealer
@@ -193,6 +203,7 @@
     {
         "override_hero"			"npc_dota_hero_lycan"
         "Ability1"				"lycan_summon_wolves_datadriven"
+        // TODO: Revert ability 1
     }
 	//=================================================================================================================
 	// HERO: Magnus
@@ -217,6 +228,8 @@
         "override_hero"			"npc_dota_hero_mirana"
         "Ability2"				"holdout_mirana_arrow"
         "Ability4"				"holdout_mirana_shadow"
+        // TODO: "Ability16"		"special_bonus_unique_mirana_1"
+        // TODO: "Ability17"		"special_bonus_unique_mirana_2"
     }
 	//=================================================================================================================
 	// HERO: Naga Siren
@@ -234,6 +247,7 @@
         "override_hero"			"npc_dota_hero_necrolyte"
         "Ability2"              "necrolyte_heartstopper_aura_datadriven"
         "Ability4"              "necrolyte_reapers_scythe_datadriven"
+        // TODO: Update scythe
     }
     //=================================================================================================================
     // HERO: Night Stalker
@@ -243,6 +257,7 @@
         "override_hero"			"npc_dota_hero_night_stalker"
         "Ability1"              "night_stalker_void_datadriven"
         "Ability2"              "night_stalker_crippling_fear_datadriven"
+        // TODO: "Ability17"		"special_bonus_unique_night_stalker"
     }
     //=================================================================================================================
     // HERO: Nyx Assassin
@@ -252,6 +267,7 @@
         "override_hero"			"npc_dota_hero_nyx_assassin"
         "Ability2"              "nyx_assassin_mana_burn_datadriven"
         "Ability3"              "nyx_assassin_spiked_carapace_datadriven"
+        // TODO: "Ability17"		"special_bonus_unique_nyx"
     }
     //=================================================================================================================
     // HERO: Obsidian Destroyer
@@ -261,6 +277,7 @@
         "override_hero"			"npc_dota_hero_obsidian_destroyer"
         "Ability1"				"obsidian_destroyer_arcane_orb_datadriven"
         "Ability4"              "obsidian_destroyer_sanity_eclipse_datadriven"
+        // TODO: "Ability16"		"special_bonus_unique_outworld_devourer"
     }
     //=================================================================================================================
     // HERO: Omniknight
@@ -269,6 +286,8 @@
     {
         "override_hero"			"npc_dota_hero_omniknight"
         "Ability3"				"omniknight_degen_aura_datadriven"
+        // TODO: "Ability16"		"special_bonus_unique_omniknight_1"
+        // TODO: "Ability17"		"special_bonus_unique_omniknight_2"
     }
 	//=================================================================================================================
 	// HERO: Sand King
@@ -285,6 +304,7 @@
 	{
 		"override_hero"			"npc_dota_hero_phantom_assassin"
 		"Ability1"				"phantom_assassin_stifling_dagger_datadriven"
+		// TODO: "Ability17"		"special_bonus_unique_phantom_assassin"
 	}
 	//=================================================================================================================
     // HERO: Pudge
@@ -293,6 +313,8 @@
     {
         "override_hero"			"npc_dota_hero_pudge"
         "Ability3"				"pudge_flesh_heap_datadriven"
+        // TODO: "Ability16"		"special_bonus_unique_pudge_1"
+        // TODO: "Ability17"		"special_bonus_unique_pudge_2"
     }
 	//=================================================================================================================
 	// HERO: Pugna
@@ -310,6 +332,7 @@
         "override_hero"			"npc_dota_hero_riki"
         "Ability2"              "riki_blink_strike_datadriven"
         "Ability4"				"tricks_of_the_trade_datadriven"
+        // TODO: Add aghs
     }
 	//=================================================================================================================
 	// HERO: Rubick
@@ -326,6 +349,8 @@
 	{
 		"override_hero"			"npc_dota_hero_lone_druid"
 		"Ability3"				"ursa_earthshock"
+		// TODO: "Ability16"		"special_bonus_unique_lone_druid_3"
+        // TODO: "Ability17"		"special_bonus_unique_lone_druid_4"
 	}
 	//=================================================================================================================
     // HERO: Puck
@@ -360,6 +385,8 @@
 		"override_hero"			"npc_dota_hero_shadow_shaman"
 		"Ability2"              "shadow_shaman_voodoo_datadriven"
 		"Ability3"				"horde_shadow_shaman_shackles"
+		// TODO: "Ability16"		"special_bonus_unique_shadow_shaman_1"
+        // TODO: "Ability17"		"special_bonus_unique_shadow_shaman_2"
 	}
 	//=================================================================================================================
     // HERO: Silencer
@@ -389,6 +416,7 @@
         "Ability1"              "skywrath_mage_arcane_bolt_datadriven"
         "Ability2"				"skywrath_mage_concussive_shot_datadriven"
         "Ability4"				"skywrath_mage_mystic_flare_datadriven"
+        // TODO: Check aghs
     }
 	//=================================================================================================================
 	// HERO: Slardar
@@ -406,6 +434,7 @@
         "override_hero"			"npc_dota_hero_slark"
         "Ability2"              "mirana_leap"
         "Ability3"              "slark_essence_shift_datadriven"
+        // TODO: "Ability17"		"special_bonus_unique_slark"
     }
 	//=================================================================================================================
     // HERO: Spectre
@@ -433,22 +462,17 @@
 		"override_hero"			"npc_dota_hero_terrorblade"
 		"Ability1"				"terrorblade_zeal_datadriven"
 		"Ability4"				"terrorblade_sunder_datadriven"
+		// TODO: "Ability17"		"special_bonus_unique_terrorblade"
 	}
 	//=================================================================================================================
-    // HERO: Tidehunter
-    //=================================================================================================================
-    "npc_dota_hero_tidehunter_holdout"
-    {
-        "override_hero"			"npc_dota_hero_tidehunter"
-    }
-	//=================================================================================================================
-	// HERO: Tidehunter
+	// HERO: Tinker
 	//=================================================================================================================
 	"npc_dota_hero_tinker"
 	{
 		"override_hero"			"npc_dota_hero_tinker"
 		"Ability1"				"tinker_laser_datadriven"
 		"Ability2"				"tinker_heat_seeking_missile_datadriven"
+		// TODO: "Ability17"		"special_bonus_unique_tinker"
 	}
 	//=================================================================================================================
 	// HERO: Treant
@@ -457,6 +481,7 @@
 	{
 		"override_hero"			"npc_dota_hero_treant"
 		"Ability1"				"treant_entangle_datadriven"
+		// TODO: reconsider passive
 	}
 	//=================================================================================================================
 	// HERO: Undying
@@ -474,6 +499,9 @@
 		"override_hero"			"npc_dota_hero_vengefulspirit"
 		"Ability1"				"vengefulspirit_magic_missile_datadriven"
 		"Ability4"				"vengefulspirit_nether_swap_datadriven"
+		// TODO: "Ability13"		"special_bonus_unique_vengeful_spirit_1"
+        // TODO: "Ability16"		"special_bonus_unique_vengeful_spirit_2"
+        // TODO: "Ability17"		"special_bonus_unique_vengeful_spirit_3"
 	}
 	//=================================================================================================================
 	// HERO: Venomancer
@@ -496,6 +524,8 @@
 		"override_hero"			"npc_dota_hero_viper"
 		"Ability1"				"viper_poison_attack_datadriven"
 		"Ability4"              "viper_strike_lua"
+		// TODO: "Ability16"		"special_bonus_unique_viper_1"
+        // TODO: "Ability17"		"special_bonus_unique_viper_2"
 	}
 	//=================================================================================================================
     // HERO: Visage
@@ -506,20 +536,14 @@
         "Ability2"              "visage_soul_assumption_datadriven"
     }
 	//=================================================================================================================
-	// HERO: Windrunner
-	//=================================================================================================================
-	"npc_dota_hero_windrunner_holdout"
-	{
-		"override_hero"			"npc_dota_hero_windrunner"
-		//"Ability1"				"holdout_shackleshot"
-	}
-	//=================================================================================================================
 	// HERO: Witch Doctor
 	//=================================================================================================================
 	"npc_dota_hero_witch_doctor_holdout"
 	{
 		"override_hero"			"npc_dota_hero_witch_doctor"
 		"Ability4"				"witch_doctor_death_ward_datadriven"
+		// TODO: "Ability16"		"special_bonus_unique_witch_doctor_1"
+        // TODO: "Ability17"		"special_bonus_unique_witch_doctor_2"
 	}
 	//=================================================================================================================
 	// HERO: Zuus
@@ -528,5 +552,6 @@
 	{
 		"override_hero"			"npc_dota_hero_zuus"
 		"Ability4"				"zuus_thundergods_vengeance"
+		// TODO: Check aghs
 	}
 }

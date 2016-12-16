@@ -27,6 +27,12 @@ function spiked_carapace_reflect( keys )
 	local caster = keys.caster
 	local attacker = keys.attacker
 	local damageTaken = keys.DamageTaken
+	local multiplier = 1
+	local multiplier_ability = caster:FindAbilityByName(keys.Multiplier)
+
+	if multiplier_ability ~= nil and multiplier_ability:GetLevel() > 0 then
+		multiplier = 3
+	end
 	
 	-- Check if it's not already been hit
 	if not caster.carapaced_units[ attacker:entindex() ] and not attacker:IsMagicImmune() then
@@ -35,7 +41,7 @@ function spiked_carapace_reflect( keys )
 		damage_table.victim = attacker
 		damage_table.ability = keys.ability
 		damage_table.damage_type = DAMAGE_TYPE_PURE
-		damage_table.damage = damageTaken
+		damage_table.damage = damageTaken * multiplier
 		damage_table.damage_flags = DOTA_DAMAGE_FLAG_REFLECTION
 
 		ApplyDamage(damage_table)

@@ -1,73 +1,29 @@
 Next Update Patch Notes:
 
-1.21b
-Added the pregame shop.
-Replaced non-working talents with alternates (will go back and revert them later, when Valve makes custom talents easier to use)
+1.21c
+Reworked Wolf and Treant waves
 
-Heroes:
-// Ancient Apparition
--- Replaced Cold Feet stacks talent with 20% cooldown reduction
+Treant Wave:
+Removed one of the treant types
+Increased bounty gold and xp of base treants
+Treants now have Caustic Finale instead of Dragon's Blood
+Slightly reduced shroom armor and attack speed
+Reduced Prophet mana pool, is now a Creep-Hero and not an Ancient
+Reduced Prophet base damage, added a Desolator
+Stumpy now carries a Maelstrom and a Sange and Yasha
+Stumpy is no longer a spell-immune ancient, but a Creep-Hero with 80% spell resist
+Stumpy mana pool reduced from 4k to 2k
+Stumpy learned Leech Seed!
 
-// Axe
--- Replaced Battle Hunger dps talent with 25% lifesteal
-
-// Bane
--- Replaced level 25 talents with 20% cooldown reduction and 20% spell amplification
-
-// Dazzle
--- Replaced Poison Touch cooldown reduction talent with 20% cooldown reduction
-
-// Huskar
--- Replaced Life Break cast range talent with +15 armor
-
-// Legion Commander
--- Replaced Duel damage bonus talent with +75 damage
-
-// Lone Druid
--- Replace Savage Roar cooldown reduction with 20% cooldown reduction
-
-// Mirana
--- Replaced +2 Sacred Arrows talent with 20% cooldown reduction
-
-// Nightstalker
--- Replaced Crippling Fear cooldown reduction talent with 25% lifesteal
-
-// Nyx
--- Fixed Spiked Carapace talent
-
-// Omniknight
--- Replaced degeneration aura talent with +12 armor
-
-// Orangutan Disorienter
--- Replaced +60s Astral Orb duration with 20% spell lifesteal
-
-// Phantom Assassin
--- Replaced double dagger talent with +25 HP Regen
-
-// Pudge
--- Replaced Pudge Heap Stack bonus talent with +25 Strength
-
-// Shadow Shaman
--- Replaced +Shackle duration with 20% cooldown reduction
-
-// Slark
--- Replaced +Leash duration talent with +100 Leap attack speed
-
-// Terrorblade
--- Replaced Sunder cooldown reduction talent with 20% cooldown reduction
-
-// Tinker
--- Replace laser bonus damage talent with +14 MP Regen
-
-// Vengeful Spirit
--- Replaced Magic Missile damage talent with 8% spell amplify
--- Replaced Magic Missile spell immunity piercing talent with 20% cooldown reduction
-
-// Viper
--- Replaced level 25 talents with 25% lifesteal and 75 attack damage
-
-// Witch Doctor
--- Replaed ward attack range talent with 20% cooldown reduction
+Wolf Wave:
+Removed Invisibility from weaker wolves
+Removed one of the wolf types
+Removed Mana Break from small wolves
+Added Blade Dance or Chaos Strike to most wolves
+Great Hound upgraded to miniboss: increased hit points and spell resistance
+Great Hound now carries a Desolator, Assault Cuirass, and Skull Basher
+Great Hound's abilities are now Untouchable, Mana Break, Thirst, and Primal Roar
+Boss replaced with The Disco Pony (Leshrac)
 
 To Do:
 -- update russian lang

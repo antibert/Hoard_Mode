@@ -2751,6 +2751,15 @@
 			}
 		}
 		
+		"OnUnequip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/item_magic_stick.lua"
+				"Function"		"UpdateStickInfo"
+			}
+		}
+		
 		"Modifiers"
 		{
 			"modifier_item_magic_stick_charges"
@@ -2850,6 +2859,15 @@
 			{
 				"ScriptFile"			"items/item_magic_stick.lua"
 				"Function"				"MagicStickActivate"
+			}
+		}
+		
+		"OnEquip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"items/item_magic_stick.lua"
+				"Function"		"CarryOverStacks"
 			}
 		}
 		

@@ -1,29 +1,13 @@
 Next Update Patch Notes:
 
-1.21c
-Reworked Wolf and Treant waves
-
-Treant Wave:
-Removed one of the treant types
-Increased bounty gold and xp of base treants
-Treants now have Caustic Finale instead of Dragon's Blood
-Slightly reduced shroom armor and attack speed
-Reduced Prophet mana pool, is now a Creep-Hero and not an Ancient
-Reduced Prophet base damage, added a Desolator
-Stumpy now carries a Maelstrom and a Sange and Yasha
-Stumpy is no longer a spell-immune ancient, but a Creep-Hero with 80% spell resist
-Stumpy mana pool reduced from 4k to 2k
-Stumpy learned Leech Seed!
-
-Wolf Wave:
-Removed Invisibility from weaker wolves
-Removed one of the wolf types
-Removed Mana Break from small wolves
-Added Blade Dance or Chaos Strike to most wolves
-Great Hound upgraded to miniboss: increased hit points and spell resistance
-Great Hound now carries a Desolator, Assault Cuirass, and Skull Basher
-Great Hound's abilities are now Untouchable, Mana Break, Thirst, and Primal Roar
-Boss replaced with The Disco Pony (Leshrac)
+1.21d
+Increased cast range bonus of Aether Lens and upgrades by 20
+Updated Helm of the Oppressor to match the new Helm of the Dominator
+Fixed night vision of Moon Shard
+Increased number of charges in Drums of Endurance to 25, increased duration to 9 seconds
+Reduced cooldown of Infused Raindrops to 3.25, increased charges to 12
+Reduced cooldown of Lotus Orb to 15 seconds, increased duration to 15 seconds
+Reduced cooldown of Linken's Sphere to 6.5 seconds, increased duration to 6.5 seconds
 
 To Do:
 -- update russian lang

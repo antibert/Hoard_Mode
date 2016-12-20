@@ -410,89 +410,6 @@
             }
         }
     }
-	"item_quelling_blade_datadriven"
-    {
-        // General
-        //-------------------------------------------------------------------------------------------------------------
-        "ID"							"90011"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-        "BaseClass"                     "item_bfury"
-        "AbilityTextureName"			"item_quelling_blade_datadriven"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE | DOTA_UNIT_TARGET_CUSTOM"
-        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
-
-        "AbilityCastRange"				"350"
-        "AbilityCastPoint"				"0.0"
-        "AbilityCooldown"				"4.0"
-        "AbilitySharedCooldown" "qblade"
-
-        // Item Info
-        //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"200"
-        "ItemAliases"					"quelling blade"
-        "ItemQuality"                   "component"
-
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"0"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_health_regen"	"0"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_mana_regen"		"0"
-            }
-            "04"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "cleave_damage_percent"	"10"
-            }
-            "05"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "quelling_bonus"		"110"
-            }
-            "06"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "quelling_bonus_ranged"	"110"
-            }
-            "07"
-	        {
-	            "var_type"				"FIELD_INTEGER"
-	            "cleave_starting_width"			"150"
-	        }
-	        "08"
-	        {
-	            "var_type"				"FIELD_INTEGER"
-	            "cleave_ending_width"			"280"
-	        }
-	        "09"
-	        {
-	            "var_type"				"FIELD_INTEGER"
-	            "cleave_distance"			"520"
-	        }
-	        "10"
-	        {
-	            "var_type"				"FIELD_INTEGER"
-	            "cast_range_tooltip"			"350"
-	        }
-	        "11"
-	        {
-	            "var_type"				"FIELD_INTEGER"
-	            "cast_range_ward"			"450"
-	        }
-        }
-    }
     "item_quelling_blade_2_datadriven"
     {
         // General
@@ -1236,7 +1153,7 @@
         "ItemResult"					"item_dragon_javelin"
         "ItemRequirements"
         {
-            "01"						"item_quelling_blade_datadriven;item_dragon_lance;item_pers"
+            "01"						"item_quelling_blade;item_dragon_lance;item_pers"
         }
     }
     "item_recipe_dragon_javelin_2"
@@ -3310,7 +3227,7 @@
         "ItemResult"					"item_quelling_blade_2_datadriven"
         "ItemRequirements"
         {
-            "01"						"item_broadsword;item_quelling_blade_datadriven"
+            "01"						"item_broadsword;item_quelling_blade"
         }
     }
 	"item_recipe_bfury_datadriven"

@@ -8,6 +8,7 @@ Increased number of charges in Drums of Endurance to 25, increased duration to 9
 Reduced cooldown of Infused Raindrops to 3.25, increased charges to 12
 Reduced cooldown of Lotus Orb to 15 seconds, increased duration to 15 seconds
 Reduced cooldown of Linken's Sphere to 6.5 seconds, increased duration to 6.5 seconds
+Quelling Blade reverted to normal (loses % damage and cleave damage, now gives flat unstackable bonus damage)
 
 To Do:
 -- update russian lang

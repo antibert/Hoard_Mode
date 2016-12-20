@@ -42,7 +42,7 @@
 	{
 		"item"		"item_ring_of_protection"
 		"item"		"item_stout_shield"
-		"item"		"item_quelling_blade_datadriven"
+		"item"		"item_quelling_blade"
 		"item"		"item_infused_raindrop"
 		"item"		"item_blight_stone"
 		"item"		"item_orb_of_venom_datadriven"
@@ -261,7 +261,7 @@
     		"item"		"item_circlet"
     		"item"		"item_ring_of_protection"
     		"item"		"item_stout_shield"
-    		"item"		"item_quelling_blade_datadriven"
+    		"item"		"item_quelling_blade"
     		"item"		"item_blight_stone"
     		"item"		"item_orb_of_venom_datadriven"
     		"item"		"item_wind_lace"

@@ -129,7 +129,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_bonus"			"250"
+				"cast_range_bonus"			"270"
 			}
 			"04"
 			{
@@ -175,7 +175,7 @@
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "cast_range_bonus"			"300"
+                "cast_range_bonus"			"320"
             }
             "04"
             {
@@ -221,7 +221,7 @@
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "cast_range_bonus"			"350"
+                "cast_range_bonus"			"370"
             }
             "04"
             {
@@ -267,7 +267,7 @@
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "cast_range_bonus"			"400"
+                "cast_range_bonus"			"420"
             }
             "04"
             {
@@ -2147,45 +2147,47 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityTextureName"            "item_helm_of_madness"
 		"AbilityCooldown"				"45.0"
-		"ItemCost"						"4600"
-		"AbilitySpecial"
+		"ItemCost"                    "4600"
+        
+        
+        "AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"45"
+				"bonus_stats"		"24"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"15"
+				"attack_speed"			"25"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_regen"			"3"
+				"attack_speed_aura"		"25"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"lifesteal_percent"		"20"
+				"hp_regen_aura"			"18"
 			}
 			"05"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"dominate_duration"		"1200.0"
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"900"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_min"			"1400"
+				"health_min"			"2200"
 			}
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"speed_base"			"350"
+				"speed_base"			"475"
 			}
-		}
+		}   
 	}
 	//=================================================================================================================
 	// Dagon
@@ -3512,7 +3514,7 @@
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_night_vision"	"250"
+                "bonus_night_vision"	"300"
             }
             "03"
             {
@@ -3578,7 +3580,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"1100"	
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -3587,7 +3589,7 @@
 		"ItemResult"					"item_helm_of_madness"
 		"ItemRequirements"
 		{
-			"01"						"item_helm_of_the_dominator;item_claymore;item_platemail"
+			"01"						"item_helm_of_the_dominator;item_ultimate_orb;item_ring_of_health;item_gloves"
 		}
 	}
 	//=================================================================================================================
@@ -6016,4 +6018,77 @@
             }
         }
     }
+    
+	"item_ancient_janggo"
+	{
+		"AbilityCooldown"				"20.0"
+
+		"ItemInitialCharges"			"25"
+        
+        "AbilitySpecial"
+		{
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"9"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"900"
+			}
+		}
+	}
+
+	"item_infused_raindrop"
+	{
+		"AbilityCooldown"				"3.25"
+
+		"ItemInitialCharges"			"12"
+		
+		"AbilitySpecial"
+		{
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"initial_charges"		"12"
+			}
+		}
+	}
+
+	"item_lotus_orb"
+	{
+		"AbilityCooldown"				"15.0"
+
+		"AbilitySpecial"
+		{
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"active_duration"		"15"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"cast_range_tooltip"		"900"
+			}
+		}
+	}
+
+	"item_sphere"
+	{
+		
+		"AbilityCooldown"				"6.5"
+		
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"block_cooldown"		"6.5"
+			}
+		}
+	}
+
+
 }

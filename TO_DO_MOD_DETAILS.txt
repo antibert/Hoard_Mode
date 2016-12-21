@@ -1,6 +1,7 @@
 Next Update Patch Notes:
 
 1.21d
+7.01 Parity!
 Increased cast range bonus of Aether Lens and upgrades by 20
 Updated Helm of the Oppressor to match the new Helm of the Dominator
 Fixed night vision of Moon Shard

@@ -277,6 +277,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
+		"AbilityLayout"				"6"
 		"Ability1"		"centaur_hoof_stomp"
         "Ability2"		"centaur_double_edge"
         "Ability3"		"razor_unstable_current"
@@ -326,7 +327,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"25000"		// Base health.
+		"StatusHealth"				"15000"		// Base health.
 		"StatusHealthRegen"			"34"		// Health regeneration rate.
 		"StatusMana"				"10000"			// Base mana.
 		"StatusManaRegen"			"10.0"		// Mana regeneration rate.		 
@@ -727,6 +728,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
+		"AbilityLayout"				"6"
 		"Ability1"					"spirit_breaker_greater_bash"			// Ability 1
 		"Ability2"					"generic_gold_bag_fountain_medium"			// Ability 2
 		"Ability3"					""			// Ability 3
@@ -768,7 +770,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2300"		// Base health.
+		"StatusHealth"				"1500"		// Base health.
 		"StatusHealthRegen"			"3"		// Health regeneration rate.
 		"StatusMana"				"350"			// Base mana.
 		"StatusManaRegen"			"1.0"		// Mana regeneration rate.		 
@@ -953,6 +955,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
+		"AbilityLayout"				"6"
 		"Ability1"					"ursa_fury_swipes"			// Ability 1
 		"Ability2"					"generic_gold_bag_fountain_large"			// Ability 2
 		"Ability3"					"polar_furbolg_ursa_warrior_thunder_clap"			// Ability 3
@@ -994,7 +997,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"6500"		// Base health.
+		"StatusHealth"				"4500"		// Base health.
 		"StatusHealthRegen"			"12"			// Health regeneration rate.
 		"StatusMana"				"3000"		// Base mana.
 		"StatusManaRegen"			"10"		// Mana regeneration rate.
@@ -1287,6 +1290,7 @@
 
 		// Abilities
 		//----------------------------------------------------------------
+		"AbilityLayout"				"6"
 		"Ability1"		"lich_frost_nova"
         "Ability2"		"lich_frost_armor"
         "Ability3"		"phantom_assassin_blur"
@@ -1333,7 +1337,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"20000"		// Base health.
+		"StatusHealth"				"15000"		// Base health.
 		"StatusHealthRegen"			"23.0"		// Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"22"			// Mana regeneration rate.
@@ -1453,6 +1457,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
+		"AbilityLayout"				"6"
 		"Ability1"					"lion_finger_of_death"			// Ability 1
 		"Ability2"					"generic_gold_bag_fountain_large"			// Ability 2
 		"Ability3"					"tinker_heat_seeking_missile"			// Ability 3
@@ -1494,7 +1499,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"5500"		// Base health.
+		"StatusHealth"				"3000"		// Base health.
 		"StatusHealthRegen"			"12"			// Health regeneration rate.
 		"StatusMana"				"3000"		// Base mana.
 		"StatusManaRegen"			"5.0"		// Mana regeneration rate.		 
@@ -1601,6 +1606,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
+		"AbilityLayout"				"6"
 		"Ability1"					"satyr_hellcaller_shockwave"			// Ability 1
 		"Ability2"					"satyr_hellcaller_unholy_aura"			// Ability 2
 		"Ability3"					"generic_gold_bag_fountain_large"			// Ability 3
@@ -1642,7 +1648,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"7500"		// Base health.
+		"StatusHealth"				"5000"		// Base health.
 		"StatusHealthRegen"			"12"		    // Health regeneration rate.
 		"StatusMana"				"1000"			// Base mana.
 		"StatusManaRegen"			"10.0"		// Mana regeneration rate.		 
@@ -1730,6 +1736,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
+		"AbilityLayout"				"6"
 		"Ability1"					"tiny_avalanche"			// Ability 1.
 		"Ability2"					"tiny_toss"			// Ability 2.
 		"Ability3"					"tiny_craggy_exterior"			// Ability 3.
@@ -2173,7 +2180,7 @@
 		}
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"				"6"
 		"Ability1"					"creature_summon_undead"			// Ability 1.
 		"Ability2"					"creature_summon_undead2"			// Ability 2.
 		"Ability3"					"creature_acid_spray"			// Ability 3.
@@ -2220,7 +2227,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1300"		// Base health.
+		"StatusHealth"				"1000"		// Base health.
 		"StatusHealthRegen"			"1"			// Health regeneration rate.
 		"StatusMana"				"2000"		// Base mana.
 		"StatusManaRegen"			"5"			// Mana regeneration rate.
@@ -2630,7 +2637,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"				"6"
 		"Ability1"					"furion_sprout"			            // Ability 1.
 		"Ability2"					"furion_force_of_nature_hoard"			// Ability 2.
 		"Ability3"					"generic_gold_bag_fountain_medium"			// Ability 3.
@@ -2680,7 +2687,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2300"		// Base health.
+		"StatusHealth"				"1600"		// Base health.
 		"StatusHealthRegen"			"8.0"		// Health regeneration rate.
 		"StatusMana"				"2000"		// Base mana.
 		"StatusManaRegen"			"8"		// Mana regeneration rate.
@@ -2982,6 +2989,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
+		"AbilityLayout"				"6"
 		"Ability1"					"skeleton_king_hellfire_blast_datadriven"	        // Ability 1.
 		"Ability2"					"necrolyte_heartstopper_aura"	 		// Ability 2.
 		"Ability3"					"generic_gold_bag_fountain_large"			// Ability 3.
@@ -3029,7 +3037,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"66666"		// Base health.
+		"StatusHealth"				"50000"		// Base health.
 		"StatusHealthRegen"			"66"		// Health regeneration rate.
 		"StatusMana"				"6666"		// Base mana.
 		"StatusManaRegen"			"6"			// Mana regeneration rate.
@@ -3084,7 +3092,6 @@
 
 			"EquippedItems"
             {
-                "Sphere"    {    "Item"    "item_sphere"    }
                 "Shiva"   {   "Item"        "item_shivas_guard_2"  }
                 "KingRapier"    {   "Item"  "item_king_rapier"}
                 "Radiance2" {   "Item"  "item_radiance_2"}
@@ -3202,7 +3209,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"				"6"
 		"Ability1"					"enchantress_untouchable"			// Ability 1.
 		"Ability2"					"bloodseeker_thirst_datadriven"			// Ability 2.
 		"Ability3"					"antimage_mana_break"			// Ability 3.
@@ -3249,7 +3256,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"10000"		// Base health.
+		"StatusHealth"				"8000"		// Base health.
 		"StatusHealthRegen"			"15"		// Health regeneration rate.
 		"StatusMana"				"2000"			// Base mana.
 		"StatusManaRegen"			"5"			// Mana regeneration rate.
@@ -3811,6 +3818,7 @@
 		}
 		// Abilities
 		//----------------------------------------------------------------
+		"AbilityLayout"				"6"
 		"Ability1"					"treant_living_armor"	        // Ability 1.
 		"Ability2"					"generic_gold_bag_fountain_large"	 		// Ability 2.
 		"Ability3"					"dragon_knight_dragon_blood"			// Ability 3.
@@ -3858,7 +3866,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"23000"		// Base health.
+		"StatusHealth"				"12000"		// Base health.
 		"StatusHealthRegen"			"40"		// Health regeneration rate.
 		"StatusMana"				"5000"		// Base mana.
 		"StatusManaRegen"			"5"			// Mana regeneration rate.
@@ -3957,6 +3965,7 @@
 		}
 		// Abilities
 		//----------------------------------------------------------------
+        "AbilityLayout"				"6"
 		"Ability1"		"leshrac_split_earth"
         "Ability2"		"leshrac_diabolic_edict"
         "Ability3"		"leshrac_lightning_storm"
@@ -4004,7 +4013,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"15000"		// Base health.
+		"StatusHealth"				"10000"		// Base health.
 		"StatusHealthRegen"			"30"		// Health regeneration rate.
 		"StatusMana"				"5000"		// Base mana.
 		"StatusManaRegen"			"50"			// Mana regeneration rate.
@@ -4195,6 +4204,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
+		"AbilityLayout"				"6"
 		"Ability1"					"generic_gold_bag_fountain_large"			// Ability 1
 		"Ability2"					"sven_storm_bolt_datadriven"			// Ability 2
 		"Ability3"					"necronomicon_archer_aoe"			// Ability 3
@@ -4238,7 +4248,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"25000"		// Base health.
+		"StatusHealth"				"15000"		// Base health.
 		"StatusHealthRegen"			"34"		// Health regeneration rate.
 		"StatusMana"				"10000"			// Base mana.
 		"StatusManaRegen"			"10.0"		// Mana regeneration rate.		 
@@ -4721,7 +4731,7 @@
 		
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"20000"		// Base health.
+		"StatusHealth"				"15000"		// Base health.
 		"StatusHealthRegen"			"25"			// Health regeneration rate.
 		"StatusMana"				"3000"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
@@ -4737,6 +4747,7 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"Target"                    "spawner10"
 		"vscripts"					"MapBossAI.lua"
 		
 		// Creature Data
@@ -4993,6 +5004,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
+		"AbilityLayout"				"6"
 		"Ability1"					"creature_fire_breath"	// Ability 1.
 		"Ability2"					"generic_gold_bag_fountain_small"			// Ability 2.
 		"Ability3"					""			// Ability 3.
@@ -5040,7 +5052,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"6500"		// Base health.
+		"StatusHealth"				"4500"		// Base health.
 		"StatusHealthRegen"			"20"		// Health regeneration rate.
 		"StatusMana"				"250"		// Base mana.
 		"StatusManaRegen"			"5"			// Mana regeneration rate.
@@ -5270,6 +5282,8 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"Target"                    "spawner6"
+		"vscripts"					"MapBossAI.lua"
 
 		"CanBeDominated"               "0"
 		"IsNeutralUnitType"            "1"
@@ -5436,6 +5450,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
+		"AbilityLayout"				"6"
 		"Ability1"					"spirit_breaker_greater_bash"			// Ability 1
 		"Ability2"					"generic_gold_bag_fountain_large"			// Ability 2
 		"Ability3"					"ogre_magi_frost_armor"			// Ability 3
@@ -5481,7 +5496,7 @@
 	        
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"23000"		// Base health.
+		"StatusHealth"				"10000"		// Base health.
 		"StatusHealthRegen"			"25"			// Health regeneration rate.
 		"StatusMana"				"3000"			// Base mana.
 		"StatusManaRegen"			"0"			// Mana regeneration rate.		 
@@ -5682,7 +5697,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"				"6"
 		"Ability1"					"chaos_knight_chaos_strike"			// Ability 1.
 		"Ability2"					"spectre_dispersion"			// Ability 2.
 		"Ability3"					"lycan_summon_wolves_critical_strike"			// Ability 3.
@@ -5729,7 +5744,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"2300"		// Base health.
+		"StatusHealth"				"1500"		// Base health.
 		"StatusHealthRegen"			"15"		// Health regeneration rate.
 		"StatusMana"				"400"			// Base mana.
 		"StatusManaRegen"			"5"			// Mana regeneration rate.
@@ -5846,10 +5861,11 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
+		"AbilityLayout"				"6"
 		"Ability1"					"generic_gold_bag_fountain_large"	        // Ability 1.
-		"Ability2"					"roshan_spell_block"			// Ability 2.
-		"Ability3"					"roshan_bash"			// Ability 3.
-		"Ability4"					"roshan_slam"			// Ability 4.
+		"Ability2"					"roshan_bash"			// Ability 2.
+		"Ability3"					"roshan_slam"			// Ability 3.
+		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -5893,7 +5909,7 @@
 	        
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"10000"		// Base health.
+		"StatusHealth"				"7500"		// Base health.
 		"StatusHealthRegen"			"5"		// Health regeneration rate.
 		"StatusMana"				"2500"		// Base mana.
 		"StatusManaRegen"			"5"			// Mana regeneration rate.
@@ -6307,7 +6323,7 @@
 		
 		// Abilities
 		//----------------------------------------------------------------
-		
+		"AbilityLayout"				"6"
 		"Ability1"					"necrolyte_death_pulse"			// Ability 1.
 		"Ability2"					"tidehunter_kraken_shell"			// Ability 2.
 		"Ability3"					"treant_leech_seed"			// Ability 3.
@@ -6354,7 +6370,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"10000"		// Base health.
+		"StatusHealth"				"8000"		// Base health.
 		"StatusHealthRegen"			"3"		// Health regeneration rate.
 		"StatusMana"				"4000"			// Base mana.
 		"StatusManaRegen"			"10"			// Mana regeneration rate.
@@ -7676,16 +7692,6 @@
 			
 			"DisableClumpingBehavior"	"1"
 		}
-	}
-	//=================================================================================================================
-	// HERO: Venomancer
-	//=================================================================================================================
-	"npc_dota_hero_venomancer_holdout"
-	{
-		"override_hero"			    "npc_dota_hero_venomancer"
-		"AbilityLayout"				"5"
-		"Ability4"					"holdout_scourge_ward"					// Ability 3
-		"Ability5"					"holdout_poison_nova"					// Ability 4
 	}
 	//=================================================================================
 	// Tower: Hoard Tower
@@ -9012,7 +9018,7 @@
 		//----------------------------------------------------------------
 		"Ability1"					"roshan_slam"	        // Ability 1.
 		"Ability2"					"roshan_bash"			// Ability 2.
-		"Ability3"					"roshan_spell_block"			// Ability 3.
+		"Ability3"					""			// Ability 3.
 		"Ability4"					""			// Ability 4.
 		"Ability5"					""			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.

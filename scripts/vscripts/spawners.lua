@@ -6,8 +6,8 @@ require('libraries/timers')
 require('libraries/spawners')
 
 local waveZeroDuration = 180
-local waveDuration = 250
-local wavePause = 50
+local waveDuration = 270
+local wavePause = 30
 
 -- Settings
 local spawns = LoadKeyValues('scripts/vscripts/spawns.kv')
@@ -48,35 +48,35 @@ function fetchRandomItem(table)
 	return table[keyset[math.random(#keyset)]]
 end
 
-function Spawners:StartSpawners(difficulty, mapInfo)
+function Spawners:StartSpawners(difficulty, players, mapInfo)
 	local waves = spawns.Waves
 	for _,wave in pairs(waves) do
-		Spawners:LoadWave(wave, tonumber(_), difficulty, mapInfo)
+		Spawners:LoadWave(wave, tonumber(_), difficulty, players, mapInfo)
 	end
 
 	Spawners:LoadMisc(difficulty, mapInfo)
 end
 
-function Spawners:LoadWave(wave, waveNumber, difficulty, mapInfo)
+function Spawners:LoadWave(wave, waveNumber, difficulty, players, mapInfo)
 	DebugPrint('LoadWave'..waveNumber)
 	local options = wave.Options
 	local chosenWave =  fetchRandomItem(options)
 	if chosenWave.boss_unit ~= nil then
-		Spawners:SpawnBoss(chosenWave.boss_unit, waveNumber, difficulty, mapInfo.bossSpawner, mapInfo.bossDestination)
+		Spawners:SpawnBoss(chosenWave.boss_unit, waveNumber, difficulty, players, mapInfo.bossSpawner, mapInfo.bossDestination)
 	end
 
 	for _,unit in pairs(chosenWave.Creatures) do
 		if (mapInfo.topLaneSpawner ~= nil and (unit.mid_only == nil or unit.mid_only == "0")) then
-			Spawners:SpawnUnits(unit, waveNumber, difficulty, mapInfo.topLaneSpawner, mapInfo.topLaneDestination, wave.NeverEnd)
+			Spawners:SpawnUnits(unit, waveNumber, difficulty, players, mapInfo.topLaneSpawner, mapInfo.topLaneDestination, wave.NeverEnd)
 		end
 		if (mapInfo.botLaneSpawner ~= nil and (unit.mid_only == nil or unit.mid_only == "0")) then
-			Spawners:SpawnUnits(unit, waveNumber, difficulty, mapInfo.botLaneSpawner, mapInfo.botLaneDestination, wave.NeverEnd)
+			Spawners:SpawnUnits(unit, waveNumber, difficulty, players, mapInfo.botLaneSpawner, mapInfo.botLaneDestination, wave.NeverEnd)
 		end
-		Spawners:SpawnUnits(unit, waveNumber, difficulty, mapInfo.midLaneSpawner, mapInfo.midLaneDestination, wave.NeverEnd)
+		Spawners:SpawnUnits(unit, waveNumber, difficulty, players, mapInfo.midLaneSpawner, mapInfo.midLaneDestination, wave.NeverEnd)
 	end
 end
 
-function Spawners:SpawnBoss(unit, waveNumber, difficulty, source, waypoint)
+function Spawners:SpawnBoss(unit, waveNumber, difficulty, players, source, waypoint)
 	if type(source) == 'table' then
 		source = fetchRandomItem(source)
 	end
@@ -86,12 +86,14 @@ function Spawners:SpawnBoss(unit, waveNumber, difficulty, source, waypoint)
 		spawn = {
 			source =  source,
 			waypoint = waypoint,
-			unit = unit
+			unit = unit,
+			difficulty = difficulty,
+			players = players
 		}
 	})
 end
 
-function Spawners:SpawnUnits(unit, waveNumber, difficulty, source, waypoint, forever)
+function Spawners:SpawnUnits(unit, waveNumber, difficulty, players, source, waypoint, forever)
 	if type(source) == 'table' then
 		source = fetchRandomItem(source)
 	end
@@ -108,7 +110,9 @@ function Spawners:SpawnUnits(unit, waveNumber, difficulty, source, waypoint, for
 			waypoint = waypoint,
 			max = unit.max_size,
 			min = unit.min_size,
-			unit = unit.unit_name
+			unit = unit.unit_name,
+			difficulty = difficulty,
+			players = players
 		}
 	})
 end

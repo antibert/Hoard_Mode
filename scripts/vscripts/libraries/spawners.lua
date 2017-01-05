@@ -37,6 +37,7 @@ function Spawner:Spawn(keys)
   end
   local max = keys.max
   local min = keys.min
+  local difficulty = 0
   if keys.max == nil then
     max = 1
   end
@@ -47,8 +48,28 @@ function Spawner:Spawn(keys)
     units_to_spawn = RandomInt(min, max)
   end
 
+  if keys.difficulty ~= nil then
+    difficulty = keys.difficulty
+  end
+
+  local playerCount = 2
+  if keys.players ~= nil then
+    playerCount = keys.players
+  end
+
   for i=1,units_to_spawn do
     local unit = CreateUnitByName(keys.unit, point, true, nil, nil, DOTA_TEAM_BADGUYS)
+
+    if unit:IsHero() then
+      if difficulty > 1 then
+        unit:AddAbility("roshan_spell_block")
+      end
+
+      if playerCount > 2 then
+        unit:SetMaxHealth(unit:GetMaxHealth() * 1.5)
+      end
+    end
+
     ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
       OrderType = order,
       Position = waypoint, Queue = true} )

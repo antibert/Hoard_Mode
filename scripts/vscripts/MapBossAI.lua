@@ -39,7 +39,7 @@ end
 
 function BehaviorAttackAncient:Begin()
 	self.endTime = GameRules:GetGameTime() + 5
-	local hAncient = Entities:FindByName( nil, "spawner10" )
+	local hAncient = Entities:FindByName( nil, thisEntity:GetKeyValue("Target") )
 	self.order =
 	{
 		OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,

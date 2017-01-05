@@ -32,6 +32,7 @@ function mapLogic:Init(keys)
 
 	self.DONE_INIT = true
 	self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_MEDIUM
+	self.PLAYERS = 2
 
 	-- Print the intro message
 	DebugPrint(printPrefix .. messageStarting)
@@ -48,12 +49,16 @@ end
 function mapLogic:SetDifficultyValues(keys)
 	if self.MAP == 'Horde_5p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_EASY
+		self.PLAYERS = 5
 	elseif self.MAP == 'Horde_4p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_MEDIUM
+		self.PLAYERS = 4
 	elseif self.MAP == 'Horde_2p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_MEDIUM
+		self.PLAYERS = 2
 	else
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_EASY
+		self.PLAYERS = 4
 	end
 
 	if keys.DIFFICULTY ~= nil then
@@ -220,5 +225,5 @@ function mapLogic:SetSpawns()
 	if mapData == nil then
 		mapData = mapInfo.Default
 	end
-	Spawners:StartSpawners(self.DIFFICULTY, mapData)
+	Spawners:StartSpawners(self.DIFFICULTY, self.PLAYERS, mapData)
 end

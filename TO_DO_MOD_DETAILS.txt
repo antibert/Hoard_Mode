@@ -1,6 +1,7 @@
 Next Update Patch Notes:
 
 1.21f
+Fixed some missing text
 Increased duration that waves spawn enemies and reduced delay between waves by 20 seconds (waves still end at the same time)
 Iron Talon enabled
 Iron Talon cannot target bosses or mini-bosses

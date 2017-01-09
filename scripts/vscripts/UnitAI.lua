@@ -11,7 +11,7 @@ function Spawn( entityKeyValues )
 end
 
 function AIThink()
-	if thisEntity:IsNull() or not thisEntity:IsAlive() or thisEntity:IsOwnedByAnyPlayer() then
+	if thisEntity == nil or thisEntity:IsNull() or not thisEntity:IsAlive() or thisEntity:IsOwnedByAnyPlayer() then
 		return nil -- deactivate this think function
 	end
 	return behaviorSystem:Think()

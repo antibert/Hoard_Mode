@@ -571,22 +571,19 @@
 	//=================================================================================================================
 	"doom_bringer_devour"
 	{
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
-	    "AbilityTextureName"			"horde_devour"
+		"AbilityTextureName"			"horde_devour"
 		"AbilityCooldown"				"35.0 30.0 25.0 20.0"
 	    "AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_gold"			"100 135 170 210"
+				"bonus_gold"			"100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"health_per_second"		"20 40 60 80"
+				"health_per_second"		"100"
 			}
 		}
 

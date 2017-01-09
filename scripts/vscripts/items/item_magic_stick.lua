@@ -51,18 +51,20 @@ function UpdateStickInfo( keys )
 	local caster = keys.caster
 	local oldestStick
 
-	for i=0, 5, 1 do
-		local item = caster:GetItemInSlot(i)
-		if item ~= nil and item:GetName() == "item_hoard_magic_stick" and item:GetCurrentCharges() > 0 then
-			-- find oldest stick
-			if oldestStick == nil or item:GetEntityIndex() < oldestStick:GetEntityIndex() then
-				oldestStick = item
-			end
+	if caster ~= nil then
+		for i=0, 5, 1 do
+			local item = caster:GetItemInSlot(i)
+			if item ~= nil and item:GetName() == "item_hoard_magic_stick" and item:GetCurrentCharges() > 0 then
+				-- find oldest stick
+				if oldestStick == nil or item:GetEntityIndex() < oldestStick:GetEntityIndex() then
+					oldestStick = item
+				end
 
-			-- update charges to match oldest stick
-			caster.oldCharges = oldestStick:GetCurrentCharges()
-		else
-			caster.oldCharges = nil
+				-- update charges to match oldest stick
+				caster.oldCharges = oldestStick:GetCurrentCharges()
+			else
+				caster.oldCharges = nil
+			end
 		end
 	end
 end

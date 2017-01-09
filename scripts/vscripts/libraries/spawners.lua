@@ -62,7 +62,7 @@ function Spawner:Spawn(keys)
 
     unit.Target = keys.waypoint
 
-    if unit:IsHero() then
+    if unit:IsConsideredHero() then
       if difficulty > 1 then
         unit:AddAbility("roshan_spell_block")
       end
@@ -75,7 +75,6 @@ function Spawner:Spawn(keys)
     ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
       OrderType = order,
       Position = waypoint, Queue = true} )
-    DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
   end
 end
 

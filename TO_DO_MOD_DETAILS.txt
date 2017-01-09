@@ -3,8 +3,6 @@ Next Update Patch Notes:
 1.21f
 Fixed some missing text
 Increased duration that waves spawn enemies and reduced delay between waves by 20 seconds (waves still end at the same time)
-Iron Talon enabled
-Iron Talon cannot target bosses or mini-bosses
 Removed Linken's Sphere from boss
 All bosses and mini-bosses now have Roshan's Spell Block on Hard difficulty and up
 Bosses and mini-bosses now have less hit points in 2 player mode, and more hit points in 4 or 5 player mode

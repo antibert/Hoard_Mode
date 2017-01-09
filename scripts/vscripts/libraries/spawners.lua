@@ -60,6 +60,8 @@ function Spawner:Spawn(keys)
   for i=1,units_to_spawn do
     local unit = CreateUnitByName(keys.unit, point, true, nil, nil, DOTA_TEAM_BADGUYS)
 
+    unit.Target = keys.waypoint
+
     if unit:IsHero() then
       if difficulty > 1 then
         unit:AddAbility("roshan_spell_block")

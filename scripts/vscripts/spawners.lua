@@ -199,7 +199,7 @@ function Spawners:LoadMisc(difficulty, mapInfo)
 		finish = waveEnd(3),
 		spawn = {
 			source =  "spawner6",
-			waypoint = "lane_mid_pathcorner_badguys_7",
+			waypoint = "spawner6",
 			max = 3,
 			order = DOTA_UNIT_ORDER_STOP,
 			unit = "npc_dota_creature_money"
@@ -217,7 +217,7 @@ function Spawners:SpawnMapBoss()
 	local spawner = Entities:FindByName(nil, "spawner10")
 	if spawner ~= nil then
 		local point = spawner:GetAbsOrigin()
-		local waypoint = Entities:FindByName(nil, "lane_mid_pathcorner_badguys_7"):GetAbsOrigin()
+		local waypoint = Entities:FindByName(nil, "spawner10"):GetAbsOrigin()
 		local units_to_spawn = 1
 		for i=1,units_to_spawn do
 			Timers:CreateTimer(function()

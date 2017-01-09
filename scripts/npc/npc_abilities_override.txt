@@ -122,7 +122,7 @@
 	"item_dagon_3"					"REMOVE"
 	"item_dagon_4"					"REMOVE"
 	"item_dagon_5"					"REMOVE"
-	//"item_iron_talon"				"REMOVE"
+	"item_iron_talon"				"REMOVE"
 	//"item_recipe_necronomicon"		"REMOVE"
 	//"item_recipe_necronomicon_2"	"REMOVE"
 	//"item_recipe_necronomicon_3"	"REMOVE"
@@ -135,7 +135,7 @@
 	//"item_refresher"				"REMOVE"
 	//"item_recipe_assault"			"REMOVE"
 	//"item_assault"					"REMOVE"
-	//"item_recipe_heart"				"REMOVE"
+	"item_recipe_heart"				"REMOVE"
 	"item_heart"					"REMOVE"
 	//"item_recipe_black_king_bar"	"REMOVE"
 	//"item_black_king_bar"			"REMOVE"
@@ -266,13 +266,6 @@
     //"item_recipe_glimmer_cape"		"REMOVE"
     //"item_glimmer_cape"				"REMOVE"
 
-	//=================================================================================================================
-	// Iron Talon
-	//=================================================================================================================
-	"item_iron_talon"
-	{
-		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_PREFER_ENEMIES | DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
-	}
 	//=================================================================================================================
 	// Witch Doctor: Maledict
 	//=================================================================================================================

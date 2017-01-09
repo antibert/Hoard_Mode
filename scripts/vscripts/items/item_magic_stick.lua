@@ -49,6 +49,7 @@ end
 -- if caster has more sticks, update info to match oldest stick
 function UpdateStickInfo( keys )
 	local caster = keys.caster
+	local oldestStick
 
 	for i=0, 5, 1 do
 		local item = caster:GetItemInSlot(i)
@@ -70,17 +71,19 @@ end
 function CarryOverStacks( keys )
 	local caster = keys.caster
 	local wand = keys.ability
-	local oldCharges = caster.oldCharges
+	if caster ~= nil and wand ~= nil then
+		local oldCharges = caster.oldCharges
 
-	if wand.firstEquip == nil then
-		wand.firstEquip = true
-	end
+		if wand.firstEquip == nil then
+			wand.firstEquip = true
+		end
 
-	-- set charges if this is the first time current wand has been equipped
-	if caster:IsRealHero() then
-		if wand.firstEquip and oldCharges ~= nil then
-			wand:SetCurrentCharges(oldCharges)
-			wand.firstEquip = false
+		-- set charges if this is the first time current wand has been equipped
+		if caster:IsRealHero() then
+			if wand.firstEquip and oldCharges ~= nil then
+				wand:SetCurrentCharges(oldCharges)
+				wand.firstEquip = false
+			end
 		end
 	end
 end

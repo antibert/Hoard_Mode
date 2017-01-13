@@ -1,14 +1,79 @@
 Next Update Patch Notes:
 
-1.21f
-Added Shrines to all maps!
-Fixed some missing text
-Fixed Doom's last talent not letting him eat Ancient creeps
-Increased duration that waves spawn enemies and reduced delay between waves by 20 seconds (waves still end at the same time)
-Removed Linken's Sphere from bosses
-All bosses and mini-bosses now have Roshan's Spell Block passive on Hard difficulty and up
-Bosses and mini-bosses now have less hit points in 2 player mode, and more hit points in 4 or 5 player mode
-Fixed attack behavior of money creeps
+1.21g
+Reduced recipe cost of War Fury
+Removed recipe from Sange and Yasha and Atos
+Reduced recipe cost of Vlad's Cuirass
+Fixed Zeus having two ults
+Fixed Necrophos having two auras and no sadist
+Fixed boss spell block having no cooldown
+
+// Alchemist
+Increased maximum damage of Unstable Concoction to 150/250/350/450 and radius to 300
+Increased damage of Acid Spray to match vanilla 15/20/25/30
+
+// Ancient Apparition
+Reduced cooldown of Ice Blast to 20/15/10
+
+// Arc Warden
+Tempest Double duration increased to 22/24/26
+Tempest Double cooldown reduced to 40/30/20
+
+// Clockwerk
+Reduced mana cost of Rocket Flare to match vanilla 50
+Increased damage of Hook Shot to 400/700/1000
+
+// Death Prophet
+Silence damage reducetion reduced to 20/25/30/35%
+Spirit Siphon charge restoration time reduced to 25
+
+// Dragon Knight
+Increased damage of Fire Breath to 150/240/330/420
+Increased damage of Dragon Tail to 150/250/350/450
+
+// Elder Titan
+Increased values of Natural Order back to vanilla
+
+// Enchantress
+Impetus mana cost reduced to 25/30/35
+
+// Lycan
+Shapeshift cooldown reduced to 40/35/30
+
+// Magnus
+Shockwave damage increased to 100/200/300/400
+Empower cleave damage increased to 20/25/30/35%
+Empower aghs splash damage increased to vanilla
+
+// Medusa
+Stone Gaze cooldown reduced to 60
+
+// Morphling
+Replicate now deals full damage
+
+// Puck
+Illusory Orb cooldown reduced to 8
+Waning Rift cooldown reduced to 8
+
+// Spirit Breaker
+Greater Bash base damage increased to 22/44/66/88
+Nether Strike cooldown reduced to 70/50/30
+
+// Sven
+Greater Cleave damage increased to 15/25/35/45%
+
+// Tidehunter
+Kraken Shell damage block increased to vanilla
+
+// Tiny
+Increased cleave damage of scepter to 35%
+
+// Tusk
+Walrus Punch cooldown reduced to 12/8/4
+Walrus Kick damage increased to 750
+
+// Wraith King
+Increased mortal strike crit on creeps to 200/275/350/425%
 
 To Do:
 -- update russian lang

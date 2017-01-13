@@ -233,7 +233,7 @@
     "npc_dota_hero_necrolyte_holdout"
     {
         "override_hero"			"npc_dota_hero_necrolyte"
-        "Ability2"              "necrolyte_heartstopper_aura_datadriven"
+        "Ability3"              "necrolyte_heartstopper_aura_datadriven"
         "Ability4"              "necrolyte_reapers_scythe_datadriven"
         // TODO: Update scythe
     }
@@ -533,7 +533,7 @@
 	"npc_dota_hero_zuus_holdout"
 	{
 		"override_hero"			"npc_dota_hero_zuus"
-		"Ability4"				"zuus_thundergods_vengeance"
+		"Ability5"				"zuus_thundergods_vengeance"
 		// TODO: Check aghs
 	}
 }

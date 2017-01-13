@@ -65,6 +65,10 @@ function Spawner:Spawn(keys)
     if unit:IsConsideredHero() then
       if difficulty > 1 then
         unit:AddAbility("roshan_spell_block")
+        local roshan_spell_block = unit:FindAbilityByName("roshan_spell_block")
+        if roshan_spell_block ~= nil then
+          roshan_spell_block:SetLevel(1)
+        end
       end
 
       if playerCount > 2 then

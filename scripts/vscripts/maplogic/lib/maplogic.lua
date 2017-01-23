@@ -221,7 +221,7 @@ require('Spawners')
 -- function that sets the timers for all the wave spawns
 function mapLogic:SetSpawns()
 	ShowMessage('Map name when called upon in the test client:' .. GetMapName())
-	local mapData = mapInfo[GetMapName()]
+	local mapData = mapInfo[string.lower(GetMapName())]
 	if mapData == nil then
 		mapData = mapInfo.Default
 	end

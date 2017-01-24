@@ -362,20 +362,10 @@
 		"AbilityCooldown"				"60 50 40"
 		"AbilitySpecial"
 		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"280 370 460"
-			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"jumps"					"15 17 19"
-			}
-			"09"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_scepter"		"370 460 550"
 			}
 		}			
 	}
@@ -1147,7 +1137,15 @@
 
         // Damage.
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityDamage"					"70 120 170 220"
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"axe_damage"				"70 120 170 220"
+				"LinkedSpecialBonus"		"special_bonus_unique_beastmaster"
+			}
+		}
     }
 
 	//=================================================================================================================
@@ -1314,7 +1312,6 @@
 	//=================================================================================================================
 	"crystal_maiden_crystal_nova"
 	{
-		"AbilityDamage"					"120 180 250 360"
 		"AbilitySpecial"
 		{
 			"01"
@@ -1327,6 +1324,13 @@
 				"var_type"			"FIELD_INTEGER"
 				"attackspeed_slow"	"-20 -40 -60 -80"
 			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"nova_damage"			"120 180 250 360"
+				"LinkedSpecialBonus"	"special_bonus_unique_crystal_maiden_2"
+			}
+
 		}
 	}	
 	//=================================================================================================================
@@ -1816,7 +1820,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"sand_storm_radius"		"425"
+				"sand_storm_radius"		"525"
 			}
 			"03"
 			{
@@ -2720,7 +2724,16 @@
 	"luna_lucent_beam"
 	{
 		"AbilityManaCost"				"30 40 50 60"
-		"AbilityDamage"					"150 300 450 600"
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"beam_damage"			"150 300 450 600"
+				"LinkedSpecialBonus"	"special_bonus_unique_luna_1"
+			}
+		}
+
 	}
 	//=================================================================================================================
 	// Luna: Lunar Blessing

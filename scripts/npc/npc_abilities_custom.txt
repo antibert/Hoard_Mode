@@ -4806,7 +4806,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"sand_storm_radius"		"500"
+				"sand_storm_radius"		"525"
 			}
 			"03"
 			{

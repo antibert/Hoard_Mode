@@ -4768,23 +4768,26 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+        "ID"					"25103"
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"sandking_sand_storm"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityDuration"				"20.0 40.0 60.0 80.0"
+		"AbilityDuration"				"50.0 50.0 60.0 80.0"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"40.0 30.0 20.0 10.0"
-		"AbilityChannelTime"			"20.0 40.0 60.0 80.0"
+		"AbilityChannelTime"			"50.0 50.0 60.0 80.0"
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+        "AbilityCastRange"				"525"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -4800,18 +4803,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"sand_storm_invis_delay"	"0.0"
-			}
-			"02"
-			{
 				"var_type"				"FIELD_INTEGER"
 				"sand_storm_radius"		"525"
 			}
-			"03"
+			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"AbilityDuration"		"20.0 40.0 60.0 80.0"
+				"AbilityDuration"		"50.0 50.0 60.0 80.0"
 			}
 		}
 
@@ -4830,156 +4828,92 @@
 
 		"OnSpellStart"
 		{
-
-			"FireSound"
-			{
-				"EffectName"			"Ability.SandKing_SandStorm.start"
-				"Target"				"CASTER"
-			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"			"modifier_sand_storm_debuff_datadriven"
-				"Target"				"CASTER"
-			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"			"modifier_sand_storm_vfx_datadriven"
-				"Target"				"CASTER"
-			}
-
-			"FireSound"
-			{
-				"EffectName"			"Ability.SandKing_SandStorm.loop"
-				"Target"				"CASTER"
-			}
-		}
+            "FireEffect"
+            {
+                "EffectName"	"particles/units/heroes/hero_sandking/sandking_sandstorm_start.vpcf"
+                "EffectAttachType"	"PATTACH_ABSORIGIN"
+                "Target"            "CASTER"
+            }
+            "RunScript"
+            {
+                "ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
+				"Function"		"sandStorm_Init"
+                
+                "radius"        "%sand_storm_radius"
+                "duration"      "%AbilityDuration"
+            }
+            "ApplyModifier"
+	        {
+	            "ModifierName"		"modifier_sand_storm_debuff_damage_datadriven"
+	            "Target"			"CASTER"
+	        }
+		}        
 
 		"OnChannelFinish"
 		{
-			"RemoveModifier"
+            "RunScript"
+            {
+                "ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
+				"Function"		"sandStorm_Stop"
+            }
+            "RemoveModifier"
 			{
-				"ModifierName"			"modifier_sand_storm_debuff_datadriven"
-				"Target"				"CASTER"
+				"ModifierName"	"modifier_sand_storm_debuff_damage_datadriven"
+				"Target"        "CASTER"
 			}
 		}
+        
+        "OnChannelInterrupted"
+        {            
+            "RunScript"
+            {
+                "ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
+				"Function"		"sandStorm_Stop"
+            }
+            "RemoveModifier"
+			{
+				"ModifierName"	"modifier_sand_storm_debuff_damage_datadriven"
+				"Target"        "CASTER"
+			}
+        }   
 
 		"Modifiers"
 		{
-			"modifier_sand_storm_debuff_datadriven"
-			{
-				"IsHidden"				"0"
-				"IsPurgable"			"1"
-				"Aura"					"modifier_sand_storm_debuff_damage_datadriven"
-				"Aura_Radius"			"%sand_storm_radius"
-				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-
-				"OnAbilityExecuted"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_sand_storm_debuff_damage_datadriven"
-						"Target"		"CASTER"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_sand_storm_remove_datadriven"
-						"Target"		"CASTER"
-					}
-
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
-						"Function"		"sand_storm_remove_sound"
-					}
-				}
-			}
-
 			"modifier_sand_storm_debuff_damage_datadriven"
 			{
-				"IsDebuff"				"1"
+				"IsBuff"				"1"
 				"IsPurgable"			"1"
+                "IsHidden"              "1"
 
 				"OnCreated"
 				{
-					"Damage"
+					"RunScript"
 					{
-						"Damage"		"%AbilityDamage / 2"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Target"		"TARGET"
+						"ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
+						"Function"		"sandStorm_Damage"
+                        
+                        "damage"        "%AbilityDamage"
+                        "radius"        "%sand_storm_radius"
 					}
 				}
 
 				"ThinkInterval"			"0.5"
+                
 				"OnIntervalThink"
 				{
-					"Damage"
+					"RunScript"
 					{
-						"Damage"		"%AbilityDamage / 2"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Target"		"TARGET"
-					}
-				}
-			}
-
-			"modifier_sand_storm_vfx_datadriven"
-			{
-				"IsHidden"				"1"
-				"IsPurgable"			"0"
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"		"particles/units/heroes/hero_sandking/sandking_sandstorm_start.vpcf"
-						"EffectAttachType"	"start_at_customorigin"
-						"Target"			"CASTER"
-					}
-
-					"AttachEffect"
-					{
-						"EffectName"		"particles/units/heroes/hero_sandking/sandking_sandstorm.vpcf"
-						"EffectAttachType"	"start_at_customorigin"
-						"Target"			"CASTER"
-						"ControlPoints"
-						{
-							"01"			"%sand_storm_radius %sand_storm_radius %sand_storm_radius"
-						}
-					}
-				}
-			}
-
-			"modifier_sand_storm_remove_datadriven"
-			{
-				"IsHidden"			"1"
-				"IsPurgable"		"0"
-				"Duration"			"%sand_storm_invis_delay + 0.5"
-
-				"OnCreated"
-				{
-					"DelayedAction"
-					{
-						"Delay"			"%sand_storm_invis_delay"
-						"Action"
-						{
-
-							"RemoveModifier"
-							{
-								"ModifierName"	"modifier_sand_storm_vfx_datadriven"
-								"Target"		"CASTER"
-							}
-						}
+						"ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
+						"Function"		"sandStorm_Damage"
+                        
+                        "damage"        "%AbilityDamage"
+                        "radius"        "%sand_storm_radius"
 					}
 				}
 			}
 		}
 	}
+    
 	"rubick_amp_field"
 	{
 		// General
@@ -7592,7 +7526,6 @@
 				"ControlPointEntities"
 				{
 					"CASTER"	"attach_attack1"
-					"CASTER"	"attach_attack1"
 				}
 			}
 		}
@@ -7920,9 +7853,6 @@
                 //CP3 needs to be attached to the target hit
                 "ControlPointEntities"
                 {
-                    "TARGET"		"attach_hitloc"
-                    "TARGET"		"attach_hitloc"
-                    "TARGET"		"attach_hitloc"
                     "TARGET"		"attach_hitloc"
                 }
             }

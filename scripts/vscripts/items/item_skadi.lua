@@ -7,13 +7,16 @@
 ================================================================================================================= ]]
 function modifier_item_skadi_datadriven_impactFX(keys)
     local target = keys.target
+	local ability = keys.ability
+	local ability_level = ability:GetLevel() - 1
+    
 	local radius = ability:GetLevelSpecialValueFor("cold_radius", ability_level)
     
     target.impactFX = ParticleManager:CreateParticle("particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_frost_explosion.vpcf", PATTACH_POINT_FOLLOW, target)
     ParticleManager:SetParticleControl(target.impactFX, 0, Vector(radius, 2, radius*2))
     
     ParticleManager:SetParticleControlEnt(target.impactFX, 3, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-    
+	
 	ParticleManager:ReleaseParticleIndex(target.impactFX)
 end
 

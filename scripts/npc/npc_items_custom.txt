@@ -4032,6 +4032,11 @@
 
             	"OnAttackLanded"
                 {
+                    "RunScript"
+                    {
+                        "ScriptFile"		"items/item_skadi.lua"
+                        "Function"			"modifier_item_skadi_datadriven_impactFX"
+                    }
                     "ActOnTargets"
                     {
                         "Target"
@@ -4062,17 +4067,6 @@
                             {
                                 "EffectName"	"Hero_DragonKnight.ProjectileImpact"
                                 "Target" 		"TARGET"
-                            }
-
-                            "FireEffect"
-                            {
-                                "TargetPoint"			"POINT"
-                                "EffectName"			"particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_frost_explosion.vpcf"
-                                "EffectAttachType"		"world_origin"
-                                "ControlPoints"
-                                {
-                                    "01"				"%cold_radius 2 %cold_radius*2"
-                                }
                             }
                         }
                     }

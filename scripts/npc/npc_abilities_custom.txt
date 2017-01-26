@@ -4101,24 +4101,50 @@
 			}
 		}
 	}
-	//=================================================================================================================
+
+
+    //=================================================================================================================
 	// Sniper: Assassinate
-	//=================================================================================================================
-	"horde_sniper_assassinate"
+	//=================================================================================================================   
+   "sniper_assassinate_datadriven"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
+		"BaseClass"				"ability_datadriven"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"AbilityTextureName"			"high_caliber"
-
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"sniper_assassinate"
+        "AoERadius"                     "%radius"
+        
+		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"550 600 650"
+		"AbilityCastRange"				"2000 2500 3000"
+		"AbilityCastRangeBuffer"		"600"
 		"AbilityCastPoint"				"2.0 2.0 2.0"
-		"AbilityManaCost"				"30 30 30"
-
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0 15.0 10.0"
+	
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"500 800 1100"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"175 275 375"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// Modifier just does damage
+	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -4126,141 +4152,190 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"range"						"550 600 650"
+				"projectile_speed"			"2500 2500 2500"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"100 150 200"
+				"tooltip_range"				"2000 2500 3000"
 			}
-			"02"
+			// Extra variables
+			"03"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"mana_cost"					"30 30 30"
+				"var_type"					"FIELD_FLOAT"
+				"charge_time"				"2.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"debuff_duration"			"4.0"
+			}
+            "05"
+			{
+				"var_type"				     "FIELD_INTEGER"
+				"radius"		             "400"
+			}
+            "06"
+			{
+				"var_type"				     "FIELD_INTEGER"
+				"crit_multiplier"		     "280"
 			}
 		}
-
+		
 		// Data driven
 		//-------------------------------------------------------------------------------------------------------------
-		"OnToggleOn"
+		"precache"
 		{
-			"ApplyModifier"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+			"particle"					"particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
+			"particle"					"particles/units/heroes/hero_sniper/sniper_crosshair.vpcf"
+		}
+		
+		"OnAbilityPhaseStart"
+		{
+			"FireSound"
 			{
-				"Target"					"CASTER"
-				"ModifierName"				"modifier_horde_sniper_assassinate"
+				"Target"				"CASTER"
+				"EffectName"			"Ability.AssassinateLoad"
 			}
-
-			"ApplyModifier"
+		  
+            "ActOnTargets"
+            {
+                "Target"
+                {
+                    "Center"  	"TARGET"
+                    "Radius" 	"%radius"
+                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+                
+                "Action"
+                {
+                    "ApplyModifier"
+                    {
+                        "Target"				"TARGET"
+                        "ModifierName"			"modifier_assassinate_target_datadriven"
+                    }
+                }
+            }
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
 			{
-				"Target"					"CASTER"
-				"ModifierName"				"modifier_horde_sniper_assassinate_range_dummy"
+				"Target"				"CASTER"
+				"EffectName"			"Ability.Assassinate"
+			}
+            
+            "ActOnTargets"
+            {
+                "Target"
+                {
+                    "Center"  	"TARGET"
+                    "Radius" 	"%radius"
+                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+
+                "Action"
+                {
+                    "TrackingProjectile"
+                    {
+                        "Target"				"TARGET"
+                        "EffectName"			"particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
+                        "Dodgeable"				"1"
+                        "ProvidesVision"		"0"
+                        "MoveSpeed"				"%projectile_speed"
+                        "SourceAttachment"		"DOTA_PROJECTILE_ATTACHMENT_HITLOCATION"
+                    }
+                }
+			}
+		
+			"FireSound"
+			{
+				"Target"				"CASTER"
+				"EffectName"			"Hero_Sniper.AssassinateProjectile"
 			}
 		}
-
-		"OnToggleOff"
+		
+		"OnProjectileHitUnit"
 		{
-			"RemoveModifier"
+			"FireSound"
 			{
-				"Target"					"CASTER"
-				"ModifierName"				"modifier_horde_sniper_assassinate"
+				"Target"				"TARGET"
+				"EffectName"			"Hero_Sniper.AssassinateDamage"
 			}
+            
+            "ApplyModifier"
+            {
+                "Target"				"CASTER"
+                "ModifierName"			"modifier_assassinate_bonus_datadriven"
+            }
+            
+            "Stun"
+            {
+                "Target"                "TARGET"
+                "Duration"              "0.03"
+            }
+            
+            "RunScript"
+	        {
+	            "ScriptFile"	"heroes/hero_riki/tricks_of_the_trade.lua"
+	            "Function"		"PerformAttacks"
+	        }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "heroes/hero_sniper/assassinate.lua"
+                "Function"      "ProcHeadshot"
+            }
 
-			"RemoveModifier"
-			{
-				"Target"					"CASTER"
-				"ModifierName"				"modifier_horde_sniper_assassinate_range_dummy"
-			}
+            "RemoveModifier"
+            {
+                "Target"				"TARGET"
+                "ModifierName"			"modifier_assassinate_target_datadriven"
+            }
 		}
-
+        
 		"Modifiers"
-		{
-			"modifier_horde_sniper_assassinate"
+		{	
+			"modifier_assassinate_bonus_datadriven"
 			{
-				"IsHidden"					"1"
-
-				"EffectName"			"particles/units/heroes/hero_sniper/sniper_crosshair.vpcf"
+				"IsHidden"				"1"
+				"IsPurgeble"			"0"
+				"Duration"	            "0.03"
+				
+                "Properties"
+				{
+                    "MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%crit_multiplier"
+				}
+                
+				"States"
+				{
+                    "MODIFIER_STATE_CANNOT_MISS"		"MODIFIER_STATE_VALUE_ENABLED"  //When attacking uphill, cannot miss units but can still miss buildings.
+				}
+			}
+            
+            "modifier_assassinate_target_datadriven"
+            {
+                "IsHidden"				"0"
+				"IsPurgeble"			"0"
+				"IsDebuff"				"1"
+                "Duration"				"%debuff_duration"
+                
+                "EffectName"			"particles/units/heroes/hero_sniper/sniper_crosshair.vpcf"
 				"EffectAttachType"		"follow_overhead"
-
-				"OnCreated"
+                 
+                "States"
 				{
-					"RunScript"
-					{
-						"ScriptFile"		"heroes/hero_sniper/sniper.lua"
-						"Function"			"AssinateProjectile"
-
-						"projectile"		"particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"heroes/hero_sniper/sniper.lua"
-						"Function"			"AssinateProjectile"
-
-						"projectile"		"particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
-					}
-				}
-
-				"ThinkInterval"  "0.1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"heroes/hero_sniper/sniper.lua"
-						"Function"			"AssassinateThink"
-					}
-				}
-
-				"OnAttackStart"
-				{
-					"FireSound"
-					{
-						"Target"				"CASTER"
-						"EffectName"			"Ability.Assassinate"
-					}
-				}
-
-				"OnAttack"
-				{
-
-					"RunScript"
-					{
-						"ScriptFile"			"heroes/hero_sniper/sniper.lua"
-						"Function"				"AssassinateMana"
-					}
-				}
-
-				"OnAttackLanded"
-				// "%attack_damage" is set to the damage value before mitigation
-				{
-					"FireSound"
-					{
-						"Target"				"TARGET"
-						"EffectName"			"Hero_Sniper.AssassinateDamage"
-					}
-
-					"RunScript"
-					{
-						"ScriptFile"			"heroes/hero_sniper/sniper.lua"
-						"Function"				"AssassinateHit"
-					}
-				}
-			}
-
-			"modifier_horde_sniper_assassinate_range_dummy"
-			{
-				"IsHidden"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" 				"1"
-				}
-			}
+					"MODIFIER_STATE_INVISIBLE" 			"MODIFIER_STATE_VALUE_DISABLED"
+					"MODIFIER_STATE_PROVIDES_VISION"	"MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
 		}
 	}
-	//=================================================================================================================
+   	//=================================================================================================================
 	// Keeper of the Light: Mana Overload
 	//=================================================================================================================
 	"keeper_of_the_light_mana_overload"

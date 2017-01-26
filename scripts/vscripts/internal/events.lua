@@ -6,7 +6,6 @@ function GameMode:_OnGameRulesStateChange(keys)
   elseif newState == DOTA_GAMERULES_STATE_INIT then
     --Timers:RemoveTimer("alljointimer")
   elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
-    GameMode:ProcessVotes()
     GameMode:PostLoadPrecache()
     GameMode:OnAllPlayersLoaded()
 
@@ -86,6 +85,12 @@ function GameMode:ProcessVotes()
 		end
 
 		print(category .. ": " .. highest_key)
+        
+        local event_data =
+        {
+            difficulty = tostring(highest_key),
+        }
+        CustomGameEventManager:Send_ServerToAllClients( "info_difficulty", event_data )
 	end
 end
 

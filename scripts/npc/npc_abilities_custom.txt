@@ -4101,24 +4101,50 @@
 			}
 		}
 	}
-	//=================================================================================================================
+
+
+    //=================================================================================================================
 	// Sniper: Assassinate
-	//=================================================================================================================
-	"horde_sniper_assassinate"
+	//=================================================================================================================   
+   "sniper_assassinate_datadriven"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
+		"BaseClass"				"ability_datadriven"
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"AbilityTextureName"			"high_caliber"
-
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"FightRecapLevel"				"2"
+		"AbilityTextureName"			"sniper_assassinate"
+        "AoERadius"                     "%radius"
+        
+		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"550 600 650"
+		"AbilityCastRange"				"2000 2500 3000"
+		"AbilityCastRangeBuffer"		"600"
 		"AbilityCastPoint"				"2.0 2.0 2.0"
-		"AbilityManaCost"				"30 30 30"
-
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"20.0 15.0 10.0"
+	
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"500 800 1100"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"175 275 375"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportValue"	"0.0"	// Modifier just does damage
+	
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -4126,141 +4152,190 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"range"						"550 600 650"
+				"projectile_speed"			"2500 2500 2500"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"radius"					"100 150 200"
+				"tooltip_range"				"2000 2500 3000"
 			}
-			"02"
+			// Extra variables
+			"03"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"mana_cost"					"30 30 30"
+				"var_type"					"FIELD_FLOAT"
+				"charge_time"				"2.0"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"debuff_duration"			"4.0"
+			}
+            "05"
+			{
+				"var_type"				     "FIELD_INTEGER"
+				"radius"		             "400"
+			}
+            "06"
+			{
+				"var_type"				     "FIELD_INTEGER"
+				"crit_multiplier"		     "280"
 			}
 		}
-
+		
 		// Data driven
 		//-------------------------------------------------------------------------------------------------------------
-		"OnToggleOn"
+		"precache"
 		{
-			"ApplyModifier"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_sniper.vsndevts"
+			"particle"					"particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
+			"particle"					"particles/units/heroes/hero_sniper/sniper_crosshair.vpcf"
+		}
+		
+		"OnAbilityPhaseStart"
+		{
+			"FireSound"
 			{
-				"Target"					"CASTER"
-				"ModifierName"				"modifier_horde_sniper_assassinate"
+				"Target"				"CASTER"
+				"EffectName"			"Ability.AssassinateLoad"
 			}
-
-			"ApplyModifier"
+		  
+            "ActOnTargets"
+            {
+                "Target"
+                {
+                    "Center"  	"TARGET"
+                    "Radius" 	"%radius"
+                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+                
+                "Action"
+                {
+                    "ApplyModifier"
+                    {
+                        "Target"				"TARGET"
+                        "ModifierName"			"modifier_assassinate_target_datadriven"
+                    }
+                }
+            }
+		}
+		
+		"OnSpellStart"
+		{
+			"FireSound"
 			{
-				"Target"					"CASTER"
-				"ModifierName"				"modifier_horde_sniper_assassinate_range_dummy"
+				"Target"				"CASTER"
+				"EffectName"			"Ability.Assassinate"
+			}
+            
+            "ActOnTargets"
+            {
+                "Target"
+                {
+                    "Center"  	"TARGET"
+                    "Radius" 	"%radius"
+                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+
+                "Action"
+                {
+                    "TrackingProjectile"
+                    {
+                        "Target"				"TARGET"
+                        "EffectName"			"particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
+                        "Dodgeable"				"1"
+                        "ProvidesVision"		"0"
+                        "MoveSpeed"				"%projectile_speed"
+                        "SourceAttachment"		"DOTA_PROJECTILE_ATTACHMENT_HITLOCATION"
+                    }
+                }
+			}
+		
+			"FireSound"
+			{
+				"Target"				"CASTER"
+				"EffectName"			"Hero_Sniper.AssassinateProjectile"
 			}
 		}
-
-		"OnToggleOff"
+		
+		"OnProjectileHitUnit"
 		{
-			"RemoveModifier"
+			"FireSound"
 			{
-				"Target"					"CASTER"
-				"ModifierName"				"modifier_horde_sniper_assassinate"
+				"Target"				"TARGET"
+				"EffectName"			"Hero_Sniper.AssassinateDamage"
 			}
+            
+            "ApplyModifier"
+            {
+                "Target"				"CASTER"
+                "ModifierName"			"modifier_assassinate_bonus_datadriven"
+            }
+            
+            "Stun"
+            {
+                "Target"                "TARGET"
+                "Duration"              "0.03"
+            }
+            
+            "RunScript"
+	        {
+	            "ScriptFile"	"heroes/hero_riki/tricks_of_the_trade.lua"
+	            "Function"		"PerformAttacks"
+	        }
+            
+            "RunScript"
+            {
+                "ScriptFile"    "heroes/hero_sniper/assassinate.lua"
+                "Function"      "ProcHeadshot"
+            }
 
-			"RemoveModifier"
-			{
-				"Target"					"CASTER"
-				"ModifierName"				"modifier_horde_sniper_assassinate_range_dummy"
-			}
+            "RemoveModifier"
+            {
+                "Target"				"TARGET"
+                "ModifierName"			"modifier_assassinate_target_datadriven"
+            }
 		}
-
+        
 		"Modifiers"
-		{
-			"modifier_horde_sniper_assassinate"
+		{	
+			"modifier_assassinate_bonus_datadriven"
 			{
-				"IsHidden"					"1"
-
-				"EffectName"			"particles/units/heroes/hero_sniper/sniper_crosshair.vpcf"
+				"IsHidden"				"1"
+				"IsPurgeble"			"0"
+				"Duration"	            "0.03"
+				
+                "Properties"
+				{
+                    "MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"	"%crit_multiplier"
+				}
+                
+				"States"
+				{
+                    "MODIFIER_STATE_CANNOT_MISS"		"MODIFIER_STATE_VALUE_ENABLED"  //When attacking uphill, cannot miss units but can still miss buildings.
+				}
+			}
+            
+            "modifier_assassinate_target_datadriven"
+            {
+                "IsHidden"				"0"
+				"IsPurgeble"			"0"
+				"IsDebuff"				"1"
+                "Duration"				"%debuff_duration"
+                
+                "EffectName"			"particles/units/heroes/hero_sniper/sniper_crosshair.vpcf"
 				"EffectAttachType"		"follow_overhead"
-
-				"OnCreated"
+                 
+                "States"
 				{
-					"RunScript"
-					{
-						"ScriptFile"		"heroes/hero_sniper/sniper.lua"
-						"Function"			"AssinateProjectile"
-
-						"projectile"		"particles/units/heroes/hero_sniper/sniper_assassinate.vpcf"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"heroes/hero_sniper/sniper.lua"
-						"Function"			"AssinateProjectile"
-
-						"projectile"		"particles/units/heroes/hero_sniper/sniper_base_attack.vpcf"
-					}
-				}
-
-				"ThinkInterval"  "0.1"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"		"heroes/hero_sniper/sniper.lua"
-						"Function"			"AssassinateThink"
-					}
-				}
-
-				"OnAttackStart"
-				{
-					"FireSound"
-					{
-						"Target"				"CASTER"
-						"EffectName"			"Ability.Assassinate"
-					}
-				}
-
-				"OnAttack"
-				{
-
-					"RunScript"
-					{
-						"ScriptFile"			"heroes/hero_sniper/sniper.lua"
-						"Function"				"AssassinateMana"
-					}
-				}
-
-				"OnAttackLanded"
-				// "%attack_damage" is set to the damage value before mitigation
-				{
-					"FireSound"
-					{
-						"Target"				"TARGET"
-						"EffectName"			"Hero_Sniper.AssassinateDamage"
-					}
-
-					"RunScript"
-					{
-						"ScriptFile"			"heroes/hero_sniper/sniper.lua"
-						"Function"				"AssassinateHit"
-					}
-				}
-			}
-
-			"modifier_horde_sniper_assassinate_range_dummy"
-			{
-				"IsHidden"			"1"
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" 				"1"
-				}
-			}
+					"MODIFIER_STATE_INVISIBLE" 			"MODIFIER_STATE_VALUE_DISABLED"
+					"MODIFIER_STATE_PROVIDES_VISION"	"MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
 		}
 	}
-	//=================================================================================================================
+   	//=================================================================================================================
 	// Keeper of the Light: Mana Overload
 	//=================================================================================================================
 	"keeper_of_the_light_mana_overload"
@@ -4768,23 +4843,26 @@
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
+        "ID"					"25103"
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"FightRecapLevel"				"1"
 		"AbilityTextureName"			"sandking_sand_storm"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"0"
-		"AbilityDuration"				"20.0 40.0 60.0 80.0"
+		"AbilityDuration"				"50.0 50.0 60.0 80.0"
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"40.0 30.0 20.0 10.0"
-		"AbilityChannelTime"			"20.0 40.0 60.0 80.0"
+		"AbilityChannelTime"			"50.0 50.0 60.0 80.0"
 		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+        "AbilityCastRange"				"525"
 
 		// Damage.
 		//-------------------------------------------------------------------------------------------------------------
@@ -4800,18 +4878,13 @@
 		{
 			"01"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"sand_storm_invis_delay"	"0.0"
-			}
-			"02"
-			{
 				"var_type"				"FIELD_INTEGER"
 				"sand_storm_radius"		"525"
 			}
-			"03"
+			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"AbilityDuration"		"20.0 40.0 60.0 80.0"
+				"AbilityDuration"		"50.0 50.0 60.0 80.0"
 			}
 		}
 
@@ -4830,156 +4903,92 @@
 
 		"OnSpellStart"
 		{
-
-			"FireSound"
-			{
-				"EffectName"			"Ability.SandKing_SandStorm.start"
-				"Target"				"CASTER"
-			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"			"modifier_sand_storm_debuff_datadriven"
-				"Target"				"CASTER"
-			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"			"modifier_sand_storm_vfx_datadriven"
-				"Target"				"CASTER"
-			}
-
-			"FireSound"
-			{
-				"EffectName"			"Ability.SandKing_SandStorm.loop"
-				"Target"				"CASTER"
-			}
-		}
+            "FireEffect"
+            {
+                "EffectName"	"particles/units/heroes/hero_sandking/sandking_sandstorm_start.vpcf"
+                "EffectAttachType"	"PATTACH_ABSORIGIN"
+                "Target"            "CASTER"
+            }
+            "RunScript"
+            {
+                "ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
+				"Function"		"sandStorm_Init"
+                
+                "radius"        "%sand_storm_radius"
+                "duration"      "%AbilityDuration"
+            }
+            "ApplyModifier"
+	        {
+	            "ModifierName"		"modifier_sand_storm_debuff_damage_datadriven"
+	            "Target"			"CASTER"
+	        }
+		}        
 
 		"OnChannelFinish"
 		{
-			"RemoveModifier"
+            "RunScript"
+            {
+                "ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
+				"Function"		"sandStorm_Stop"
+            }
+            "RemoveModifier"
 			{
-				"ModifierName"			"modifier_sand_storm_debuff_datadriven"
-				"Target"				"CASTER"
+				"ModifierName"	"modifier_sand_storm_debuff_damage_datadriven"
+				"Target"        "CASTER"
 			}
 		}
+        
+        "OnChannelInterrupted"
+        {            
+            "RunScript"
+            {
+                "ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
+				"Function"		"sandStorm_Stop"
+            }
+            "RemoveModifier"
+			{
+				"ModifierName"	"modifier_sand_storm_debuff_damage_datadriven"
+				"Target"        "CASTER"
+			}
+        }   
 
 		"Modifiers"
 		{
-			"modifier_sand_storm_debuff_datadriven"
-			{
-				"IsHidden"				"0"
-				"IsPurgable"			"1"
-				"Aura"					"modifier_sand_storm_debuff_damage_datadriven"
-				"Aura_Radius"			"%sand_storm_radius"
-				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-
-				"OnAbilityExecuted"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_sand_storm_debuff_damage_datadriven"
-						"Target"		"CASTER"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_sand_storm_remove_datadriven"
-						"Target"		"CASTER"
-					}
-
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
-						"Function"		"sand_storm_remove_sound"
-					}
-				}
-			}
-
 			"modifier_sand_storm_debuff_damage_datadriven"
 			{
-				"IsDebuff"				"1"
+				"IsBuff"				"1"
 				"IsPurgable"			"1"
+                "IsHidden"              "1"
 
 				"OnCreated"
 				{
-					"Damage"
+					"RunScript"
 					{
-						"Damage"		"%AbilityDamage / 2"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Target"		"TARGET"
+						"ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
+						"Function"		"sandStorm_Damage"
+                        
+                        "damage"        "%AbilityDamage"
+                        "radius"        "%sand_storm_radius"
 					}
 				}
 
 				"ThinkInterval"			"0.5"
+                
 				"OnIntervalThink"
 				{
-					"Damage"
+					"RunScript"
 					{
-						"Damage"		"%AbilityDamage / 2"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Target"		"TARGET"
-					}
-				}
-			}
-
-			"modifier_sand_storm_vfx_datadriven"
-			{
-				"IsHidden"				"1"
-				"IsPurgable"			"0"
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"		"particles/units/heroes/hero_sandking/sandking_sandstorm_start.vpcf"
-						"EffectAttachType"	"start_at_customorigin"
-						"Target"			"CASTER"
-					}
-
-					"AttachEffect"
-					{
-						"EffectName"		"particles/units/heroes/hero_sandking/sandking_sandstorm.vpcf"
-						"EffectAttachType"	"start_at_customorigin"
-						"Target"			"CASTER"
-						"ControlPoints"
-						{
-							"01"			"%sand_storm_radius %sand_storm_radius %sand_storm_radius"
-						}
-					}
-				}
-			}
-
-			"modifier_sand_storm_remove_datadriven"
-			{
-				"IsHidden"			"1"
-				"IsPurgable"		"0"
-				"Duration"			"%sand_storm_invis_delay + 0.5"
-
-				"OnCreated"
-				{
-					"DelayedAction"
-					{
-						"Delay"			"%sand_storm_invis_delay"
-						"Action"
-						{
-
-							"RemoveModifier"
-							{
-								"ModifierName"	"modifier_sand_storm_vfx_datadriven"
-								"Target"		"CASTER"
-							}
-						}
+						"ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
+						"Function"		"sandStorm_Damage"
+                        
+                        "damage"        "%AbilityDamage"
+                        "radius"        "%sand_storm_radius"
 					}
 				}
 			}
 		}
 	}
+    
 	"rubick_amp_field"
 	{
 		// General
@@ -7598,7 +7607,6 @@
 				"ControlPointEntities"
 				{
 					"CASTER"	"attach_attack1"
-					"CASTER"	"attach_attack1"
 				}
 			}
 		}
@@ -7926,9 +7934,6 @@
                 //CP3 needs to be attached to the target hit
                 "ControlPointEntities"
                 {
-                    "TARGET"		"attach_hitloc"
-                    "TARGET"		"attach_hitloc"
-                    "TARGET"		"attach_hitloc"
                     "TARGET"		"attach_hitloc"
                 }
             }
@@ -15829,4 +15834,72 @@
             }
         }
     }
+    //=================================================================================================================
+	// Centaur Warchief: Return
+	//=================================================================================================================
+	"centaur_return"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+        "ID"							"5516"	
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"AbilityTextureName"			"centaur_return"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_centaur/centaur_return.vpcf"
+		}
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+            "01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"return_damage"				"16 18 20 22"
+			}
+			"02"
+			{
+				"var_type"				    "FIELD_INTEGER"
+				"strength_pct"			    "30 45 60 75"
+                "CalculateSpellDamageTooltip"		"1"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"aura_radius"				"900"
+			}
+            "04"
+			{
+				"var_type"				    "FIELD_INTEGER"
+				"building_reduction"	    "80"
+			}
+		}	
+        
+		"Modifiers"
+		{
+			"modifier_centaur_return"
+			{
+				"Passive"					"1"
+				"IsHidden"					"1"
+
+				"OnTakeDamage"
+				{
+					"RunScript"
+					{
+						"ScriptFile"		"heroes/hero_centaur/return.lua"
+						"Function"			"Return"
+                        
+                        "building_reduction" "%building_reduction"
+					}
+				}
+			}
+		}
+	}
 }

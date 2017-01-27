@@ -1,6 +1,6 @@
 Next Update Patch Notes:
 
-1.21g
+1.22
 Reduced recipe cost of War Fury
 Removed recipe from Sange and Yasha and Atos
 Reduced recipe cost of Vlad's Cuirass
@@ -8,9 +8,8 @@ Fixed Zeus having two ults
 Fixed Necrophos having two auras and no sadist
 Fixed boss spell block having no cooldown
 
-// Alchemist
-Increased maximum damage of Unstable Concoction to 150/250/350/450 and radius to 300
-Increased damage of Acid Spray to match vanilla 15/20/25/30
+// Rubick
+Null Field now grants nearby allies bonus spell damage and resistance, instead of lowering the resistance of nearby enemies
 
 // Ancient Apparition
 Reduced cooldown of Ice Blast to 20/15/10

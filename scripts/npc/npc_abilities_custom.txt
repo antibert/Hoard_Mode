@@ -4996,13 +4996,18 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"null_amount"				"-10 -15 -20 -25"
+				"null_amount"				"10 14 18 22"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"null_radius"			    "900"
 			}
+			"03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "amp_amount"				"10 14 18 22"
+            }
 		}
 		"Modifiers"
 		{
@@ -5012,14 +5017,15 @@
 				"Passive"				"1"
 				"Aura"					"amp_null"
 				"Aura_Radius"			"%null_radius"
-				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"			"DOTA_UNIT_TARGET_ROSHAN | DOTA_UNIT_TARGET_CREEP"
-				"Aura_ApplyToCaster"	"0"
+				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster"	"1"
 			}
 			"amp_null"
 			{
 				"Properties"
 				{
+					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%amp_amount"
 					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%null_amount"
 				}
 			}

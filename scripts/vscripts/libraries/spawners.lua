@@ -29,8 +29,20 @@ function Spawner:new( o )
 end
 
 function Spawner:Spawn(keys)
-  local point = Entities:FindByName(nil, keys.source):GetAbsOrigin()
-  local waypoint = Entities:FindByName(nil, keys.waypoint):GetAbsOrigin()
+  local point = Entities:FindByName(nil, keys.source)
+  if point == nil then
+    print("Spawner could not find source: " .. keys.source)
+    return
+  end
+  point = point:GetAbsOrigin()
+
+  local waypoint = Entities:FindByName(nil, keys.waypoint)
+  if waypoint == nil then
+    print("Spawner could not find target: " .. keys.waypoint)
+    return
+  end
+  waypoint = waypoint:GetAbsOrigin()
+
   local order = keys.order
   if order == nil then
     order = DOTA_UNIT_ORDER_ATTACK_MOVE

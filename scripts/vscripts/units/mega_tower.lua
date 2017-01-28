@@ -4,7 +4,7 @@ function PercentDamage( keys )
 	local ability = keys.ability
 	local hp_percent = keys.hp_percent
 	local targetLocation = target:GetAbsOrigin()
-	local radius = keys.hp_percent_radius
+	local radius = keys.radius
 
 	if not target:IsMagicImmune() then
 

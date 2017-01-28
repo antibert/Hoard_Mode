@@ -186,10 +186,18 @@ function Spawners:LoadMisc(difficulty, mapInfo)
 	})
 
 	if difficulty < 2 then
-		Timers:CreateTimer(0, function()
-			Spawners:SpawnMapBoss()
-			return 3000.0
-		end)
+		-- spawn money units
+		Spawner:SpawnTimer({
+			start = 0,
+			interval = 3000,
+			spawn = {
+				source =  "spawner10",
+				waypoint = "spawner10",
+				max = 1,
+				order = DOTA_UNIT_ORDER_STOP,
+				unit = "npc_dota_creature_map_boss"
+			}
+		})
 	end
 
 	-- spawn money units
@@ -205,28 +213,4 @@ function Spawners:LoadMisc(difficulty, mapInfo)
 			unit = "npc_dota_creature_money"
 		}
 	})
-end
-
--- Function to stop spawners
-
-function Spawners:StopSpawner(spawner)
-	Timers:RemoveTimer(spawner)
-end
-
-function Spawners:SpawnMapBoss()
-	local spawner = Entities:FindByName(nil, "spawner10")
-	if spawner ~= nil then
-		local point = spawner:GetAbsOrigin()
-		local waypoint = Entities:FindByName(nil, "spawner10"):GetAbsOrigin()
-		local units_to_spawn = 1
-		for i=1,units_to_spawn do
-			Timers:CreateTimer(function()
-				local unit = CreateUnitByName("npc_dota_creature_map_boss", point, true, nil, nil, DOTA_TEAM_BADGUYS)
-				ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
-										OrderType = DOTA_UNIT_ORDER_STOP,
-										Position = waypoint, Queue = true} )
-				DebugPrint("Move ",unit:GetEntityIndex()," to ", waypoint)
-			end)
-		end
-	end
 end

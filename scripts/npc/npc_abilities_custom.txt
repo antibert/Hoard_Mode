@@ -1694,121 +1694,104 @@
 		}
 	}
 	//=================================================================================================================
-	// Dark Seer: Wall of Discord
-	//=================================================================================================================
-	"dark_seer_wall_of_discord"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"dark_seer_wall_of_replica"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+    // Dark Seer: Wall of Replica NB2017
+    //=================================================================================================================
+    "dark_seer_wall_of_replica_nb2017"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"ability_lua"
+        "AbilityTextureName"			"dark_seer_wall_of_replica"
+        "ScriptFile"					"heroes/hero_dark_seer/dark_seer_wall_of_replica_nb2017"
 
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"500 900 1300"
-		"AbilityCastPoint"				"0.4 0.4 0.4"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "FightRecapLevel"				"2"
 
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70.0 70.0 70.0"
+        "HasScepterUpgrade"			"1"
 
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"150 250 350"
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"500 900 1300"
+        "AbilityCastPoint"				"0.4 0.4 0.4"
 
-		"OnSpellStart"
-		{
-			"CreateThinker"
-			{
-				"ModifierName"	"dark_seer_wall_of_discord_thinker"
-				"Target"		"POINT"
-			}
-		}
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"100.0 100.0 100.0"
 
-		"Modifiers"
-		{
-			"dark_seer_wall_of_discord_thinker"
-			{
-				"Duration" "%duration"
-				"ThinkInterval" "0.25"
-				"OnIntervalThink"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_dark_seer_wall_of_discord_target"
-						"Target"
-						{
-							"Center"	"TARGET"
-							"Line"
-							{
-								"Length"	"1000"
-								"Thickness"	"50"
-							}
-							"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-							"Types"		"DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_HERO"
-						}
-					}
-				}
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"125 250 375"
 
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"Target"			"TARGET"
-						"EffectName"		"particles/units/heroes/hero_dark_seer/dark_seer_wall_of_replica.vpcf"
-						"EffectAttachType"	"start_at_customorigin"
-						"EffectLineTarget"	"TARGET"
-						"EffectLineLength"	"%width"
-					}
-				}
-			}
-
-			"modifier_dark_seer_wall_of_discord_target"
-			{
-				"Duration" "1" // Encourage you to drag them back and forth through the wall
-				"OnCreated"
-				{
-					"Damage"
-					{
-						"Type"		"DAMAGE_TYPE_MAGICAL"
-						"Damage"	"%damage"
-						"Target"	"TARGET"
-					}
-
-					"AttachEffect"
-					{
-						"Target"			"TARGET"
-						"EffectName"		"particles/units/heroes/hero_dark_seer/dark_seer_wall_of_replica_replicate.vpcf"
-						"EffectAttachType"	"follow_origin"
-					}
-				}
-			}
-		}
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"10.0 20.0 30.0"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"				"300 400 500"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"width"					"1000 1000 1000"
-			}
-		}
-	}
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "duration"				"45.0"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "replica_damage_outgoing"	"0 25 50"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "tooltip_outgoing"	"100 125 150"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "replica_damage_incoming"	"0 -25 -50"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "tooltip_replica_total_damage_incoming"	"100 75 50"
+                "CalculateSpellDamageTooltip"	"0"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "width"					"1000 1000 1000"
+            }
+            "07"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "replica_scale"			"0 10 20"
+            }
+            "08"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "range_tooltip"			"500 900 1300"
+            }
+            "09"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "replica_damage_outgoing_scepter"	"25 50 75"
+            }
+            "10"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "tooltip_outgoing_scepter"	"125 150 175"
+            }
+            "11"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "movement_slow"					"75"
+            }
+            "12"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "slow_duration"				"1.0"
+            }
+        }
+    }
 	"dazzle_poison_touch_datadriven"
 	{
 		// General
@@ -15701,13 +15684,13 @@
     //=================================================================================================================
 	// Centaur Warchief: Return
 	//=================================================================================================================
-	"centaur_return"
+	"centaur_return_datadriven"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-        "ID"							"5516"	
+        "ID"							"5516"
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityTextureName"			"centaur_return"
@@ -15742,28 +15725,307 @@
             "04"
 			{
 				"var_type"				    "FIELD_INTEGER"
-				"building_reduction"	    "80"
+				"building_reduction"	    "20"
 			}
-		}	
-        
+		}
+
 		"Modifiers"
 		{
-			"modifier_centaur_return"
+			"modifier_centaur_return_aura"
+            {
+                "IsHidden"				"1"
+                "Passive"				"1"
+                "Aura"					"modifier_centaur_return_datadriven"
+                "Aura_Radius"			"%aura_radius"
+                "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Aura_Types"			"DOTA_UNIT_TARGET_ALL"
+                "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+                "Aura_ApplyToCaster"	"0"
+            }
+
+			"modifier_centaur_return_datadriven"
 			{
-				"Passive"					"1"
+				"Passive"					"0"
 				"IsHidden"					"1"
 
-				"OnTakeDamage"
+				"OnAttackLanded"
 				{
 					"RunScript"
 					{
 						"ScriptFile"		"heroes/hero_centaur/return.lua"
 						"Function"			"Return"
-                        
+
                         "building_reduction" "%building_reduction"
 					}
 				}
 			}
 		}
 	}
+
+	//=================================================================================================================
+    // Zuus: Thundergod's Salvation
+    //=================================================================================================================
+    "zeus_thundergods_wrath_nb2017"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"ability_lua"
+        "AbilityTextureName"			"zuus_thundergods_wrath"
+        "ScriptFile"					"heroes/hero_zeus/zeus_thundergods_wrath_nb2017"
+
+        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "FightRecapLevel"				"2"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.4 0.4 0.4 0.4"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"90.0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"225 325 450"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "cloud_duration"				"15"
+            }
+            "02"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "cloud_bolt_interval"			"3.0 2.5 2.0"
+            }
+            "03"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "cloud_radius"					"300"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Disruptor: GlimpseNB2017
+    //=================================================================================================================
+    "disruptor_glimpse_nb2017"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"ability_lua"
+        "AbilityTextureName"			"disruptor_glimpse"
+        "ScriptFile"					"heroes/hero_disruptor/disruptor_glimpse_nb2017"
+
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+        "FightRecapLevel"				"1"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"				"0.05 0.05 0.05 0.05"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"15.0 13.0 11.0 9.0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"40"
+
+        // Cast Range
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"600 1000 1400 1800"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "backtrack_time"			"4.0 4.0 4.0 4.0"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "cast_range"				"600 1000 1400 1800"
+            }
+            "03"
+            {
+                "var_type"					"FIELD_FLOAT"
+                "radius"					"300"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Treant Protector: Leech Seed NB2017
+    //=================================================================================================================
+    "treant_leech_seed_nb2017"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"ability_lua"
+        "AbilityTextureName"			"treant_leech_seed"
+        "ScriptFile"					"heroes/hero_treant/treant_leech_seed_nb2017"
+
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityCooldown"				"10.0 9.0 8.0 7.0"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "damage_interval"				"0.75"
+            }
+            "02"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "leech_damage"					"15 30 45 60"
+            }
+            "03"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "movement_slow"					"-28"
+            }
+            "04"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "radius"						"500"
+            }
+            "05"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "duration"						"4.5"
+            }
+            "06"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "projectile_speed"				"400"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Treant Protector: Great Protector
+    //=================================================================================================================
+    "treant_great_protector"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"ability_lua"
+        "AbilityTextureName"			"treant_natures_guise"
+        "ScriptFile"					"heroes/hero_treant/treant_great_protector"
+
+        "AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+        "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+
+        "AbilityCastPoint"				"0.0"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"45"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"125"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "duration"						"10.0 11.0 12.0"
+            }
+            "02"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "bonus_strength"				"50 100 150"
+            }
+            "03"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "move_speed"					"150"
+            }
+            "04"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "model_scale"					"60 80 100"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Monkey King: Jingu Mastery
+    //=================================================================================================================
+    "monkey_king_jingu_mastery_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"				"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"			"monkey_king_jingu_mastery"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "bonus_damage"	"15 30 45 60"
+            }
+            "02"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "lifesteal"						"10 15 20 25"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_monkey_king_jingu_mastery_datadriven"
+            {
+                "Passive"						"1"
+                "IsHidden"						"1"
+                "IsPurgable"					"0"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
+                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%bonus_movespeed"
+                }
+
+                "OnDealDamage"
+                {
+                    "Lifesteal"
+                    {
+                        "Target"			"CASTER"
+                        "LifestealPercent"	"%lifesteal"
+                    }
+                }
+            }
+        }
+    }
 }

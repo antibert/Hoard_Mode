@@ -1,12 +1,22 @@
 function Return( keys )
 	local caster = keys.caster
 	local attacker = keys.attacker
+	local target = keys.target
 	local ability = keys.ability
 	local ability_level = ability:GetLevel() - 1
-    local building_reduction_leftover = 100-keys.building_reduction
+    local building_reduction_leftover = keys.building_reduction
     
 	-- Break applied
-	if ability_level < 0 then
+	if ability_level < 0 or caster:GetTeamNumber() == attacker:GetTeamNumber() then
+		return nil
+	end
+
+	local hTalent = caster:FindAbilityByName( "special_bonus_unique_centaur_1" )
+	if hTalent and hTalent:GetLevel() > 0 then
+		target = caster
+	end
+
+	if target ~= caster then
 		return nil
 	end
 

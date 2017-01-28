@@ -83,6 +83,14 @@
         "Ability1"				"broodmother_spawn_spiderlings_datadriven"
         // TODO: "Ability17"		"special_bonus_unique_broodmother_2"
     }
+    //=================================================================================================================
+    // HERO: Centaur
+    //=================================================================================================================
+    "npc_dota_hero_centaur_holdout"
+    {
+        "override_hero"			"npc_dota_hero_centaur"
+        "Ability3"				"centaur_return_datadriven"
+    }
 	//=================================================================================================================
     // HERO: Chaos Knight
     //=================================================================================================================
@@ -97,7 +105,7 @@
 	"npc_dota_hero_dark_seer_holdout"
 	{
 		"override_hero"			"npc_dota_hero_dark_seer"
-		"Ability4"				"dark_seer_wall_of_discord"
+		"Ability4"				"dark_seer_wall_of_replica_nb2017"
 	}
 	//=================================================================================================================
 	// HERO: Dazzle
@@ -117,6 +125,14 @@
 		"override_hero"			"npc_dota_hero_death_prophet"
 		"Ability2"				"death_prophet_silence_datadriven"
 	}
+	//=================================================================================================================
+    // HERO: Disruptor
+    //=================================================================================================================
+    "npc_dota_hero_disruptor_holdout"
+    {
+        "override_hero"			"npc_dota_hero_disruptor"
+        "Ability2"				"disruptor_glimpse_nb2017"
+    }
 	//=================================================================================================================
 	// HERO: Drow Ranger
 	//=================================================================================================================
@@ -219,6 +235,15 @@
         "Ability4"				"holdout_mirana_shadow"
         "Ability17"		"special_bonus_cooldown_reduction_20"
     }
+    //=================================================================================================================
+    // HERO: Monkey King
+    //=================================================================================================================
+    "npc_dota_hero_monkey_king_holdout"
+    {
+        "override_hero"			"npc_dota_hero_monkey_king"
+        "Ability5"				"monkey_king_jingu_mastery_datadriven"
+        "Ability8"				"chaos_knight_phantasm"
+    }
 	//=================================================================================================================
 	// HERO: Naga Siren
 	//=================================================================================================================
@@ -300,7 +325,7 @@
 	"npc_dota_hero_sniper"
 	{
 		"override_hero"			"npc_dota_hero_sniper"
-		"Ability4"				"sniper_assassinate_datadriven"
+		"Ability4"				"sniper_assassinate_dm2017"
 	}
 	//=================================================================================================================
     // HERO: Pudge
@@ -473,8 +498,9 @@
 	"npc_dota_hero_treant_holdout"
 	{
 		"override_hero"			"npc_dota_hero_treant"
-		"Ability1"				"treant_entangle_datadriven"
-		// TODO: reconsider passive
+		"Ability1"				"treant_overgrowth"
+        "Ability2"				"treant_leech_seed_nb2017"
+        "Ability5"				"treant_great_protector"
 	}
 	//=================================================================================================================
 	// HERO: Undying
@@ -542,7 +568,6 @@
 	"npc_dota_hero_zuus_holdout"
 	{
 		"override_hero"			"npc_dota_hero_zuus"
-		"Ability5"				"zuus_thundergods_vengeance"
-		// TODO: Check aghs
+		"Ability5"				"zeus_thundergods_wrath_nb2017"
 	}
 }

@@ -17,9 +17,20 @@ function GameMode:_OnGameRulesStateChange(keys)
         end
       end
     end
+  elseif newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
+    GameMode:ForceAssignHeroes()
   elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
     GameMode:OnGameInProgress()
   end
+end
+
+function GameMode:ForceAssignHeroes()
+	for nPlayerID = 0, ( DOTA_MAX_TEAM_PLAYERS - 1 ) do
+        local hPlayer = PlayerResource:GetPlayer( nPlayerID )
+        if hPlayer and not PlayerResource:HasSelectedHero( nPlayerID ) then
+            hPlayer:MakeRandomHeroSelection()
+        end
+	end
 end
 
 function GameMode:ProcessVotes()

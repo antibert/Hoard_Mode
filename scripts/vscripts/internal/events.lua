@@ -8,6 +8,13 @@ function GameMode:_OnGameRulesStateChange(keys)
   elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
     GameMode:PostLoadPrecache()
     GameMode:OnAllPlayersLoaded()
+        
+    --In case noone pressed vote buttons, prepare data
+    if GameMode.DIFFICULTY==nil then
+       GameMode:ProcessVotes()     
+    end
+    --Announce the selected difficulty
+    Say(nil, "Current difficulty: " .. GameMode:GetDifficulty(), true)
 
     if USE_CUSTOM_TEAM_COLORS_FOR_PLAYERS then
       for i=0,9 do
@@ -17,9 +24,28 @@ function GameMode:_OnGameRulesStateChange(keys)
         end
       end
     end
+  elseif newState == DOTA_GAMERULES_STATE_STRATEGY_TIME then
+    GameMode:ForceAssignHeroes()
   elseif newState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
     GameMode:OnGameInProgress()
   end
+end
+
+function GameMode:ForceAssignHeroes()
+	for nPlayerID = 0, ( DOTA_MAX_TEAM_PLAYERS - 1 ) do
+        local hPlayer = PlayerResource:GetPlayer( nPlayerID )
+        if hPlayer and not PlayerResource:HasSelectedHero( nPlayerID ) then
+            hPlayer:MakeRandomHeroSelection()
+        end
+	end
+end
+
+function GameMode:GetDifficulty()
+    if mode.DIFFICULTY==nil then
+        GameMode:ProcessVotes()
+    end
+    print("Requested difficulty is " .. mode.DIFFICULTY)
+return mode.DIFFICULTY
 end
 
 function GameMode:ProcessVotes()

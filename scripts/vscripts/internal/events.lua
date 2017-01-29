@@ -8,6 +8,7 @@ function GameMode:_OnGameRulesStateChange(keys)
   elseif newState == DOTA_GAMERULES_STATE_HERO_SELECTION then
     GameMode:PostLoadPrecache()
     GameMode:OnAllPlayersLoaded()
+    Say(nil, "Difficulty is:", true)
 
     if USE_CUSTOM_TEAM_COLORS_FOR_PLAYERS then
       for i=0,9 do

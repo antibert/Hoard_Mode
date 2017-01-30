@@ -161,9 +161,7 @@ function BonusRoundSkills:ApplyAbilities(target, skillarray, timearray)
     local Ultra=0
     local UltraLevels=0
     local Skills=0
-    local Levels=0
-    
-    --for ability,options in pairs(skillTypes) do    
+    local Levels=0   
     
     fetchAbilityTimeParameters(skillTime)
     Skills=1
@@ -171,14 +169,13 @@ function BonusRoundSkills:ApplyAbilities(target, skillarray, timearray)
     
     local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
     math.randomseed(tonumber(timeTxt)+math.random(50))
+    
     calculateAbilityPack(target, Ultra, UltraLevels, "UltraSkills")
-    --calculateAbilityPack(target, Skills, Levels, "nhuSkills", "heroSkills")
-    calculateAbilityPack(target, Skills, Levels, "heroSkills")
-            
-    --newAbility, maxLevel, Toggleable=fetchAbilityParametersTwoArr(skillSet.nhuSkills, skillSet.heroSkills)   
-    --end
+    calculateAbilityPack(target, Skills, Levels, "nhuSkills", "heroSkills")
+
 end
 
+--[[Map's trigger_dota onTrigger action is translated to here]]
 function trigger_Upgrade(trigger)
     local unit = trigger.activator
     
@@ -188,125 +185,4 @@ function trigger_Upgrade(trigger)
         unit:AddNewModifier(unit, nil, "modifier_brs_boosted", {duration=-1})
         BonusRoundSkills:ApplyAbilities(unit, skillSet, skillTimeSet)
     end
-end
-
-
---[[
-function trigger_Upgrade(trigger)
-    local unit = trigger.activator
-    local playerID = unit:GetPlayerOwnerID()
-    if playerID and PlayerResource:HasSelectedHero( playerID ) then
-        local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-        local found=2
-        for i=20,1,-1 do
-            local ability_index = hero:GetAbilityByIndex(i)
-            if ability_index ~= nil then
-                print("next ability is:",ability_index:GetAbilityName())
-                if ability_index:GetAbilityName() == "sniper_headshot" then
-                    found=1
-                    break
-                end
-            end
-        end
-        if found==2 then
-            hero:AddAbility("sniper_headshot")
-        end
-    end
-end
-]]
-
-
--- Function that will grant the abilities to the enemy towers
-function mapLogic:SetEnemyBuildings()
-	-- Find all enemy buildings on the map
-	local buildings = FindUnitsInRadius(DOTA_TEAM_GOODGUYS, Vector(0,0,0), nil, 20000, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BUILDING, DOTA_UNIT_TARGET_FLAG_INVULNERABLE, FIND_ANY_ORDER, false)
-
-	-- Iterate through each one
-	for _, building in pairs(buildings) do
-
-		-- Parameters
-		local building_name = building:GetName()
-		DebugPrint(building_name)
-
-		-- Identify the building type
-		if string.find(building_name, "tower") then
-			DebugPrint("Adding abilities to enemy tower")
-
-			-- Add abilities
-			building:AddAbility("reward_global_offense_buff")
-			local ancient_ability = building:FindAbilityByName("reward_global_offense_buff")
-
-			building:AddAbility("tower_aura")
-			local tower_aura = building:FindAbilityByName("tower_aura")
-
-			building:AddAbility("tower_splash")
-			local tower_splash = building:FindAbilityByName("tower_splash")
-
-			if string.find(building_name, "tower1") then
-				ancient_ability:SetLevel(1)
-				tower_aura:SetLevel(1)
-				tower_splash:SetLevel(1)
-			elseif string.find(building_name, "tower2") then
-				ancient_ability:SetLevel(1)
-				tower_aura:SetLevel(2)
-				tower_splash:SetLevel(2)
-			elseif string.find(building_name, "tower3") then
-				ancient_ability:SetLevel(1)
-				tower_aura:SetLevel(3)
-				tower_splash:SetLevel(3)
-			elseif string.find(building_name, "tower4") then
-				ancient_ability:SetLevel(1)
-				tower_aura:SetLevel(4)
-				tower_splash:SetLevel(4)
-			end
-
-		elseif string.find(building_name, "rax_melee") then
-			DebugPrint("Adding abilities to enemy melee rax")
-			-- Add passive buff
-			building:AddAbility("reward_global_armor_buff")
-			local ancient_ability = building:FindAbilityByName("reward_global_armor_buff")
-			ancient_ability:SetLevel(1)
-
-		elseif string.find(building_name, "rax_range") then
-			DebugPrint("Adding abilities to enemy ranged rax")
-			-- Add passive buff
-			building:AddAbility("reward_global_armor_buff")
-			local reward_global_armor_buff = building:FindAbilityByName("reward_global_armor_buff")
-			reward_global_armor_buff:SetLevel(1)
-
-		elseif string.find(building_name, "fort") then
-			-- Add passive buff
-			building:AddAbility("global_armor_buff")
-			local global_armor_buff = building:FindAbilityByName("global_armor_buff")
-			global_armor_buff:SetLevel(self.DIFFICULTY)
-
-			-- Add passive buff
-			building:AddAbility("global_offense_buff")
-			local global_offense_buff = building:FindAbilityByName("global_offense_buff")
-			global_offense_buff:SetLevel(self.DIFFICULTY)
-
-			-- Add passive buff
-			building:AddAbility("global_difficulty_buff")
-			local global_difficulty_buff = building:FindAbilityByName("global_difficulty_buff")
-			global_difficulty_buff:SetLevel(self.DIFFICULTY)
-
-		elseif string.find(building_name, "fountain") then
-			-- Do nothing (fountain was already modified previously)
-		else
-
-		end
-
-	end
-end
-
-require('Spawners')
-
--- function that sets the timers for all the wave spawns
-function mapLogic:SetSpawns()
-	ShowMessage('Map name when called upon in the test client:' .. GetMapName())
-	local mapData = mapInfo[string.lower(GetMapName())]
-	if mapData == nil then
-		mapData = mapInfo.Default
-	end
-	Spawners:StartSpawners(self.DIFFICULTY, self.PLAYERS, mapData)
 end

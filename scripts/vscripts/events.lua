@@ -26,7 +26,7 @@ function GameMode:OnGameRulesStateChange(keys)
   if newState == DOTA_GAMERULES_STATE_PRE_GAME then
     local initial_time = 2
     local line_duration = 5
-
+        
     Timers:CreateTimer(initial_time, function()
       -- First line
       Notifications:BottomToAll( {text = "#horde_introduction_line_01", duration = line_duration, style = {color = "White"} } )
@@ -38,13 +38,6 @@ function GameMode:OnGameRulesStateChange(keys)
         Notifications:BottomToAll( {text = _G.GameMode.difficulty_name, duration = line_duration, style = {color = "DodgerBlue"}, continue = true}	)
       end)
     end)
-    
-        
-    --Timers:CreateTimer(function()
-    --    xpy
-    --return 5.0
-    --end)
-        
   end
 end
 
@@ -101,7 +94,7 @@ end
 function GameMode:OnItemPurchased( keys )
   DebugPrint( '[BAREBONES] OnItemPurchased' )
   DebugPrintTable(keys)
-
+    
   -- The playerID of the hero who is buying something
   local plyID = keys.PlayerID
   if not plyID then return end

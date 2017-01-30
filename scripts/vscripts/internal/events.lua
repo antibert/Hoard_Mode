@@ -1,3 +1,8 @@
+
+local skillTimeSet = LoadKeyValues('scripts/vscripts/HoardBRS/timeList.kv')
+
+
+
 -- The overall game state has changed
 function GameMode:_OnGameRulesStateChange(keys)
   local newState = GameRules:State_Get()
@@ -23,8 +28,39 @@ function GameMode:_OnGameRulesStateChange(keys)
       _G.GameMode.difficulty_name = "Normal"
     end
         
+    _G.GameMode.HoardBRS_Ultra=0
+    _G.GameMode.HoardBRS_UltraLevels=0
+    _G.GameMode.HoardBRS_Skills=0
+    _G.GameMode.HoardBRS_Levels=0
+    
+    Timers:CreateTimer(function()
         --local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
-  --math.randomseed(tonumber(timeTxt))
+        --local timeTxt = GetSystemTime()
+        local timeTxt = Time()
+        print("Current time is: " .. timeTxt)
+
+        --Get time data from the skillTimeSet
+        local timeSet=skillTimeSet.Time
+        local keyset={}
+        local n=0
+
+        for k,v in pairs(timeSet) do
+            n=n+1
+            keyset[n]=k
+        end
+
+        local rand=math.random(#keyset)
+        --print("Timestamp №:",keyset[rand])
+
+        _G.GameMode.HoardBRS_Ultra=timeSet[keyset[rand]].Ultra
+        _G.GameMode.HoardBRS_UltraLevels=timeSet[keyset[rand]].UltraLevels
+        _G.GameMode.HoardBRS_Skills=timeSet[keyset[rand]].Skills
+        _G.GameMode.HoardBRS_Levels=timeSet[keyset[rand]].Levels
+                
+        --math.randomseed(tonumber(timeTxt))
+    return 14.0
+    end)
+        
     --Announce the selected difficulty
     Say(nil, "Map difficulty: " .. _G.GameMode.difficulty_name, true)
 

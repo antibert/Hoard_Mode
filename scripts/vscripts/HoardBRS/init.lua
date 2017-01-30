@@ -2,7 +2,8 @@
 LinkLuaModifier("modifier_brs_boosted", "HoardBRS/modifiers/modifier_brs_boosted.lua", LUA_MODIFIER_MOTION_NONE)
 
 local skillSet = LoadKeyValues('scripts/vscripts/HoardBRS/abilityList.kv')
-local skillTimeSet = LoadKeyValues('scripts/vscripts/HoardBRS/timeList.kv')
+
+
 
 --[[Get random key string from a selected table]]
 function fetchAbilityParameters(table)
@@ -65,35 +66,10 @@ function fetchAbilityParametersTwoArr(table, table2)
 	return keyset[rand], maxLevel, Toggleable
 end
 
---[[Get time data from the selected table]]
-function fetchAbilityTimeParameters(table)
-	local keyset={}
-	local n=0
-    local Ultra=0
-    local UltraLevels=0
-    local Skills=0
-    local Levels=0
-    
-	for k,v in pairs(table) do
-		n=n+1
-		keyset[n]=k
-	end
-    
-    local rand=math.random(#keyset)
-    print("Timestamp №:",keyset[rand])
-    
-    Ultra=table[keyset[rand]].Ultra
-    UltraLevels=table[keyset[rand]].UltraLevels
-    Skills=table[keyset[rand]].Skills
-    Levels=table[keyset[rand]].Levels
-    
-	return keyset[rand], Ultra, UltraLevels, Skills, Levels
-end
-
 --[[Ability appliance calculation function. Considers time and ability amount]]
-function calculateAbilityPack(target, amount, levels, ...)
-    local tempArray={}
-    local tempArrayIter=0
+function applyAbilityPack(target, amount, levels, ...)
+    --local tempArray={}
+    --local tempArrayIter=0
     local found=2
     
     local argString1={}
@@ -114,12 +90,13 @@ function calculateAbilityPack(target, amount, levels, ...)
             newAbility, maxLevel, Toggleable=fetchAbilityParameters(skillSet[argString1])
         end
         
-        for k,v in pairs(tempArray) do
-            if k==newAbility then
-                found=1
-            break
-            end
-        end
+        --This check is not quite necessary, considering we're doing the next one too.
+        --for k,v in pairs(tempArray) do
+        --    if k==newAbility then
+        --        found=1
+        --    break
+        --    end
+        --end
         for i=20,0,-1 do -- Magical number 20 represents maximal ability amount unit ever may have.
             local ability_index = target:GetAbilityByIndex(i)
             if ability_index ~= nil then
@@ -141,8 +118,9 @@ function calculateAbilityPack(target, amount, levels, ...)
                 h_Ability:ToggleAbility()
                 h_Ability:ToggleAutoCast()
             end
-            tempArray[tempArrayIter]=newAbility
-            tempArrayIter=tempArrayIter+1
+            --Extras for the commented check above.
+            --tempArray[tempArrayIter]=newAbility
+            --tempArrayIter=tempArrayIter+1
         end
         found=2
     end
@@ -154,25 +132,17 @@ if BonusRoundSkills == nil then
 end
 
 --[[Apply abilities from the KV file]]
-function BonusRoundSkills:ApplyAbilities(target, skillarray, timearray)
-    local skillTime = skillTimeSet.Time
-    local currTime={}
+function BonusRoundSkills:ApplyAbilities(target, skillarray)    
+    
+    --Gather the skill appliance data from the global vars, that is refreshed by timer
+    local Ultra=_G.GameMode.HoardBRS_Ultra
+    local UltraLevels=_G.GameMode.HoardBRS_UltraLevels
+    local Skills=_G.GameMode.HoardBRS_Skills
+    local Levels=_G.GameMode.HoardBRS_Levels   
         
-    local Ultra=0
-    local UltraLevels=0
-    local Skills=0
-    local Levels=0   
-    
-    fetchAbilityTimeParameters(skillTime)
-    Skills=1
-    Levels=1
-    
-    local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
-    math.randomseed(tonumber(timeTxt)+math.random(50))
-    
-    calculateAbilityPack(target, Ultra, UltraLevels, "UltraSkills")
-    calculateAbilityPack(target, Skills, Levels, "nhuSkills", "heroSkills")
-
+    --[[Apply skills, based on the target, skillslot amount, skill level and category key in the abilityList.kv]]
+    applyAbilityPack(target, Ultra, UltraLevels, "UltraSkills")
+    applyAbilityPack(target, Skills, Levels, "nhuSkills", "heroSkills")
 end
 
 --[[Map's trigger_dota onTrigger action is translated to here]]
@@ -183,6 +153,6 @@ function trigger_Upgrade(trigger)
     return
     else
         unit:AddNewModifier(unit, nil, "modifier_brs_boosted", {duration=-1})
-        BonusRoundSkills:ApplyAbilities(unit, skillSet, skillTimeSet)
+        BonusRoundSkills:ApplyAbilities(unit, skillSet)
     end
 end

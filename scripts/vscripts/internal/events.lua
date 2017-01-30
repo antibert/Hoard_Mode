@@ -1,7 +1,11 @@
 
-local skillTimeSet = LoadKeyValues('scripts/vscripts/HoardBRS/timeList.kv')
+skillTimeSet = LoadKeyValues('scripts/vscripts/HoardBRS/timeList.kv')
+skillTimeKeyset={}
 
-
+_G.GameMode.HoardBRS_Ultra=0
+_G.GameMode.HoardBRS_UltraLevels=0
+_G.GameMode.HoardBRS_Skills=0
+_G.GameMode.HoardBRS_Levels=0
 
 -- The overall game state has changed
 function GameMode:_OnGameRulesStateChange(keys)
@@ -28,36 +32,26 @@ function GameMode:_OnGameRulesStateChange(keys)
       _G.GameMode.difficulty_name = "Normal"
     end
         
-    _G.GameMode.HoardBRS_Ultra=0
-    _G.GameMode.HoardBRS_UltraLevels=0
-    _G.GameMode.HoardBRS_Skills=0
-    _G.GameMode.HoardBRS_Levels=0
+    --Get time data from the skillTimeSet. Fill in the keyset table.
+    local n=0
+
+    for k,v in pairs(skillTimeSet.Time) do
+        n=n+1
+        skillTimeKeyset[n]=k
+    end
     
     Timers:CreateTimer(function()
-        --local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
-        --local timeTxt = GetSystemTime()
-        local timeTxt = Time()
-        print("Current time is: " .. timeTxt)
+        local currTime = tonumber(Time())
+        local currMinutes=math.floor(currTime/60)
+        print("Current time is: " .. currTime)    
+        --local rand=math.random(#skillTimeKeyset)
 
-        --Get time data from the skillTimeSet
-        local timeSet=skillTimeSet.Time
-        local keyset={}
-        local n=0
-
-        for k,v in pairs(timeSet) do
-            n=n+1
-            keyset[n]=k
+        if skillTimeSet.Time[skillTimeKeyset[currMinutes]] ~= nil then
+            _G.GameMode.HoardBRS_Ultra=skillTimeSet.Time[skillTimeKeyset[currMinutes]].Ultra
+            _G.GameMode.HoardBRS_UltraLevels=skillTimeSet.Time[skillTimeKeyset[currMinutes]].UltraLevels
+            _G.GameMode.HoardBRS_Skills=skillTimeSet.Time[skillTimeKeyset[currMinutes]].Skills
+            _G.GameMode.HoardBRS_Levels=skillTimeSet.Time[skillTimeKeyset[currMinutes]].Levels
         end
-
-        local rand=math.random(#keyset)
-        --print("Timestamp №:",keyset[rand])
-
-        _G.GameMode.HoardBRS_Ultra=timeSet[keyset[rand]].Ultra
-        _G.GameMode.HoardBRS_UltraLevels=timeSet[keyset[rand]].UltraLevels
-        _G.GameMode.HoardBRS_Skills=timeSet[keyset[rand]].Skills
-        _G.GameMode.HoardBRS_Levels=timeSet[keyset[rand]].Levels
-                
-        --math.randomseed(tonumber(timeTxt))
     return 14.0
     end)
         

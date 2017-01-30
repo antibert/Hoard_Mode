@@ -10,11 +10,23 @@ function GameMode:_OnGameRulesStateChange(keys)
     GameMode:OnAllPlayersLoaded()
         
     --In case noone pressed vote buttons, prepare data
-    if GameMode.DIFFICULTY==nil then
+    if _G.GameMode.DIFFICULTY==nil then
        GameMode:ProcessVotes()     
     end
+        
+    _G.GameMode.difficulty_name = "Easy"
+    if _G.GameMode.DIFFICULTY == 3 then
+      _G.GameMode.difficulty_name = "Ultra"
+    elseif _G.GameMode.DIFFICULTY == 2 then
+      _G.GameMode.difficulty_name = "Hard"
+    elseif _G.GameMode.DIFFICULTY == 1 then
+      _G.GameMode.difficulty_name = "Normal"
+    end
+        
+        --local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
+  --math.randomseed(tonumber(timeTxt))
     --Announce the selected difficulty
-    Say(nil, "Current difficulty: " .. GameMode:GetDifficulty(), true)
+    Say(nil, "Map difficulty: " .. _G.GameMode.difficulty_name, true)
 
     if USE_CUSTOM_TEAM_COLORS_FOR_PLAYERS then
       for i=0,9 do
@@ -38,14 +50,6 @@ function GameMode:ForceAssignHeroes()
             hPlayer:MakeRandomHeroSelection()
         end
 	end
-end
-
-function GameMode:GetDifficulty()
-    if mode.DIFFICULTY==nil then
-        GameMode:ProcessVotes()
-    end
-    print("Requested difficulty is " .. mode.DIFFICULTY)
-return mode.DIFFICULTY
 end
 
 function GameMode:ProcessVotes()

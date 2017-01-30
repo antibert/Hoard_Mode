@@ -1,6 +1,5 @@
 
 skillTimeSet = LoadKeyValues('scripts/vscripts/HoardBRS/timeList.kv')
-skillTimeKeyset={}
 
 _G.GameMode.HoardBRS_Ultra=0
 _G.GameMode.HoardBRS_UltraLevels=0
@@ -32,25 +31,16 @@ function GameMode:_OnGameRulesStateChange(keys)
       _G.GameMode.difficulty_name = "Normal"
     end
         
-    --Get time data from the skillTimeSet. Fill in the keyset table.
-    local n=0
-
-    for k,v in pairs(skillTimeSet.Time) do
-        n=n+1
-        skillTimeKeyset[n]=k
-    end
-    
+    --[[Initializing HordeBRS]]
     Timers:CreateTimer(function()
-        local currTime = tonumber(Time())
-        local currMinutes=math.floor(currTime/60)
-        print("Current time is: " .. currTime)    
-        --local rand=math.random(#skillTimeKeyset)
+        local currTime = Time()
+        local currMinutesStr=tostring(math.floor(currTime/60))
 
-        if skillTimeSet.Time[skillTimeKeyset[currMinutes]] ~= nil then
-            _G.GameMode.HoardBRS_Ultra=skillTimeSet.Time[skillTimeKeyset[currMinutes]].Ultra
-            _G.GameMode.HoardBRS_UltraLevels=skillTimeSet.Time[skillTimeKeyset[currMinutes]].UltraLevels
-            _G.GameMode.HoardBRS_Skills=skillTimeSet.Time[skillTimeKeyset[currMinutes]].Skills
-            _G.GameMode.HoardBRS_Levels=skillTimeSet.Time[skillTimeKeyset[currMinutes]].Levels
+        if skillTimeSet.Time[currMinutesStr] ~= nil then
+            _G.GameMode.HoardBRS_Ultra=skillTimeSet.Time[currMinutesStr].Ultra
+         _G.GameMode.HoardBRS_UltraLevels=skillTimeSet.Time[currMinutesStr].UltraLevels
+            _G.GameMode.HoardBRS_Skills=skillTimeSet.Time[currMinutesStr].Skills
+            _G.GameMode.HoardBRS_Levels=skillTimeSet.Time[currMinutesStr].Levels
         end
     return 14.0
     end)

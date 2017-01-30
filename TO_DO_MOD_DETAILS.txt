@@ -49,6 +49,9 @@ Homing Missile mana cost reduced to 60/70/80/90
 Homing Missile now always deals max damage
 Homing Missile stun duration increased to 2.4/2.7/3.0/3.3
 
+// Invoker
+Tornado cooldown reverted to 30 seconds
+
 // Luna
 Fixed Lucent Beam damage talent
 Increased Moon Glaive bounce count to 2/4/6/8

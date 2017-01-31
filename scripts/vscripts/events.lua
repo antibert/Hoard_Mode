@@ -12,6 +12,7 @@ function GameMode:OnDisconnect(keys)
   local userid = keys.userid
 
 end
+
 -- The overall game state has changed
 function GameMode:OnGameRulesStateChange(keys)
   DebugPrint("[BAREBONES] GameRules State Changed")
@@ -25,16 +26,7 @@ function GameMode:OnGameRulesStateChange(keys)
   if newState == DOTA_GAMERULES_STATE_PRE_GAME then
     local initial_time = 2
     local line_duration = 5
-
-    local difficulty_name = "Easy"
-    if _G.GameMode.DIFFICULTY == 3 then
-      difficulty_name = "Ultra"
-    elseif _G.GameMode.DIFFICULTY == 2 then
-      difficulty_name = "Hard"
-    elseif _G.GameMode.DIFFICULTY == 1 then
-        difficulty_name = "Normal"
-    end
-
+        
     Timers:CreateTimer(initial_time, function()
       -- First line
       Notifications:BottomToAll( {text = "#horde_introduction_line_01", duration = line_duration, style = {color = "White"} } )
@@ -43,7 +35,7 @@ function GameMode:OnGameRulesStateChange(keys)
       -- Second line
       Timers:CreateTimer(line_duration, function()
         Notifications:BottomToAll( {text = "#horde_introduction_line_03", duration = line_duration, style = {color = "White"} }	)
-        Notifications:BottomToAll( {text = difficulty_name, duration = line_duration, style = {color = "DodgerBlue"}, continue = true}	)
+        Notifications:BottomToAll( {text = _G.GameMode.difficulty_name, duration = line_duration, style = {color = "DodgerBlue"}, continue = true}	)
       end)
     end)
   end
@@ -102,7 +94,7 @@ end
 function GameMode:OnItemPurchased( keys )
   DebugPrint( '[BAREBONES] OnItemPurchased' )
   DebugPrintTable(keys)
-
+    
   -- The playerID of the hero who is buying something
   local plyID = keys.PlayerID
   if not plyID then return end

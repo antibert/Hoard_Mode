@@ -1,3 +1,11 @@
+
+skillTimeSet = LoadKeyValues('scripts/vscripts/HoardBRS/timeList.kv')
+
+_G.GameMode.HoardBRS_Ultra=0
+_G.GameMode.HoardBRS_UltraLevels=0
+_G.GameMode.HoardBRS_Skills=0
+_G.GameMode.HoardBRS_Levels=0
+
 -- The overall game state has changed
 function GameMode:_OnGameRulesStateChange(keys)
   local newState = GameRules:State_Get()
@@ -10,11 +18,35 @@ function GameMode:_OnGameRulesStateChange(keys)
     GameMode:OnAllPlayersLoaded()
         
     --In case noone pressed vote buttons, prepare data
-    if GameMode.DIFFICULTY==nil then
+    if _G.GameMode.DIFFICULTY==nil then
        GameMode:ProcessVotes()     
     end
+        
+    _G.GameMode.difficulty_name = "Easy"
+    if _G.GameMode.DIFFICULTY == 3 then
+      _G.GameMode.difficulty_name = "Ultra"
+    elseif _G.GameMode.DIFFICULTY == 2 then
+      _G.GameMode.difficulty_name = "Hard"
+    elseif _G.GameMode.DIFFICULTY == 1 then
+      _G.GameMode.difficulty_name = "Normal"
+    end
+        
+    --[[Initializing HordeBRS]]
+    Timers:CreateTimer(function()
+        local currTime = Time()
+        local currMinutesStr=tostring(math.floor(currTime/60))
+
+        if skillTimeSet.Time[currMinutesStr] ~= nil then
+            _G.GameMode.HoardBRS_Ultra=skillTimeSet.Time[currMinutesStr].Ultra
+         _G.GameMode.HoardBRS_UltraLevels=skillTimeSet.Time[currMinutesStr].UltraLevels
+            _G.GameMode.HoardBRS_Skills=skillTimeSet.Time[currMinutesStr].Skills
+            _G.GameMode.HoardBRS_Levels=skillTimeSet.Time[currMinutesStr].Levels
+        end
+    return 14.0
+    end)
+        
     --Announce the selected difficulty
-    Say(nil, "Current difficulty: " .. GameMode:GetDifficulty(), true)
+    Say(nil, "Map difficulty: " .. _G.GameMode.difficulty_name, true)
 
     if USE_CUSTOM_TEAM_COLORS_FOR_PLAYERS then
       for i=0,9 do
@@ -38,14 +70,6 @@ function GameMode:ForceAssignHeroes()
             hPlayer:MakeRandomHeroSelection()
         end
 	end
-end
-
-function GameMode:GetDifficulty()
-    if mode.DIFFICULTY==nil then
-        GameMode:ProcessVotes()
-    end
-    print("Requested difficulty is " .. mode.DIFFICULTY)
-return mode.DIFFICULTY
 end
 
 function GameMode:ProcessVotes()

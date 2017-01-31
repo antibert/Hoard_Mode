@@ -24,12 +24,12 @@ function BonusRoundSkills:InitHoardBRS(baseTime)
     print("[HoardBRS initialized]")
     print("Base time is:" .. baseTime)
     
-    Timers:CreateTimer(function()
+    Timers:CreateTimer(baseTime, function()
         local currTime = Time() - _G.GameMode.HoardBRS_StartTime
         local currMinutesStr=tostring(math.floor(currTime/60))
-        print("Current time is:" .. Time())
-        print("currTime:" .. currTime)
-        print("currMinutesStr:" .. currMinutesStr)
+        print("Current time is: " .. Time())
+        print("currTime: " .. currTime)
+        print("currMinutesStr: " .. currMinutesStr)
             
         if skillTimeSet.Time[currMinutesStr] ~= nil then
             _G.GameMode.HoardBRS_Ultra=skillTimeSet.Time[currMinutesStr].Ultra

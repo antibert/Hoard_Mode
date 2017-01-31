@@ -43,8 +43,7 @@ function Spawner:Spawn(keys)
   end
   waypoint = waypoint:GetAbsOrigin()
 
-  local unit = keys.unit
-  if unit == nil then
+  if keys.unit == nil then
     print("Spawner missing unit")
     return
   end
@@ -76,10 +75,10 @@ function Spawner:Spawn(keys)
   end
 
   for i=1,units_to_spawn do
-    local unit = CreateUnitByName(unit, point, true, nil, nil, DOTA_TEAM_BADGUYS)
+    local unit = CreateUnitByName(keys.unit, point, true, nil, nil, DOTA_TEAM_BADGUYS)
 
-    if unit ~= nil then
-      print('Could not create a unit'.. unit)
+    if unit == nil then
+      print('Could not create a unit: '.. keys.unit)
     else
       unit.Target = keys.waypoint
 

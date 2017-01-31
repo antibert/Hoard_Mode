@@ -69,7 +69,7 @@ function Spawners:LoadWave(wave, waveNumber, difficulty, players, mapInfo)
     --Giving a boosting boot to a "Bonus Round Skills for creeps" system.
     if wave.NeverEnd==1 and _G.GameMode.NewPar==nil then 
         _G.GameMode.NewPar=1
-        BonusRoundSkills:InitHoardBRS(Time())
+        BonusRoundSkills:InitHoardBRS(waveStart(waveNumber))
     end
 
 	for _,unit in pairs(chosenWave.Creatures) do

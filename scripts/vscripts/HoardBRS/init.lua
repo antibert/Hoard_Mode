@@ -21,15 +21,10 @@ _G.GameMode.HoardBRS_StartTime=0
 --[[Initializing HordeBRS]]
 function BonusRoundSkills:InitHoardBRS(baseTime)
     _G.GameMode.HoardBRS_StartTime=baseTime
-    print("[HoardBRS initialized]")
-    print("Base time is:" .. baseTime)
     
     Timers:CreateTimer(baseTime, function()
         local currTime = Time() - _G.GameMode.HoardBRS_StartTime
         local currMinutesStr=tostring(math.floor(currTime/60))
-        print("Current time is: " .. Time())
-        print("currTime: " .. currTime)
-        print("currMinutesStr: " .. currMinutesStr)
             
         if skillTimeSet.Time[currMinutesStr] ~= nil then
             _G.GameMode.HoardBRS_Ultra=skillTimeSet.Time[currMinutesStr].Ultra
@@ -126,13 +121,6 @@ function applyAbilityPack(target, amount, levels, ...)
             newAbility, maxLevel, Toggleable=fetchAbilityParameters(skillSet[argString1])
         end
         
-        --This check is not quite necessary, considering we're doing the next one too.
-        --for k,v in pairs(tempArray) do
-        --    if k==newAbility then
-        --        found=1
-        --    break
-        --    end
-        --end
         for i=20,0,-1 do -- Magical number 20 represents maximal ability amount unit ever may have.
             local ability_index = target:GetAbilityByIndex(i)
             if ability_index ~= nil then
@@ -154,9 +142,6 @@ function applyAbilityPack(target, amount, levels, ...)
                 h_Ability:ToggleAbility()
                 h_Ability:ToggleAutoCast()
             end
-            --Extras for the commented check above.
-            --tempArray[tempArrayIter]=newAbility
-            --tempArrayIter=tempArrayIter+1
         end
         found=2
     end

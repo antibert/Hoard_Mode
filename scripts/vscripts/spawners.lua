@@ -2,6 +2,8 @@ if Spawners == nil then
 	Spawners = class({})
 end
 
+_G.GameMode.BRSAlreadyStarted=0
+
 require('libraries/timers')
 require('libraries/spawners')
 require('HoardBRS/init')

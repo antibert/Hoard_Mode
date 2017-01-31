@@ -4,6 +4,7 @@ end
 
 require('libraries/timers')
 require('libraries/spawners')
+require('HoardBRS/init')
 
 local waveZeroDuration = 180
 local waveDuration = 270
@@ -64,6 +65,12 @@ function Spawners:LoadWave(wave, waveNumber, difficulty, players, mapInfo)
 	if chosenWave.boss_unit ~= nil then
 		Spawners:SpawnBoss(chosenWave.boss_unit, waveNumber, difficulty, players, mapInfo.bossSpawner, mapInfo.bossDestination)
 	end
+    
+    --Giving a boosting boot to a "Bonus Round Skills for creeps" system.
+    if wave.NeverEnd==1 and _G.GameMode.NewPar==nil then 
+        _G.GameMode.NewPar=1
+        BonusRoundSkills:InitHoardBRS(Time())
+    end
 
 	for _,unit in pairs(chosenWave.Creatures) do
 		if (mapInfo.topLaneSpawner ~= nil and (unit.mid_only == nil or unit.mid_only == "0")) then
@@ -184,7 +191,7 @@ function Spawners:LoadMisc(difficulty, mapInfo)
 			})
 		end
 	})
-
+    
 	if difficulty < 2 then
 		-- spawn money units
 		Spawner:SpawnTimer({
@@ -194,7 +201,7 @@ function Spawners:LoadMisc(difficulty, mapInfo)
 				source =  "spawner10",
 				waypoint = "spawner10",
 				max = 1,
-				order = DOTA_UNIT_ORDER_STOP,
+				order = DOTA_UNIT_ORDER_ATTACK_MOVE,
 				unit = "npc_dota_creature_map_boss"
 			}
 		})

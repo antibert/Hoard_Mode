@@ -1,11 +1,6 @@
 
 skillTimeSet = LoadKeyValues('scripts/vscripts/HoardBRS/timeList.kv')
 
-_G.GameMode.HoardBRS_Ultra=0
-_G.GameMode.HoardBRS_UltraLevels=0
-_G.GameMode.HoardBRS_Skills=0
-_G.GameMode.HoardBRS_Levels=0
-
 -- The overall game state has changed
 function GameMode:_OnGameRulesStateChange(keys)
   local newState = GameRules:State_Get()
@@ -30,21 +25,7 @@ function GameMode:_OnGameRulesStateChange(keys)
     elseif _G.GameMode.DIFFICULTY == 1 then
       _G.GameMode.difficulty_name = "Normal"
     end
-        
-    --[[Initializing HordeBRS]]
-    Timers:CreateTimer(function()
-        local currTime = Time()
-        local currMinutesStr=tostring(math.floor(currTime/60))
-
-        if skillTimeSet.Time[currMinutesStr] ~= nil then
-            _G.GameMode.HoardBRS_Ultra=skillTimeSet.Time[currMinutesStr].Ultra
-         _G.GameMode.HoardBRS_UltraLevels=skillTimeSet.Time[currMinutesStr].UltraLevels
-            _G.GameMode.HoardBRS_Skills=skillTimeSet.Time[currMinutesStr].Skills
-            _G.GameMode.HoardBRS_Levels=skillTimeSet.Time[currMinutesStr].Levels
-        end
-    return 14.0
-    end)
-        
+            
     --Announce the selected difficulty
     Say(nil, "Map difficulty: " .. _G.GameMode.difficulty_name, true)
 

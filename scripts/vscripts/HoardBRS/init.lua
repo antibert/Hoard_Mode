@@ -3,7 +3,43 @@ LinkLuaModifier("modifier_brs_boosted", "HoardBRS/modifiers/modifier_brs_boosted
 
 local skillSet = LoadKeyValues('scripts/vscripts/HoardBRS/abilityList.kv')
 
+if GameMode == nil then
+    _G.GameMode = class({})
+end
 
+-- Precaution
+if BonusRoundSkills == nil then
+	_G.BonusRoundSkills = class({})
+end
+
+_G.GameMode.HoardBRS_Ultra=0
+_G.GameMode.HoardBRS_UltraLevels=0
+_G.GameMode.HoardBRS_Skills=0
+_G.GameMode.HoardBRS_Levels=0
+_G.GameMode.HoardBRS_StartTime=0
+
+--[[Initializing HordeBRS]]
+function BonusRoundSkills:InitHoardBRS(baseTime)
+    _G.GameMode.HoardBRS_StartTime=baseTime
+    print("[HoardBRS initialized]")
+    print("Base time is:" .. baseTime)
+    
+    Timers:CreateTimer(function()
+        local currTime = Time() - _G.GameMode.HoardBRS_StartTime
+        local currMinutesStr=tostring(math.floor(currTime/60))
+        print("Current time is:" .. Time())
+        print("currTime:" .. currTime)
+        print("currMinutesStr:" .. currMinutesStr)
+            
+        if skillTimeSet.Time[currMinutesStr] ~= nil then
+            _G.GameMode.HoardBRS_Ultra=skillTimeSet.Time[currMinutesStr].Ultra
+         _G.GameMode.HoardBRS_UltraLevels=skillTimeSet.Time[currMinutesStr].UltraLevels
+            _G.GameMode.HoardBRS_Skills=skillTimeSet.Time[currMinutesStr].Skills
+            _G.GameMode.HoardBRS_Levels=skillTimeSet.Time[currMinutesStr].Levels
+        end
+    return 14.0
+    end)
+end
 
 --[[Get random key string from a selected table]]
 function fetchAbilityParameters(table)
@@ -124,11 +160,6 @@ function applyAbilityPack(target, amount, levels, ...)
         end
         found=2
     end
-end
-
--- Precaution
-if BonusRoundSkills == nil then
-	_G.BonusRoundSkills = class({})
 end
 
 --[[Apply abilities from the KV file]]

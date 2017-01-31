@@ -76,8 +76,10 @@ function GameMode:ProcessVotes()
 
 		-- Tally the votes into a new table
 		local voteCounts = {}
+		local totalValue = 0
 		for pid, vote in pairs(pidVoteTable) do
 			if not voteCounts[vote] then voteCounts[vote] = 0 end
+			totalValue = totalValue + vote
 			voteCounts[vote] = voteCounts[vote] + 1
 		end
 
@@ -108,9 +110,11 @@ function GameMode:ProcessVotes()
 			highest_key = tieTable[math.random(table.getn(tieTable))]
 		end
 
+		local averageValue = totalValue / table.getn(voteCounts)
+
 		-- Act on the winning vote
 		if category == "difficulty" then
-			mode.DIFFICULTY = highest_key
+			mode.DIFFICULTY = math.floor(averageValue + 0.5)
 			--GameRules:SetPreGameTime( 60 * highest_key )
 			--mode.game_length = highest_key
 		end

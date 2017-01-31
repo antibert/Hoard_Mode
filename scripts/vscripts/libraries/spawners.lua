@@ -43,6 +43,11 @@ function Spawner:Spawn(keys)
   end
   waypoint = waypoint:GetAbsOrigin()
 
+  if keys.unit == nil then
+    print("Spawner missing unit")
+    return
+  end
+
   local order = keys.order
   if order == nil then
     order = DOTA_UNIT_ORDER_ATTACK_MOVE
@@ -72,25 +77,29 @@ function Spawner:Spawn(keys)
   for i=1,units_to_spawn do
     local unit = CreateUnitByName(keys.unit, point, true, nil, nil, DOTA_TEAM_BADGUYS)
 
-    unit.Target = keys.waypoint
+    if unit == nil then
+      print('Could not create a unit: '.. keys.unit)
+    else
+      unit.Target = keys.waypoint
 
-    if unit:IsConsideredHero() then
-      if difficulty > 1 then
-        unit:AddAbility("roshan_spell_block")
-        local roshan_spell_block = unit:FindAbilityByName("roshan_spell_block")
-        if roshan_spell_block ~= nil then
-          roshan_spell_block:SetLevel(1)
+      if unit:IsConsideredHero() then
+        if difficulty > 1 then
+          unit:AddAbility("roshan_spell_block")
+          local roshan_spell_block = unit:FindAbilityByName("roshan_spell_block")
+          if roshan_spell_block ~= nil then
+            roshan_spell_block:SetLevel(1)
+          end
+        end
+
+        if playerCount > 2 then
+          unit:SetMaxHealth(unit:GetMaxHealth() * 1.5)
         end
       end
 
-      if playerCount > 2 then
-        unit:SetMaxHealth(unit:GetMaxHealth() * 1.5)
-      end
+      ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
+        OrderType = order,
+        Position = waypoint, Queue = true} )
     end
-
-    ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
-      OrderType = order,
-      Position = waypoint, Queue = true} )
   end
 end
 

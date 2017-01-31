@@ -2,6 +2,8 @@ if Spawners == nil then
 	Spawners = class({})
 end
 
+_G.GameMode.BRSAlreadyStarted=0
+
 require('libraries/timers')
 require('libraries/spawners')
 require('HoardBRS/init')
@@ -67,8 +69,8 @@ function Spawners:LoadWave(wave, waveNumber, difficulty, players, mapInfo)
 	end
     
     --Giving a boosting boot to a "Bonus Round Skills for creeps" system.
-    if wave.NeverEnd==1 and _G.GameMode.NewPar==nil then 
-        _G.GameMode.NewPar=1
+    if wave.NeverEnd~=nil and _G.GameMode.BRSAlreadyStarted==nil then 
+        _G.GameMode.BRSAlreadyStarted=1
         BonusRoundSkills:InitHoardBRS(Time())
     end
 

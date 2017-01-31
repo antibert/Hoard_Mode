@@ -16405,7 +16405,7 @@
 
         // Time
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "50.0"
+        "AbilityCooldown"               "60.0"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
@@ -16488,7 +16488,6 @@
                     "MODIFIER_STATE_DISARMED"				"MODIFIER_STATE_VALUE_DISABLED"
                     "MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
                     "MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
-                    "MODIFIER_STATE_FLYING"					"MODIFIER_STATE_VALUE_ENABLED"
                 }
             }
 

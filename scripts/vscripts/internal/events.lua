@@ -114,7 +114,8 @@ function GameMode:ProcessVotes()
 
 		-- Act on the winning vote
 		if category == "difficulty" then
-			mode.DIFFICULTY = math.floor(averageValue + 0.5)
+			highest_key = math.floor(averageValue + 0.5)
+			mode.DIFFICULTY = highest_key
 			--GameRules:SetPreGameTime( 60 * highest_key )
 			--mode.game_length = highest_key
 		end

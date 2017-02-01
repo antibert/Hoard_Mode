@@ -1,134 +1,63 @@
 Next Update Patch Notes:
 
-1.22
-Dark Moon parity!
-Ultra late game difficulty ramp!
+1.22a
+Fixed courier crash
+Tweaked difficulty formula
+Synced with new Dark Moon update
 
-Added visual notification of current difficulty earlier on
-Removed jungling Horde creeps
-Various visual clean ups to the maps
-Fixed Skadi particle effect
-Scythe of Vyse and Heaven's Halberd now apply their abilities as an area of effect
-Removed Heaven's Halberd 2 for ceremonial purposes
-
-After the Final skeleton boss comes the Bonus Round!
-From this point forwards, all enemies get access to the Bonus Round Skills system.
-The BRS grants randomly selected abilities from a set pool.
-The longer you take, the more powerful these abilities become.
-See how long you can last... if you dare!
-
-// Abyssal Underlord
-Dark Rift cooldown reduced to 80/70/60
-Dark Rift radius increased to 600
-
-// Beastmaster
-Fixed Axes damage talent
-
-// Centaur Warrunner
-Reworked Return so that it deals 20% damage against Buildings
-Return now deals same damage as live: 16/18/20/22 base + 30/45/60/75% strength
-
-// Crystal Maiden
-Fixed Crystal Nova damage talent
+// Axe
+Increased damage of Counter Helix
+Rescaled counter-helix cooldown to 0.75/0.7/0.65/0.6
+Reduced cooldown of Culling Blade to 15/12.5/10
+Reduced manacost of Culling Blade to 100/75/50
+Reduced scepter cooldown of Culling Blade to 6/6/6
+Slighly reduced damage threshold of Culling Blade
+Changed level 25 talent from 25% spell lifesteal to +20 all stats
 
 // Dark Seer
-Replaced Wall of Replica with Dark Moon version
-Wall of Replica now summons illusions of regular creeps
-Wall of Replica will copy any given creep only once
+Fixed an exploit that let Dark Seer sell items from creep illusions.
+Creep illusions no longer drop bags of gold
 
-// Disruptor
-Kinetic Field duration increased to 3/4/5/6
-Kinetic Field formation time increased to 1.2/1.0/0.8/0.6
-Thunder Strike damage increased to 40/80/120/160 per strike
-Glimpse replaced with Dark Moon version
-Glimpse is now an AoE
-Static Storm mana cost is now a flat 175
+// Nature's Prophet
+Reduced cooldown of Force of Nature to 30/26/22/18
+Reduced mana cost of Force of Nature to 80/90/100/110
+Increased number of Treants summoned to 4/5/6/7
+Treant hit points increased to 850
+Increased cooldown of Wrath of Nature to 80/70/60
+Increased number of bounces to 32/40/48
 
-// Ember Spirit
-Sleight of Fist damage reduction reduced to 0
-Fire Remnant charges changed to 3/5/7
-Fire Remnant charge refresh changed to 35/25/15
-
-// Gyrocopter
-Increased rockets per second of Rocket Barrage from 10 to 12
-Homing Missile damage reduced to 150/300/450/600
-Homing Missile mana cost reduced to 60/70/80/90
-Homing Missile now always deals max damage
-Homing Missile stun duration increased to 2.4/2.7/3.0/3.3
-
-// Invoker
-Tornado cooldown reverted to 30 seconds
-
-// Legion Commander
-Ultimate is now Duel!
-Duel works on any enemy unit, granting damage as normal
-Aghanim's Scepter no longer makes units invulnerable
-
-// Luna
-Fixed Lucent Beam damage talent
-Increased Moon Glaive bounce count to 2/4/6/8
-Reduced Moon Glaive bounce damage from 75% to 65%
-
-// Medusa
-Changed split shot damage reduction to -35/-30/-25/-20
-Increased number of split shot arrows to 3/4/5/6
-
-// Monkey King
-ENABLED!
-Jingu Mastery is now flat damage and lifesteal
-Wukong's Command replaced with Phantasm (temporarily)
+// Leshrac
+Rescaled damage and mana cost of Split Earth
+Increased damage and jump count of Lightning Storm
+Reduced mana cost of Pulse Nova
+Increased radius of Pulse Nova
 
 // Phoenix
-Icarus Dive cooldown rescaled to 20/18/16/14
-Sun Ray cooldown reduced to 20/18/16/14
-Creeps can now hurt the Supernova
-Number of attacks required to destroy the supernova increased to 15/25/35 (25/35/45 with scepter)
+Reduced Icarus Dive cooldown.
+Reduced Icarus Dive hp cost.
+Increased Icarus Dive damage per second.
+Increased Icarus Dive movement slow.
+Reduced Sun Ray’s hp cost per second.
+Increased Sun Ray’s heal percent.
 
-// Rubick
-Null Field now grants nearby allies bonus spell damage and resistance, instead of lowering the resistance of nearby enemies
+// Shadow Fiend
+Reduced cooldown of Requiem of Souls to 100/90/80
 
-// Sand King
-Fixed sand storm damage
-
-// Sniper
-Reduced mana cost of Shrapnel from 50 to 35
-Reduced charge restore time of Shrapnel to 24/22/20/18
-Reduced damage and radius of Shrapnel
-Assassinate replaced with Dark Moon version
-Assassinate deals splash damage
-Assassinate aghs works
-
-// Techies
-Proximity Mine cooldown reduced from 12 to 12/10/8/6
-Proximity Mine mana cost reduced to 70/80/90/100
-Proximity Mine activation delay reduced to 0
-Suicide Squad cooldown reduced to 26/22/18/14
-Suicide Squad hp cost reduced to 25%
-Suicide Squad damage and range increased
-
-
-// Tiny
-Increased stun duration of avalanche
-Reduced mana cost of Toss
-Increased damage of Toss
-
-// Treant
-Increased number of living armor stacks to 10/15/20/25
-Overgrowth moved to a basic power and replaces Nature's Guise
-Leech Seed replaced with Dark Moon version
-Treant has Great Protector ultimate - a self buff that increases damage and reduces movement speed
+// Storm Spirit
+Removed base mana cost of Ball Lightning
 
 // Tusk
-Snowball replaced with Dark Moon version
+Increased damage of ice shards
+Reduced cooldown of ice shards
+Increased ally damage bonus of snowball
+Increased stun duration of snowball
+Reduced mana cost of frozen sigil
 
-
-// Winter Wyvern
-Reduced cooldown of ultimate to 45/40/35
-
-// Zeus
-Lightning Bolt damage reduced to 150/225/325/400
-Lightning Bolt mana cost reduced to 75/80/85/90
-Ultimate replaced with Dark Moon ultimate
+// Venomancer
+Scourge Ward now has Poison Blast ability
+Scourge Ward damage reduced
+Poison Nova cooldown reduced to 70/60/50
+Poison Nova mana cost reduced to 100/150/200
 
 To Do:
 -- update russian lang

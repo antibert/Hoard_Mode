@@ -3009,11 +3009,11 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25.0 15.5 10.0"
+		"AbilityCooldown"				"15.0 12.5 10.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"250 180 110"
+		"AbilityManaCost"				"100 75 50"
 
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
@@ -3027,7 +3027,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"leap_speed"			"1200 1250 1300"
+				"leap_speed"			"1000 1100 1200"
 			}
 			"03"
 			{
@@ -3042,12 +3042,12 @@
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"kill_threshold"			"250 350 500"
+				"kill_threshold"			"250 350 450"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"200 300 400"
+				"damage"					"150 250 350"
 			}
 			"07"
 			{
@@ -3067,12 +3067,12 @@
 			"10"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"10.0 8.0 6.0"
+				"cooldown_scepter"			"6.0 6.0 6.0"
 			}
 			"11"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"kill_threshold_scepter"	"350 500 700"
+				"kill_threshold_scepter"	"300 450 625"
 			}
 			"12"
 			{
@@ -3606,6 +3606,151 @@
         }
     }
 
+    //=================================================================================================================
+    // Holdout: Scourge Ward Venomous Gale
+    //=================================================================================================================
+    "holdout_scourge_venomous_gale"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"						"ability_datadriven"
+        "AbilityTextureName"			"venomancer_venomous_gale"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+        "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+        "AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+
+        // Casting
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"				"700"
+        "AbilityCastPoint"				"0.0 0.0 0.0 0.0"
+
+        // Time
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"				"22.0 22.0 22.0 22.0"
+
+        // Cost
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityManaCost"				"0"
+
+        "OnSpellStart"
+        {
+            "LinearProjectile"
+            {
+                "Target"				"POINT"
+                "EffectName"			"particles/units/heroes/hero_venomancer/venomancer_venomous_gale.vpcf"
+                "MoveSpeed"				"%speed"
+                "StartRadius"			"%radius"
+                "EndRadius"				"%radius"
+                "TargetTeams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "TargetTypes"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+                "TargetFlags"			"DOTA_UNIT_TARGET_FLAG_NONE"
+                "HasFrontalCone"		"0"
+                "ProvidesVision"		"1"
+                "VisionRadius"			"400"
+            }
+            "FireSound"
+            {
+                "EffectName"			"Hero_Venomancer.VenomousGale"
+            }
+        }
+
+        "OnProjectileHitUnit"
+        {
+            "DeleteOnHit"				"false"
+
+            "Damage"
+            {
+                "Target"				"TARGET"
+                "Type"					"DAMAGE_TYPE_MAGICAL"
+                "Damage"				"%strike_damage"
+            }
+
+            "ApplyModifier"
+            {
+                "ModifierName"			"modifier_holdout_scourge_gale"
+                "Duration"				"%duration"
+                "Target"				"TARGET"
+            }
+
+            "FireSound"
+            {
+                "EffectName"			"Hero_Venomancer.VenomousGaleImpact"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_holdout_scourge_gale"
+            {
+                "IsDebuff"		"1"
+                "ThinkInterval"		"%tick_interval"
+                "OnIntervalThink"
+                {
+                    "Damage"
+                    {
+                        "Target"				"TARGET"
+                        "Type"					"DAMAGE_TYPE_MAGICAL"
+                        "Damage"				"%tick_damage"
+                    }
+                }
+
+                "AttachEffect"
+                {
+                    "EffectName"		"particles/units/heroes/hero_venomancer/venomancer_gale_poison_debuff.vpcf"
+                    "EffectAttachType"	"follow_origin"
+                    "Target"			"TARGET"
+                }
+
+                "Duration"	"%duration"
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "%movement_slow"
+                }
+            }
+        }
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "duration"				"10"
+            }
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "strike_damage"			"0"
+            }
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "tick_damage"			"5 20 35 50"
+            }
+            "04"
+            {
+                "var_type"				"FIELD_FLOAT"
+                "tick_interval"			"3.0 3.0 3.0 3.0"
+            }
+            "05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "movement_slow"			"-15"
+            }
+            "06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "radius"				"125"
+            }
+            "07"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "speed"					"1200 1200 1200 1200"
+            }
+        }
+    }
+
 	//=================================================================================================================
 	// Holdout: Scourge Ward
 	//=================================================================================================================
@@ -3624,7 +3769,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13.0"
+		"AbilityCooldown"				"15.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -3642,12 +3787,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ward_hp_tooltip"		"250 400 550 700"
+				"ward_hp_tooltip"		"150 300 450 600"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ward_damage_tooltip"	"50 80 110 140"
+				"ward_damage_tooltip"	"20 30 40 50"
 			}
 		}
 	}

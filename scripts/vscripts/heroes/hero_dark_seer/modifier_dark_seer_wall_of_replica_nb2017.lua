@@ -27,7 +27,7 @@ function modifier_dark_seer_wall_of_replica_nb2017:OnCreated( kv )
 		self.vWallDirection = Vector( kv["dir_x"], kv["dir_y"], kv["dir_z"] )
 		self:GetParent():SetForwardVector( self.vWallDirection )
 		self.vWallRight = self:GetParent():GetRightVector() * self.width / 2
-		
+
 		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_dark_seer/dark_seer_wall_of_replica.vpcf", PATTACH_CUSTOMORIGIN, nil );
 		ParticleManager:SetParticleControlForward( nFXIndex, 0, self.vWallDirection );
 		ParticleManager:SetParticleControl( nFXIndex, 0, ( self:GetParent():GetOrigin() + self.vWallRight ) );
@@ -36,7 +36,7 @@ function modifier_dark_seer_wall_of_replica_nb2017:OnCreated( kv )
 		self:AddParticle( nFXIndex, false, false, -1, false, false )
 
 		self:StartIntervalThink( 0.0 )
-		EmitSoundOn( "Hero_Dark_Seer.Wall_of_Replica_Start", self:GetParent() )	
+		EmitSoundOn( "Hero_Dark_Seer.Wall_of_Replica_Start", self:GetParent() )
 		self:GetParent():EmitSoundParams( "Hero_Dark_Seer.Wall_of_Replica_lp", 100, 0.0, self:GetDuration() )
 
 		self.hReplicatedUnits = {}
@@ -64,44 +64,68 @@ function modifier_dark_seer_wall_of_replica_nb2017:OnIntervalThink()
 				local bTryCreate = true
 				for _, replicated in pairs( self.hReplicatedUnits ) do
 					if enemy == replicated then
-				    	bTryCreate = false
-				    end
+						bTryCreate = false
+					end
 				end
 
-			    if bTryCreate == true then 
-			    	local flDistOffLine = CalcDistanceToLineSegment2D( enemy:GetOrigin(), vLineA, vLineB )
-			    	if flDistOffLine <= ( enemy:GetPaddedCollisionRadius() + 50.0 ) then
-			    		table.insert( self.hReplicatedUnits, enemy )
-			    		local flDuration = self:GetDieTime() - GameRules:GetGameTime()
-			    		local kv =
-			    		{
-			    			duration = flDuration,
-			    			outgoing_damage = self.replica_damage_outgoing,
-			    			replica_damage_incoming = self.replica_damage_incoming,
-			    		}
+				if bTryCreate == true then
+					local flDistOffLine = CalcDistanceToLineSegment2D( enemy:GetOrigin(), vLineA, vLineB )
+					if flDistOffLine <= ( enemy:GetPaddedCollisionRadius() + 50.0 ) then
+						table.insert( self.hReplicatedUnits, enemy )
+						local flDuration = self:GetDieTime() - GameRules:GetGameTime()
+						local kv =
+						{
+							duration = flDuration,
+							outgoing_damage = self.replica_damage_outgoing,
+							replica_damage_incoming = self.replica_damage_incoming,
+						}
 
-			    		local replica = CreateUnitByName( enemy:GetUnitName(), enemy:GetOrigin() + RandomVector( enemy:GetPaddedCollisionRadius() + 50.0 ), true, self:GetCaster(), self:GetCaster(), self:GetCaster():GetTeamNumber() )
-			    		
-			    		if replica ~= nil then
-			    			local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_dark_seer/dark_seer_wall_of_replica_replicate.vpcf", PATTACH_ABSORIGIN_FOLLOW, enemy );
+						local replica = CreateUnitByName( enemy:GetUnitName(), enemy:GetOrigin() + RandomVector( enemy:GetPaddedCollisionRadius() + 50.0 ), true, self:GetCaster(), self:GetCaster(), self:GetCaster():GetTeamNumber() )
+
+						if replica ~= nil then
+							local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_dark_seer/dark_seer_wall_of_replica_replicate.vpcf", PATTACH_ABSORIGIN_FOLLOW, enemy );
 							ParticleManager:SetParticleControlEnt( nFXIndex, 1, replica, PATTACH_ABSORIGIN_FOLLOW, nil, enemy:GetOrigin(), true );
 							ParticleManager:ReleaseParticleIndex( nFXIndex );
 
-			    			replica:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_illusion", kv )
-			    			replica:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_darkseer_wallofreplica_illusion", { duration = flDuration } )
-			    			replica:SetControllableByPlayer( self:GetCaster():GetPlayerID(), true )
-			    			replica:SetIdleAcquire( true )
-			    		end
+							replica:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_illusion", kv )
+							replica:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_darkseer_wallofreplica_illusion", { duration = flDuration } )
+							replica:SetControllableByPlayer( self:GetCaster():GetPlayerID(), true )
+							replica:SetIdleAcquire( true )
+							FindClearSpaceForUnit( replica, replica:GetOrigin(), true )
 
-			    		local kv2 =
-			    		{
-			    			duration = self.slow_duration
-			    		}
-			    		enemy:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_dark_seer_wall_slow", kv2 )
-			    	end
-			    end
+							local hAbility = replica:FindAbilityByName( "generic_gold_bag_fountain_large" )
+							if hAbility ~= nil then
+								replica:RemoveAbility( "generic_gold_bag_fountain_large" )
+							end
+
+							local hAbility = replica:FindAbilityByName( "generic_gold_bag_fountain_medium" )
+							if hAbility ~= nil then
+								replica:RemoveAbility( "generic_gold_bag_fountain_medium" )
+							end
+
+							local hAbility = replica:FindAbilityByName( "generic_gold_bag_fountain_small" )
+							if hAbility ~= nil then
+								replica:RemoveAbility( "generic_gold_bag_fountain_small" )
+							end
+
+							for i = 0, DOTA_ITEM_MAX - 1 do
+								local item = replica:GetItemInSlot( i )
+								if item ~= nil then
+									item:SetSellable( false )
+									item:SetDroppable( false )
+								end
+							end
+						end
+
+						local kv2 =
+						{
+							duration = self.slow_duration
+						}
+						enemy:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_dark_seer_wall_slow", kv2 )
+					end
+				end
 			end
-			
+
 		end
 	end
 end

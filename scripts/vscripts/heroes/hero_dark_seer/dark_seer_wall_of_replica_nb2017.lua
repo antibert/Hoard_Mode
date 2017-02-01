@@ -3,7 +3,7 @@ LinkLuaModifier( "modifier_dark_seer_wall_of_replica_nb2017", "heroes/hero_dark_
 
 --------------------------------------------------------------------------------
 
-function dark_seer_wall_of_replica_nb2017:OnSpellStart()	
+function dark_seer_wall_of_replica_nb2017:OnSpellStart()
 	local vWallDirection = self:GetCursorPosition() - self:GetCaster():GetOrigin()
 	vWallDirection = vWallDirection:Normalized();
 

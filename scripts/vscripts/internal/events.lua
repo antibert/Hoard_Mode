@@ -110,15 +110,15 @@ function GameMode:ProcessVotes()
 			highest_key = tieTable[math.random(table.getn(tieTable))]
 		end
 
-		local averageValue = totalValue / table.getn(voteCounts)
+		--local averageValue = totalValue / table.getn(voteCounts)
 
 		-- Act on the winning vote
-		if category == "difficulty" then
-			highest_key = math.floor(averageValue + 0.5)
-			mode.DIFFICULTY = highest_key
+		--if category == "difficulty" then
+			--highest_key = math.floor(averageValue + 0.5)
+			--mode.DIFFICULTY = highest_key
 			--GameRules:SetPreGameTime( 60 * highest_key )
 			--mode.game_length = highest_key
-		end
+		--end
 
 		print(category .. ": " .. highest_key)
         

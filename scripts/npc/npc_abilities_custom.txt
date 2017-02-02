@@ -4239,7 +4239,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_lua"
 		"AbilityTextureName"			"sniper_assassinate"
-		"ScriptFile"					"abilities/sniper_assassinate_dm2017"
+		"ScriptFile"					"heroes/hero_sniper/sniper_assassinate_dm2017"
 
 		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN"

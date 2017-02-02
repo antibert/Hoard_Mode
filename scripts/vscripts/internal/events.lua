@@ -113,12 +113,12 @@ function GameMode:ProcessVotes()
 		--local averageValue = totalValue / table.getn(voteCounts)
 
 		-- Act on the winning vote
-		--if category == "difficulty" then
+		if category == "difficulty" then
 			--highest_key = math.floor(averageValue + 0.5)
-			--mode.DIFFICULTY = highest_key
+			mode.DIFFICULTY = highest_key
 			--GameRules:SetPreGameTime( 60 * highest_key )
 			--mode.game_length = highest_key
-		--end
+		end
 
 		print(category .. ": " .. highest_key)
         

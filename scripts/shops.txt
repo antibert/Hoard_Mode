@@ -18,7 +18,6 @@
         "item"		"item_bottle"
 	    "item"		"item_greater_salve"
 		"item"      "item_cheese"
-		"item"      "item_building_upgrade_datadriven"
 	}
 
 	"attributes"
@@ -36,6 +35,7 @@
 		"item"		"item_staff_of_wizardry"
 		"item"		"item_ultimate_orb"
         "item"		"item_talisman_of_evasion"
+        "item"      "item_building_upgrade_datadriven"
 	}
 
 	"weapons_armor"

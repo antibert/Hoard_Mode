@@ -1,63 +1,9 @@
 Next Update Patch Notes:
 
-1.22a
-Fixed courier crash
-Tweaked difficulty formula
-Synced with new Dark Moon update
-
-// Axe
-Increased damage of Counter Helix
-Rescaled counter-helix cooldown to 0.75/0.7/0.65/0.6
-Reduced cooldown of Culling Blade to 15/12.5/10
-Reduced manacost of Culling Blade to 100/75/50
-Reduced scepter cooldown of Culling Blade to 6/6/6
-Slighly reduced damage threshold of Culling Blade
-Changed level 25 talent from 25% spell lifesteal to +20 all stats
-
-// Dark Seer
-Fixed an exploit that let Dark Seer sell items from creep illusions.
-Creep illusions no longer drop bags of gold
-
-// Nature's Prophet
-Reduced cooldown of Force of Nature to 30/26/22/18
-Reduced mana cost of Force of Nature to 80/90/100/110
-Increased number of Treants summoned to 4/5/6/7
-Treant hit points increased to 850
-Increased cooldown of Wrath of Nature to 80/70/60
-Increased number of bounces to 32/40/48
-
-// Leshrac
-Rescaled damage and mana cost of Split Earth
-Increased damage and jump count of Lightning Storm
-Reduced mana cost of Pulse Nova
-Increased radius of Pulse Nova
-
-// Phoenix
-Reduced Icarus Dive cooldown.
-Reduced Icarus Dive hp cost.
-Increased Icarus Dive damage per second.
-Increased Icarus Dive movement slow.
-Reduced Sun Ray’s hp cost per second.
-Increased Sun Ray’s heal percent.
-
-// Shadow Fiend
-Reduced cooldown of Requiem of Souls to 100/90/80
-
-// Storm Spirit
-Removed base mana cost of Ball Lightning
-
-// Tusk
-Increased damage of ice shards
-Reduced cooldown of ice shards
-Increased ally damage bonus of snowball
-Increased stun duration of snowball
-Reduced mana cost of frozen sigil
-
-// Venomancer
-Scourge Ward now has Poison Blast ability
-Scourge Ward damage reduced
-Poison Nova cooldown reduced to 70/60/50
-Poison Nova mana cost reduced to 100/150/200
+1.22b
+Another difficulty selection bugfix
+Fixed Sniper's ult
+Moved Building Upgrade to an actual visible spot
 
 To Do:
 -- update russian lang

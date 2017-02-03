@@ -1,9 +1,7 @@
 Next Update Patch Notes:
 
-1.22b
-Another difficulty selection bugfix
-Fixed Sniper's ult
-Moved Building Upgrade to an actual visible spot
+1.22c
+Made rapier ogre more aggressive
 
 To Do:
 -- update russian lang

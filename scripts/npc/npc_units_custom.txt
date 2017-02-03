@@ -4749,6 +4749,9 @@
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"Target"                    "spawner10"
 		"vscripts"					"MapBossAI.lua"
+
+		"IsNeutralUnitType"            "1"
+		"AutoAttacksByDefault"         "1"
 		
 		// Creature Data
 		//----------------------------------------------------------------

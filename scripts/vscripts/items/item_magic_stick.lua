@@ -10,6 +10,7 @@ function MagicStickActivate(keys)
 	caster:GiveMana(amount_to_restore)
 	
 	ability:SetCurrentCharges(0)
+	caster.oldCharges = 0
 end
 
 function MagicStickCharge(keys)

@@ -40,6 +40,11 @@ function sandStorm_Damage( keys )
     local radius = keys.radius
 	local caster_loc = caster:GetAbsOrigin()
 
+	local hTalent = caster:FindAbilityByName( keys.bonus_damage )
+	if hTalent and hTalent:GetLevel() > 0 then
+		damage = damage + hTalent:GetSpecialValueFor("value")
+	end
+
 	local enemies = FindUnitsInRadius(caster:GetTeamNumber(), caster_loc, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
     
     for _,enemy in pairs(enemies) do

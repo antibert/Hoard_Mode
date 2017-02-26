@@ -4960,6 +4960,7 @@
 						"Function"		"sandStorm_Damage"
                         
                         "damage"        "%AbilityDamage"
+                        "bonus_damage"  "special_bonus_unique_sand_king_2"
                         "radius"        "%sand_storm_radius"
 					}
 				}
@@ -4974,6 +4975,7 @@
 						"Function"		"sandStorm_Damage"
                         
                         "damage"        "%AbilityDamage"
+                        "bonus_damage"  "special_bonus_unique_sand_king_2"
                         "radius"        "%sand_storm_radius"
 					}
 				}
@@ -12332,7 +12334,7 @@
             "04"
             {
                 "var_type"				"FIELD_FLOAT"
-                "mini_stun"				"0.1"
+                "mini_stun"				"0.75"
             }
             "05"
             {
@@ -16162,12 +16164,27 @@
                     "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%bonus_movespeed"
                 }
 
+                "OnAttackLanded"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"			"items/item_lifesteal.lua"
+                        "Function"				"modifier_lifesteal_datadriven"
+                        "modifier"              "modifier_monkey_king_jingu_mastery_datadriven_lifesteal"
+                    }
+                }
+            }
+            "modifier_monkey_king_jingu_mastery_datadriven_lifesteal"
+            {
+                "Passive"			"0"
+                "IsHidden"			"1"
+
                 "OnDealDamage"
                 {
                     "Lifesteal"
                     {
-                        "Target"			"CASTER"
-                        "LifestealPercent"	"%lifesteal"
+                        "Target"			"ATTACKER"
+                        "LifestealPercent"	"%lifesteal_aura_percent"
                     }
                 }
             }

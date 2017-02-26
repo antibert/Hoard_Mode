@@ -1,7 +1,24 @@
 Next Update Patch Notes:
 
-1.22c
-Made rapier ogre more aggressive
+1.22d
+7.02 parity!
+Fixed Riki ultimate
+Added some missing tooltips
+Replaced Antimage Mana Void cooldown reduction talent with 25% lifesteal
+Swapped Bane's level 20 movement speed talent with his level 25 cooldown talent
+Bounty Hunter shuriken toss ministun increased from 0.1 to 0.75 seconds
+Replaced Bounty Hunter shuriken toss damage talent with spell amplify talent
+Replaced Huskar burning spears damage talent with spell amplify talent
+Replaced Mirana arrow cooldown reduction talent with bonus to all stats talent
+Replaced Monkey King Jingu Strike damage talent with evasion talent
+Fixed Jingu Strike lifesteal applying to spells
+Replaced Naga Siren Ensnare cooldown reduction talent with generic cooldown reduction talent
+Replaced Pugna Nether Ward damage talent with all stats talent
+Replaced Queen of Pain shadow strike cooldown reduction with bonus intelligence talent
+Replaced Undying decay cooldown reduction talent with global cooldown reduction talent
+Replaced Wraith King wraithfire dps talent with evasion talent
+
+
 
 To Do:
 -- update russian lang

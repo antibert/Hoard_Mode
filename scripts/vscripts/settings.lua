@@ -11,7 +11,7 @@ POST_GAME_TIME = 120.0                   -- How long should we let people look a
 TREE_REGROW_TIME = 60.0                 -- How long should it take individual trees to respawn after being cut down/destroyed?
 
 GOLD_PER_TICK = 1                     -- How much gold should players get per tick?
-GOLD_TICK_TIME = 0.6                      -- How long should we wait in seconds between gold ticks?
+GOLD_TICK_TIME = 0.66                      -- How long should we wait in seconds between gold ticks?
 
 RECOMMENDED_BUILDS_DISABLED = false     -- Should we disable the recommened builds for heroes
 CAMERA_DISTANCE_OVERRIDE = 1134.0       -- How far out should we allow the camera to go?  1134 is the default in Dota

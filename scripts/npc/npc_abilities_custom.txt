@@ -94,6 +94,17 @@
 			}
 		}
 
+		"OnAbilityPhaseStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"misc/lazy_linkens_checks.lua"
+				"Function"		"CheckLinkensStop"
+				"UseCooldown"	"1"
+				"UseMana"		"1"
+			}
+		}
+
 		"OnSpellStart"
 		{
 			"FireSound"
@@ -461,22 +472,10 @@
 	
 		"OnProjectileHitUnit"
 		{	
-			"FireSound"
+			"RunScript"
 			{
-				"EffectName"	"Hero_Broodmother.SpawnSpiderlingsImpact"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_spawn_spiderlings_datadriven"
-				"Target"		"TARGET"
-			}
-	
-			"Damage"
-			{
-				"Target"	"TARGET"
-				"Type"		"DAMAGE_TYPE_MAGICAL"
-				"Damage"	"%damage"
+				"ScriptFile"	"heroes/hero_broodmother/spawn_spiderlings.lua"
+				"Function"		"SpawnSpiderlings"
 			}
 		}
 	
@@ -625,23 +624,10 @@
 	
 		"OnProjectileHitUnit"
 		{
-			"FireSound"
+			"RunScript"
 			{
-				"EffectName"	"Hero_Broodmother.SpawnSpiderlingsImpact"
-				"Target"		"TARGET"
-			}
-	
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_spawn_spiderlings_datadriven"
-				"Target"		"TARGET"
-			}
-	
-			"Damage"
-			{
-				"Target"	"TARGET"
-				"Type"		"DAMAGE_TYPE_MAGICAL"
-				"Damage"	"%damage"
+				"ScriptFile"	"heroes/hero_broodmother/spawn_spiderlings.lua"
+				"Function"		"SpawnSpiderlings"
 			}
 		}
 	
@@ -1983,6 +1969,19 @@
 						"Duration"		"%damage_duration"
 					}
 				}
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"misc/lazy_linkens_checks.lua"
+				"Function"		"CheckLinkensSpecial"
+				"UseMana"		"0"
+				"UseCooldown"	"0"
+				"RemoveModifier""true"
+				"Modifier"		"modifier_poison_touch_slow_1_datadriven"
+				"Modifier2"		"modifier_poison_touch_debuff_datadriven"
+				"Delay"			"%set_time + 0.1"
+				"DelayedModifier" "modifier_poison_touch_damage_datadriven"
 			}
 		}
 
@@ -3926,38 +3925,10 @@
 
 		"OnSpellStart"
 		{
-			"FireSound"
+			"RunScript"
 			{
-				"EffectName"	"Hero_ShadowShaman.Shackles.Cast"
-				"Target" 		"CASTER"
-			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shackles_sound"
-				"Target" 		"CASTER"
-				"Duration"		"%channel_time"
-			}
-
-			"ActOnTargets"
-			{
-				"Target"
-				{
-					"Center"  	"TARGET"
-					"Radius" 	"%radius"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				}
-
-				"Action"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_shackles"
-						"Target" 		"TARGET"
-						"Duration"		"%channel_time"
-					}
-				}
+				"ScriptFile"	"heroes/hero_shadow_shaman/shackles.lua"
+				"Function"		"ShacklesStart"
 			}
 		}
 
@@ -4359,10 +4330,13 @@
 
 		"OnSpellStart"
 		{
-			"ApplyModifier"
+			"RunScript"
 			{
-				"Target" "TARGET"
-				"ModifierName" "keeper_of_the_light_mana_overload_target"
+				"ScriptFile"	"misc/lazy_linkens_checks.lua"
+				"Function"		"CheckLinkensApplyModifier"
+				"UseMana"	  "0"
+				"UseCooldown" "0"
+				"modifier"	  "keeper_of_the_light_mana_overload_target"
 			}
 		}
 
@@ -4640,43 +4614,11 @@
 
 		"OnSpellStart"
 		{
-			"FireSound"
+			"RunScript"
 			{
-				"EffectName"	"Hero_LifeStealer.OpenWounds.Cast"
-				"Target" 		"TARGET"
+				"ScriptFile"	"heroes/hero_life_stealer/open_wounds.lua"
+				"Function"		"OpenWounds"
 			}
-			"FireSound"
-			{
-				"EffectName"	"Hero_LifeStealer.OpenWounds"
-				"Target" 		"TARGET"
-			}
-			"ActOnTargets"
-			{
-				"Target"
-				{
-					"Center"  	"TARGET"
-					"Radius" 	"%radius"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				}
-				"Action"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_open_wounds"
-						"Target" 		"TARGET"
-						"Duration"		"%duration"
-					}
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_wounds_damage_datadriven"
-						"Target" 		"TARGET"
-						"Duration"		"%duration"
-					}
-
-				}
-			}
-
 		}
 
 		"Modifiers"
@@ -5413,44 +5355,11 @@
 
 		"OnProjectileHitUnit"
 		{
-			"ApplyModifier"
-	        {
-	            "ModifierName"		"modifier_stifling_dagger_attack_datadriven"
-	            "Target"			"CASTER"
-	        }
-
-	        "ActOnTargets"
-            {
-                "Target"
-                {
-                    "Center"  	"TARGET"
-                    "Radius" 	"%radius"
-                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                }
-
-                "Action"
-                {
-                    "Damage"
-                    {
-                        "Target"        "TARGET"
-                        "Type"			"DAMAGE_TYPE_PHYSICAL"
-                        "Damage"		"%base_damage"
-                    }
-
-                    "ApplyModifier"
-                    {
-                        "ModifierName"		"modifier_stifling_dagger_slow_datadriven"
-                        "Target"			"TARGET"
-                    }
-                }
-            }
-
 			"RunScript"
-	        {
-	            "ScriptFile"	"heroes/hero_riki/tricks_of_the_trade.lua"
-	            "Function"		"PerformAttacks"
-	        }
+			{
+				"ScriptFile"	"heroes/hero_phantom_assassin/stifling_dagger.lua"
+				"Function"		"StiflingDagger"
+			}
 		}
 
 		"Modifiers"
@@ -5487,6 +5396,7 @@
 			}
 		}
 	}
+
 	"pugna_nether_ward_datadriven"
 	{
 		// General
@@ -5833,6 +5743,7 @@
 			}
 		}
 	}
+
 	"pugna_nether_ward_datadriven_suicide"
     {
         // General
@@ -5945,6 +5856,7 @@
             }
         }
     }
+
 	"queenofpain_shadow_strike_datadriven"
 	{
 		// General
@@ -6024,6 +5936,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"radius"				"250 250 250 250"
 			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_stacks"			"15"
+			}
 		}
 
 		"OnSpellStart"
@@ -6079,105 +5996,11 @@
 
 		"OnProjectileHitUnit"
 		{
-			"Damage"
+			"RunScript"
 			{
-				"Target"		"TARGET"
-				"Type"			"DAMAGE_TYPE_MAGICAL"
-				"Damage"		"%strike_damage"
+				"ScriptFile"	"heroes/hero_queenofpain/shadow_strike.lua"
+				"Function"		"ShadowStrike"
 			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_debuff_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_thinker_datadriven"
-				"Target"		"TARGET"
-			}
-
-			// Slow stacks(15 of them)
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			// 5
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			// 10
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_shadow_strike_slow_datadriven"
-				"Target"		"TARGET"
-			}
-			// 15
 		}
 
 		"Modifiers"
@@ -6211,7 +6034,6 @@
 				"Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 
 				"ThinkInterval"	"1.0"
-
 				"OnIntervalThink"
 				{
 					"RemoveModifier"
@@ -6437,12 +6259,6 @@
 
 		"OnProjectileHitUnit"
 		{
-			"FireSound"
-			{
-				"EffectName"		"Hero_Sven.StormBoltImpact"
-				"Target"			"TARGET"
-			}
-
 			"FireEffect"
 			{
 				"EffectName"	"particles/units/heroes/hero_sven/sven_storm_bolt_projectile_explosion.vpcf"
@@ -6457,32 +6273,10 @@
 				}
 			}
 
-			"ActOnTargets"
+			"RunScript"
 			{
-				"Target"
-				{
-					"Center" "POINT"
-	                "Radius" "%bolt_aoe"
-	                "Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-	                "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-				}
-
-				"Action"
-				{
-					"Damage"
-					{
-						"Target"	"TARGET"
-						"Type"		"DAMAGE_TYPE_MAGICAL"
-						"Damage"	"%AbilityDamage"
-					}
-
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_storm_bolt_datadriven"
-						"Target"		"TARGET"
-					}
-
-				}
+				"ScriptFile"	"heroes/hero_sven/storm_bolt.lua"
+				"Function"		"StormBolt"
 			}
 		}
 
@@ -6791,20 +6585,10 @@
 
 		"OnSpellStart"
 		{
-			"FireSound"
+			"RunScript"
 			{
-				"Target"				"CASTER"
-				"EffectName"			"Hero_Tinker.Laser"
-			}
-
-			"TrackingProjectile"
-			{
-				"Target"				"TARGET"
-				"EffectName"			"particles/units/heroes/hero_tinker/tinker_laser.vpcf"
-				"MoveSpeed"				"1100"
-				"Dodgeable"				"1"
-				"ProvidesVision"		"0"
-				"SourceAttachment"		"DOTA_PROJECTILE_ATTACHMENT_ATTACK_2"
+				"ScriptFile"	"heroes/hero_tinker/laser.lua"
+				"Function"		"Laser"
 			}
 
 			"RunScript"
@@ -6816,32 +6600,11 @@
 
 		"OnProjectileHitUnit"
 		{
-			"FireSound"
+			"RunScript"
 			{
-				"Target"				"CASTER"
-				"EffectName"			"Hero_Tinker.LaserImpact"
+				"ScriptFile"	"heroes/hero_tinker/laser.lua"
+				"Function"		"LaserHit"
 			}
-
-			"Damage"
-			{
-				"Target"		"TARGET"
-				"Damage"		"%AbilityDamage"
-				"Type"			"DAMAGE_TYPE_PURE"
-			}
-
-			"ApplyModifier"
-			{
-				"Target"        "TARGET"
-				"ModifierName"	"modifier_tinker_laser_datadriven_blind"
-				"Duration"		"%duration"
-			}
-
-			"ApplyModifier"
-            {
-                "Target"        "TARGET"
-                "ModifierName"	"modifier_tinker_laser_datadriven_tracking"
-                "Duration"		"0.6"
-            }
 
 			"RunScript"
 			{
@@ -7210,23 +6973,11 @@
 		"OnProjectileHitUnit"
 		{
 			"DeleteOnHit"	"1"
-			"FireSound"
-			{
-				"EffectName"	"Hero_VengefulSpirit.MagicMissileImpact"
-				"Target" 		"TARGET"
-			}
 
-			"Stun"
+			"RunScript"
 			{
-				"Duration"   "%magic_missile_stun"
-				"Target" 	 "TARGET"
-			}
-
-			"Damage"
-			{
-				"Target"		"TARGET"
-				"Type"			"DAMAGE_TYPE_MAGICAL"
-				"Damage"		"%AbilityDamage"
+				"ScriptFile"	"heroes/hero_vengeful/magic_missile.lua"
+				"Function"		"MagicMissile"
 			}
 		}
 	}
@@ -7913,12 +7664,6 @@
         {
             "DeleteOnHit"			"1"
 
-            "FireSound"
-            {
-                "EffectName"	"Hero_SkeletonKing.Hellfire_BlastImpact"
-                "Target"		"CASTER"
-            }
-
             "FireEffect"
             {
                 "EffectName"		"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_explosion.vpcf"
@@ -7932,51 +7677,11 @@
                 }
             }
 
-            "ActOnTargets"
-            {
-                "Target"
-                {
-                    "Center" "POINT"
-                    "Radius" "%bolt_aoe"
-                    "Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-                }
-
-                "Action"
-                {
-                    "Damage"
-                    {
-                        "Target"		"TARGET"
-                        "Type"			"DAMAGE_TYPE_MAGICAL"
-                        "Damage"		 "%AbilityDamage"
-                    }
-
-                    "ApplyModifier"
-                    {
-                        "ModifierName"	"modifier_hellfire_blast_stun"
-                        "Target"		"TARGET"
-                    }
-
-                    "ApplyModifier"
-                    {
-                        "ModifierName"	"modifier_hellfire_blast_slow"
-                        "Target"		"TARGET"
-                    }
-
-                    "DelayedAction"
-                    {
-                        "Delay"			"%blast_stun_duration"
-                        "Action"
-                        {
-                            "ApplyModifier"
-                            {
-                                "ModifierName"	"modifier_hellfire_blast_dot"
-                                "Target"		"TARGET"
-                            }
-                        }
-                    }
-                }
-            }
+           "RunScript"
+           {
+				"ScriptFile"	"heroes/hero_skeletonking/hellfireblast.lua"
+				"Function"		"HellFireBlast"
+           }
         }
 
         "Modifiers"
@@ -8126,38 +7831,10 @@
         {
             "DeleteOnHit"	"1"
 
-            "FireSound"
+            "RunScript"
             {
-                "EffectName"	"Hero_ChaosKnight.ChaosBolt.Impact"
-                "Target" 		"TARGET"
-            }
-
-            "ActOnTargets"
-            {
-                "Target"
-                {
-                    "Center" "POINT"
-                    "Radius" "%bolt_aoe"
-                    "Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-                }
-
-                "Action"
-                {
-                    "Damage"
-                    {
-                        "Target"		"TARGET"
-                        "Type"			"DAMAGE_TYPE_MAGICAL"
-                        "Damage"		 "%AbilityDamage"
-                    }
-
-                    "RunScript"
-                    {
-                        "ScriptFile"	"heroes/hero_chaos_knight/chaos_bolt.lua"
-                        "Function"		"ChaosBolt"
-                        "chaos_bolt_particle"	"particles/units/heroes/hero_chaos_knight/chaos_knight_bolt_msg.vpcf"
-                    }
-                }
+            	"ScriptFile"	"heroes/hero_chaos_knight/chaos_bolt.lua"
+            	"Function"		"ChaosBolt"
             }
         }
     }
@@ -8229,13 +7906,13 @@
         }
 
         "OnUpgrade"
-	{
+		{
             "RunScript"
-	    {
+	    	{
                 "ScriptFile"    "heroes/hero_spectre/haunt.lua"
                 "Function"      "LevelReality"
             }
-	}
+		}
 
         "OnSpellStart"
         {
@@ -10368,12 +10045,6 @@
 
         "OnSpellStart"
         {
-            "FireSound"
-            {
-                "EffectName"		"Hero_Riki.Blink_Strike"
-                "Target"			"CASTER"
-            }
-
             "AttachEffect"
             {
                 "EffectName"		"particles/units/heroes/hero_riki/riki_blink_strike.vpcf"
@@ -11230,32 +10901,11 @@
 
         "OnProjectileHitUnit"
         {
-            "FireSound"
-            {
-                "Target"				"CASTER"
-                "EffectName"			"Hero_SkywrathMage.ArcaneBolt.Impact"
-            }
-
-            "ActOnTargets"
-            {
-                "Target"
-                {
-                    "Center"			"TARGET"
-                    "Radius"			"%radius"
-                    "Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "Flags"				"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-                    "Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                }
-
-                "Action"
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"			"heroes/hero_skywrath_mage/arcane_bolt.lua"
-                        "Function"				"arcane_bolt_hit"
-                    }
-                }
-            }
+        	"RunScript"
+        	{
+        		"ScriptFile"	"heroes/hero_skywrath_mage/arcane_bolt.lua"
+        		"Function"		"ArcaneBolt"
+        	}
         }
     }
 
@@ -11678,7 +11328,7 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "projectile_speed"		"2000"
+                "projectile_speed"		"1600"
             }
             "02"
             {
@@ -11716,70 +11366,28 @@
                 "EffectName"			"Hero_Abaddon.DeathCoil.Cast"
             }
 
+            "Damage"
+            {
+            	"Target"		"CASTER"
+            	"Type"			"DAMAGE_TYPE_PURE"
+            	"Damage"		"%self_damage"
+            }
+
             "TrackingProjectile"
             {
                 "Target"				"TARGET"
                 "EffectName"			"particles/units/heroes/hero_abaddon/abaddon_death_coil.vpcf"
-                "Dodgeable"				"0"
+                "Dodgeable"				"1"
                 "MoveSpeed"				"%projectile_speed"
             }
         }
+
         "OnProjectileHitUnit"
         {
-            "FireSound"
+            "RunScript"
             {
-                "Target"		"TARGET"
-                "EffectName"		"Hero_Abaddon.DeathCoil.Target"
-            }
-
-            "Damage"
-            {
-                "Target"	"CASTER"
-                "Type"		"DAMAGE_TYPE_PURE"
-                "Damage"	"%self_damage"
-            }
-
-            "ActOnTargets"
-            {
-                "Target"
-                {
-                    "Center"			"TARGET"
-                    "Radius"			"0"
-                    "Teams"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-                    "Flags"				"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-                    "Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                }
-
-                "Action"
-                {
-                    "Heal"
-                    {
-                        "Target"        "TARGET"
-                        "HealAmount"	"%heal_amount"
-                    }
-                }
-            }
-
-            "ActOnTargets"
-            {
-                "Target"
-                {
-                    "Center"			"TARGET"
-                    "Radius"			"%radius"
-                    "Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "Flags"				"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-                    "Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                }
-
-                "Action"
-                {
-                    "Damage"
-                    {
-                        "Target"	"TARGET"
-                        "Type"		"DAMAGE_TYPE_MAGICAL"
-                        "Damage"	"%target_damage"
-                    }
-                }
+            	"ScriptFile"	"heroes/hero_abaddon/death_coil.lua"
+            	"Function"		"DeathCoil"
             }
         }
     }
@@ -12365,8 +11973,6 @@
                 "EffectName"	"Hero_BountyHunter.Shuriken"
                 "Target"	"CASTER"
             }
-
-
         }
 
         "OnProjectileHitUnit"
@@ -12655,8 +12261,7 @@
             {
                 "Target"				"TARGET"
                 "EffectName"			"particles/units/heroes/hero_visage/visage_soul_assumption_bolt.vpcf"
-                "Dodgeable"				"0"
-                "ProvidesVision"		"0"
+                "Dodgeable"				"1"
                 "MoveSpeed"				"%bolt_speed"
             }
         }
@@ -12683,31 +12288,10 @@
                 }
             }
 
-            "ActOnTargets"
+            "RunScript"
             {
-                "Target"
-                {
-                    "Center"			"TARGET"
-                    "Radius"			"%radius"
-                    "Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                }
-
-                "Action"
-                {
-                    "FireEffect"
-                    {
-                        "Target"			"CASTER"
-                        "EffectName"		"particles/units/heroes/hero_visage/visage_soul_assumption_beam.vpcf"
-                        "EffectAttachType"	"follow_origin"
-                    }
-                    "Damage"
-                    {
-                        "Target"	"TARGET"
-                        "Type"		"DAMAGE_TYPE_MAGICAL"
-                        "Damage"	"%AbilityDamage"
-                    }
-                }
+            	"ScriptFile"	"heroes/hero_visage/soul_assumption.lua"
+            	"Function"		"SoulAssumption"
             }
         }
     }
@@ -12938,7 +12522,7 @@
 
         "OnSpellStart"
         {
-            "FireSound"
+        	"FireSound"
             {
                 "EffectName" "Hero_Bane.BrainSap.Target"
                 "Target"	"TARGET"
@@ -13046,7 +12630,7 @@
 
         "OnSpellStart"
         {
-            "FireSound"
+        	"FireSound"
             {
                 "EffectName"	"Hero_Bane.Enfeeble.Cast"
                 "Target"	"TARGET"
@@ -13088,6 +12672,7 @@
             }
         }
     }
+
     "bane_fiends_grip_datadriven"
     {
         // General
@@ -13761,45 +13346,11 @@
 
         "OnSpellStart"
         {
-            "FireSound"
-            {
-                "EffectName"	"Hero_Nightstalker.Void"
-                "Target"		"TARGET"
-            }
-
-            "ActOnTargets"
-            {
-                "Target"
-                {
-                    "Center"  	"TARGET"
-                    "Radius" 	"%radius"
-                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                }
-
-                "Action"
-                {
-                    "Stun"
-                    {
-                        "Target"	"TARGET"
-                        "Duration"	"%mini_stun"
-                    }
-
-                    "RunScript"
-                    {
-                        "ScriptFile"	"scripts/vscripts/heroes/hero_night_stalker/void.lua"
-                        "Function"		"Void"
-                        "modifier"		"modifier_void_datadriven"
-                    }
-
-                    "Damage"
-                    {
-                        "Target"	"TARGET"
-                        "Type"		"DAMAGE_TYPE_MAGICAL"
-                        "Damage"	"%AbilityDamage"
-                    }
-                }
-            }
+        	"RunScript"
+        	{
+        		"ScriptFile"	"heroes/hero_night_stalker/void.lua"
+        		"Function"		"AbilityName"
+        	}
         }
 
         "Modifiers"
@@ -13887,32 +13438,12 @@
 
         "OnSpellStart"
         {
-            "FireSound"
+            "RunScript"
             {
-                "EffectName"	"Hero_Nightstalker.Trickling_Fear"
-                "Target"		"TARGET"
-            }
-
-            "ActOnTargets"
-            {
-                "Target"
-                {
-                    "Center"  	"TARGET"
-                    "Radius" 	"%radius"
-                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                }
-
-                "Action"
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"	"scripts/vscripts/heroes/hero_night_stalker/crippling_fear.lua"
-                        "Function"		"CripplingFear"
-                        "modifier_day"		"modifier_crippling_fear_day_datadriven"
-                        "modifier_night"	"modifier_crippling_fear_night_datadriven"
-                    }
-                }
+                "ScriptFile"	"scripts/vscripts/heroes/hero_night_stalker/crippling_fear.lua"
+                "Function"		"CripplingFear"
+                "modifier_day"		"modifier_crippling_fear_day_datadriven"
+                "modifier_night"	"modifier_crippling_fear_night_datadriven"
             }
         }
 
@@ -14296,35 +13827,11 @@
                 "MoveSpeed" "1000"
                 "SourceAttachment" "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
             }
-        }
 
-        "OnProjectileHitUnit"
-        {
-            "ActOnTargets"
+            "RunScript"
             {
-                "Target"
-                {
-                    "Center"  	"TARGET"
-                    "Radius" 	"%radius"
-                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                }
-
-                "Action"
-                {
-                    "ApplyModifier"
-                    {
-                        "ModifierName"	"modifier_arc_warden_flux"
-                        "Target"		"TARGET"
-                        "Duration"      "%duration"
-                    }
-                }
-            }
-
-            "FireSound"
-            {
-                "EffectName"	"Hero_ArcWarden.Flux.Target"
-                "Target"		"TARGET"
+            	"ScriptFile"	"heroes/hero_arc_warden/flux.lua"
+            	"Function"		"Flux"
             }
         }
     }
@@ -14883,25 +14390,11 @@
 
         "OnSpellStart"
         {
-            "ActOnTargets"
-            {
-                "Target"
-                {
-                    "Center"  	"TARGET"
-                    "Radius" 	"%radius"
-                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                }
-
-                "Action"
-                {
-                    "ApplyModifier"
-                    {
-                        "ModifierName"	"modifier_malefice_datadriven"
-                        "Target"	"TARGET"
-                    }
-                }
-            }
+        	"RunScript"
+        	{
+        		"ScriptFile"	"heroes/hero_enigma/malefice.lua"
+        		"Function"		"Malefice"
+        	}
         }
 
         "Modifiers"
@@ -15214,38 +14707,10 @@
         {
             "DeleteOnHit"	"1"
 
-            "FireSound"
+            "RunScript"
             {
-                "EffectName"			"Hero_NagaSiren.Ensnare.Target"
-                "Target"				"TARGET"
-            }
-
-            "ActOnTargets"
-            {
-                "Target"
-                {
-                    "Center"  	"TARGET"
-                    "Radius" 	"%radius"
-                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                    "Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-                }
-
-                "Action"
-                {
-                    "ApplyModifier"
-                    {
-                        "Target"				"TARGET"
-                        "ModifierName"			"modifier_ensnare_datadriven"
-                    }
-
-                    "Damage"
-                    {
-                        "Target"		"TARGET"
-                        "Type"			"DAMAGE_TYPE_MAGICAL"
-                        "Damage"		"%AbilityDamage"
-                    }
-                }
+            	"ScriptFile"	"heroes/hero_naga_siren/ensnare.lua"
+            	"Function"		"Ensnare"
             }
         }
 
@@ -15787,45 +15252,11 @@
 
         "OnSpellStart"
         {
-            "FireSound"
-            {
-                "EffectName"	"Hero_Lion.Voodoo"
-                "Target"		"TARGET"
-            }
-
-            "FireSound"
-            {
-                "EffectName"	"Hero_Lion.Hex.Target"
-                "Target"		"TARGET"
-            }
-
-            "ActOnTargets"
-            {
-                "Target"
-                {
-                    "Center"  	"TARGET"
-                    "Radius" 	"%radius"
-                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                }
-
-                "Action"
-                {
-                    "ApplyModifier"
-                    {
-                        "ModifierName"	"modifier_lion_voodoo"
-                        "Target" 		"TARGET"
-                        "Duration"		"%duration"
-                    }
-
-                    "FireEffect"
-                    {
-                        "EffectName"	"particles/units/heroes/hero_lion/lion_spell_voodoo.vpcf"
-                        "EffectAttachType"	"follow_origin"
-                        "Target"		"TARGET"
-                    }
-                }
-            }
+         	"RunScript"
+         	{
+         		"ScriptFile"	"heroes/hero_lion/voodoo.lua"
+         		"Function"		"Voodoo"
+         	}
         }
     }
     //=================================================================================================================

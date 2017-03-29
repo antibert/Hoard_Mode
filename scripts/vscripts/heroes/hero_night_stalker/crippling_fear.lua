@@ -1,6 +1,3 @@
---[[Author: Pizzalol
-	Date: 11.01.2015.
-	It applies a different modifier depending on the time of day]]
 function CripplingFear( keys )
 	local caster = keys.caster
 	local ability = keys.ability
@@ -8,10 +5,21 @@ function CripplingFear( keys )
 
 	local modifier_day = keys.modifier_day
 	local modifier_night = keys.modifier_night
+	local radius = ability:GetSpecialValueFor("radius")
 
-	if GameRules:IsDaytime() then
-		ability:ApplyDataDrivenModifier(caster, target, modifier_day, {})
-	else
-		ability:ApplyDataDrivenModifier(caster, target, modifier_night, {})
+	if target:GetTeam() ~= caster:GetTeam() and target:TriggerSpellAbsorb(ability) then
+		return
+	end
+
+	EmitSoundOn("Hero_Nightstalker.Trickling_Fear", target)
+
+	local units = FindUnitsInRadius(caster:GetTeam(), target:GetAbsOrigin(), nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)
+	for _,unit in pairs(units) do
+		if GameRules:IsDaytime() then
+			ability:ApplyDataDrivenModifier(caster, unit, modifier_day, {})
+		else
+			ability:ApplyDataDrivenModifier(caster, unit, modifier_night, {})
+		end
+
 	end
 end

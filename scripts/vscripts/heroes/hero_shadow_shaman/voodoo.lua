@@ -15,6 +15,9 @@ function voodoo_start( keys )
 	if target:IsIllusion() then
 		target:ForceKill(true)
 	else
+		if target:GetTeam() ~= caster:GetTeam() and target:TriggerSpellAbsorb(ability) then
+			return
+		end
 		target:AddNewModifier(caster, ability, "modifier_voodoo_lua", {duration = duration})
 	end
 end

@@ -17,6 +17,10 @@ function mana_burn_function( keys )
 	local targetLocation = target:GetAbsOrigin()
 	local radius = ability:GetSpecialValueFor("radius")
 
+	if target:GetTeam() ~= caster:GetTeam() and target:TriggerSpellAbsorb(ability) then
+		return
+	end
+
 	-- do percent of total mana if target does not have int
 	local current_int = 0
 	if target:IsHero() then

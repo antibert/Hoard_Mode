@@ -10,6 +10,12 @@ function BlinkStrike( keys )
 	local particle = keys.particle
 	local ability_level = ability:GetLevel() - 1
 
+	if target:GetTeam() ~= caster:GetTeam() and target:TriggerSpellAbsorb(ability) then
+		return
+	end
+
+	EmitSoundOn("Hero_Riki.Blink_Strike", caster)
+
 	-- Ability variables
 	local bonus_damage = ability:GetLevelSpecialValueFor("bonus_damage", ability_level)
 	local radius = ability:GetLevelSpecialValueFor("radius", ability_level)

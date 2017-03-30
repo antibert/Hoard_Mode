@@ -4,6 +4,10 @@ function MagicMissile( keys )
 	local target = keys.target
 	local damage = ability:GetAbilityDamage()
 	local duration = ability:GetSpecialValueFor("magic_missile_stun")
+	
+	if target:GetTeam() ~= caster:GetTeam() and target:TriggerSpellAbsorb(ability) then
+		return
+	end
 
 	EmitSoundOn("Hero_VengefulSpirit.MagicMissileImpact", target)
 	target:AddNewModifier(caster, ability, "modifier_stunned", {duration = duration})

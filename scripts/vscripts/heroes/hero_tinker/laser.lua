@@ -41,7 +41,6 @@ end
 function laser_bounce_start(keys)
 	local caster = keys.caster
 	caster.total_bounce = 0
-	print('laser_bounce_start')
 end
 
 function laser_bounce( keys )

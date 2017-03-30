@@ -6,6 +6,7 @@ function ShacklesStart( keys )
 	local radius = ability:GetSpecialValueFor("radius")
 
 	if target:GetTeam() ~= caster:GetTeam() and target:TriggerSpellAbsorb(ability) then
+		caster:Stop()
 		return
 	end
 

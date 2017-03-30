@@ -100,8 +100,8 @@
 			{
 				"ScriptFile"	"misc/lazy_linkens_checks.lua"
 				"Function"		"CheckLinkensStop"
-				"UseCooldown"	"1"
-				"UseMana"		"1"
+				"UseCooldown"	"true"
+				"UseMana"		"true"
 			}
 		}
 
@@ -1975,8 +1975,8 @@
 			{
 				"ScriptFile"	"misc/lazy_linkens_checks.lua"
 				"Function"		"CheckLinkensSpecial"
-				"UseMana"		"0"
-				"UseCooldown"	"0"
+				"UseMana"		"false"
+				"UseCooldown"	"false"
 				"RemoveModifier""true"
 				"Modifier"		"modifier_poison_touch_slow_1_datadriven"
 				"Modifier2"		"modifier_poison_touch_debuff_datadriven"
@@ -4081,39 +4081,11 @@
 
         "OnSpellStart"
         {
-            "FireSound"
-            {
-                "EffectName"	"Hero_ShadowShaman.Hex.Target"
-                "Target"		"TARGET"
-            }
-
-            "ActOnTargets"
-            {
-                "Target"
-                {
-                    "Center"  	"TARGET"
-                    "Radius" 	"%radius"
-                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                }
-
-                "Action"
-                {
-                    "ApplyModifier"
-                    {
-                        "ModifierName"	"modifier_shadow_shaman_voodoo"
-                        "Target" 		"TARGET"
-                        "Duration"		"%duration"
-                    }
-
-                    "FireEffect"
-                    {
-                        "EffectName"	"particles/units/heroes/hero_shadowshaman/shadowshaman_voodoo.vpcf"
-                        "EffectAttachType"	"follow_origin"
-                        "Target"		"TARGET"
-                    }
-                }
-            }
+        	"RunScript"
+        	{
+        		"ScriptFile"	"heroes/hero_shadow_shaman/voodoo.lua"
+        		"Function"		"voodoo_start"
+        	}
         }
     }
 	//=================================================================================================================
@@ -4334,8 +4306,8 @@
 			{
 				"ScriptFile"	"misc/lazy_linkens_checks.lua"
 				"Function"		"CheckLinkensApplyModifier"
-				"UseMana"	  "0"
-				"UseCooldown" "0"
+				"UseMana"	  "false"
+				"UseCooldown" "false"
 				"modifier"	  "keeper_of_the_light_mana_overload_target"
 			}
 		}
@@ -5998,7 +5970,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"heroes/hero_queenofpain/shadow_strike.lua"
+				"ScriptFile"	"heroes/hero_queen_of_pain/shadow_strike.lua"
 				"Function"		"ShadowStrike"
 			}
 		}
@@ -6586,16 +6558,16 @@
 		"OnSpellStart"
 		{
 			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_tinker/laser.lua"
-				"Function"		"Laser"
-			}
-
-			"RunScript"
             {
                 "ScriptFile"		"heroes/hero_tinker/laser"
                 "Function"			"laser_bounce_start"
             }
+
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_tinker/laser.lua"
+				"Function"		"LaserStart"
+			}
 		}
 
 		"OnProjectileHitUnit"
@@ -12522,49 +12494,11 @@
 
         "OnSpellStart"
         {
-        	"FireSound"
-            {
-                "EffectName" "Hero_Bane.BrainSap.Target"
-                "Target"	"TARGET"
-            }
-
-            "FireSound"
-            {
-                "EffectName"	"Hero_Bane.BrainSap"
-                "Target"	"CASTER"
-            }
-
-            "FireEffect"
-            {
-                "EffectName"	"particles/units/heroes/hero_bane/bane_sap.vpcf"
-                "EffectAttachType"	"follow_origin"
-
-                "ControlPointEntities"
-                {
-                    "CASTER" "follow_origin"
-                    "TARGET" "follow_origin"
-                }
-            }
-
-            "Damage"
-            {
-                "Target"
-                {
-                    "Center"	"POINT"
-                    "Radius"	"%radius"
-                    "Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                }
-
-                "Type"		"DAMAGE_TYPE_PURE"
-                "Damage"	"%tooltip_brain_sap_heal_amt"
-            }
-
-            "Heal"
-            {
-                "Target"	"CASTER"
-                "HealAmount"	"%tooltip_brain_sap_heal_amt"
-            }
+        	"RunScript"
+        	{
+        		"ScriptFile"	"heroes/hero_bane/brain_sap.lua"
+        		"Function"		"BrainSap"
+        	}
         }
     }
 
@@ -12630,29 +12564,11 @@
 
         "OnSpellStart"
         {
-        	"FireSound"
-            {
-                "EffectName"	"Hero_Bane.Enfeeble.Cast"
-                "Target"	"TARGET"
-            }
-
-            "FireSound"
-            {
-                "EffectName"	"Hero_Bane.Enfeeble"
-                "Target"		"TARGET"
-            }
-
-            "ApplyModifier"
-            {
-                "ModifierName"	"modifier_enfeeble_datadriven"
-                "Target"
-                    {
-                        "Center"	"POINT"
-                        "Radius"	"%radius"
-                        "Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                        "Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                    }
-            }
+        	"RunScript"
+        	{
+        		"ScriptFile"	"heroes/hero_bane/enfeeble.lua"
+        		"Function"		"Enfeeble"
+        	}
         }
 
         "Modifiers"
@@ -12761,6 +12677,14 @@
 
         "OnSpellStart"
         {
+        	"RunScript"
+            {
+            	"ScriptFile"	"misc/lazy_linkens_checks.lua"
+            	"Function"		"CheckLinkensStop"
+            	"UseCooldown"	"false"
+            	"UseMana"		"false"
+            }
+
             "ActOnTargets"
             {
                 "Target"
@@ -13668,6 +13592,13 @@
                     "Center"	"TARGET"
                     "Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
                 }
+            }
+            "RunScript"
+            {
+            	"ScriptFile"	"misc/lazy_linkens_checks.lua"
+            	"Function"		"CheckLinkensStop"
+            	"UseCooldown"	"true"
+            	"UseMana"		"true"
             }
         }
 

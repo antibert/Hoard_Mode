@@ -9,7 +9,7 @@ function ChaosBolt( keys )
         return
     end
 
-    EmitSoundOn("Hero_ChaosKnight.ChaosBolt.Impact", "target")
+    EmitSoundOn("Hero_ChaosKnight.ChaosBolt.Impact", target)
 
     local units = FindUnitsInRadius(caster:GetTeam(), target:GetAbsOrigin(), nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)
     for _,unit in pairs(units) do
@@ -19,8 +19,8 @@ end
 
 
 --[[Author: Pizzalol
-	Date: 08.04.2015.
-	Rolls the dice and then determines the damage and stun duration according to that]]
+    Date: 08.04.2015.
+    Rolls the dice and then determines the damage and stun duration according to that]]
 function ChaosBoltDamage( caster, target, ability )
     local target_location = target:GetAbsOrigin()
     local ability_level = ability:GetLevel() - 1

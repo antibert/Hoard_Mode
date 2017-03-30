@@ -22,10 +22,7 @@ end
 	Date: 08.04.2015.
 	Rolls the dice and then determines the damage and stun duration according to that]]
 function ChaosBoltDamage( caster, target, ability )
-    local caster = keys.caster
-    local target = keys.target
     local target_location = target:GetAbsOrigin()
-    local ability = keys.ability
     local ability_level = ability:GetLevel() - 1
 
     -- Ability variables

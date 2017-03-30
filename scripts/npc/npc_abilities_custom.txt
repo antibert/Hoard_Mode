@@ -12494,11 +12494,49 @@
 
         "OnSpellStart"
         {
-        	"RunScript"
-        	{
-        		"ScriptFile"	"heroes/hero_bane/brain_sap.lua"
-        		"Function"		"BrainSap"
-        	}
+       		"FireSound"
+            {
+                "EffectName" "Hero_Bane.BrainSap.Target"
+                "Target"	"TARGET"
+            }
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_Bane.BrainSap"
+                "Target"	"CASTER"
+            }
+
+            "FireEffect"
+            {
+                "EffectName"	"particles/units/heroes/hero_bane/bane_sap.vpcf"
+                "EffectAttachType"	"follow_origin"
+
+               "ControlPointEntities"
+               {
+                    "CASTER" "follow_origin"
+                    "TARGET" "follow_origin"
+               }
+            }
+
+            "Damage"
+            {
+                "Target"
+                {
+                   "Center"	"POINT"
+                   "Radius"	"%radius"
+                    "Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+
+                "Type"		"DAMAGE_TYPE_PURE"
+                "Damage"	"%tooltip_brain_sap_heal_amt"
+            }
+
+            "Heal"
+            {
+                "Target"	"CASTER"
+               "HealAmount"	"%tooltip_brain_sap_heal_amt"
+            }
         }
     }
 
@@ -12564,11 +12602,29 @@
 
         "OnSpellStart"
         {
-        	"RunScript"
-        	{
-        		"ScriptFile"	"heroes/hero_bane/enfeeble.lua"
-        		"Function"		"Enfeeble"
-        	}
+        	"FireSound"
+            {
+                "EffectName"	"Hero_Bane.Enfeeble.Cast"
+                "Target"	"TARGET"
+            }
+
+            "FireSound"
+            {
+                "EffectName"	"Hero_Bane.Enfeeble"
+                "Target"		"TARGET"
+            }
+
+            "ApplyModifier"
+            {
+                "ModifierName"	"modifier_enfeeble_datadriven"
+                "Target"
+                {
+                    "Center"	"POINT"
+                    "Radius"	"%radius"
+                    "Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                    "Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                }
+            }
         }
 
         "Modifiers"

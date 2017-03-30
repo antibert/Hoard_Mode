@@ -1,4 +1,4 @@
-function ShacklesStart( keys )\
+function ShacklesStart( keys )
 	local caster = keys.caster
 	local ability = keys.ability
 	local target = keys.target

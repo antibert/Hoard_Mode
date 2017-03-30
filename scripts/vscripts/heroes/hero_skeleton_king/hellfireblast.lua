@@ -18,6 +18,8 @@ function HellFireBlast( keys )
 		ability:ApplyDataDrivenModifier(caster, unit, "modifier_hellfire_blast_stun", {})
 		ability:ApplyDataDrivenModifier(caster, unit, "modifier_hellfire_blast_slow", {})
 		Timers:CreateTimer(stunDuration, function()
+			if not unit or unit:IsNull() then return end
+			if not unit:IsAlive() then return end
 			ability:ApplyDataDrivenModifier(caster, unit, "modifier_hellfire_blast_dot", {})
 		end)
 	end

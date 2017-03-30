@@ -5,6 +5,7 @@ function HellFireBlast( keys )
 	local damage = ability:GetAbilityDamage()
 	local radius = ability:GetSpecialValueFor("bolt_aoe")
 	local stunDuration = ability:GetSpecialValueFor("blast_stun_duration")
+	local damage = ability:GetAbilityDamage()
 
 	if target:GetTeam() ~= caster:GetTeam() and target:TriggerSpellAbsorb(ability) then
 		return
@@ -14,7 +15,7 @@ function HellFireBlast( keys )
 
 	local units = FindUnitsInRadius(caster:GetTeam(), target:GetAbsOrigin(), nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)
 	for _,unit in pairs(units) do
-		ApplyDamage({})
+		ApplyDamage({victim = unit, attacker = caster, ability = ability, damage = damage, damage_type = ability:GetAbilityDamageType()})
 		ability:ApplyDataDrivenModifier(caster, unit, "modifier_hellfire_blast_stun", {})
 		ability:ApplyDataDrivenModifier(caster, unit, "modifier_hellfire_blast_slow", {})
 		Timers:CreateTimer(stunDuration, function()

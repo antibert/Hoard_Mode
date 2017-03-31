@@ -14,10 +14,14 @@ function DeathCoil( keys )
 	
 	local units = FindUnitsInRadius(caster:GetTeam(), target:GetAbsOrigin(), nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)
 	for _,unit in pairs(units) do
-		if unit:GetTeam() ~= caster:GetTeam() then
-			ApplyDamage({victim = unit, attacker = caster, ability = ability, damage = damage, damage_type = ability:GetAbilityDamageType()})
-		else
-			unit:Heal(heal, caster)
+		if unit ~= caster then
+			if unit:GetTeam() == target:GetTeam() then
+				if unit:GetTeam() == caster:GetTeam() then
+					unit:Heal(heal, caster)
+				else	
+					ApplyDamage({victim = unit, attacker = caster, ability = ability, damage = damage, damage_type = ability:GetAbilityDamageType()})
+				end
+			end
 		end
 	end
 end

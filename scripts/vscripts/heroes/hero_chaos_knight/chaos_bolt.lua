@@ -1,11 +1,28 @@
---[[Author: Pizzalol
-	Date: 08.04.2015.
-	Rolls the dice and then determines the damage and stun duration according to that]]
+
 function ChaosBolt( keys )
     local caster = keys.caster
     local target = keys.target
-    local target_location = target:GetAbsOrigin()
     local ability = keys.ability
+    local radius = ability:GetSpecialValueFor("bolt_aoe")
+
+    if target:GetTeam() ~= caster:GetTeam() and target:TriggerSpellAbsorb(ability) then
+        return
+    end
+
+    EmitSoundOn("Hero_ChaosKnight.ChaosBolt.Impact", target)
+
+    local units = FindUnitsInRadius(caster:GetTeam(), target:GetAbsOrigin(), nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)
+    for _,unit in pairs(units) do
+        ChaosBoltDamage(caster, unit, ability)
+    end
+end
+
+
+--[[Author: Pizzalol
+    Date: 08.04.2015.
+    Rolls the dice and then determines the damage and stun duration according to that]]
+function ChaosBoltDamage( caster, target, ability )
+    local target_location = target:GetAbsOrigin()
     local ability_level = ability:GetLevel() - 1
 
     -- Ability variables
@@ -13,7 +30,7 @@ function ChaosBolt( keys )
     local stun_max = ability:GetLevelSpecialValueFor("stun_max", ability_level)
     local damage_min = ability:GetLevelSpecialValueFor("damage_min", ability_level)
     local damage_max = ability:GetLevelSpecialValueFor("damage_max", ability_level)
-    local chaos_bolt_particle = keys.chaos_bolt_particle
+    local chaos_bolt_particle = "particles/units/heroes/hero_chaos_knight/chaos_knight_bolt_msg.vpcf"
 
     -- Calculate the stun and damage values
     local random = RandomFloat(0, 1)

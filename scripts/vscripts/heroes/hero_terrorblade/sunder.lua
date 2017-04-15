@@ -12,6 +12,10 @@ function Sunder( event )
 	local casterHP_percent = caster:GetHealth() / caster_maxHealth
 	local targetHP_percent = target:GetHealth() / target_maxHealth
 
+	if caster:GetTeam() ~= target:GetTeam() and target:TriggerSpellAbsorb(ability) then
+		return
+	end
+
 	-- Swap the HP of the caster
 	if targetHP_percent <= hit_point_minimum_pct then
 		caster:SetHealth(caster_maxHealth * hit_point_minimum_pct)

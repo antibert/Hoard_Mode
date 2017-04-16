@@ -16,14 +16,19 @@ this function runs after that and replaces the boots with the highest priority i
 function UpdateMeepoBoots()
 	-- 1 is highest priority
   local bootPrio = {
-    ["item_travel_boots_2"] = 1,
-    ["item_travel_boots"]   = 2,
-    ["item_guardian_greaves"] = 3,
-    ["item_power_treads"]   = 4,
-    ["item_arcane_boots"]   = 5,
-    ["item_phase_boots"]    = 6,
-    ["item_tranquil_boots"] = 7,
-    ["item_boots"]          = 8,
+    ["item_travel_boots_3"] = 1,
+    ["item_travel_boots_2"] = 2,
+    ["item_travel_boots"]   = 3,
+    ["item_guardian_greaves"] = 4,
+	  ["item_boots_of_power"] = 5,
+	  ["item_boots_of_strength"] = 6,
+	  ["item_boots_of_agility"] = 7,
+	  ["item_boots_of_intellect"] = 8,
+    ["item_power_treads"]   = 9,
+    ["item_arcane_boots"]   = 10,
+    ["item_phase_boots"]    = 11,
+    ["item_tranquil_boots"] = 12,
+    ["item_boots"]          = 13,
   }
 	local primeItems = {}
 	local currentBoot = nil

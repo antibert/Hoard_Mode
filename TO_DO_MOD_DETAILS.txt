@@ -1,9 +1,10 @@
 Next Update Patch Notes:
 
-1.22e
-7.03 parity!
-Fix to text encoding
-Changed passive gold rate to match live
+1.22f
+7.05 parity!
+Modified several custom abilities to no longer ignore Linken's Sphere
+Attempted fix to case where Vladimir's Cuirass aura would be removed
+Fixed Meepo not duplicating the new boots
 
 
 To Do:

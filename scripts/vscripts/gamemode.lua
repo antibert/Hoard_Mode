@@ -156,6 +156,15 @@ function GameMode:OrderFilter( filterTable )
   local units = filterTable["units"]
   local orderType = filterTable["order_type"]
 
+  if orderType == DOTA_UNIT_ORDER_DISASSEMBLE_ITEM then
+    for _,unitIndex in pairs(units) do
+      local unit = EntIndexToHScript(unitIndex)
+      if unit:HasModifier("modifier_darkseer_wallofreplica_illusion") then
+        return false
+      end
+    end
+  end
+
   for _,unitIndex in pairs(units) do
     local unit = EntIndexToHScript(unitIndex)
     if unit:GetUnitName() == "npc_dota_hero_meepo" then

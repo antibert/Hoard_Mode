@@ -11,6 +11,18 @@ Boots of Str/Agi/Int now grant 50 to the primary stat and 25 to other stats
 Heaven's Halberd maim chance increased to 35%, cooldown reduced to 22 seconds
 SnYnA's maim chance increased to 40%, now applies a root instead of a slow
 
+// Ancient Apparition
+-- Reduced Cold Feet mana cost to 125
+-- Reduced Cold Feet cooldown to 10/9/8/7
+-- Rescaled Cold Feet damage to 30/50/70/90
+
+// Viper
+-- Level 20 Talent changed from Poison Attack Effects Buildings (Didn't Work) to 20% Lifesteal
+-- Level 25 Talent changed from 25% Lifesteal to +20 Armor
+
+// Warlock
+-- Replaced level 15 Shadow Word cooldown reduction talent with -10% cooldown reduction
+
 To Do:
 -- update russian lang
 -- Lifestealer hotkeys getting messed up

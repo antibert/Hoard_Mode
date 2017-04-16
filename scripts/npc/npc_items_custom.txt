@@ -4296,8 +4296,8 @@
 
         // Stats
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"10"
-        "AbilityCastRange"				"1200"
+        "AbilityCooldown"				"14"
+        "AbilityCastRange"				"1150"
         "AbilityCastPoint"				"0.0"
         "AbilityManaCost"				"50"
 
@@ -4317,7 +4317,7 @@
             "01"
             {
                 "var_type"						"FIELD_INTEGER"
-                "maim_chance"					"33"
+                "maim_chance"					"40"
             }
             "02"
             {
@@ -4369,6 +4369,11 @@
                 "var_type"				"FIELD_FLOAT"
                 "cripple_duration"				"4.0"
             }
+            "12"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "projectile_speed"              "1500"
+            }
         }
 
         "OnSpellStart"
@@ -4379,6 +4384,20 @@
                 "Target"			"TARGET"
             }
 
+            "TrackingProjectile"
+            {
+                "Target"           "TARGET"
+                "EffectName"       "particles/items2_fx/rod_of_atos_attack.vpcf"
+                "Dodgeable"        "1"
+                "ProvidesVision"   "1"
+                "VisionRadius"     "300"
+                "MoveSpeed"        "%projectile_speed"
+                "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+            }
+        }
+
+        "OnProjectileHitUnit"
+        {
             "ApplyModifier"
             {
                 "Target"			"TARGET"
@@ -4397,12 +4416,12 @@
                 "IsDebuff"			"1"
                 "IsPurgable"		"1"
 
-                "EffectName"			"particles/items2_fx/rod_of_atos.vpcf"
+                "EffectName"			"particles/items2_fx/rod_of_atos_debuff.vpcf"
                 "EffectAttachType"		"follow_origin"
 
-                "Properties"
+                "States"
                 {
-                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%cripple_movespeed_slow_pct"
+                    "MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
                 }
             }
             "modifier_item_sange_and_yasha_and_atos_datadriven"
@@ -4635,7 +4654,7 @@
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"22"
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.0"
 
@@ -4673,7 +4692,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maim_chance"			"24"
+				"maim_chance"			"35"
 			}
 			"05"
 			{

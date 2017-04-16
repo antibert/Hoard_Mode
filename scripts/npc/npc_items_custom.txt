@@ -610,17 +610,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"45"
+				"bonus_stat"			"50"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"40"
+				"bonus_attack_speed"	"25"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat2"			"17"
+				"bonus_stat2"			"25"
 			}
 			"06"
 			{
@@ -635,7 +635,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat3"			"17"
+				"bonus_stat3"			"25"
 			}
 			"08"
 			{
@@ -725,44 +725,34 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"45"
+				"bonus_stat"			"50"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"40"
+				"bonus_attack_speed"	"25"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat2"			"17"
+				"bonus_stat2"			"25"
 			}
 			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_restore"			"50000"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"			    "0.7"
-			}	
-			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"null_radius"			    "1000"
 			}	
-			"08"
+			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"null_amount"			    "-35"
 			}	
-			"09"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat3"			"17"
+				"bonus_stat3"			"25"
 			}			
-			"10"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"9"	
@@ -842,22 +832,22 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"			"14"
+				"bonus_strength"			"19"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"14"
+				"bonus_agility"			"19"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"			"14"
+				"bonus_intellect"			"19"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"35"
+				"bonus_attack_speed"	"25"
 			}
 			"06"
 			{
@@ -922,12 +912,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"45"
+				"bonus_stat"			"50"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"40"
+				"bonus_attack_speed"	"25"
 			}
 			"05"
 			{
@@ -942,12 +932,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat2"			"17"
+				"bonus_stat2"			"25"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat3"			"17"
+				"bonus_stat3"			"25"
 			}
 			"09"
 			{
@@ -5376,7 +5366,7 @@
             "03"
             {
                 "var_type"				"FIELD_FLOAT"
-                "poison_duration"		"4.0"
+                "poison_duration"		"3.0"
             }
             "04"
             {

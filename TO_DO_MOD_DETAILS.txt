@@ -2,6 +2,7 @@ Next Update Patch Notes:
 
 1.22f
 7.05 parity!
+Fix to stat collection for getdotastats.com
 Modified several custom abilities to no longer ignore Linken's Sphere
 Attempted fix to case where Vladimir's Cuirass aura would be removed
 Fixed Meepo not duplicating the new boots

@@ -1282,7 +1282,7 @@
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_agility"			"15"
+                "bonus_agility"			"17"
             }
             "03"
             {
@@ -1451,17 +1451,17 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_damage"			"10"
+                "bonus_damage"			"15"
             }
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_agility"			"15"
+                "bonus_agility"			"20"
             }
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_strength"		"15"
+                "bonus_strength"		"17"
             }
             "04"
             {
@@ -1607,17 +1607,17 @@
              "01"
              {
                  "var_type"				"FIELD_INTEGER"
-                 "bonus_damage"			"10"
+                 "bonus_damage"			"20"
              }
              "02"
              {
                  "var_type"				"FIELD_INTEGER"
-                 "bonus_agility"			"15"
+                 "bonus_agility"			"23"
              }
              "03"
              {
                  "var_type"				"FIELD_INTEGER"
-                 "bonus_strength"		"15"
+                 "bonus_strength"		"19"
              }
              "04"
              {
@@ -1763,17 +1763,17 @@
              "01"
              {
                  "var_type"				"FIELD_INTEGER"
-                 "bonus_damage"			"10"
+                 "bonus_damage"			"25"
              }
              "02"
              {
                  "var_type"				"FIELD_INTEGER"
-                 "bonus_agility"			"15"
+                 "bonus_agility"			"26"
              }
              "03"
              {
                  "var_type"				"FIELD_INTEGER"
-                 "bonus_strength"		"15"
+                 "bonus_strength"		"21"
              }
              "04"
              {
@@ -1919,17 +1919,17 @@
               "01"
               {
                   "var_type"				"FIELD_INTEGER"
-                  "bonus_damage"			"10"
+                  "bonus_damage"			"30"
               }
               "02"
               {
                   "var_type"				"FIELD_INTEGER"
-                  "bonus_agility"			"15"
+                  "bonus_agility"			"29"
               }
               "03"
               {
                   "var_type"				"FIELD_INTEGER"
-                  "bonus_strength"		"15"
+                  "bonus_strength"		"23"
               }
               "04"
               {

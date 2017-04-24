@@ -74,6 +74,7 @@ function UpdateMeepoBoots()
 							-- clone has wrong item
 								--print("destroy")
 								item:Destroy()
+								item = nil
 							end
 						end
 					end

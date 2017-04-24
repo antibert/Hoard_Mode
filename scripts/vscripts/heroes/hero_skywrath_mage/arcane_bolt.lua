@@ -24,7 +24,7 @@ function arcane_bolt_hit( keys )
 		return
 	end
 
-	EmitSoundOn(Hero_SkywrathMage.ArcaneBolt.Impact, target)
+	EmitSoundOn("Hero_SkywrathMage.ArcaneBolt.Impact", target)
 
 	local searchRadius = ability:GetSpecialValueFor("radius")
 	local units = FindUnitsInRadius(caster:GetTeam(), target:GetAbsOrigin(), nil, searchRadius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)

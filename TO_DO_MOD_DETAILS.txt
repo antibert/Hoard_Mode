@@ -1,31 +1,10 @@
 Next Update Patch Notes:
 
-1.22f
-7.05 parity!
-Fix to stat collection for getdotastats.com
-Modified several custom abilities to no longer ignore Linken's Sphere
-Attempted fix to case where Vladimir's Cuirass aura would be removed
-Fixed Meepo not duplicating the new boots
-Orb of Venom duration reduced from 4 to 3 seconds
-Boots of Power now grants 19 to all stats and 25 attack speed
-Boots of Str/Agi/Int now grant 50 to the primary stat and 25 to other stats
-Heaven's Halberd maim chance increased to 35%, cooldown reduced to 22 seconds
-SnYnA's maim chance increased to 40%, now applies a root instead of a slow
-
-// Ancient Apparition
--- Reduced Cold Feet mana cost to 125
--- Reduced Cold Feet cooldown to 10/9/8/7
--- Rescaled Cold Feet damage to 30/50/70/90
-
-// Dark Seer
--- Wall of Replica no longer duplicates items
-
-// Viper
--- Level 20 Talent changed from Poison Attack Effects Buildings (Didn't Work) to 20% Lifesteal
--- Level 25 Talent changed from 25% Lifesteal to +20 Armor
-
-// Warlock
--- Replaced level 15 Shadow Word cooldown reduction talent with -10% cooldown reduction
+1.22g
+Fix to Skywrath Mage's Arcane Bolt
+Fix to Warlock's ability list
+Fix to Wraithfire blast
+Changed order of priority on Meepo boots
 
 To Do:
 -- update russian lang

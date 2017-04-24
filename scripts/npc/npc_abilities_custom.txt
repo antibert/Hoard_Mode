@@ -7651,7 +7651,7 @@
 
            "RunScript"
            {
-				"ScriptFile"	"heroes/hero_skeletonking/hellfireblast.lua"
+				"ScriptFile"	"heroes/hero_skeleton_king/hellfireblast.lua"
 				"Function"		"HellFireBlast"
            }
         }

@@ -1,10 +1,7 @@
 Next Update Patch Notes:
 
-1.22g
+1.22h
 Fix to Skywrath Mage's Arcane Bolt
-Fix to Warlock's ability list
-Fix to Wraithfire blast
-Changed order of priority on Meepo boots
 
 To Do:
 -- update russian lang

@@ -8,7 +8,7 @@
 	Date: 09.01.2015
 	Calculating the damage for arcane bolt
 ]]
-function arcane_bolt_hit( keys )
+function ArcaneBolt( keys )
 	-- Variables
 	local caster = keys.caster
 	local target = keys.target

@@ -13329,7 +13329,7 @@
         	"RunScript"
         	{
         		"ScriptFile"	"heroes/hero_night_stalker/void.lua"
-        		"Function"		"AbilityName"
+        		"Function"		"Void"
         	}
         }
 

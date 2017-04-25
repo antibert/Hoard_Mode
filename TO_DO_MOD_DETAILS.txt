@@ -1,7 +1,7 @@
 Next Update Patch Notes:
 
-1.22h
-Fix to Skywrath Mage's Arcane Bolt
+1.22i
+Fix to Night Stalker's Void
 
 To Do:
 -- update russian lang

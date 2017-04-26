@@ -111,8 +111,7 @@ function modifier_dark_seer_wall_of_replica_nb2017:OnIntervalThink()
 							for i = 0, DOTA_ITEM_MAX - 1 do
 								local item = replica:GetItemInSlot( i )
 								if item ~= nil then
-									item:SetSellable( false )
-									item:SetDroppable( false )
+									replica:RemoveItem(item)
 								end
 							end
 						end

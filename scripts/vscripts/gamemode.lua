@@ -33,6 +33,7 @@ require('settings')
 -- events.lua is where you can specify the actions to be taken when any event occurs and is one of the core barebones files.
 require('events')
 
+require('heroes/hero_meepo/update_meepo_boots')
 --[[
   This function should be used to set up Async precache calls at the beginning of the gameplay.
 
@@ -94,6 +95,12 @@ function GameMode:OnHeroInGame(hero)
     int_steal:SetLevel(1)
   end
 
+  -- marks first spawned meepo as meepo prime
+  if not self.firstMeepo and hero:GetUnitName() == "npc_dota_hero_meepo" then
+    self.firstMeepo = hero
+    hero.firstMeepo = true
+  end
+
   -- This line for example will set the starting gold of every hero to 50000 unreliable gold
   -- hero:SetGold(50000, false)
   -- hero:AddExperience(50000, DOTA_ModifyXP_Unspecified, false, true)
@@ -137,10 +144,36 @@ function GameMode:InitGameMode()
   -- Check out internals/gamemode to see/modify the exact code
   GameMode:_InitGameMode()
 
+  GameRules:GetGameModeEntity():SetExecuteOrderFilter(Dynamic_Wrap(GameMode, "OrderFilter"), self)
+
   -- Commands can be registered for debugging purposes or as functions that can be called by the custom Scaleform UI
   Convars:RegisterCommand( "command_example", Dynamic_Wrap(GameMode, 'ExampleConsoleCommand'), "A console command example", FCVAR_CHEAT )
 
   DebugPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')
+end
+
+function GameMode:OrderFilter( filterTable )
+  local units = filterTable["units"]
+  local orderType = filterTable["order_type"]
+
+  if orderType == DOTA_UNIT_ORDER_DISASSEMBLE_ITEM then
+    for _,unitIndex in pairs(units) do
+      local unit = EntIndexToHScript(unitIndex)
+      if unit:HasModifier("modifier_darkseer_wallofreplica_illusion") then
+        return false
+      end
+    end
+  end
+
+  for _,unitIndex in pairs(units) do
+    local unit = EntIndexToHScript(unitIndex)
+    if unit:GetUnitName() == "npc_dota_hero_meepo" then
+      UpdateMeepoBoots(orderType)
+    end
+  end
+
+  --Return true by default to keep all other orders unchanged
+  return true
 end
 
 

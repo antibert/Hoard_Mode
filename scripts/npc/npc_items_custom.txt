@@ -610,17 +610,17 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"45"
+				"bonus_stat"			"50"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"40"
+				"bonus_attack_speed"	"25"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat2"			"17"
+				"bonus_stat2"			"25"
 			}
 			"06"
 			{
@@ -635,7 +635,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat3"			"17"
+				"bonus_stat3"			"25"
 			}
 			"08"
 			{
@@ -725,44 +725,34 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"45"
+				"bonus_stat"			"50"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"40"
+				"bonus_attack_speed"	"25"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat2"			"17"
+				"bonus_stat2"			"25"
 			}
 			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"mana_restore"			"50000"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"			    "0.7"
-			}	
-			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"null_radius"			    "1000"
 			}	
-			"08"
+			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"null_amount"			    "-35"
 			}	
-			"09"
+			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat3"			"17"
+				"bonus_stat3"			"25"
 			}			
-			"10"
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_damage"			"9"	
@@ -842,22 +832,22 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"			"14"
+				"bonus_strength"			"19"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_agility"			"14"
+				"bonus_agility"			"19"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_intellect"			"14"
+				"bonus_intellect"			"19"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"35"
+				"bonus_attack_speed"	"25"
 			}
 			"06"
 			{
@@ -922,12 +912,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat"			"45"
+				"bonus_stat"			"50"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attack_speed"	"40"
+				"bonus_attack_speed"	"25"
 			}
 			"05"
 			{
@@ -942,12 +932,12 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat2"			"17"
+				"bonus_stat2"			"25"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stat3"			"17"
+				"bonus_stat3"			"25"
 			}
 			"09"
 			{
@@ -4306,8 +4296,8 @@
 
         // Stats
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"10"
-        "AbilityCastRange"				"1200"
+        "AbilityCooldown"				"14"
+        "AbilityCastRange"				"1150"
         "AbilityCastPoint"				"0.0"
         "AbilityManaCost"				"50"
 
@@ -4327,7 +4317,7 @@
             "01"
             {
                 "var_type"						"FIELD_INTEGER"
-                "maim_chance"					"33"
+                "maim_chance"					"40"
             }
             "02"
             {
@@ -4379,6 +4369,11 @@
                 "var_type"				"FIELD_FLOAT"
                 "cripple_duration"				"4.0"
             }
+            "12"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "projectile_speed"              "1500"
+            }
         }
 
         "OnSpellStart"
@@ -4389,6 +4384,20 @@
                 "Target"			"TARGET"
             }
 
+            "TrackingProjectile"
+            {
+                "Target"           "TARGET"
+                "EffectName"       "particles/items2_fx/rod_of_atos_attack.vpcf"
+                "Dodgeable"        "1"
+                "ProvidesVision"   "1"
+                "VisionRadius"     "300"
+                "MoveSpeed"        "%projectile_speed"
+                "SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+            }
+        }
+
+        "OnProjectileHitUnit"
+        {
             "ApplyModifier"
             {
                 "Target"			"TARGET"
@@ -4407,12 +4416,12 @@
                 "IsDebuff"			"1"
                 "IsPurgable"		"1"
 
-                "EffectName"			"particles/items2_fx/rod_of_atos.vpcf"
+                "EffectName"			"particles/items2_fx/rod_of_atos_debuff.vpcf"
                 "EffectAttachType"		"follow_origin"
 
-                "Properties"
+                "States"
                 {
-                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%cripple_movespeed_slow_pct"
+                    "MODIFIER_STATE_ROOTED"		"MODIFIER_STATE_VALUE_ENABLED"
                 }
             }
             "modifier_item_sange_and_yasha_and_atos_datadriven"
@@ -4645,7 +4654,7 @@
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"30"
+		"AbilityCooldown"				"18"
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.0"
 
@@ -4683,7 +4692,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"maim_chance"			"24"
+				"maim_chance"			"35"
 			}
 			"05"
 			{
@@ -5230,6 +5239,7 @@
             {
                 "Passive"				"1"
                 "IsHidden"				"1"
+		"Attributes"				"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 
                 "Aura" 					"modifier_item_vladmir_2_building_aura"
                 "Aura_Radius" 			"%aura_radius"
@@ -5262,6 +5272,7 @@
             {
                 "Passive"				"1"
                 "IsHidden"				"1"
+		"Attributes"				"MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE"
 
                 "Aura" 					"modifier_item_vladmir_2_general_aura"
                 "Aura_Radius" 			"%aura_radius"
@@ -5374,7 +5385,7 @@
             "03"
             {
                 "var_type"				"FIELD_FLOAT"
-                "poison_duration"		"4.0"
+                "poison_duration"		"3.0"
             }
             "04"
             {

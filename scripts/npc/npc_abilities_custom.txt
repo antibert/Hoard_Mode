@@ -15541,116 +15541,140 @@
         }
     }
 
-    "monkey_king_jingu_mastery_datadriven"
-    {
-        "BaseClass"				"ability_datadriven"
-        "AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "SpellImmunityType"		"SPELL_IMMUNITY_ENEMIES_YES"
-        "AbilityTextureName"	"monkey_king_jingu_mastery"
-       
-        "precache"
-        {
-            "particle" "particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_overhead.vpcf"
-            "particle" "particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_hit.vpcf"
-            "particle" "particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_stack.vpcf"
-            "soundfile" "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts"
-        }
+	//the buff is supposed to have a duration now, but whatever.
+	"monkey_king_jingu_mastery_datadriven"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"		"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"	"monkey_king_jingu_mastery"
 
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "required_hits"				"4"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "counter_duration"			"10"
-            }
-            "03"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "charges"					"4"
-            }
-            "04"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "bonus_damage"				"80 120 160 200"
-            }
-            "05"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "lifesteal"					"20 30 40 50"
-            }
-        }
+		"precache"
+		{
+			"particle" "particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_overhead.vpcf"
+			"particle" "particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_hit.vpcf"
+			"particle" "particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_stack.vpcf"
+			"particle" "particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_start.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts"
+		}
 
-        "Modifiers"
-        {    
-            "modifier_jingu_mastery_passive"
-            {
-                "Passive"			"1"
-                "IsHidden"			"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"required_hits"				"4"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"counter_duration"			"10"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"charges"					"4"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"80 120 160 200"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"lifesteal"					"20 30 40 50"
+			}
+		}
 
-                "OnAbilityExecuted"
-                // Any ability (including items) was used by the unit with this modifier.
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"	"heroes/hero_monkey_king/jingu_mastery.lua"
-                        "Function"		"BoundlessDecrement"
-                    }
-                }
+		"Modifiers"
+		{
+			"modifier_jingu_mastery_passive"
+			{
+				"Passive"			"1"
+				"IsHidden"			"1"
+
+				"OnAbilityExecuted"
+				// Any ability (including items) was used by the unit with this modifier.
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_monkey_king/jingu_mastery.lua"
+						"Function"		"BoundlessDecrement"
+					}
+				}
 		
-                "OnAttackLanded"
-                // "%attack_damage" is set to the damage value before mitigation
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"	"heroes/hero_monkey_king/jingu_mastery.lua"
-                        "Function"		"ApplyJinguDebuff"
-                    }
-                }
-            }
+				"OnAttackLanded"
+				// "%attack_damage" is set to the damage value before mitigation
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_monkey_king/jingu_mastery.lua"
+						"Function"		"ApplyJinguDebuff"
+					}
+				}
+			}
 
-            "modifier_jingu_mastery_debuff"
-            {
-                "IsDebuff"	"1"
+			"modifier_jingu_mastery_debuff"
+			{
+				"IsDebuff"	"1"
 
-                "OnDestroy"
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"	"heroes/hero_monkey_king/jingu_mastery.lua"
-                        "Function"		"JinguOverheadDestroy"
-                    }
-                }
-            }
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_monkey_king/jingu_mastery.lua"
+						"Function"		"JinguOverheadDestroy"
+					}
+				}
+			}
 
-            "modifier_jingu_mastery_buff"
-            {
-                "EffectName"		"particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_overhead.vpcf"
-                "EffectAttachType"	"follow_overhead"
+			"modifier_jingu_mastery_buff"
+			{
+				"EffectName"		"particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_overhead.vpcf"
+				"EffectAttachType"	"follow_overhead"
 			
-                "OnAttackLanded"
-                // "%attack_damage" is set to the damage value before mitigation
-                {
-                    "RunScript"
-                    {
+				"OnAttackLanded"
+				// "%attack_damage" is set to the damage value before mitigation
+				{
+					"RunScript"
+					{
 						"ScriptFile"	"heroes/hero_monkey_king/jingu_mastery.lua"
 						"Function"		"JinguHit"
 						"attack_damage"	"%attack_damage"
-                    }
-                }
+					}
+				}
 
-                //this needs to be in a seperate modifier
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
-                }
-            }
-        }
-    }
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_jingu_mastery_buff_damage"
+						"Target" 		"CASTER"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_jingu_mastery_buff_damage"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+
+			"modifier_jingu_mastery_buff_damage"
+			{
+				"IsHidden"			"1"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
+				}
+			}
+		}
+	}
     
 //-==-==-==-==-==-==-==-==-==-==-==-==-==-==-
 //........HoardBRS Ultra skills..............

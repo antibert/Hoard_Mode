@@ -10,6 +10,6 @@ function Malefice( keys )
 
     local units = FindUnitsInRadius(caster:GetTeam(), target:GetAbsOrigin(), nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)
     for _,unit in pairs(units) do
-        ability:ApplyDataDrivenModifier(caster, target, "modifier_malefice_datadriven", {})
+        ability:ApplyDataDrivenModifier(caster, unit, "modifier_malefice_datadriven", {})
     end
 end

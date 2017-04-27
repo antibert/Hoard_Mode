@@ -14311,7 +14311,7 @@
         "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
         "FightRecapLevel"				"1"
         "AbilityTextureName"			"enigma_malefice"
-        "AOERadius"                     "350"
+        "AOERadius"                     "%radius"
 
         // Precache
         //-------------------------------------------------------------------------------------------------------------

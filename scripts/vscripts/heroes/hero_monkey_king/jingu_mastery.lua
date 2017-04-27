@@ -30,7 +30,8 @@ function ApplyJinguDebuff( keys )
 		-- flashy particles on caster
 		local explo = ParticleManager:CreateParticle("particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_start.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 		ParticleManager:SetParticleControl(explo, 0, caster:GetAbsOrigin())
-
+		ParticleManager:ReleaseParticleIndex(explo)
+		
 		EmitSoundOn("Hero_MonkeyKing.IronCudgel", caster)
 
 		local buff = ability:ApplyDataDrivenModifier(caster, caster, "modifier_jingu_mastery_buff", {})
@@ -56,11 +57,13 @@ function JinguHit( keys )
     		-- lifesteal pfx and heal
     		local lifePfx = ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
 	--	ParticleManager:SetParticleControl(lifePfx, 0, caster:GetAbsOrigin())
+		ParticleManager:ReleaseParticleIndex(lifePfx)
 		caster:Heal(lifesteal, caster)
 
 		-- jingu hit pfx on target
 		local hitPfx = ParticleManager:CreateParticle("particles/units/heroes/hero_monkey_king/monkey_king_quad_tap_hit.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
 		ParticleManager:SetParticleControl(hitPfx, 1, target:GetAbsOrigin())
+		ParticleManager:ReleaseParticleIndex(hitPfx)
 	end
 
 	local jingu = caster:FindModifierByNameAndCaster("modifier_jingu_mastery_buff", caster)

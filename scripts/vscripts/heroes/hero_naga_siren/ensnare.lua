@@ -13,7 +13,7 @@ function Ensnare( keys )
 
 	local units = FindUnitsInRadius(caster:GetTeam(), target:GetAbsOrigin(), nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)
 	for _,unit in pairs(units) do
-		ability:ApplyDataDrivenModifier(caster, target, "modifier_ensnare_datadriven", {})
+		ability:ApplyDataDrivenModifier(caster, unit, "modifier_ensnare_datadriven", {})
 		ApplyDamage({victim = unit, attacker = caster, ability = ability, damage = damage, damage_type = ability:GetAbilityDamageType()})
 	end
 end

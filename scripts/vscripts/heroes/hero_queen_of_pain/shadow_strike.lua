@@ -13,6 +13,7 @@ function ShadowStrike( keys )
 
 	local i = 0
 	while i < slowStacks do
+		i=i+1
 		ability:ApplyDataDrivenModifier(caster, target, "modifier_shadow_strike_slow_datadriven", {})
 	end
 end

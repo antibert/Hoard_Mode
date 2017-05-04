@@ -1,7 +1,12 @@
 Next Update Patch Notes:
 
-1.22i
-Fix to Night Stalker's Void
+1.22j
+Fix to Enigma's Malefice
+Fix to Queen of Pain's Shadow Strike
+Fix to Naga Siren's Ensnare
+Fix to Zeus's ultimate targeting illusions
+Fix to Vengeful Spirit's Magic Missile
+Changed Monkey King's Jingu Mastery to work like vanilla Jingu Mastery (but on creeps)
 
 To Do:
 -- update russian lang

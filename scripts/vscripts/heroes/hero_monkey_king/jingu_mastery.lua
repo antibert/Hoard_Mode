@@ -103,7 +103,7 @@ function BoundlessDecrement( keys )
 	Timers:CreateTimer(0.03, function()
 		caster.BoundlessCast = nil
 
-		--remove jingu buff after boundless strike hits units
+		--decrement jingu buff after boundless strike hits units
 		local jingu = caster:FindModifierByNameAndCaster("modifier_jingu_mastery_buff", caster)
 		if jingu then
 			jingu:DecrementStackCount()
@@ -116,4 +116,22 @@ function BoundlessDecrement( keys )
 			end
 		end
 	end)
+end
+
+function SetBuffDamage( keys )
+	local caster = keys.caster
+	local ability = keys.ability
+	local damage = ability:GetSpecialValueFor("bonus_damage")
+
+	local talent = caster:FindAbilityByName("special_bonus_unique_monkey_king_2")
+	if talent then
+		if talent:GetLevel() > 0 then
+			damage = damage + talent:GetSpecialValueFor("value")
+		end
+	end
+
+	local buff = caster:FindModifierByNameAndCaster("modifier_jingu_mastery_buff_damage", caster)
+	if buff then
+		buff:SetStackCount(damage)
+	end
 end

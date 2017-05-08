@@ -15546,7 +15546,7 @@
 		"BaseClass"				"ability_datadriven"
 		"AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"SpellImmunityType"		"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"	"monkey_king_jingu_mastery"
+		"AbilityTextureName"		"monkey_king_jingu_mastery"
 
 		"precache"
 		{
@@ -15578,6 +15578,7 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"bonus_damage"				"80 120 160 200"
+				"LinkedSpecialBonus"			"special_bonus_unique_monkey_king_2
 			}
 			"05"
 			{
@@ -15609,7 +15610,6 @@
 				}
 
 				"OnAttackLanded"
-				// "%attack_damage" is set to the damage value before mitigation
 				{
 					"RunScript"
 					{
@@ -15658,6 +15658,11 @@
 						"ModifierName"	"modifier_jingu_mastery_buff_damage"
 						"Target" 		"CASTER"
 					}
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_monkey_king/jingu_mastery.lua"
+						"Function"		"SetBuffDamage"
+					}
 				}
 
 				"OnDestroy"
@@ -15676,7 +15681,7 @@
 
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "1"
 				}
 			}
 		}

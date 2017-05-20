@@ -4745,157 +4745,6 @@
 			}
 		}
 	}
-	"sandking_sand_storm_datadriven"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-        "ID"					"25103"
-		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-        "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"sandking_sand_storm"
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"0"
-		"AbilityDuration"				"50.0 50.0 60.0 80.0"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"40.0 30.0 20.0 10.0"
-		"AbilityChannelTime"			"50.0 50.0 60.0 80.0"
-		"AbilityCastPoint"				"0.0 0.0 0.0 0.0"
-        "AbilityCastRange"				"525"
-
-		// Damage.
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityDamage"					"25 50 75 100"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"60 50 40 30"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"sand_storm_radius"		"525"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"AbilityDuration"		"50.0 50.0 60.0 80.0"
-			}
-		}
-
-		// Data driven
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"
-			"particle"					"particles/units/heroes/hero_sandking/sandking_sandstorm.vpcf"
-			"particle"					"particles/units/heroes/hero_sandking/sandking_sandstorm_cloud.vpcf"
-			"particle"					"particles/units/heroes/hero_sandking/sandking_sandstorm_eruption_dust.vpcf"
-			"particle"					"particles/units/heroes/hero_sandking/sandking_sandstorm_cloud_center.vpcf"
-			"particle"					"particles/units/heroes/hero_sandking/sandking_sandstorm_start.vpcf"
-			"particle"					"particles/units/heroes/hero_sandking/sandking_sandstorm_sand.vpcf"
-		}
-
-		"OnSpellStart"
-		{
-            "FireEffect"
-            {
-                "EffectName"	"particles/units/heroes/hero_sandking/sandking_sandstorm_start.vpcf"
-                "EffectAttachType"	"PATTACH_ABSORIGIN"
-                "Target"            "CASTER"
-            }
-            "RunScript"
-            {
-                "ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
-				"Function"		"sandStorm_Init"
-                
-                "radius"        "%sand_storm_radius"
-                "duration"      "%AbilityDuration"
-            }
-            "ApplyModifier"
-	        {
-	            "ModifierName"		"modifier_sand_storm_debuff_damage_datadriven"
-	            "Target"			"CASTER"
-	        }
-		}        
-
-		"OnChannelFinish"
-		{
-            "RunScript"
-            {
-                "ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
-				"Function"		"sandStorm_Stop"
-            }
-            "RemoveModifier"
-			{
-				"ModifierName"	"modifier_sand_storm_debuff_damage_datadriven"
-				"Target"        "CASTER"
-			}
-		}
-        
-        "OnChannelInterrupted"
-        {            
-            "RunScript"
-            {
-                "ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
-				"Function"		"sandStorm_Stop"
-            }
-            "RemoveModifier"
-			{
-				"ModifierName"	"modifier_sand_storm_debuff_damage_datadriven"
-				"Target"        "CASTER"
-			}
-        }   
-
-		"Modifiers"
-		{
-			"modifier_sand_storm_debuff_damage_datadriven"
-			{
-				"IsBuff"				"1"
-				"IsPurgable"			"1"
-                "IsHidden"              "1"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
-						"Function"		"sandStorm_Damage"
-                        
-                        "damage"        "%AbilityDamage"
-                        "bonus_damage"  "special_bonus_unique_sand_king_2"
-                        "radius"        "%sand_storm_radius"
-					}
-				}
-
-				"ThinkInterval"			"0.5"
-                
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_sand_king/sand_storm.lua"
-						"Function"		"sandStorm_Damage"
-                        
-                        "damage"        "%AbilityDamage"
-                        "bonus_damage"  "special_bonus_unique_sand_king_2"
-                        "radius"        "%sand_storm_radius"
-					}
-				}
-			}
-		}
-	}
     
 	"rubick_amp_field"
 	{
@@ -7241,7 +7090,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"70.0 50.0 30.0"
+		"AbilityCooldown"				"60 45 30.0"
 
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -9809,12 +9658,12 @@
             "01"
             {
                 "var_type"							"FIELD_FLOAT"
-                "health_cost_percent"				"0.35"
+                "health_cost_percent"				"0.34 0.38 0.42"
             }
             "02"
             {
                 "var_type"							"FIELD_FLOAT"
-                "health_damage"						"0.35"
+                "health_damage"						"0.34 0.38 0.42"
             }
             "03"
             {
@@ -9839,12 +9688,12 @@
             "07"
             {
                 "var_type"							"FIELD_INTEGER"
-                "tooltip_health_damage"				"35"
+                "tooltip_health_damage"				"34 38 42"
             }
             "08"
             {
                 "var_type"							"FIELD_INTEGER"
-                "tooltip_health_cost_percent"		"35"
+                "tooltip_health_cost_percent"		"34 38 42"
             }
             "09"
             {
@@ -11721,6 +11570,8 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityTextureName"					"pudge_flesh_heap"
 
+		"MaxLevel"                      "5"
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"900"
@@ -11735,12 +11586,12 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"flesh_heap_magic_resist"		"12 20 28 36"
+				"flesh_heap_magic_resist"		"0 12 20 28 36"
 			}
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"flesh_heap_strength_buff_amount"		"0.2"
+				"flesh_heap_strength_buff_amount"		"0 0.2 0.2 0.2 0.2"
 			}
 			"04"
 			{
@@ -12443,7 +12294,8 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"				"ability_datadriven"
+        "BaseClass"						"ability_lua"
+        		"ScriptFile"					"heroes/hero_bane/brain_sap_lua.lua"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
         "AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
@@ -12483,12 +12335,24 @@
             "01"
             {
                 "var_type"						"FIELD_INTEGER"
-                "tooltip_brain_sap_heal_amt"		"90 160 230 300"
+                "brain_sap_damage"				"90 160 230 300"
+                "LinkedSpecialBonus"			"special_bonus_unique_bane_2"
             }
             "02"
             {
                 "var_type"						"FIELD_INTEGER"
+                "tooltip_brain_sap_heal_amt"	"90 160 230 300"
+                "LinkedSpecialBonus"			"special_bonus_unique_bane_2"
+            }
+            "03"
+            {
+                "var_type"						"FIELD_INTEGER"
                 "radius"		"325 375 425 475"
+            }
+            "04"
+            {
+                "var_type"						"FIELD_FLOAT"
+                "cooldown_scepter"				"1.5"
             }
         }
 
@@ -12692,7 +12556,7 @@
             "01"
             {
                 "var_type"						"FIELD_FLOAT"
-                "fiend_grip_tick_interval"		"1.0"
+                "fiend_grip_tick_interval"		"0.5"
             }
             "02"
             {
@@ -12945,7 +12809,7 @@
                     {
                         "Target"	"TARGET"
                         "Type"		"DAMAGE_TYPE_MAGICAL"
-                        "Damage"	"%fiend_grip_damage"
+                        "Damage"	"%fiend_grip_damage * %fiend_grip_tick_interval"
                     }
                 }
 

@@ -90,6 +90,16 @@ function GameMode:OnHeroInGame(hero)
     multicast:SetLevel(1)
   end
 
+  if hero:GetUnitName() == "npc_dota_hero_pudge" then
+    local pudge = hero:FindAbilityByName("pudge_flesh_heap_datadriven")
+    pudge:SetLevel(1)
+  end
+
+  if hero:GetUnitName() == "npc_dota_hero_queenofpain" then
+    local qop = hero:FindAbilityByName("special_bonus_unique_queen_of_pain")
+    qop:SetLevel(1)
+  end
+
   if hero:GetUnitName() == "npc_dota_hero_silencer" then
     local int_steal = hero:FindAbilityByName("silencer_int_steal_datadriven")
     int_steal:SetLevel(1)

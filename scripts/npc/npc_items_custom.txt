@@ -124,7 +124,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_health_regen"	"9"
+				"bonus_mana_regen"	"150"
 			}
 			"03"
 			{
@@ -134,7 +134,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"10"
+				"spell_amp"				"12"
 			}
 		}
 	}
@@ -170,7 +170,7 @@
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_health_regen"	"10"
+                "bonus_health_regen"	"200"
             }
             "03"
             {
@@ -180,7 +180,7 @@
             "04"
             {
                 "var_type"				"FIELD_INTEGER"
-                "spell_amp"				"15"
+                "spell_amp"				"18"
             }
         }
     }
@@ -216,7 +216,7 @@
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_health_regen"	"11"
+                "bonus_health_regen"	"250"
             }
             "03"
             {
@@ -226,7 +226,7 @@
             "04"
             {
                 "var_type"				"FIELD_INTEGER"
-                "spell_amp"				"20"
+                "spell_amp"				"24"
             }
         }
     }
@@ -262,7 +262,7 @@
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_health_regen"	"12"
+                "bonus_health_regen"	"300"
             }
             "03"
             {
@@ -272,7 +272,7 @@
             "04"
             {
                 "var_type"				"FIELD_INTEGER"
-                "spell_amp"				"25"
+                "spell_amp"				"30"
             }
         }
     }
@@ -3428,6 +3428,11 @@
                 "var_type"				"FIELD_INTEGER"
                 "consumed_bonus"			"60"
             }
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"consumed_bonus_night_vision"	"150"
+			}
         }
 
         "OnSpellStart"
@@ -3469,6 +3474,7 @@
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 	"%consumed_bonus"
+                    "MODIFIER_PROPERTY_BONUS_NIGHT_VISION"			"%consumed_bonus_night_vision"
                 }
             }
         }
@@ -4337,39 +4343,34 @@
             "05"
             {
                 "var_type"						"FIELD_INTEGER"
-                "bonus_all_stats"				"30"
+                "bonus_all_stats"				"35"
             }
             "06"
             {
                 "var_type"						"FIELD_INTEGER"
-                "bonus_health"					"350"
+                "bonus_attack_speed"			"30"
             }
             "07"
             {
                 "var_type"						"FIELD_INTEGER"
-                "bonus_attack_speed"			"30"
-            }
-            "08"
-            {
-                "var_type"						"FIELD_INTEGER"
                 "movement_speed_percent_bonus"	"16"
             }
-            "09"
+            "08"
             {
                 "var_type"						"FIELD_FLOAT"
                 "maim_duration"					"5.0"
             }
-            "10"
+            "09"
             {
                 "var_type"				"FIELD_INTEGER"
                 "cripple_movespeed_slow_pct"				"-60"
             }
-            "11"
+            "10"
             {
                 "var_type"				"FIELD_FLOAT"
                 "cripple_duration"				"4.0"
             }
-            "12"
+            "11"
             {
                 "var_type"              "FIELD_INTEGER"
                 "projectile_speed"              "1500"
@@ -4436,7 +4437,6 @@
                     "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%bonus_all_stats"
                     "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"					"%bonus_all_stats"
                     "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"				"%bonus_all_stats"
-                    "MODIFIER_PROPERTY_HEALTH_BONUS"				"%bonus_health"
 
                     //Attack speed from Yasha-derived items affect your illusions.
                     "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY"		"%bonus_attack_speed"
@@ -5763,7 +5763,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"1400"
+        "ItemCost"						""
         "ItemShopTags"					""
 
         // Recipe
@@ -5772,7 +5772,7 @@
         "ItemResult"					"item_heart_datadriven"
         "ItemRequirements"
         {
-            "01"						"item_reaver;item_vitality_booster"
+            "01"						"item_reaver;item_vitality_booster;item_vitality_booster"
         }
     }
     // Rewrite of Heart of Tarrasque
@@ -5809,12 +5809,12 @@
             "01"
             {
                 "var_type"							"FIELD_INTEGER"
-                "bonus_strength"					"45"
+                "bonus_strength"					"40"
             }
             "02"
             {
                 "var_type"							"FIELD_INTEGER"
-                "bonus_health"						"250"
+                "bonus_health"						"500"
             }
             "03"
             {
@@ -5997,7 +5997,7 @@
 
 		// Stats		
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"25.0"
+		"AbilityCooldown"				"22.0"
         "AbilitySharedCooldown"			"sheepstick"
 
 		// Item Info

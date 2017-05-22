@@ -50,6 +50,15 @@ function mapLogic:SetDifficultyValues(keys)
 	if self.MAP == 'Horde_5p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_EASY
 		self.PLAYERS = 5
+	elseif self.MAP == 'Horde_5p_ultra' then
+		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_ULTRA
+		self.PLAYERS = 5
+	elseif self.MAP == 'Horde_4p_ultra' then
+		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_ULTRA
+		self.PLAYERS = 4
+	elseif self.MAP == 'Horde_2p_ultra' then
+		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_ULTRA
+		self.PLAYERS = 2
 	elseif self.MAP == 'Horde_4p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_MEDIUM
 		self.PLAYERS = 4

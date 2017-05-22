@@ -1,12 +1,27 @@
 Next Update Patch Notes:
 
-1.22j
-Fix to Enigma's Malefice
-Fix to Queen of Pain's Shadow Strike
-Fix to Naga Siren's Ensnare
-Fix to Zeus's ultimate targeting illusions
-Fix to Vengeful Spirit's Magic Missile
-Changed Monkey King's Jingu Mastery to work like vanilla Jingu Mastery (but on creeps)
+1.23
+Ultra difficulty is now its own set of maps (still with 2, 4, and 5 players)
+Ultra difficulty is no longer an option at difficulty select.
+
+7.06 Parity!
+Aether Lens upgrades grant 150/200/250/300% mana regen
+Aether Lens upgrades grant 12/18/24/30% spell amp
+Desolator 2's tooltip no longer says it's a unique attack modifier
+Heart of Tarrasque uses the proper build up
+Moon Shard now gives night vision when consumed
+Sange and Yasha and Atos now gives +35 to all stats and no health bonus
+Scythe of Vyse cooldown reduced to 22 seconds
+Alchemist's Greevil's Greed now 4 gold base, 4 per stack, and 8/12/16/20 max
+Bane's scepter properly reduces the cooldown of brain sap to 1.5 seconds
+Bane's level 25 talent reverted to bonus damage on brain sap
+Bane's Fiend's Grip tick interval set to 0.5 seconds
+Huskar's Life Break rescaled to 34/38/42% damage
+Pudge now gains the first level of Flesh Heap for free, but it grants no bonuses (this allows him to collect stacks from level 1 without investing in the power)
+Queen of Pain now uses the normal Shadow Strike, but gets the 550 AoE talent for free at level 1 (she still has the 35 Int replacement talent)
+Sand King's Sandstorm reverted to vanilla behavior, but duration is now only 10 seconds
+Viper's Viper Strike cooldown reduced to 60/45/30
+
 
 To Do:
 -- update russian lang

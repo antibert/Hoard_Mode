@@ -245,7 +245,6 @@
         "override_hero"			"npc_dota_hero_monkey_king"
         "Ability5"				"monkey_king_jingu_mastery_datadriven"
         "Ability8"				"chaos_knight_phantasm"
-        "Ability13"               "special_bonus_evasion_12"
     }
 	//=================================================================================================================
 	// HERO: Naga Siren

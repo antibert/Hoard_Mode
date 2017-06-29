@@ -15379,7 +15379,7 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"bonus_damage"				"80 120 160 200"
-				"LinkedSpecialBonus"			"special_bonus_unique_monkey_king_2
+				"LinkedSpecialBonus"			"special_bonus_unique_monkey_king_2"
 			}
 			"05"
 			{

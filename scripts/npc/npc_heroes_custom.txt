@@ -52,7 +52,7 @@
     {
         "override_hero"			"npc_dota_hero_bane"
         "Ability1"              "bane_enfeeble_datadriven"
-        "Ability2"              "bane_brain_sap_datadriven"
+        "Ability2"              "brain_sap_lua"
         "Ability4"              "bane_fiends_grip_datadriven"
         "Ability14"		"special_bonus_cooldown_reduction_20"
     }

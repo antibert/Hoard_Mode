@@ -1,9 +1,10 @@
 Next Update Patch Notes:
 
-1.23a
-Fixed corrupted files preventing loading of abilities
-Properly hide difficulty selection on Ultra maps
-
+1.23b
+Fixed Sand King's Sand Storm not having proper duration
+Fix Urn of Shadows healing
+Fixed Aether Lens upgrades giving hp regen instead of mana regen
+Fixed Pudge Flesh Heap
 
 To Do:
 -- update russian lang

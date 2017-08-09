@@ -17,7 +17,6 @@ function modifier_flesh_heap_increment(event)
 	if caster:HasModifier(modifier) then
 		current_stack = caster:GetModifierStackCount( modifier, ability )
 	else
-		DebugPrint("adding modifier"..modifier)
 		ability:ApplyDataDrivenModifier(caster, caster, modifier, {})
 	end
 
@@ -27,6 +26,7 @@ function modifier_flesh_heap_increment(event)
 	else
 		caster:SetModifierStackCount( modifier, ability, max_stacks )
 	end
+	caster:CalculateStatBonus()
 end
 
 function modifier_flesh_heap_increment_check(event)
@@ -35,5 +35,20 @@ function modifier_flesh_heap_increment_check(event)
 
 	if not target:HasModifier(target_modifier) then
 		modifier_flesh_heap_increment(event)
+	end
+end
+
+function modifier_flesh_heap_refresh(event)
+	local caster = event.caster
+	local modifier = event.modifier
+	local ability = event.ability
+
+	-- Check if the hero already has the modifier
+	local current_stack = 0
+	if caster:HasModifier(modifier) then
+		current_stack = caster:GetModifierStackCount( modifier, ability )
+		caster:RemoveModifierByName(modifier)
+		ability:ApplyDataDrivenModifier(caster, caster, modifier, {})
+		caster:SetModifierStackCount( modifier, ability, current_stack + 1 )
 	end
 end

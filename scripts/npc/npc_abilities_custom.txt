@@ -11571,6 +11571,7 @@
 		"AbilityTextureName"					"pudge_flesh_heap"
 
 		"MaxLevel"                      "5"
+		"RequiredLevel"        "-3"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -11664,6 +11665,16 @@
 				}
 			}
 		}
+
+		"OnUpgrade"
+        {
+            "RunScript"
+            {
+                "ScriptFile"	"heroes/hero_pudge/flesh_heap.lua"
+                "Function"			"modifier_flesh_heap_refresh"
+                "modifier"          "modifier_pudge_flesh_heap_datadriven_buff"
+            }
+        }
 	}
 
 	 //=================================================================================================================

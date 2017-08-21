@@ -112,8 +112,8 @@ function GameMode:OnHeroInGame(hero)
   end
 
   -- This line for example will set the starting gold of every hero to 50000 unreliable gold
-  -- hero:SetGold(50000, false)
-  -- hero:AddExperience(50000, DOTA_ModifyXP_Unspecified, false, true)
+   hero:SetGold(50000, false)
+   hero:AddExperience(50000, DOTA_ModifyXP_Unspecified, false, true)
 
   -- These lines will create an item and add it to the player, effectively ensuring they start with the item
   -- local item = CreateItem("item_example_item", hero, hero)

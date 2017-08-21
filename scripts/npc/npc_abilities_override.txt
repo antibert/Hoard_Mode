@@ -3640,6 +3640,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"damage_per_second"		"20 30 40 50"
+				"LinkedSpecialBonus"	"special_bonus_unique_doom_4"
 			}
 		}
 	}
@@ -3750,16 +3751,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"damage"				"500 700 900"
 			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"infest_scepter_duration"		"8"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_increase_pct"				"50"
-			}
 		}
 	}
 	//=================================================================================================================
@@ -3868,7 +3859,7 @@
     {
         // Time
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"12"
+        "AbilityCooldown"				"15 14 13 12"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
@@ -5239,7 +5230,7 @@
             "02"
             {
                 "var_type"				"FIELD_FLOAT"
-                "stun_duration"			"2.5 3.0 3.5 4.0"
+                "stun_duration"			"2.0 2.6 3.2 3.8"
             }
             "03"
             {
@@ -5373,31 +5364,11 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilitySpecial"
         {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "radius"				"250 350 450 550"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "duration"				"0.5"
-            }
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
                 "damage"				"100 180 260 340"
             }
-            "04"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "radius_tree"				"275"
-            }
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"affect_ancients"		"1"
-			}
         }
     }
 

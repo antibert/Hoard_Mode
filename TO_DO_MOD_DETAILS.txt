@@ -1,10 +1,19 @@
 Next Update Patch Notes:
 
 1.23b
-Fixed Sand King's Sand Storm not having proper duration
-Fix Urn of Shadows healing
-Fixed Aether Lens upgrades giving hp regen instead of mana regen
-Fixed Pudge Flesh Heap
+7.06f parity!
+All changes match the patch except:
+Earthshaker Fissure cooldown increased to 15/14/13/12
+Wraith King reincarnation still uses 60/45/30 cooldown
+Helm of Madness attack speed aura increased from 25 to 30
+Fixed Doom's Scorched Earth
+Fixed Dark Seer's Vacuum
+Fixed Life Stealer's Open Wounds
+Spooky's base damage reduced from 666 to 350
+Spooky's base health regen reduced from 66 to 20
+Spooky's base speed reduced from 420 to 370
+Spooky now carries a Bloodthorn instead of a Daedalus
+Spooky now wears Guardian Greaves
 
 To Do:
 -- update russian lang

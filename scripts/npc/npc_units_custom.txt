@@ -2982,7 +2982,7 @@
 		"Model"						"models\creeps\neutral_creeps\n_creep_troll_skeleton\n_creep_skeleton_melee.vmdl"	// Model.
 		"SoundSet"					"n_creep_Melee"					// Name of sound set.
 		"ModelScale"				"3"
-		"Level"						"24"
+		"Level"						"50"
 		"ConsideredHero"			"1"
 		"MinimapIcon"				"minimap_roshancamp"
 		"MinimapIconSize"			"400"
@@ -3007,8 +3007,8 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"666"		// Damage range min.
-		"AttackDamageMax"			"666"		// Damage range max.
+		"AttackDamageMin"			"300"		// Damage range min.
+		"AttackDamageMax"			"400"		// Damage range max.
 		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 		"AttackRate"				"1.7"			// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
@@ -3032,13 +3032,13 @@
 		// Movement
 		//----------------------------------------------------------------
 		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
-		"MovementSpeed"				"420"		// Speed
+		"MovementSpeed"				"370"		// Speed
 		"MovementTurnRate"			"1.0"		// Turning rate.
 	
 		// Status
 		//----------------------------------------------------------------
 		"StatusHealth"				"50000"		// Base health.
-		"StatusHealthRegen"			"66"		// Health regeneration rate.
+		"StatusHealthRegen"			"6"		// Health regeneration rate.
 		"StatusMana"				"6666"		// Base mana.
 		"StatusManaRegen"			"6"			// Mana regeneration rate.
 	
@@ -3096,7 +3096,8 @@
                 "KingRapier"    {   "Item"  "item_king_rapier"}
                 "Radiance2" {   "Item"  "item_radiance_2"}
                 "Vlad2" {   "Item"  "item_vladmir_2"}
-                "Crit2" {   "Item"  "item_greater_crit"}
+                "Bloodthorn" {   "Item"  "item_bloodthorn"}
+                "Greaves"   {   "Item"  "item_guardian_greaves"}
             }
 		}
 	}

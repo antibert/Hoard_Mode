@@ -18,3 +18,20 @@ function OpenWounds( keys )
 		ability:ApplyDataDrivenModifier(caster, unit, "modifier_wounds_damage_datadriven", {duration = duration})
 	end
 end
+
+function OpenWoundsHeal( keys )
+	local attacker = keys.attacker
+	local unit = keys.unit
+	local caster = keys.caster
+
+	if unit == nil then
+		return
+	end
+
+	if unit:GetTeam() == attacker:GetTeam() then
+		return
+	end
+
+	local healAmount = keys.Damage * keys.HealAmount / 100
+	attacker:Heal(healAmount, caster)
+end

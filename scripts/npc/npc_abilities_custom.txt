@@ -4603,11 +4603,13 @@
 
 				"OnTakeDamage"
 				{
-					"Heal"
-					{
-						"Target"        "ATTACKER"
-						"HealAmount"	"%attack_damage * %heal_percent / 100"
-					}
+					"RunScript"
+                    {
+                        "ScriptFile"	"heroes/hero_life_stealer/open_wounds.lua"
+                        "Function"		"OpenWoundsHeal"
+                        "HealAmount"    "%heal_percent"
+                        "Damage"        "%attack_damage"
+                    }
 				}
 
 				"OnCreated"
@@ -10922,7 +10924,7 @@
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"				"350 575 800"
+        "AbilityManaCost"				"300 550 800"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------

@@ -2072,7 +2072,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"attack_speed_aura"		"25"
+				"attack_speed_aura"		"30"
 			}
 			"04"
 			{

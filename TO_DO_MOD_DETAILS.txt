@@ -1,6 +1,6 @@
 Next Update Patch Notes:
 
-1.23b
+1.23c
 7.06f parity!
 All changes match the patch except:
 Earthshaker Fissure cooldown increased to 15/14/13/12

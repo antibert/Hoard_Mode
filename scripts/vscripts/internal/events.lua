@@ -27,7 +27,7 @@ function GameMode:_OnGameRulesStateChange(keys)
     end
             
     --Announce the selected difficulty
-    Say(nil, "Map difficulty: " .. _G.GameMode.difficulty_name, true)
+    --Say(nil, "Map difficulty: " .. _G.GameMode.difficulty_name, true)
 
     if USE_CUSTOM_TEAM_COLORS_FOR_PLAYERS then
       for i=0,9 do

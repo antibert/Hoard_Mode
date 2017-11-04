@@ -404,7 +404,7 @@
                 "Maelstrom"    {    "Item"    "item_maelstrom"    }
                 "Cuirass"   {   "Item"        "item_vladmir_2"  }
                 "Treads"   {   "Item"        "item_power_treads"  }
-                "SnYnA"     {   "Item"      "item_sange_and_yasha_and_atos_datadriven"  }
+                "SnYnA"     {   "Item"      "item_sange_and_yasha_and_kaya_datadriven"  }
             }
 		}
 	}
@@ -10690,7 +10690,7 @@
 
         // Bounty
         //----------------------------------------------------------------
-        "BountyXP"					"90"		// Experience earn.
+        "BountyXP"					"69"		// Experience earn.
         "BountyGoldMin"				"42"		// Gold earned min.
         "BountyGoldMax"				"48"		// Gold earned max.
 

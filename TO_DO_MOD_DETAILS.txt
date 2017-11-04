@@ -1,19 +1,25 @@
 Next Update Patch Notes:
 
-1.23c
-7.06f parity!
-All changes match the patch except:
-Earthshaker Fissure cooldown increased to 15/14/13/12
-Wraith King reincarnation still uses 60/45/30 cooldown
-Helm of Madness attack speed aura increased from 25 to 30
-Fixed Doom's Scorched Earth
-Fixed Dark Seer's Vacuum
-Fixed Life Stealer's Open Wounds
-Spooky's base damage reduced from 666 to 350
-Spooky's base health regen reduced from 66 to 20
-Spooky's base speed reduced from 420 to 370
-Spooky now carries a Bloodthorn instead of a Daedalus
-Spooky now wears Guardian Greaves
+1.24
+7.07 Parity Patch #1
+
+Items:
+Aether Lens upgrades add +50 max mana, +0.5 mana regen, and 50 cast range
+Quelling Axe now requires Quelling Blade and Demon Edge
+Quelling Axe gives 42 damage and has increased cleave size
+Battle Fury now requires Quelling Axe and a Perseverance
+War Fury damage reduced from 70 to 65, hp regen reduced from 9 to 8, mana regen set to 2.5, cleave size increased
+Boots of Power no longer give bonus damage and give +20 to all stats
+Boots of Agility no longer give bonus damage and give +55 agility and +25 to other stats
+Boots of Intellect no longer give bonus damage and give +55 intelligence and +25 to other stats
+Boots of Strength no longer give bonus damage and give +55 strength and +25 to other stats
+Deathstone no longer gives bonus damage and gives +30 intelligence
+Dragon Javelins no longer give bonus damage
+King Rapier no longer bashes, instead has 60 attack speed and full true strike (unlike MKB)
+Desolator 2 armor reduction reduced to -12
+Eye of Skadi no longer requires an orb of venom
+Sange and Yasha and Atos replaced with Sange and Yasha and Kaya
+Shiva's Guard 2 no longer gives bonus damage and gives increased stats
 
 To Do:
 -- update russian lang

@@ -1262,11 +1262,13 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"damage"					"600 800 1000"
+				"LinkedSpecialBonus"			"special_bonus_unique_lion_3"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"damage_scepter"			"800 1100 1400"
+				"LinkedSpecialBonus"			"special_bonus_unique_lion_3"
 			}
 			"03"
 			{
@@ -4362,14 +4364,6 @@
 	{
 		"ItemCost"                   "30"
 	}
-	//=================================================================================================================
-	// Flying Courier
-	//=================================================================================================================
-	"item_flying_courier"
-	{
-		"ItemCost"                   "50"
-		"ItemStockInitial"				"1"
-	}
     //=================================================================================================================
 	// Clarity
 	//=================================================================================================================
@@ -4397,19 +4391,16 @@
 	"item_urn_of_shadows"
 	{
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"AbilityCooldown"				"23.0"
-		"ItemStackable"					"1"
-		"ItemPermanent"					"1"
-		"ItemInitialCharges"            "50"
-		"AbilitySpecial"
-		{
-			"08"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"soul_damage_amount"	"400"
-			}
-      	}
+		"ItemRequiresCharges"           "0"
 	}
+	//=================================================================================================================
+    // Spirit Vessel
+    //=================================================================================================================
+    "item_spirit_vessel"
+    {
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+        "ItemRequiresCharges"			"0"
+    }
 
 	//=================================================================================================================
     // Bloodstone
@@ -4420,7 +4411,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilitySpecial"
         {
-            "11"
+            "07"
             {
                 "var_type"				"FIELD_FLOAT"
                 "on_death_removal"		"1" //0% gone
@@ -4551,25 +4542,6 @@
 	{
 		"ItemCost"                      "900"
 		"AbilitySharedCooldown"			"blink"
-	}
-	//=================================================================================================================
-	// Poor Man's Shield
-	//=================================================================================================================
-	"item_poor_mans_shield"
-	{
-		"AbilitySpecial"
-		{
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"70"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance_hero"		"100"
-			}
-		}
 	}
 	//=================================================================================================================
 	// Manta
@@ -4872,19 +4844,6 @@
 	"necronomicon_archer_mana_burn"
 	{
 		"AbilityCooldown"				"28"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"burn_amount"			"125 175 225"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"burn_as_damage_tooltip"			"50"
-			}
-		}
 	}
 	//=================================================================================================================
 	// Ghost: Frost Attack
@@ -6056,30 +6015,11 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilitySpecial"
         {
-            "01"
-            {
-                "var_type"					"FIELD_INTEGER"
-                "radius"						"600"
-            }
-            "02"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "silence_duration"			"3 4 5 6"
-            }
             "03"
             {
                 "var_type"					"FIELD_INTEGER"
                 "damage"					"120 180 240 300"
-            }
-            "04"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "delay"						"2.6"
-            }
-            "05"
-            {
-                "var_type"					"FIELD_FLOAT"
-                "delay_plus_castpoint_tooltip"						"3.0"
+                "LinkedSpecialBonus"		"special_bonus_unique_bloodseeker_2"
             }
         }
     }
@@ -6906,7 +6846,7 @@
     {
         "ItemRequirements"
         {
-            "01"						"item_claymore;item_pers;item_quelling_blade_2_datadriven"
+            "01"						"item_pers;item_quelling_blade_2_datadriven"
         }
     }
 

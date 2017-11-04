@@ -20,12 +20,23 @@ function modifier_flesh_heap_increment(event)
 		ability:ApplyDataDrivenModifier(caster, caster, modifier, {})
 	end
 
-	-- Set the stack up to max_stacks
-	if (current_stack + 1) <= max_stacks then
-		caster:SetModifierStackCount( modifier, ability, current_stack + 1 )
-	else
-		caster:SetModifierStackCount( modifier, ability, max_stacks )
+	local new_stacks = current_stack + 1
+
+	local bonus_modifier = event.bonus_modifier
+	if bonus_modifier ~= nil then
+		if caster:HasAbility(bonus_modifier) then
+			local talent = caster:FindAbilityByName(bonus_modifier)
+			if talent:GetLevel()>0 then
+				new_stacks = new_stacks + 1
+			end
+		end
 	end
+
+	if (current_stack + 1) > max_stacks then
+		new_stacks = max_stacks
+	end
+
+	caster:SetModifierStackCount( modifier, ability, new_stacks )
 	caster:CalculateStatBonus()
 end
 

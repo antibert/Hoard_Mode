@@ -32,6 +32,13 @@ function ChaosBoltDamage( caster, target, ability )
     local damage_max = ability:GetLevelSpecialValueFor("damage_max", ability_level)
     local chaos_bolt_particle = "particles/units/heroes/hero_chaos_knight/chaos_knight_bolt_msg.vpcf"
 
+    if caster:HasAbility("special_bonus_unique_chaos_knight_3") then
+        local talent = caster:FindAbilityByName("special_bonus_unique_chaos_knight_3")
+        if talent:GetLevel()>0 then
+            stun_max = stun_max + talent:GetSpecialValueFor("value")
+        end
+    end
+
     -- Calculate the stun and damage values
     local random = RandomFloat(0, 1)
     local stun = stun_min + (stun_max - stun_min) * random

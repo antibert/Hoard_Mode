@@ -19,6 +19,13 @@ function SanityEclipseDamage( keys )
 		dmg_multiplier = ability:GetLevelSpecialValueFor("damage_multiplier_scepter", (ability:GetLevel() -1))
 	end
 
+	if caster:HasAbility("special_bonus_unique_outworld_devourer_3") then
+		local talent = caster:FindAbilityByName("special_bonus_unique_outworld_devourer_3")
+		if talent:GetLevel()>0 then
+			dmg_multiplier = dmg_multiplier + talent:GetSpecialValueFor("value")
+		end
+	end
+
 	local damage_table = {}
 
 	damage_table.attacker = caster

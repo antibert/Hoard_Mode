@@ -9,6 +9,13 @@ function Flux( keys )
 		return
 	end
 
+	local talent = caster:FindAbilityByName("special_bonus_unique_arc_warden_2")
+	if talent then
+		if talent:GetLevel() > 0 then
+			duration = duration + talent:GetSpecialValueFor("value")
+		end
+	end
+
 	EmitSoundOn("Hero_ArcWarden.Flux.Target", target)
 
 	local units = FindUnitsInRadius(caster:GetTeam(), target:GetAbsOrigin(), nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)

@@ -9,6 +9,13 @@ function Voodoo( keys )
 		return
 	end
 
+	if caster:HasAbility("special_bonus_unique_lion_4") then
+		local talent = caster:FindAbilityByName("special_bonus_unique_lion_4")
+		if talent:GetLevel()>0 then
+			radius = radius + talent:GetSpecialValueFor("value")
+		end
+	end
+
 	EmitSoundOn("Hero_Lion.Voodoo", target)
 	EmitSoundOn("Hero_Lion.Hex.Target", target)
 

@@ -18,6 +18,13 @@ function HeartstopperAura( keys )
 		target:RemoveModifierByName(visibility_modifier)
 	end
 
+	if caster:HasAbility("special_bonus_unique_necrophos_2") then
+		local talent = caster:FindAbilityByName("special_bonus_unique_necrophos_2")
+		if talent:GetLevel()>0 then
+			aura_damage = aura_damage + talent:GetSpecialValueFor("value")
+		end
+	end
+
 	local damage_table = {}
 
 	damage_table.attacker = caster

@@ -1,7 +1,78 @@
 Next Update Patch Notes:
 
 1.24
-7.07 Parity Patch #1
+7.07 Parity Patch
+
+Added Dark Willow and Pangolier!
+
+Heroes:
+Abaddon
+Replaced +50 Mist Coil Heal/Damage with 10% spell amp
+
+Bane
+Replaced Enfeeble Steals Damage with +120 attack damage
+
+Bloodseeker
+Replaced +20 Thirst with +75 movement speed
+
+Bounty Hunter
+Replaced +300 Track with +120 attack damage
+
+Dark Seer
+Replaced Parallel Wall with +420 gpm
+
+Faceless Void
+Replaced +100 Time Lock Damage with +20 agility
+
+Magnus
+Replaced +500 Skewer range with +150 cast range
+
+Phantom Assassin
+Replaced Double Strike Stifling Dagger with +30 Attack Speed
+
+Pugna
+Replaced Nether Ward Health with +15 to all stats
+Replaced Nether Ward Damage with +30% spell lifesteal
+
+Riki
+Replaced Blink Strike range with +150 cast range
+Replaced Tricks of the Trade AOE with +100 attack damage
+
+Puck
+Replaced Waning Rift cooldown with 20% cooldown reduction
+
+Shadow Shaman
+Replaced Hex cooldown with 20% cooldown reduction
+Replaced Shackles duration with 15% spell amplify
+
+Silencer
++2 int steal makes every dead creep count twice
+Replaced +2s global silence with 20% cooldown reduction
+
+Slark
+Replaced +3s pounce leash with +100 leap attack speed
+Replaced 120s essence shift with +40 agility
+
+Spectre
+Replaced +20% Haunt damage with +40 agility
+
+Terrorblade
+Replaced -8s Reflection cooldown with +20% Evasion
+Replaced -35s Sunder cooldown with +25 health regen
+
+Tinker
+Replaced +100 Laser damage with +35 Intelligence
+Replaced +0.3s Heat-seeking missile stun with +14 mana regen
+
+Undying
+Replaced +20s decay with +15 strength
+
+Vengeful Spirit
+Replaced Magic Missile pierces spell immunity with Reincarnation 200s
+
+Visage
+Replaced Soul Assumption double strike with 12% spell amplify
+Replaced +15 soul assumption damage per charge with 15% cooldown reduction
 
 Items:
 Aether Lens upgrades add +50 max mana, +0.5 mana regen, and 50 cast range

@@ -60,3 +60,13 @@ function disruptor_glimpse_nb2017:OnNPCSpawned( event )
 	end
 end
 
+function disruptor_glimpse_nb2017:GetCooldown( nLevel )
+	if self:GetCaster():HasAbility("special_bonus_unique_disruptor_4") then
+		local talent = self:GetCaster():FindAbilityByName("special_bonus_unique_disruptor_4")
+		if talent:GetLevel()>0 then
+			return talent:GetSpecialValueFor("value")
+		end
+	end
+
+	return self.BaseClass.GetCooldown( self, nLevel )
+end

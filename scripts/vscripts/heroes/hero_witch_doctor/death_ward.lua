@@ -50,6 +50,20 @@ function death_ward_start_create_dummy( keys )
 		dummy_ability.maxBounces = ability:GetLevelSpecialValueFor("bounces_scepter", ability_level)
 	end
 
+	if caster:HasAbility("special_bonus_unique_witch_doctor_1") then
+		local talent = caster:FindAbilityByName("special_bonus_unique_witch_doctor_1")
+		if talent:GetLevel()>0 then
+			dummy_ability.bounceRange = dummy_ability.bounceRange + talent:GetSpecialValueFor("value")
+		end
+	end
+
+	if caster:HasAbility("special_bonus_unique_witch_doctor_5") then
+		local talent = caster:FindAbilityByName("special_bonus_unique_witch_doctor_5")
+		if talent:GetLevel()>0 then
+			dummy_ability.damage = dummy_ability.damage + talent:GetSpecialValueFor("value")
+		end
+	end
+
 	dummy_ability.particle_name = "particles/units/heroes/hero_witchdoctor/witchdoctor_ward_attack.vpcf"
 	dummy_ability.projectile_speed = 1000
 	dummy_ability.projectileFrom = target

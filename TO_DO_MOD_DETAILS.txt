@@ -1,7 +1,7 @@
 Next Update Patch Notes:
 
 1.24b
-Fixed Silencer Curse of the Silent
+Fixed Silencer Arcane Curse
 
 To Do:
 -- update russian lang

@@ -1,11 +1,7 @@
 Next Update Patch Notes:
 
-1.24a
-Damage bonus on King Rapier and SnYnK fixed
-Fixed AOE Tooltip on Brain Sap
-Fixed Fiend's Grip damage
-War Fury now requires a Battle Fury and a Claymore
-Fixed Dragon Javelins in the store
+1.24b
+Fixed Silencer Curse of the Silent
 
 To Do:
 -- update russian lang

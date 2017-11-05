@@ -4890,6 +4890,7 @@
             {
                 "var_type"			"FIELD_INTEGER"
                 "damage"		"28 44 60 76"
+                "LinkedSpecialBonus"	"special_bonus_unique_silencer"
             }
         }
     }

@@ -89,6 +89,7 @@
 		"item"		"item_hand_of_midas"
 		"item"		"item_travel_boots"
 		"item"      "item_moon_shard_datadriven"
+		"item"      "item_dragon_javelin"
 	}
 
 	// Level 2 - Blue Recipes

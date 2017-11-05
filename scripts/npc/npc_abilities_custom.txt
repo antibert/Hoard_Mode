@@ -11555,7 +11555,7 @@
 		"AbilityCastPoint"			"0.5"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilityDamage"				"90 160 230 300"
-		"AoERadius"				"%radius"
+		"AOERadius"				"%radius"
 
 		"precache"
 		{
@@ -11761,7 +11761,7 @@
             "01"
             {
                 "var_type"						"FIELD_FLOAT"
-                "fiend_grip_tick_interval"		"0.5"
+                "fiend_grip_tick_interval"		"1"
             }
             "02"
             {
@@ -11787,14 +11787,6 @@
 
         "OnSpellStart"
         {
-        	"RunScript"
-            {
-            	"ScriptFile"	"misc/lazy_linkens_checks.lua"
-            	"Function"		"CheckLinkensStop"
-            	"UseCooldown"	"false"
-            	"UseMana"		"false"
-            }
-
             "ActOnTargets"
             {
                 "Target"
@@ -11999,7 +11991,7 @@
                     {
                         "Target"	"TARGET"
                         "Type"		"DAMAGE_TYPE_MAGICAL"
-                        "Damage"	"%fiend_grip_damage * %fiend_grip_tick_interval"
+                        "Damage"	"%fiend_grip_damage"
                     }
                 }
 

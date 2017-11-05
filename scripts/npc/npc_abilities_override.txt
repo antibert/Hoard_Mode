@@ -3325,6 +3325,7 @@
 	{
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"ItemRequiresCharges"           "0"
+		"ItemInitialCharges"			"500"
 	}
 	//=================================================================================================================
     // Spirit Vessel
@@ -3333,6 +3334,7 @@
     {
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
         "ItemRequiresCharges"			"0"
+        "ItemInitialCharges"			"500"
     }
 
 	//=================================================================================================================

@@ -28,7 +28,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_datadriven"
-        "ID"							"99231"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "ID"							"99223"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "Model"							"models/props_gameplay/recipe.vmdl"
         "AbilityTextureName"			"item_recipe"
 
@@ -51,7 +51,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_datadriven"
-        "ID"							"99241"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "ID"							"99224"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "Model"							"models/props_gameplay/recipe.vmdl"
         "AbilityTextureName"			"item_recipe"
 
@@ -74,7 +74,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_datadriven"
-        "ID"							"99251"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "ID"							"99225"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "Model"							"models/props_gameplay/recipe.vmdl"
         "AbilityTextureName"			"item_recipe"
 
@@ -140,7 +140,7 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "ID"							"99232"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "ID"							"99226"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "BaseClass"                     "item_aether_lens"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityTextureName"			"item_aether_lens_3"
@@ -181,7 +181,7 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "ID"							"99242"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "ID"							"99227"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "BaseClass"                     "item_aether_lens"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityTextureName"			"item_aether_lens_4"
@@ -222,7 +222,7 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "ID"							"99252"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "ID"							"99228"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "BaseClass"                     "item_aether_lens"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityTextureName"			"item_aether_lens_5"
@@ -404,11 +404,11 @@
         "AbilityCastRange"				"350"
         "AbilityCastPoint"				"0.0"
         "AbilityCooldown"				"4.0"
-        "AbilitySharedCooldown" "qblade"
+        "AbilitySharedCooldown"         "qblade"
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"1400"
+        "ItemCost"						"2400"
         "ItemAliases"					"quelling axe"
         "ItemQuality"                   "component"
 
@@ -488,13 +488,13 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"item_datadriven"
-		"ID"							"1144"  //Valve's version of this item uses the ID "144".
+		"ID"							"1146"  //Valve's version of this item uses the ID "144".
 		"Model"							"models/props_gameplay/recipe.mdl"
 		"AbilityTextureName"			"item_recipe"
 
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"1200"
+		"ItemCost"						"0"
 		"ItemShopTags"					""
 
 		// Recipe
@@ -503,7 +503,7 @@
 		"ItemResult"					"item_bfury_datadriven"
 		"ItemRequirements"
 		{
-			"01"						"item_bfury"
+			"01"						"item_bfury;item_claymore"
 		}
 	}
 	"item_bfury_datadriven"
@@ -535,7 +535,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"65"
+				"bonus_damage"			"75"
 			}
 			"02"
 			{
@@ -1157,7 +1157,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_datadriven"
-        "ID"							"99235"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "ID"							"99236"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "Model"							"models/props_gameplay/recipe.vmdl"
         "AbilityTextureName"			"item_recipe"
 
@@ -1180,7 +1180,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_datadriven"
-        "ID"							"99235"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "ID"							"99237"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "Model"							"models/props_gameplay/recipe.vmdl"
         "AbilityTextureName"			"item_recipe"
 
@@ -1203,7 +1203,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_datadriven"
-        "ID"							"99235"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "ID"							"99238"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "Model"							"models/props_gameplay/recipe.vmdl"
         "AbilityTextureName"			"item_recipe"
 
@@ -1229,7 +1229,7 @@
     	// General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_datadriven"
-        "ID"							"99236"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "ID"							"99239"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -1397,7 +1397,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_datadriven"
-        "ID"							"99237"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "ID"							"99240"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -1547,7 +1547,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_datadriven"
-        "ID"							"99238"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "ID"							"99241"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -1697,7 +1697,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_datadriven"
-        "ID"							"99236"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "ID"							"99242"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -1847,7 +1847,7 @@
         // General
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"						"item_datadriven"
-        "ID"							"99236"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "ID"							"99243"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -3072,7 +3072,7 @@
 
                 "Properties"
                 {
-                    "MODIFIER_PROPERTY_PREATTACK_BONUSDAMAGE"						"%bonus_damage"
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
                     "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 	"%bonus_attack_speed"
                 }
 
@@ -4308,15 +4308,13 @@
 
                 "Properties"
                 {
-                    "MODIFIER_PROPERTY_PREATTACK_BONUSDAMAGE"						"%bonus_damage"
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
                     "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"				"%bonus_all_stats"
                     "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"					"%bonus_all_stats"
                     "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"				"%bonus_all_stats"
                     "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"            "%spell_amp"
                     "MODIFIER_PROPERTY_MANACOST_PERCENTAGE"                 "%manacost_reduction"
-
-                    //Attack speed from Yasha-derived items affect your illusions.
-                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT_SECONDARY"		"%bonus_attack_speed"
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
 
                     //Movement speed from Yasha-derived items does not stack with itself but does stack with other percentage-based movement speed bonuses.
                     "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE_UNIQUE"			"%movement_speed_percent_bonus"
@@ -4638,7 +4636,7 @@
 
                 "Properties"
                 {
-                    "MODIFIER_PROPERTY_PREATTACK_BONUSDAMAGE"			"%bonus_damage"
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%bonus_damage"
                     "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%bonus_strength"
                     "MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion"
                 }

@@ -1,5 +1,9 @@
 brain_sap_lua = class({})
 
+function brain_sap_lua:GetAOERadius()
+	return self:GetSpecialValueFor( "radius" )
+end
+
 function brain_sap_lua:GetBehavior()
 	local behav = DOTA_ABILITY_BEHAVIOR_UNIT_TARGET + DOTA_ABILITY_BEHAVIOR_AOE
 	return behav

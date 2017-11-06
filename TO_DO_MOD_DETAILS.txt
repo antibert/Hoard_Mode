@@ -1,7 +1,10 @@
 Next Update Patch Notes:
 
-1.24b
-Fixed Silencer Arcane Curse
+1.24c
+7.07b Parity!
+Swapped Bane's talents to match the change
+Reduced War Fury damage by 5
+Fix to Elder Titan's stomp
 
 To Do:
 -- update russian lang

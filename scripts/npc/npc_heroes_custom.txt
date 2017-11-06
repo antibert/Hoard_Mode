@@ -53,7 +53,7 @@
         "Ability1"              "bane_enfeeble_datadriven"
         "Ability2"              "brain_sap_lua"
         "Ability4"              "bane_fiends_grip_datadriven"
-        "Ability11"             "special_bonus_attack_damage_120"
+        "Ability12"             "special_bonus_attack_damage_120"
         "Ability14"		"special_bonus_cooldown_reduction_20"
     }
 	//=================================================================================================================

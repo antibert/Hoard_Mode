@@ -1076,7 +1076,7 @@
 
             "EquippedItems"
             {
-                "MoonShard"    {    "Item"    "item_moon_shard"    }
+                "MoonShard"    {    "Item"    "item_moon_shard_datadriven"    }
                 "Plate"   {   "Item"        "item_platemail"  }
                 "Relic" {   "Item"  "item_relic"}
             }
@@ -1415,7 +1415,7 @@
                 "Aghanims"    {    "Item"    "item_ultimate_scepter"    }
                 "Shiva"   {   "Item"        "item_shivas_guard_2"  }
                 "Relic" {   "Item"  "item_relic"    }
-                "MoonShard"    {    "Item"    "item_moon_shard"    }
+                "MoonShard"    {    "Item"    "item_moon_shard_datadriven"    }
             }
 
             "AttachWearables"
@@ -1583,7 +1583,7 @@
 			"EquippedItems"
             {
                 "Relic" {   "Item"  "item_relic"    }
-                "MoonShard"    {    "Item"    "item_moon_shard"    }
+                "MoonShard"    {    "Item"    "item_moon_shard_datadriven"    }
             }
 		}
 	}
@@ -1712,7 +1712,7 @@
 			"EquippedItems"
 	        {
 	            "Relic" {   "Item"  "item_relic"    }
-	            "MoonShard"    {    "Item"    "item_moon_shard"    }
+	            "MoonShard"    {    "Item"    "item_moon_shard_datadriven"    }
 	        }
 		}
 	}
@@ -3937,7 +3937,7 @@
 			"EquippedItems"
             {
                 "Relic" {   "Item"  "item_relic"    }
-                "MoonShard"    {    "Item"    "item_moon_shard"    }
+                "MoonShard"    {    "Item"    "item_moon_shard_datadriven"    }
                 "Assault"       {   "Item"  "item_assault"}
             }
 		}
@@ -4086,7 +4086,7 @@
 			"EquippedItems"
             {
                 "Bloodstone" {   "Item"  "item_bloodstone"    }
-                "MoonShard"    {    "Item"    "item_moon_shard"    }
+                "MoonShard"    {    "Item"    "item_moon_shard_datadriven"    }
                 "Veil"       {   "Item"  "item_veil_of_discord"}
             }
 		}
@@ -5573,7 +5573,7 @@
             "EquippedItems"
             {
                 "Relic" {   "Item"  "item_relic"    }
-                "MoonShard"    {    "Item"    "item_moon_shard"    }
+                "MoonShard"    {    "Item"    "item_moon_shard_datadriven"    }
                 "Shiva"     {   "Item"  "item_shivas_guard"}
                 "Mekansm"   {   "Item"  "item_mekansm"}
             }

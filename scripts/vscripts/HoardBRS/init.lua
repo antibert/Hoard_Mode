@@ -133,14 +133,17 @@ function applyAbilityPack(target, amount, levels, ...)
         if found==2 then
             target:AddAbility(newAbility)
             local h_Ability = target:FindAbilityByName(newAbility)
-            local tmpLevels=levels
-            if (maxLevel<tmpLevels) then
-                tmpLevels=maxLevel
-            end
-			h_Ability:SetLevel(tmpLevels)
-            if Toggleable==1 then
-                h_Ability:ToggleAbility()
-                h_Ability:ToggleAutoCast()
+
+            if h_Ability ~= nil then
+                local tmpLevels=levels
+                if (maxLevel<tmpLevels) then
+                    tmpLevels=maxLevel
+                end
+                h_Ability:SetLevel(tmpLevels)
+                if Toggleable==1 then
+                    h_Ability:ToggleAbility()
+                    h_Ability:ToggleAutoCast()
+                end
             end
         end
         found=2

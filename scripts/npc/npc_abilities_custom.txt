@@ -2591,8 +2591,7 @@
 			"ice_vortex_slow"
 			{
 				"Duration"					"0.1"
-				"EffectName"				"particles/generic_gameplay/generic_slowed_cold.vpcf"
-				"StatusEffectName"			"status_effect_frost"
+				"StatusEffectName"			"particles/generic_gameplay/generic_slowed_cold.vpcf"
 				"StatusEffectPriority"		"41"
 				"Properties"
 				{
@@ -4151,146 +4150,6 @@
 
 		}
 	}
-	"medusa_split_shot_datadriven"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-		"AbilityUnitTargetFlag"			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"			"holdout_multishot"
-
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_medusa.vsndevts"
-			"particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
-			"particle"			"particles/units/heroes/hero_medusa/medusa_base_attack.vpcf"
-		}
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0.4 0.4 0.4 0.4"
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage_modifier"		"-50"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_modifier_tooltip"		"50"
-			}
-			"03"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"arrow_count"				"1 2 3 4"
-			}
-			"04"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"total_arrow_count"				"2 3 4 5"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"range"					"625"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"projectile_speed"		"1000"
-			}
-		}
-
-		"OnToggleOn"
-		{
-			"FireEffect"
-			{
-				"EffectName"        "particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
-				"EffectAttachType"  "follow_origin"
-				"Target"            "CASTER"
-			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_split_shot_datadriven"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnToggleOff"
-		{
-			"FireEffect"
-			{
-				"EffectName"        "particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
-				"EffectAttachType"  "follow_origin"
-				"Target"            "CASTER"
-			}
-
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_split_shot_datadriven"
-				"Target"
-				{
-					"Center"	"CASTER"
-					"Flags" 	"DOTA_UNIT_TARGET_FLAG_DEAD"
-				}
-			}
-		}
-
-		"OnProjectileHitUnit"
-		{
-			"DeleteOnHit"	"1"
-
-			"FireSound"
-			{
-				"EffectName"	"Hero_Medusa.AttackSplit"
-				"Target" 		"TARGET"
-			}
-
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_medusa/split_shot.lua"
-				"Function"		"SplitShotDamage"
-			}
-		}
-
-		"Modifiers"
-		{
-			"modifier_split_shot_datadriven"
-			{
-				"Passive"			"0"
-				"IsHidden"			"1"
-				"IsDebuff"			"0"
-
-				"OnAttack"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_medusa/split_shot.lua"
-						"Function"		"SplitShotLaunch"
-						"split_shot_projectile"	"particles/units/heroes/hero_medusa/medusa_base_attack.vpcf"
-					}
-				}
-
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE" "%damage_modifier"
-				}
-			}
-		}
-	}
 	"necronomicon_warrior_last_will_datadriven"
 	{
 		// General
@@ -5405,12 +5264,12 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"450 450 450 450"
+				"outer_damage"					"100"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"partial_damage"			"350 350 350 350"
+				"partial_damage"			"350"
 			}
 			"05"
 			{
@@ -5477,7 +5336,7 @@
 							"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 						}
 						"Type"			"DAMAGE_TYPE_PHYSICAL"
-						"Damage"		"%damage - %partial_damage"
+						"Damage"		"%outer_damage"
 					}
 				}
 			}
@@ -8263,7 +8122,7 @@
                     "Random"
                     {
                         "Chance"		"%truestrike"
-                        "PseudoRandom"	"DOTA_PSEUDO_RANDOM_TOWER_TRUESTRIKE"
+                        "PseudoRandom"	"DOTA_PSEUDO_RANDOM_JUGG_CRIT"
 
                         "OnSuccess"
                         {
@@ -12088,7 +11947,7 @@
                     "Random"
                     {
                         "Chance"		"%truestrike"
-                        "PseudoRandom"	"DOTA_PSEUDO_RANDOM_TOWER_TRUESTRIKE"
+                        "PseudoRandom"	"DOTA_PSEUDO_RANDOM_JUGG_CRIT"
 
                         "OnSuccess"
                         {

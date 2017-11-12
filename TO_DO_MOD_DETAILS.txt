@@ -1,10 +1,15 @@
 Next Update Patch Notes:
 
-1.24c
-7.07b Parity!
-Swapped Bane's talents to match the change
-Reduced War Fury damage by 5
-Fix to Elder Titan's stomp
+1.24d
+Removed references from no longer existing skills in the late game survival triggers (caused a crash)
+Rapier Ogre is now an Ancient
+Organ Distillator's 60 second arcane orb talent replaced with +35 Intelligence
+Fixed bug preventing bosses to spawn with moon shards
+
+Wraith King Temporary Rework
+- Mortal Strike replaced with Blade Dance
+- +5 Skeletons replaced with +7 armor
+- +30 skeleton damage replaced with 25% cleave
 
 To Do:
 -- update russian lang

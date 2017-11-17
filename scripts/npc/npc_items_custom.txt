@@ -5442,13 +5442,11 @@
             }
         }
 
-        "OnSpellStart"
+        "ApplyModifier"
         {
-            "RunScript"
-            {
-                "ScriptFile"		"items/item_butterfly.lua"
-                "Function"			"item_butterfly_datadriven_on_spell_start"
-            }
+            "Target"					"CASTER"
+            "ModifierName"				"modifier_item_butterfly_datadriven_movespeed"
+            "Duration"					"%duration"
         }
 
         "Modifiers"
@@ -5464,24 +5462,7 @@
                     "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"				"%bonus_agility"
                     "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"			"%bonus_damage"
                     "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%bonus_attack_speed"
-                }
-
-                "OnCreated"
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"		"items/item_butterfly.lua"
-                        "Function"			"modifier_item_butterfly_datadriven_on_created"
-                    }
-                }
-
-                "OnDestroy"
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"		"items/item_butterfly.lua"
-                        "Function"			"modifier_item_butterfly_datadriven_on_destroy"
-                    }
+                    "MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion"
                 }
 
                 "OnAttackStart"
@@ -5506,20 +5487,9 @@
                     }
                 }
             }
-            "modifier_item_butterfly_datadriven_evasion"
-            {
-                "Passive"			"0"
-                "IsHidden"			"1"
-                "Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
 
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_EVASION_CONSTANT"				"%bonus_evasion"
-                }
-            }
             "modifier_item_butterfly_datadriven_movespeed"
             {
-                "Duration"			"%duration"
                 "Passive"			"0"
                 "IsHidden"			"0"
 
@@ -5532,17 +5502,6 @@
                 {
                     "MODIFIER_STATE_NO_UNIT_COLLISION"				"MODIFIER_STATE_VALUE_ENABLED"
                     "MODIFIER_STATE_FLYING"							"MODIFIER_STATE_VALUE_ENABLED"
-                }
-
-                //Reinstate the evasion for each Butterfly in the caster's inventory.  Note that this effect
-                //is not purgable, so OnDestroy should occur %duration seconds after Butterfly is used.
-                "OnDestroy"
-                {
-                    "RunScript"
-                    {
-                        "ScriptFile"		"items/item_butterfly.lua"
-                        "Function"			"modifier_item_butterfly_datadriven_movespeed_on_destroy"
-                    }
                 }
             }
 

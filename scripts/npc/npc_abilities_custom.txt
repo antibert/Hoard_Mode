@@ -10774,49 +10774,6 @@
         }
 	}
 
-	 //=================================================================================================================
-    // Ability: Treant Protector's Entangle
-    //=================================================================================================================
-    "treant_entangle_datadriven"
-    {
-        "BaseClass"						"lone_druid_spirit_bear_entangle"
-        "MaxLevel"                      "4"
-        "AbilityType"                   "DOTA_ABILITY_TYPE_BASIC"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-        "RequiredLevel"        "1"
-
-        // Damage.
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityDamage"					"20 40 60 80"
-
-        // Time
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"1.0"
-
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "entangle_chance"		"10 15 20 25"
-            }
-            "02"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "hero_duration"			"6"
-            }
-            "03"
-            {
-                "var_type"				"FIELD_FLOAT"
-                "creep_duration"		"6"
-            }
-        }
-    }
-
     // Rewrite of the Shuriken Toss ability, based on Luna moon Glaive
     // Author: jacklarnes, Pizzalol, Diellan
     // Date: 09.03.2016
@@ -14644,7 +14601,6 @@
 				"Aura_Radius"   	"%radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ALLIES"
 			}
 	
 			"modifier_inner_beast_buff"

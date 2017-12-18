@@ -59,7 +59,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"30 50 70 90"
+				"damage"				"50 75 100 125"
 			}
 			"02"
 			{
@@ -75,7 +75,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_interval"		"0.8"
+				"damage_interval"		"1"
 			}
 			"05"
 			{
@@ -90,7 +90,7 @@
 			"07"
 			{
 			    "var_type"				"FIELD_INTEGER"
-                "radius"		"350"
+                "radius"				"400"
 			}
 		}
 
@@ -265,6 +265,177 @@
 				{
 					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_FROZEN"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Axe: Berserker's Call
+	//=================================================================================================================
+	"axe_berserkers_call_datadriven"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"FightRecapLevel"				"1"
+		"AbilityTextureName"			"axe_berserkers_call"
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+			"particle"			"particles/units/heroes/hero_axe/axe_beserkers_call_owner.vpcf"
+			"particle"			"particles/status_fx/status_effect_beserkers_call.vpcf"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15"
+
+		// Damage.
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityDamage"					"0 0 0 0"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"80 90 100 110"	
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"60"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_regen"			"40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2 3 4 5"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"	"Hero_Axe.Berserkers_Call"
+				"Target" 		"CASTER"
+			}
+
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_berserkers_call_caster_datadriven"
+				"Target" 		"CASTER"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_berserkers_call_caster_datadriven"
+				"Target" 		"CASTER"
+				"Duration"		"%duration"
+			}
+
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"CASTER"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					"Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+				}
+			
+				"Action"    
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_beserkers_call_enemy_datadriven"
+						"Target" 		"TARGET"
+						"Duration"		"%duration"
+					}
+				}
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_berserkers_call_caster_datadriven"
+			{
+				"IsPurgable"		"0"
+				"IsBuff"			"1"
+		
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"Target"			"CASTER"
+						"EffectName"        "particles/units/heroes/hero_axe/axe_beserkers_call_owner.vpcf"
+						"EffectAttachType" 	"follow_origin"
+						"ControlPoints"
+						{
+							"02"		"%radius 1 1"	//Required for Rampant Outrage (axe immortal)
+						}
+						"ControlPointEntities"
+						{
+							"CASTER"	"follow_origin"
+							"CASTER"	"follow_origin"
+							"CASTER"	"follow_origin"
+						}
+					}
+				}
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%bonus_armor"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%bonus_regen"
+				}
+			}
+
+			"modifier_beserkers_call_enemy_datadriven"
+			{
+				"IsPurgable"		"0"
+				"IsDebuff"			"1"
+
+				"StatusEffectName" 		"particles/status_fx/status_effect_beserkers_call.vpcf" 	   
+				"StatusEffectPriority"  "10"
+
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_axe/berserkers_call.lua"
+						"Function"		"BerserkersCall"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_axe/berserkers_call.lua"
+						"Function"		"BerserkersCallEnd"
+					}
 				}
 			}
 		}
@@ -10250,17 +10421,17 @@
             "02"
             {
                 "var_type"				"FIELD_FLOAT"
-                "self_damage"			"75 100 125 150"
+                "self_damage"			"80 120 160 200"
             }
             "03"
             {
                 "var_type"				"FIELD_FLOAT"
-                "target_damage"			"100 150 200 250"
+                "target_damage"			"120 180 240 300"
             }
             "04"
             {
                 "var_type"				"FIELD_INTEGER"
-                "heal_amount"			"100 150 200 250"
+                "heal_amount"			"120 180 240 300"
             }
             "05"
             {
@@ -11346,7 +11517,7 @@
             }
         }
     }
-    	///////////////////////
+    ///////////////////////
 	/// Bane: Brain Sap ///
 	///////////////////////
 	"brain_sap_lua"
@@ -11443,8 +11614,7 @@
 
         // Time
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"8.0"
-        "AbilityDuration"				"8 12 16 20"
+        "AbilityCooldown"				"12.0"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
@@ -11457,12 +11627,17 @@
             "01"
             {
                 "var_type"						"FIELD_INTEGER"
-                "enfeeble_attack_reduction"		"-30 -60 -90 -120"
+                "attack_reduction"				"-30 -60 -90 -120"
             }
             "02"
             {
                 "var_type"						"FIELD_INTEGER"
-                "radius"		"325 375 425 475"
+                "radius"						"325 375 425 475"
+            }
+            "03"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "duration"						"8 12 16 20"
             }
         }
 
@@ -11505,7 +11680,7 @@
             "modifier_enfeeble_datadriven"
             {
                 "IsDebuff"	"1"
-                "Duration"	"%AbilityDuration"
+                "Duration"	"%duration"
                 "IsPurgable"	"0"
                 "EffectName"	"particles/units/heroes/hero_bane/bane_enfeeble.vpcf"
                 "EffectAttachType"	"follow_overhead"
@@ -11519,7 +11694,7 @@
             "modifier_enfeeble_buff_datadriven"
             {
                 "IsBuff"	"1"
-                "Duration"	"%AbilityDuration"
+                "Duration"	"%duration"
                 "IsPurgable"	"1"
                 "EffectName"	"particles/units/heroes/hero_bane/bane_enfeeble.vpcf"
                 "EffectAttachType"	"follow_overhead"
@@ -11588,6 +11763,7 @@
             {
                 "var_type"						"FIELD_FLOAT"
                 "fiend_grip_duration"			"5.0 5.0 5.0"
+                "LinkedSpecialBonus"			"special_bonus_unique_bane_1"
             }
             "04"
             {
@@ -12370,17 +12546,17 @@
             "01"
             {
                 "var_type"				"FIELD_FLOAT"
-                "damage_per_burn"		"0.6"
+                "damage_per_burn"		"1.0"
             }
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "mana_per_hit"			"28 40 52 64"
+                "mana_per_hit"			"16 32 48 64"
             }
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "radius"			"225"
+                "radius"				"225"
             }
             "04"
             {
@@ -12451,7 +12627,7 @@
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"				"75"
+        "AbilityManaCost"				"60 80 100 120"
 
         "precache"
         {
@@ -12466,12 +12642,13 @@
             "01"
             {
                 "var_type"						"FIELD_FLOAT"
-                "duration"						"6.0"
+                "duration"						"4.0"
+                "LinkedSpecialBonus"			"special_bonus_unique_arc_warden_2"
             }
             "02"
             {
                 "var_type"						"FIELD_INTEGER"
-                "damage_per_second"				"20 35 50 65"
+                "damage_per_second"				"25 50 75 100"
             }
             "03"
             {
@@ -12486,17 +12663,17 @@
             "05"
             {
                 "var_type"						"FIELD_INTEGER"
-                "move_speed_slow_pct"				"35 40 45 50"
+                "move_speed_slow_pct"			"35 40 45 50"
             }
             "06"
             {
-                "var_type"					"FIELD_INTEGER"
-                "cast_range_tooltip"		"600 700 800 900"
+                "var_type"						"FIELD_INTEGER"
+                "cast_range_tooltip"			"600 700 800 900"
             }
             "07"
             {
-                "var_type"					"FIELD_INTEGER"
-                "radius"		"325"
+                "var_type"						"FIELD_INTEGER"
+                "radius"						"300"
             }
         }
 

@@ -123,15 +123,38 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana_regen"	"1.75"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen"		"1.75"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"cast_range_bonus"			"300"
+				"cast_range_bonus"		"300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"3"
 			}
 		}
+
+		"Modifiers"
+        {
+            "modifier_item_aether_lens_2"
+            {
+                "Passive"			"1"
+                "IsHidden"			"1"
+                "Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
+                    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
+                    "MODIFIER_PROPERTY_CAST_RANGE_BONUS"			"%cast_range_bonus"
+                    "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp"
+                }
+            }
+        }
 	}
 	//=================================================================================================================
     // Focused Aether Lens
@@ -164,13 +187,36 @@
             }
             "02"
             {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_mana_regen"	"2.25"
+                "var_type"				"FIELD_FLOAT"
+                "bonus_mana_regen"		"2"
             }
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "cast_range_bonus"			"350"
+                "cast_range_bonus"		"350"
+            }
+            "04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"6"
+			}
+		}
+
+		"Modifiers"
+        {
+            "modifier_item_aether_lens_3"
+            {
+                "Passive"			"1"
+                "IsHidden"			"1"
+                "Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
+                    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
+                    "MODIFIER_PROPERTY_CAST_RANGE_BONUS"			"%cast_range_bonus"
+                    "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp"
+                }
             }
         }
     }
@@ -205,13 +251,36 @@
             }
             "02"
             {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_mana_regen"	"2.75"
+                "var_type"				"FIELD_FLOAT"
+                "bonus_mana_regen"		"2.5"
             }
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
                 "cast_range_bonus"			"400"
+            }
+            "04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"9"
+			}
+		}
+
+		"Modifiers"
+        {
+            "modifier_item_aether_lens_4"
+            {
+                "Passive"			"1"
+                "IsHidden"			"1"
+                "Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
+                    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
+                    "MODIFIER_PROPERTY_CAST_RANGE_BONUS"			"%cast_range_bonus"
+                    "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp"
+                }
             }
         }
     }
@@ -246,16 +315,40 @@
             }
             "02"
             {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_mana_regen"	"3.25"
+                "var_type"				"FIELD_FLOAT"
+                "bonus_mana_regen"		"3"
             }
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
                 "cast_range_bonus"			"450"
             }
+            "04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"12"
+			}
+		}
+
+		"Modifiers"
+        {
+            "modifier_item_aether_lens_5"
+            {
+                "Passive"			"1"
+                "IsHidden"			"1"
+                "Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
+                    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
+                    "MODIFIER_PROPERTY_CAST_RANGE_BONUS"			"%cast_range_bonus"
+                    "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp"
+                }
+            }
         }
     }
+
     "item_recipe_blink_2"
     {
         // General
@@ -544,7 +637,7 @@
 			}
 			"03"
 			{
-				"var_type"				"FIELD_INTEGER"
+				"var_type"				"FIELD_FLOAT"
 				"bonus_mana_regen"		"2.5"
 			}
 			"04"
@@ -698,7 +791,7 @@
 			{
 				"IsPurgable"		"0"
 				"IsBuff"			"1"
-				"EffectName"            	"particles\customgames\capturepoints\cp_allied_wood.vpcf"
+				"EffectName"            	"particles/customgames/capturepoints/cp_allied_wood.vpcf"
 				"EffectAttachType"      	"PATTACH_ABSORIGIN"	
 				"Properties"
 				{
@@ -1068,7 +1161,7 @@
 			"09"
 			{
 				"var_type"							"FIELD_INTEGER"
-				"bonus_mana_regen_percentage"		"7.6"
+				"bonus_mana_regen_percentage"		"7"
 			}
 		}
 	
@@ -1294,12 +1387,12 @@
             }
             "08"
             {
-                "var_type"							"FIELD_INTEGER"
+                "var_type"							"FIELD_FLOAT"
                 "bonus_health_regen"				"5.5"
             }
             "09"
             {
-                "var_type"							"FIELD_INTEGER"
+                "var_type"							"FIELD_FLOAT"
                 "bonus_mana_regen_percentage"		"1.5"
             }
         }
@@ -1310,7 +1403,7 @@
         {
             "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
             "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
-            "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+            "particle"			"particles/units/heroes/hero_drow/drow_base_attack.vpcf"
         }
 
         "Modifiers"
@@ -1332,7 +1425,7 @@
                     {
                         "ScriptFile"	"items/item_dragon_javelin.lua"
                         "Function"		"SplitShotLaunch"
-                        "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+                        "split_shot_projectile"	"particles/units/heroes/hero_drow/drow_base_attack.vpcf"
                         "range"         "%range"
                         "projectile_speed" "%projectile_speed"
                         "arrow_count" "%arrow_count"
@@ -1462,12 +1555,12 @@
             }
             "08"
             {
-                "var_type"							"FIELD_INTEGER"
+                "var_type"							"FIELD_FLOAT"
                 "bonus_health_regen"				"5.5"
             }
             "09"
             {
-                "var_type"							"FIELD_INTEGER"
+                "var_type"							"FIELD_FLOAT"
                 "bonus_mana_regen_percentage"		"1.5"
             }
         }
@@ -1478,7 +1571,7 @@
         {
             "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
             "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
-            "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+            "particle"			"particles/units/heroes/hero_drow/drow_base_attack.vpcf"
         }
 
         "Modifiers"
@@ -1500,7 +1593,7 @@
                     {
                         "ScriptFile"	"items/item_dragon_javelin.lua"
                         "Function"		"SplitShotLaunch"
-                        "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+                        "split_shot_projectile"	"particles/units/heroes/hero_drow/drow_base_attack.vpcf"
                         "range"         "%range"
                         "projectile_speed" "%projectile_speed"
                         "arrow_count" "%arrow_count"
@@ -1612,12 +1705,12 @@
              }
              "08"
              {
-                 "var_type"							"FIELD_INTEGER"
+                 "var_type"							"FIELD_FLOAT"
                  "bonus_health_regen"				"5.5"
              }
              "09"
              {
-                 "var_type"							"FIELD_INTEGER"
+                 "var_type"							"FIELD_FLOAT"
                  "bonus_mana_regen_percentage"		"1.5"
              }
          }
@@ -1628,7 +1721,7 @@
          {
              "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
              "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
-             "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+             "particle"			"particles/units/heroes/hero_drow/drow_base_attack.vpcf"
          }
 
          "Modifiers"
@@ -1650,7 +1743,7 @@
                      {
                          "ScriptFile"	"items/item_dragon_javelin.lua"
                          "Function"		"SplitShotLaunch"
-                         "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+                         "split_shot_projectile"	"particles/units/heroes/hero_drow/drow_base_attack.vpcf"
                          "range"         "%range"
                          "projectile_speed" "%projectile_speed"
                          "arrow_count" "%arrow_count"
@@ -1762,12 +1855,12 @@
              }
              "08"
              {
-                 "var_type"							"FIELD_INTEGER"
+                 "var_type"							"FIELD_FLOAT"
                  "bonus_health_regen"				"5.5"
              }
              "09"
              {
-                 "var_type"							"FIELD_INTEGER"
+                 "var_type"							"FIELD_FLOAT"
                  "bonus_mana_regen_percentage"		"1.5"
              }
          }
@@ -1778,7 +1871,7 @@
          {
              "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
              "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
-             "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+             "particle"			"particles/units/heroes/hero_drow/drow_base_attack.vpcf"
          }
 
          "Modifiers"
@@ -1800,7 +1893,7 @@
                      {
                          "ScriptFile"	"items/item_dragon_javelin.lua"
                          "Function"		"SplitShotLaunch"
-                         "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+                         "split_shot_projectile"	"particles/units/heroes/hero_drow/drow_base_attack.vpcf"
                          "range"         "%range"
                          "projectile_speed" "%projectile_speed"
                          "arrow_count" "%arrow_count"
@@ -1912,12 +2005,12 @@
               }
               "08"
               {
-                  "var_type"							"FIELD_INTEGER"
+                  "var_type"							"FIELD_FLOAT"
                   "bonus_health_regen"				"5.5"
               }
               "09"
               {
-                  "var_type"							"FIELD_INTEGER"
+                  "var_type"							"FIELD_FLOAT"
                   "bonus_mana_regen_percentage"		"1.5"
               }
           }
@@ -1928,7 +2021,7 @@
           {
               "soundfile"			"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
               "particle"			"particles/units/heroes/hero_medusa/medusa_bow_split_shot_cast.vpcf"
-              "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+              "particle"			"particles/units/heroes/hero_drow/drow_base_attack.vpcf"
           }
 
           "Modifiers"
@@ -1950,7 +2043,7 @@
                       {
                           "ScriptFile"	"items/item_dragon_javelin.lua"
                           "Function"		"SplitShotLaunch"
-                          "split_shot_projectile"	"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+                          "split_shot_projectile"	"particles/units/heroes/hero_drow/drow_base_attack.vpcf"
                           "range"         "%range"
                           "projectile_speed" "%projectile_speed"
                           "arrow_count" "%arrow_count"
@@ -2008,7 +2101,7 @@
 		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		"AbilityTextureName"            "item_helm_of_madness"
 		"AbilityCooldown"				"45.0"
-		"ItemCost"                    "4600"
+		"ItemCost"                   	"4600"
         
         
         "AbilitySpecial"
@@ -2016,7 +2109,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_stats"		"15"
+				"bonus_stats"			"15"
 			}
 			"02"
 			{
@@ -2856,7 +2949,7 @@
 			"TrackingProjectile"
 			{
 				"Target"           	"TARGET"
-				"EffectName"		"particles\items_fx\ethereal_blade.vpcf"
+				"EffectName"		"particles/items_fx/ethereal_blade.vpcf"
 				"Dodgeable"			"1"
 				"ProvidesVision"	"0"
 				"MoveSpeed"        	"%projectile_speed"
@@ -3769,7 +3862,7 @@
 			{
 				"IsHidden"			"0"
 		
-				"EffectName"		"particles\econ\events\league_teleport_2014\teleport_start_league_gold.vpcf"
+				"EffectName"		"particles/econ/events/league_teleport_2014/teleport_start_league_gold.vpcf"
 				"EffectAttachType"	"follow_origin"
 	
 				"OnOrder"
@@ -4198,7 +4291,7 @@
         "ItemResult"					"item_sange_and_yasha_and_kaya_datadriven"
         "ItemRequirements"
         {
-            "01"						"item_sange_and_yasha;item_trident"
+            "01"						"item_sange_and_yasha;item_kaya"
         }
     }
 
@@ -4221,7 +4314,7 @@
         "ItemCost"						"7200"
         "ItemShopTags"					"damage;str;agi;int;regen_health;attack_speed;unique"
         "ItemQuality"					"artifact"
-        "ItemAliases"					"snyna;s&y&a;sya;sange and yasha and atos"
+        "ItemAliases"					"snyna;s&y&a;sya;sange and yasha and kaya"
         "ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
         "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 
@@ -5037,7 +5130,7 @@
             }
             "02"
             {
-                "var_type"				"FIELD_INTEGER"
+                "var_type"				"FIELD_FLOAT"
                 "hp_regen"				"2.5"
             }
             "03"
@@ -5403,7 +5496,7 @@
             "01"
             {
                 "var_type"						"FIELD_INTEGER"
-                "bonus_agility"					"30"
+                "bonus_agility"					"35"
             }
             "02"
             {
@@ -5854,7 +5947,7 @@
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
+				"var_type"				"FIELD_FLOAT"
 				"bonus_mana_regen"		"2.25"
 			}
 			"05"

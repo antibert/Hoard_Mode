@@ -1,11 +1,5 @@
 Next Update Patch Notes:
 
-1.24e
-Wasp no longer loses evasion when activated
-Tweaks to late game code to determine what the crash is
-
-To Do:
--- update russian lang
--- Lifestealer hotkeys getting messed up
--- make horde mode video
--- More map bosses than drop super items you can't buy in shop
+1.24g
+Nature's Prophet
+Revert Force of Nature to vanilla

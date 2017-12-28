@@ -16,9 +16,6 @@
     {
         "override_hero"			"npc_dota_hero_ancient_apparition"
         "Ability1"              "ancient_apparition_cold_feet_datadriven"
-        "Ability10"             "special_bonus_exp_boost_25"
-        "Ability12"             "special_bonus_attack_speed_35"
-        "Ability14"             "special_bonus_intelligence_35"
         "Ability16"		        "special_bonus_evasion_20"
         "Ability17"             "special_bonus_spell_lifesteal_20"
     }
@@ -58,9 +55,7 @@
         "Ability1"              "bane_enfeeble_datadriven"
         "Ability2"              "brain_sap_lua"
         "Ability6"              "bane_fiends_grip_datadriven"
-        "Ability11"             "special_bonus_exp_boost_25"
         "Ability12"             "special_bonus_attack_damage_90"
-        "Ability13"             "special_bonus_cast_range_150"
         "Ability14"		        "special_bonus_cooldown_reduction_15"
     }
 	//=================================================================================================================

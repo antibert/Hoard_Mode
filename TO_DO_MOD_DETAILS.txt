@@ -1,5 +1,5 @@
 Next Update Patch Notes:
 
 1.24g
-Nature's Prophet
-Revert Force of Nature to vanilla
+Revert Nature's Prophet Force of Nature to vanilla
+Removed some problematic end game abilities

@@ -1,5 +1,8 @@
 Next Update Patch Notes:
 
-1.24g
-Revert Nature's Prophet Force of Nature to vanilla
-Removed some problematic end game abilities
+1.24h
+Urn of Shadows and Spirit Vessel removed until we figure out what Valve did to them
+Fixed Wasp activation ability
+Fixed Bane's Enfeeble
+Bane +90 damage changed back to Enfeeble Steals Damage
+Brain Sap heal no longer scales with number of targets hit

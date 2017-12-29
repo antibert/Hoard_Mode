@@ -5535,12 +5535,20 @@
             }
         }
 
-        "ApplyModifier"
-        {
-            "Target"					"CASTER"
-            "ModifierName"				"modifier_item_butterfly_datadriven_movespeed"
-            "Duration"					"%duration"
-        }
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+            {
+                "Target"					"CASTER"
+                "ModifierName"				"modifier_item_butterfly_datadriven_movespeed"
+                "Duration"					"%duration"
+            }
+			"FireSound"
+			{
+				"EffectName"				"DOTA_Item.Armlet.Activate"
+				"Target"					"CASTER"
+			}
+		}
 
         "Modifiers"
         {

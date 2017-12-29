@@ -11468,6 +11468,11 @@
                 "var_type"						"FIELD_INTEGER"
                 "duration"						"8 12 16 20"
             }
+            "04"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "attack_bonus"                  "30 60 90 120"
+            }
         }
 
 
@@ -11487,7 +11492,7 @@
 
             "RunScript"
             {
-                "ScriptFile"	"hero_bane/enfeeble.lua"
+                "ScriptFile"	"heroes/hero_bane/enfeeble.lua"
                 "Function"		"StealDamage"
             }
 
@@ -11516,7 +11521,7 @@
 
                 "Properties"
                 {
-                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%enfeeble_attack_reduction"
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%attack_reduction"
                 }
             }
 
@@ -11525,12 +11530,12 @@
                 "IsBuff"	"1"
                 "Duration"	"%duration"
                 "IsPurgable"	"1"
-                "EffectName"	"particles/units/heroes/hero_bane/bane_enfeeble.vpcf"
-                "EffectAttachType"	"follow_overhead"
+                "IsHidden"      "1"
+                "Attributes"	"MODIFIER_ATTRIBUTE_MULTIPLE"
 
                 "Properties"
                 {
-                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%enfeeble_attack_reduction"
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%attack_bonus"
                 }
             }
         }

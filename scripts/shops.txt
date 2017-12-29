@@ -99,8 +99,8 @@
 	// Level 2 - Blue Recipes
 	"support"
 	{
-		"item"      "item_urn_of_shadows"
-		"item"		"item_spirit_vessel"
+//		"item"      "item_urn_of_shadows"
+//		"item"		"item_spirit_vessel"
 		"item"		"item_ring_of_aquila"
 		"item"		"item_medallion_of_courage"
 		"item"      "item_solar_crest"

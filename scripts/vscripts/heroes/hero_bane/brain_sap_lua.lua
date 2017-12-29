@@ -44,8 +44,9 @@ function brain_sap_lua:OnSpellStart()
 		ParticleManager:ReleaseParticleIndex(pfx)
 
 		ApplyDamage({victim = unit, attacker = caster, ability = self, damage = damage, damage_type = self:GetAbilityDamageType()})
-		caster:Heal(heal, caster)
 	end
+
+	caster:Heal(heal, caster)
 end
 
 function brain_sap_lua:GetCooldown( iLevel )

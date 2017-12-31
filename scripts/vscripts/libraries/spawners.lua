@@ -92,7 +92,9 @@ function Spawner:Spawn(keys)
         end
 
         if playerCount > 2 then
-          unit:SetMaxHealth(unit:GetMaxHealth() * 1.5)
+          local max_hp = unit:GetMaxHealth()
+          unit:SetMaxHealth(max_hp * 1.5)
+          unit:SetHealth(max_hp * 1.5)
         end
       end
 

@@ -1,211 +1,225 @@
-if Spawner == nil then
-  print ( '[Spawner] creating Spawner' )
-  Spawner = {}
-  Spawner.__index = Spawner
-
-  bottomFriends = {}
-  for i=1, 30 do
-    bottomFriends[i] = nil
-  end
-
-  topFriends = {}
-  for i=1, 30 do
-    topFriends[i] = nil
-  end
-
-  midFriends = {}
-  for i=1, 30 do
-    midFriends[i] = nil
-  end
+if Spawners == nil then
+	Spawners = class({})
 end
+
+_G.GameMode.BRSAlreadyStarted=0
 
 require('libraries/timers')
+require('libraries/spawners')
+require('HoardBRS/init')
 
-function Spawner:new( o )
-  o = o or {}
-  setmetatable( o, Spawner )
+local waveZeroDuration = 180
+local waveDuration = 270
+local wavePause = 30
 
-  return o
+-- Settings
+local spawns = LoadKeyValues('scripts/vscripts/spawns.kv')
+
+function waveStart(waveNumber)
+	local time = 0
+	if waveNumber > 0 then
+		time = waveZeroDuration + wavePause + (waveDuration + wavePause) * (waveNumber - 1)
+	end
+	DebugPrint('waveStart '..waveNumber..' '..time)
+	return time
 end
 
-function Spawner:Spawn(keys)
-  local point = Entities:FindByName(nil, keys.source)
-  if point == nil then
-    print("Spawner could not find source: " .. keys.source)
-    return
-  end
-  point = point:GetAbsOrigin()
-
-  local waypoint = Entities:FindByName(nil, keys.waypoint)
-  if waypoint == nil then
-    print("Spawner could not find target: " .. keys.waypoint)
-    return
-  end
-  waypoint = waypoint:GetAbsOrigin()
-
-  if keys.unit == nil then
-    print("Spawner missing unit")
-    return
-  end
-
-  local order = keys.order
-  if order == nil then
-    order = DOTA_UNIT_ORDER_ATTACK_MOVE
-  end
-  local max = keys.max
-  local min = keys.min
-  local difficulty = 0
-  if keys.max == nil then
-    max = 1
-  end
-  local units_to_spawn
-  if min == nil then
-    units_to_spawn = max
-  else
-    units_to_spawn = RandomInt(min, max)
-  end
-
-  if keys.difficulty ~= nil then
-    difficulty = keys.difficulty
-  end
-
-  local playerCount = 2
-  if keys.players ~= nil then
-    playerCount = keys.players
-  end
-
-  for i=1,units_to_spawn do
-    local unit = CreateUnitByName(keys.unit, point, true, nil, nil, DOTA_TEAM_BADGUYS)
-
-    if unit == nil then
-      print('Could not create a unit: '.. keys.unit)
-    else
-      unit.Target = keys.waypoint
-
-      if unit:IsConsideredHero() then
-        if difficulty > 1 then
-          unit:AddAbility("roshan_spell_block")
-          local roshan_spell_block = unit:FindAbilityByName("roshan_spell_block")
-          if roshan_spell_block ~= nil then
-            roshan_spell_block:SetLevel(1)
-          end
-        end
-
-        if playerCount > 2 then
-          local max_hp = unit:GetMaxHealth()
-          unit:SetMaxHealth(max_hp * 1.5)
-          unit:SetHealth(max_hp * 1.5)
-        end
-      end
-
-      ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
-        OrderType = order,
-        Position = waypoint, Queue = true} )
-    end
-  end
+function waveEnd(waveNumber)
+	local time = waveZeroDuration
+	if waveNumber > 0 then
+		time = waveStart(waveNumber) + waveDuration
+	end
+	DebugPrint('waveEnd '..waveNumber..' '..time)
+	return time
 end
 
-function Spawner:SpawnTimer(keys)
-  local start = keys.start
-
-  if start == nil then
-    start = 0
-  end
-
-  local finish = keys.finish
-  local interval = keys.interval
-
-  local spawn = keys.spawn
-
-  Timers:CreateTimer(start, function()
-    if type(spawn) == "function" then
-      spawn()
-    else
-      Spawner:Spawn(spawn)
-    end
-    local nextCall = interval
-    if finish ~= nil and GameRules:GetGameTime() > finish then
-        nextCall = nil
-    end
-    return nextCall
-  end)
+function waveBoss(waveNumber)
+	local time = waveEnd(waveNumber) - 60
+	DebugPrint('waveBoss '..waveNumber..' '..time)
+	return time
 end
 
-function Spawner:SpawnFriend(keys)
-  local pointEntity = keys.point
-  local waypointEntity = keys.waypoint
-  local lane = keys.lane
-  local unit = keys.unit
-  local max_spawn = keys.max_spawn
-  local meleeBarracksEntity = "good_rax_melee_mid"
-  local rangedBarracksEntity = "good_rax_range_mid"
-  local unitArray = midFriends
+function fetchRandomItem(table)
+	local keyset={}
+	local n=0
 
-  if lane == "top" then
-    meleeBarracksEntity = "good_rax_melee_top"
-    rangedBarracksEntity = "good_rax_range_top"
-    unitArray = topFriends
-  elseif lane == "bot" then
-    meleeBarracksEntity = "good_rax_melee_bot"
-    rangedBarracksEntity = "good_rax_range_bot"
-    unitArray = bottomFriends
-  end
+	for k,v in pairs(table) do
+		n=n+1
+		keyset[n]=k
+	end
 
-  local point = Entities:FindByName(nil, pointEntity):GetAbsOrigin()
-  local waypoint = Entities:FindByName(nil, waypointEntity):GetAbsOrigin()
-  local spawned_units = 0
-  local extra_spawn = 0
+	return table[keyset[math.random(#keyset)]]
+end
 
-  local melee_barracks = Entities:FindByName(nil, meleeBarracksEntity)
-  if melee_barracks ~= nil then
-    local building_stats = melee_barracks:FindAbilityByName("building_stats")
-    if building_stats ~= nil then
-      max_spawn = max_spawn + math.floor(building_stats:GetLevel() / 2)
+function Spawners:StartSpawners(difficulty, players, mapInfo)
+	local waves = spawns.Waves
+	for _,wave in pairs(waves) do
+		Spawners:LoadWave(wave, tonumber(_), difficulty, players, mapInfo)
+	end
 
-      if building_stats:GetLevel() > 9 then
-        extra_spawn = 2
-      elseif building_stats:GetLevel() > 4 then
-        extra_spawn = 1
-      end
+	Spawners:LoadMisc(difficulty, mapInfo)
+end
+
+function Spawners:LoadWave(wave, waveNumber, difficulty, players, mapInfo)
+	DebugPrint('LoadWave'..waveNumber)
+	local options = wave.Options
+	local chosenWave =  fetchRandomItem(options)
+	if chosenWave.boss_unit ~= nil then
+		Spawners:SpawnBoss(chosenWave.boss_unit, waveNumber, difficulty, players, mapInfo.bossSpawner, mapInfo.bossDestination)
+	end
+    
+    --Giving a boosting boot to a "Bonus Round Skills for creeps" system.
+    if wave.NeverEnd==1 and _G.GameMode.NewPar==nil then 
+        _G.GameMode.NewPar=1
+        BonusRoundSkills:InitHoardBRS(waveStart(waveNumber))
     end
-  end
 
-  local ranged_barracks = Entities:FindByName(nil, rangedBarracksEntity)
-  local unit_level = 0
-  if ranged_barracks ~= nil then
-    local ranged_building_stats = ranged_barracks:FindAbilityByName("building_stats")
-    if ranged_building_stats ~= nil then
-      unit_level = ranged_building_stats:GetLevel()
-    end
-  end
+	for _,unit in pairs(chosenWave.Creatures) do
+		if (mapInfo.topLaneSpawner ~= nil and (unit.mid_only == nil or unit.mid_only == "0")) then
+			Spawners:SpawnUnits(unit, waveNumber, difficulty, players, mapInfo.topLaneSpawner, mapInfo.topLaneDestination, wave.NeverEnd)
+		end
+		if (mapInfo.botLaneSpawner ~= nil and (unit.mid_only == nil or unit.mid_only == "0")) then
+			Spawners:SpawnUnits(unit, waveNumber, difficulty, players, mapInfo.botLaneSpawner, mapInfo.botLaneDestination, wave.NeverEnd)
+		end
+		Spawners:SpawnUnits(unit, waveNumber, difficulty, players, mapInfo.midLaneSpawner, mapInfo.midLaneDestination, wave.NeverEnd)
+	end
+end
 
-  for j=1, max_spawn do
-    if spawned_units > extra_spawn then
-      break
-    end
-    if unitArray[j] ~= nil then
-      if unitArray[j]:IsNull() == true then
-        unitArray[j] = nil
-      end
-    end
-    if unitArray[j] == nil then
-      Timers:CreateTimer(function()
-        unitArray[j] = CreateUnitByName(unit, point, true, nil, nil, DOTA_TEAM_GOODGUYS)
-        -- for testing purposes
-        -- bottomFriends[j]:SetMaxHealth(100)
-        if unit_level > 0 then
-          unitArray[j]:CreatureLevelUp(unit_level)
-        end
+function Spawners:SpawnBoss(unit, waveNumber, difficulty, players, source, waypoint)
+	if type(source) == 'table' then
+		source = fetchRandomItem(source)
+	end
+	Spawner:SpawnTimer({
+		start = waveBoss(waveNumber),
+		interval = 3000,
+		spawn = {
+			source =  source,
+			waypoint = waypoint,
+			unit = unit,
+			difficulty = difficulty,
+			players = players
+		}
+	})
+end
 
-        unitArray[j].targetWaypoint = waypointEntity
+function Spawners:SpawnUnits(unit, waveNumber, difficulty, players, source, waypoint, forever)
+	if type(source) == 'table' then
+		source = fetchRandomItem(source)
+	end
+	local finish = waveEnd(waveNumber)
+	if forever ~= nil and forever == 1 then
+		finish = nil
+	end
+	Spawner:SpawnTimer({
+		start = waveStart(waveNumber)+unit.delay,
+		finish = finish,
+		interval = unit.interval,
+		spawn = {
+			source =  source,
+			waypoint = waypoint,
+			max = unit.max_size,
+			min = unit.min_size,
+			unit = unit.unit_name,
+			difficulty = difficulty,
+			players = players
+		}
+	})
+end
 
-        ExecuteOrderFromTable({	UnitIndex = unitArray[j]:GetEntityIndex(),
-          OrderType = DOTA_UNIT_ORDER_ATTACK_MOVE,
-          Position = waypoint, Queue = true} )
-        DebugPrint("Move ",unitArray[j]:GetEntityIndex()," to ", waypoint)
-        DebugPrint("Friendly ".. lane .. " creep spawned at index: " .. tostring(j))
-      end)
-      spawned_units = spawned_units + 1
-    end
-  end
+function Spawners:SpawnFriends(mapInfo, offset)
+	-- Neutral Camps/Map Spawns
+	Spawner:SpawnTimer({
+		start = offset,
+		interval = 30,
+		spawn = function()
+			if (mapInfo.botLaneFriendlyDestination ~= nil) then
+				Spawner:SpawnFriend({
+					point = mapInfo.botLaneFriendlySpawner,
+					waypoint = mapInfo.botLaneFriendlyDestination,
+					lane = "bot",
+					unit = "npc_dota_creature_friend",
+					max_spawn = 8
+				})
+			end
+			if (mapInfo.topLaneFriendlyDestination ~= nil) then
+				Spawner:SpawnFriend({
+					point = mapInfo.topLaneFriendlySpawner,
+					waypoint = mapInfo.topLaneFriendlyDestination,
+					lane = "top",
+					unit = "npc_dota_creature_friend",
+					max_spawn = 8
+				})
+			end
+			if (mapInfo.midLaneSpawner ~= nil) then
+				Spawner:SpawnFriend({
+					point = mapInfo.midLaneFriendlySpawner,
+					waypoint = mapInfo.midLaneFriendlyDestination,
+					lane = "mid",
+					unit = "npc_dota_creature_friend",
+					max_spawn = 8
+				})
+			end
+		end
+	})
+end
+
+function Spawners:LoadMisc(difficulty, mapInfo)
+	--------------------------------------------------------------------------
+	---------------- Neutral Camps/Map Spawns --------------------------------
+	--------------------------------------------------------------------------
+
+	Spawners:SpawnFriends(mapInfo, 0)
+	Spawners:SpawnFriends(mapInfo, 1)
+	Spawners:SpawnFriends(mapInfo, 2)
+
+	Spawner:SpawnTimer({
+		start = 0,
+		interval = 30,
+		spawn = function()
+			Spawner:SpawnFriend({
+				point = "spawner8",
+				waypoint = "lane_top_pathcorner_badguys_3",
+				lane = "base1",
+				unit = "npc_dota_creature_friend_base",
+				max_spawn = 1
+			})
+
+			Spawner:SpawnFriend({
+				point = "spawner8",
+				waypoint = "lane_top_pathcorner_badguys_2b",
+				lane = "base2",
+				unit = "npc_dota_creature_friend_base",
+				max_spawn = 1
+			})
+		end
+	})
+    
+	if difficulty < 2 then
+		-- spawn money units
+		Spawner:SpawnTimer({
+			start = 0,
+			interval = 3000,
+			spawn = {
+				source =  "spawner10",
+				waypoint = "spawner10",
+				max = 1,
+				order = DOTA_UNIT_ORDER_ATTACK_MOVE,
+				unit = "npc_dota_creature_map_boss"
+			}
+		})
+	end
+
+	-- spawn money units
+	Spawner:SpawnTimer({
+		start = 0,
+		interval = 150,
+		finish = waveEnd(3),
+		spawn = {
+			source =  "spawner6",
+			waypoint = "spawner6",
+			max = 3,
+			order = DOTA_UNIT_ORDER_STOP,
+			unit = "npc_dota_creature_money"
+		}
+	})
 end

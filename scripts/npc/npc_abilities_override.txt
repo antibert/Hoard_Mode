@@ -1,4 +1,4 @@
-	
+
 // Dota Abilities Override File for Hoard Mode
 "DOTAAbilities"
 
@@ -967,15 +967,20 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilitySpecial"
         {
-        "02"
+        	"02"
             {
                 "var_type"					"FIELD_INTEGER"
-                "boar_hp_tooltip"				"300 500 700 900"
+                "boar_hp_tooltip"			"300 500 700 900"
             }
-        "01"
+            "03"
             {
                 "var_type"					"FIELD_INTEGER"
-                "boar_damage_tooltip"				"30 50 70 90"
+                "placeholder"				"30 50 70 90"
+            }
+            "10"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "boar_damage_tooltip"		"30 50 70 90"
             }
         }
     }

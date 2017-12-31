@@ -41,7 +41,6 @@
 	"npc_dota_hero_axe_holdout"
 	{
 		"override_hero"			"npc_dota_hero_axe"
-        "Ability1"              "axe_berserkers_call_datadriven"
 		"Ability2"              "axe_battle_rage"
 		"Ability6"				"holdout_culling_blade"
 		"Ability17"		        "special_bonus_all_stats_20"

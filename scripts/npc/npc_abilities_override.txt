@@ -100,10 +100,10 @@
 	//"item_ring_of_basilius"			"REMOVE"
 	//"item_recipe_pipe"				"REMOVE"
 	//"item_pipe"						"REMOVE"
-	"item_recipe_urn_of_shadows"	"REMOVE"
-	"item_urn_of_shadows"			"REMOVE"
-	"item_recipe_spirit_vessel"			"REMOVE"
-	"item_spirit_vessel"			"REMOVE"
+	//"item_recipe_urn_of_shadows"	"REMOVE"
+	//"item_urn_of_shadows"			"REMOVE"
+	//"item_recipe_spirit_vessel"			"REMOVE"
+	//"item_spirit_vessel"			"REMOVE"
 	//"item_recipe_headdress"			"REMOVE"
 	//"item_headdress"				"REMOVE"
 	//"item_recipe_sheepstick"		"REMOVE"
@@ -972,7 +972,7 @@
                 "var_type"					"FIELD_INTEGER"
                 "boar_hp_tooltip"				"300 500 700 900"
             }
-        "03"
+        "01"
             {
                 "var_type"					"FIELD_INTEGER"
                 "boar_damage_tooltip"				"30 50 70 90"
@@ -3362,21 +3362,21 @@
 	//=================================================================================================================
 	// Urn of Shadows
 	//=================================================================================================================
-//	"item_urn_of_shadows"
-//	{
-//		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-//		"ItemRequiresCharges"           "0"
-//		"ItemInitialCharges"			"500"
-//	}
+	"item_urn_of_shadows"
+	{
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+		"ItemRequiresCharges"           "0"
+		"ItemInitialCharges"			"999"
+	}
 	//=================================================================================================================
     // Spirit Vessel
     //=================================================================================================================
-//    "item_spirit_vessel"
-//    {
-//        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-//        "ItemRequiresCharges"			"0"
-//        "ItemInitialCharges"			"500"
-//    }
+    "item_spirit_vessel"
+    {
+        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+        "ItemRequiresCharges"			"0"
+        "ItemInitialCharges"			"0"
+    }
 
 	//=================================================================================================================
     // Bloodstone
@@ -4794,6 +4794,23 @@
         //-------------------------------------------------------------------------------------------------------------
         "AbilityManaCost"				"90 105 120 135"
     }
+
+    //=================================================================================================================
+	// Brewmaster: Drunken Brawler
+	//=================================================================================================================
+	"brewmaster_drunken_brawler"
+	{
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"crit_multiplier"			"200"
+			}
+		}
+	}
 
     //=================================================================================================================
     // Brewmaster Earth: Hurl Boulder

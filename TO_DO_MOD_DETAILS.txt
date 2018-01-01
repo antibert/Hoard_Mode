@@ -2,3 +2,9 @@ Next Update Patch Notes:
 
 1.24i
 Fixed typo in War Fury's mana regen tooltip
+Axe: Berserker's Call fixed
+Beastmaster: Call of the Wild description fixed + workaround to show true boar damage in the tooltip
+Brewmaster: Drunken Brawler evasion and crit chance fixed (did not work previously, outside of the guaranteed trigger)
+Visage: Soul Assumption aoe damage fixed
+Urn of Shadows/Spirit Vessel: buy/sell exploit fixed
+Updated boss health formula to increase current health in addition to max health at higher player counts

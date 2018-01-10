@@ -4950,6 +4950,11 @@
                 "var_type"				"FIELD_INTEGER"
                 "cast_range_tooltip"	"450"
             }
+            "06"
+            {
+                "var_type"						"FIELD_INTEGER"
+                "charge_restore_time_scepter"	"10"
+            }
         }
     }
 

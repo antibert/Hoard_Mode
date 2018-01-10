@@ -9757,6 +9757,7 @@
         "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
         "AbilityTextureName"			"obsidian_destroyer_arcane_orb"
         "AbilityCastRange"				"450"
+        "HasScepterUpgrade"				"1"
 
         // Precache
         //-------------------------------------------------------------------------------------------------------------
@@ -9803,12 +9804,12 @@
             "06"
             {
                 "var_type"				"FIELD_INTEGER"
-                "scepter_radius"		"200"
+                "scepter_splash_pct"	"30"
             }
             "07"
             {
                 "var_type"				"FIELD_INTEGER"
-                "scepter_splash_pct"	"30"
+                "scepter_radius"		"200"
             }
         }
 

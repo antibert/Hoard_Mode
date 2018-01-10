@@ -9,11 +9,15 @@ function ArcaneOrb( keys )
 	local caster = keys.caster
 	local mana = caster:GetMana()
 	local target = keys.target
+	local targetLocation = target:GetAbsOrigin()
+	local radius = ability:GetSpecialValueFor("scepter_radius")
+	local splash = ability:GetSpecialValueFor("scepter_splash_pct") / 100
 	local summon_damage = ability:GetLevelSpecialValueFor("illusion_damage", (ability:GetLevel() -1))
 	local extra_damage = ability:GetLevelSpecialValueFor("mana_pool_damage_pct", (ability:GetLevel() -1)) / 100
 	local essence_aura = "obsidian_destroyer_essence_aura"
 	local essence_aura_sound = "Hero_ObsidianDestroyer.EssenceAura"
 	local essence_aura_particle = "particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_essence_effect.vpcf"
+	local has_scepter = caster:HasScepter()
 
 	local damage_table = {}
 
@@ -32,6 +36,16 @@ function ArcaneOrb( keys )
 	ApplyDamage(damage_table)
 
 	PopupSpellDamage(target, math.floor(damage_table.damage))
+
+	if has_scepter then
+		local unitsToDamage = {unpack(FindUnitsInRadius(caster:GetTeam(), targetLocation, nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), DOTA_UNIT_TARGET_FLAG_NONE, 1, false), 2)}
+		damage_table.damage = damage_table.damage * splash
+
+		for _,v in ipairs(unitsToDamage) do
+			damage_table.victim = v
+			ApplyDamage(damage_table)
+		end
+	end
 
 	local essence_aura_ability = caster:FindAbilityByName(essence_aura)
 	if essence_aura_ability ~= nil then

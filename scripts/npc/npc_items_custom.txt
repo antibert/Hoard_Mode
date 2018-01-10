@@ -92,89 +92,73 @@
             "01"						"item_aether_lens_4;item_recipe_aether_lens_2"
         }
     }
+
     //=================================================================================================================
-	// Focused Aether Lens
-	//=================================================================================================================
-	"item_aether_lens_2"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"99222"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"BaseClass"                     "item_aether_lens"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"item_aether_lens_2"
-	
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"3300"
-		"ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
-		"ItemQuality"					"epic"
-		"ItemAliases"					"aether lens 2"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		
-		// Special	
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_mana"			"500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen"		"1.75"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"cast_range_bonus"		"300"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"3"
-			}
-		}
+    // Aether Lens 2
+    //=================================================================================================================
+    "item_aether_lens_2"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"                            "99222"
+        "BaseClass"                     "item_lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "item_aether_lens_2"
+        "ScriptFile"                    "items/item_aether_lens.lua"
 
-		"Modifiers"
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "3350"
+        "ItemShopTags"                  "int;regen_mana;move_speed;hard_to_tag"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "aether lens"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
         {
-            "modifier_item_aether_lens_2"
+            "01"
             {
-                "Passive"			"1"
-                "IsHidden"			"1"
-                "Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
-                    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
-                    "MODIFIER_PROPERTY_CAST_RANGE_BONUS"			"%cast_range_bonus"
-                    "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp"
-                }
+                "var_type"              "FIELD_INTEGER"
+                "bonus_mana"            "500"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "bonus_mana_regen"      "1.75"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "cast_range_bonus"      "300"
+            }
+            "04"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "spell_power"           "3"
             }
         }
-	}
-	//=================================================================================================================
-    // Focused Aether Lens
+    }
+
+    //=================================================================================================================
+    // Aether Lens 3
     //=================================================================================================================
     "item_aether_lens_3"
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "ID"							"99226"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-        "BaseClass"                     "item_aether_lens"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"item_aether_lens_3"
+        "ID"                            "99226"
+        "BaseClass"                     "item_lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "item_aether_lens_3"
+        "ScriptFile"                    "items/item_aether_lens.lua"
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"4300"
-        "ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
-        "ItemQuality"					"epic"
-        "ItemAliases"					"aether lens 3"
-        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ItemCost"                      "4350"
+        "ItemShopTags"                  "int;regen_mana;move_speed;hard_to_tag"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "aether lens"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -182,63 +166,46 @@
         {
             "01"
             {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_mana"			"550"
+                "var_type"              "FIELD_INTEGER"
+                "bonus_mana"            "550"
             }
             "02"
             {
-                "var_type"				"FIELD_FLOAT"
-                "bonus_mana_regen"		"2"
+                "var_type"              "FIELD_FLOAT"
+                "bonus_mana_regen"      "2"
             }
             "03"
             {
-                "var_type"				"FIELD_INTEGER"
-                "cast_range_bonus"		"350"
+                "var_type"              "FIELD_INTEGER"
+                "cast_range_bonus"      "350"
             }
             "04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"6"
-			}
-		}
-
-		"Modifiers"
-        {
-            "modifier_item_aether_lens_3"
             {
-                "Passive"			"1"
-                "IsHidden"			"1"
-                "Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
-                    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
-                    "MODIFIER_PROPERTY_CAST_RANGE_BONUS"			"%cast_range_bonus"
-                    "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp"
-                }
+                "var_type"              "FIELD_INTEGER"
+                "spell_power"           "6"
             }
         }
     }
+
     //=================================================================================================================
-    // Focused Aether Lens
+    // Aether Lens 4
     //=================================================================================================================
     "item_aether_lens_4"
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "ID"							"99227"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-        "BaseClass"                     "item_aether_lens"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"item_aether_lens_4"
+        "ID"                            "99227"
+        "BaseClass"                     "item_lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "item_aether_lens_4"
+        "ScriptFile"                    "items/item_aether_lens.lua"
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"5300"
-        "ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
-        "ItemQuality"					"epic"
-        "ItemAliases"					"aether lens 4"
-        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ItemCost"                      "5350"
+        "ItemShopTags"                  "int;regen_mana;move_speed;hard_to_tag"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "aether lens"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -246,63 +213,46 @@
         {
             "01"
             {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_mana"			"600"
+                "var_type"              "FIELD_INTEGER"
+                "bonus_mana"            "600"
             }
             "02"
             {
-                "var_type"				"FIELD_FLOAT"
-                "bonus_mana_regen"		"2.5"
+                "var_type"              "FIELD_FLOAT"
+                "bonus_mana_regen"      "2.25"
             }
             "03"
             {
-                "var_type"				"FIELD_INTEGER"
-                "cast_range_bonus"			"400"
+                "var_type"              "FIELD_INTEGER"
+                "cast_range_bonus"      "400"
             }
             "04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"9"
-			}
-		}
-
-		"Modifiers"
-        {
-            "modifier_item_aether_lens_4"
             {
-                "Passive"			"1"
-                "IsHidden"			"1"
-                "Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
-                    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
-                    "MODIFIER_PROPERTY_CAST_RANGE_BONUS"			"%cast_range_bonus"
-                    "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp"
-                }
+                "var_type"              "FIELD_INTEGER"
+                "spell_power"           "9"
             }
         }
     }
+
     //=================================================================================================================
-    // Focused Aether Lens
+    // Aether Lens 5
     //=================================================================================================================
     "item_aether_lens_5"
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "ID"							"99228"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-        "BaseClass"                     "item_aether_lens"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityTextureName"			"item_aether_lens_5"
+        "ID"                            "99228"
+        "BaseClass"                     "item_lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"            "item_aether_lens_5"
+        "ScriptFile"                    "items/item_aether_lens.lua"
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"3300"
-        "ItemShopTags"					"int;regen_mana;move_speed;hard_to_tag"
-        "ItemQuality"					"epic"
-        "ItemAliases"					"aether lens 5"
-        "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        "ItemCost"                      "6350"
+        "ItemShopTags"                  "int;regen_mana;move_speed;hard_to_tag"
+        "ItemQuality"                   "rare"
+        "ItemAliases"                   "aether lens"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -310,41 +260,23 @@
         {
             "01"
             {
-                "var_type"				"FIELD_INTEGER"
-                "bonus_mana"			"650"
+                "var_type"              "FIELD_INTEGER"
+                "bonus_mana"            "650"
             }
             "02"
             {
-                "var_type"				"FIELD_FLOAT"
-                "bonus_mana_regen"		"3"
+                "var_type"              "FIELD_FLOAT"
+                "bonus_mana_regen"      "2.5"
             }
             "03"
             {
-                "var_type"				"FIELD_INTEGER"
-                "cast_range_bonus"			"450"
+                "var_type"              "FIELD_INTEGER"
+                "cast_range_bonus"      "450"
             }
             "04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"12"
-			}
-		}
-
-		"Modifiers"
-        {
-            "modifier_item_aether_lens_5"
             {
-                "Passive"			"1"
-                "IsHidden"			"1"
-                "Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_MANA_BONUS"					"%bonus_mana"
-                    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"%bonus_mana_regen"
-                    "MODIFIER_PROPERTY_CAST_RANGE_BONUS"			"%cast_range_bonus"
-                    "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%spell_amp"
-                }
+                "var_type"              "FIELD_INTEGER"
+                "spell_power"           "12"
             }
         }
     }
@@ -446,7 +378,7 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "ID"							"99012"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "ID"							"99013"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "BaseClass"                     "item_blink"		// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES"
         "AbilityTextureName"			"item_blink"
@@ -738,7 +670,7 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_stat2"			"25"
 			}
-			"06"
+			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_armor"			    "100"
@@ -1019,7 +951,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_strength"			"30"
+				"bonus_strength"		"100"
 			}
 			"06"
 			{
@@ -6009,5 +5941,197 @@
 			}
 		}
 	}
+
+    "item_recipe_insight_armor"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99021"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "AbilityTextureName"            "item_recipe"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1800" 
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_insight_armor"
+        "ItemRequirements"
+        {
+            "01"                        "item_crimson_guard;item_pipe"
+        }
+    }
+
+    "item_insight_armor"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99022"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "Model"                         "models/props_gameplay/red_box.vmdl" 
+        "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+        "AbilityTextureName"            "item_insight_armor"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "8500"
+        "ItemShopTags"                  "armor;resist"
+        "ItemQuality"                   "epic"
+        "ItemAliases"                   "armor of insight"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        
+        "AbilityCooldown"               "60.0"
+        "AbilityManaCost"               "200"
+            
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_health"          "250"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_health_regen"    "10"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_all_stats"       "10"
+            }
+            "04"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "damage_reduction"      "-15"
+            }
+            "05"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "radius"                        "900"
+            }
+            "06"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "aura_regen_base"               "5"
+            }
+            "07"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "aura_damage_reduction_base"    "-5"
+            }
+            "08"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "aura_regen_buff"               "15"
+            }
+            "11"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "aura_damage_reduction_buff"    "-30"
+            }
+            "13"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "duration"                      "8"
+            }
+        }
+
+        "Precache"
+        {
+            "particle"              "particles/units/heroes/hero_medusa/medusa_mana_shield_oldbase.vpcf"
+        }
+
+        "OnSpellStart" 
+        {
+            "ApplyModifier"
+            {
+                "Target"                    "CASTER"
+                "ModifierName"              "modifier_insight_armor_aura_buff_caster"
+                "Duration"                  "%duration"
+            }       
+            "FireSound"
+            {
+                "EffectName"                "DOTA_Item.Armlet.Activate"
+                "Target"                    "CASTER"
+            }
+        }
+        
+        "Modifiers"
+        {
+            "modifier_item_insight_armor"
+            {
+                "Passive"           "1"
+                "IsHidden"          "1"
+                "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Aura"                  "modifier_insight_armor_aura"
+                "Aura_Radius"           "%radius"
+                "Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+                "Aura_Types"            "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                "Aura_Flags"            "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+                "Aura_ApplyToCaster"    "1"
+                
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"             "%bonus_all_stats"
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"            "%bonus_all_stats"
+                    "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"           "%bonus_all_stats"
+                    "MODIFIER_PROPERTY_HEALTH_BONUS"                    "%bonus_health"
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"           "%bonus_health_regen"
+                    "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"      "%damage_reduction"
+                }
+            }
+
+            "modifier_insight_armor_aura"
+            {
+                "IsBuff"        "1"
+                "IsPurgable"    "0"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"        "%aura_regen_base"
+                    "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"   "%aura_damage_reduction_base"
+                }
+            }
+
+            "modifier_insight_armor_aura_buff_caster"
+            {
+                "Passive"           "0"
+                "IsHidden"          "1"
+                "IsDebuff"          "0"
+                "IsPurgable"        "0"
+
+                "Aura"                  "modifier_insight_armor_aura_buff"
+                "Aura_Radius"           "%radius"
+                "Aura_Teams"            "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+                "Aura_Types"            "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                "Aura_Flags"            "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+                "Aura_ApplyToCaster"    "1"
+            }
+
+            "modifier_insight_armor_aura_buff"
+            {
+                "IsBuff"        "1"
+                "IsPurgable"    "0"
+
+                "EffectName"                "particles/units/heroes/hero_medusa/medusa_mana_shield_oldbase.vpcf"
+                "EffectAttachType"          "PATTACH_ABSORIGIN"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"        "%aura_regen_buff"
+                    "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"   "%aura_damage_reduction_buff"
+                }
+            }
+        }
+    }
     
 }

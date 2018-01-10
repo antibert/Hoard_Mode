@@ -81,20 +81,42 @@ function Spawner:Spawn(keys)
       print('Could not create a unit: '.. keys.unit)
     else
       unit.Target = keys.waypoint
+      unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * (1 + 0.2 * (playerCount - 2)))
 
-      if unit:IsConsideredHero() then
-        if difficulty > 1 then
-          unit:AddAbility("roshan_spell_block")
-          local roshan_spell_block = unit:FindAbilityByName("roshan_spell_block")
-          if roshan_spell_block ~= nil then
-            roshan_spell_block:SetLevel(1)
+      if difficulty > 0 then
+
+        if unit:IsConsideredHero() then
+          unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * (1 + 0.1 * difficulty))
+
+          if difficulty > 1 then
+            unit:AddAbility("roshan_spell_block")
+            local roshan_spell_block = unit:FindAbilityByName("roshan_spell_block")
+            if roshan_spell_block ~= nil then
+              roshan_spell_block:SetLevel(1)
+            end
           end
-        end
 
-        if playerCount > 2 then
-          local max_hp = unit:GetMaxHealth()
-          unit:SetMaxHealth(max_hp * 1.5)
-          unit:SetHealth(max_hp * 1.5)
+        else
+          local chance = math.random(100)
+          if chance <= (difficulty * (playerCount - 1)) then
+            unit:AddAbility("corruption_aura")
+            local corruption_aura = unit:FindAbilityByName("corruption_aura")
+            if corruption_aura ~= nil then
+              corruption_aura:SetLevel(1)
+            end
+          elseif chance > (difficulty * (playerCount - 1)) and chance <= (2 * difficulty * (playerCount - 1)) then
+            unit:AddAbility("blight_aura")
+            local blight_aura = unit:FindAbilityByName("blight_aura")
+            if blight_aura ~= nil then
+              blight_aura:SetLevel(1)
+            end
+          elseif chance > (2 * difficulty * (playerCount - 1)) and chance < (3 * difficulty * (playerCount - 1)) then
+            unit:AddAbility("frenzy_aura")
+            local frenzy_aura = unit:FindAbilityByName("frenzy_aura")
+            if frenzy_aura ~= nil then
+              frenzy_aura:SetLevel(1)
+            end
+          end
         end
       end
 

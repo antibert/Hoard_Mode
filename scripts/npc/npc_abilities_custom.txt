@@ -7373,7 +7373,7 @@
             "07"
             {
                 "var_type"			"FIELD_INTEGER"
-                "bonus_armor_lvl_tower"	"5"
+                "bonus_armor_lvl_tower"	"3"
             }
             "08"
             {
@@ -7393,7 +7393,7 @@
             "11"
             {
                 "var_type"			"FIELD_INTEGER"
-                "bonus_armor_lvl_creep"	"5"
+                "bonus_armor_lvl_creep"	"3"
             }
             "12"
             {
@@ -7610,16 +7610,16 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"				"ability_datadriven"
+        "BaseClass"						"ability_datadriven"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityTextureName"			"global_damage"
 
-        "MaxLevel"						"10"
+        //"MaxLevel"						"3"
 
         // Casting
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastRange"				"100000"
+        //"AbilityCastRange"				"100000"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -7627,42 +7627,130 @@
         {
             "01"
             {
-                "var_type"			"FIELD_INTEGER"
-                "damage_increase_pct"	"0 20 40 60"
+                "var_type"					"FIELD_INTEGER"
+                "damage_increase_pct"		"15 30 45"
             }
             "02"
             {
-                "var_type"			"FIELD_INTEGER"
-                "damage_decrease_pct"	"0 -10 -20 -30"
+                "var_type"					"FIELD_INTEGER"
+                "damage_decrease_pct"		"-10 -20 -30"
             }
             "03"
             {
-                "var_type"			"FIELD_INTEGER"
-                "aura_radius"		"100000"
+                "var_type"					"FIELD_INTEGER"
+                "aura_radius"				"100000"
             }
+            "04"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bonus_armor_building"		"5 10 15"
+            }
+            "05"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bonus_resist_building"		"5 10 15"
+            }
+            "06"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bonus_armor_creep"			"2 4 6"
+            }
+            "07"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bonus_resist_creep"		"5 10 15"
+            }
+            "08"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bonus_attack_speed_creep"	"5 10 15"
+            }
+            "09"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bonus_base_damage_creep"	"5 10 15"
+            }
+
         }
 
         "Modifiers"
         {
 
-            "modifier_global_difficulty_buff_caster_datadriven"
+            "modifier_global_difficulty_buff_buildings_caster_datadriven"
             {
                 "Passive"			"1"
                 "IsHidden"			"1"
                 "IsDebuff"			"0"
 
-                "Aura"					"modifier_global_difficulty_buff_friendly_datadriven"
+                "Aura"					"modifier_global_difficulty_buff_buildings_datadriven"
                 "Aura_Radius"			"%aura_radius"
-                "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-                "Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
-                "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES | DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
-                "Aura_ApplyToCaster" 	"1"
+                "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_BUILDING"
+                "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+                "Aura_ApplyToCaster" 	"0"
             }
 
-            "modifier_global_difficulty_buff_friendly_datadriven"
+            "modifier_global_difficulty_buff_buildings_datadriven"
             {
                 "IsBuff"	"1"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%damage_increase_pct"
+                    "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"%damage_decrease_pct"
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor_building"
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_resist_building"
+                }
+            }
+
+            "modifier_global_difficulty_buff_creeps_caster_datadriven"
+            {
+                "Passive"			"1"
                 "IsHidden"			"1"
+                "IsPurgable"		"0"
+
+                "Aura"					"modifier_global_difficulty_buff_creeps_datadriven"
+                "Aura_Radius"			"%aura_radius"
+                "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_BASIC"
+                "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+                "Aura_ApplyToCaster" 	"0"
+
+            }
+
+            "modifier_global_difficulty_buff_creeps_datadriven"
+            {
+                "IsBuff"			"1"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor_creep"
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_resist_creep"
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed_creep"
+                    "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"		"%bonus_base_damage_creep"
+                    "MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE"	"%damage_increase_pct"
+                    "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"	"%damage_decrease_pct"
+                }
+            }
+
+            "modifier_global_difficulty_buff_bosses_caster_datadriven"
+            {
+                "Passive"			"1"
+                "IsHidden"			"1"
+                "IsPurgable"		"0"
+
+                "Aura"					"modifier_global_difficulty_buff_bosses_datadriven"
+                "Aura_Radius"			"%aura_radius"
+                "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_HERO"
+                "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+                "Aura_ApplyToCaster" 	"0"
+
+            }
+
+            "modifier_global_difficulty_buff_bosses_datadriven"
+            {
+                "IsBuff"			"1"
 
                 "Properties"
                 {
@@ -7673,6 +7761,240 @@
 
         }
     }
+
+    //=================================================================================================================
+	// Aura: Frenzy
+	//=================================================================================================================
+	"frenzy_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+        "AbilityTextureName"			"hellbear_smasher_swiftness_aura"
+        "MaxLevel"						"1"
+        "AOERadius"						"%aura_radius"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "aura_radius"				"500"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bonus_attack_speed"		"20"
+            }
+            "03"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "bonus_health_regen"		"10"
+            }
+        }
+
+        "Precache"
+        {
+        	//"particle"			"particles/econ/items/effigies/status_fx_effigies/se_ambient_ti6_lvl3_ribbon.vpcf"
+        	"particle"				"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds_core_ground.vpcf"
+        }
+
+        "Modifiers"
+        {
+
+            "modifier_frenzy_aura_caster_datadriven"
+            {
+                "Passive"			"1"
+                "IsHidden"			"1"
+                "IsDebuff"			"0"
+
+                //"EffectName"		"particles/econ/items/effigies/status_fx_effigies/se_ambient_ti6_lvl3_ribbon.vpcf"
+                "EffectName"		"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds_core_ground.vpcf"
+                "EffectAttachType"	"follow_origin"
+
+                "Aura"					"modifier_frenzy_aura_datadriven"
+                "Aura_Radius"			"%aura_radius"
+                "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+                "Aura_ApplyToCaster" 	"1"
+            }
+
+            "modifier_frenzy_aura_datadriven"
+            {
+                "IsBuff"	"1"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%bonus_attack_speed"
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%bonus_health_regen"
+                }
+            }
+        }
+	}
+
+	//=================================================================================================================
+	// Aura: Blight
+	//=================================================================================================================
+	"blight_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+        "AbilityTextureName"			"undying_decay"
+        "MaxLevel"						"1"
+        "AOERadius"						"%aura_radius"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "aura_radius"				"500"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "damage_per_second"			"20"
+            }
+        }
+
+        "Precache"
+        {
+        	"particle"				"particles/econ/items/rubick/rubick_force_ambient/rubick_telekinesis_force_ground_b.vpcf"
+        }
+
+        "Modifiers"
+        {
+        	"modifier_blight_aura_caster_datadriven"
+            {
+                "Passive"			"1"
+                "IsHidden"			"1"
+                "IsDebuff"			"0"
+
+                "EffectName"		"particles/econ/items/rubick/rubick_force_ambient/rubick_telekinesis_force_ground_b.vpcf"
+                "EffectAttachType"	"follow_origin"
+
+                "Aura"					"modifier_blight_aura_datadriven"
+                "Aura_Radius"			"%aura_radius"
+                "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
+                "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+                "Aura_ApplyToCaster" 	"0"
+            }
+
+            "modifier_blight_aura_datadriven"
+            {
+                "IsDebuff"			"1"
+
+                "EffectName"		"particles/econ/items/rubick/rubick_force_ambient/rubick_telekinesis_force_ground_b.vpcf"
+                "EffectAttachType"	"follow_origin"
+
+                "ThinkInterval" "1"
+			    "OnIntervalThink"
+			    {
+			        "Damage"
+			        {
+			             "Target"
+			             {
+			                 "Center" 	"CASTER"
+			                 "Radius" 	"%aura_radius"
+			                 "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			                 "Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			             }
+			             "Type" 		"DAMAGE_TYPE_MAGICAL" 
+			             "Damage"  		"%damage_per_second"
+			        } 
+			    }
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_DISABLE_HEALING"				"1"
+                }
+            }
+        }
+	}
+
+	//=================================================================================================================
+	// Aura: Corruption
+	//=================================================================================================================
+	"corruption_aura"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+        "AbilityTextureName"			"spectre_spectral_dagger"
+        "MaxLevel"						"1"
+        "AOERadius"						"%aura_radius"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "aura_radius"				"500"
+            }
+            "02"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "armor_reduction"			"-10"
+            }
+            "03"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "resist_reduction"			"-20"
+            }
+        }
+
+        "Precache"
+        {
+        	"particle"				"particles/econ/items/bloodseeker/bloodseeker_eztzhok_weapon/bloodseeker_bloodrage_ground_eztzhok_energy.vpcf"
+        	"particle"				"particles/units/heroes/hero_nevermore/nevermore_shadowraze_debuff_ground_shadow.vpcf"
+        }
+
+        "Modifiers"
+        {
+        	"modifier_corruption_aura_caster_datadriven"
+            {
+                "Passive"			"1"
+                "IsHidden"			"1"
+                "IsDebuff"			"0"
+
+                "EffectName"		"particles/econ/items/bloodseeker/bloodseeker_eztzhok_weapon/bloodseeker_bloodrage_ground_eztzhok_energy.vpcf"
+                "EffectAttachType"	"follow_origin"
+
+                "Aura"					"modifier_corruption_aura_datadriven"
+                "Aura_Radius"			"%aura_radius"
+                "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
+                "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+                "Aura_ApplyToCaster" 	"0"
+            }
+
+            "modifier_corruption_aura_datadriven"
+            {
+                "IsDebuff"			"1"
+
+                "EffectName"		"particles/units/heroes/hero_nevermore/nevermore_shadowraze_debuff_ground_shadow.vpcf"
+                "EffectAttachType"	"follow_origin"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"				"%armor_reduction"
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"			"%resist_reduction"
+                }
+            }
+        }
+	}
 
     //=================================================================================================================
 	// Tower: Overpower
@@ -8389,7 +8711,7 @@
             "03"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_damage"	"12 20 28 36"
+                "bonus_damage"			"12 20 28 36"
             }
         }
 
@@ -8416,7 +8738,7 @@
                 "Properties"
                 {
                     "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%bonus_movespeed_pct"
-                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"%bonus_damage"
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%bonus_damage"
                 }
             }
         }
@@ -8449,7 +8771,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"aura_damage"		"-0.5 -1 -1.5 -2.0"
+				"aura_damage"		"0.5 1 1.5 2.0"
 				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_2"
 			}
 			"03"
@@ -8460,7 +8782,7 @@
 			"04"
 			{
 			    "var_type"			"FIELD_FLOAT"
-                "max_damage"		"50 70 90 110"
+                "max_damage"		"60 90 120 150"
 			}
 		}
 
@@ -9427,7 +9749,7 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"				"ability_datadriven"
+        "BaseClass"						"ability_datadriven"
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -9478,7 +9800,16 @@
                 "var_type"				"FIELD_INTEGER"
                 "steal_duration"		"20"
             }
-
+            "06"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "scepter_radius"		"200"
+            }
+            "07"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "scepter_splash_pct"	"30"
+            }
         }
 
         "Modifiers"
@@ -9662,12 +9993,12 @@
                 "var_type"					"FIELD_INTEGER"
                 "radius"					"375 475 575"
             }
-            "04"
-            {
-                "var_type"						"FIELD_INTEGER"
-                "damage_multiplier_scepter"		"10 12 14"
-				"LinkedSpecialBonus"	"special_bonus_unique_outworld_devourer_3"
-            }
+            //"04"
+            //{
+            //	"var_type"						"FIELD_INTEGER"
+            //	"damage_multiplier_scepter"		"10 12 14"
+			//	"LinkedSpecialBonus"	"special_bonus_unique_outworld_devourer_3"
+            //}
         }
 
         "OnSpellStart"
@@ -11183,6 +11514,136 @@
             }
         }
     }
+
+    //=================================================================================================================
+    // Visage: Gravekeeper's Presence
+    //=================================================================================================================
+    // Adapted from:
+    // Rewrite of the Lycan Feral Impulse
+	// Author: chrislotix, Pizzalol
+	// Date: 24.03.2015.
+
+    "visage_gravekeepers_presence"
+    {
+        "BaseClass"                     "ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+        "AbilityTextureName"            "visage_gravekeepers_cloak"
+        "MaxLevel"						"4"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"radius"							"900"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_armor_units"					"2 4 6 8"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"bonus_resist_units"				"6 12 18 24"
+			}
+			"04"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_armor_self"					"1 2 3 4"
+			}
+			"05"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"bonus_resist_self"					"3 6 9 12"
+			}
+			"06"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"think_interval"					"0.5"
+			}
+		}
+
+        "Modifiers"
+		{
+			"modifier_visage_gravekeepers_presence"
+			{
+				"Passive" 		"1"
+				"IsBuff"		"1"
+				"IsPurgable"	"0"
+
+				"OnCreated"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  	"CASTER"
+							"Radius" 	"%radius"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+							"Types" 	"DOTA_UNIT_TARGET_ALL"
+						}
+					
+						"Action"    
+						{
+							"RunScript"
+							{
+								"ScriptFile"	"heroes/hero_visage/gravekeepers_presence.lua"
+								"Function"		"GravekeepersPresence"
+								"modifier"		"modifier_visage_gravekeepers_presence_unit"
+							}
+						}
+					}
+				}
+
+				"ThinkInterval"  "%think_interval"
+				"OnIntervalThink"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  	"CASTER"
+							"Radius" 	"%radius"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+							"Types" 	"DOTA_UNIT_TARGET_ALL"
+						}
+					
+						"Action"    
+						{
+							"RunScript"
+							{
+								"ScriptFile"	"heroes/hero_visage/gravekeepers_presence.lua"
+								"Function"		"GravekeepersPresence"
+								"modifier"		"modifier_visage_gravekeepers_presence_unit"
+							}
+						}
+					}
+				}
+
+				"Properties"
+                {
+                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor_self"
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_resist_self"
+                }
+			}
+
+			"modifier_visage_gravekeepers_presence_unit"
+			{
+				"IsHidden"		"1"
+				"IsBuff"		"1"
+				"IsPurgable"	"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%bonus_armor_units"
+                    "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"%bonus_resist_units" 
+				}
+			}
+	    }
+	}
 
     //=================================================================================================================
     // Terrorblade: Zeal
@@ -14816,5 +15277,45 @@
                 }
             }
         }
+    }
+
+    "splash_attack_datadriven"
+    {
+    	"BaseClass"					"black_dragon_splash_attack"
+    	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+
+    	"AbilitySpecial"
+    	{
+    		"01"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "range_close"			"60"
+            }
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_percent_close"	"60"
+			}
+            "03"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "range_mid"				"120"
+            }
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_percent_mid"	"40"
+			}
+			"05"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "range_far"				"180"
+            }
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_percent_far"	"20"
+			}
+    	}
     }
 }

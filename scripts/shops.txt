@@ -90,7 +90,7 @@
 		"item"		"item_tranquil_boots"
 		"item"		"item_travel_boots"
 		"item"		"item_travel_boots_3"
-		"item"		"item_pers"
+		"item"		"item_hand_of_midas"
 		"item"      "item_moon_shard_datadriven"
 		"item"		"item_rapier"
        	"item" 		"item_king_rapier"
@@ -113,7 +113,7 @@
 		"item"		"item_force_staff"
 		"item"		"item_glimmer_cape"
 		"item"		"item_necronomicon"
-		"item"		"item_hand_of_midas"
+		"item"		"item_insight_armor"
 	}
 	
 	"magics"

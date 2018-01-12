@@ -50,30 +50,30 @@ function mapLogic:SetDifficultyValues(keys)
 	local playerCount = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS)
 	local heroCount = HeroList:GetHeroCount()
 
-	if self.MAP == 'horde_5p' then
+	if self.MAP == 'Horde_5p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_EASY
 		if heroCount <= 5 and heroCount >= playerCount then
 			self.PLAYERS = heroCount
 		else
 			self.PLAYERS = playerCount
 		end
-	elseif self.MAP == 'horde_5p_ultra' then
+	elseif self.MAP == 'Horde_5p_ultra' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_ULTRA
 		self.PLAYERS = 5
-	elseif self.MAP == 'horde_4p_ultra' then
+	elseif self.MAP == 'Horde_4p_ultra' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_ULTRA
 		self.PLAYERS = 4
-	elseif self.MAP == 'horde_2p_ultra' then
+	elseif self.MAP == 'Horde_2p_ultra' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_ULTRA
 		self.PLAYERS = 2
-	elseif self.MAP == 'horde_4p' then
+	elseif self.MAP == 'Horde_4p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_MEDIUM
 		if heroCount <= 4 and heroCount >= playerCount then
 			self.PLAYERS = heroCount
 		else
 			self.PLAYERS = playerCount
 		end
-	elseif self.MAP == 'horde_2p' then
+	elseif self.MAP == 'Horde_2p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_MEDIUM
 		if heroCount <= 2 and heroCount >= playerCount then
 			self.PLAYERS = heroCount

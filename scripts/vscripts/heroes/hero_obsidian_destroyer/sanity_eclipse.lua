@@ -13,11 +13,11 @@ function SanityEclipseDamage( keys )
 	local mana = target:GetMaxMana()
 	local dmg_multiplier = ability:GetLevelSpecialValueFor("damage_multiplier", (ability:GetLevel() -1))
 	local mana_drain = ability:GetLevelSpecialValueFor("mana_drain", (ability:GetLevel() -1))
-	local has_scepter = caster:HasScepter()
+	-- local has_scepter = caster:HasScepter()
 
-	if has_scepter then
-		dmg_multiplier = ability:GetLevelSpecialValueFor("damage_multiplier_scepter", (ability:GetLevel() -1))
-	end
+	-- if has_scepter then
+	-- 	dmg_multiplier = ability:GetLevelSpecialValueFor("damage_multiplier_scepter", (ability:GetLevel() -1))
+	-- end
 
 	if caster:HasAbility("special_bonus_unique_outworld_devourer_3") then
 		local talent = caster:FindAbilityByName("special_bonus_unique_outworld_devourer_3")

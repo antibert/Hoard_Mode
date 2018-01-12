@@ -1,4 +1,57 @@
 Next Update Patch Notes:
 
-1.24j
-Fix to crash
+1.24k
+Difficulty overhaul
+-Enemy HP scales based on the number of players/heroes (whichever is higher) at 0:00
+-Formula: 1 + 0.2 * (players - 2); [1p: 80% HP, 2p: 100% HP, 3p: 120% HP, etc.]
+-Additionally, boss HP scales based on difficulty
+-Formula: 1 + 0.1 * difficulty [Easy: 100%, Medium: 110%, Hard: 120%, Ultra: 130%]
+-Difficulty aura actually works now, moved to friendly ancient, integrated offense and armor bonuses
+-Formula: +15% enemy outgoing damage and -10% enemy incoming damage per each difficulty level above Easy [up to +45%/-30% on Ultra]
+-At player counts above 1 and difficulties above Easy regular enemies have a chance to spawn with one of 3 new auras: Frenzy, Blight, or Corruption [the chance increases with player count and difficulty]
+-Boss HP adjusted to reflect difficulty changes
+-Overall challenge will increase at higher player counts, while solo players should have more options (a significant number of games played are 1p games, according to statistics). 4p map should be unnecessary now.
+
+Hero changes
+//Undying
+Tombstone cooldown reduced to 60 seconds at all levels
+
+//Shadow Fiend
+Shadow Raze mana cost increased to 60
+
+//Spectre
+Spectral Dagger damage increased to 120/200/280/360
+
+//Razor
+Plasma Field damage increased to 80-160/120-240/160-320/200-400
+Unstable Current damage increased to 160/240/320/400 and radius increased to 500
+
+//Visage
+Gravekeeper's Cloak replaced with Gravekeeper's Presence aura
+Provides an armor and magic resist bonus to units under Visage's control
+The bonus is halved for Visage
+Gravekeeper's Cloak talent replaced with Spell Lifesteal
+Familiars buffed
+HP increased to 500/750/1000 and damage increased to 40/60/80
+Familiars' attacks deal splash damage in a small area; damage quickly decreases towards the edge of the area
+
+//Dark Willow
+An attempt to make her abilities more useful in Horde Mode
+Shadow Realm cooldown and mana cost greatly reduced
+Bramble Maze damage doubled
+Bedlam attack radius increased and damage rescaled
+
+//Necrophos
+Heartstopper fixed to work with the talent and max damage increased to 60/90/120/150 per second
+
+//Outworld Devourer
+Aghanim's Scepter adds 30% splash damage in a small radius to Arcane Orb instead of increasing damage on the ultimate
+Aghanim's Scepter still adds charges to Astral Imprisonment
+
+Item Changes
+Aether Lens finally provides all listed bonuses; stats from multiple Lenses do not stack
+
+New item: Armor of Insight
+Pipe of Insight + Crimson Guard + Recipe
+Provides damage reduction to the wearer and a weak damage reduction/HP regen aura
+Can be activated to greatly increase the strength of the aura for 8 seconds; 60 second cooldown

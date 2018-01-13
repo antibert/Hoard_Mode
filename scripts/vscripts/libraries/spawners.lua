@@ -81,12 +81,16 @@ function Spawner:Spawn(keys)
       print('Could not create a unit: '.. keys.unit)
     else
       unit.Target = keys.waypoint
-      unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * (1 + 0.2 * (playerCount - 2)))
+      if playerCount < 2 then
+        unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * 0.8)
+      elseif playerCount > 3 then
+        unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * (1 + 0.1 * (playerCount - 3)))
+      end
 
       if difficulty > 0 then
 
         if unit:IsConsideredHero() then
-          unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * (1 + 0.1 * difficulty))
+          unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * (1 + 0.2 * difficulty))
 
           if difficulty > 1 then
             unit:AddAbility("roshan_spell_block")

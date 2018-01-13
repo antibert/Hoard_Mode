@@ -7628,7 +7628,7 @@
             "01"
             {
                 "var_type"					"FIELD_INTEGER"
-                "damage_increase_pct"		"15 30 45"
+                "damage_increase_pct"		"10 20 30"
             }
             "02"
             {
@@ -7643,7 +7643,7 @@
             "04"
             {
                 "var_type"					"FIELD_INTEGER"
-                "bonus_armor_building"		"5 10 15"
+                "bonus_armor_building"		"3 6 9"
             }
             "05"
             {
@@ -7668,7 +7668,7 @@
             "09"
             {
                 "var_type"					"FIELD_INTEGER"
-                "bonus_base_damage_creep"	"5 10 15"
+                "bonus_base_damage_creep"	"3 6 9"
             }
 
         }

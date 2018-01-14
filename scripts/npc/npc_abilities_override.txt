@@ -5287,6 +5287,11 @@
     {
         "AbilitySpecial"
         {
+        	"04"
+        	{
+        		"var_type"						"FIELD_FLOAT"
+                "placeholder"					"30 35 40 45"
+        	}
             "05"
             {
                 "var_type"						"FIELD_FLOAT"

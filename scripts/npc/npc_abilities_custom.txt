@@ -7628,12 +7628,12 @@
             "01"
             {
                 "var_type"					"FIELD_INTEGER"
-                "damage_increase_pct"		"10 20 30"
+                "damage_increase_pct"		"6 12 18"
             }
             "02"
             {
                 "var_type"					"FIELD_INTEGER"
-                "damage_decrease_pct"		"-10 -20 -30"
+                "damage_decrease_pct"		"-6 -12 -18"
             }
             "03"
             {
@@ -7643,12 +7643,12 @@
             "04"
             {
                 "var_type"					"FIELD_INTEGER"
-                "bonus_armor_building"		"3 6 9"
+                "bonus_armor_building"		"2 4 6"
             }
             "05"
             {
                 "var_type"					"FIELD_INTEGER"
-                "bonus_resist_building"		"5 10 15"
+                "bonus_resist_building"		"4 8 12"
             }
             "06"
             {
@@ -7658,12 +7658,12 @@
             "07"
             {
                 "var_type"					"FIELD_INTEGER"
-                "bonus_resist_creep"		"5 10 15"
+                "bonus_resist_creep"		"4 8 12"
             }
             "08"
             {
                 "var_type"					"FIELD_INTEGER"
-                "bonus_attack_speed_creep"	"5 10 15"
+                "bonus_attack_speed_creep"	"6 12 18"
             }
             "09"
             {
@@ -14871,6 +14871,7 @@
             {
                 "var_type"						"FIELD_INTEGER"
                 "leech_damage"					"15 30 45 60"
+                "LinkedSpecialBonus"			"special_bonus_unique_treant_2"
             }
             "03"
             {

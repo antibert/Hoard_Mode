@@ -170,6 +170,7 @@
 	{
 		"override_hero"			"npc_dota_hero_legion_commander"
 		"Ability6"					"legion_commander_duel_datadriven"
+        "Ability13"             "special_bonus_armor_8"
 	}
 	//=================================================================================================================
 	// HERO: Lina
@@ -436,6 +437,14 @@
 		"Ability15"		"special_bonus_cooldown_reduction_20"
 		"Ability16"		"special_bonus_hp_regen_25"
 	}
+    //=================================================================================================================
+    // HERO: Timbersaw
+    //=================================================================================================================
+    "npc_dota_hero_shredder_holdout"
+    {
+        "override_hero"         "npc_dota_hero_shredder"
+        "Ability16"             "special_bonus_movement_speed_90"
+    }
 	//=================================================================================================================
 	// HERO: Tinker
 	//=================================================================================================================
@@ -458,6 +467,15 @@
         "Ability6"				"treant_great_protector"
         // TODO check talent
 	}
+    //=================================================================================================================
+    // HERO: Underlord
+    //=================================================================================================================
+    "npc_dota_hero_abyssal_underlord_holdout"
+    {
+        "override_hero"         "npc_dota_hero_abyssal_underlord"
+        "Ability13"             "special_bonus_unique_underlord_4"
+        "Ability17"             "special_bonus_armor_20"
+    }
 	//=================================================================================================================
 	// HERO: Undying
 	//=================================================================================================================
@@ -492,6 +510,7 @@
 	
 		"Ability4"					"holdout_scourge_ward"					// Ability 3
 		"Ability6"					"venomancer_poison_nova"					// Ability 4
+        "Ability15"                 "special_bonus_attack_damage_60"
 	}
 	//=================================================================================================================
 	// HERO: Viper
@@ -501,8 +520,8 @@
 		"override_hero"			"npc_dota_hero_viper"
 		"Ability1"				"viper_poison_attack_datadriven"
 		"Ability6"              "viper_strike_lua"
-		"Ability14"		"special_bonus_lifesteal_20"
-        "Ability15"		"special_bonus_attack_damage_75"
+		"Ability14"		        "special_bonus_lifesteal_20"
+        "Ability15"		        "special_bonus_mp_regen_6"
 	}
 	//=================================================================================================================
     // HERO: Visage

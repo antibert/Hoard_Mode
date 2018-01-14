@@ -102,23 +102,44 @@ function Spawner:Spawn(keys)
 
         else
           local chance = math.random(100)
-          if chance <= (difficulty * (playerCount - 1)) then
-            unit:AddAbility("corruption_aura")
-            local corruption_aura = unit:FindAbilityByName("corruption_aura")
-            if corruption_aura ~= nil then
-              corruption_aura:SetLevel(1)
+          --if chance <= (difficulty * (playerCount - 1)) then
+          if chance <= 2 then
+            unit:AddAbility("darkness_aura")
+            local darkness_aura = unit:FindAbilityByName("darkness_aura")
+            if darkness_aura ~= nil then
+              darkness_aura:SetLevel(1)
             end
-          elseif chance > (difficulty * (playerCount - 1)) and chance <= (2 * difficulty * (playerCount - 1)) then
+          --elseif chance > (difficulty * (playerCount - 1)) and chance <= (2 * difficulty * (playerCount - 1)) then
+          elseif chance > 2 and chance <= 4 then
             unit:AddAbility("blight_aura")
             local blight_aura = unit:FindAbilityByName("blight_aura")
             if blight_aura ~= nil then
               blight_aura:SetLevel(1)
             end
-          elseif chance > (2 * difficulty * (playerCount - 1)) and chance < (3 * difficulty * (playerCount - 1)) then
+          --elseif chance > (2 * difficulty * (playerCount - 1)) and chance < (3 * difficulty * (playerCount - 1)) then
+          elseif chance > 4 and chance <= 6 then
             unit:AddAbility("frenzy_aura")
             local frenzy_aura = unit:FindAbilityByName("frenzy_aura")
             if frenzy_aura ~= nil then
               frenzy_aura:SetLevel(1)
+            end
+          elseif chance > 6 and chance <= 8 then
+            unit:AddAbility("apathy_aura")
+            local apathy_aura = unit:FindAbilityByName("apathy_aura")
+            if apathy_aura ~= nil then
+              apathy_aura:SetLevel(1)
+            end
+          elseif chance > 8 and chance <= 10 then
+            unit:AddAbility("stupor_aura")
+            local stupor_aura = unit:FindAbilityByName("stupor_aura")
+            if stupor_aura ~= nil then
+              stupor_aura:SetLevel(1)
+            end
+          elseif chance > 10 and chance <= 12 then
+            unit:AddAbility("corruption_aura")
+            local corruption_aura = unit:FindAbilityByName("corruption_aura")
+            if corruption_aura ~= nil then
+              corruption_aura:SetLevel(1)
             end
           end
         end

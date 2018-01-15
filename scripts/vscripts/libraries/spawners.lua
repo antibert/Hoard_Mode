@@ -90,7 +90,7 @@ function Spawner:Spawn(keys)
       if difficulty > 0 then
 
         if unit:IsConsideredHero() then
-          unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * (1 + 0.2 * difficulty))
+          unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * (1 + 0.1* difficulty))
 
           if difficulty > 1 then
             unit:AddAbility("roshan_spell_block")

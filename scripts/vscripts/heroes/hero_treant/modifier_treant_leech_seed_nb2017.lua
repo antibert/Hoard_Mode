@@ -54,7 +54,8 @@ function modifier_treant_leech_seed_nb2017:OnAttackLanded( params )
 			return 0
 		end
 
-		hAbility:StartCooldown( hAbility:GetCooldown( hAbility:GetLevel() ) )
+		--hAbility:StartCooldown( hAbility:GetCooldown( hAbility:GetLevel() ) )
+		hAbility:UseResources(false,false,true)
 		hTarget:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_treant_leech_seed", { duration = self:GetAbility():GetSpecialValueFor( "duration" ) } )
 
 		EmitSoundOn( "Hero_Treant.LeechSeed.Cast", self:GetCaster() )

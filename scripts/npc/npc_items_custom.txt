@@ -4557,6 +4557,7 @@
 		"AbilityCooldown"				"18"
 		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0.0"
+        "AbilitySharedCooldown"         "halberd"
 
 
 		// Item Info
@@ -4622,7 +4623,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"disarm_range"				"5.5"
+				"disarm_range"				"5.0"
 			}
             "11"
 			{
@@ -5653,7 +5654,7 @@
 
         // Stats
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"2.0"
+        "AbilityCooldown"				"5.0"
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
@@ -5680,17 +5681,17 @@
             "03"
             {
                 "var_type"							"FIELD_INTEGER"
-                "health_regen_rate"	"7"
+                "health_regen_rate"	                "7"
             }
             "04"
             {
                 "var_type"							"FIELD_FLOAT"
-                "cooldown_melee"					"0.6"
+                "cooldown_melee"					"3.0"
             }
             "05"
             {
                 "var_type"							"FIELD_INTEGER"
-                "melee_reduction"	"-3"
+                "melee_reduction"	                "-3"
             }
             "06"
             {
@@ -5765,16 +5766,18 @@
     
 	"item_ancient_janggo"
 	{
-		"AbilityCooldown"				"20.0"
+		"AbilityCooldown"				"25.0"
 
-		"ItemInitialCharges"			"25"
+		"ItemInitialCharges"            "-1"
+        "ItemDisplayCharges"            "0"
+        "ItemRequiresCharges"           "0" 
         
         "AbilitySpecial"
 		{
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"9"
+				"duration"				"6"
 			}
 			"09"
 			{
@@ -5975,7 +5978,7 @@
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "Model"                         "models/props_gameplay/red_box.vmdl" 
         "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
-        "AbilityTextureName"            "item_insight_armor"
+        "AbilityTextureName"            "item_insight_armor" // credits for image: http://majan22.deviantart.com/
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
@@ -6010,7 +6013,7 @@
             "04"
             {
                 "var_type"              "FIELD_INTEGER"
-                "damage_reduction"      "-15"
+                "damage_reduction"      "-10"
             }
             "05"
             {
@@ -6025,7 +6028,7 @@
             "07"
             {
                 "var_type"                      "FIELD_INTEGER"
-                "aura_damage_reduction_base"    "-5"
+                "aura_damage_reduction_base"    "-10"
             }
             "08"
             {
@@ -6130,6 +6133,1343 @@
                     "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"        "%aura_regen_buff"
                     "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"   "%aura_damage_reduction_buff"
                 }
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Upgrade Orb
+    //=================================================================================================================
+
+    "item_upgrade_orb"
+    {
+        "ID"                        "99023"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                 "item_datadriven"
+        "Model"                     "models/heroes/oracle/crystal_ball.vmdl"
+        "Effect"                    "particles/econ/items/lanaya/lanaya_epit_trap/templar_assassin_epit_trap_core_ring.vpcf"
+        "AbilityTextureName"        "item_upgrade_orb"
+ 
+        // Item Info
+        //---------------------------------------------------------------------------------------------------------
+        "ItemPurchasable"               "0"
+        "ItemSellable"                  "0"
+        "ItemKillable"                  "0"
+        "ItemQuality"                   "artifact"
+        "ItemShareability"              "ITEM_FULLY_SHAREABLE"
+
+        "OnOwnerDied"
+        {
+            "RunScript"
+            {
+                "ScriptFile"            "scripts/vscripts/itemfunctions.lua"
+                "Function"              "DropItemOnDeath"
+            }
+        }
+
+    }
+
+    //=================================================================================================================
+    // Exalted Black King Bar
+    //=================================================================================================================
+
+    "item_recipe_exalted_bkb"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99024"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "AbilityTextureName"            "item_recipe"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1000" 
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_exalted_bkb"
+        "ItemRequirements"
+        {
+            "01"                        "item_black_king_bar;item_upgrade_orb"
+        }
+    }
+
+    "item_exalted_bkb"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_black_king_bar"
+        "ID"                            "99025"                                                     // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityTextureName"            "item_exalted_bkb"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "3975"
+        "ItemShopTags"                  "exalted"
+        "ItemQuality"                   "artifact"
+        "ItemKillable"                  "0" 
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemDroppable"                 "1"
+        "ItemShareability"              "ITEM_FULLY_SHAREABLE"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        
+
+        // Active Properties
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "30"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_strength"        "20"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_damage"          "50"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "duration"              "12.0"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Exalted Spirit Vessel
+    //=================================================================================================================
+
+    "item_recipe_exalted_spirit_vessel"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99026"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "AbilityTextureName"            "item_recipe"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1000" 
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_exalted_spirit_vessel"
+        "ItemRequirements"
+        {
+            "01"                        "item_spirit_vessel;item_upgrade_orb"
+        }
+    }
+
+    "item_exalted_spirit_vessel"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_spirit_vessel"
+        "ID"                            "99027"                                                     // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
+        "AbilitySharedCooldown"         "urn"
+        "AbilityTextureName"            "item_exalted_spirit_vessel"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "3825"
+        "ItemShopTags"                  "exalted"
+        "ItemQuality"                   "artifact"
+        "ItemKillable"                  "0" 
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemDroppable"                 "1"
+        "ItemShareability"              "ITEM_FULLY_SHAREABLE"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        // Active Properties
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemInitialCharges"            "-1"
+        "ItemDisplayCharges"            "0"
+        "ItemRequiresCharges"           "0"
+        "AbilityCooldown"               "8"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"        "FIELD_INTEGER"
+                "bonus_health"      "400"
+            }
+            "02"
+            {
+                "var_type"        "FIELD_INTEGER"
+                "bonus_movement_speed"  "45"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "bonus_mana_regen"      "2.0"
+            }
+            "04"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_all_stats"       "5"
+            }
+            "05"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "bonus_armor"           "5"
+            }
+            "06"
+            {
+                "var_type"        "FIELD_INTEGER"
+                "soul_radius"     "1400"
+            }
+            "07"
+            {
+                "var_type"        "FIELD_INTEGER"
+                "soul_initial_charge" "2"
+            }
+            "08"
+            {
+                "var_type"        "FIELD_INTEGER"
+                "soul_additional_charges" "1"
+            }
+            "09"
+            {
+                "var_type"        "FIELD_INTEGER"
+                "soul_heal_amount"      "35"
+            }
+            "10"
+            {
+                "var_type"        "FIELD_INTEGER"
+                "soul_damage_amount"    "20"
+            }
+            "11"
+            {
+                "var_type"        "FIELD_FLOAT"
+                "duration"      "8.0"
+            }
+            "12"
+            {
+                "var_type"        "FIELD_INTEGER"
+                "soul_release_range_tooltip"  "950"
+            }
+            "13"
+            {
+                "var_type"        "FIELD_INTEGER"
+                "hp_regen_reduction_enemy"  "70"
+            }
+            "14"
+            {
+                "var_type"        "FIELD_INTEGER"
+                "hp_regen_increase_allies"  "20"
+            }
+            "15"
+            {
+                "var_type"        "FIELD_FLOAT"
+                "enemy_hp_drain"    "3.0"
+            }
+            "16"
+            {
+                "var_type"        "FIELD_FLOAT"
+                "ally_hp_gain"    "1.0"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Exalted Diffusal Blade
+    //=================================================================================================================
+    "item_recipe_exalted_diffusal_blade"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99028"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "AbilityTextureName"            "item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1000"
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_exalted_diffusal_blade"
+        "AbilityTextureName"            "item_recipe"
+        "ItemRequirements"
+        {
+            "01"                        "item_diffusal_blade;item_upgrade_orb"
+        }
+    }
+
+    "item_exalted_diffusal_blade"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_diffusal_blade"
+        "ID"                            "99029"                                                     // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
+        "AbilityTextureName"            "item_exalted_diffusal_blade"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "4150"
+        "ItemShopTags"                  "exalted"
+        "ItemQuality"                   "artifact"
+        "ItemKillable"                  "0" 
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemDroppable"                 "1"
+        "ItemShareability"              "ITEM_FULLY_SHAREABLE"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        // Active Properties
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "600"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "10.0"
+        "AbilitySharedCooldown"         "diffusal"      
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "bonus_agility"                                   "40"
+            }
+            "02"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "bonus_intellect"                                 "20"
+            }
+            "03"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "feedback_mana_burn"                              "80"
+            }
+            "04"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "feedback_mana_burn_illusion_melee"               "28"
+            }
+            "05"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "feedback_mana_burn_illusion_ranged"              "14"
+            }
+            "06"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "purge_rate"                                      "5"
+            }
+            "07"
+            {
+                "var_type"                                        "FIELD_FLOAT"
+                "purge_root_duration"                             "5.0"
+            }
+            "08"
+            {
+                "var_type"                                        "FIELD_FLOAT"
+                "purge_slow_duration"                             "6.0"
+            }
+            "09"
+            {
+                "var_type"                                        "FIELD_FLOAT"
+                "damage_per_burn"                                 "0.8"
+            }
+            "10"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "cast_range_tooltip"                              "600"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Exalted Armlet of Mordiggian
+    //=================================================================================================================
+    "item_recipe_exalted_armlet"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99030"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "AbilityTextureName"            "item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1000"
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_exalted_armlet"
+        "AbilityTextureName"            "item_recipe"
+        "ItemRequirements"
+        {
+            "01"                        "item_armlet;item_upgrade_orb"
+        }
+    }
+
+    "item_exalted_armlet"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_armlet"
+        "ID"                            "99031"                                                     // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+        "AbilitySharedCooldown"         "diffusal"
+        "AbilityTextureName"            "item_exalted_armlet"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "3370"
+        "ItemShopTags"                  "exalted"
+        "ItemQuality"                   "artifact"
+        "ItemKillable"                  "0" 
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemDroppable"                 "1"
+        "ItemShareability"              "ITEM_FULLY_SHAREABLE"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        // Active Properties
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "0.0"     
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "bonus_damage"                                    "20"
+            }
+            "02"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "bonus_attack_speed"                              "40"
+            }
+            "03"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "bonus_armor"                                     "8"
+            }
+            "04"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "bonus_health_regen"                              "8"
+            }
+            "05"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "unholy_bonus_damage"                             "60"
+            }
+            "06"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "unholy_bonus_attack_speed"                       "0"
+            }
+            "07"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "unholy_bonus_strength"                           "40"
+            }
+            "08"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "unholy_bonus_armor"                              "7"
+            }
+            "09"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "unholy_health_drain_per_tick"                    "8"
+            }
+            "10"
+            {
+                "var_type"                                        "FIELD_INTEGER"
+                "unholy_health_drain_per_second_tooltip"          "72"
+            }
+            "11"
+            {
+                "var_type"                                        "FIELD_FLOAT"
+                "toggle_cooldown"                                 "0.036f"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Exalted Solar Crest
+    //=================================================================================================================
+    "item_recipe_exalted_solar_crest"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99032"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "AbilityTextureName"            "item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1000"
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_exalted_solar_crest"
+        "AbilityTextureName"            "item_recipe"
+        "ItemRequirements"
+        {
+            "01"                        "item_solar_crest;item_upgrade_orb"
+        }
+    }
+
+    "item_exalted_solar_crest"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_solar_crest"
+        "ID"                            "99033"                                                     // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_BOTH"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilitySharedCooldown"         "medallion"
+        "AbilityTextureName"            "item_exalted_solar_crest"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "3625"
+        "ItemShopTags"                  "exalted"
+        "ItemQuality"                   "artifact"
+        "ItemKillable"                  "0" 
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemDroppable"                 "1"
+        "ItemShareability"              "ITEM_FULLY_SHAREABLE"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        // Active Properties
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "1000"
+        "AbilityCooldown"               "7.0"     
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                         "FIELD_INTEGER"
+                "bonus_armor"                      "15"
+            }
+            "02"
+            {
+                "var_type"                         "FIELD_FLOAT"
+                "bonus_mana_regen_pct"             "2.0"
+            }
+            "03"
+            {
+                "var_type"                         "FIELD_INTEGER"
+                "bonus_evasion"                    "30"
+            }
+            "04"
+            {
+                "var_type"                         "FIELD_INTEGER"
+                "truestrike_chance"                "60"
+            }
+            "05"
+            {
+                "var_type"                         "FIELD_INTEGER"
+                "duration"                         "7"
+            }
+            "06"
+            {
+                "var_type"                         "FIELD_INTEGER"
+                "valor_cast_range_tooltip"         "1000"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Exalted Drum of Endurance
+    //=================================================================================================================
+    "item_recipe_exalted_ancient_janggo"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99034"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "AbilityTextureName"            "item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1000"
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_exalted_ancient_janggo"
+        "AbilityTextureName"            "item_recipe"
+        "ItemRequirements"
+        {
+            "01"                        "item_ancient_janggo;item_upgrade_orb"
+        }
+    }
+
+    "item_exalted_ancient_janggo"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_ancient_janggo"
+        "ID"                            "99035"                                                     // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilitySharedCooldown"         "drums"
+        "AbilityTextureName"            "item_exalted_ancient_janggo"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "2615"
+        "ItemShopTags"                  "exalted"
+        "ItemQuality"                   "artifact"
+        "ItemKillable"                  "0" 
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemDroppable"                 "1"
+        "ItemShareability"              "ITEM_FULLY_SHAREABLE"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        // Active Properties
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "900"
+        "AbilityCooldown"               "25.0"
+        "ItemInitialCharges"            "-1"
+        "ItemDisplayCharges"            "0"
+        "ItemRequiresCharges"           "0"     
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                          "FIELD_INTEGER"
+                "bonus_int"                         "12"
+            }
+            "02"
+            {
+                "var_type"                          "FIELD_INTEGER"
+                "bonus_str"                         "15"
+            }
+            "03"
+            {
+                "var_type"                          "FIELD_INTEGER"
+                "bonus_agi"                         "6"
+            }
+            "04"
+            {
+                "var_type"                          "FIELD_FLOAT"
+                "bonus_mana_regen"                  "1.5"
+            }
+            "05"
+            {
+                "var_type"                          "FIELD_INTEGER"
+                "bonus_aura_movement_speed"         "30"
+            }
+            "06"
+            {
+                "var_type"                          "FIELD_INTEGER"
+                "bonus_attack_speed_pct"            "50"
+            }
+            "07"
+            {
+                "var_type"                          "FIELD_INTEGER"
+                "bonus_movement_speed_pct"          "18"
+            }
+            "08"
+            {
+                "var_type"                          "FIELD_INTEGER"
+                "duration"                          "8"
+            }
+            "09"
+            {
+                "var_type"                          "FIELD_INTEGER"
+                "radius"                            "900"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Exalted Echo Sabre
+    //=================================================================================================================
+    "item_recipe_exalted_echo_sabre"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99036"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "AbilityTextureName"            "item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1000"
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_exalted_echo_sabre"
+        "AbilityTextureName"            "item_recipe"
+        "ItemRequirements"
+        {
+            "01"                        "item_echo_sabre;item_upgrade_orb"
+        }
+    }
+
+    "item_exalted_echo_sabre"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_echo_sabre"
+        "ID"                            "99037"                                                     // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilitySharedCooldown"         "echo"
+        "AbilityTextureName"            "item_exalted_echo_sabre"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "3650"
+        "ItemShopTags"                  "exalted"
+        "ItemQuality"                   "artifact"
+        "ItemKillable"                  "0" 
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemDroppable"                 "1"
+        "ItemShareability"              "ITEM_FULLY_SHAREABLE"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        // Active Properties
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "4.0"    
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_intellect"           "20"
+            }
+            "02"
+            {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_strength"            "20"
+            }
+            "03"
+            {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_attack_speed"        "20"
+            }
+            "04"
+            {
+            "var_type"                  "FIELD_INTEGER"
+            "bonus_damage"              "30"
+            }
+            "05"
+            {
+            "var_type"                  "FIELD_FLOAT"
+            "bonus_mana_regen"          "1.5"
+            }
+            "06"
+            {
+            "var_type"                  "FIELD_INTEGER"
+            "proc_damage"               "0"
+            }
+            "07"
+            {
+            "var_type"                  "FIELD_INTEGER"
+            "movement_slow"             "100"
+            }
+            "08"
+            {
+            "var_type"                  "FIELD_INTEGER"
+            "attack_speed_slow"         "0"
+            }
+            "09"
+            {
+            "var_type"                  "FIELD_FLOAT"
+            "slow_duration"             "0.7"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Exalted Phase Boots
+    //=================================================================================================================
+    "item_recipe_exalted_phase_boots"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99038"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "AbilityTextureName"            "item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1000"
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_exalted_phase_boots"
+        "AbilityTextureName"            "item_recipe"
+        "ItemRequirements"
+        {
+            "01"                        "item_phase_boots;item_upgrade_orb"
+        }
+    }
+
+    "item_exalted_phase_boots"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_phase_boots"
+        "ID"                            "99039"                                                     // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+        "AbilitySharedCooldown"         "phase"
+        "AbilityTextureName"            "item_exalted_phase_boots"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "3490"
+        "ItemShopTags"                  "exalted"
+        "ItemQuality"                   "artifact"
+        "ItemKillable"                  "0" 
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemDroppable"                 "1"
+        "ItemShareability"              "ITEM_FULLY_SHAREABLE"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        // Active Properties
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "12"    
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_movement_speed"  "70"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_damage"          "40"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "damage_block_melee"    "32"
+            }
+            "04"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "damage_block_ranged"   "16"
+            }
+            "05"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "block_chance"          "100"
+            }
+            "06"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "phase_movement_speed"  "24"
+            }
+            "07"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "phase_movement_speed_range"  "20"
+            }
+            "08"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "phase_duration"        "6"
+            }
+            "09"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_attack_speed"    "30"
+            }
+            "10"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_armor"           "8"
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Exalted Heaven's Halberd
+    //=================================================================================================================
+    "item_recipe_exalted_heavens_halberd"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99040"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "AbilityTextureName"            "item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1000"
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_exalted_heavens_halberd"
+        "AbilityTextureName"            "item_recipe"
+        "ItemRequirements"
+        {
+            "01"                        "item_heavens_halberd;item_upgrade_orb"
+        }
+    }
+
+    "item_exalted_heavens_halberd"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"                            "99041"   // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "BaseClass"                     "item_datadriven"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityTextureName"            "item_exalted_heavens_halberd"
+        "AOERadius"                     "%radius"
+
+        // Stats        
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySharedCooldown"         "halberd"
+        "AbilityCooldown"               "15"
+        "AbilityCastRange"              "600"
+        "AbilityCastPoint"              "0.0"
+        "AbilityManaCost"               "50"
+
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "4500"
+        "ItemShopTags"                  "exalted"
+        "ItemQuality"                   "artifact"
+        "ItemKillable"                  "0" 
+        "ItemSellable"                  "0"
+        "ItemPurchasable"               "1"
+        "ItemDroppable"                 "1"
+        "ItemShareability"              "ITEM_FULLY_SHAREABLE"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_evasion"         "30"
+            }           
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_damage"          "50"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_strength"        "35"
+            }
+            "04"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "maim_chance"           "40"
+            }
+            "05"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "maim_slow_movement"    "-25"
+            }
+            "06"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "maim_slow_attack"      "-25"
+            }
+            "07"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "maim_slow_movement_range"  "-15"
+            }           
+            "08"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "maim_slow_attack_range"        "-15"
+            }
+            "09"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "maim_duration"         "6.0"
+            }           
+            "10"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "disarm_range"              "5.0"
+            }
+            "11"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "disarm_melee"              "3.0"
+            }   
+            "12"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "disarm_cast_range_tooltip" "600"
+            }   
+            "13"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "radius"                "225"
+            }
+        }
+
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"    "items/item_heavens_halberd.lua"
+                "Function"      "item_heavens_halberd_datadriven_on_spell_start"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_item_heavens_halberd_datadriven"
+            {
+                "Passive"           "1"
+                "IsHidden"          "1"
+                "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"          "%bonus_damage"
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"            "%bonus_strength"
+                    "MODIFIER_PROPERTY_EVASION_CONSTANT"                "%bonus_evasion"
+                }
+
+                "OnAttackLanded"
+                {
+                    "Random"
+                    {
+                        "Chance"        "%maim_chance"
+                        "OnSuccess"
+                        {
+                            "RunScript"
+                            {
+                                "ScriptFile"            "items/item_heavens_halberd.lua"
+                                "Function"              "modifier_item_heavens_halberd_datadriven_on_attack_landed_random_on_success"
+                            }
+                        }
+                    }
+                }
+            }
+            
+            "modifier_item_heavens_halberd_datadriven_lesser_maim_ranged"
+            {
+                "Duration"              "%maim_duration"
+                "Passive"               "0"
+                "IsHidden"              "0"
+                "IsBuff"                "0"
+                "IsDebuff"              "1"
+                "IsPurgable"            "1"
+
+                "EffectName"            "particles/items2_fx/sange_maim.vpcf"
+                "EffectAttachType"      "PATTACH_ABSORIGIN"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "%maim_slow_attack_range"
+                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "%maim_slow_movement_range"
+                }
+            }
+            
+            "modifier_item_heavens_halberd_datadriven_lesser_maim_melee"
+            {
+                "Duration"              "%maim_duration"
+                "Passive"               "0"
+                "IsHidden"              "0"
+                "IsBuff"                "0"
+                "IsDebuff"              "1"
+                "IsPurgable"            "1"
+
+                "EffectName"            "particles/items2_fx/sange_maim.vpcf"
+                "EffectAttachType"      "PATTACH_ABSORIGIN"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"      "%maim_slow_attack"
+                    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "%maim_slow_movement"
+                }
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Cursed Rapier
+    //=================================================================================================================
+
+    "item_recipe_cursed_rapier"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99665"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "AbilityTextureName"            "item_recipe"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0" 
+        "ItemShopTags"                  "damage"
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_cursed_rapier"
+        "ItemRequirements"
+        {
+            "01"                        "item_claymore;item_mithril_hammer;item_demon_edge;item_relic"
+        }
+    }
+
+    "item_cursed_rapier"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99666"                                                     // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityTextureName"            "item_cursed_rapier"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "9000"
+        "ItemShopTags"                  "damage"
+        "ItemQuality"                   "artifact"
+        "ItemAliases"                   "rapier"
+        "ItemDroppable"                 "1"
+        "ItemSellable"                  "0"
+        "ItemKillable"                  "0"
+        "ItemShareability"              "ITEM_NOT_SHAREABLE"
+        "ItemDisassembleRule"           "DOTA_ITEM_DISASSEMBLE_NEVER"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        // Active Properties
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCooldown"               "3"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_damage_base"     "150"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_damage_toggle"   "300"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "health_pct_drain"      "3"
+            }
+            "04"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "max_attack_range"      "150"
+            }
+        }
+
+        "precache"
+        {
+            "particle"                  "particles/econ/items/silencer/silencer_ti6/silencer_last_word_status_ti6_ring_edge.vpcf"
+        }
+
+        "OnOwnerDied"
+        {
+            "RunScript"
+            {
+                "ScriptFile"            "scripts/vscripts/itemfunctions.lua"
+                "Function"              "DropItemOnDeath"
+            }
+            "RunScript"
+            {
+                "ScriptFile"                "scripts/vscripts/itemfunctions.lua"
+                "Function"                  "ToggleLuaModifier"
+                "modifier"                  "modifier_cursed_rapier_toggle"
+                "modifierPath"              "items/modifiers/modifier_cursed_rapier.lua"
+                "cleanUp"                   "true"
+            } 
+        }
+
+        "OnSpellStart"
+        {
+            "RunScript"
+            {
+                "ScriptFile"                "scripts/vscripts/itemfunctions.lua"
+                "Function"                  "ToggleLuaModifier"
+                "modifier"                  "modifier_cursed_rapier_toggle"
+                "modifierPath"              "items/modifiers/modifier_cursed_rapier.lua"
+            } 
+
+            "FireSound"
+            {
+                "EffectName"                "DOTA_Item.Armlet.Activate"
+                "Target"                    "CASTER"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_item_cursed_rapier"
+            {
+                "Passive"           "1"
+                "IsHidden"          "1"
+                "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+                
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"          "%bonus_damage_base"
+                }
+            }
+        }
+    }
+
+    //=================================================================================================================
+    // Sacred Trident
+    //=================================================================================================================
+    "item_recipe_sacred_trident"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99776"
+        "Model"                         "models/props_gameplay/recipe.mdl"
+        "AbilityTextureName"            "item_recipe"
+        
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "1000"  
+        "ItemShopTags"                  ""
+        
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_sacred_trident"
+        "ItemRequirements"
+        {
+            "01"                        "item_monkey_king_bar;item_relic"
+        }
+    }
+
+    "item_sacred_trident"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"                            "99777"                                                      // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_sacred_trident.lua"
+        "AbilityTextureName"            "item_sacred_trident"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "9000"
+        "ItemShopTags"                  "damage;hard_to_tag"
+        "ItemQuality"                   "epic"
+        "ItemAliases"                   "trident"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+        
+        // Special  
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "bonus_damage"              "80"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "bonus_attack_speed"        "80"
+            }
+            "03"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "pure_damage_proc"          "80"
+            }
+            "03"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "pure_damage_proc_illusion" "16"
             }
         }
     }

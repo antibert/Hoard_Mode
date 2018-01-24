@@ -28,6 +28,13 @@ function mystic_flare_start( keys )
 	local has_scepter = caster:HasScepter()
 	local scepter_duration = ability:GetLevelSpecialValueFor( "scepter_duration", ability:GetLevel() - 1 )
 
+	if caster:HasAbility("special_bonus_unique_skywrath_5") then
+		local talent = caster:FindAbilityByName("special_bonus_unique_skywrath_5")
+		if talent:GetLevel()>0 then
+			total_damage = total_damage + talent:GetSpecialValueFor("value")
+		end
+	end
+	
 	if has_scepter then
 		total_damage = total_damage * scepter_duration / duration
 		duration = scepter_duration

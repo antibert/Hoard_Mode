@@ -155,8 +155,10 @@
 	//"item_soul_booster"				"REMOVE"
 	//"item_recipe_hood_of_defiance"	"REMOVE"
 	//"item_hood_of_defiance"			"REMOVE"
-	//"item_recipe_rapier"			"REMOVE"
-	//"item_rapier"					"REMOVE"
+	"item_recipe_rapier"			"REMOVE"
+	"item_rapier"					"REMOVE"
+	"item_recipe_king_rapier"		"REMOVE"
+	"item_king_rapier"				"REMOVE"
 	//"item_recipe_monkey_king_bar"	"REMOVE"
 	//"item_monkey_king_bar"			"REMOVE"
 	//"item_recipe_radiance"			"REMOVE"
@@ -494,6 +496,15 @@
 	"witch_doctor_maledict"
 	{
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+
+		"AbilitySpecial"
+		{
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"15 20 25 30"
+			}
+		}
 	}
 	//=================================================================================================================
 	// Witch Doctor: Paralyzing Cask
@@ -507,11 +518,13 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bounces"				"6 9 12 15"
+				"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_3"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bounces_tooltip"		"6 9 12 15"
+				"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_3"
 			}
 		}
 	}
@@ -1278,28 +1291,28 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"lance_damage"				"150 230 310 390"
+				"lance_damage"				"160 240 320 400"
 				"LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer_2"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_out_pct"	"-30 -30 -30 -30"
+				"illusion_damage_out_pct"	"-70"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_illusion_damage"	"70 70 70 70"
+				"tooltip_illusion_damage"	"30"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_in_pct"	"100"
+				"illusion_damage_in_pct"	"200"
 			}
 			"09"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_illusion_total_damage_in_pct"	"200"
+				"tooltip_illusion_total_damage_in_pct"	"300"
 			}			
 		}	
 	}
@@ -1313,22 +1326,22 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_1_damage_out_pct"	"-30"
+				"illusion_1_damage_out_pct"	"-70"
 			}
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_1_damage_in_pct"	"100"
+				"illusion_1_damage_in_pct"	"200"
 			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_2_damage_out_pct"	"-30"
+				"illusion_2_damage_out_pct"	"-70"
 			}
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_2_damage_in_pct"	"100"
+				"illusion_2_damage_in_pct"	"200"
 			}
 		}
 	}
@@ -1339,30 +1352,31 @@
 	{
 		"AbilitySpecial"
 		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_illusions"				"3 4 5"
+				"LinkedSpecialBonus"		"special_bonus_unique_phantom_lancer_3"
+			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_out_pct"	"-30"
+				"illusion_damage_out_pct"	"-70"
 			}
 			"06"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_illusion_damage"	"70"
+				"tooltip_illusion_damage"	"30"
 			}
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"illusion_damage_in_pct"	"100"
+				"illusion_damage_in_pct"	"200"
 			}
 			"08"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"tooltip_total_illusion_damage_in_pct"	"200"
-			}
-			"09"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"illusion_from_illusion_duration"	"5"
+				"tooltip_total_illusion_damage_in_pct"	"300"
 			}
 		}
 	}
@@ -1924,7 +1938,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"freeze_damage"			"20 30 42 66 89 127 177"
+				"freeze_damage"			"10 25 40 55 70 85 100"
 				"levelkey"				"quaslevel"	
 			}
 		}
@@ -1944,7 +1958,7 @@
 			"09"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"wex_damage"			"75 110 160 250 380 500 725"
+				"wex_damage"			"80 160 240 320 400 480 560"
 				"levelkey"				"wexlevel"
 			}
 		}
@@ -1959,7 +1973,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_mana_pct"	"150"
+				"damage_per_mana_pct"	"120"
 			}
 		}
 	}
@@ -1968,14 +1982,14 @@
 	//=================================================================================================================
 	"invoker_chaos_meteor"
 	{
-		"AbilityCooldown"				"35"
+		"AbilityCooldown"				"40"
 		"AbilitySpecial"
 		{
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"main_damage"			"70 100 135 170 220 280 350"
-				"LinkedSpecialBonus"		"special_bonus_unique_invoker_6"
+				"main_damage"			"70 100 130 160 190 220 250"
+				"LinkedSpecialBonus"	"special_bonus_unique_invoker_6"
 				"levelkey"				"exortlevel"
 			}
 			"09"
@@ -1986,7 +2000,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"burn_dps"				"12 20 25 32 41 50 62"
+				"burn_dps"				"12 20 28 36 44 52 60"
 				"levelkey"				"exortlevel"
 				"CalculateSpellDamageTooltip"	"1"
 			}
@@ -2002,7 +2016,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"600 900 1200 1500 1800 2100 2400"
+				"damage"				"200 400 600 800 1000 1200 1400"
 				"levelkey"				"exortlevel"
 			}
 		}
@@ -2012,7 +2026,7 @@
 	//=================================================================================================================
 	"invoker_deafening_blast"
 	{
-		"AbilityCooldown"				"10"
+		"AbilityCooldown"				"12"
 	}
 	//=================================================================================================================
     // Venomancer: Venomous Gale
@@ -2469,6 +2483,16 @@
 	    // Damage.
 	    //-------------------------------------------------------------------------------------------------------------
 	    "AbilityDamage"					"100 150 200 250"
+
+	    "AbilitySpecial"
+	    {
+	    	"01"
+	    	{
+	    		"var_type"				"FIELD_INTEGER"
+	    		"damage_reduction"		"-10 -15 -20 -25"
+	    		"LinkedSpecialBonus"	"special_bonus_unique_tidehunter_3"
+	    	}
+	    }
     }
 	//=================================================================================================================
 	// Tidehunter: Ravage
@@ -2518,14 +2542,14 @@
 	//=================================================================================================================
 	"enigma_black_hole"
 	{
-		"AbilityChannelTime"			"5 6 7"
+		"AbilityChannelTime"			"5.0 5.5 6.0"
 		"AbilityCooldown"				"100 90 80"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"far_damage"			"200 300 400"
+				"far_damage"			"150 225 300"
 			}
 			"02"
 			{
@@ -2545,12 +2569,12 @@
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"near_damage"			"200 300 400"
+				"near_damage"			"150 225 300"
 			}
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"5 6 7"
+				"duration"				"5.0 5.5 6.0"
 			}
 		}
 	}
@@ -2811,6 +2835,13 @@
 		}
 	}
 	//=================================================================================================================
+	// Dazzle: Poison Touch
+	//=================================================================================================================
+	"dazzle_poison_touch"
+	{
+		"AbilityCooldown"		"13 12 11 10"
+	}
+	//=================================================================================================================
 	// Doom Bringer: Scorched Earth
 	//=================================================================================================================
 	"doom_bringer_scorched_earth"
@@ -2837,6 +2868,21 @@
         // Damage.
         //-------------------------------------------------------------------------------------------------------------
         "AbilityDamage"					"150 225 325 400"
+	}
+	//=================================================================================================================
+	// Zeus: Static Field
+	//=================================================================================================================
+	"zuus_static_field"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_health_pct"		"4 5 6 7"
+				"LinkedSpecialBonus"	"special_bonus_unique_zeus"
+			}
+		}
 	}
 	//=================================================================================================================
     // Magnataur: Shockwave
@@ -2940,7 +2986,16 @@
 	//=================================================================================================================
 	"elder_titan_earth_splitter"
 	{
-		"AbilityCooldown"				"100 90 80"
+		"AbilityCooldown"				"100 95 90"
+
+		"AbilitySpecial"
+		{
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_pct"			"20 25 30"
+			}
+		}
 	}
 	//=================================================================================================================
 	// Ursa: Earthshock
@@ -2965,6 +3020,20 @@
                 "LinkedSpecialBonus"			"special_bonus_unique_ursa"
             }
         }
+    }
+    //=================================================================================================================
+    // Ursa: Overpower
+    //=================================================================================================================
+    "ursa_overpower"
+    {
+    	"AbilitySpecial"
+    	{
+    		"01"
+    		{
+    			"var_type"						"FIELD_INTEGER"
+    			"max_attacks"	"4 5 6 7"
+    		}
+    	}
     }
     //=================================================================================================================
     // Ability: Earthshaker Fissure
@@ -3282,14 +3351,27 @@
 		{
 			"01"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"damage"					"125 250 375 500"
+				"var_type"							"FIELD_INTEGER"
+				"damage"							"125 250 375 500"
 			}
 			"02"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"jump_damage_reduction_pct"	"0"
-				"CalculateSpellDamageTooltip"	"0"
+				"var_type"							"FIELD_INTEGER"
+				"jump_damage_reduction_pct"			"0"
+				"CalculateSpellDamageTooltip"		"0"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"hero_attack_damage_reduction" 		"12 24 36 48"
+				"LinkedSpecialBonus"				"special_bonus_unique_rubick_2"
+				"CalculateSpellDamageTooltip"		"0"
+			}
+			"04"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"creep_attack_damage_reduction" 	"6 12 18 24"
+				"CalculateSpellDamageTooltip"		"0"
 			}
 		}
 	}	
@@ -3383,8 +3465,9 @@
 	"item_urn_of_shadows"
 	{
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"ItemRequiresCharges"           "0"
-		"ItemInitialCharges"			"999"
+		"ItemInitialCharges"            "-1"
+        "ItemDisplayCharges"            "0"
+        "ItemRequiresCharges"           "0" 
 	}
 	//=================================================================================================================
     // Spirit Vessel
@@ -3392,8 +3475,10 @@
     "item_spirit_vessel"
     {
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-        "ItemRequiresCharges"			"0"
-        "ItemInitialCharges"			"0"
+        "ItemInitialCharges"            "-1"
+        "ItemDisplayCharges"            "0"
+        "ItemRequiresCharges"           "0" 
+        "AbilityCooldown"				"12"
     }
 
 	//=================================================================================================================
@@ -3679,6 +3764,7 @@
     "item_phase_boots"
     {
         "AbilityCooldown"				"12"
+        "AbilitySharedCooldown"         "phase"
         "AbilitySpecial"
         {
             "01"
@@ -5287,6 +5373,11 @@
     {
         "AbilitySpecial"
         {
+        	"02"
+        	{
+        		"var_type"						"FIELD_INTEGER"
+        		"damage_reduction_pct"			"4 11 18 25"
+        	}
         	"04"
         	{
         		"var_type"						"FIELD_FLOAT"

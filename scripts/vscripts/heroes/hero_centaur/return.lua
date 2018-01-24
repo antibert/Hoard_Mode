@@ -20,8 +20,15 @@ function Return( keys )
 		return nil
 	end
 
+	local flat_damage = ability:GetLevelSpecialValueFor("return_damage", ability_level)
 	local str_percentage = ability:GetLevelSpecialValueFor("strength_pct", ability_level)
-    local flat_damage = ability:GetLevelSpecialValueFor("return_damage", ability_level)
+
+	if caster:HasAbility("special_bonus_unique_centaur_3") then
+		local talent = caster:FindAbilityByName("special_bonus_unique_centaur_3")
+		if talent:GetLevel()>0 then
+			str_percentage = str_percentage + talent:GetSpecialValueFor("value")
+		end
+	end
 
 	local caster_str = caster:GetStrength()
 	local damage = flat_damage+((caster_str/100)*str_percentage)

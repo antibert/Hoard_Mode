@@ -18,6 +18,18 @@ end
 
 --------------------------------------------------------------------------------
 
+function sniper_assassinate_dm2017:GetCastPoint()
+	if self:GetCaster():HasAbility("special_bonus_unique_sniper_4") then
+		local talent = self:GetCaster():FindAbilityByName("special_bonus_unique_sniper_4")
+		if talent:GetLevel()>0 then
+			return self.BaseClass.GetCastPoint(self) - 1.5
+		end
+	end
+	return self.BaseClass.GetCastPoint(self)
+end
+
+--------------------------------------------------------------------------------
+
 function sniper_assassinate_dm2017:OnAbilityPhaseStart()
 	if IsServer() then
 		local aim_duration = self:GetSpecialValueFor( "aim_duration" )
@@ -31,7 +43,7 @@ function sniper_assassinate_dm2017:OnAbilityPhaseStart()
 			if #enemies > 0 then
 				for _,enemy in pairs(enemies) do
 					if enemy ~= nil then
-						enemy:AddNewModifier( self:GetCaster(), self, "modifier_sniper_assassinate", { duration = aim_duration } )
+						enemy:AddNewModifier( self:GetCaster(), self, "modifier_sniper_assassinate", { duration = aim_duration + 0.5 } )
 						table.insert( self.hScepterTargets, enemy )
 					end
 				end

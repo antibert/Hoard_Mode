@@ -2184,6 +2184,81 @@
 		}
 	}
 	//=================================================================================================================
+	// Generic: Spawn Upgrade Orb
+	//=================================================================================================================
+	"spawn_upgrade_orb"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"item_upgrade_orb"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"orb_count"				"1 2 3 4 5"
+			}
+		}
+
+		"precache"
+		{
+			"particle"					"particles/econ/items/lanaya/lanaya_epit_trap/templar_assassin_epit_trap_explosion_shock.vpcf"
+		}
+
+		"OnOwnerDied"
+		{
+			"CreateItem"
+			{
+				"Target"
+				{
+					"Center" 	"CASTER"
+					"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}
+				"ItemName"			"item_upgrade_orb"
+				"ItemCount"			"%orb_count"
+				"LaunchHeight"		"50"
+				"LaunchDistance"	"200 400"
+				"LaunchDuration"	"0.75"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"			"particles/econ/items/lanaya/lanaya_epit_trap/templar_assassin_epit_trap_explosion_shock.vpcf"
+				"EffectAttachType"  	"follow_origin"
+				"Target"
+				{
+					"Center"			"CASTER"
+					"Flags"     		"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}
+			}
+
+			"DestroyTrees"
+			{
+				"Target"
+				{
+					"Center"			"CASTER"
+					"Flags"     		"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}
+				"Radius"		"300"
+			}
+
+			"FireSound"
+			{
+				"EffectName"			"DOTA_Item.DustOfAppearance.Activate"
+				"Target"
+				{
+					"Center"			"CASTER"
+					"Flags"     		"DOTA_UNIT_TARGET_FLAG_DEAD"
+				}
+			}
+		}
+	}
+	//=================================================================================================================
 	// Generic: Gold Bag Fountain 50g
 	//=================================================================================================================
 	"generic_gold_bag_fountain_small"
@@ -3898,7 +3973,7 @@
 
 		// Time
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"20.0 15.0 10.0"
+		"AbilityCooldown"				"25.0 20.0 15.0"
 
 
 		// Cost
@@ -6443,6 +6518,96 @@
 		}
 	}
 
+	"skeleton_king_mortal_strike_datadriven"
+	//Adapted from Pizzalol's Spell Library
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityTextureName"			"skeleton_king_mortal_strike"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"crit_chance"	"9 11 13 15"
+			}
+			"02"
+			{
+				"var_type"		"FIELD_INTEGER"
+				"crit_mult"		"300"
+			}
+		}
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+			"particle"	"particles/units/heroes/hero_skeletonking/skeleton_king_weapon_blur_critical.vpcf"
+		}
+
+		"Modifiers"
+		{
+			"modifier_mortal_strike"
+			{
+			    "Passive"   "1"
+			    "IsHidden"  "1"
+			    "OnAttackStart"
+			    {
+			        "RemoveModifier"
+			        {
+			            "ModifierName" 	"modifier_mortal_strike_crit"
+			            "Target" 		"CASTER"
+			        }
+
+			        "Random"
+			        {
+			            "Chance" "%crit_chance"
+			            "OnSuccess"
+			            {
+			            	"FireSound"
+					        {
+					        	"EffectName"	"Hero_SkeletonKing.CriticalStrike"
+					        	"Target"		"CASTER"
+					        }
+
+					        "FireEffect"
+					        {
+					       		"EffectName" 		"particles/units/heroes/hero_skeletonking/skeleton_king_weapon_blur_critical.vpcf"
+					            "EffectAttachType"  "follow_origin"
+					            "Target"    		"CASTER"
+					        }
+
+			                "ApplyModifier"
+			                {
+			                    "ModifierName" 	"modifier_mortal_strike_crit_datadriven"
+			                    "Target"    	"CASTER"    
+			                }        
+			            }
+			        }
+			    }
+			}
+
+			"modifier_mortal_strike_crit_datadriven"
+			{
+			    "IsHidden"  "1"
+			    "Properties"
+			    {
+			        "MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" "%crit_mult"
+			    }
+
+			    "OnAttackLanded"
+			    {
+			        "RemoveModifier"
+			        {
+			            "ModifierName"  "modifier_mortal_strike_crit_datadriven"
+			            "Target"   		"CASTER"    
+			        }
+			    }
+			}
+		}
+	}
+
 	"skeleton_king_hellfire_blast_datadriven"
     {
         // General
@@ -8784,17 +8949,17 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "agi_gain"				"3"
+                "agi_gain"				"2"
             }
             "02"
             {
-                "var_type"				"FIELD_INTEGER"
+                "var_type"				"FIELD_FLOAT"
                 "stat_loss"				"-1"
             }
             "03"
             {
                 "var_type"				"FIELD_FLOAT"
-                "duration"				"5 10 15 20"
+                "duration"				"8 16 24 32"
             }
         }
 
@@ -8858,16 +9023,18 @@
                 "Passive"				"0"
                 "IsHidden"  			"1"
                 "Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE"
+                "IsDebuff"				"1"
 
                 "Properties"
                 {
                 // loses 19 maximum health, 0.03 health regen, 0.14 armor, 1 attack speed, 13 maximum mana, 0.04 mana regen and 1 attack damage
-                    "MODIFIER_PROPERTY_HEALTH_BONUS"		"%stat_loss * 19"
-                    "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%stat_loss * 0.03"
-                    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%stat_loss * 0.14"
+                // commented out properties do not work properly in this context
+                    //"MODIFIER_PROPERTY_HEALTH_BONUS"		"%stat_loss * 19"
+                    //"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"		"%stat_loss * 0.03"
+                    //"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%stat_loss * 0.14"
                     "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"%stat_loss"
-                    "MODIFIER_PROPERTY_MANA_BONUS"		"%stat_loss * 13"
-                    "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"%stat_loss * 0.04"
+                    //"MODIFIER_PROPERTY_MANA_BONUS"		"%stat_loss * 13"
+                    //"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"%stat_loss * 0.04"
                     "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"			"%stat_loss"
                 }
 
@@ -10353,14 +10520,15 @@
         //-------------------------------------------------------------------------------------------------------------
         "ID"							"95581"														// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
         "BaseClass"				"ability_datadriven"
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
         "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
         "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
         "FightRecapLevel"				"1"
         "AbilityTextureName"			"skywrath_mage_arcane_bolt"
-        "AOERadius"                     "325"
+        //"AOERadius"                     "225"
+        "HasScepterUpgrade"				"1"
 
         // Casting
         //-------------------------------------------------------------------------------------------------------------
@@ -10373,7 +10541,7 @@
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"				"70 70 70 70"
+        "AbilityManaCost"				"75 90 105 120"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -10387,17 +10555,17 @@
             "02"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bolt_vision"			"325"
+                "bolt_vision"			"225"
             }
             "03"
             {
                 "var_type"				"FIELD_FLOAT"
-                "bolt_damage"			"60 120 180 240"
+                "bolt_damage"			"60 80 100 120"
             }
             "04"
             {
                 "var_type"				"FIELD_FLOAT"
-                "int_multiplier"		"1.6"
+                "int_multiplier"		"1.2"
             }
             "05"
             {
@@ -10407,7 +10575,7 @@
             "06"
             {
                 "var_type"				"FIELD_FLOAT"
-                "radius"		"325"
+                "scepter_radius"		"225"
             }
         }
 
@@ -10476,7 +10644,7 @@
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"				"110 110 110 110"
+        "AbilityManaCost"				"90 100 110 120"
 
 
         // Special
@@ -10636,7 +10804,7 @@
 
         // Time
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"30 15 5"
+        "AbilityCooldown"				"30 20 10"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
@@ -10660,6 +10828,7 @@
             {
                 "var_type"				"FIELD_INTEGER"
                 "damage"				"600 1000 1400"
+                "LinkedSpecialBonus"	"special_bonus_unique_skywrath_5"
             }
             "04"
             {
@@ -10668,8 +10837,8 @@
             }
             "05"
             {
-                "var_type"			"FIELD_FLOAT"
-                "scepter_duration"	"12"
+                "var_type"				"FIELD_FLOAT"
+                "scepter_duration"		"10"
             }
         }
 
@@ -13967,7 +14136,7 @@
             "02"
             {
                 "var_type"					"FIELD_FLOAT"
-                "damage_percent"			"3 3.75 4.5 5.25"
+                "damage_percent"			"1.5 2.0 2.5 3.0"
             }
             "03"
             {
@@ -13982,7 +14151,7 @@
             "05"
             {
                 "var_type"				"FIELD_FLOAT"
-                "max_damage"				"300 400 500 600"
+                "max_damage"				"150 200 250 300"
             }
         }
 
@@ -14261,7 +14430,8 @@
     		"01"
             {
                 "var_type"					"FIELD_INTEGER"
-                "damage"					"100 130 160"
+                "damage"					"75 125 175"
+                "LinkedSpecialBonus"		"special_bonus_unique_witch_doctor_5"
             }
             "02"
             {
@@ -14690,6 +14860,7 @@
 				"var_type"				    "FIELD_INTEGER"
 				"strength_pct"			    "30 45 60 75"
                 "CalculateSpellDamageTooltip"		"1"
+                "LinkedSpecialBonus"		"special_bonus_unique_centaur_3"
 			}
 			"03"
 			{
@@ -15609,5 +15780,30 @@
 				"damage_percent_far"	"20"
 			}
     	}
+    }
+
+    //=================================================================================================================
+    // Ghost Bane: Nightmare
+    //=================================================================================================================
+    "ghost_bane_nightmare"
+    {
+    	"BaseClass"						"bane_nightmare"
+    	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO"
+        "AbilityDuration"				"6"
+        "AbilityCooldown"				"20"
+
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "02"
+            {
+                "var_type"				"FIELD_INTEGER"
+                "duration"				"6"
+            }
+        }
     }
 }

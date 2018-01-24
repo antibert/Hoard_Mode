@@ -92,8 +92,8 @@
 		"item"		"item_travel_boots_3"
 		"item"		"item_hand_of_midas"
 		"item"      "item_moon_shard_datadriven"
-		"item"		"item_rapier"
-       	"item" 		"item_king_rapier"
+		"item"		"item_sacred_trident"
+       	"item" 		"item_cursed_rapier"
 	}
 
 	// Level 2 - Blue Recipes

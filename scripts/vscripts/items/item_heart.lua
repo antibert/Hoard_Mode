@@ -6,10 +6,11 @@
 	Additional parameters: keys.CooldownMelee keys.DisableModifier
 ================================================================================================================= ]]
 function modifier_item_heart_datadriven_regen_on_take_damage(keys)
-	local cooldown = keys.ability:GetCooldown(keys.ability:GetLevel())
+	local cooldown = keys.CooldownMelee
 	local modifier = keys.MeleeDisableModifier
 	if keys.caster:IsRangedAttacker() then
 		modifier = keys.RangedDisableModifier
+		cooldown = keys.ability:GetCooldown(keys.ability:GetLevel())
 	end
 
 	keys.ability:StartCooldown(cooldown)

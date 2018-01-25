@@ -1,5 +1,5 @@
 -- In this file you can set up all the properties and settings for your game mode.
-GAME_VERSION = "1.24a"
+GAME_VERSION = "1.25"
 
 ENABLE_HERO_RESPAWN = true              -- Should the heroes automatically respawn on a timer or stay dead until manually respawned
 UNIVERSAL_SHOP_MODE = true             -- Should the main shop contain Secret Shop items as well as regular items

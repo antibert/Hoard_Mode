@@ -123,6 +123,7 @@ end
 function RollPseudoRandom(base_chance, entity)
   local chances_table = {
               {5, 0.38},
+              {9, 1.20},
               {10, 1.48},
               {12, 2.10},
               {15, 3.22},

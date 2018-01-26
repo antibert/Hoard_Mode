@@ -43,6 +43,7 @@ function Precache( context )
 	--PrecacheUnitByNameSync("npc_dota_hero_enigma", context)
 
 	PrecacheResource( "particle_folder", "particles/frostivus_gameplay", context )
+	PrecacheItemByNameSync("item_willful_resonance", context)
 	PrecacheItemByNameSync("item_exalted_heavens_halberd", context)
 	PrecacheItemByNameSync("item_exalted_phase_boots", context)
 	PrecacheItemByNameSync("item_exalted_echo_sabre", context)

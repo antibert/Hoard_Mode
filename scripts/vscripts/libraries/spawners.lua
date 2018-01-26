@@ -118,8 +118,9 @@ function Spawner:Spawn(keys)
           end
         end
 
-      elseif difficulty > 1 then
-        if RollPseudoRandom(15, self) then
+      elseif difficulty > 0 then
+        local scaling_chance = 9 + 3 * (difficulty - 1)
+        if RollPseudoRandom(scaling_chance, self) then
           unit:SetMaximumGoldBounty(unit:GetMaximumGoldBounty() * 2)
           unit:SetMinimumGoldBounty(unit:GetMinimumGoldBounty() * 2)
 

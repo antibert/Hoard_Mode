@@ -2222,7 +2222,7 @@
 				"ItemName"			"item_upgrade_orb"
 				"ItemCount"			"%orb_count"
 				"LaunchHeight"		"50"
-				"LaunchDistance"	"200 400"
+				"LaunchDistance"	"200 300"
 				"LaunchDuration"	"0.75"
 			}
 

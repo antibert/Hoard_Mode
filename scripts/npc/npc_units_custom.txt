@@ -4679,7 +4679,7 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_Melee"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"3"
+		"Level"						"5"
 		"ModelScale" 				"2.6"
 		"MinimapIcon"				"minimap_enemyicon"
 		"MinimapIconSize"			"275"
@@ -5861,7 +5861,7 @@
 		"Model"						"models\creeps\roshan\roshan.vmdl"	// Model.
 		"SoundSet"					"Roshan"					        // Name of sound set.
 		"ModelScale"				"1.3"
-		"Level"						"6"
+		"Level"						"5"
 		"CanBeDominated"			"0"
 		"ConsideredHero"            "1"
 		"MinimapIcon"				"minimap_roshancamp"

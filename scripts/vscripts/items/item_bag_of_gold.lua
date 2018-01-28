@@ -23,4 +23,5 @@ function ConsumeBag(keys)
 	end
 
 	keys.ability:SetCurrentCharges(0)
+	itemFunctions:RemoveBag(keys.ability)
 end

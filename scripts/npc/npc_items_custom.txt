@@ -5573,7 +5573,6 @@
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
         "Model"							"models/props_gameplay/gold_bag.vmdl"
         "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
-        "ItemKillable"					"0"
 
         // Stats
         //-------------------------------------------------------------------------------------------------------------
@@ -5593,7 +5592,7 @@
         "ItemKillable"					"0"
 		"ItemRequiresCharges" "1" //The active ability needs charges to be used - Urn
 
-        "ItemCastOnPickup"				"1"
+        //"ItemCastOnPickup"				"1"
 
         // Precache
         //-------------------------------------------------------------------------------------------------------------
@@ -5604,14 +5603,13 @@
             "particle"			"particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
         }
 
-        "OnSpellStart"
+        "OnEquip"
         {
             "RunScript"
             {
                 "ScriptFile"			"scripts/vscripts/items/item_bag_of_gold.lua"
                 "Function"				"ConsumeBag"
             }
-
         }
     }
     "item_recipe_heart_datadriven"

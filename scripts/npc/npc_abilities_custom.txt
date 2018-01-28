@@ -2282,10 +2282,17 @@
 				"ItemCount"			"%bag_count"
 				"SpawnRadius"		"10"
 				"ItemChargeCount"	"%gold_value"
-				"AutoUse"			"1"
+				//"AutoUse"			"1"
 				"LaunchHeight"		"300"
 				"LaunchDistance"	"?50 350"
 				"LaunchDuration"	"0.75"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"itemfunctions.lua"
+				"Function"		"AddBags"
+				"max_distance" "350"
+				"max_duration" "0.75"
 			}
 		}
 
@@ -2329,10 +2336,17 @@
 				"ItemCount"			"%bag_count"
 				"SpawnRadius"		"25"
 				"ItemChargeCount"	"%gold_value"
-				"AutoUse"			"1"
+				//"AutoUse"			"1"
 				"LaunchHeight"		"300"
 				"LaunchDistance"	"?50 350"
 				"LaunchDuration"	"0.75"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"itemfunctions.lua"
+				"Function"		"AddBags"
+				"max_distance" "350"
+				"max_duration" "0.75"
 			}
 		}
 
@@ -2376,10 +2390,17 @@
 				"ItemCount"			"%bag_count"
 				"SpawnRadius"		"25"
 				"ItemChargeCount"	"%gold_value"
-				"AutoUse"			"1"
+				//"AutoUse"			"1"
 				"LaunchHeight"		"300"
 				"LaunchDistance"	"?50 350"
 				"LaunchDuration"	"0.75"
+			}
+			"RunScript"
+			{
+				"ScriptFile"	"itemfunctions.lua"
+				"Function"		"AddBags"
+				"max_distance" "350"
+				"max_duration" "0.75"
 			}
 		}
 
@@ -11835,11 +11856,18 @@
                                 "ItemCount"			"%bag_count"
                                 "SpawnRadius"		"10"
                                 "ItemChargeCount"	"%gold_value"
-                                "AutoUse"			"1"
+                                //"AutoUse"			"1"
                                 "LaunchHeight"		"300"
                                 "LaunchDistance"	"?50 350"
                                 "LaunchDuration"	"0.75"
                             }
+							"RunScript"
+							{
+								"ScriptFile"	"itemfunctions.lua"
+								"Function"		"AddBags"
+								"max_distance" "350"
+								"max_duration" "0.75"
+							}
                         }
                     }
                 }

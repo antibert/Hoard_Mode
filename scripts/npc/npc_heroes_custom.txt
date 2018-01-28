@@ -41,7 +41,6 @@
 	"npc_dota_hero_axe_holdout"
 	{
 		"override_hero"			"npc_dota_hero_axe"
-        "Ability1"              "axe_berserkers_call_datadriven"
 		"Ability2"              "axe_battle_rage"
 		"Ability6"				"holdout_culling_blade"
 		"Ability17"		        "special_bonus_all_stats_20"
@@ -126,6 +125,7 @@
     {
         "override_hero"			"npc_dota_hero_disruptor"
         "Ability2"				"disruptor_glimpse_nb2017"
+        "Ability16"             "special_bonus_spell_block_15"
     }
 	//=================================================================================================================
 	// HERO: Drow Ranger
@@ -171,6 +171,7 @@
 	{
 		"override_hero"			"npc_dota_hero_legion_commander"
 		"Ability6"					"legion_commander_duel_datadriven"
+        "Ability13"             "special_bonus_armor_8"
 	}
 	//=================================================================================================================
 	// HERO: Lina
@@ -246,7 +247,7 @@
         "override_hero"			"npc_dota_hero_night_stalker"
         "Ability1"              "night_stalker_void_datadriven"
         "Ability2"              "night_stalker_crippling_fear_datadriven"
-        "Ability17"		"special_bonus_lifesteal_25"
+        "Ability17"		        "special_bonus_lifesteal_25"
     }
     //=================================================================================================================
     // HERO: Nyx Assassin
@@ -381,7 +382,7 @@
 	{
 		"override_hero"			"npc_dota_hero_skeleton_king"
 		"Ability1"				"skeleton_king_hellfire_blast_datadriven"
-		"Ability3"				"juggernaut_blade_dance"
+		"Ability3"				"skeleton_king_mortal_strike_datadriven"
 		"Ability10"		"special_bonus_evasion_12"
 		"Ability13"		"special_bonus_armor_7"
 		"Ability15"		"special_bonus_cleave_25"
@@ -395,7 +396,8 @@
         "Ability1"              "skywrath_mage_arcane_bolt_datadriven"
         "Ability2"				"skywrath_mage_concussive_shot_datadriven"
         "Ability6"				"skywrath_mage_mystic_flare_datadriven"
-        // TODO: Check aghs
+        "Ability13"             "special_bonus_exp_boost_30"
+        "Ability14"             "special_bonus_armor_10"
     }
 	//=================================================================================================================
     // HERO: Slark
@@ -437,6 +439,23 @@
 		"Ability15"		"special_bonus_cooldown_reduction_20"
 		"Ability16"		"special_bonus_hp_regen_25"
 	}
+    //=================================================================================================================
+    // HERO: Tidehunter
+    //=================================================================================================================
+    "npc_dota_hero_tidehunter_holdout"
+    {
+        "override_hero"         "npc_dota_hero_tidehunter"
+        "Ability13"             "special_bonus_unique_tidehunter"
+        "Ability15"             "special_bonus_unique_tidehunter_3"
+    }
+    //=================================================================================================================
+    // HERO: Timbersaw
+    //=================================================================================================================
+    "npc_dota_hero_shredder_holdout"
+    {
+        "override_hero"         "npc_dota_hero_shredder"
+        "Ability16"             "special_bonus_movement_speed_90"
+    }
 	//=================================================================================================================
 	// HERO: Tinker
 	//=================================================================================================================
@@ -459,6 +478,15 @@
         "Ability6"				"treant_great_protector"
         // TODO check talent
 	}
+    //=================================================================================================================
+    // HERO: Underlord
+    //=================================================================================================================
+    "npc_dota_hero_abyssal_underlord_holdout"
+    {
+        "override_hero"         "npc_dota_hero_abyssal_underlord"
+        "Ability13"             "special_bonus_unique_underlord_4"
+        "Ability17"             "special_bonus_armor_20"
+    }
 	//=================================================================================================================
 	// HERO: Undying
 	//=================================================================================================================
@@ -489,10 +517,11 @@
 		"override_hero"			"npc_dota_hero_venomancer"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityLayout"				"5"
+		//"AbilityLayout"				"5"
 	
-		"Ability4"					"holdout_scourge_ward"					// Ability 3
+		//"Ability4"					"holdout_scourge_ward"					// Ability 3
 		"Ability6"					"venomancer_poison_nova"					// Ability 4
+        "Ability15"                 "special_bonus_attack_damage_60"
 	}
 	//=================================================================================================================
 	// HERO: Viper
@@ -502,8 +531,8 @@
 		"override_hero"			"npc_dota_hero_viper"
 		"Ability1"				"viper_poison_attack_datadriven"
 		"Ability6"              "viper_strike_lua"
-		"Ability14"		"special_bonus_lifesteal_20"
-        "Ability15"		"special_bonus_attack_damage_75"
+		"Ability14"		        "special_bonus_lifesteal_20"
+        "Ability15"		        "special_bonus_mp_regen_6"
 	}
 	//=================================================================================================================
     // HERO: Visage
@@ -512,8 +541,10 @@
     {
         "override_hero"			"npc_dota_hero_visage"
         "Ability2"              "visage_soul_assumption_datadriven"
+        "Ability3"              "visage_gravekeepers_presence"
         "Ability13"             "special_bonus_spell_amplify_12"
         "Ability14"             "special_bonus_cooldown_reduction_20"
+        "Ability16"             "special_bonus_spell_lifesteal_30"
     }
 	//=================================================================================================================
 	// HERO: Witch Doctor

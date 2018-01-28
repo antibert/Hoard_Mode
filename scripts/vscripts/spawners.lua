@@ -194,20 +194,20 @@ function Spawners:LoadMisc(difficulty, mapInfo)
 		end
 	})
     
-	if difficulty < 2 then
+	--if difficulty < 2 then
 		-- spawn money units
-		Spawner:SpawnTimer({
-			start = 0,
-			interval = 3000,
-			spawn = {
-				source =  "spawner10",
-				waypoint = "spawner10",
-				max = 1,
-				order = DOTA_UNIT_ORDER_ATTACK_MOVE,
-				unit = "npc_dota_creature_map_boss"
-			}
-		})
-	end
+	Spawner:SpawnTimer({
+		start = 0,
+		interval = 3000,
+		spawn = {
+			source =  "spawner10",
+			waypoint = "spawner10",
+			max = 1,
+			order = DOTA_UNIT_ORDER_ATTACK_MOVE,
+			unit = "npc_dota_creature_map_boss"
+		}
+	})
+	--end
 
 	-- spawn money units
 	Spawner:SpawnTimer({

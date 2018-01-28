@@ -76,23 +76,80 @@ function Spawner:Spawn(keys)
 
   for i=1,units_to_spawn do
     local unit = CreateUnitByName(keys.unit, point, true, nil, nil, DOTA_TEAM_BADGUYS)
+    --print(GameRules:GetGameTime() .. " " .. keys.unit)
 
     if unit == nil then
       print('Could not create a unit: '.. keys.unit)
     else
       unit.Target = keys.waypoint
+      if playerCount < 3 then
+        unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * (0.6 + 0.2 * (playerCount - 1)))
+        unit:SetBaseDamageMin(unit:GetBaseDamageMin() * (0.8 + 0.1 * (playerCount - 1)))
+        unit:SetBaseDamageMax(unit:GetBaseDamageMax() * (0.8 + 0.1 * (playerCount - 1)))
+      elseif playerCount > 3 then
+        unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * (1 + 0.1 * (playerCount - 3)))
+      end
 
+      -- Creep Hero spawning rules --
       if unit:IsConsideredHero() then
+        unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * (1 + 0.2 * difficulty))
+
         if difficulty > 1 then
           unit:AddAbility("roshan_spell_block")
           local roshan_spell_block = unit:FindAbilityByName("roshan_spell_block")
           if roshan_spell_block ~= nil then
             roshan_spell_block:SetLevel(1)
           end
+        elseif difficulty == 0 then
+          unit:SetBaseDamageMin(unit:GetBaseDamageMin() * 0.8)
+          unit:SetBaseDamageMax(unit:GetBaseDamageMax() * 0.8)
         end
 
-        if playerCount > 2 then
-          unit:SetMaxHealth(unit:GetMaxHealth() * 1.5)
+      -- Regular Creep spawning rules --
+      elseif difficulty > 0 then
+        local scaling_chance = 9 + 3 * (difficulty - 1)
+        if RollPseudoRandom(scaling_chance, self) then
+          unit:SetMaximumGoldBounty(unit:GetMaximumGoldBounty() * 2)
+          unit:SetMinimumGoldBounty(unit:GetMinimumGoldBounty() * 2)
+
+          local chance = math.random(60)
+          if chance <= 10 then
+            unit:AddAbility("darkness_aura")
+            local darkness_aura = unit:FindAbilityByName("darkness_aura")
+            if darkness_aura ~= nil then
+              darkness_aura:SetLevel(1)
+            end
+          elseif chance > 10 and chance <= 20 then
+            unit:AddAbility("blight_aura")
+            local blight_aura = unit:FindAbilityByName("blight_aura")
+            if blight_aura ~= nil then
+              blight_aura:SetLevel(1)
+            end
+          elseif chance > 20 and chance <= 30 then
+            unit:AddAbility("frenzy_aura")
+            local frenzy_aura = unit:FindAbilityByName("frenzy_aura")
+            if frenzy_aura ~= nil then
+              frenzy_aura:SetLevel(1)
+            end
+          elseif chance > 30 and chance <= 40 then
+            unit:AddAbility("apathy_aura")
+            local apathy_aura = unit:FindAbilityByName("apathy_aura")
+            if apathy_aura ~= nil then
+              apathy_aura:SetLevel(1)
+            end
+          elseif chance > 40 and chance <= 50 then
+            unit:AddAbility("stupor_aura")
+            local stupor_aura = unit:FindAbilityByName("stupor_aura")
+            if stupor_aura ~= nil then
+              stupor_aura:SetLevel(1)
+            end
+          elseif chance > 50 and chance <= 60 then
+            unit:AddAbility("corruption_aura")
+            local corruption_aura = unit:FindAbilityByName("corruption_aura")
+            if corruption_aura ~= nil then
+              corruption_aura:SetLevel(1)
+            end
+          end
         end
       end
 

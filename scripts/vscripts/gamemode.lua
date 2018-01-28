@@ -34,6 +34,7 @@ require('settings')
 require('events')
 
 require('heroes/hero_meepo/update_meepo_boots')
+require('itemfunctions')
 --[[
   This function should be used to set up Async precache calls at the beginning of the gameplay.
 

@@ -47,9 +47,16 @@ end
 
 -- Function that will set various settings based on difficulty
 function mapLogic:SetDifficultyValues(keys)
+	local playerCount = PlayerResource:GetPlayerCountForTeam(DOTA_TEAM_GOODGUYS)
+	local heroCount = HeroList:GetHeroCount()
+
 	if self.MAP == 'Horde_5p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_EASY
-		self.PLAYERS = 5
+		if heroCount <= 5 and heroCount >= playerCount then
+			self.PLAYERS = heroCount
+		else
+			self.PLAYERS = playerCount
+		end
 	elseif self.MAP == 'Horde_5p_ultra' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_ULTRA
 		self.PLAYERS = 5
@@ -61,10 +68,18 @@ function mapLogic:SetDifficultyValues(keys)
 		self.PLAYERS = 2
 	elseif self.MAP == 'Horde_4p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_MEDIUM
-		self.PLAYERS = 4
+		if heroCount <= 4 and heroCount >= playerCount then
+			self.PLAYERS = heroCount
+		else
+			self.PLAYERS = playerCount
+		end
 	elseif self.MAP == 'Horde_2p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_MEDIUM
-		self.PLAYERS = 2
+		if heroCount <= 2 and heroCount >= playerCount then
+			self.PLAYERS = heroCount
+		else
+			self.PLAYERS = playerCount
+		end
 	else
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_EASY
 		self.PLAYERS = 4
@@ -132,6 +147,10 @@ function mapLogic:SetFriendlyBuildings()
 			building:AddAbility("global_offense_buff")
 			local ancient_ability = building:FindAbilityByName("global_offense_buff")
 			ancient_ability:SetLevel(0)
+
+			building:AddAbility("global_difficulty_buff")
+			local global_difficulty_buff = building:FindAbilityByName("global_difficulty_buff")
+			global_difficulty_buff:SetLevel(self.DIFFICULTY)
 
 		elseif string.find(building_name, "fountain") then
 			-- Do nothing (fountain was already modified previously)
@@ -201,20 +220,15 @@ function mapLogic:SetEnemyBuildings()
 			reward_global_armor_buff:SetLevel(1)
 
 		elseif string.find(building_name, "fort") then
-			-- Add passive buff
+			-- Add passive buff // Ability levels don't work properly
 			building:AddAbility("global_armor_buff")
 			local global_armor_buff = building:FindAbilityByName("global_armor_buff")
-			global_armor_buff:SetLevel(self.DIFFICULTY)
+			global_armor_buff:SetLevel(0)
 
-			-- Add passive buff
+			-- Add passive buff // Ability levels don't work properly
 			building:AddAbility("global_offense_buff")
 			local global_offense_buff = building:FindAbilityByName("global_offense_buff")
-			global_offense_buff:SetLevel(self.DIFFICULTY)
-
-			-- Add passive buff
-			building:AddAbility("global_difficulty_buff")
-			local global_difficulty_buff = building:FindAbilityByName("global_difficulty_buff")
-			global_difficulty_buff:SetLevel(self.DIFFICULTY)
+			global_offense_buff:SetLevel(0)
 
 		elseif string.find(building_name, "fountain") then
 			-- Do nothing (fountain was already modified previously)

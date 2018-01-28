@@ -77,7 +77,7 @@ function GameMode:OnItemPickedUp(keys)
   DebugPrint( '[BAREBONES] OnItemPickedUp' )
   DebugPrintTable(keys)
 
-  local heroEntity = EntIndexToHScript(keys.HeroEntityIndex)
+  --local heroEntity = EntIndexToHScript(keys.HeroEntityIndex)
   local itemEntity = EntIndexToHScript(keys.ItemEntityIndex)
   local player = PlayerResource:GetPlayer(keys.PlayerID)
   local itemname = keys.itemname

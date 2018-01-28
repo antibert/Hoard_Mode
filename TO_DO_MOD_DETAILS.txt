@@ -1,88 +1,14 @@
 Next Update Patch Notes:
 
-1.25
-Difficulty
-- Further scaling adjustments
-- Aura chance from random 12% to pseudo-random 15% for more even aura distribution
-- Creeps with auras give double their regular gold bounty
+1.25a
+Gold bags should no longer break invisibility or channeling abilities (Weaver fans rejoice)
 
 Items
-Rapier and King Rapier removed
-New Item: Cursed Rapier (Sacred Relic + Demon Edge + Mithril Hammer + Claymore)
-New Item: Sacred Trident (MKB + Sacred Relic + Recipe)
+Cursed Rapier: no longer drops on death
+Sacred Trident: rewritten as datadriven with lua functions to fix all interactions with pure damage proc (does not stack, works properly on illusions, and works on hero creeps)
+Willful Resonance: new item, battlefury alternative for rightclickers focused around magical damage
 
-9 New Exalted Items: upgraded versions of BKB, Spirit Vessel, Diffusal Blade, Armlet of Mordiggian, Solar Crest, Drum of Endurance, Echo Sabre, Phase Boots, and Heaven’s Halberd
-Exalted items require the base item, a Mysterious Orb, and a recipe; fully shareable; cannot be sold nor destroyed
-
-Heart: melee cooldown increased to 3 seconds, ranged cooldown increased to 5 seconds
-Armor of Insight: 5% damage reduction transferred from passive to aura (10%/10% now)
-Spirit Vessel: cooldown increased to 12
-Urn/Spirit Vessel/Drums: charges removed
-
-Heroes
-
-Centaur
-o	Return Aura: Talent fixed
-Dazzle
-o	Poison Touch: cooldown reduced to 13/12/11/10
-Disruptor
-o	Level 25 Glimpse Talent replaced with 15s Spell Block
-Elder Titan
-o	Earth Splitter: cooldown increased to 100/95/90
-o	Earth Splitter: damage reduced to 20%/25%/30%
-Enigma
-o	Midnight Pulse: damage reduced to 1.5%/2.0%/2.5%/3.0%, capped at 150/200/250/300
-o	Black Hole: duration decreased to 5.0/5.5/6.0
-o	Black Hole: damage decreased to 150/225/300
-Invoker
-o	Damage of most abilities decreased
-Phantom Lancer
-o	All illusions spawned by his abilities deal 30% and take 300% damage
-o	Juxtapose: max illusions decreased to 3/4/5
-Rubick
-o	Fade Bolt: hero damage reduction (works on Bosses) increased to 12/24/36/48
-o	Fade Bolt: creep damage reduction increased to 6/12/18/24
-Skeleton King
-o	Mortal Strike makes a return without skeletons and instakill
-Skywrath Mage
-o	Arcane Bolt: damage reduced to 60/80/100/120 and Int multiplier to 1.2
-o	Arcane Bolt: AOE behavior removed
-o	Arcane Bolt: now upgradable by Aghs, provides AOE behavior
-o	Arcane Bolt: mana cost increased to 75/90/105/120
-o	Concussive Shot: mana cost rescaled to 90/100/110/120
-o	Mystic Flare: cooldown increased to 30/20/10
-o	Mystic Flare: Talent fixed; Aghs duration reduced to 10
-o	Level 15 Arcane Bolt Talent replaced with +30% XP Gain
-o	Level 20 Concussive Shot Talent replaced with +10 Armor
-Slark
-o	Essence Shift: Agility gain reduced to 2
-o	Essence Shift: duration increased to 8/16/24/32
-o	Essence Shift: each stack reduces base damage and attack speed by 1
-Sniper
-o	Assassinate: Talent and Aghs fixed; cooldown increased to 25/20/15
-Tidehunter
-o	Level 15 Anchor Smash Talent swapped with Level 20 Gush Talent
-Underlord
-o	Atrophy Aura: damage reduction decreased to 4%/11%/18%/25%
-Ursa
-o	Overpower: max attacks increased to 4/5/6/7
-Venomancer
-o	Scourge Ward removed
-Witch Doctor
-o	Maledict: bonus damage reduced to 15%/20%/25%/30%
-o	Paralyzing Cask: Talent fixed
-o	Death Ward: damage rescaled to 75/125/175
-Zeus
-o	Static Field: damage decreased to 4%/5%/6%/7%
-Enemies
-
-Boss levels adjusted for more consistency
-Wave 1-6 Bosses (Roshan to Spooky) now drop Mysterious Orbs
-Rapier Ogre: inventory replaced, no longer drops Rapier
-Rapier Ogre: now drops 3 Mysterious Orbs
-Spooky: Base Attack Time reduced to 2.4
-Spooky: Base Damage reduced to 250-300
-Spooky is sad that his Rapier was taken away, so he has a new inventory, beware
-Spooky is also sad that his damage was nerfed, so he has Berserker’s Blood now
-Ghost Bane: Nightmare duration significantly reduced
-Stumpy: Magic Resistance decreased to 60%
+Difficulty
+Auras return to Medium difficulty
+Aura chance now scales with difficulty: 0%/9%/12%/15%
+Bosses no longer spawn Mysterious Orbs; Rapier Ogre now drops 5 Mysterious Orbs

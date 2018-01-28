@@ -7598,7 +7598,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "BaseClass"                     "item_lua"
         "ScriptFile"                    "items/item_willful_resonance.lua"
-        "ID"                            "99042"
+        "ID"                            "99043"
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
         "Model"                         "models/props_gameplay/red_box.vmdl"
         "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"

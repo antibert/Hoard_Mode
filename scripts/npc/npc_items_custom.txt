@@ -7354,11 +7354,6 @@
         {
             "RunScript"
             {
-                "ScriptFile"            "scripts/vscripts/itemfunctions.lua"
-                "Function"              "DropItemOnDeath"
-            }
-            "RunScript"
-            {
                 "ScriptFile"                "scripts/vscripts/itemfunctions.lua"
                 "Function"                  "ToggleLuaModifier"
                 "modifier"                  "modifier_cursed_rapier_toggle"
@@ -7433,8 +7428,7 @@
         //-------------------------------------------------------------------------------------------------------------
         "ID"                            "99777"                                                      // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "BaseClass"                     "item_lua"
-        "ScriptFile"                    "items/item_sacred_trident.lua"
+        "BaseClass"                     "item_datadriven"
         "AbilityTextureName"            "item_sacred_trident"
 
         // Item Info
@@ -7470,6 +7464,198 @@
                 "pure_damage_proc_illusion" "16"
             }
         }
+
+        "OnOwnerSpawned"
+        {
+            "RunScript"
+            {
+                "ScriptFile"        "items/item_sacred_trident.lua"
+                "Function"          "GrantSacredTridentProc"
+            }
+        }
+
+        "OnEquip"
+        {
+            "RunScript"
+            {
+                "ScriptFile"        "items/item_sacred_trident.lua"
+                "Function"          "GrantSacredTridentProc"
+            }
+        }
+
+        "OnUnequip"
+        {
+            "RemoveModifier"
+            {
+                "ModifierName"  "modifier_sacred_trident_proc_illusion"
+                "Target"        "CASTER"
+            }
+            "RemoveModifier"
+            {
+                "ModifierName"  "modifier_sacred_trident_proc_hero"
+                "Target"        "CASTER"
+            }
+        }
+
+        "Modifiers"
+        {
+            "modifier_sacred_trident_passive"
+            {
+                "Passive"               "1"
+                "IsHidden"              "1"
+                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"        "%bonus_damage"
+                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"    "%bonus_attack_speed"
+                }
+
+                "States"
+                {
+                    "MODIFIER_STATE_CANNOT_MISS"    "MODIFIER_STATE_VALUE_ENABLED"
+                }
+            }
+
+            "modifier_sacred_trident_proc_hero"
+            {
+                "Passive"               "0"
+                "IsHidden"              "1"
+                "Attributes"            "MODIFIER_ATTRIBUTE_NONE"
+
+                "OnAttackLanded"
+                {
+                    "Damage"
+                    {
+                        "Target"
+                        {
+                            "Center"    "TARGET"
+                            "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                            "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                            "Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+                        }
+                        "Type"      "DAMAGE_TYPE_PURE"
+                        "Damage"    "%pure_damage_proc"
+                    }
+                }
+            }
+
+            "modifier_sacred_trident_proc_illusion"
+            {
+                "Passive"               "0"
+                "IsHidden"              "1"
+                "Attributes"            "MODIFIER_ATTRIBUTE_NONE"
+
+                "OnAttackLanded"
+                {
+                    "Damage"
+                    {
+                        "Target"
+                        {
+                            "Center"    "TARGET"
+                            "Teams"     "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                            "Types"     "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+                            "Flags"     "DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+                        }
+                        "Type"      "DAMAGE_TYPE_PURE"
+                        "Damage"    "%pure_damage_proc_illusion"
+                    }
+                }
+            }
+        }
     }
     
+    //=================================================================================================================
+    // Willful Resonance
+    //=================================================================================================================
+    "item_recipe_willful_resonance"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99042"                                                     // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"            "item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_willful_resonance"
+        "ItemRequirements"
+        {
+            "01"                        "item_ultimate_orb;item_blade_of_alacrity;item_staff_of_wizardry;item_bracer;item_robe;item_boots_of_elves"
+        }
+    }
+
+    "item_willful_resonance"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_willful_resonance.lua"
+        "ID"                            "99042"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "Model"                         "models/props_gameplay/red_box.vmdl"
+        "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+        "AbilityTextureName"            "item_willful_resonance"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "5515"
+        "ItemShopTags"                  "damage"
+        "ItemQuality"                   "artifact"
+        "ItemAliases"                   "resonance;wr"
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_all_stats"       "25"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "distance_melee"        "600"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "distance_ranged"       "300"
+            }
+            "04"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "radius_melee"          "100"
+            }
+            "05"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "radius_ranged"         "50"
+            }
+            "06"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "melee_dmg_multiplier"  "1.0"
+            }
+            "07"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "ranged_dmg_multiplier" "0.7"
+            }
+            "08"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "internal_cooldown"     "0.25"
+            }
+        }
+    }
 }

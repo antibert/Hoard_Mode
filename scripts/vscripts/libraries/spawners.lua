@@ -74,14 +74,9 @@ function Spawner:Spawn(keys)
     playerCount = keys.players
   end
 
-  local forever = false
-  if keys.forever ~= nil and keys.forever == 1 then
-    forever = true
-  end
-
   for i=1,units_to_spawn do
     local unit = CreateUnitByName(keys.unit, point, true, nil, nil, DOTA_TEAM_BADGUYS)
-    --print(GameRules:GetGameTime() .. " " .. keys.unit .. " " .. tostring(forever))
+    --print(GameRules:GetGameTime() .. " " .. keys.unit)
 
     if unit == nil then
       print('Could not create a unit: '.. keys.unit)
@@ -95,6 +90,7 @@ function Spawner:Spawn(keys)
         unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * (1 + 0.1 * (playerCount - 3)))
       end
 
+      -- Creep Hero spawning rules --
       if unit:IsConsideredHero() then
         unit:SetBaseMaxHealth(unit:GetBaseMaxHealth() * (1 + 0.2 * difficulty))
 
@@ -109,17 +105,10 @@ function Spawner:Spawn(keys)
           unit:SetBaseDamageMax(unit:GetBaseDamageMax() * 0.8)
         end
 
-        if not forever and unit:GetLevel() > 5 then
-          print("adding spawn_upgrade_orb ability")
-          unit:AddAbility("spawn_upgrade_orb")
-          local spawn_upgrade_orb = unit:FindAbilityByName("spawn_upgrade_orb")
-          if spawn_upgrade_orb ~= nil then
-            spawn_upgrade_orb:SetLevel(1)
-          end
-        end
-
-      elseif difficulty > 1 then
-        if RollPseudoRandom(15, self) then
+      -- Regular Creep spawning rules --
+      elseif difficulty > 0 then
+        local scaling_chance = 9 + 3 * (difficulty - 1)
+        if RollPseudoRandom(scaling_chance, self) then
           unit:SetMaximumGoldBounty(unit:GetMaximumGoldBounty() * 2)
           unit:SetMinimumGoldBounty(unit:GetMinimumGoldBounty() * 2)
 
@@ -130,14 +119,12 @@ function Spawner:Spawn(keys)
             if darkness_aura ~= nil then
               darkness_aura:SetLevel(1)
             end
-          --elseif chance > (difficulty * (playerCount - 1)) and chance <= (2 * difficulty * (playerCount - 1)) then
           elseif chance > 10 and chance <= 20 then
             unit:AddAbility("blight_aura")
             local blight_aura = unit:FindAbilityByName("blight_aura")
             if blight_aura ~= nil then
               blight_aura:SetLevel(1)
             end
-          --elseif chance > (2 * difficulty * (playerCount - 1)) and chance < (3 * difficulty * (playerCount - 1)) then
           elseif chance > 20 and chance <= 30 then
             unit:AddAbility("frenzy_aura")
             local frenzy_aura = unit:FindAbilityByName("frenzy_aura")

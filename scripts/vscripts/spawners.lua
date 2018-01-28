@@ -121,8 +121,7 @@ function Spawners:SpawnUnits(unit, waveNumber, difficulty, players, source, wayp
 			min = unit.min_size,
 			unit = unit.unit_name,
 			difficulty = difficulty,
-			players = players,
-			forever = forever
+			players = players
 		}
 	})
 end

@@ -49,7 +49,7 @@
 	//"item_ghost"					"REMOVE"
 	//"item_clarity"					"REMOVE"
 	//"item_flask"					"REMOVE"
-	//"item_dust"						"REMOVE"
+	"item_dust"						"REMOVE"
 	//"item_bottle"					"REMOVE"
 	//"item_ward_observer"			"REMOVE"
 	//"item_ward_sentry"				"REMOVE"

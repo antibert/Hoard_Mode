@@ -1,14 +1,4 @@
 Next Update Patch Notes:
 
-1.25a
-Gold bags should no longer break invisibility or channeling abilities (Weaver fans rejoice)
-
-Items
-Cursed Rapier: no longer drops on death
-Sacred Trident: rewritten as datadriven with lua functions to fix all interactions with pure damage proc (does not stack, works properly on illusions, and works on hero creeps)
-Willful Resonance: new item, battlefury alternative for rightclickers focused around magical damage
-
-Difficulty
-Auras return to Medium difficulty
-Aura chance now scales with difficulty: 0%/9%/12%/15%
-Bosses no longer spawn Mysterious Orbs; Rapier Ogre now drops 5 Mysterious Orbs
+1.25c
+Fix to gold bags

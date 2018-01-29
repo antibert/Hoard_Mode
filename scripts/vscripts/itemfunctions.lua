@@ -65,6 +65,31 @@ end
 function itemFunctions:GoldBagHandler()
 	local searchRadius = 150 --melee range
 
+	local function MoneyMoney(bag, hero)
+		local amount_to_give = bag:GetCurrentCharges()
+		local player = PlayerResource:GetPlayer( hero:GetPlayerID() )
+		local symbol = 0 -- "+" presymbol
+		local color = Vector(255, 200, 33) -- Gold
+		local lifetime = 2
+		local digits = string.len(amount_to_give) + 1
+		local particleName = "particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf"
+		local particle = ParticleManager:CreateParticleForPlayer(particleName, PATTACH_ABSORIGIN, hero, player)
+		ParticleManager:SetParticleControl(particle, 1, Vector(symbol, amount_to_give, symbol))
+		ParticleManager:SetParticleControl(particle, 2, Vector(lifetime, digits, 0))
+		ParticleManager:SetParticleControl(particle, 3, color)
+
+		for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
+			if PlayerResource:IsValidPlayerID(playerID) then
+				PlayerResource:ModifyGold(playerID, amount_to_give, true, DOTA_ModifyGold_SharedGold)
+				EmitSoundOnClient("General.Coins", PlayerResource:GetPlayer(playerID))
+			end
+		end
+
+		--this bag has been picked up, delete it from C++
+		bag:SetCurrentCharges(0)
+		self:RemoveBag(bag)
+	end
+
 	if self.goldBags then
 		--iterate through our recorded gold bag drops
 		for k,v in pairs(self.goldBags) do
@@ -74,40 +99,33 @@ function itemFunctions:GoldBagHandler()
 			if not bag or bag:IsNull() then
 				bag = EntIndexToHScript(k)
 			end
-			if bag and not bag:IsNull() then
+			if bag and not bag:IsNull() and bag:GetContainer() then
 
 				--search for nearby heroes to pick up this bag
 				for l,m in pairs(FindUnitsInRadius(DOTA_TEAM_GOODGUYS, bag:GetContainer():GetAbsOrigin(), nil, searchRadius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)) do
-
-					local amount_to_give = bag:GetCurrentCharges()
-					local player = PlayerResource:GetPlayer( m:GetPlayerID() )
-					local symbol = 0 -- "+" presymbol
-					local color = Vector(255, 200, 33) -- Gold
-					local lifetime = 2
-					local digits = string.len(amount_to_give) + 1
-					local particleName = "particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf"
-					local particle = ParticleManager:CreateParticleForPlayer(particleName, PATTACH_ABSORIGIN, m, player)
-					ParticleManager:SetParticleControl(particle, 1, Vector(symbol, amount_to_give, symbol))
-					ParticleManager:SetParticleControl(particle, 2, Vector(lifetime, digits, 0))
-					ParticleManager:SetParticleControl(particle, 3, color)
-
-					for playerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
-						if PlayerResource:IsValidPlayerID(playerID) then
-							PlayerResource:ModifyGold(playerID, amount_to_give, true, DOTA_ModifyGold_SharedGold)
-							EmitSoundOnClient("General.Coins", PlayerResource:GetPlayer(playerID))
-						end
-					end
-
-					--this bag has been picked up, delete it from C++
-					bag:SetCurrentCharges(0)
-					self:RemoveBag(bag)
-
+					MoneyMoney(bag, m)
 					--aesthetic delay between each bag pick up, replace this with 'break' if not wanted. (all bags will be activated at the same time) 
-					return 0.085
-					--break
+					return 0.085 --break
 				end
 			else
+				--bag no longer exists, get rid of its entry
 				self.goldBags[k] = nil
+			end
+		end
+	end
+
+	--remove any gold bags a player manages to pick up into their backpack
+	for pid=0,DOTA_MAX_TEAM_PLAYERS - 1 do
+		if PlayerResource:IsValidPlayerID(pid) then
+			local hero = PlayerResource:GetSelectedHeroEntity(pid)
+			if hero then
+				-- backpack and stash
+				for i=6,DOTA_ITEM_MAX - 1 do
+					local item = hero:GetItemInSlot(i)
+					if item and item:GetName() == "item_bag_of_gold_datadriven" then
+						MoneyMoney(item, hero)
+					end
+				end
 			end
 		end
 	end

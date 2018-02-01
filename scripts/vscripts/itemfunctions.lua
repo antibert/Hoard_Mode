@@ -119,8 +119,8 @@ function itemFunctions:GoldBagHandler()
 		if PlayerResource:IsValidPlayerID(pid) then
 			local hero = PlayerResource:GetSelectedHeroEntity(pid)
 			if hero then
-				-- backpack and stash
-				for i=6,DOTA_ITEM_MAX - 1 do
+				-- backpack
+				for i=6,9 do
 					local item = hero:GetItemInSlot(i)
 					if item and item:GetName() == "item_bag_of_gold_datadriven" then
 						MoneyMoney(item, hero)
@@ -155,14 +155,14 @@ function AddBags(keys)
 end
 
 function itemFunctions:RemoveBag(item)
-	if item then
+	if item and not item:IsNull() then
 		if self.goldBags then
 			self.goldBags[item:entindex()] = nil
 		end
 		if item.GetContainer and item:GetContainer() then
-			item:GetContainer():RemoveSelf()
+			UTIL_Remove(item:GetContainer())
 		end
-		item:RemoveSelf()
+		UTIL_Remove(item)
 	end
 end
 

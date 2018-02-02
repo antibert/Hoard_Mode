@@ -1,4 +1,8 @@
 Next Update Patch Notes:
 
-1.25c
-Fix to gold bags
+1.25d
+7.08 Parity!
+Tweaks for performance
+All changes propagated
+Turned on AFK check
+Turned on matchmaking penalties

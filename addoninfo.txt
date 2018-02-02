@@ -2,6 +2,8 @@
 {
 	maps			"Horde_5p Horde_4p Horde_2p Horde_5p_ultra Horde_4p_ultra Horde_2p_ultra"
 	"IsPlayable"	"1"
+	"PenaltiesEnabled" "1"
+	"CheckAFKPlayers" "1"
 	"Horde_5p"
 	{
 					"MaxPlayers"                    "5"

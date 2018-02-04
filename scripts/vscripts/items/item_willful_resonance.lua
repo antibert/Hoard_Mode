@@ -31,7 +31,8 @@ function modifier_item_willful_resonance_passive:DeclareFunctions()
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_EVENT_ON_ATTACK
+        MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL,
+        MODIFIER_EVENT_ON_ATTACK_LANDED
     }
     return decFuns
 end
@@ -45,7 +46,11 @@ function modifier_item_willful_resonance_passive:GetModifierBonusStats_Agility()
 function modifier_item_willful_resonance_passive:GetModifierBonusStats_Intellect()
     return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
 
-function modifier_item_willful_resonance_passive:OnAttack(keys)
+function modifier_item_willful_resonance_passive:GetModifierProcAttack_BonusDamage_Magical()
+    if self:GetParent():IsIllusion() then return end
+    return self:GetAbility():GetSpecialValueFor("bonus_magical_damage") end
+
+function modifier_item_willful_resonance_passive:OnAttackLanded(keys)
     if IsServer() then
         local parent = self:GetParent()
         local ability = self:GetAbility()
@@ -60,81 +65,41 @@ function modifier_item_willful_resonance_passive:OnAttack(keys)
 
         -- If the target is not valid, do nothing either
         local target = keys.target
-        if (not target:IsHero() and not target:IsCreep()) or target:GetTeam() == parent:GetTeam() then
+        if ((not target:IsHero()) and (not target:IsCreep())) or (target:GetTeam() == parent:GetTeam()) then
             return end
 
-        if not parent:HasModifier("modifier_item_willful_resonance_cooldown") and parent:IsRealHero() then
+        if (not parent:HasModifier("modifier_item_willful_resonance_cooldown")) and parent:IsRealHero() then
             parent:AddNewModifier(parent, ability, "modifier_item_willful_resonance_cooldown", {duration = ability:GetSpecialValueFor("internal_cooldown")})
 
-            local projectileTable = {
-                Ability = ability,
-                Source = parent,
-                bDeleteOnHit = false,
-                bHasFrontalCone = false,
-                bReplaceExisting = false,
-                bProvidesVision = true,
-                iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
-                iUnitTargetFlags = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
-                iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC
-            }
-
-            local radiusRanged = ability:GetSpecialValueFor("radius_ranged")
-            local radiusMelee = ability:GetSpecialValueFor("radius_melee")
+            local damage_table = {}
+            local radius = 200
+            local multiplier = 1.0
+            -- local particle_name = nil -- if defining separate particles for melee and ranged attackers
 
             if parent:IsRangedAttacker() then
-                projectileTable.EffectName = "particles/units/heroes/hero_magnataur/magnataur_shockwave.vpcf"
-                local distance = (parent:GetAbsOrigin() - target:GetAbsOrigin()):Length()
-                local min_distance = ability:GetSpecialValueFor("distance_ranged")
-                if distance < min_distance then distance = min_distance end
-                projectileTable.vSpawnOrigin = parent:GetAbsOrigin() + (target:GetAbsOrigin() - parent:GetAbsOrigin()):Normalized() * 50
-                projectileTable.fDistance = distance
-                projectileTable.fStartRadius = radiusRanged
-                projectileTable.fEndRadius = radiusRanged
-                projectileTable.iVisionRadius = radiusRanged
-
+                radius = ability:GetSpecialValueFor("radius_ranged")
+                multiplier = ability:GetSpecialValueFor("ranged_dmg_multiplier")
             else
-                projectileTable.EffectName = "particles/econ/items/magnataur/shock_of_the_anvil/magnataur_shockanvil.vpcf"
-                projectileTable.vSpawnOrigin = parent:GetAbsOrigin() + (target:GetAbsOrigin() - parent:GetAbsOrigin()):Normalized() * 100
-                projectileTable.fDistance = ability:GetSpecialValueFor("distance_melee")
-                projectileTable.fStartRadius = radiusMelee
-                projectileTable.fEndRadius = radiusMelee * 1.5
-                projectileTable.iVisionRadius = radiusMelee
+                radius = ability:GetSpecialValueFor("radius_melee")
+                multiplier = ability:GetSpecialValueFor("melee_dmg_multiplier")
             end
 
-            -- Set the direction and speed
-            local speed = 2000
-            projectileTable.vVelocity = (target:GetAbsOrigin() - parent:GetAbsOrigin()):Normalized() * speed
+            local particle_name = "particles/units/heroes/hero_brewmaster/brewmaster_storm_attack_explosion.vpcf"
+            local particle_willful_fx = ParticleManager:CreateParticle(particle_name, PATTACH_POINT_FOLLOW, target)
+            ParticleManager:SetParticleControl(particle_willful_fx, 0, Vector(radius, 2, radius*2))
+            ParticleManager:SetParticleControlEnt(particle_willful_fx, 3, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+            ParticleManager:ReleaseParticleIndex(particle_willful_fx)
 
-            -- Launch the projectile
-            ProjectileManager:CreateLinearProjectile( projectileTable )
-        end
-    end
-end
+            damage_table.attacker = parent
+            damage_table.damage_type = DAMAGE_TYPE_MAGICAL
+            damage_table.ability = ability
+            damage_table.damage = 0.5 * (parent:GetBaseDamageMin() + parent:GetBaseDamageMax()) * multiplier
 
-function item_willful_resonance:OnProjectileHit( target, location )
-    if IsServer() then
-        caster = self:GetCaster()
-        if target == caster then
-            return false
-        end
+            local unitsToDamage = {unpack(FindUnitsInRadius(parent:GetTeam(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, 1, false), 2)}
 
-        if target ~= nil then
-            if target:GetTeamNumber() ~= caster:GetTeamNumber() then
-                local multiplier = self:GetSpecialValueFor("melee_dmg_multiplier")
-                if caster:IsRangedAttacker() then
-                    multiplier = self:GetSpecialValueFor("ranged_dmg_multiplier")
-                end
-                local damage = 0.5 * (caster:GetBaseDamageMin() + caster:GetBaseDamageMax()) * multiplier
-
-                local damageTable = {
-                        victim = target,
-                        attacker = caster,
-                        damage = damage,
-                        damage_type = DAMAGE_TYPE_MAGICAL,     
-                        ability = this
-                    }
-
-                ApplyDamage( damageTable )
+            for _,v in ipairs(unitsToDamage) do
+                damage_table.victim = v
+                ApplyDamage(damage_table)
             end
         end
     end

@@ -1,8 +1,9 @@
 Next Update Patch Notes:
 
-1.25d
-7.08 Parity!
-Tweaks for performance
-All changes propagated
-Turned on AFK check
-Turned on matchmaking penalties
+1.25e
+All Exalted Items buffed and recipe costs increased
+Sacred Trident illusion fix
+Willful Resonance redesigned to fix lag; now splashes some of the wielder's base attack damage as magic damage around the target and adds magic damage to the main attack
+Cursed Rapier redesigned; now drains 6% of maximum health per second, but increases damage bonus by 20% of the amount drained; while active, the wielder is protected from all physical and magical damage
+Disabled penalties until Valve fixes the crash bugs
+Fix Ember Spirit's Fiery Remnants

@@ -210,8 +210,8 @@
 	//"item_recipe_arcane_boots"		"REMOVE"
 	//"item_arcane_boots"				"REMOVE"
 	"item_orb_of_venom"				"REMOVE"
-	//"item_recipe_ancient_janggo"	"REMOVE"
-	//"item_ancient_janggo"			"REMOVE"
+	"item_recipe_ancient_janggo"	"REMOVE"
+	"item_ancient_janggo"			"REMOVE"
 	//"item_recipe_medallion_of_courage"	"REMOVE"
 	//"item_medallion_of_courage"		"REMOVE"
 	"item_smoke_of_deceit"			"REMOVE"
@@ -3460,9 +3460,8 @@
 	"item_urn_of_shadows"
 	{
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-		"ItemInitialCharges"            "-1"
-        "ItemDisplayCharges"            "0"
-        "ItemRequiresCharges"           "0" 
+		"ItemInitialCharges"            "999"
+        "AbilityCooldown"				"15"
 	}
 	//=================================================================================================================
     // Spirit Vessel
@@ -3470,9 +3469,7 @@
     "item_spirit_vessel"
     {
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-        "ItemInitialCharges"            "-1"
-        "ItemDisplayCharges"            "0"
-        "ItemRequiresCharges"           "0" 
+        "ItemInitialCharges"            "0"
         "AbilityCooldown"				"12"
     }
 

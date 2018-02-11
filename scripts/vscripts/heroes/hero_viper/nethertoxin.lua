@@ -10,10 +10,11 @@ function Nethertoxin( keys )
 		local nethertoxin_level = nethertoxin:GetLevel() - 1
 		if nethertoxin_level >= 0 then
 			local HPPercentage = math.floor((1 - target:GetHealth()/target:GetMaxHealth()) * 5) -- Calculate the target HP percentage
-			local damage = nethertoxin:GetLevelSpecialValueFor("bonus_damage", nethertoxin_level)
+			-- local damage = nethertoxin:GetLevelSpecialValueFor("bonus_damage", nethertoxin_level)
+			local damage = nethertoxin_level * keys.multiplier
 			damage = damage * math.pow(2, HPPercentage)
 			if damage > 0 then
-				ApplyDamage({victim = target, attacker = caster, damage = damage, damage_type = nethertoxin:GetAbilityDamageType()})
+				ApplyDamage({victim = target, attacker = caster, damage = damage, damage_type = DAMAGE_TYPE_PHYSICAL})
 			end
 		end
 	end

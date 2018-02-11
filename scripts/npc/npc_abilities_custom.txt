@@ -6146,6 +6146,11 @@
 				"var_type"				"FIELD_INTEGER"
 				"projectile_speed"		"1200"
 			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"nethertoxin_multiplier"		"3"
+			}
 		}
 		"Modifiers"
 		{
@@ -6208,6 +6213,7 @@
                                 "ScriptFile"	"scripts/vscripts/heroes/hero_viper/nethertoxin.lua"
                                 "Function"		"Nethertoxin"
                                 "Target"		"TARGET"
+                                "multiplier"	"%nethertoxin_multiplier"
                             }
                         }
                     }

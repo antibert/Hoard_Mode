@@ -105,7 +105,7 @@
 		"item"		"item_medallion_of_courage"
 		"item"      "item_solar_crest"
 		"item"		"item_arcane_boots"
-		"item"		"item_ancient_janggo"
+		"item"		"item_ancient_janggo_datadriven"
 		"item"		"item_vladmir"
 		"item"		"item_pipe"
 		"item"		"item_mekansm"

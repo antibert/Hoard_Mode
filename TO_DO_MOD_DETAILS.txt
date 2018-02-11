@@ -1,9 +1,6 @@
 Next Update Patch Notes:
 
-1.25e
-All Exalted Items buffed and recipe costs increased
-Sacred Trident illusion fix
-Willful Resonance redesigned to fix lag; now splashes some of the wielder's base attack damage as magic damage around the target and adds magic damage to the main attack
-Cursed Rapier redesigned; now drains 6% of maximum health per second, but increases damage bonus by 20% of the amount drained; while active, the wielder is protected from all physical and magical damage
-Disabled penalties until Valve fixes the crash bugs
-Fix Ember Spirit's Fiery Remnants
+1.25f
+Drums no longer require charges and applies to all friendly units
+Urn and Spirit Vessel charges fixed, which should remove lag on purchase
+Viper's Poison Strike gives bonus damage based on the level of Nethertoxin once again (no changes to Nethertoxin itself)

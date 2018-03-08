@@ -5581,8 +5581,9 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"99999"
+        "ItemCost"						"0"
         "ItemPurchasable"				"0"
+        "ItemSellable"                  "0"
         "ItemShopTags"					"consumable"
         "ItemQuality"					"consumable"
         "ItemStackable"					"1"
@@ -5632,8 +5633,9 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "99999"
+        "ItemCost"                      "0"
         "ItemPurchasable"               "0"
+        "ItemSellable"                  "0"
         "ItemShopTags"                  "consumable"
         "ItemQuality"                   "consumable"
         "ItemStackable"                 "1"
@@ -5683,8 +5685,9 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "99999"
+        "ItemCost"                      "0"
         "ItemPurchasable"               "0"
+        "ItemSellable"                  "0"
         "ItemShopTags"                  "consumable"
         "ItemQuality"                   "consumable"
         "ItemStackable"                 "1"
@@ -7691,7 +7694,7 @@
 
         // Active Properties
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "4"
+        "AbilityCooldown"               "3"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -7761,6 +7764,18 @@
             } 
         }
 
+        "OnUnequip"
+        {
+            "RunScript"
+            {
+                "ScriptFile"                "scripts/vscripts/itemfunctions.lua"
+                "Function"                  "ToggleLuaModifier"
+                "modifier"                  "modifier_cursed_rapier_toggle"
+                "modifierPath"              "items/modifiers/modifier_cursed_rapier.lua"
+                "cleanUp"                   "true"
+            } 
+        }
+
         "OnSpellStart"
         {
             "RunScript"
@@ -7769,6 +7784,7 @@
                 "Function"                  "ToggleLuaModifier"
                 "modifier"                  "modifier_cursed_rapier_toggle"
                 "modifierPath"              "items/modifiers/modifier_cursed_rapier.lua"
+                "realHeroOnly"              "true"
             } 
 
             "FireSound"

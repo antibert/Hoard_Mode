@@ -4201,7 +4201,7 @@
 		"ConsideredHero"			"1"
 		"MinimapIcon"				"minimap_roshancamp"
 		"CanBeDominated"			"0"
-	
+		"HasInventory"              "1"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -4304,6 +4304,11 @@
 					"MinimumTargets"	"1"
 				}
 			}
+
+			"EquippedItems"
+            {
+                "DragonJavelin" {   "Item"  "item_dragon_javelin_5"    }
+            }
 		}
 	}
 	//=================================================================================

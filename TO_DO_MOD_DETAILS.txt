@@ -1,6 +1,25 @@
 Next Update Patch Notes:
 
-1.25f
-Drums no longer require charges and applies to all friendly units
-Urn and Spirit Vessel charges fixed, which should remove lag on purchase
-Viper's Poison Strike gives bonus damage based on the level of Nethertoxin once again (no changes to Nethertoxin itself)
+1.25g
+Gold bag overhaul
+Removed gold bag drops from non-boss creeps
+Bosses (and mini-bosses) now drop a single gold chest (bag) worth 2500g (1000g)
+Total chest/bag gold earned per player before the start of infinite waves is now 18000g
+4p/5p maps: the new total is roughly the same as the average total before the changes
+2p map: the new total is roughly double of the average total before the changes
+These changes remove the substantial variation in gold earned from bags due to different wave combinations and different numbers of lanes on 4p/5p and 2p maps
+Each money creep now drops a single gold coin worth 200g (same total gold value as before)
+Rapier Ogre now drops a 2500g gold chest
+Gold coins/bags/chests are no longer selleable
+
+Auras
+Blight aura redesigned: now gives a -2% health regen per second penalty in a 500 unit radius
+Slight buffs to other auras
+
+Items
+Resonant Shard: a weaker version of Willful Resonance that builds into it
+Willful Resonance: bonus to all stats increased from +25 to +30; main attack target magic damage bonus increased from +50 to +0.5*(base attack damage); splash damage slightly reduced; now requires a 1000g recipe
+Cursed Rapier: health drain reduced from 6% to 5%; cooldown reduced from 5s to 3s; active ability no longer affects Spirit Bear; active modifier is now properly removed on unequip
+
+Enemies
+Kobold Guard boss now carries Dragon Javelin 5

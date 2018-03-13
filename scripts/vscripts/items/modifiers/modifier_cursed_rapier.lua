@@ -28,7 +28,6 @@ function modifier_cursed_rapier_toggle:OnCreated()
 			end
 
 			self.accumulated_damage = 0
-			print(self.accumulated_damage)
 			if CustomNetTables:GetTableValue("player_table", "server_accumulated_damage"..tostring(self.parent:GetPlayerOwnerID())) then
 				if CustomNetTables:GetTableValue("player_table", "server_accumulated_damage"..tostring(self.parent:GetPlayerOwnerID())).server_accumulated_damage then
 					CustomNetTables:SetTableValue( "player_table", "server_accumulated_damage"..tostring(self.parent:GetPlayerOwnerID()), { server_accumulated_damage = self.accumulated_damage})
@@ -37,6 +36,8 @@ function modifier_cursed_rapier_toggle:OnCreated()
 
 			self.think = 0.2
 			self:StartIntervalThink( self.think )
+		else
+			self:Destroy()
 		end
 	end
 end
@@ -78,10 +79,12 @@ end
 
 function modifier_cursed_rapier_toggle:GetModifierAttackRangeBonus()
 	local parent = self:GetParent()
-	if CustomNetTables:GetTableValue("player_table", "server_range_penalty"..tostring(parent:GetPlayerOwnerID())) then
-		if CustomNetTables:GetTableValue("player_table", "server_range_penalty"..tostring(parent:GetPlayerOwnerID())).server_range_penalty then
-			local range_penalty = CustomNetTables:GetTableValue("player_table", "server_range_penalty"..tostring(parent:GetPlayerOwnerID())).server_range_penalty	
-			return range_penalty
+	if parent:IsRealHero() then
+		if CustomNetTables:GetTableValue("player_table", "server_range_penalty"..tostring(parent:GetPlayerOwnerID())) then
+			if CustomNetTables:GetTableValue("player_table", "server_range_penalty"..tostring(parent:GetPlayerOwnerID())).server_range_penalty then
+				local range_penalty = CustomNetTables:GetTableValue("player_table", "server_range_penalty"..tostring(parent:GetPlayerOwnerID())).server_range_penalty	
+				return range_penalty
+			end
 		end
 	end
 	return nil
@@ -89,23 +92,25 @@ end
 
 function modifier_cursed_rapier_toggle:GetModifierPreAttack_BonusDamage()
 	local parent = self:GetParent()
-	if CustomNetTables:GetTableValue("player_table", "server_accumulated_damage"..tostring(parent:GetPlayerOwnerID())) then
-		if CustomNetTables:GetTableValue("player_table", "server_accumulated_damage"..tostring(parent:GetPlayerOwnerID())).server_accumulated_damage then
-			local accumulated_damage = self:GetAbility():GetSpecialValueFor("bonus_damage_toggle") + 0.2 * CustomNetTables:GetTableValue("player_table", "server_accumulated_damage"..tostring(parent:GetPlayerOwnerID())).server_accumulated_damage	
-			return accumulated_damage
+	if parent:IsRealHero() then
+		if CustomNetTables:GetTableValue("player_table", "server_accumulated_damage"..tostring(parent:GetPlayerOwnerID())) then
+			if CustomNetTables:GetTableValue("player_table", "server_accumulated_damage"..tostring(parent:GetPlayerOwnerID())).server_accumulated_damage then
+				local accumulated_damage = self:GetAbility():GetSpecialValueFor("bonus_damage_toggle") + 0.2 * CustomNetTables:GetTableValue("player_table", "server_accumulated_damage"..tostring(parent:GetPlayerOwnerID())).server_accumulated_damage	
+				return accumulated_damage
+			end
 		end
 	end
 	return nil
 end
 
 function modifier_cursed_rapier_toggle:GetDisableHealing()
-	return 1
+	if self:GetParent():IsRealHero() then return 1 end
 end
 
 function modifier_cursed_rapier_toggle:GetAbsoluteNoDamagePhysical()
-	return 1
+	if self:GetParent():IsRealHero() then return 1 end
 end
 
 function modifier_cursed_rapier_toggle:GetAbsoluteNoDamageMagical()
-	return 1
+	if self:GetParent():IsRealHero() then return 1 end
 end

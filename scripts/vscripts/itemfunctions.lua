@@ -41,11 +41,16 @@ end
 
 function ToggleLuaModifier(keys)
 	local locCaster = EntIndexToHScript( keys.caster_entindex ) -- EntIndexToHScript takes the keys.caster_entindex, which is the number assigned to the entity that ran the function from the ability, and finds the actual entity from it.
+
+	if keys.realHeroOnly ~= nil and keys.realHeroOnly == "true" and not locCaster:IsRealHero() then
+		return
+	end
+
 	local locAbility = keys.ability
 	local cleanUp = false
 
-	if keys.cleanUp ~= nil and keys.cleanUp == true then
-		local cleanUp = keys.cleanUp
+	if keys.cleanUp ~= nil and keys.cleanUp == "true" then
+		cleanUp = keys.cleanUp
 	end
 
 	local modifier = keys.modifier
@@ -63,7 +68,7 @@ function ToggleLuaModifier(keys)
 end
 
 function itemFunctions:GoldBagHandler()
-	local searchRadius = 150 --melee range
+	local searchRadius = 200
 
 	local function MoneyMoney(bag, hero)
 		local amount_to_give = bag:GetCurrentCharges()
@@ -122,7 +127,7 @@ function itemFunctions:GoldBagHandler()
 				-- backpack
 				for i=6,9 do
 					local item = hero:GetItemInSlot(i)
-					if item and item:GetName() == "item_bag_of_gold_datadriven" then
+					if item and ( (item:GetName() == "item_gold_coin_datadriven") or (item:GetName() == "item_gold_bag_datadriven") or (item:GetName() == "item_gold_chest_datadriven") ) then
 						MoneyMoney(item, hero)
 					end
 				end
@@ -131,7 +136,7 @@ function itemFunctions:GoldBagHandler()
 	end
 
 	--think interval
-	return 0.2
+	return 0.5
 end
 
 --keys.max_distance | the max distance we should search for a bag
@@ -145,7 +150,7 @@ function AddBags(keys)
 				local item = v.GetContainedItem and v:GetContainedItem()
 				if item then
 					--is this a gold bag thats not already recorded?
-					if not itemFunctions.goldBags[item:entindex()] and item:GetName() == "item_bag_of_gold_datadriven" then
+					if not itemFunctions.goldBags[item:entindex()] and ( (item:GetName() == "item_gold_coin_datadriven") or (item:GetName() == "item_gold_bag_datadriven") or (item:GetName() == "item_gold_chest_datadriven") ) then
 						itemFunctions.goldBags[item:entindex()] = item
 					end
 				end

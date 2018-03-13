@@ -2259,9 +2259,9 @@
 		}
 	}
 	//=================================================================================================================
-	// Generic: Gold Bag Fountain 50g
+	// Generic: Gold Coin Fountain
 	//=================================================================================================================
-	"generic_gold_bag_fountain_small"
+	"generic_gold_coin_fountain"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2278,21 +2278,21 @@
 					"Center" 	"CASTER"
 					"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
 				}
-				"ItemName"			"item_bag_of_gold_datadriven"
+				"ItemName"			"item_gold_coin_datadriven"
 				"ItemCount"			"%bag_count"
 				"SpawnRadius"		"10"
 				"ItemChargeCount"	"%gold_value"
 				//"AutoUse"			"1"
-				"LaunchHeight"		"300"
-				"LaunchDistance"	"?50 350"
-				"LaunchDuration"	"0.75"
+				"LaunchHeight"		"200"
+				"LaunchDistance"	"10"
+				"LaunchDuration"	"0.5"
 			}
 			"RunScript"
 			{
 				"ScriptFile"	"itemfunctions.lua"
 				"Function"		"AddBags"
-				"max_distance" "350"
-				"max_duration" "0.75"
+				"max_distance" 	"350"
+				"max_duration" 	"0.6"
 			}
 		}
 
@@ -2303,7 +2303,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold_value"			"50"
+				"gold_value"			"200"
 			}
 			"02"
 			{
@@ -2313,9 +2313,9 @@
 		}
 	}
 	//=================================================================================================================
-	// Generic: Gold Bag Fountain 400g
+	// Generic: Gold Bag Fountain
 	//=================================================================================================================
-	"generic_gold_bag_fountain_large"
+	"generic_gold_bag_fountain"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2332,21 +2332,21 @@
 					"Center" 	"CASTER"
 					"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
 				}
-				"ItemName"			"item_bag_of_gold_datadriven"
+				"ItemName"			"item_gold_bag_datadriven"
 				"ItemCount"			"%bag_count"
-				"SpawnRadius"		"25"
+				"SpawnRadius"		"10"
 				"ItemChargeCount"	"%gold_value"
 				//"AutoUse"			"1"
-				"LaunchHeight"		"300"
-				"LaunchDistance"	"?50 350"
-				"LaunchDuration"	"0.75"
+				"LaunchHeight"		"200"
+				"LaunchDistance"	"10"
+				"LaunchDuration"	"0.5"
 			}
 			"RunScript"
 			{
 				"ScriptFile"	"itemfunctions.lua"
 				"Function"		"AddBags"
-				"max_distance" "350"
-				"max_duration" "0.75"
+				"max_distance" 	"350"
+				"max_duration" 	"0.6"
 			}
 		}
 
@@ -2357,19 +2357,19 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold_value"			"50"
+				"gold_value"			"1000"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bag_count"				"10"
+				"bag_count"				"1"
 			}
 		}
 	}
 	//=================================================================================================================
-	// Generic: Gold Bag Fountain 80g
+	// Generic: Gold Chest Fountain
 	//=================================================================================================================
-	"generic_gold_bag_fountain_medium"
+	"generic_gold_chest_fountain"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -2386,21 +2386,21 @@
 					"Center" 	"CASTER"
 					"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
 				}
-				"ItemName"			"item_bag_of_gold_datadriven"
+				"ItemName"			"item_gold_chest_datadriven"
 				"ItemCount"			"%bag_count"
-				"SpawnRadius"		"25"
+				"SpawnRadius"		"10"
 				"ItemChargeCount"	"%gold_value"
 				//"AutoUse"			"1"
-				"LaunchHeight"		"300"
-				"LaunchDistance"	"?50 350"
-				"LaunchDuration"	"0.75"
+				"LaunchHeight"		"200"
+				"LaunchDistance"	"10"
+				"LaunchDuration"	"0.5"
 			}
 			"RunScript"
 			{
 				"ScriptFile"	"itemfunctions.lua"
 				"Function"		"AddBags"
-				"max_distance" "350"
-				"max_duration" "0.75"
+				"max_distance" 	"350"
+				"max_duration" 	"0.6"
 			}
 		}
 
@@ -2411,12 +2411,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"gold_value"			"50"
+				"gold_value"			"2500"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bag_count"				"4"
+				"bag_count"				"1"
 			}
 		}
 	}
@@ -7979,12 +7979,12 @@
             "02"
             {
                 "var_type"					"FIELD_INTEGER"
-                "bonus_attack_speed"		"20"
+                "bonus_attack_speed"		"25"
             }
             "03"
             {
                 "var_type"					"FIELD_INTEGER"
-                "bonus_lifesteal"			"10"
+                "bonus_lifesteal"			"15"
             }
         }
 
@@ -8068,11 +8068,11 @@
                 "var_type"					"FIELD_INTEGER"
                 "aura_radius"				"500"
             }
-            // "02"
-            // {
-            //     "var_type"					"FIELD_INTEGER"
-            //     "damage_per_second"			"20"
-            // }
+            "02"
+            {
+                "var_type"					"FIELD_INTEGER"
+                "health_regen_penalty"		"-2"
+            }
         }
 
         "Precache"
@@ -8115,26 +8115,9 @@
             {
                 "IsDebuff"			"1"
 
-       			// "ThinkInterval" "1"
-			    // "OnIntervalThink"
-			    // {
-			    //     "Damage"
-			    //     {
-			    //          "Target"
-			    //          {
-			    //              "Center" 	"CASTER"
-			    //              "Radius" 	"%aura_radius"
-			    //              "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-			    //              "Types"	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			    //          }
-			    //          "Type" 		"DAMAGE_TYPE_MAGICAL" 
-			    //          "Damage"  		"%damage_per_second"
-			    //     } 
-			    // }
-
                 "Properties"
                 {
-                    "MODIFIER_PROPERTY_DISABLE_HEALING"				"1"
+                    "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"				"%health_regen_penalty"
                 }
             }
         }
@@ -8170,7 +8153,7 @@
             "03"
             {
                 "var_type"					"FIELD_INTEGER"
-                "resist_reduction"			"-20"
+                "resist_reduction"			"-25"
             }
         }
 
@@ -8248,12 +8231,12 @@
             "02"
             {
                 "var_type"					"FIELD_INTEGER"
-                "movespeed_penalty_pct"		"-20"
+                "movespeed_penalty_pct"		"-25"
             }
             "03"
             {
                 "var_type"					"FIELD_INTEGER"
-                "turn_rate_penalty_pct"		"-60"
+                "turn_rate_penalty_pct"		"-65"
             }
         }
 
@@ -8336,7 +8319,7 @@
             "03"
             {
                 "var_type"					"FIELD_INTEGER"
-                "spell_power_penalty"		"-15"
+                "spell_power_penalty"		"-20"
             }
         }
 
@@ -11790,14 +11773,14 @@
 
         // Casting
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCastRange"				"2000"
+        "AbilityCastRange"				"1200"
 
         "AbilitySpecial"
         {
             "01"
             {
                 "var_type"			"FIELD_INTEGER"
-                "track_range"		"2000"		// If you change this, also change the AbilityCastRange above
+                "track_range"		"1200"		// If you change this, also change the AbilityCastRange above
             }
             "02"
             {
@@ -11858,21 +11841,21 @@
                                     "Center" 	"UNIT"
                                     "Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
                                 }
-                                "ItemName"			"item_bag_of_gold_datadriven"
+                                "ItemName"			"item_gold_bag_datadriven"
                                 "ItemCount"			"%bag_count"
                                 "SpawnRadius"		"10"
                                 "ItemChargeCount"	"%gold_value"
                                 //"AutoUse"			"1"
-                                "LaunchHeight"		"300"
-                                "LaunchDistance"	"?50 350"
-                                "LaunchDuration"	"0.75"
+                                "LaunchHeight"		"200"
+                                "LaunchDistance"	"10"
+                                "LaunchDuration"	"0.5"
                             }
 							"RunScript"
 							{
 								"ScriptFile"	"itemfunctions.lua"
 								"Function"		"AddBags"
-								"max_distance" "350"
-								"max_duration" "0.75"
+								"max_distance" 	"1300"
+								"max_duration" 	"0.6"
 							}
                         }
                     }

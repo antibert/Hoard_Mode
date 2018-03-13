@@ -5562,7 +5562,7 @@
     //=================================================================================================================
     // Bag of Gold
     //=================================================================================================================
-    "item_bag_of_gold_datadriven"
+    "item_gold_coin_datadriven"
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
@@ -5571,7 +5571,7 @@
         "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
         "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
         "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-        "Model"							"models/props_gameplay/gold_bag.vmdl"
+        "Model"							"models/props_gameplay/gold_coin001.vmdl"
         "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
 
         // Stats
@@ -5581,8 +5581,9 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"99999"
+        "ItemCost"						"0"
         "ItemPurchasable"				"0"
+        "ItemSellable"                  "0"
         "ItemShopTags"					"consumable"
         "ItemQuality"					"consumable"
         "ItemStackable"					"1"
@@ -5612,6 +5613,111 @@
             }
         }
     }
+
+    "item_gold_bag_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "91141"  //Valve's version of this item uses the ID "139".
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO"
+        "Model"                         "models/props_gameplay/gold_bag.vmdl"
+        "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "100"
+        "AbilityCastPoint"              "0.0"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"
+        "ItemPurchasable"               "0"
+        "ItemSellable"                  "0"
+        "ItemShopTags"                  "consumable"
+        "ItemQuality"                   "consumable"
+        "ItemStackable"                 "1"
+        "ItemShareability"              "ITEM_FULLY_SHAREABLE"
+        "ItemPermanent"                 "0"
+        "ItemInitialCharges"            "1"
+        "ItemKillable"                  "0"
+        "ItemRequiresCharges" "1" //The active ability needs charges to be used - Urn
+
+        //"ItemCastOnPickup"                "1"
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"         "soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+            "particle"          "particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf"
+            "particle"          "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+        }
+
+        "OnEquip"
+        {
+            "RunScript"
+            {
+                "ScriptFile"            "scripts/vscripts/items/item_bag_of_gold.lua"
+                "Function"              "ConsumeBag"
+            }
+        }
+    }
+
+    "item_gold_chest_datadriven"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "91142"  //Valve's version of this item uses the ID "139".
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO"
+        "Model"                         "models/props_gameplay/treasure_chest_gold.vmdl"
+        "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+
+        // Stats
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilityCastRange"              "100"
+        "AbilityCastPoint"              "0.0"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"
+        "ItemPurchasable"               "0"
+        "ItemSellable"                  "0"
+        "ItemShopTags"                  "consumable"
+        "ItemQuality"                   "consumable"
+        "ItemStackable"                 "1"
+        "ItemShareability"              "ITEM_FULLY_SHAREABLE"
+        "ItemPermanent"                 "0"
+        "ItemInitialCharges"            "1"
+        "ItemKillable"                  "0"
+        "ItemRequiresCharges" "1" //The active ability needs charges to be used - Urn
+
+        //"ItemCastOnPickup"                "1"
+
+        // Precache
+        //-------------------------------------------------------------------------------------------------------------
+        "precache"
+        {
+            "soundfile"         "soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts"
+            "particle"          "particles/units/heroes/hero_alchemist/alchemist_lasthit_msg_gold.vpcf"
+            "particle"          "particles/units/heroes/hero_huskar/huskar_base_attack.vpcf"
+        }
+
+        "OnEquip"
+        {
+            "RunScript"
+            {
+                "ScriptFile"            "scripts/vscripts/items/item_bag_of_gold.lua"
+                "Function"              "ConsumeBag"
+            }
+        }
+    }
+
     "item_recipe_heart_datadriven"
     {
         // General
@@ -7588,7 +7694,7 @@
 
         // Active Properties
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "5"
+        "AbilityCooldown"               "3"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -7607,7 +7713,7 @@
             "03"
             {
                 "var_type"              "FIELD_INTEGER"
-                "health_pct_drain"      "6"
+                "health_pct_drain"      "5"
             }
             "04"
             {
@@ -7658,6 +7764,18 @@
             } 
         }
 
+        "OnUnequip"
+        {
+            "RunScript"
+            {
+                "ScriptFile"                "scripts/vscripts/itemfunctions.lua"
+                "Function"                  "ToggleLuaModifier"
+                "modifier"                  "modifier_cursed_rapier_toggle"
+                "modifierPath"              "items/modifiers/modifier_cursed_rapier.lua"
+                "cleanUp"                   "true"
+            } 
+        }
+
         "OnSpellStart"
         {
             "RunScript"
@@ -7666,6 +7784,7 @@
                 "Function"                  "ToggleLuaModifier"
                 "modifier"                  "modifier_cursed_rapier_toggle"
                 "modifierPath"              "items/modifiers/modifier_cursed_rapier.lua"
+                "realHeroOnly"              "true"
             } 
 
             "FireSound"
@@ -7899,6 +8018,100 @@
             }
         }
     }
+
+    //=================================================================================================================
+    // Resonant Shard
+    //=================================================================================================================
+    "item_recipe_resonant_shard"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_datadriven"
+        "ID"                            "99046"                                                     // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+        "Model"                         "models/props_gameplay/recipe.vmdl"
+        "AbilityTextureName"            "item_recipe"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "0"
+        "ItemShopTags"                  ""
+
+        // Recipe
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemRecipe"                    "1"
+        "ItemResult"                    "item_resonant_shard"
+        "ItemRequirements"
+        {
+            "01"                        "item_blade_of_alacrity;item_staff_of_wizardry;item_bracer;item_robe;item_boots_of_elves"
+        }
+    }
+
+    "item_resonant_shard"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "BaseClass"                     "item_lua"
+        "ScriptFile"                    "items/item_resonant_shard.lua"
+        "ID"                            "99047"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "Model"                         "models/props_gameplay/red_box.vmdl"
+        "Effect"                        "particles/generic_gameplay/dropped_item.vpcf"
+        "AbilityTextureName"            "item_resonant_shard"
+
+        // Item Info
+        //-------------------------------------------------------------------------------------------------------------
+        "ItemCost"                      "3315"
+        "ItemShopTags"                  "damage"
+        "ItemQuality"                   "epic"
+        "ItemAliases"                   ""
+        "ItemDeclarations"              "DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_all_stats"       "15"
+            }
+            "02"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "bonus_magical_damage"  "20"
+            }
+            "03"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "radius_melee"          "225"
+            }
+            "04"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "radius_ranged"         "150"
+            }
+            "05"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "melee_dmg_multiplier"  "0.4"
+            }
+            "06"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "ranged_dmg_multiplier" "0.3"
+            }
+            "07"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "internal_cooldown"     "0.2"
+            }
+            "08"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "trigger_chance_pct"    "40"
+            }
+        }
+    }
     
     //=================================================================================================================
     // Willful Resonance
@@ -7914,7 +8127,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "0"
+        "ItemCost"                      "1000"
         "ItemShopTags"                  ""
 
         // Recipe
@@ -7923,7 +8136,7 @@
         "ItemResult"                    "item_willful_resonance"
         "ItemRequirements"
         {
-            "01"                        "item_ultimate_orb;item_blade_of_alacrity;item_staff_of_wizardry;item_bracer;item_robe;item_boots_of_elves"
+            "01"                        "item_ultimate_orb;item_resonant_shard"
         }
     }
 
@@ -7941,7 +8154,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "5515"
+        "ItemCost"                      "6515"
         "ItemShopTags"                  "damage"
         "ItemQuality"                   "artifact"
         "ItemAliases"                   "resonance;wr"
@@ -7954,12 +8167,12 @@
             "01"
             {
                 "var_type"              "FIELD_INTEGER"
-                "bonus_all_stats"       "25"
+                "bonus_all_stats"       "30"
             }
             "02"
             {
-                "var_type"              "FIELD_INTEGER"
-                "bonus_magical_damage"  "50"
+                "var_type"              "FIELD_FLOAT"
+                "bonus_magical_damage_multiplier"  "0.5"
             }
             "03"
             {
@@ -7974,12 +8187,12 @@
             "05"
             {
                 "var_type"              "FIELD_FLOAT"
-                "melee_dmg_multiplier"  "1.0"
+                "melee_dmg_multiplier"  "0.8"
             }
             "06"
             {
                 "var_type"              "FIELD_FLOAT"
-                "ranged_dmg_multiplier" "0.7"
+                "ranged_dmg_multiplier" "0.6"
             }
             "07"
             {

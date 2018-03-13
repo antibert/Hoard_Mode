@@ -31,7 +31,6 @@ function modifier_item_willful_resonance_passive:DeclareFunctions()
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_PROCATTACK_BONUS_DAMAGE_MAGICAL,
         MODIFIER_EVENT_ON_ATTACK_LANDED
     }
     return decFuns
@@ -45,10 +44,6 @@ function modifier_item_willful_resonance_passive:GetModifierBonusStats_Agility()
 
 function modifier_item_willful_resonance_passive:GetModifierBonusStats_Intellect()
     return self:GetAbility():GetSpecialValueFor("bonus_all_stats") end
-
-function modifier_item_willful_resonance_passive:GetModifierProcAttack_BonusDamage_Magical()
-    if self:GetParent():IsIllusion() then return end
-    return self:GetAbility():GetSpecialValueFor("bonus_magical_damage") end
 
 function modifier_item_willful_resonance_passive:OnAttackLanded(keys)
     if IsServer() then
@@ -73,8 +68,16 @@ function modifier_item_willful_resonance_passive:OnAttackLanded(keys)
 
             local damage_table = {}
             local radius = 200
-            local multiplier = 1.0
-            -- local particle_name = nil -- if defining separate particles for melee and ranged attackers
+            local multiplier = ability:GetSpecialValueFor("bonus_magical_damage_multiplier")
+            local base_damage = 0.5 * (parent:GetBaseDamageMin() + parent:GetBaseDamageMax())
+
+            damage_table.attacker = parent
+            damage_table.victim = target
+            damage_table.damage_type = DAMAGE_TYPE_MAGICAL
+            damage_table.ability = ability
+            damage_table.damage = base_damage * multiplier
+
+            ApplyDamage(damage_table)
 
             if parent:IsRangedAttacker() then
                 radius = ability:GetSpecialValueFor("radius_ranged")
@@ -84,16 +87,7 @@ function modifier_item_willful_resonance_passive:OnAttackLanded(keys)
                 multiplier = ability:GetSpecialValueFor("melee_dmg_multiplier")
             end
 
-            local particle_name = "particles/units/heroes/hero_brewmaster/brewmaster_storm_attack_explosion.vpcf"
-            local particle_willful_fx = ParticleManager:CreateParticle(particle_name, PATTACH_POINT_FOLLOW, target)
-            ParticleManager:SetParticleControl(particle_willful_fx, 0, Vector(radius, 2, radius*2))
-            ParticleManager:SetParticleControlEnt(particle_willful_fx, 3, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-            ParticleManager:ReleaseParticleIndex(particle_willful_fx)
-
-            damage_table.attacker = parent
-            damage_table.damage_type = DAMAGE_TYPE_MAGICAL
-            damage_table.ability = ability
-            damage_table.damage = 0.5 * (parent:GetBaseDamageMin() + parent:GetBaseDamageMax()) * multiplier
+            damage_table.damage = base_damage * multiplier
 
             local unitsToDamage = {unpack(FindUnitsInRadius(parent:GetTeam(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, 1, false), 2)}
 
@@ -101,6 +95,12 @@ function modifier_item_willful_resonance_passive:OnAttackLanded(keys)
                 damage_table.victim = v
                 ApplyDamage(damage_table)
             end
+
+            local particle_name = "particles/units/heroes/hero_brewmaster/brewmaster_storm_attack_explosion.vpcf"
+            local particle_willful_fx = ParticleManager:CreateParticle(particle_name, PATTACH_POINT_FOLLOW, target)
+            ParticleManager:SetParticleControl(particle_willful_fx, 0, Vector(radius, 2, radius*2))
+            ParticleManager:SetParticleControlEnt(particle_willful_fx, 3, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+            ParticleManager:ReleaseParticleIndex(particle_willful_fx)
         end
     end
 end

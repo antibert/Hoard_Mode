@@ -812,17 +812,7 @@
 	{
 		"AbilitySpecial"
 		{
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"chains_damage"					"100"
-			}				
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"total_damage_tooltip"			"100 200 200 300"
-			}
-			"06"
+			"05"
 			{
 				"var_type"						"FIELD_INTEGER"
 				"unit_count"					"8"
@@ -4364,23 +4354,17 @@
 
             "04"
             {
-                "var_type"			"FIELD_INTEGER"
-                "fireblast_mana_cost"	"0"
+                "var_type"			"FIELD_FLOAT"
+                "fireblast_cooldown"	"0 2 4 6"
             }
 
             "05"
             {
                 "var_type"			"FIELD_FLOAT"
-                "fireblast_cooldown"	"0 2 4 6"
-            }
-
-            "06"
-            {
-                "var_type"			"FIELD_FLOAT"
                 "ignite_aoe"		"300 300 450 600"
             }
 
-            "07"
+            "06"
             {
                 "var_type"			"FIELD_INTEGER"
                 "ignite_cast_range"	"150 300 450 600"
@@ -4389,27 +4373,21 @@
             "08"
             {
                 "var_type"				"FIELD_FLOAT"
-                "bloodlust_aoe"			"575"
-            }
-
-            "09"
-            {
-                "var_type"				"FIELD_FLOAT"
                 "bloodlust_cooldown"	"0 5 10 15"
             }
-            "10"
+            "09"
             {
                 "var_type"				"FIELD_FLOAT"
                 "multicast_2_times_tooltip"		"0 75 50 25"
             }
 
-            "11"
+            "10"
             {
                 "var_type"				"FIELD_FLOAT"
                 "multicast_3_times_tooltip"		"0 0 25 50"
             }
 
-            "12"
+            "11"
             {
                 "var_type"				"FIELD_FLOAT"
                 "multicast_4_times_tooltip"		"0 0 0 25"

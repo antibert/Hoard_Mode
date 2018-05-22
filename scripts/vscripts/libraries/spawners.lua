@@ -41,7 +41,7 @@ function Spawner:Spawn(keys)
     print("Spawner could not find target: " .. keys.waypoint)
     return
   end
-  waypoint = waypoint:GetAbsOrigin()
+  --waypoint = waypoint:GetAbsOrigin()
 
   if keys.unit == nil then
     print("Spawner missing unit")
@@ -153,9 +153,7 @@ function Spawner:Spawn(keys)
         end
       end
 
-      ExecuteOrderFromTable({	UnitIndex = unit:GetEntityIndex(),
-        OrderType = order,
-        Position = waypoint, Queue = true} )
+      unit:SetInitialGoalEntity(waypoint)
     end
   end
 end

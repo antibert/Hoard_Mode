@@ -3060,7 +3060,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ID"							"1666"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"                     "item_datadriven"
+		"BaseClass"                     "item_monkey_king_bar"
 		"AbilityTextureName"            "item_king_rapier"
 
 		// Item Info
@@ -3085,28 +3085,17 @@
                 "var_type"				"FIELD_INTEGER"
                 "bonus_attack_speed"		"60"
             }
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_chance"			"75"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_chance_damage"			"100"
+			}
 		}
-
-		"Modifiers"
-        {
-            "modifier_item_king_rapier"
-            {
-                "Passive"			"1"
-                "IsHidden"			"1"
-                "Attributes" 		"MODIFIER_ATTRIBUTE_MULTIPLE"
-
-                "Properties"
-                {
-                    "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"						"%bonus_damage"
-                    "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" 	"%bonus_attack_speed"
-                }
-
-                "States"
-                {
-                    "MODIFIER_STATE_CANNOT_MISS"    "MODIFIER_STATE_VALUE_ENABLED"
-                }
-            }
-        }
 	}
 	//=================================================================================================================
     // Desolator
@@ -3359,7 +3348,7 @@
             "01"
             {
                 "var_type"				"FIELD_INTEGER"
-                "bonus_attack_speed"	"120"
+                "bonus_attack_speed"	"130"
             }
             "02"
             {
@@ -3576,7 +3565,7 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"0"	
+		"ItemCost"						"150"
 		"ItemShopTags"					""
 		
 		// Recipe
@@ -3585,7 +3574,7 @@
 		"ItemResult"					"item_hoard_magic_wand"
 		"ItemRequirements"
 		{
-			"01"						"item_hoard_magic_stick;item_branches;item_branches;item_enchanted_mango"
+			"01"						"item_hoard_magic_stick;item_branches;item_branches"
 		}
 	}
 	//=================================================================================================================
@@ -5775,7 +5764,7 @@
             "01"
             {
                 "var_type"							"FIELD_INTEGER"
-                "bonus_strength"					"40"
+                "bonus_strength"					"45"
             }
             "02"
             {

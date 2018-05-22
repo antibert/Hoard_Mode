@@ -96,6 +96,11 @@ function GameMode:OnHeroInGame(hero)
     pudge:SetLevel(1)
   end
 
+  if hero:GetUnitName() == "npc_dota_hero_ancient_apparition" then
+    local aa = hero:FindAbilityByName("special_bonus_unique_queen_of_pain")
+    aa:SetLevel(1)
+  end
+
   if hero:GetUnitName() == "npc_dota_hero_queenofpain" then
     local qop = hero:FindAbilityByName("special_bonus_unique_queen_of_pain")
     qop:SetLevel(1)

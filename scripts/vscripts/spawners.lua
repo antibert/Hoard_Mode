@@ -174,30 +174,6 @@ function Spawners:LoadMisc(difficulty, mapInfo)
 
 	Spawner:SpawnTimer({
 		start = 0,
-		interval = 30,
-		spawn = function()
-			Spawner:SpawnFriend({
-				point = "spawner8",
-				waypoint = "lane_top_pathcorner_badguys_3",
-				lane = "base1",
-				unit = "npc_dota_creature_friend_base",
-				max_spawn = 1
-			})
-
-			Spawner:SpawnFriend({
-				point = "spawner8",
-				waypoint = "lane_top_pathcorner_badguys_2b",
-				lane = "base2",
-				unit = "npc_dota_creature_friend_base",
-				max_spawn = 1
-			})
-		end
-	})
-    
-	--if difficulty < 2 then
-		-- spawn money units
-	Spawner:SpawnTimer({
-		start = 0,
 		interval = 3000,
 		spawn = {
 			source =  "spawner10",
@@ -205,21 +181,6 @@ function Spawners:LoadMisc(difficulty, mapInfo)
 			max = 1,
 			order = DOTA_UNIT_ORDER_ATTACK_MOVE,
 			unit = "npc_dota_creature_map_boss"
-		}
-	})
-	--end
-
-	-- spawn money units
-	Spawner:SpawnTimer({
-		start = 0,
-		interval = 150,
-		finish = waveEnd(3),
-		spawn = {
-			source =  "spawner6",
-			waypoint = "spawner6",
-			max = 3,
-			order = DOTA_UNIT_ORDER_STOP,
-			unit = "npc_dota_creature_money"
 		}
 	})
 end

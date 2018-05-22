@@ -15,7 +15,7 @@
     "npc_dota_hero_ancient_apparition_holdout"
     {
         "override_hero"			"npc_dota_hero_ancient_apparition"
-        "Ability1"              "ancient_apparition_cold_feet_datadriven"
+        "Ability8"             "special_bonus_unique_ancient_apparition_6"
         "Ability16"		        "special_bonus_evasion_20"
         "Ability17"             "special_bonus_spell_lifesteal_20"
     }
@@ -34,6 +34,7 @@
     {
         "override_hero"			"npc_dota_hero_arc_warden"
         "Ability1"              "arc_warden_flux_datadriven"
+        "Ability13"            "special_bonus_unique_arc_warden_2"
     }
 	//=================================================================================================================
 	// HERO: Axe

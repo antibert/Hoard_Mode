@@ -1,274 +1,5 @@
 "DOTAAbilities"
 {
-    // Rewrite of the Ancient Apparition Cold Feet ability
-	// Author: Pizzalol
-	// Date: October 13, 2015
-	// Version: 6.85
-	// Type: Datadriven
-	//
-	// ----- FILE REQUIREMENTS -----
-	// Script files:
-	// scripts/vscripts/heroes/hero_ancient_apparition/cold_feet.lua
-	"ancient_apparition_cold_feet_datadriven"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"				"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"ancient_apparition_cold_feet"
-		"AOERadius"                     "350"
-
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-		"precache"
-		{
-			"soundfile"			"soundevents/game_sounds_heroes/game_sounds_ancient_apparition.vsndevts"
-			"particle"			"particles/units/heroes/hero_ancient_apparition/ancient_apparition_cold_feet.vpcf"
-			"particle"			"particles/units/heroes/hero_ancient_apparition/ancient_apparition_cold_feet_frozen.vpcf"
-			"particle"			"particles/units/heroes/hero_ancient_apparition/ancient_apparition_cold_feet_marker.vpcf"
-			"particle"  		"particles/generic_gameplay/generic_stunned.vpcf"
-		}
-
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"700 800 900 1000"
-		"AbilityCastPoint"				"0.01 0.01 0.01 0.01"
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"10 9 8 7"
-		"AbilityDuration"				"4.0"
-
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"125"
-
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityModifierSupportValue"	"0.5"	// Does two modifiers
-
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage"				"50 75 100 125"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"break_distance"		"1000"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"stun_duration"			"2 2.5 3 3.5"
-			}
-			// Extra
-			"04"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"damage_interval"		"1"
-			}
-			"05"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"leash_interval"		"0.1"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"4.0"
-			}
-			"07"
-			{
-			    "var_type"				"FIELD_INTEGER"
-                "radius"				"400"
-			}
-		}
-
-		"OnAbilityPhaseStart"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"misc/lazy_linkens_checks.lua"
-				"Function"		"CheckLinkensStop"
-				"UseCooldown"	"true"
-				"UseMana"		"true"
-			}
-		}
-
-		"OnSpellStart"
-		{
-			"FireSound"
-			{
-				"EffectName"	"Hero_Ancient_Apparition.ColdFeetCast"
-				"Target" 		"TARGET"
-			}
-
-			"ActOnTargets"
-            {
-                "Target"
-                {
-                    "Center"  	"TARGET"
-                    "Radius" 	"%radius"
-                    "Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                }
-
-                "Action"
-                {
-                    "ApplyModifier"
-                    {
-                        "ModifierName"	"modifier_cold_feet_debuff_datadriven"
-                        "Target" 		"TARGET"
-                        "Duration"		"%duration"
-                    }
-
-                    "RunScript"
-                    {
-                        "ScriptFile"	"heroes/hero_ancient_apparition/cold_feet.lua"
-                        "Function"		"ColdFeetInitializeCaster"
-                    }
-
-                    "CreateThinker"
-                    {
-                        "ModifierName"	"modifier_cold_feet_thinker_datadriven"
-                        "Target" 		"TARGET"
-                    }
-                }
-            }
-		}
-
-		"Modifiers"
-		{
-			"modifier_cold_feet_thinker_datadriven"
-			{
-				"Duration"			"%duration"
-				"IsHidden"          "1"
-
-				"EffectName"		"particles/units/heroes/hero_ancient_apparition/ancient_apparition_cold_feet_marker.vpcf"
-				"EffectAttachType"	"follow_origin"
-
-				"OnCreated"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_ancient_apparition/cold_feet.lua"
-						"Function"		"ColdFeetInitializeThinker"
-					}
-				}
-
-				"ThinkInterval"  "%leash_interval"
-				"OnIntervalThink"
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"heroes/hero_ancient_apparition/cold_feet.lua"
-						"Function"		"ColdFeetLeashCheck"
-						"modifier"		"modifier_cold_feet_debuff_datadriven"
-					}
-				}
-			}
-
-			"modifier_cold_feet_damage_datadriven"
-			{
-				"IsHidden"		"1"
-
-				"ThinkInterval"  "%damage_interval"
-				"OnIntervalThink"
-				{
-					"FireSound"
-					{
-						"EffectName"	"Hero_Ancient_Apparition.ColdFeetTick"
-						"Target" 		"TARGET"
-					}
-					"Damage"
-					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"%damage"
-					}
-				}
-			}
-
-			"modifier_cold_feet_debuff_datadriven"
-			{
-				"IsDebuff"		"1"
-
-				"EffectName"	"particles/units/heroes/hero_ancient_apparition/ancient_apparition_cold_feet.vpcf"
-				"EffectAttachType"	"follow_overhead"
-
-				"OnCreated"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_cold_feet_damage_datadriven"
-						"Target" 		"TARGET"
-						"Duration"		"%duration"
-					}
-				}
-
-				"OnDestroy"
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_cold_feet_damage_datadriven"
-						"Target" 		"TARGET"
-					}
-				}
-
-				"ThinkInterval"  "%duration"
-				"OnIntervalThink"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_cold_feet_stun_datadriven"
-						"Target" 		"TARGET"
-						"Duration"		"%stun_duration"
-					}
-				}
-			}
-
-			"modifier_cold_feet_stun_datadriven"
-			{
-				"IsDebuff"		"1"
-				"IsPurgable"	"0"
-
-				"EffectName"	"particles/units/heroes/hero_ancient_apparition/ancient_apparition_cold_feet_frozen.vpcf"
-				"EffectAttachType"	"follow_origin"
-
-				"OnCreated"
-				{
-					"FireSound"
-					{
-						"EffectName"	"Hero_Ancient_Apparition.ColdFeetFreeze"
-						"Target" 		"TARGET"
-					}
-
-					"AttachEffect"
-					{
-						"EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
-						"EffectAttachType"  "follow_overhead"
-						"Target"            "TARGET"
-					}
-				}
-
-				"States"
-				{
-					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_FROZEN"			"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
 	//=================================================================================================================
 	// Axe: Battle Rage
 	//=================================================================================================================
@@ -13395,7 +13126,7 @@
 
         // Time
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"18.0"
+        "AbilityCooldown"				"16.0"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
@@ -13981,11 +13712,11 @@
 
         // Time
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"15.0 15.0 15.0 15.0"
+        "AbilityCooldown"				"18.0 17.0 16.0 15.0"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityManaCost"				"110 130 150 160"
+        "AbilityManaCost"				"100 120 140 160"
 
         // Stats
         //-------------------------------------------------------------------------------------------------------------
@@ -14003,7 +13734,7 @@
             "02"
             {
                 "var_type"				"FIELD_FLOAT"
-                "stun_duration"			"0.25 0.5 0.75 1.0"
+                "stun_duration"			"0.4 0.6 0.8 1.0"
             }
             "03"
             {

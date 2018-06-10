@@ -1,11 +1,5 @@
 Next Update Patch Notes:
 
-1.26
-7.15 Parity!
-
-Map updated!
-Increased Cold Feet AOE to 900 (same as the level 25 talent)
-Fixed Ogre Magi's Multicast
-Arc Warden talent changed back to +3s Flux Duration
-Fixed Ember Spirit's Searing Chains
-Fixed King Rapier
+1.26b
+Reverted maps to earlier version, but actually working this time
+The ancient is now actually killable

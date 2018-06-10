@@ -3,7 +3,7 @@
 	//=================================================================================
 	// Fountain
 	//=================================================================================
-	"dota_fountain_good"
+	"dota_fountain"
 	{
 		"BaseClass"					"ent_dota_fountain"	// Class of entity of link to.
 		"StatusHealth"				"5000"		// Base health.

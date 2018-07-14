@@ -4047,7 +4047,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"0"
+        "ItemCost"						"1200"
         "ItemShopTags"					""
 
         // Recipe
@@ -4056,7 +4056,7 @@
         "ItemResult"					"item_manta_2"
         "ItemRequirements"
         {
-            "01"						"item_manta;item_ultimate_orb;item_recipe_manta"
+            "01"						"item_manta;item_ultimate_orb"
         }
     }
 
@@ -4074,7 +4074,7 @@
 
         // Stats
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"45.0"
+        "AbilityCooldown"				"20.0"
 		"AbilityCastPoint"				"0.0"
 
         // Item Info
@@ -4169,12 +4169,12 @@
             "16"
             {
                 "var_type"				"FIELD_FLOAT"
-                "cooldown_melee"		"30.0"
+                "cooldown_melee"		"15.0"
             }
             "17"
             {
                 "var_type"				"FIELD_INTEGER"
-                "cooldown_ranged_tooltip"		"45"
+                "cooldown_ranged_tooltip"		"5"
             }
             "18"
             {
@@ -4190,7 +4190,7 @@
     }
 
     //=================================================================================================================
-    // Recipe: SnYnA
+    // Recipe: SnYnK
     //=================================================================================================================
     "item_recipe_sange_and_yasha_and_kaya_datadriven"
     {
@@ -6229,7 +6229,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "1800" 
+        "ItemCost"                      "1200" 
         "ItemShopTags"                  ""
         
         // Recipe
@@ -6744,12 +6744,12 @@
             "04"
             {
                 "var_type"                                        "FIELD_INTEGER"
-                "feedback_mana_burn_illusion_melee"               "24"
+                "feedback_mana_burn_illusion_melee"               "45"
             }
             "05"
             {
                 "var_type"                                        "FIELD_INTEGER"
-                "feedback_mana_burn_illusion_ranged"              "12"
+                "feedback_mana_burn_illusion_ranged"              "45"
             }
             "06"
             {
@@ -6950,7 +6950,7 @@
         // Active Properties
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCastRange"              "1000"
-        "AbilityCooldown"               "10.0"     
+        "AbilityCooldown"               "7.0"     
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -6959,7 +6959,7 @@
             "01"
             {
                 "var_type"                         "FIELD_INTEGER"
-                "bonus_armor"                      "20"
+                "bonus_armor"                      "25"
             }
             "02"
             {
@@ -6979,7 +6979,7 @@
             "05"
             {
                 "var_type"                         "FIELD_INTEGER"
-                "duration"                         "5"
+                "duration"                         "7"
             }
             "06"
             {

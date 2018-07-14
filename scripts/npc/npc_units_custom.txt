@@ -3944,7 +3944,7 @@
 	}	
 	////////////////////////////////////////// WOLF WAVE GROUP //////////////////////////////////////////////
 	//=================================================================================
-	// Creature: Leshrac
+	// Creature: Leshrac Boss
 	//=================================================================================
 	"npc_dota_creature_disco_pony"
 	{
@@ -3968,7 +3968,7 @@
 		//----------------------------------------------------------------
         "AbilityLayout"				"6"
 		"Ability1"		"leshrac_split_earth"
-        "Ability2"		"leshrac_diabolic_edict"
+        "Ability2"		"leshrac_diabolic_edict_boss"
         "Ability3"		"leshrac_lightning_storm"
         "Ability4"		"leshrac_pulse_nova"
 		"Ability5"					"generic_gold_chest_fountain"			// Ability 5.
@@ -4067,7 +4067,7 @@
                 {
                     "Name"        "leshrac_diabolic_edict"
                     "AOE"                       "1"
-                    "Radius"			"800"
+                    "Radius"			"500"
                     "MinimumTargets"	"1"
                 }
                 "Ability3"

@@ -7837,7 +7837,7 @@
                 "Aura"					"modifier_blight_aura_datadriven"
                 "Aura_Radius"			"%aura_radius"
                 "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
                 "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
                 "Aura_ApplyToCaster" 	"0"
             }
@@ -7919,7 +7919,7 @@
                 "Aura"					"modifier_corruption_aura_datadriven"
                 "Aura_Radius"			"%aura_radius"
                 "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
                 "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
                 "Aura_ApplyToCaster" 	"0"
             }
@@ -8085,7 +8085,7 @@
                 "Aura"					"modifier_stupor_aura_datadriven"
                 "Aura_Radius"			"%aura_radius"
                 "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
                 "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
                 "Aura_ApplyToCaster" 	"0"
             }
@@ -8173,7 +8173,7 @@
                 "Aura"					"modifier_darkness_aura_datadriven"
                 "Aura_Radius"			"%aura_radius"
                 "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
                 "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
                 "Aura_ApplyToCaster" 	"0"
             }
@@ -15582,3 +15582,33 @@
         }
     }
 }
+
+"leshrac_diabolic_edict_boss"
+	{
+		"BaseClass" "leshrac_diabolic_edict"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"2.2"
+		"AbilityManaCost"				"105"
+		"AbilityDamage"					"9 18 27 36"
+		"AbilityDuration"				"8"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_explosions"		"36"
+			}
+			
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration_tooltip"			"8"
+			}
+		}
+	}
+

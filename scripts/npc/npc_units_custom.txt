@@ -1943,7 +1943,7 @@
 
             "EquippedItems"
             {
-                "Aghanims"    {    "Item"    "item_ultimate_scepter"    }
+                "Warfury"    {    "Item"    "item_bfury_datadriven"    }
                 "Cuirass"   {   "Item"        "item_vladmir_2"  }
             }
 		}
@@ -4226,7 +4226,7 @@
 		"AttackRate"				"1.1"		// Speed of attack.
 		"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
-		"AttackRange"				"1550"		// Range within a target can be attacked.
+		"AttackRange"				"2350"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles\boss_arrow.vpcf"      
 		// Particle system model for projectile.
 		"ProjectileSpeed"			"2000"		    // Speed of projectile.		   

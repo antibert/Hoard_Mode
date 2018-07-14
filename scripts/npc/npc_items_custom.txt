@@ -135,7 +135,7 @@
             "04"
             {
                 "var_type"              "FIELD_INTEGER"
-                "spell_power"           "3"
+                "spell_power"           "5"
             }
         }
     }
@@ -182,7 +182,7 @@
             "04"
             {
                 "var_type"              "FIELD_INTEGER"
-                "spell_power"           "6"
+                "spell_power"           "10"
             }
         }
     }
@@ -229,7 +229,7 @@
             "04"
             {
                 "var_type"              "FIELD_INTEGER"
-                "spell_power"           "9"
+                "spell_power"           "15"
             }
         }
     }
@@ -276,7 +276,7 @@
             "04"
             {
                 "var_type"              "FIELD_INTEGER"
-                "spell_power"           "12"
+                "spell_power"           "20"
             }
         }
     }
@@ -292,7 +292,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"1500"
+        "ItemCost"						"600"
         "ItemShopTags"					""
 
         // Recipe
@@ -344,7 +344,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"2100"
+        "ItemCost"						"1800"
         "ItemShopTags"					"teleport"
         "ItemQuality"					"component"
         "ItemAliases"					"blink 2"
@@ -388,7 +388,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"						"3600"
+        "ItemCost"						"1800"
         "ItemShopTags"					"teleport"
         "ItemQuality"					"component"
         "ItemAliases"					"blink 3"

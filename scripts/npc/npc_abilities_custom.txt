@@ -15135,7 +15135,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
-        
+       	"AOERadius"                     "%radius"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -15167,6 +15167,7 @@
 			{
 				"IsDebuff" "0"
 				"IsPurgable" "0"
+				"Aura_ApplyToCaster"	"1"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
@@ -15185,7 +15186,9 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"rubick_spell_amp"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-        "MaxLevel"						"20"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+        	"MaxLevel"						"20"
 		"AOERadius"                     "%null_radius"
 
 		// Special
@@ -15198,28 +15201,29 @@
 				"null_radius"			    "900"
 			}
 			"02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "amp_amount"				"10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 160 170 180 190 200"       // 20 levels
-            }
+            	{
+               		"var_type"				"FIELD_INTEGER"
+                		"amp_amount"				"-10 -20 -30 -40 -50 -60 -70 -80 -90 -100 -110 -120 -130 -140 -150 -160 -170 -180 -190 -200"       // 20 levels
+            	}
 		}
 		"Modifiers"
 		{
 			"aura_amp_null"
 			{
-				"IsHidden"				"1"
+				"IsHidden"				"0"
 				"Passive"				"1"
 				"Aura"					"amp_null"
 				"Aura_Radius"			"%null_radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_ApplyToCaster"	"0"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 			}
 			"amp_null"
 			{
+				"IsDebuff" "1"
+				"IsPurgable" "0"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%amp_amount"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%amp_amount"
 				}
 			}
 		}
@@ -15233,16 +15237,12 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				        "ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
 		"AbilityTextureName"			"bristleback_bristleback"
         "MaxLevel"						"20"
 	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0 0 0 0"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -15256,9 +15256,10 @@
 		{
 			"modifier_hordebrs_reduce_dmg"
 			{
+				"Passive" "1"
+				"isHidden" "1"
 				"IsBuff"	"1"
-				"Duration"	"-1"
-                "IsPurgable" "0"
+                		"IsPurgable" "0"
 				
 				"Properties"
 				{
@@ -15278,6 +15279,7 @@
 		"BaseClass"				        "ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityTextureName"			"beastmaster_inner_beast"
         "MaxLevel"						"20"
 	
@@ -15300,9 +15302,8 @@
 		{
 			"modifier_inner_beast"
 			{
-				"Passive"			"1"
 				"IsHidden"			"1"
-		
+				"Passive" "1"
 				"Aura"          	"modifier_inner_beast_buff"
 				"Aura_Radius"   	"%radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -15311,6 +15312,9 @@
 	
 			"modifier_inner_beast_buff"
 			{
+"IsDebuff"			"0"
+				"IsPurgable" 		"0"
+				"Aura_ApplyToCaster"	"1"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"

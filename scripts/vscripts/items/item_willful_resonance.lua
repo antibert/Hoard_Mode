@@ -69,13 +69,12 @@ function modifier_item_willful_resonance_passive:OnAttackLanded(keys)
             local damage_table = {}
             local radius = 200
             local multiplier = ability:GetSpecialValueFor("bonus_magical_damage_multiplier")
-            local base_damage = 0.5 * (parent:GetBaseDamageMin() + parent:GetBaseDamageMax())
 
             damage_table.attacker = parent
             damage_table.victim = target
             damage_table.damage_type = DAMAGE_TYPE_MAGICAL
             damage_table.ability = ability
-            damage_table.damage = base_damage * multiplier
+            damage_table.damage = keys.damage * multiplier
 
             ApplyDamage(damage_table)
 
@@ -87,7 +86,7 @@ function modifier_item_willful_resonance_passive:OnAttackLanded(keys)
                 multiplier = ability:GetSpecialValueFor("melee_dmg_multiplier")
             end
 
-            damage_table.damage = base_damage * multiplier
+            damage_table.damage = keys.damage * multiplier
 
             local unitsToDamage = {unpack(FindUnitsInRadius(parent:GetTeam(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, 1, false), 2)}
 

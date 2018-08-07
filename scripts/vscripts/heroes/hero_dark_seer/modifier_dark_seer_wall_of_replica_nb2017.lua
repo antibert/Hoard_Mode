@@ -93,19 +93,24 @@ function modifier_dark_seer_wall_of_replica_nb2017:OnIntervalThink()
 							replica:SetIdleAcquire( true )
 							FindClearSpaceForUnit( replica, replica:GetOrigin(), true )
 
-							local hAbility = replica:FindAbilityByName( "generic_gold_bag_fountain_large" )
+							local hAbility = replica:FindAbilityByName( "spawn_upgrade_orb" )
 							if hAbility ~= nil then
-								replica:RemoveAbility( "generic_gold_bag_fountain_large" )
+								replica:RemoveAbility( "spawn_upgrade_orb" )
 							end
 
-							local hAbility = replica:FindAbilityByName( "generic_gold_bag_fountain_medium" )
+							local hAbility = replica:FindAbilityByName( "generic_gold_coin_fountain" )
 							if hAbility ~= nil then
-								replica:RemoveAbility( "generic_gold_bag_fountain_medium" )
+								replica:RemoveAbility( "generic_gold_coin_fountain" )
 							end
 
-							local hAbility = replica:FindAbilityByName( "generic_gold_bag_fountain_small" )
+							local hAbility = replica:FindAbilityByName( "generic_gold_bag_fountain" )
 							if hAbility ~= nil then
-								replica:RemoveAbility( "generic_gold_bag_fountain_small" )
+								replica:RemoveAbility( "generic_gold_bag_fountain" )
+							end
+              
+              local hAbility = replica:FindAbilityByName( "generic_gold_chest_fountain" )
+							if hAbility ~= nil then
+								replica:RemoveAbility( "generic_gold_chest_fountain" )
 							end
 
 							for i = 0, DOTA_ITEM_MAX - 1 do

@@ -2857,7 +2857,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"ethereal_damage_bonus"	"-40"
+				"ethereal_damage_bonus"	"-115"
 			}
 			"09"
 			{
@@ -6107,11 +6107,11 @@
     //=================================================================================================================
 	// Sheepstick
 	//=================================================================================================================
-	"item_sheepstick"
+	"item_sheepstick_horde"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"ID"							"96" // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+		"ID"							"9986" // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
         "BaseClass"						"item_datadriven"
         
         "Model"							"models/props_gameplay/red_box.vmdl"
@@ -6121,6 +6121,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"FightRecapLevel"				"2"
+		"AOERadius"                     "%radius"
 
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
@@ -6140,7 +6141,6 @@
 		"ItemQuality"					"rare"
 		"ItemAliases"					"hex;sheepstick;scythe of vyse"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-        "AOERadius"						"%radius"
 		
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
@@ -6169,22 +6169,17 @@
 			"05"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"sheep_duration"		"3.5"
-			}
-			"06"
-			{
-				"var_type"				"FIELD_FLOAT"
 				"sheep_movement_speed"	"140"
 			}
-            "07"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"radius"				"400"
-			}
-            "08"
+            "06"
             {
                 "var_type"				"FIELD_FLOAT"
 				"duration"		        "6.0"
+            }
+            "07"
+            {
+            	"var_type"				"FIELD_FLOAT"
+            	"radius"				"400"
             }
 		}
         
@@ -6212,7 +6207,7 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"	"items/item_sheepstick.lua"
+				"ScriptFile"	"items/item_sheepstick_horde.lua"
 				"Function"		"voodoo_item_start"
 			}
 		}
@@ -6229,7 +6224,7 @@
         
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "1200" 
+        "ItemCost"                      "800" 
         "ItemShopTags"                  ""
         
         // Recipe
@@ -6677,7 +6672,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "4000"
+        "ItemCost"                      "3000"
         "ItemShopTags"                  ""
 
         // Recipe
@@ -6793,7 +6788,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "4000"
+        "ItemCost"                      "3000"
         "ItemShopTags"                  ""
 
         // Recipe
@@ -6955,38 +6950,44 @@
         // Special
         //-------------------------------------------------------------------------------------------------------------
         "AbilitySpecial"
-        {
-            "01"
-            {
-                "var_type"                         "FIELD_INTEGER"
-                "bonus_armor"                      "25"
-            }
-            "02"
-            {
-                "var_type"                         "FIELD_FLOAT"
-                "bonus_mana_regen_pct"             "3.0"
-            }
-            "03"
-            {
-                "var_type"                         "FIELD_INTEGER"
-                "bonus_evasion"                    "30"
-            }
-            "04"
-            {
-                "var_type"                         "FIELD_INTEGER"
-                "truestrike_chance"                "75"
-            }
-            "05"
-            {
-                "var_type"                         "FIELD_INTEGER"
-                "duration"                         "7"
-            }
-            "06"
-            {
-                "var_type"                         "FIELD_INTEGER"
-                "valor_cast_range_tooltip"         "1000"
-            }
-        }
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen_pct"	"3.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"self_bonus_evasion"	"30"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_evasion"			"30"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"truestrike_chance"		"40"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"7"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"valor_cast_range_tooltip"				"1000"
+			}			
+		}
+
     }
 
     //=================================================================================================================
@@ -7003,7 +7004,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "4000"
+        "ItemCost"                      "3000"
         "ItemShopTags"                  ""
 
         // Recipe
@@ -7253,7 +7254,7 @@
         // Active Properties
         //-------------------------------------------------------------------------------------------------------------
         "AbilityCastPoint"              "0.0"
-        "AbilityCooldown"               "3.0"    
+        "AbilityCooldown"               "2.2"    
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -7321,7 +7322,7 @@
 
         // Item Info
         //-------------------------------------------------------------------------------------------------------------
-        "ItemCost"                      "4000"
+        "ItemCost"                      "3000"
         "ItemShopTags"                  ""
 
         // Recipe
@@ -7683,7 +7684,7 @@
 
         // Active Properties
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"               "3"
+        "AbilityCooldown"               "0.5"
 
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -7697,7 +7698,7 @@
             "02"
             {
                 "var_type"              "FIELD_INTEGER"
-                "bonus_damage_toggle"   "150"
+                "bonus_damage_toggle"   "0"
             }
             "03"
             {
@@ -7734,6 +7735,26 @@
                 "var_type"              "FIELD_FLOAT"
                 "tree_radius"           "150"
             }
+			"10"
+			{
+				"var_type"			   "FIELD_INTEGER"
+				"health_penalty_toggle" "150"
+			}
+		 	"11"
+			{
+				"var_type"			   "FIELD_FLOAT"
+				"damage_pct_reduct"	   "20.0"
+			}
+			"12"
+			{
+				"var_type"			   "FIELD_FLOAT"
+				"inc_heal_pct_reduct"	   "-65.0"
+			}
+			"13"
+			{
+				"var_type"			   "FIELD_FLOAT"
+				"stat_resist_toggle"	   "50.0"
+			}
         }
 
         "precache"
@@ -8176,12 +8197,12 @@
             "05"
             {
                 "var_type"              "FIELD_FLOAT"
-                "melee_dmg_multiplier"  "0.8"
+                "melee_dmg_multiplier"  "0.4"
             }
             "06"
             {
                 "var_type"              "FIELD_FLOAT"
-                "ranged_dmg_multiplier" "0.6"
+                "ranged_dmg_multiplier" "0.3"
             }
             "07"
             {

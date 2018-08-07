@@ -18,12 +18,12 @@ function GameMode:_OnGameRulesStateChange(keys)
     end
         
     _G.GameMode.difficulty_name = "Easy"
-    if _G.GameMode.DIFFICULTY == 3 then
-      _G.GameMode.difficulty_name = "Ultra"
+    if _G.GameMode.DIFFICULTY == 3 or string.find(string.lower(GetMapName()), "ultra") then
+      _G.GameMode.difficulty_name = "Ultra" 
     elseif _G.GameMode.DIFFICULTY == 2 then
       _G.GameMode.difficulty_name = "Hard"
     elseif _G.GameMode.DIFFICULTY == 1 then
-      _G.GameMode.difficulty_name = "Normal"
+      _G.GameMode.difficulty_name = "Medium"
     end
             
     --Announce the selected difficulty

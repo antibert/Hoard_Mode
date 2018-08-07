@@ -6710,7 +6710,7 @@
             "01"
             {
                 "var_type"					"FIELD_FLOAT"
-                "duration"					"10"
+                "duration"					"30 35 40"
             }
             "02"
             {
@@ -6978,7 +6978,7 @@
 
         // Time
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"70 55 40"
+        "AbilityCooldown"				"20 15 10"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
@@ -7015,7 +7015,7 @@
             "05"
             {
                 "var_type"					"FIELD_FLOAT"
-                "coil_stun_duration"		"1.5 2.25 3.0"
+                "coil_stun_duration"		"3 4.5 6"
             }
             "06"
             {
@@ -10874,7 +10874,7 @@
             "04"
             {
                 "var_type"			"FIELD_FLOAT"
-                "max_stacks"		"1000"
+                "max_stacks"		"10000"
             }
         }
 
@@ -11226,7 +11226,7 @@
 			"04"
 			{
 			    "var_type"			"FIELD_FLOAT"
-                "max_stacks"		"1000"
+                "max_stacks"		"10000"
 			}
 		}
 
@@ -15568,10 +15568,6 @@
         "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO"
         "AbilityDuration"				"6"
         "AbilityCooldown"				"20"
-
-
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
         "AbilitySpecial"
         {
             "02"
@@ -15581,14 +15577,21 @@
             }
         }
     }
-}
 
-"leshrac_diabolic_edict_boss"
+
+"diabolic_edict_boss"
 	{
-		"BaseClass" "leshrac_diabolic_edict"
+		"BaseClass"	"leshrac_diabolic_edict"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
 		"AbilityCastPoint"				"0.5"
-		"AbilityCooldown"				"2.2"
-		"AbilityManaCost"				"105"
+		"AbilityCooldown"				"0.7 0.7 0.70 0.7"
+		"AbilityManaCost"				"55 55 55 55"
 		"AbilityDamage"					"9 18 27 36"
 		"AbilityDuration"				"8"
 		"AbilitySpecial"
@@ -15596,7 +15599,8 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"num_explosions"		"36"
+				"num_explosions"		"72"
+				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_1"
 			}
 			
 			"02"
@@ -15604,11 +15608,89 @@
 				"var_type"			"FIELD_INTEGER"
 				"radius"			"500"
 			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tower_bonus"			"40"
+			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"duration_tooltip"			"8"
 			}
 		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
 	}
 
+	//=================================================================================================================
+    // Tower: Antisniper
+    //=================================================================================================================
+    "tower_antisniper"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"                    "99801"
+        "BaseClass"						"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "AbilityTextureName"			"holdout_multishot"
+        "MaxLevel"						"1"
+
+        "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_range"		"1"
+			}
+		}
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "Modifiers"
+        {
+            "modifier_tower_antisniper"
+            {
+                "Passive"			"1"
+                "IsHidden"			"1"
+                "IsDebuff"			"0"
+
+	            "OnCreated"
+	            {
+	            	"RunScript"
+	            	{
+	            		"ScriptFile"	"misc/modifier_tower_antisniper.lua"
+	            		"Function"		"antisniper_init"
+	            	}
+	            }
+
+	 			"OnTakeDamage"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"	"misc/modifier_tower_antisniper.lua"
+	                    "Function"		"antisniper_attacked"
+	                    "modifier"		"modifier_tower_antisniper_buff"
+	                }
+	            } 
+            }
+
+            "modifier_tower_antisniper_buff"
+			{
+			    "Passive"   "0"
+			    "IsPurgable"    "0"
+			    "IsHidden"	"1"
+			    "Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "%bonus_range"
+                }
+			}
+
+
+        }
+    }
+
+
+}

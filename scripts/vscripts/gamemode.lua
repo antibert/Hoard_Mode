@@ -3,7 +3,7 @@
 
 -- Set this to true if you want to see a complete debug output of all events/processes done by barebones
 -- You can also change the cvar 'barebones_spew' at any time to 1 or 0 for output/no output
-BAREBONES_DEBUG_SPEW = false
+BAREBONES_DEBUG_SPEW = FALSE
 
 if GameMode == nil then
     DebugPrint( '[BAREBONES] creating barebones game mode' )
@@ -136,7 +136,7 @@ end
 --[[
   This function is called once and only once when the game completely begins (about 0:00 on the clock).  At this point,
   gold will begin to go up in ticks if configured, creeps will spawn, towers will become damageable etc.  This function
-  is useful for starting any game logic timers/thinkers, beginning the first round, etc.
+  is useful for starting any game logic timers/thinkers, b0eginning the first round, etc.
 ]]
 function GameMode:OnGameInProgress()
   DebugPrint("[BAREBONES] The game has officially begun")
@@ -164,6 +164,7 @@ function GameMode:InitGameMode()
 
   -- Commands can be registered for debugging purposes or as functions that can be called by the custom Scaleform UI
   Convars:RegisterCommand( "command_example", Dynamic_Wrap(GameMode, 'ExampleConsoleCommand'), "A console command example", FCVAR_CHEAT )
+  Convars:RegisterCommand( "grant_skill", Dynamic_Wrap(GameMode, 'GrantSkill'), "Give user a special skill", FCVAR_CHEAT )
 
   DebugPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')
 end
@@ -206,6 +207,45 @@ function GameMode:ExampleConsoleCommand()
   end
 
 	DebugPrint( '*********************************************' )
+end
+
+function GameMode:GrantSkill(skillName, level)
+  if skillName == nil then
+    return
+  end
+    
+  if level ~= nil then
+    print( 'Granting skill: ' .. skillName .. ' of level ' .. level .. '\n' )
+  else
+    print( 'Granting skill: ' .. skillName .. '\n' )
+  end
+  
+  local cmdPlayer = Convars:GetCommandClient()
+  
+  if cmdPlayer then
+    local ability = nil
+    local player = Convars:GetDOTACommandClient()
+    local hero = player:GetAssignedHero()
+    
+    for i=20,0,-1 do
+        ability = hero:GetAbilityByIndex(i)
+        if ability ~= nil then
+            if ability:GetAbilityName() == skillName then
+                break
+            end
+            ability = nil
+        end
+    end
+    
+    if ability == nil then
+      local newAbility = hero:AddAbility(skillName)
+      newAbility:SetLevel(tonumber(level))
+    else
+      ability:SetLevel(tonumber(level))
+    end
+    
+    
+  end
 end
 
 function GetVersion()

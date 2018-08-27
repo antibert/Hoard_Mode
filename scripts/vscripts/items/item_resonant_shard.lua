@@ -95,7 +95,7 @@ function modifier_item_resonant_shard_passive:OnAttackLanded(keys)
                 damage_table.attacker = parent
                 damage_table.damage_type = DAMAGE_TYPE_MAGICAL
                 damage_table.ability = ability
-                damage_table.damage = 0.5 * (parent:GetBaseDamageMin() + parent:GetBaseDamageMax()) * multiplier
+                damage_table.damage = keys.damage * multiplier
 
                 local unitsToDamage = {unpack(FindUnitsInRadius(parent:GetTeam(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, 1, false), 2)}
 

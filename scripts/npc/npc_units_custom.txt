@@ -1943,7 +1943,7 @@
 
             "EquippedItems"
             {
-                "Aghanims"    {    "Item"    "item_ultimate_scepter"    }
+                "Warfury"    {    "Item"    "item_bfury_datadriven"    }
                 "Cuirass"   {   "Item"        "item_vladmir_2"  }
             }
 		}
@@ -3944,7 +3944,7 @@
 	}	
 	////////////////////////////////////////// WOLF WAVE GROUP //////////////////////////////////////////////
 	//=================================================================================
-	// Creature: Leshrac
+	// Creature: Leshrac Boss
 	//=================================================================================
 	"npc_dota_creature_disco_pony"
 	{
@@ -3968,9 +3968,9 @@
 		//----------------------------------------------------------------
         "AbilityLayout"				"6"
 		"Ability1"		"leshrac_split_earth"
-        "Ability2"		"leshrac_diabolic_edict"
+        "Ability2"		"leshrac_pulse_nova"
         "Ability3"		"leshrac_lightning_storm"
-        "Ability4"		"leshrac_pulse_nova"
+        "Ability4"		"diabolic_edict_boss"
 		"Ability5"					"generic_gold_chest_fountain"			// Ability 5.
 		"Ability6"					""			// Ability 6 - Extra.
 		"Ability7"					""			// Ability 7 - Extra.
@@ -4065,9 +4065,9 @@
                 }
                 "Ability2"
                 {
-                    "Name"        "leshrac_diabolic_edict"
+                    "Name"        "diabolic_edict_boss"
                     "AOE"                       "1"
-                    "Radius"			"800"
+                    "Radius"			"500"
                     "MinimumTargets"	"1"
                 }
                 "Ability3"
@@ -4211,6 +4211,7 @@
 		"Ability3"					"necronomicon_archer_aoe"			// Ability 3
 		"Ability4"					"necronomicon_warrior_sight"			// Ability 4
 		"Ability5"                  "necronomicon_archer_mana_burn"
+		"Ability6" "medusa_split_shot"
 	
 		// Armor
 		//----------------------------------------------------------------
@@ -4225,7 +4226,7 @@
 		"AttackRate"				"1.1"		// Speed of attack.
 		"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
-		"AttackRange"				"1550"		// Range within a target can be attacked.
+		"AttackRange"				"2350"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles\boss_arrow.vpcf"      
 		// Particle system model for projectile.
 		"ProjectileSpeed"			"2000"		    // Speed of projectile.		   
@@ -4256,8 +4257,8 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"1500"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1000"		// Range of vision at night time.
+		"VisionDaytimeRange"		"2100"		// Range of vision during day light.
+		"VisionNighttimeRange"		"1500"		// Range of vision at night time.
 		
 		// Team
 		//----------------------------------------------------------------
@@ -4304,11 +4305,6 @@
 					"MinimumTargets"	"1"
 				}
 			}
-
-			"EquippedItems"
-            {
-                "DragonJavelin" {   "Item"  "item_dragon_javelin_5"    }
-            }
 		}
 	}
 	//=================================================================================
@@ -4913,7 +4909,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"Ability1"					"necronomicon_warrior_last_will_datadriven"			// Ability 1
-		"Ability2"					"necronomicon_archer_mana_burn"			// Ability 2
+		//"Ability2"					//"necronomicon_archer_mana_burn"			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
 	
@@ -9116,17 +9112,6 @@
 			"DefaultState"				"Invade"
 			
 			"DisableClumpingBehavior"	"1"
-
-			"OffensiveAbilities"
-            {
-                "Ability1"
-                {
-                    "Name"				"brewmaster_earth_pulverize"
-                    "AOE"                "1"
-                    "Radius"             "275"
-                    "MinimumTargets"     "2"
-                }
-            }
 		}
 	}
 	//=================================================================================
@@ -12502,8 +12487,8 @@
         // Attack
         //----------------------------------------------------------------
         "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"			"15"		// Damage range min.
-        "AttackDamageMax"			"19"		// Damage range max.
+        "AttackDamageMin"			"38"		// Damage range min.
+        "AttackDamageMax"			"42"		// Damage range max.
         "AttackRate"				"1.2"		// Speed of attack.
         "AttackAnimationPoint"		"0.33"		// Normalized time in animation cycle to attack.
         "AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -12576,8 +12561,8 @@
         // Attack
         //----------------------------------------------------------------
         "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"			"26"		// Damage range min.
-        "AttackDamageMax"			"30"		// Damage range max.
+        "AttackDamageMin"			"54"		// Damage range min.
+        "AttackDamageMax"			"58"		// Damage range max.
         "AttackRate"				"1.1"		// Speed of attack.
         "AttackAnimationPoint"		"0.33"		// Normalized time in animation cycle to attack.
         "AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -12605,7 +12590,7 @@
 
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"				"480"		// Base health.
+        "StatusHealth"				"600"		// Base health.
         "StatusHealthRegen"			"0.5"		// Health regeneration rate.
         "StatusMana"				"0"			// Base mana.
         "StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -12651,8 +12636,8 @@
         // Attack
         //----------------------------------------------------------------
         "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"			"35"		// Damage range min.
-        "AttackDamageMax"			"39"		// Damage range max.
+        "AttackDamageMin"			"70"		// Damage range min.
+        "AttackDamageMax"			"74"		// Damage range max.
         "AttackRate"				"1.0"		// Speed of attack.
         "AttackAnimationPoint"		"0.33"		// Normalized time in animation cycle to attack.
         "AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -12679,7 +12664,7 @@
 
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"				"560"		// Base health.
+        "StatusHealth"				"800"		// Base health.
         "StatusHealthRegen"			"0.5"		// Health regeneration rate.
         "StatusMana"				"0"			// Base mana.
         "StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -12725,8 +12710,8 @@
         // Attack
         //----------------------------------------------------------------
         "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"			"44"		// Damage range min.
-        "AttackDamageMax"			"48"		// Damage range max.
+        "AttackDamageMin"			"86"		// Damage range min.
+        "AttackDamageMax"			"90"		// Damage range max.
         "AttackRate"				"0.9"		// Speed of attack.
         "AttackAnimationPoint"		"0.33"		// Normalized time in animation cycle to attack.
         "AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
@@ -12753,7 +12738,7 @@
 
         // Status
         //----------------------------------------------------------------
-        "StatusHealth"				"640"		// Base health.
+        "StatusHealth"				"1000"		// Base health.
         "StatusHealthRegen"			"0.5"		// Health regeneration rate.
         "StatusMana"				"0"			// Base mana.
         "StatusManaRegen"			"0"			// Mana regeneration rate.
@@ -13087,7 +13072,7 @@
 		"SoundSet"					"n_creep_ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
 		"Level"						"1"
-		"ModelScale" 				"0.66"
+		"ModelScale" 				"0.77"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -13104,84 +13089,12 @@
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"40"		// Damage range min.
-		"AttackDamageMax"			"40"		// Damage range max.
+		"AttackDamageMin"			"90"		// Damage range min.
+		"AttackDamageMax"			"90"		// Damage range max.
 		"AttackRate"				"0.4"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"400"		// Range within a target can be acquired.
 		"AttackRange"				"160"		// Range within a target can be attacked.
-		"ProjectileModel"			"particles/units/heroes/hero_visage/visage_familiar_base_attack.vpcf"          // Particle system model for projectile.
-		"ProjectileSpeed"			"900"		    // Speed of projectile.		     
-	
-		// Bounds
-		//----------------------------------------------------------------
-		"RingRadius"				"50"
-		"HealthBarOffset"			"150"
-		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"	
-	
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyXP"					"41"		// Experience earn.
-		"BountyGoldMin"				"100"		// Gold earned min.
-		"BountyGoldMax"				"100"		// Gold earned max.
-	
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
-		"MovementSpeed"				"430"		// Speed.			
-	
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"600"		// Base health.
-		"StatusHealthRegen"			"0"		// Health regeneration rate.
-		"StatusMana"				"0"			// Base mana.
-		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"390"		// Range of vision during day light.
-		"VisionNighttimeRange"		"390"		// Range of vision at night time.
-	
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
-		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-	}
-
-	"npc_dota_visage_familiar2"	
-	{
-		// General
-		//----------------------------------------------------------------
-		"Model"						"models\heroes\visage\visage_familiar.vmdl"	// Model.
-		"BaseClass"					"npc_dota_creature"
-		"SoundSet"					"n_creep_ranged"
-		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"2"
-		"ModelScale" 				"0.66"
-	
-		// Abilities
-		//----------------------------------------------------------------
-		"Ability1"					"visage_summon_familiars_stone_form"			// Ability 1
-		"Ability2"					"splash_attack_datadriven"						// Ability 2
-		"Ability3"					""			// Ability 3
-		"Ability4"					""			// Ability 4
-	
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"1"			// Physical protection.
-		"MagicalResistance"			"35"
-	
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"60"		// Damage range min.
-		"AttackDamageMax"			"60"		// Damage range max.
-		"AttackRate"				"0.4"		// Speed of attack.
-		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"400"		// Range within a target can be acquired.
-		"AttackRange"				"240"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_visage/visage_familiar_base_attack.vpcf"          // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		    // Speed of projectile.		     
 	
@@ -13222,7 +13135,7 @@
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	}
 
-	"npc_dota_visage_familiar3"	
+	"npc_dota_visage_familiar2"	
 	{
 		// General
 		//----------------------------------------------------------------
@@ -13230,8 +13143,8 @@
 		"BaseClass"					"npc_dota_creature"
 		"SoundSet"					"n_creep_ranged"
 		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
-		"Level"						"3"
-		"ModelScale" 				"0.66"
+		"Level"						"2"
+		"ModelScale" 				"0.99"
 	
 		// Abilities
 		//----------------------------------------------------------------
@@ -13242,24 +13155,24 @@
 	
 		// Armor
 		//----------------------------------------------------------------
-		"ArmorPhysical"				"2"			// Physical protection.
+		"ArmorPhysical"				"1"			// Physical protection.
 		"MagicalResistance"			"35"
 	
 		// Attack
 		//----------------------------------------------------------------
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"			"80"		// Damage range min.
-		"AttackDamageMax"			"80"		// Damage range max.
+		"AttackDamageMin"			"120"		// Damage range min.
+		"AttackDamageMax"			"120"		// Damage range max.
 		"AttackRate"				"0.4"		// Speed of attack.
 		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"400"		// Range within a target can be acquired.
-		"AttackRange"				"320"		// Range within a target can be attacked.
+		"AttackRange"				"240"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles/units/heroes/hero_visage/visage_familiar_base_attack.vpcf"          // Particle system model for projectile.
 		"ProjectileSpeed"			"900"		    // Speed of projectile.		     
 	
 		// Bounds
 		//----------------------------------------------------------------
-		"RingRadius"				"50"
+		"RingRadius"				"75"
 		"HealthBarOffset"			"150"
 		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"	
 	
@@ -13276,7 +13189,7 @@
 	
 		// Status
 		//----------------------------------------------------------------
-		"StatusHealth"				"1800"		// Base health.
+		"StatusHealth"				"2200"		// Base health.
 		"StatusHealthRegen"			"0"		// Health regeneration rate.
 		"StatusMana"				"0"			// Base mana.
 		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
@@ -13293,4 +13206,240 @@
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
 		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 	}
+
+	"npc_dota_visage_familiar3"	
+	{
+		// General
+		//----------------------------------------------------------------
+		"Model"						"models\heroes\visage\visage_familiar.vmdl"	// Model.
+		"BaseClass"					"npc_dota_creature"
+		"SoundSet"					"n_creep_ranged"
+		"GameSoundsFile"			"soundevents/game_sounds_creeps.vsndevts"
+		"Level"						"3"
+		"ModelScale" 				"1.22"
+	
+		// Abilities
+		//----------------------------------------------------------------
+		"Ability1"					"visage_summon_familiars_stone_form"			// Ability 1
+		"Ability2"					"splash_attack_datadriven"						// Ability 2
+		"Ability3"					""			// Ability 3
+		"Ability4"					""			// Ability 4
+	
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"2"			// Physical protection.
+		"MagicalResistance"			"35"
+	
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"150"		// Damage range min.
+		"AttackDamageMax"			"150"		// Damage range max.
+		"AttackRate"				"0.4"		// Speed of attack.
+		"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+		"AttackAcquisitionRange"	"400"		// Range within a target can be acquired.
+		"AttackRange"				"320"		// Range within a target can be attacked.
+		"ProjectileModel"			"particles/units/heroes/hero_visage/visage_familiar_base_attack.vpcf"          // Particle system model for projectile.
+		"ProjectileSpeed"			"900"		    // Speed of projectile.		     
+	
+		// Bounds
+		//----------------------------------------------------------------
+		"RingRadius"				"100"
+		"HealthBarOffset"			"150"
+		"BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"	
+	
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyXP"					"41"		// Experience earn.
+		"BountyGoldMin"				"100"		// Gold earned min.
+		"BountyGoldMax"				"100"		// Gold earned max.
+	
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+		"MovementSpeed"				"430"		// Speed.			
+	
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"3200"		// Base health.
+		"StatusHealthRegen"			"0"		// Health regeneration rate.
+		"StatusMana"				"0"			// Base mana.
+		"StatusManaRegen"			"0"		// Mana regeneration rate.		 
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"390"		// Range of vision during day light.
+		"VisionNighttimeRange"		"390"		// Range of vision at night time.
+	
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_NEUTRALS"						// Team name.
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+		"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+
+//=================================================================================
+// Creeps: necronomicon Warrior Level 1
+//=================================================================================
+	"npc_dota_necronomicon_warrior_1"
+	{
+		"ArmorPhysical"				"4"			// Physical protection.
+		"AttackDamageMin"			"75"		// Damage range min.
+		"AttackDamageMax"			"85"		// Damage range max.
+		"AttackRate"				"0.75"		// Speed of attack.
+		"StatusHealth"				"1000"		// Base health.
+		"StatusHealthRegen"			"5"			// Health regeneration rate.
+	}	
+
+//=================================================================================
+// Creeps: Necronomicon Warrior Level 2
+//=================================================================================
+	"npc_dota_necronomicon_warrior_2"
+	{
+		"ArmorPhysical"				"8"			// Physical protection.
+		"AttackDamageMin"			"155"		// Damage range min.
+		"AttackDamageMax"			"165"		// Damage range max.
+		"AttackRate"				"0.57"		// Speed of attack.
+		"StatusHealth"				"1500"		// Base health.
+		"StatusHealthRegen"			"15"			// Health regeneration rate.
+	}	
+
+//=================================================================================
+// Creeps: Necronomicon Warrior Level 3
+//=================================================================================
+	"npc_dota_necronomicon_warrior_3"
+	{
+		"ArmorPhysical"				"16"		// Physical protection.
+		"AttackDamageMin"			"235"		// Damage range min.
+		"AttackDamageMax"			"255"		// Damage range max.
+		"AttackRate"				"0.4"		// Speed of attack.
+		"StatusHealth"				"2000"		// Base health.
+		"StatusHealthRegen"			"25"			// Health regeneration rate.
+	}	
+
+//=================================================================================
+// Creeps: Necronomicon Archer Level 1
+//=================================================================================
+	"npc_dota_necronomicon_archer_1"
+	{
+		"ArmorPhysical"				"4"			// Physical protection.
+		"AttackDamageMin"			"75"		// Damage range min.
+		"AttackDamageMax"			"85"		// Damage range max.
+		"AttackRate"				"0.75"			// Speed of attack.
+		"StatusHealth"				"1000"		// Base health.
+		"StatusHealthRegen"			"5"			// Health regeneration rate.
+	}	
+	
+//=================================================================================
+// Creeps: Necronomicon Archer Level 2
+//=================================================================================
+	"npc_dota_necronomicon_archer_2"
+	{
+		"ArmorPhysical"				"4"			// Physical protection.
+		"AttackDamageMin"			"155"		// Damage range min.
+		"AttackDamageMax"			"165"		// Damage range max.
+		"AttackRate"				"0.75"			// Speed of attack.
+		"StatusHealth"				"1500"		// Base health.
+		"StatusHealthRegen"			"5"			// Health regeneration rate.
+	}	
+
+//=================================================================================
+// Creeps: Necronomicon Archer Level 3
+//=================================================================================
+	"npc_dota_necronomicon_archer_3"
+	{
+		"ArmorPhysical"				"4"		// Physical protection.
+		"AttackDamageMin"			"240"		// Damage range min.
+		"AttackDamageMax"			"250"		// Damage range max.
+		"AttackRate"				"0.75"			// Speed of attack.
+		"StatusHealth"				"2000"		// Base health.
+		"StatusHealthRegen"			"5"			// Health regeneration rate.
+	}	
+	
+
+//=================================================================================
+// Brewmaster Units
+//=================================================================================
+		
+	"npc_dota_brewmaster_earth_1"
+	{
+		"ArmorPhysical"				"8"			// Physical protection.
+		"AttackDamageMin"			"75"		// Damage range min.
+		"AttackDamageMax"			"85"		// Damage range max.	
+		"AttackRate"				"1.0"		// Speed of attack.
+		"StatusHealth"				"2200"		// Base health.
+	}	
+
+	"npc_dota_brewmaster_earth_2"
+	{
+		"ArmorPhysical"				"16"			// Physical protection.
+		"AttackDamageMin"			"155"		// Damage range min.
+		"AttackDamageMax"			"165"		// Damage range max.	
+		"AttackRate"				"1.0"		// Speed of attack.
+		"StatusHealth"				"3000"		// Base health.
+	}	
+
+	"npc_dota_brewmaster_earth_3"
+	{
+		"ArmorPhysical"				"24"			// Physical protection.
+		"AttackDamageMin"			"235"		// Damage range min.
+		"AttackDamageMax"			"245"		// Damage range max.	
+		"AttackRate"				"1.0"		// Speed of attack.
+		"StatusHealth"				"3800"		// Base health.
+	}	
+
+	"npc_dota_brewmaster_storm_1"
+	{
+		"ArmorPhysical"				"6"			// Physical protection.
+		"AttackDamageMin"			"75"		// Damage range min.
+		"AttackDamageMax"			"85"		// Damage range max.	
+		"AttackRate"				"1.25"		// Speed of attack.
+		"StatusHealth"				"1500"		// Base health.
+	}	
+
+	"npc_dota_brewmaster_storm_2"
+	{
+		"ArmorPhysical"				"6"			// Physical protection.
+		"AttackDamageMin"			"145"		// Damage range min.
+		"AttackDamageMax"			"155"		// Damage range max.	
+		"AttackRate"				"1.5"		// Speed of attack.
+		"StatusHealth"				"2000"		// Base health.
+	}	
+
+	"npc_dota_brewmaster_storm_3"
+	{
+		"ArmorPhysical"				"6"			// Physical protection.
+		"AttackDamageMin"			"145"		// Damage range min.
+		"AttackDamageMax"			"155"		// Damage range max.	
+		"AttackRate"				"1.25"		// Speed of attack.
+		"StatusHealth"				"2500"		// Base health.
+	}	
+
+	"npc_dota_brewmaster_fire_1"
+	{
+		"ArmorPhysical"				"2"			// Physical protection.
+		"AttackDamageMin"			"115"		// Damage range min.
+		"AttackDamageMax"			"125"		// Damage range max.	
+		"AttackRate"				"0.8"		// Speed of attack.
+		"StatusHealth"				"2900"		// Base health.
+	}	
+
+	"npc_dota_brewmaster_fire_2"
+	{
+		"ArmorPhysical"				"8"			// Physical protection.
+		"AttackDamageMin"			"245"		// Damage range min.
+		"AttackDamageMax"			"255"		// Damage range max.	
+		"AttackRate"				"0.6"		// Speed of attack.
+		"StatusHealth"				"2900"		// Base health.
+	}	
+
+	"npc_dota_brewmaster_fire_3"
+	{
+		"ArmorPhysical"				"16"			// Physical protection.
+		"AttackDamageMin"			"375"		// Damage range min.
+		"AttackDamageMax"			"385"		// Damage range max.	
+		"AttackRate"				"0.4"		// Speed of attack.
+		"StatusHealth"				"2900"		// Base health.
+	}	
 }

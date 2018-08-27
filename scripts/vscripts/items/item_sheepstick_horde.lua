@@ -3,14 +3,13 @@ LinkLuaModifier("modifier_item_voodoo_lua", "items/modifiers/modifier_item_voodo
 function voodoo_item_start( keys )
 	local caster = keys.caster
 	local ability = keys.ability
+  local target = keys.target
 	local ability_level = ability:GetLevel() - 1
-	local target = keys.target
-    local radius = ability:GetLevelSpecialValueFor("radius", ability_level)
-
+  local radius = ability:GetLevelSpecialValueFor("radius", ability_level)
 	local duration = ability:GetLevelSpecialValueFor("duration", ability_level)
 	
-    local units = FindUnitsInRadius(caster:GetTeam(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
-	
+  local units = FindUnitsInRadius(caster:GetTeam(), target:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, FIND_ANY_ORDER, false)
+  
 	for _,unit in pairs(units) do
         if unit:IsIllusion() then
 		  unit:ForceKill(true)

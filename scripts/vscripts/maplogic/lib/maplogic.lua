@@ -122,6 +122,10 @@ function mapLogic:SetFriendlyBuildings(mapInfo)
 			building:AddAbility("tower_splash")
 			local tower_splash = building:FindAbilityByName("tower_splash")
 			tower_splash:SetLevel(0)
+      
+      --building:AddAbility("tower_antisniper")
+			--local tower_antisniper = building:FindAbilityByName("tower_antisniper")
+			--tower_antisniper:SetLevel(1)
 
 			building:AddAbility("reward_global_offense_penalty")
 			local ancient_ability = building:FindAbilityByName("reward_global_offense_penalty")
@@ -210,6 +214,10 @@ function mapLogic:SetEnemyBuildings(mapInfo)
 
 			building:AddAbility("tower_splash")
 			local tower_splash = building:FindAbilityByName("tower_splash")
+      
+      building:AddAbility("tower_antisniper")
+			local tower_antisniper = building:FindAbilityByName("tower_antisniper")
+			tower_antisniper:SetLevel(1)
 
 			if string.find(building_name, "1") then
 				tower_stats:SetLevel(1)

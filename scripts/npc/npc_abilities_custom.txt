@@ -6710,7 +6710,7 @@
             "01"
             {
                 "var_type"					"FIELD_FLOAT"
-                "duration"					"10"
+                "duration"					"30 35 40"
             }
             "02"
             {
@@ -6978,7 +6978,7 @@
 
         // Time
         //-------------------------------------------------------------------------------------------------------------
-        "AbilityCooldown"				"70 55 40"
+        "AbilityCooldown"				"20 15 10"
 
         // Cost
         //-------------------------------------------------------------------------------------------------------------
@@ -7015,7 +7015,7 @@
             "05"
             {
                 "var_type"					"FIELD_FLOAT"
-                "coil_stun_duration"		"1.5 2.25 3.0"
+                "coil_stun_duration"		"3 4.5 6"
             }
             "06"
             {
@@ -7837,7 +7837,7 @@
                 "Aura"					"modifier_blight_aura_datadriven"
                 "Aura_Radius"			"%aura_radius"
                 "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
                 "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
                 "Aura_ApplyToCaster" 	"0"
             }
@@ -7919,7 +7919,7 @@
                 "Aura"					"modifier_corruption_aura_datadriven"
                 "Aura_Radius"			"%aura_radius"
                 "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
                 "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
                 "Aura_ApplyToCaster" 	"0"
             }
@@ -8085,7 +8085,7 @@
                 "Aura"					"modifier_stupor_aura_datadriven"
                 "Aura_Radius"			"%aura_radius"
                 "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
                 "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
                 "Aura_ApplyToCaster" 	"0"
             }
@@ -8173,7 +8173,7 @@
                 "Aura"					"modifier_darkness_aura_datadriven"
                 "Aura_Radius"			"%aura_radius"
                 "Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
+                "Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
                 "Aura_Flags" 			"DOTA_UNIT_TARGET_FLAG_INVULNERABLE"
                 "Aura_ApplyToCaster" 	"0"
             }
@@ -10874,7 +10874,7 @@
             "04"
             {
                 "var_type"			"FIELD_FLOAT"
-                "max_stacks"		"1000"
+                "max_stacks"		"10000"
             }
         }
 
@@ -11226,7 +11226,7 @@
 			"04"
 			{
 			    "var_type"			"FIELD_FLOAT"
-                "max_stacks"		"1000"
+                "max_stacks"		"10000"
 			}
 		}
 
@@ -15051,7 +15051,7 @@
             "01"
             {
                 "var_type"				"FIELD_FLOAT"
-                "damage_per_burn"		"1"
+                "damage_per_burn"		"0.6"
             }
             "02"
             {
@@ -15061,7 +15061,7 @@
             "03"
             {
                 "var_type"				"FIELD_FLOAT"
-                "damage_no_mana"		"0.5"
+                "damage_no_mana"		"0.0"
             }
         }
 
@@ -15127,14 +15127,15 @@
 	//=================================================================================================================
 	"hordebrs_ultra_armor_aura"
 	{
-	    "BaseClass"                     "enraged_wildkin_toughness_aura"
+	    "BaseClass"                     "ability_datadriven"
 		"AbilityTextureName"			"contagious_flamboyance"
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"MaxLevel"						"20"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityCastRange"				"900"
-        
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+       	"AOERadius"                     "%radius"
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -15150,6 +15151,29 @@
 				"radius"			"900"
 			}
 		}
+		"Modifiers"
+		{
+			"BRS_UltraArmor_Modifier"
+			{
+				"Passive" "1"
+				"IsHidden" "0"
+				"Aura" "BRS_UltraArmor_Aura"
+				"Aura_Radius" "%radius"
+				"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+			}
+
+			"BRS_UltraArmor_Aura"
+			{
+				"IsDebuff" "0"
+				"IsPurgable" "0"
+				"Aura_ApplyToCaster"	"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
+				}
+			}
+		}
 	}
 
     //=================================================================================================================
@@ -15162,7 +15186,9 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityTextureName"			"rubick_spell_amp"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
-        "MaxLevel"						"20"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+        	"MaxLevel"						"20"
 		"AOERadius"                     "%null_radius"
 
 		// Special
@@ -15175,28 +15201,29 @@
 				"null_radius"			    "900"
 			}
 			"02"
-            {
-                "var_type"				"FIELD_INTEGER"
-                "amp_amount"				"10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 160 170 180 190 200"       // 20 levels
-            }
+            	{
+               		"var_type"				"FIELD_INTEGER"
+                		"amp_amount"				"-10 -20 -30 -40 -50 -60 -70 -80 -90 -100 -110 -120 -130 -140 -150 -160 -170 -180 -190 -200"       // 20 levels
+            	}
 		}
 		"Modifiers"
 		{
 			"aura_amp_null"
 			{
-				"IsHidden"				"1"
+				"IsHidden"				"0"
 				"Passive"				"1"
 				"Aura"					"amp_null"
 				"Aura_Radius"			"%null_radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_ApplyToCaster"	"0"
+				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 			}
 			"amp_null"
 			{
+				"IsDebuff" "1"
+				"IsPurgable" "0"
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"	"%amp_amount"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "%amp_amount"
 				}
 			}
 		}
@@ -15210,16 +15237,12 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"				        "ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_ALL"
 		"AbilityTextureName"			"bristleback_bristleback"
         "MaxLevel"						"20"
 	
-		// Casting
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastPoint"				"0 0 0 0"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
 		{
 			"01"
@@ -15233,9 +15256,10 @@
 		{
 			"modifier_hordebrs_reduce_dmg"
 			{
+				"Passive" "1"
+				"isHidden" "1"
 				"IsBuff"	"1"
-				"Duration"	"-1"
-                "IsPurgable" "0"
+                		"IsPurgable" "0"
 				
 				"Properties"
 				{
@@ -15255,6 +15279,7 @@
 		"BaseClass"				        "ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityTextureName"			"beastmaster_inner_beast"
         "MaxLevel"						"20"
 	
@@ -15277,9 +15302,8 @@
 		{
 			"modifier_inner_beast"
 			{
-				"Passive"			"1"
 				"IsHidden"			"1"
-		
+				"Passive" "1"
 				"Aura"          	"modifier_inner_beast_buff"
 				"Aura_Radius"   	"%radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -15288,6 +15312,9 @@
 	
 			"modifier_inner_beast_buff"
 			{
+"IsDebuff"			"0"
+				"IsPurgable" 		"0"
+				"Aura_ApplyToCaster"	"1"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
@@ -15541,10 +15568,6 @@
         "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO"
         "AbilityDuration"				"6"
         "AbilityCooldown"				"20"
-
-
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
         "AbilitySpecial"
         {
             "02"
@@ -15554,4 +15577,120 @@
             }
         }
     }
+
+
+"diabolic_edict_boss"
+	{
+		"BaseClass"	"leshrac_diabolic_edict"	
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"0.7 0.7 0.70 0.7"
+		"AbilityManaCost"				"55 55 55 55"
+		"AbilityDamage"					"9 18 27 36"
+		"AbilityDuration"				"8"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_explosions"		"72"
+				"LinkedSpecialBonus"	"special_bonus_unique_leshrac_1"
+			}
+			
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tower_bonus"			"40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration_tooltip"			"8"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+
+	//=================================================================================================================
+    // Tower: Antisniper
+    //=================================================================================================================
+    "tower_antisniper"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"                    "99801"
+        "BaseClass"						"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+        "AbilityTextureName"			"holdout_multishot"
+        "MaxLevel"						"1"
+
+        "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_range"		"1"
+			}
+		}
+
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "Modifiers"
+        {
+            "modifier_tower_antisniper"
+            {
+                "Passive"			"1"
+                "IsHidden"			"1"
+                "IsDebuff"			"0"
+
+	            "OnCreated"
+	            {
+	            	"RunScript"
+	            	{
+	            		"ScriptFile"	"misc/modifier_tower_antisniper.lua"
+	            		"Function"		"antisniper_init"
+	            	}
+	            }
+
+	 			"OnTakeDamage"
+	            {
+	                "RunScript"
+	                {
+	                    "ScriptFile"	"misc/modifier_tower_antisniper.lua"
+	                    "Function"		"antisniper_attacked"
+	                    "modifier"		"modifier_tower_antisniper_buff"
+	                }
+	            } 
+            }
+
+            "modifier_tower_antisniper_buff"
+			{
+			    "Passive"   "0"
+			    "IsPurgable"    "0"
+			    "IsHidden"	"1"
+			    "Attributes"			"MODIFIER_ATTRIBUTE_MULTIPLE | MODIFIER_ATTRIBUTE_PERMANENT"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS" "%bonus_range"
+                }
+			}
+
+
+        }
+    }
+
+
 }

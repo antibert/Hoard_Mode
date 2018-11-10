@@ -106,8 +106,8 @@
 	//"item_spirit_vessel"			"REMOVE"
 	//"item_recipe_headdress"			"REMOVE"
 	//"item_headdress"				"REMOVE"
-	//"item_recipe_sheepstick"		"REMOVE"
-	//"item_sheepstick"				"REMOVE"
+	"item_recipe_sheepstick"		"REMOVE"
+	"item_sheepstick"				"REMOVE"
 	//"item_recipe_orchid"			"REMOVE"
 	//"item_orchid"					"REMOVE"
 	//"item_recipe_cyclone"			"REMOVE"
@@ -5860,5 +5860,4 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityDamage"					"160 240 360"
 	}
-
 }

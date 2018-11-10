@@ -125,17 +125,12 @@
             "02"
             {
                 "var_type"              "FIELD_FLOAT"
-                "bonus_mana_regen"      "1.75"
+                "bonus_mana_regen"      "1.5"
             }
             "03"
             {
                 "var_type"              "FIELD_INTEGER"
-                "cast_range_bonus"      "300"
-            }
-            "04"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "spell_power"           "5"
+                "cast_range_bonus"      "375"
             }
         }
     }
@@ -172,17 +167,12 @@
             "02"
             {
                 "var_type"              "FIELD_FLOAT"
-                "bonus_mana_regen"      "2"
+                "bonus_mana_regen"      "1.75"
             }
             "03"
             {
                 "var_type"              "FIELD_INTEGER"
-                "cast_range_bonus"      "350"
-            }
-            "04"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "spell_power"           "10"
+                "cast_range_bonus"      "500"
             }
         }
     }
@@ -219,17 +209,12 @@
             "02"
             {
                 "var_type"              "FIELD_FLOAT"
-                "bonus_mana_regen"      "2.25"
+                "bonus_mana_regen"      "2"
             }
             "03"
             {
                 "var_type"              "FIELD_INTEGER"
-                "cast_range_bonus"      "400"
-            }
-            "04"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "spell_power"           "15"
+                "cast_range_bonus"      "625"
             }
         }
     }
@@ -266,17 +251,12 @@
             "02"
             {
                 "var_type"              "FIELD_FLOAT"
-                "bonus_mana_regen"      "2.5"
+                "bonus_mana_regen"      "2.25"
             }
             "03"
             {
                 "var_type"              "FIELD_INTEGER"
-                "cast_range_bonus"      "450"
-            }
-            "04"
-            {
-                "var_type"              "FIELD_INTEGER"
-                "spell_power"           "20"
+                "cast_range_bonus"      "750"
             }
         }
     }
@@ -4404,15 +4384,14 @@
     {
         // General
         //-------------------------------------------------------------------------------------------------------------
-        "BaseClass"						"item_ultimate_scepter"
+        "BaseClass"                     "item_datadriven"
         "ID"							"99108"														// unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
-        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-        "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-        "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-        "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
         "AbilityTextureName"			"item_ultimate_scepter_2"
 
-        "AbilityCastRange"				"600"
+        "AbilityCastPoint"              "0.0"
+        "AbilityCooldown"               "80"
+        "AbilityManaCost"               "150"
 
 
         // Item Info
@@ -4442,6 +4421,78 @@
             {
                 "var_type"				"FIELD_INTEGER"
                 "bonus_mana"			"350"
+            }
+            "04"
+            {
+                "var_type"              "FIELD_INTEGER"
+                "spell_amp_boost_pct"       "375"
+            }
+            "05"
+            {
+                "var_type"              "FIELD_FLOAT"
+                "spell_boost_duration"      "6.0"
+            }
+        }
+
+        "OnSpellStart" 
+        {
+            "ApplyModifier"
+            {
+                "Target"                    "CASTER"
+                "ModifierName"              "modifier_item_ultimate_scepter_spell_boost"
+                "Duration"                  "%spell_boost_duration"
+            }       
+            "FireSound"
+            {
+                "EffectName"                "DOTA_Item.Armlet.Activate"
+                "Target"                    "CASTER"
+            }
+        }
+        "Modifiers"
+        {
+            "modifier_item_ultimate_scepter_2"
+            {
+                "Passive"           "1"
+                "IsHidden"          "1"
+                "Attributes"        "MODIFIER_ATTRIBUTE_MULTIPLE"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"             "%bonus_all_stats"
+                    "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"           "%bonus_all_stats"
+                    "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"            "%bonus_all_stats"
+                    "MODIFIER_PROPERTY_HEALTH_BONUS"              "%bonus_health"
+                    "MODIFIER_PROPERTY_MANA_BONUS"                "%bonus_mana"
+                }
+
+                "OnCreated"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"        "items/item_ultimate_scepter_2.lua"
+                        "Function"          "modifier_item_ultimate_scepter_2_on_created"
+                    }
+                }
+                
+                "OnDestroy"
+                {
+                    "RunScript"
+                    {
+                        "ScriptFile"        "items/item_ultimate_scepter_2.lua"
+                        "Function"          "modifier_item_ultimate_scepter_2_on_destroy"
+                    }
+                }
+            } 
+
+            "modifier_item_ultimate_scepter_spell_boost"
+            {
+                "IsPurgable"        "0"
+                "IsBuff"            "1"
+
+                "Properties"
+                {
+                    "MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE"            "%spell_amp_boost_pct"
+                }
             }
         }
     }
@@ -6104,8 +6155,37 @@
 			}
 		}
 	}
-    //=================================================================================================================
-	// Sheepstick
+
+	//=================================================================================================================
+	// Horde Sheepstick Recipe
+	//=================================================================================================================
+
+	"item_recipe_sheepstick_horde"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"item_datadriven"
+		"ID"							"9985"  //Valve's version of this item uses the ID "62".
+		"Model"							"models/props_gameplay/recipe.mdl"
+		"AbilityTextureName"			"item_recipe"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"0"	
+		"ItemShopTags"					""
+		
+		// Recipe
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemRecipe"					"1"
+		"ItemResult"					"item_sheepstick_horde"
+		"ItemRequirements"
+		{
+			"01"						"item_mystic_staff;item_ultimate_orb;item_void_stone"
+		}
+	}
+
+    	//=================================================================================================================
+	// Horde Sheepstick
 	//=================================================================================================================
 	"item_sheepstick_horde"
 	{
@@ -7723,12 +7803,12 @@
             "07"
             {
                 "var_type"              "FIELD_INTEGER"
-                "knockback_height"      "50 50 50"
+                "knockback_height"      "88 88 88"
             }
             "08"
             {
                 "var_type"              "FIELD_FLOAT"
-                "knockback_duration"    "0.4 0.4 0.4"
+                "knockback_duration"    "0.6 0.6 0.6"
             }
             "09"
             {
@@ -7748,7 +7828,7 @@
 			"12"
 			{
 				"var_type"			   "FIELD_FLOAT"
-				"inc_heal_pct_reduct"	   "-65.0"
+				"inc_heal_pct_reduct"	   "-35.0"
 			}
 			"13"
 			{

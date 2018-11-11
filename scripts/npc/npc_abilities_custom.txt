@@ -15579,7 +15579,10 @@
     }
 
 
-"diabolic_edict_boss"
+	//=================================================================================================================
+    // Disco Pony: Diabolic Edict
+    //=================================================================================================================
+	"diabolic_edict_boss"
 	{
 		"BaseClass"	"leshrac_diabolic_edict"	
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
@@ -15692,5 +15695,38 @@
         }
     }
 
+	//=================================================================================================================
+    // Tower: Upgrade-o-meter
+    //=================================================================================================================
+    "tower_upgradeometer"
+    {
+        // General
+        //-------------------------------------------------------------------------------------------------------------
+        "ID"                    "99800"
+        "BaseClass"						"ability_datadriven"
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "MaxLevel"						"1"
+        "AbilityTextureName"			"lone_druid_spirit_bear_demolish"
+
+        "Modifiers"
+        {
+            "modifier_tower_upgradeometer"
+            {
+                "Passive"			"1"
+                "IsBuff"			"1"
+                "IsHidden"			"0"
+
+	            "OnCreated"
+	            {
+	            	"RunScript"
+	            	{
+	            		"ScriptFile"	"misc/modifier_tower_upgradeometer.lua"
+	            		"Function"		"upgradeometer_init"
+	            		"modifier_stack"	"modifier_tower_upgradeometer"
+	            	}
+	            }
+            }
+        }
+    }
 
 }

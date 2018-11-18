@@ -7994,17 +7994,17 @@
             "02"
             {
                 "var_type"                  "FIELD_INTEGER"
-                "bonus_attack_speed"        "80"
+                "bonus_attack_speed"        "30"
             }
             "03"
             {
                 "var_type"                  "FIELD_INTEGER"
-                "pure_damage_proc"          "80"
+                "pure_damage_proc"          "100"
             }
             "03"
             {
                 "var_type"                  "FIELD_INTEGER"
-                "pure_damage_proc_illusion" "16"
+                "pure_damage_proc_illusion" "20"
             }
         }
 

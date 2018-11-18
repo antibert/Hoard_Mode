@@ -15103,7 +15103,8 @@
     //=================================================================================================================
     "hordebrs_ultra_puredmg"
     {
-        "BaseClass"				        "spectre_desolate"       
+        "BaseClass"				        "spectre_desolate"  
+        "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"     
         "MaxLevel"						"20"
         // Special
         //-------------------------------------------------------------------------------------------------------------
@@ -15156,18 +15157,18 @@
 			"BRS_UltraArmor_Modifier"
 			{
 				"Passive" "1"
-				"IsHidden" "0"
+				"IsHidden" "1"
 				"Aura" "BRS_UltraArmor_Aura"
 				"Aura_Radius" "%radius"
 				"Aura_Teams" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 				"Aura_Types" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Aura_ApplyToCaster"	"1"
 			}
 
 			"BRS_UltraArmor_Aura"
 			{
 				"IsDebuff" "0"
 				"IsPurgable" "0"
-				"Aura_ApplyToCaster"	"1"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%bonus_armor"
@@ -15208,16 +15209,18 @@
 		}
 		"Modifiers"
 		{
-			"aura_amp_null"
+			"horde_aura_amp_null"
 			{
-				"IsHidden"				"0"
+				"IsHidden"				"1"
 				"Passive"				"1"
-				"Aura"					"amp_null"
+				"Aura"					"horde_amp_null"
 				"Aura_Radius"			"%null_radius"
 				"Aura_Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+				"Aura_ApplyToCaster"	"0"
 			}
-			"amp_null"
+
+			"horde_amp_null"
 			{
 				"IsDebuff" "1"
 				"IsPurgable" "0"
@@ -15282,6 +15285,7 @@
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
 		"AbilityTextureName"			"beastmaster_inner_beast"
         "MaxLevel"						"20"
+        "AOERadius"                     "%radius"
 	
 		// Casting
 		"AbilitySpecial"
@@ -15300,21 +15304,21 @@
 	
 		"Modifiers"
 		{
-			"modifier_inner_beast"
+			"horde_modifier_inner_beast"
 			{
 				"IsHidden"			"1"
 				"Passive" "1"
-				"Aura"          	"modifier_inner_beast_buff"
+				"Aura"          	"horde_modifier_inner_beast_buff"
 				"Aura_Radius"   	"%radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster"	"1"
 			}
 	
-			"modifier_inner_beast_buff"
+			"horde_modifier_inner_beast_buff"
 			{
 "IsDebuff"			"0"
 				"IsPurgable" 		"0"
-				"Aura_ApplyToCaster"	"1"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
@@ -15337,6 +15341,7 @@
         "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
         "AbilityTextureName"			"omniknight_degen_aura"
         "MaxLevel"						"15"
+        "AOERadius"                     "%radius"
 	
 		// Casting
 		"AbilitySpecial"
@@ -15365,11 +15370,13 @@
 				"Aura_Radius"   	"%radius"
 				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster"	"0"
                 
 			}
 	
 			"modifier_hordebrs_attackspeed_slow"
 			{
+				"IsDebuff" "1"
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "%bonus_attack_speed"
@@ -15728,5 +15735,106 @@
             }
         }
     }
+
+	//=================================================================================================================
+	// Treant Protector Boss: Horde Living Armor
+	//=================================================================================================================
+	"boss_treant_living_armor"
+	{
+		"BaseClass"					"treant_living_armor"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"12"
+		"MaxLevel"						"1"
+		"AbilityManaCost"				"50"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_count"		"120"
+				"LinkedSpecialBonus"	"special_bonus_unique_treant"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"health_regen"		"30"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_block"		"120"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"30.0"
+			}
+
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+
+	//=================================================================================================================
+	// Kappapult's Liquid Fire
+	//=================================================================================================================
+	"kappapult_liquid_fire"
+	{
+		"BaseClass"					"jakiro_liquid_fire"							
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Jakiro.LiquidFire"
+		"MaxLevel"						"1"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"0"
+		"AbilityDuration"				"5.0"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.0"
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityModifierSupportBonus"		"35"
+			
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_attack_speed_pct" 		"-30"
+				"LinkedSpecialBonus"	"special_bonus_unique_jakiro_4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"300"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"24"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tooltip_duration"			"5"
+			}
+		}		
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
 
 }

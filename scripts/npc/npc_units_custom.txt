@@ -3708,7 +3708,7 @@
 	
 		// Abilities
 		//----------------------------------------------------------------
-		"Ability1"					"jakiro_liquid_fire"			// Ability 1
+		"Ability1"					"kappapult_liquid_fire"			// Ability 1
 		"Ability2"					""			// Ability 2
 		"Ability3"					""			// Ability 3
 		"Ability4"					""			// Ability 4
@@ -3820,7 +3820,7 @@
 		// Abilities
 		//----------------------------------------------------------------
 		"AbilityLayout"				"6"
-		"Ability1"					"treant_living_armor"	        // Ability 1.
+		"Ability1"					"boss_treant_living_armor"	        // Ability 1.
 		"Ability2"					"generic_gold_chest_fountain"	 		// Ability 2.
 		"Ability3"					"dragon_knight_dragon_blood"			// Ability 3.
 		"Ability4"					"furion_sprout"			// Ability 4.
@@ -4223,10 +4223,10 @@
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"740"		// Damage range min.
 		"AttackDamageMax"			"800"		// Damage range max.
-		"AttackRate"				"1.1"		// Speed of attack.
+		"AttackRate"				"0.8"		// Speed of attack.
 		"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
 		"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
-		"AttackRange"				"2350"		// Range within a target can be attacked.
+		"AttackRange"				"3150"		// Range within a target can be attacked.
 		"ProjectileModel"			"particles\boss_arrow.vpcf"      
 		// Particle system model for projectile.
 		"ProjectileSpeed"			"2000"		    // Speed of projectile.		   
@@ -4257,8 +4257,8 @@
 		
 		// Vision
 		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"2100"		// Range of vision during day light.
-		"VisionNighttimeRange"		"1500"		// Range of vision at night time.
+		"VisionDaytimeRange"		"4700"		// Range of vision during day light.
+		"VisionNighttimeRange"		"4100"		// Range of vision at night time.
 		
 		// Team
 		//----------------------------------------------------------------

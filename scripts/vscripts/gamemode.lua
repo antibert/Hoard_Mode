@@ -111,6 +111,11 @@ function GameMode:OnHeroInGame(hero)
     int_steal:SetLevel(1)
   end
 
+  if hero:GetUnitName() == "npc_dota_hero_spirit_breaker" then
+    local sb = hero:FindAbilityByName("spirit_breaker_empowering_haste_datadriven")
+    sb:SetLevel(1)
+  end
+
   -- marks first spawned meepo as meepo prime
   if not self.firstMeepo and hero:GetUnitName() == "npc_dota_hero_meepo" then
     self.firstMeepo = hero
@@ -165,6 +170,7 @@ function GameMode:InitGameMode()
   -- Commands can be registered for debugging purposes or as functions that can be called by the custom Scaleform UI
   Convars:RegisterCommand( "command_example", Dynamic_Wrap(GameMode, 'ExampleConsoleCommand'), "A console command example", FCVAR_CHEAT )
   Convars:RegisterCommand( "grant_skill", Dynamic_Wrap(GameMode, 'GrantSkill'), "Give user a special skill", FCVAR_CHEAT )
+  Convars:RegisterCommand( "show_difficulty", Dynamic_Wrap(GameMode, 'ShowDifficulty'), "Shows current game's difficulty", FCVAR_CHEAT )
 
   DebugPrint('[BAREBONES] Done loading Barebones gamemode!\n\n')
 end
@@ -246,6 +252,17 @@ function GameMode:GrantSkill(skillName, level)
     
     
   end
+end
+
+function GameMode:ShowDifficulty()
+  local line_duration = 5
+
+  Timers:CreateTimer(line_duration, function()
+    Notifications:BottomToAll( {text = "#horde_introduction_line_03", duration = line_duration, style = {color = "White"} } )
+    Notifications:BottomToAll( {text = _G.GameMode.difficulty_name, duration = line_duration, style = {color = "DodgerBlue"}, continue = true}  )
+  end)
+  print("Player amount: ".._G.mapLogic.PLAYERS)
+  print("Map logic difficulty is[EMHU]: ".._G.mapLogic.DIFFICULTY)
 end
 
 function GetVersion()

@@ -30,11 +30,63 @@ function upgrade_barracks( keys, level )
 	local caster = keys.caster
 	local target = keys.target
 
+	local barracksName = target:GetName()
+
 	local building_stats = target:FindAbilityByName("building_stats")
 	if building_stats ~= nil then
 		--local level = building_stats:GetLevel()
 		--building_stats:SetLevel(level + 1)
 		building_stats:SetLevel(level)
+
+		local barracksType = getBarracksType(barracksName)
+		if barracksType ~= nil then
+			local barracksLane = getBarracksLane(barracksName)
+			if barracksLane ~= nil then
+				upgrade_barracks_global(barracksLane, barracksType, level)
+			end
+		end
+	end
+end
+
+-- Possible output: "melee", "range"
+function getBarracksType( name )
+	if string.find(name, "range") ~= nil then
+		return "range"
+	elseif string.find(name, "melee") ~= nil then
+		return "melee"
+	end
+	return nil
+end
+
+-- Possible output: "top", "mid", "bot"
+function getBarracksLane( name )
+	if string.find(name, "mid") ~= nil then
+		return "mid"
+	elseif string.find(name, "top") ~= nil then
+		return "top"
+	elseif string.find(name, "bot") ~= nil then
+		return "bot"
+	end
+	return nil
+end
+
+function upgrade_barracks_global( lane, type, level )
+	if type == "range" then
+		if lane == "top" then
+			_G.GameMode.BarracksTopRangedLvl=level
+		elseif lane == "mid" then
+			_G.GameMode.BarracksMidRangedLvl=level
+		elseif lane == "bot" then
+			_G.GameMode.BarracksBotRangedLvl=level
+		end
+	elseif type == "melee" then
+		if lane == "top" then
+			_G.GameMode.BarracksTopMeleeLvl=level
+		elseif lane == "mid" then
+			_G.GameMode.BarracksMidMeleeLvl=level
+		elseif lane == "bot" then
+			_G.GameMode.BarracksBotMeleeLvl=level
+		end
 	end
 end
 
@@ -51,7 +103,7 @@ function item_upgrade_tower( keys )
 			local wasHealed = false
 
 			if target:FindAbilityByName("tower_stats") ~= nil or target:FindAbilityByName("building_stats") ~= nil then
-				-- Upgradeometer is an ability with a stack counter that controls the upgrade levels for the buildings
+				-- Upgradeometer is an ability with a stack counter that displays the upgrade levels for the buildings(and is also used to control the current level)
 				local tower_upgradeometer = target:FindAbilityByName("tower_upgradeometer")
 				local totalStacks = nil
 
@@ -86,6 +138,7 @@ function item_upgrade_tower( keys )
 
 			if wasUpgraded == true or wasHealed == true then
 				item:SpendCharge()
+				target:EmitSound("ui.crafting_mech")
 				return true
 			end
 		end

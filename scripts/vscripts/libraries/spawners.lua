@@ -190,26 +190,32 @@ function Spawner:SpawnFriend(keys)
   local lane = keys.lane
   local unit = keys.unit
   local max_spawn = keys.max_spawn
-  local meleeBarracksEntity = "good_rax_melee_mid"
-  local rangedBarracksEntity = "good_rax_range_mid"
+  --local meleeBarracksEntity = "good_rax_melee_mid"
+  --local rangedBarracksEntity = "good_rax_range_mid"
+  local meleeLevel = _G.GameMode.BarracksMidMeleeLvl
+  local rangedLevel = _G.GameMode.BarracksMidRangedLvl
   local unitArray = midFriends
 
   if lane == "top" then
-    meleeBarracksEntity = "good_rax_melee_top"
-    rangedBarracksEntity = "good_rax_range_top"
+    --meleeBarracksEntity = "good_rax_melee_top"
+    --rangedBarracksEntity = "good_rax_range_top"
+    meleeLevel = _G.GameMode.BarracksTopMeleeLvl
+    rangedLevel = _G.GameMode.BarracksTopRangedLvl
     unitArray = topFriends
   elseif lane == "bot" then
-    meleeBarracksEntity = "good_rax_melee_bot"
-    rangedBarracksEntity = "good_rax_range_bot"
+    --meleeBarracksEntity = "good_rax_melee_bot"
+    --rangedBarracksEntity = "good_rax_range_bot"
+    meleeLevel = _G.GameMode.BarracksBotMeleeLvl
+    rangedLevel = _G.GameMode.BarracksBotRangedLvl
     unitArray = bottomFriends
   end
 
   local point = Entities:FindByName(nil, pointEntity):GetAbsOrigin()
-  local waypoint = Entities:FindByName(nil, waypointEntity):GetAbsOrigin()
+  local waypoint = Entities:FindByName(nil, waypointEntity):GetAbsOrigin() 
   local spawned_units = 0
   local extra_spawn = 0
 
-  local melee_barracks = Entities:FindByName(nil, meleeBarracksEntity)
+  --[[local melee_barracks = Entities:FindByName(nil, meleeBarracksEntity)
   if melee_barracks ~= nil then
     local building_stats = melee_barracks:FindAbilityByName("building_stats")
     if building_stats ~= nil then
@@ -221,16 +227,26 @@ function Spawner:SpawnFriend(keys)
         extra_spawn = 1
       end
     end
+  end--]]
+
+  max_spawn = max_spawn + math.floor(meleeLevel / 2)
+  if meleeLevel > 9 then
+    extra_spawn = 2
+  elseif meleeLevel > 4 then
+    extra_spawn = 1
   end
 
-  local ranged_barracks = Entities:FindByName(nil, rangedBarracksEntity)
+  --[[local ranged_barracks = Entities:FindByName(nil, rangedBarracksEntity)
   local unit_level = 0
   if ranged_barracks ~= nil then
     local ranged_building_stats = ranged_barracks:FindAbilityByName("building_stats")
     if ranged_building_stats ~= nil then
       unit_level = ranged_building_stats:GetLevel()
     end
-  end
+  end--]]
+
+  local unit_level = 0
+  unit_level = rangedLevel
 
   for j=1, max_spawn do
     if spawned_units > extra_spawn then

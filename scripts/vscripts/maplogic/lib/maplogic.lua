@@ -48,6 +48,7 @@ function mapLogic:Init(keys)
 	self:SetDifficultyValues(keys)
 	self:SetFriendlyBuildings(mapData)
 	self:SetEnemyBuildings(mapData)
+	self:SetBarracksGlobal()
 
 	self:SetSpawns(mapData)
 end
@@ -64,15 +65,6 @@ function mapLogic:SetDifficultyValues(keys)
 		else
 			self.PLAYERS = playerCount
 		end
-	elseif self.MAP == 'Horde_5p_ultra' then
-		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_ULTRA
-		self.PLAYERS = 5
-	elseif self.MAP == 'Horde_4p_ultra' then
-		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_ULTRA
-		self.PLAYERS = 4
-	elseif self.MAP == 'Horde_2p_ultra' then
-		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_ULTRA
-		self.PLAYERS = 2
 	elseif self.MAP == 'Horde_4p' then
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_MEDIUM
 		if heroCount <= 4 and heroCount >= playerCount then
@@ -90,6 +82,10 @@ function mapLogic:SetDifficultyValues(keys)
 	else
 		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_EASY
 		self.PLAYERS = 4
+	end
+
+	if string.find(self.MAP, "_ultra") ~= nil then 
+		self.DIFFICULTY = MAP_LOGIC_DIFFICULTY_ULTRA
 	end
 
 	if keys.DIFFICULTY ~= nil then
@@ -215,7 +211,7 @@ function mapLogic:SetEnemyBuildings(mapInfo)
 			building:AddAbility("tower_splash")
 			local tower_splash = building:FindAbilityByName("tower_splash")
       
-      building:AddAbility("tower_antisniper")
+      		building:AddAbility("tower_antisniper")
 			local tower_antisniper = building:FindAbilityByName("tower_antisniper")
 			tower_antisniper:SetLevel(1)
 
@@ -271,6 +267,15 @@ function mapLogic:SetEnemyBuildings(mapInfo)
 		end
 
 	end
+end
+
+function mapLogic:SetBarracksGlobal()
+  _G.GameMode.BarracksMidMeleeLvl = 0
+  _G.GameMode.BarracksMidRangedLvl = 0
+  _G.GameMode.BarracksTopMeleeLvl = 0
+  _G.GameMode.BarracksTopRangedLvl = 0
+  _G.GameMode.BarracksBotMeleeLvl = 0
+  _G.GameMode.BarracksBotRangedLvl = 0
 end
 
 require('Spawners')

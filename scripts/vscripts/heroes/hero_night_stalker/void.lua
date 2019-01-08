@@ -18,12 +18,13 @@ function Void( keys )
 	
 	local units = FindUnitsInRadius(caster:GetTeam(), target:GetAbsOrigin(), nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), ability:GetAbilityTargetFlags(), FIND_ANY_ORDER, false)
 	for _,unit in pairs(units) do
+		print(modifier)
 		if GameRules:IsDaytime() then
 			ability:ApplyDataDrivenModifier(caster, unit, modifier, {duration = duration_day})
 		else
 			ability:ApplyDataDrivenModifier(caster, unit, modifier, {duration = duration_night})
+			unit:AddNewModifier(caster, ability, "modifier_stunned", {duration = stunDuration})
 		end
-		unit:AddNewModifier(caster, ability, "modifier_stunned", {duration = stunDuration})
 		ApplyDamage({victim = unit, attacker = caster, ability = ability, damage = damage, damage_type = ability:GetAbilityDamageType()})
 	end
 end

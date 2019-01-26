@@ -6937,30 +6937,35 @@
 			}
 			"02"
 			{
-				"var_type"				"FIELD_FLOAT"
-				"bonus_mana_regen_pct"	"3.0"
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"25"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"self_bonus_evasion"	"30"
+				"self_movement_speed"	"15"
 			}
 			"04"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_evasion"			"30"
+				"var_type"				"FIELD_FLOAT"
+				"bonus_mana_regen_pct"	"5.0"
 			}
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"truestrike_chance"		"40"
+				"target_movement_speed"	"20"
 			}
 			"06"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"duration"				"7"
+				"target_attack_speed"	"200"
 			}
 			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"7"
+			}
+			"08"
 			{
 				"var_type"				"FIELD_INTEGER"
 				"valor_cast_range_tooltip"				"1000"
@@ -7656,6 +7661,11 @@
 				"var_type"			   "FIELD_FLOAT"
 				"stat_resist_toggle"	   "50.0"
 			}
+			"14"
+			{
+				"var_type"              "FIELD_INTEGER"
+                		"health_const_drain"      "15"
+			}
         }
 
         "precache"
@@ -8004,12 +8014,12 @@
             "05"
             {
                 "var_type"              "FIELD_FLOAT"
-                "melee_dmg_multiplier"  "0.4"
+                "melee_dmg_multiplier"  "0.7"
             }
             "06"
             {
                 "var_type"              "FIELD_FLOAT"
-                "ranged_dmg_multiplier" "0.3"
+                "ranged_dmg_multiplier" "0.5"
             }
             "07"
             {
@@ -8098,12 +8108,12 @@
             "05"
             {
                 "var_type"              "FIELD_FLOAT"
-                "melee_dmg_multiplier"  "0.4"
+                "melee_dmg_multiplier"  "0.7"
             }
             "06"
             {
                 "var_type"              "FIELD_FLOAT"
-                "ranged_dmg_multiplier" "0.3"
+                "ranged_dmg_multiplier" "0.5"
             }
             "07"
             {

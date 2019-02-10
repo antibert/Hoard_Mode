@@ -378,9 +378,8 @@
     "npc_dota_hero_skywrath_mage_holdout"
     {
         "override_hero"			"npc_dota_hero_skywrath_mage"
-        "Ability1"              "skywrath_mage_arcane_bolt_datadriven"
-        "Ability6"				"skywrath_mage_mystic_flare_datadriven"
-        "Ability13"             "special_bonus_exp_boost_30"
+	"Ability1"              "skywrath_mage_arcane_bolt_datadriven"
+	"Ability13"             "special_bonus_exp_boost_30"
     }
 	//=================================================================================================================
     // HERO: Slark

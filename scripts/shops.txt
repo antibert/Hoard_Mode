@@ -130,7 +130,7 @@
 	{
 		"item"		"item_hood_of_defiance"
 		"item"		"item_vanguard"
-		"item"		"item_blademail"
+		"item"		"item_blade_mail"
 		"item"		"item_aeon_disk"
 		"item"		"item_crimson_guard"
 		"item"		"item_lotus_orb"

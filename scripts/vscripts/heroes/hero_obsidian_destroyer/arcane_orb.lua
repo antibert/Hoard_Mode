@@ -37,7 +37,7 @@ function ArcaneOrb( keys )
 
 	PopupSpellDamage(target, math.floor(damage_table.damage))
 
-	if has_scepter then
+	--[[if has_scepter then]]
 		local unitsToDamage = {unpack(FindUnitsInRadius(caster:GetTeam(), targetLocation, nil, radius, ability:GetAbilityTargetTeam(), ability:GetAbilityTargetType(), DOTA_UNIT_TARGET_FLAG_NONE, 1, false), 2)}
 		damage_table.damage = damage_table.damage * splash
 
@@ -45,7 +45,7 @@ function ArcaneOrb( keys )
 			damage_table.victim = v
 			ApplyDamage(damage_table)
 		end
-	end
+	--[[end]]
 
 	local essence_aura_ability = caster:FindAbilityByName(essence_aura)
 	if essence_aura_ability ~= nil then

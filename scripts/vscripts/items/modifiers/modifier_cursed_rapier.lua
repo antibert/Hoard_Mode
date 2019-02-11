@@ -55,7 +55,7 @@ function modifier_cursed_rapier_toggle:OnIntervalThink()
 	    damage_table.victim = self.parent
 	    damage_table.damage_type = DAMAGE_TYPE_PURE
 
-	    local self_damage = (self.parent:GetMaxHealth() * self:GetAbility():GetSpecialValueFor("health_pct_drain") * self.think * 0.01)
+	    local self_damage = self:GetAbility():GetSpecialValueFor("health_const_drain") + (self.parent:GetMaxHealth() * self:GetAbility():GetSpecialValueFor("health_pct_drain") * self.think * 0.01)
 	    damage_table.damage = self_damage
 	    self.accumulated_damage = self.accumulated_damage + self_damage
 
